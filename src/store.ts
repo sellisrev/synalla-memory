@@ -100,6 +100,17 @@ export function quantize(v: Float32Array): Int8Array {
 }
 
 const norm = (x: string) => x.replace(/\s+/g, ' ').trim().toLowerCase();
+
+/** Predicates that hold one value at a time (memory_ab/extract.py FUNCTIONAL and functional()). */
+export const FUNCTIONAL = Object.freeze(['lives_in', 'works_for', 'employer', 'role', 'job_title', 'title', 'salary', 'status',
+  'has_partner', 'address', 'price', 'current_price', 'located_in', 'is_based_in', 'phone', 'plan', 'subscription', 'balance', 'stage']);
+export function isFunctional(predicate: string): boolean {
+  const p = norm(predicate).replace(/ /g, '_');
+  return FUNCTIONAL.includes(p) || p.startsWith('current_') || p.endsWith('_status');
+}
+
+/** Sources of agent sessions. Their facts were left out of the measured setting (work notes were the main noise). */
+export const AGENT_SESSION_SOURCES = Object.freeze(['claude-code', 'hermes']);
 const f32 = (b: Buffer) => new Float32Array(b.buffer.slice(b.byteOffset, b.byteOffset + b.byteLength));
 
 /** int8 RAM cache over one table's float32 vectors, with exact rescoring from the file. */
@@ -316,9 +327,10 @@ export class MemoryStore {
 
   /**
    * Replace the facts of an item with these (already checked against the item's text by the extractor), scrubbed,
-   * and record the item as extracted. Then recompute, for every subject and predicate touched, which facts a later
-   * value superseded: sorted by (valid_from or mentioned_at or the item's date, mentioned_at), each fact whose value
-   * differs from the next one's, and which has no end date of its own, ends where the next one starts.
+   * and record the item as extracted. Then recompute, for every subject and single-valued predicate touched (as
+   * measured: `extract.py load --functional-only`), which facts a later value superseded: sorted by (valid_from or
+   * mentioned_at or the item's date, mentioned_at), each fact whose value differs from the next one's, and which has
+   * no end date of its own, ends where the next one starts. Other predicates (prefers, owns, bought...) accumulate.
    */
   setFacts(item: string, facts: readonly FactInput[], at: Date = new Date(), error: string | null = null): number[] {
     const it = this.#db.prepare('SELECT date FROM items WHERE id = ?').get(item) as { date: string } | undefined;
@@ -361,7 +373,8 @@ export class MemoryStore {
         return a1 < b1 ? -1 : a1 > b1 ? 1 : a2 < b2 ? -1 : a2 > b2 ? 1 : a.i - b.i;
       }).map(x => x.r);
       const sup = new Map<number, string | null>(rows.map(r => [r.fid, null]));
-      for (let i = 1; i < sorted.length; i++) {
+      const single = isFunctional(k.slice(k.indexOf('\u0000') + 1));
+      for (let i = 1; single && i < sorted.length; i++) {
         const prev = sorted[i - 1] as typeof rows[number], cur = sorted[i] as typeof rows[number];
         if (norm(prev.object) !== norm(cur.object) && !prev.valid_to && sup.get(prev.fid) === null) sup.set(prev.fid, cur.valid_from || cur.mentioned_at);
       }
@@ -370,9 +383,10 @@ export class MemoryStore {
   }
 
   /** Items whose facts were not extracted yet (oldest first). */
-  pendingExtraction(limit = 50): StoredItem[] {
+  pendingExtraction(limit = 50, opts: { agentSessions?: boolean } = {}): StoredItem[] {
+    const skip = opts.agentSessions ? [] : [...AGENT_SESSION_SOURCES];
     return this.#db.prepare(`SELECT id, date, source, title, text FROM items WHERE id NOT IN (SELECT item FROM extracted)
-      ORDER BY date, id LIMIT ?`).all(limit) as StoredItem[];
+      AND source NOT IN (${skip.map(() => '?').join(',') || "''"}) ORDER BY date, id LIMIT ?`).all(...skip, limit) as StoredItem[];
   }
 
   setFactVectors(vectors: readonly { fid: number; vec: Float32Array }[]): void {

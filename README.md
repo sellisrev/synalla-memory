@@ -16,6 +16,8 @@ Status: early work, not released. Node 22.18 or later.
   agent's own model reads the results.
 - **Extracts facts** with a chat model you choose: a local one by default. A model that is not on your machine is
   used only after you agree that your records are sent to it.
+  Facts are read from mail, notes and what you ask it to `remember`; agent sessions only with `--agent-sessions`,
+  because in our measurements facts from work sessions added more noise than help. Sessions are always searchable.
 - **Runs the embedding model locally** as a small llama.cpp server on a free local port. A pinned release and the
   model file are downloaded on first use and checked against published checksums.
 - **Keeps the store encrypted** (SQLCipher) with its key in your system's keychain (macOS Keychain, the Linux Secret

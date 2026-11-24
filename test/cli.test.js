@@ -96,6 +96,7 @@ test('recovery code: round trip, forgiving input, typos refused', () => {
 
 test('the built-in embedder starts for import and recall and is always stopped', async () => {
   const root = mkdtempSync(join(tmpdir(), 'synalla-cli-'));
+  const srvs = [];
   try {
     const projects = join(root, 'claude', 'C--p'); mkdirSync(projects, { recursive: true });
     writeFileSync(join(projects, 's.jsonl'), JSON.stringify({ type: 'user', sessionId: 's', timestamp: '2026-11-20T09:00:00Z', message: { content: 'Mamie lives in Lyon' } }));
@@ -104,6 +105,7 @@ test('the built-in embedder starts for import and recall and is always stopped',
     const srv = createServer((req, res) => { let b = ''; req.on('data', d => b += d); req.on('end', () => {
       const { input } = JSON.parse(b); res.end(JSON.stringify({ data: input.map((_, i) => ({ index: i, embedding: Array.from({ length: 1024 }, (_, j) => (j === 0 ? 1 : 0.01)) })) }));
     }); });
+    srvs.push(srv);
     await new Promise(r => srv.listen(0, '127.0.0.1', r));
     const url = `http://127.0.0.1:${srv.address().port}`;
     const e = env(join(root, 'home'), { claudeProjects: join(root, 'claude'), hermesDb: join(root, 'none.db'),
@@ -114,12 +116,12 @@ test('the built-in embedder starts for import and recall and is always stopped',
     assert.equal(await main(['recall', 'Where does Mamie live?'], e), 0);
     assert.match(e.outText(), /Mamie lives in Lyon/);
     assert.deepEqual(events, [['start', 1024, 'vulkan'], ['stop'], ['start', 1024, 'vulkan'], ['stop']]);
-    srv.close();
-  } finally { rmSync(root, { recursive: true, force: true }); }
+  } finally { srvs.forEach(x => x.close()); rmSync(root, { recursive: true, force: true }); }
 });
 
-test('extract-with refuses a remote endpoint without --cloud-ok; extract reads items and stores checked facts', async () => {
+test('extract-with refuses a remote endpoint without --cloud-ok; extract skips agent sessions unless asked', async () => {
   const root = mkdtempSync(join(tmpdir(), 'synalla-cli-'));
+  const srvs = [];
   try {
     const { createServer } = await import('node:http');
     const srv = createServer((req, res) => { let b = ''; req.on('data', d => b += d); req.on('end', () => {
@@ -127,6 +129,7 @@ test('extract-with refuses a remote endpoint without --cloud-ok; extract reads i
       const facts = prompt.includes('Lyon') ? [{ subject: 'Mamie', predicate: 'lives_in', object: 'Lyon', valid_from: '2026-11-20', valid_to: null, mentioned_at: '2026-11-20', quote: 'Mamie lives in Lyon' }] : [];
       res.end(JSON.stringify({ choices: [{ message: { content: JSON.stringify({ facts }) } }] }));
     }); });
+    srvs.push(srv);
     await new Promise(r => srv.listen(0, '127.0.0.1', r));
     const url = `http://127.0.0.1:${srv.address().port}`;
     const projects = join(root, 'claude', 'C--p'); mkdirSync(projects, { recursive: true });
@@ -140,11 +143,12 @@ test('extract-with refuses a remote endpoint without --cloud-ok; extract reads i
     assert.equal(await main(['extract-with', url, 'daily', '--owner', 'Maria'], e), 0);
     assert.equal(await main(['import'], e), 0);
     assert.equal(await main(['extract'], e), 0, e.errText());
+    assert.match(e.outText(), /Facts: 0 from 0 item\(s\)/, 'agent sessions are not read for facts by default (as measured)');
+    assert.equal(await main(['extract', '--agent-sessions'], e), 0, e.errText());
     assert.match(e.outText(), /Facts: 1 from 1 item\(s\); 0 item\(s\) failed\. All items read\./);
     assert.equal(await main(['recall', 'Where does Mamie live?'], e), 0);
     assert.match(e.outText(), /Facts:\n- Mamie \| lives_in \| Lyon \(valid from 2026-11-20, current;/);
-    srv.close();
-  } finally { rmSync(root, { recursive: true, force: true }); }
+  } finally { srvs.forEach(x => x.close()); rmSync(root, { recursive: true, force: true }); }
 });
 
 test('S3: backup-to reads the secret from stdin; a restore on a new machine (empty keychain) asks for it again', async () => {

@@ -146,12 +146,14 @@ export function httpChatModel({ url, model, apiKey, fetch: base }: HttpChatOptio
 
 /** Extract facts for up to `limit` pending items. A failed item is recorded with its error and not retried. */
 export async function extractPending(
-  store: { pendingExtraction(limit: number): StoredItem[]; setFacts(item: string, facts: readonly FactInput[], at?: Date, error?: string | null): number[] },
-  model: ChatModel, owner: string, opts: { limit?: number; now?: () => Date; onItem?: (id: string, kept: number, dropped: number, error?: string) => void } = {},
+  store: { pendingExtraction(limit: number, opts?: { agentSessions?: boolean }): StoredItem[]; setFacts(item: string, facts: readonly FactInput[], at?: Date, error?: string | null): number[] },
+  model: ChatModel, owner: string,
+  opts: { limit?: number; now?: () => Date; agentSessions?: boolean; onItem?: (id: string, kept: number, dropped: number, error?: string) => void } = {},
 ): Promise<{ items: number; facts: number; failed: number }> {
   const now = opts.now ?? (() => new Date());
   let items = 0, facts = 0, failed = 0;
-  for (const it of store.pendingExtraction(opts.limit ?? 50)) {
+  // Agent sessions are not read for facts unless asked: the measured setting left their facts out as noise.
+  for (const it of store.pendingExtraction(opts.limit ?? 50, { agentSessions: opts.agentSessions ?? false })) {
     const text = itemText(it);
     try {
       const { kept, dropped } = checkFacts(await model.complete(extractionPrompt(owner) + text), text);

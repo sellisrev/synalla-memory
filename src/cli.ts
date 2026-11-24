@@ -8,7 +8,8 @@
 //   embed                    embed chunks and facts that have no vector yet
 //   extract-with <url> <model> --owner <name> [--cloud-ok]   choose the chat model that extracts facts (API key, if
 //                            any, read from stdin; a non-local endpoint needs --cloud-ok: records are sent to it)
-//   extract [--limit N]      extract facts from items not yet read (then embeds them)
+//   extract [--limit N] [--agent-sessions]   extract facts from items not yet read (then embeds them); agent
+//                            sessions are read only with --agent-sessions (the measured setting left their facts out)
 //   recall <question>        search from the terminal
 //   serve                    run the MCP server on stdio (configure your agent to start this)
 //   backup-to folder <path> | webdav <url> <user> | s3 <endpoint> <bucket> <region> <access key id>
@@ -324,8 +325,9 @@ export async function main(argv: string[], env: Env): Promise<number> {
         const model = httpChatModel({ url: c.extract.url, model: c.extract.model, ...(key ? { apiKey: Buffer.from(key).toString('utf8') } : {}) });
         const store = openStore(env, c);
         try {
-          const r = await extractPending(store, model, c.extract.owner, { limit, now: env.now });
-          env.out(`Facts: ${r.facts} from ${r.items} item(s); ${r.failed} item(s) failed. ${store.pendingExtraction(1).length ? 'More items wait: run extract again.' : 'All items read.'}\n`);
+          const r = await extractPending(store, model, c.extract.owner, { limit, now: env.now, agentSessions: rest.includes('--agent-sessions') });
+          const more = store.pendingExtraction(1, { agentSessions: rest.includes('--agent-sessions') }).length > 0;
+          env.out(`Facts: ${r.facts} from ${r.items} item(s); ${r.failed} item(s) failed. ${more ? 'More items wait: run extract again.' : 'All items read.'}\n`);
           const em = await embedder(env, c);
           try { if (em.e) env.out(`Embedded ${await embedMissing(store, em.e)} new vector(s).\n`); } finally { em.stop(); }
           return 0;

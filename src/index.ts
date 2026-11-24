@@ -22,3 +22,4 @@ export type { Keychain, Runner } from './keychain.ts';
 export { main as cli, reminders } from './cli.ts';
 export type { Config } from './cli.ts';
 export { toRecoveryCode, fromRecoveryCode } from './recovery_code.ts';
+export { readHermes, hermesDbPath, HermesFormatChangedError } from './import_hermes.ts';

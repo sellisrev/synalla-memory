@@ -59,7 +59,19 @@ const norm = (s: string) => s.replace(/\s+/g, ' ').trim().toLowerCase();
 
 /** The text the extraction model reads for one item. */
 export function itemText(it: Pick<StoredItem, 'date' | 'source' | 'title' | 'text'>): string {
-  return `Date: ${(it.date || '').slice(0, 10)}\nSource: ${it.source}\nTitle: ${it.title || ''}\n\n${(it.text || '').slice(0, ITEM_CHARS)}`;
+  return itemWindows(it, 1)[0] as string;
+}
+
+/**
+ * The texts the model reads for one item, one per 8,000-character window, at most `max` windows. The measured
+ * setting reads only the first window (max 1); reading every window is an option until it is measured, because
+ * most long sessions put their content beyond the first 8,000 characters (internal research/longmemeval_cost.md).
+ */
+export function itemWindows(it: Pick<StoredItem, 'date' | 'source' | 'title' | 'text'>, max = 1): string[] {
+  const head = `Date: ${(it.date || '').slice(0, 10)}\nSource: ${it.source}\nTitle: ${it.title || ''}\n\n`;
+  const text = it.text || '';
+  const n = Math.max(1, Math.min(max, Math.ceil(text.length / ITEM_CHARS)));
+  return Array.from({ length: n }, (_, i) => head + text.slice(i * ITEM_CHARS, (i + 1) * ITEM_CHARS));
 }
 
 /** Parse a model reply and keep the facts whose quote is in `text`. Throws on a reply that is not the JSON asked for. */

@@ -117,3 +117,14 @@ test('httpChatModel: structured output request as measured', async () => {
   const down = httpChatModel({ url: 'http://x', model: 'm', fetch: async () => ({ ok: false, status: 500 }) });
   await assert.rejects(down.complete('P'), /500/);
 });
+
+test('itemWindows: the measured setting reads one window; more windows only when asked', async () => {
+  const { itemWindows } = await import('../src/facts.ts');
+  const it = { date: '2026-01-01', source: 's', title: 't', text: 'a'.repeat(ITEM_CHARS) + 'b'.repeat(10) };
+  assert.equal(itemWindows(it).length, 1);
+  assert.equal(itemWindows(it)[0], itemText(it));
+  const w = itemWindows(it, 5);
+  assert.equal(w.length, 2);
+  assert.ok(w[1].endsWith('b'.repeat(10)) && w[1].startsWith('Date: 2026-01-01'));
+  assert.equal(itemWindows({ ...it, text: '' }, 5).length, 1);
+});

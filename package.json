@@ -19,5 +19,8 @@
   },
   "dependencies": {
     "better-sqlite3-multiple-ciphers": "13.0.3"
+  },
+  "bin": {
+    "synalla-memory": "bin/synalla-memory.mjs"
   }
 }

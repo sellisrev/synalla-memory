@@ -19,3 +19,6 @@ export { exportPlain, renderPlain, README as READABLE_README } from './export.ts
 export type { StoredItem } from './store.ts';
 export { systemKeychain, macKeychain, linuxSecretService, windowsDpapi } from './keychain.ts';
 export type { Keychain, Runner } from './keychain.ts';
+export { main as cli, reminders } from './cli.ts';
+export type { Config } from './cli.ts';
+export { toRecoveryCode, fromRecoveryCode } from './recovery_code.ts';

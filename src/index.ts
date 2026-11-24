@@ -6,3 +6,5 @@ export { KINDS, marker, scrub } from './scrub.ts';
 export { fuse, ftsQuery, RRF_K, DEFAULT_TOP, CANDIDATES } from './fusion.ts';
 export { MemoryStore, quantize, SCHEMA_VERSION } from './store.ts';
 export type { Item, Chunk, StoreOptions } from './store.ts';
+export { chunkText, itemChunks, header, CHUNK, OVERLAP } from './chunk.ts';
+export { parseSession, importClaudeCode, toStoreItem, cleanUserText, FormatChangedError } from './import_claude_code.ts';

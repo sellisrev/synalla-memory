@@ -4,3 +4,5 @@
 export const VERSION = "0.0.1";
 export { KINDS, marker, scrub } from './scrub.ts';
 export { fuse, ftsQuery, RRF_K, DEFAULT_TOP, CANDIDATES } from './fusion.ts';
+export { MemoryStore, quantize, SCHEMA_VERSION } from './store.ts';
+export type { Item, Chunk, StoreOptions } from './store.ts';

@@ -2,7 +2,8 @@
 // SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Synalla-Commercial
 
 // `synalla-memory`: one command for the memory package (pilot plan W1).
-//   init                     create the store, its key and the backup key (shown once as a recovery code)
+//   init [--gpu vulkan] [--no-embed] [--embed-url <url>]   create the store, its key and the backup key (shown once
+//                            as a recovery code); --gpu vulkan runs the built-in embedder on the GPU
 //   import                   import Claude Code sessions (and embed them if an embedding endpoint is set)
 //   embed                    embed chunks and facts that have no vector yet
 //   extract-with <url> <model> --owner <name> [--cloud-ok]   choose the chat model that extracts facts (API key, if
@@ -43,6 +44,8 @@ export interface Config {
   embedUrl?: string;
   /** 'none': keyword search only, no model download. */
   embed?: 'builtin' | 'none';
+  /** Run the built-in embedder on the GPU (Vulkan build of llama.cpp); default CPU. */
+  embedGpu?: 'vulkan';
   backup?: { type: 'folder'; path: string } | { type: 'webdav'; url: string; user: string }
     | { type: 's3'; endpoint: string; bucket: string; region: string; accessKeyId: string };
   lastBackup?: string;
@@ -62,7 +65,7 @@ export interface Env {
   claudeProjects?: string;
   hermesDb?: string;
   /** Starts the built-in embedding server (tests inject a fake; the default downloads pinned files on first use). */
-  startBuiltin?: (home: string, dim: number) => Promise<{ url: string; stop(): void }>;
+  startBuiltin?: (home: string, dim: number, gpu?: 'vulkan') => Promise<{ url: string; stop(): void }>;
 }
 
 const YEAR_MS = 365 * 86400000;
@@ -86,20 +89,21 @@ function openStore(env: Env, c: Config): MemoryStore {
 async function embedder(env: Env, c: Config): Promise<{ e?: Embedder; stop(): void }> {
   if (c.embedUrl) return { e: httpEmbedder({ url: c.embedUrl, dim: c.dim }), stop: () => {} };
   if (c.embed === 'none') return { stop: () => {} };
-  const s = await (env.startBuiltin ?? builtin(env))(env.home, c.dim);
+  const s = await (env.startBuiltin ?? builtin(env))(env.home, c.dim, c.embedGpu);
   return { e: httpEmbedder({ url: s.url, dim: c.dim }), stop: s.stop };
 }
 function builtin(env: Env) {
-  return async (home: string, dim: number) => {
+  return async (home: string, dim: number, gpu?: 'vulkan') => {
     if (dim !== EMBED_MODEL.dim) throw new Error(`the built-in model makes ${EMBED_MODEL.dim}-number vectors, this memory uses ${dim}; set embedUrl`);
     let last = '';
     const { server, model } = await ensureModels(join(home, 'models'), {
+      gpu: gpu ?? 'cpu',
       progress: (what, d, t) => {
         const line = `Downloading ${what} (first use only): ${Math.floor((100 * d) / t)}%`;
         if (line !== last) { env.err(`\r${line}`); last = line; if (d === t) env.err('\n'); }
       },
     });
-    return startEmbedServer(server, model, { gpuLayers: 0 });
+    return startEmbedServer(server, model, { gpuLayers: gpu ? 99 : 0 });
   };
 }
 async function embedMissing(store: MemoryStore, e: Embedder): Promise<number> {
@@ -180,7 +184,8 @@ export async function main(argv: string[], env: Env): Promise<number> {
         env.keychain.set(`store-${id}`, storeKey);
         env.keychain.set(`backup-${id}`, b);
         const c: Config = { id, dim, ...(urlArg >= 0 && rest[urlArg + 1] ? { embedUrl: rest[urlArg + 1] as string } : {}),
-          ...(rest.includes('--no-embed') ? { embed: 'none' as const } : {}) };
+          ...(rest.includes('--no-embed') ? { embed: 'none' as const } : {}),
+          ...(rest.includes('--gpu') && rest[rest.indexOf('--gpu') + 1] === 'vulkan' ? { embedGpu: 'vulkan' as const } : {}) };
         MemoryStore.open(join(env.home, 'memory.db'), { key: storeKey, dim }).close();
         save(env, c);
         env.out(`Memory created in ${env.home}. Its keys are in the ${env.keychain.kind}.\n\n`

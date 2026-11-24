@@ -107,13 +107,13 @@ test('the built-in embedder starts for import and recall and is always stopped',
     await new Promise(r => srv.listen(0, '127.0.0.1', r));
     const url = `http://127.0.0.1:${srv.address().port}`;
     const e = env(join(root, 'home'), { claudeProjects: join(root, 'claude'), hermesDb: join(root, 'none.db'),
-      startBuiltin: async (home, dim) => { events.push(['start', dim]); return { url, stop: () => events.push(['stop']) }; } });
-    assert.equal(await main(['init'], e), 0);
+      startBuiltin: async (home, dim, gpu) => { events.push(['start', dim, gpu]); return { url, stop: () => events.push(['stop']) }; } });
+    assert.equal(await main(['init', '--gpu', 'vulkan'], e), 0);
     assert.equal(await main(['import'], e), 0);
     assert.match(e.outText(), /Embedded 1 new chunk/);
     assert.equal(await main(['recall', 'Where does Mamie live?'], e), 0);
     assert.match(e.outText(), /Mamie lives in Lyon/);
-    assert.deepEqual(events, [['start', 1024], ['stop'], ['start', 1024], ['stop']]);
+    assert.deepEqual(events, [['start', 1024, 'vulkan'], ['stop'], ['start', 1024, 'vulkan'], ['stop']]);
     srv.close();
   } finally { rmSync(root, { recursive: true, force: true }); }
 });

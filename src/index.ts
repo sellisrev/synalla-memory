@@ -23,3 +23,5 @@ export { main as cli, reminders } from './cli.ts';
 export type { Config } from './cli.ts';
 export { toRecoveryCode, fromRecoveryCode } from './recovery_code.ts';
 export { readHermes, hermesDbPath, HermesFormatChangedError } from './import_hermes.ts';
+export { ensureModels, startEmbedServer, download, serverAssetKey, SERVER_ASSETS, EMBED_MODEL, LLAMA_CPP_BUILD } from './models.ts';
+export type { Asset, Sidecar } from './models.ts';

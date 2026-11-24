@@ -25,6 +25,7 @@ import { toRecoveryCode, fromRecoveryCode } from './recovery_code.ts';
 import { importClaudeCode } from './import_claude_code.ts';
 import { readHermes, hermesDbPath } from './import_hermes.ts';
 import { httpEmbedder, type Embedder } from './embed.ts';
+import { ensureModels, startEmbedServer, EMBED_MODEL } from './models.ts';
 import { McpServer, serveStdio } from './mcp.ts';
 import { backup, restore, folderTarget, webdavTarget, listSnapshots, type Target } from './backup.ts';
 import { exportPlain } from './export.ts';
@@ -33,7 +34,10 @@ export interface Config {
   /** Names this memory's keys in the keychain, so two memories on one machine never share keys. */
   id: string;
   dim: number;
+  /** An OpenAI-compatible embedding endpoint you run yourself; otherwise the built-in llama.cpp sidecar. */
   embedUrl?: string;
+  /** 'none': keyword search only, no model download. */
+  embed?: 'builtin' | 'none';
   backup?: { type: 'folder'; path: string } | { type: 'webdav'; url: string; user: string };
   lastBackup?: string;
   koofrLoginAt?: string;
@@ -50,6 +54,8 @@ export interface Env {
   now: () => Date;
   claudeProjects?: string;
   hermesDb?: string;
+  /** Starts the built-in embedding server (tests inject a fake; the default downloads pinned files on first use). */
+  startBuiltin?: (home: string, dim: number) => Promise<{ url: string; stop(): void }>;
 }
 
 const YEAR_MS = 365 * 86400000;
@@ -69,8 +75,25 @@ function need(env: Env, c: Config, name: string): Uint8Array {
 function openStore(env: Env, c: Config): MemoryStore {
   return MemoryStore.open(join(env.home, 'memory.db'), { key: need(env, c, 'store'), dim: c.dim });
 }
-function embedder(c: Config): Embedder | undefined {
-  return c.embedUrl ? httpEmbedder({ url: c.embedUrl, dim: c.dim }) : undefined;
+/** The embedder for this memory and a function that releases it (stops the sidecar). */
+async function embedder(env: Env, c: Config): Promise<{ e?: Embedder; stop(): void }> {
+  if (c.embedUrl) return { e: httpEmbedder({ url: c.embedUrl, dim: c.dim }), stop: () => {} };
+  if (c.embed === 'none') return { stop: () => {} };
+  const s = await (env.startBuiltin ?? builtin(env))(env.home, c.dim);
+  return { e: httpEmbedder({ url: s.url, dim: c.dim }), stop: s.stop };
+}
+function builtin(env: Env) {
+  return async (home: string, dim: number) => {
+    if (dim !== EMBED_MODEL.dim) throw new Error(`the built-in model makes ${EMBED_MODEL.dim}-number vectors, this memory uses ${dim}; set embedUrl`);
+    let last = '';
+    const { server, model } = await ensureModels(join(home, 'models'), {
+      progress: (what, d, t) => {
+        const line = `Downloading ${what} (first use only): ${Math.floor((100 * d) / t)}%`;
+        if (line !== last) { env.err(`\r${line}`); last = line; if (d === t) env.err('\n'); }
+      },
+    });
+    return startEmbedServer(server, model, { gpuLayers: 0 });
+  };
 }
 async function embedMissing(store: MemoryStore, e: Embedder): Promise<number> {
   let n = 0;
@@ -122,7 +145,8 @@ export async function main(argv: string[], env: Env): Promise<number> {
         const id = randomBytes(4).toString('hex');
         env.keychain.set(`store-${id}`, storeKey);
         env.keychain.set(`backup-${id}`, b);
-        const c: Config = { id, dim, ...(urlArg >= 0 && rest[urlArg + 1] ? { embedUrl: rest[urlArg + 1] as string } : {}) };
+        const c: Config = { id, dim, ...(urlArg >= 0 && rest[urlArg + 1] ? { embedUrl: rest[urlArg + 1] as string } : {}),
+          ...(rest.includes('--no-embed') ? { embed: 'none' as const } : {}) };
         MemoryStore.open(join(env.home, 'memory.db'), { key: storeKey, dim }).close();
         save(env, c);
         env.out(`Memory created in ${env.home}. Its keys are in the ${env.keychain.kind}.\n\n`
@@ -149,32 +173,34 @@ export async function main(argv: string[], env: Env): Promise<number> {
             save(env, c);
             if (hs.size > 0) env.out(`Hermes: ${items.length} session(s) imported.\n`);
           } catch (e) { hermesFailed = true; env.err(`Hermes: ${(e as Error).message}\n`); }
-          const e = embedder(c);
-          if (e) env.out(`Embedded ${await embedMissing(store, e)} new chunk(s).\n`);
+          const em = await embedder(env, c);
+          try { if (em.e) env.out(`Embedded ${await embedMissing(store, em.e)} new chunk(s).\n`); } finally { em.stop(); }
           return r.failed.length > 0 || hermesFailed ? 1 : 0;
         } finally { store.close(); }
       }
       case 'embed': {
-        const c = load(env), e = embedder(c);
-        if (!e) throw new Error('no embedding endpoint set (init --embed-url http://127.0.0.1:5941)');
-        const store = openStore(env, c);
-        try { env.out(`Embedded ${await embedMissing(store, e)} chunk(s).\n`); return 0; } finally { store.close(); }
+        const c = load(env);
+        if (!c.embedUrl && c.embed === 'none') throw new Error('this memory uses keyword search only (--no-embed)');
+        const store = openStore(env, c), em = await embedder(env, c);
+        try { env.out(`Embedded ${await embedMissing(store, em.e as Embedder)} chunk(s).\n`); return 0; } finally { store.close(); em.stop(); }
       }
       case 'recall': {
         const q = rest.join(' ').trim();
         if (!q) throw new Error('usage: synalla-memory recall <question>');
         const c = load(env), store = openStore(env, c);
+        const em = await embedder(env, c).catch(e => { store.close(); throw e; });
         try {
-          const s = new McpServer(store, embedder(c) ? { embedder: embedder(c) as Embedder } : {});
+          const s = new McpServer(store, em.e ? { embedder: em.e } : {});
           const r = await s.handle({ jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name: 'recall', arguments: { question: q, limit: 5 } } }) as
             { result: { structuredContent: { passages: { text: string }[] } } };
           for (const p of r.result.structuredContent.passages) env.out(`---\n${p.text}\n`);
           return 0;
-        } finally { store.close(); }
+        } finally { store.close(); em.stop(); }
       }
       case 'serve': {
         const c = load(env), store = openStore(env, c);
-        try { await serveStdio(new McpServer(store, embedder(c) ? { embedder: embedder(c) as Embedder } : {})); return 0; } finally { store.close(); }
+        const em = await embedder(env, c).catch(e => { store.close(); throw e; });
+        try { await serveStdio(new McpServer(store, em.e ? { embedder: em.e } : {})); return 0; } finally { store.close(); em.stop(); }
       }
       case 'backup-to': {
         const c = load(env);
@@ -216,8 +242,10 @@ export async function main(argv: string[], env: Env): Promise<number> {
         const got = await restore(t, b, join(dir, 'memory.db'), before ? { before } : {});
         env.keychain.set(`store-${id}`, got.key);
         env.keychain.set(`backup-${id}`, b);
-        writeFileSync(join(dir, 'config.json'), JSON.stringify({ id, dim: got.dim }, null, 2));
-        env.out(`Restored snapshot ${got.seq} of ${got.createdAt} into ${dir}. Keys are in the ${env.keychain.kind}.\n`);
+        const builtinFits = got.dim === EMBED_MODEL.dim;
+        writeFileSync(join(dir, 'config.json'), JSON.stringify({ id, dim: got.dim, ...(builtinFits ? {} : { embed: 'none' }) }, null, 2));
+        env.out(`Restored snapshot ${got.seq} of ${got.createdAt} into ${dir}. Keys are in the ${env.keychain.kind}.\n`
+          + (builtinFits ? '' : `Its vectors have ${got.dim} numbers, not the built-in model's ${EMBED_MODEL.dim}: recall uses keywords until you set embedUrl in config.json.\n`));
         return 0;
       }
       case 'export': {

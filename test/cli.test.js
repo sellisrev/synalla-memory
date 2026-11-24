@@ -27,7 +27,7 @@ test('init, import, recall, backup, then restore elsewhere with only the recover
     writeFileSync(join(projects, 's1.jsonl'), [rec({ type: 'user', message: { content: 'Our landlord is Frau Kerschbaumer.' } }),
       rec({ type: 'assistant', message: { content: [{ type: 'text', text: 'Noted.' }] } })].join('\n'));
     const a = env(join(root, 'home-a'), { claudeProjects: join(root, 'claude'), hermesDb: join(root, 'no-hermes', 'state.db') });
-    assert.equal(await main(['init', '--dim', '8'], a), 0);
+    assert.equal(await main(['init', '--dim', '8', '--no-embed'], a), 0);
     const code = a.outText().match(/RECOVERY CODE[^\n]*\n\n\s+(\S+)/)[1];
     const id = JSON.parse(readFileSync(join(root, 'home-a', 'config.json'), 'utf8')).id;
     assert.deepEqual(fromRecoveryCode(code), a.keychain.get(`backup-${id}`));
@@ -92,4 +92,28 @@ test('recovery code: round trip, forgiving input, typos refused', () => {
   assert.deepEqual(fromRecoveryCode(c.toLowerCase().replace(/-/g, ' ').replace(/0/g, 'o').replace(/1/g, 'l')), k);
   assert.throws(() => fromRecoveryCode('short'), /not a recovery code/);
   assert.throws(() => toRecoveryCode(new Uint8Array(3)), TypeError);
+});
+
+test('the built-in embedder starts for import and recall and is always stopped', async () => {
+  const root = mkdtempSync(join(tmpdir(), 'synalla-cli-'));
+  try {
+    const projects = join(root, 'claude', 'C--p'); mkdirSync(projects, { recursive: true });
+    writeFileSync(join(projects, 's.jsonl'), JSON.stringify({ type: 'user', sessionId: 's', timestamp: '2026-11-20T09:00:00Z', message: { content: 'Mamie lives in Lyon' } }));
+    const events = [];
+    const { createServer } = await import('node:http');
+    const srv = createServer((req, res) => { let b = ''; req.on('data', d => b += d); req.on('end', () => {
+      const { input } = JSON.parse(b); res.end(JSON.stringify({ data: input.map((_, i) => ({ index: i, embedding: Array.from({ length: 1024 }, (_, j) => (j === 0 ? 1 : 0.01)) })) }));
+    }); });
+    await new Promise(r => srv.listen(0, '127.0.0.1', r));
+    const url = `http://127.0.0.1:${srv.address().port}`;
+    const e = env(join(root, 'home'), { claudeProjects: join(root, 'claude'), hermesDb: join(root, 'none.db'),
+      startBuiltin: async (home, dim) => { events.push(['start', dim]); return { url, stop: () => events.push(['stop']) }; } });
+    assert.equal(await main(['init'], e), 0);
+    assert.equal(await main(['import'], e), 0);
+    assert.match(e.outText(), /Embedded 1 new chunk/);
+    assert.equal(await main(['recall', 'Where does Mamie live?'], e), 0);
+    assert.match(e.outText(), /Mamie lives in Lyon/);
+    assert.deepEqual(events, [['start', 1024], ['stop'], ['start', 1024], ['stop']]);
+    srv.close();
+  } finally { rmSync(root, { recursive: true, force: true }); }
 });

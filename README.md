@@ -1,22 +1,51 @@
 # Synalla memory
 
-Owned memory for the agents you already run (Claude Code, Hermes, OpenClaw, any MCP client): installed with one
-command, stored locally and encrypted, filled automatically from your agent sessions, and better at recall than the
-agents' built-in memory. It is useful on its own; joining the Synalla network is optional.
+Owned memory for the agents you already run (Claude Code, Hermes, any MCP client). It is stored on your machine,
+encrypted, filled automatically from your agent sessions, and backed up where you choose. It is useful on its own;
+joining the Synalla network is optional.
 
-Status: early work, not released.
+Status: early work, not released. Node 22.18 or later.
 
 ## What it does
 
-- Imports your agent sessions, mail and notes, with secrets scrubbed before anything is stored.
-- Answers `recall` with hybrid search (keywords and meaning, fused and reranked) plus dated facts that know what is
-  true now.
-- Keeps everything in an encrypted local store, with an encrypted backup to a place you choose.
+- **Imports** your Claude Code and Hermes sessions: what you wrote and what the agent answered. Tool output, the
+  agent's reasoning and subagent runs are left out. Secrets (API keys, tokens, private keys, passwords) are replaced
+  by a marker before anything is stored.
+- **Answers `recall`** with passages found by keywords and by meaning, merged, plus dated facts that say what is true
+  now and what was replaced, each with the quote it came from. On a laptop CPU a recall takes milliseconds; your
+  agent's own model reads the results.
+- **Extracts facts** with a chat model you choose: a local one by default. A model that is not on your machine is
+  used only after you agree that your records are sent to it.
+- **Runs the embedding model locally** as a small llama.cpp server on a free local port. A pinned release and the
+  model file are downloaded on first use and checked against published checksums.
+- **Keeps the store encrypted** (SQLCipher) with its key in your system's keychain (macOS Keychain, the Linux Secret
+  Service, Windows DPAPI).
+- **Backs up** to a sync folder (iCloud Drive, Google Drive, OneDrive, Dropbox and others) or over WebDAV (Koofr,
+  Nextcloud, a NAS). Backups are encrypted and incremental. Restoring on a new machine needs the recovery code shown
+  once at setup.
+- **Exports a readable copy** on request: plain Markdown that opens without this package.
+
+## Using it
+
+```
+synalla-memory init                 # creates the store and shows your recovery code once
+synalla-memory import               # reads your sessions
+synalla-memory serve                # the MCP server: add this command to your agent's MCP settings
+synalla-memory backup-to folder <your cloud folder>
+synalla-memory backup
+synalla-memory status
+```
+
+MCP tools: `recall`, `remember`, `facts_about`, `what_changed`.
 
 ## Limits
 
-- Recall results go to your agent's own model; this package cannot see what that model does with them.
-- An agent with a shell running as your user can read what your user can read; see the project's limits notes.
+- Results reach your agent as records marked untrusted; this package cannot see what the agent's model does with them.
+- Encryption protects a machine that is off or locked. Anyone using your unlocked session can read the keychain, as
+  with any keychain.
+- An agent with a shell running as your user can read what your user can read, with or without this package.
+- Without the recovery code, a lost machine means a lost memory. Keep the code in a password manager or on paper.
+- A readable export is not encrypted: anyone who can open that folder can read it.
 
 ## Licence
 

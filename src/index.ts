@@ -11,3 +11,5 @@ export { parseSession, importClaudeCode, toStoreItem, cleanUserText, FormatChang
 export { McpServer, serveStdio, PROTOCOL_VERSIONS } from './mcp.ts';
 export { httpEmbedder, QUERY_INSTRUCT } from './embed.ts';
 export type { Embedder, HttpEmbedderOptions } from './embed.ts';
+export { backup, restore, rotateBackupKey, listSnapshots, prune, retained, folderTarget, sealManifest, openManifest, PIECE } from './backup.ts';
+export type { Target, Manifest, SnapshotResult, SnapshotInfo } from './backup.ts';

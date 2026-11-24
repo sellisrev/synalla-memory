@@ -66,12 +66,13 @@ export function quantize(v: Float32Array): Int8Array {
 
 export class MemoryStore {
   readonly dim: number;
+  readonly path: string;
   #db: Db;
   #ids: number[] = [];
   #mat: Int8Array = new Int8Array(0);
   #pos = new Map<number, number>();
 
-  private constructor(db: Db, dim: number) { this.#db = db; this.dim = dim; }
+  private constructor(db: Db, dim: number, path: string) { this.#db = db; this.dim = dim; this.path = path; }
 
   /** Open or create the store at `path` (':memory:' for tests). Throws if the key is wrong. */
   static open(path: string, { key, dim }: StoreOptions): MemoryStore {
@@ -100,7 +101,7 @@ export class MemoryStore {
       }
       throw e;
     }
-    const store = new MemoryStore(db, dim);
+    const store = new MemoryStore(db, dim, path);
     store.#loadVectors();
     return store;
   }
@@ -235,6 +236,28 @@ export class MemoryStore {
   stats(): { items: number; chunks: number; vectors: number } {
     const one = (sql: string) => (this.#db.prepare(sql).get() as { n: number }).n;
     return { items: one('SELECT count(*) n FROM items'), chunks: one('SELECT count(*) n FROM chunks'), vectors: this.#ids.length };
+  }
+
+  /**
+   * Copy the store file, still encrypted with the store key, to `dest` as a consistent snapshot: the write-ahead log
+   * is folded into the file, then the file is copied while this connection holds the write lock, so no other writer
+   * can change it. Pages that did not change keep their exact bytes, which lets backups skip them. One process owns
+   * the store (the daemon or the CLI), so the fold normally succeeds; if another connection keeps the log busy this
+   * throws and the caller retries later.
+   */
+  snapshotTo(dest: string): void {
+    if (this.path === ':memory:') throw new Error('an in-memory store has no file to snapshot');
+    const fs = require('node:fs') as typeof import('node:fs');
+    const [ck] = this.#db.pragma('wal_checkpoint(TRUNCATE)') as { busy: number; log: number }[];
+    if (!ck || ck.busy !== 0) throw new Error('store is busy; snapshot not taken');
+    this.#db.exec('BEGIN IMMEDIATE');
+    try {
+      const wal = `${this.path}-wal`;
+      if (fs.existsSync(wal) && fs.statSync(wal).size > 0) throw new Error('store changed during snapshot; not taken');
+      fs.copyFileSync(this.path, dest);
+    } finally {
+      this.#db.exec('COMMIT');
+    }
   }
 
   close(): void { this.#db.close(); }

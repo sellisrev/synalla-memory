@@ -244,3 +244,71 @@ export function folderTarget(root: string): Target {
     },
   };
 }
+
+export interface WebDavOptions {
+  /** Folder URL, e.g. https://app.koofr.net/dav/Koofr/Backups (created if missing). */
+  url: string;
+  user: string;
+  /** An app password, never the account password. */
+  password: string;
+  fetch?: typeof fetch;
+}
+
+/** A WebDAV target: Koofr (EU), Nextcloud, Hetzner Storage Box, a NAS. HTTPS only, except for localhost. */
+export function webdavTarget({ url, user, password, fetch: f = fetch }: WebDavOptions): Target {
+  const base = new URL(url.endsWith('/') ? url : url + '/');
+  const local = ['localhost', '127.0.0.1', '[::1]'].includes(base.hostname);
+  if (base.protocol !== 'https:' && !(base.protocol === 'http:' && local)) throw new TypeError('WebDAV needs an https:// URL');
+  const auth = 'Basic ' + Buffer.from(`${user}:${password}`).toString('base64');
+  const at = (name: string) => {
+    if (name.startsWith('/') || name.split('/').some(p => p === '..' || p === '' || p === '.')) throw new TypeError(`bad name ${name}`);
+    return new URL(name.split('/').map(encodeURIComponent).join('/'), base);
+  };
+  const req = async (method: string, u: URL, init: { body?: Uint8Array; headers?: Record<string, string> } = {}) =>
+    f(u, { method, headers: { authorization: auth, ...(init.headers ?? {}) }, ...(init.body ? { body: init.body as unknown as BodyInit } : {}) });
+  const fail = (what: string, status: number) => new Error(`WebDAV ${what} failed: HTTP ${status}${status === 401 ? ' (check the app password)' : status === 507 ? ' (account full)' : ''}`);
+  const made = new Set<string>();
+  async function mkcols(name: string): Promise<void> {
+    const parts = name.split('/').slice(0, -1);
+    let path = '';
+    for (const p of ['', ...parts]) {
+      path = p === '' ? '' : (path ? `${path}/${p}` : p);
+      const u = p === '' ? base : new URL(path.split('/').map(encodeURIComponent).join('/') + '/', base);
+      if (made.has(u.href)) continue;
+      const r = await req('MKCOL', u);
+      if (!(r.ok || r.status === 405 || r.status === 301)) throw fail(`creating folder ${u.pathname}`, r.status);
+      made.add(u.href);
+    }
+  }
+  return {
+    async list(prefix) {
+      const dir = prefix.endsWith('/') ? prefix.slice(0, -1) : prefix;
+      const u = new URL(dir.split('/').map(encodeURIComponent).join('/') + '/', base);
+      const r = await req('PROPFIND', u, { headers: { depth: '1', 'content-type': 'application/xml' } });
+      if (r.status === 404) return [];
+      if (r.status !== 207) throw fail('listing', r.status);
+      const xml = await r.text();
+      const hrefs = [...xml.matchAll(/<(?:[A-Za-z0-9]+:)?href>([^<]+)<\/(?:[A-Za-z0-9]+:)?href>/g)].map(m => decodeURIComponent((m[1] as string).trim()));
+      const own = decodeURIComponent(u.pathname);
+      return hrefs.map(h => new URL(h, base).pathname).map(p => decodeURIComponent(p))
+        .filter(p => p !== own && p.startsWith(own) && !p.slice(own.length).replace(/\/$/, '').includes('/') && !p.endsWith('/'))
+        .map(p => `${dir}/${p.slice(own.length)}`).sort();
+    },
+    async get(name) {
+      const r = await req('GET', at(name));
+      if (r.status === 404) return null;
+      if (!r.ok) throw fail('download', r.status);
+      return new Uint8Array(await r.arrayBuffer());
+    },
+    async put(name, data) {
+      const u = at(name);
+      let r = await req('PUT', u, { body: data, headers: { 'content-type': 'application/octet-stream' } });
+      if (r.status === 409 || r.status === 404) { await mkcols(name); r = await req('PUT', u, { body: data, headers: { 'content-type': 'application/octet-stream' } }); }
+      if (!r.ok) throw fail('upload', r.status);
+    },
+    async delete(name) {
+      const r = await req('DELETE', at(name));
+      if (!(r.ok || r.status === 404)) throw fail('delete', r.status);
+    },
+  };
+}

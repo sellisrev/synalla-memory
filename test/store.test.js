@@ -122,3 +122,12 @@ test('bad input throws', () => {
   assert.throws(() => s.vectorSearch(new Float32Array(2)), TypeError);
   s.close();
 });
+
+test('exact rescoring fixes an order the int8 cache alone gets wrong', () => {
+  const s = MemoryStore.open(':memory:', { key: key(), dim: DIM });
+  const [a, b] = s.addItem({ id: 'x', date: '', source: 'n', chunks: ['a', 'b'] });
+  // int8: a -> (127, 0), b -> (127, 1), query -> (127, 1): b would win. Exact cosine: a is closer.
+  s.setVectors([{ cid: a, vec: v(1, 0.0035) }, { cid: b, vec: v(1, 0.0065) }]);
+  assert.deepEqual(s.vectorSearch(v(1, 0.004)), [a, b]);
+  s.close();
+});

@@ -18,7 +18,10 @@ const require = createRequire(import.meta.url);
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const Database = require('better-sqlite3-multiple-ciphers') as new (path: string, opts?: object) => Db;
 
-interface Stmt { run(...a: unknown[]): { lastInsertRowid: number | bigint; changes: number }; get(...a: unknown[]): unknown; all(...a: unknown[]): unknown[] }
+interface Stmt {
+  run(...a: unknown[]): { lastInsertRowid: number | bigint; changes: number }; get(...a: unknown[]): unknown; all(...a: unknown[]): unknown[];
+  iterate(...a: unknown[]): Iterable<unknown>;
+}
 interface Db {
   pragma(s: string, o?: { simple?: boolean }): unknown;
   exec(s: string): void;
@@ -31,7 +34,12 @@ export const SCHEMA_VERSION = 1;
 /** Candidates taken from the int8 cache before exact rescoring. */
 export const RESCORE = 200;
 
-export interface Item { id: string; date: string; source: string; title?: string; chunks: readonly string[] }
+export interface Item {
+  id: string; date: string; source: string; title?: string; chunks: readonly string[];
+  /** The whole text, for the readable export (chunks overlap and carry headers). */
+  text?: string;
+}
+export interface StoredItem { id: string; date: string; source: string; title: string; text: string }
 export interface Chunk { cid: number; item: string; n: number; date: string; source: string; text: string }
 export interface StoreOptions {
   /** 32-byte key. */
@@ -42,7 +50,8 @@ export interface StoreOptions {
 
 const SCHEMA = `
 CREATE TABLE IF NOT EXISTS meta(k TEXT PRIMARY KEY, v TEXT NOT NULL);
-CREATE TABLE IF NOT EXISTS items(id TEXT PRIMARY KEY, date TEXT NOT NULL, source TEXT NOT NULL, title TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS items(id TEXT PRIMARY KEY, date TEXT NOT NULL, source TEXT NOT NULL, title TEXT NOT NULL,
+  text TEXT NOT NULL DEFAULT '');
 CREATE TABLE IF NOT EXISTS chunks(cid INTEGER PRIMARY KEY, item TEXT NOT NULL REFERENCES items(id) ON DELETE CASCADE,
   n INTEGER NOT NULL, date TEXT NOT NULL, source TEXT NOT NULL, text TEXT NOT NULL, vec BLOB);
 CREATE INDEX IF NOT EXISTS chunks_item ON chunks(item);
@@ -122,10 +131,12 @@ export class MemoryStore {
   addItem(item: Item): number[] {
     if (!item || typeof item.id !== 'string' || item.id === '') throw new TypeError('item id must be a non-empty string');
     if (!Array.isArray(item.chunks) || item.chunks.some(c => typeof c !== 'string')) throw new TypeError('chunks must be strings');
+    if (item.text !== undefined && typeof item.text !== 'string') throw new TypeError('text must be a string');
     const date = String(item.date ?? ''), source = String(item.source ?? '');
     const run = this.#db.transaction(() => {
       this.#removeItem(item.id);
-      this.#db.prepare('INSERT INTO items(id, date, source, title) VALUES (?, ?, ?, ?)').run(item.id, date, source, scrub(item.title ?? '').text);
+      this.#db.prepare('INSERT INTO items(id, date, source, title, text) VALUES (?, ?, ?, ?, ?)')
+        .run(item.id, date, source, scrub(item.title ?? '').text, scrub(item.text ?? '').text);
       const ins = this.#db.prepare('INSERT INTO chunks(item, n, date, source, text) VALUES (?, ?, ?, ?, ?)');
       return item.chunks.map((text, n) => Number(ins.run(item.id, n, date, source, scrub(text).text).lastInsertRowid));
     });
@@ -226,6 +237,11 @@ export class MemoryStore {
     const rows = this.#db.prepare(`SELECT cid, item, n, date, source, text FROM chunks WHERE cid IN (${cids.map(() => '?').join(',')})`).all(...cids) as Chunk[];
     const by = new Map(rows.map(r => [r.cid, r]));
     return cids.flatMap(c => (by.has(c) ? [by.get(c) as Chunk] : []));
+  }
+
+  /** Every item, oldest first (for the readable export). */
+  *items(): Generator<StoredItem> {
+    yield* this.#db.prepare('SELECT id, date, source, title, text FROM items ORDER BY date, id').iterate() as Iterable<StoredItem>;
   }
 
   /** Chunks that still need an embedding. */

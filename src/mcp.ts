@@ -15,7 +15,7 @@ import { VERSION } from './version.ts';
 export const PROTOCOL_VERSIONS = ['2025-06-18', '2025-03-26', '2024-11-05'];
 
 interface StoreLike {
-  addItem(i: { id: string; date: string; source: string; title: string; chunks: string[] }): number[];
+  addItem(i: { id: string; date: string; source: string; title: string; chunks: string[]; text?: string }): number[];
   setVectors(v: { cid: number; vec: Float32Array }[]): void;
   keywordSearch(q: string, k?: number): number[];
   search(q: string, v: Float32Array, top?: number): number[];
@@ -148,7 +148,7 @@ export class McpServer {
     const id = `remember:${date}:${randomUUID().slice(0, 8)}`;
     const item = { id, date, source: 'remember', title, text };
     const chunks = itemChunks(item);
-    const cids = this.#store.addItem({ id, date, source: 'remember', title, chunks });
+    const cids = this.#store.addItem({ id, date, source: 'remember', title, chunks, text });
     if (this.#embedder && cids.length > 0) {
       const stored = this.#store.chunks(cids);
       const vecs = await this.#embedder.embed(stored.map(c => c.text), 'passage');

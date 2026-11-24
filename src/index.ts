@@ -15,3 +15,5 @@ export { backup, restore, rotateBackupKey, listSnapshots, prune, retained, folde
 export type { Target, Manifest, SnapshotResult, SnapshotInfo } from './backup.ts';
 export { webdavTarget } from './backup.ts';
 export type { WebDavOptions } from './backup.ts';
+export { exportPlain, renderPlain, README as READABLE_README } from './export.ts';
+export type { StoredItem } from './store.ts';

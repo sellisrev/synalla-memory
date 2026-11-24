@@ -87,8 +87,8 @@ export function parseSession(jsonl: string): SessionItem | null {
 }
 
 /** The item as the store takes it: header-prefixed chunks. */
-export function toStoreItem(s: SessionItem): { id: string; date: string; source: string; title: string; chunks: string[] } {
-  return { id: s.id, date: s.date, source: s.source, title: s.title, chunks: itemChunks(s) };
+export function toStoreItem(s: SessionItem): { id: string; date: string; source: string; title: string; chunks: string[]; text: string } {
+  return { id: s.id, date: s.date, source: s.source, title: s.title, chunks: itemChunks(s), text: s.text };
 }
 
 export interface ImportResult { imported: string[]; skipped: number; failed: { file: string; error: string }[] }
@@ -99,7 +99,7 @@ export interface ImportResult { imported: string[]; skipped: number; failed: { f
  * changed is reported in `failed` and keeps its earlier copy.
  */
 export async function importClaudeCode(
-  store: { addItem(i: { id: string; date: string; source: string; title: string; chunks: string[] }): number[] },
+  store: { addItem(i: { id: string; date: string; source: string; title: string; chunks: string[]; text: string }): number[] },
   seen: Map<string, number>,
   projectsDir?: string,
 ): Promise<ImportResult> {

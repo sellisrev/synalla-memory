@@ -1,0 +1,63 @@
+# Switching it on in your agent
+
+Synalla memory is an MCP server that your agent starts as a local command: `synalla-memory serve`. It reads and
+writes only your encrypted store. Set it up once with `synalla-memory init` and `synalla-memory import` (see the
+README), then add it to your agent below.
+
+On a machine without a keychain (a Linux server, WSL, a container), also pass `SYNALLA_MEMORY_PASSPHRASE` in the
+server's environment, as shown in each example.
+
+## Claude Code
+
+```
+claude mcp add synalla-memory -- synalla-memory serve
+```
+
+Or in a project's `.mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "synalla-memory": { "command": "synalla-memory", "args": ["serve"] }
+  }
+}
+```
+
+With a passphrase: `claude mcp add synalla-memory -e SYNALLA_MEMORY_PASSPHRASE=... -- synalla-memory serve`.
+
+## Hermes Agent
+
+In `~/.hermes/config.yaml` (Hermes docs, "MCP"):
+
+```yaml
+mcp_servers:
+  synalla-memory:
+    command: "synalla-memory"
+    args: ["serve"]
+    env:
+      SYNALLA_MEMORY_PASSPHRASE: "${SYNALLA_MEMORY_PASSPHRASE}"   # only where there is no keychain
+```
+
+Hermes reads `${...}` values from `~/.hermes/.env`, so the passphrase can stay out of the config file. Run
+`/reload-mcp` in a session, or start a new one.
+
+## OpenClaw
+
+```
+openclaw mcp add synalla-memory --command synalla-memory --arg serve
+```
+
+With a passphrase, add `--env SYNALLA_MEMORY_PASSPHRASE=...`. The config lands in `~/.openclaw/openclaw.json` under
+`mcp.servers`. `openclaw mcp add` probes the server before saving and refuses while the Gateway is running: stop the
+Gateway first, or add `--no-probe`.
+
+## What the agent gets
+
+| Tool | What it does |
+|---|---|
+| `recall` | Passages and dated facts that help answer a question, each marked as a record, not an instruction. |
+| `remember` | Stores a note the owner states. Secrets are removed first. |
+| `facts_about` | Every fact about one person, place or thing, oldest first. |
+| `what_changed` | Facts mentioned, started, ended or replaced since a date. |
+
+None of these tools sends anything to other people or services.

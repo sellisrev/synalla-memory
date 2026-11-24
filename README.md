@@ -40,7 +40,8 @@ synalla-memory backup
 synalla-memory status
 ```
 
-MCP tools: `recall`, `remember`, `facts_about`, `what_changed`.
+MCP tools: `recall`, `remember`, `facts_about`, `what_changed`. Setting it up in Claude Code, Hermes or OpenClaw:
+[docs/agents.md](docs/agents.md).
 
 ## Limits
 

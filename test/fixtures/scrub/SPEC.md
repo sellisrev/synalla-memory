@@ -86,7 +86,7 @@ The rules (the regex source is the concatenation shown; `+` joins pieces):
 | 12 | `nostr-secret` | `B + 'nsec1[02-9ac-hj-np-z]{58}' + E` | whole match |
 | 13 | `auth-header` | `'\\bauthorization\\s*[:=]\\s*["\']?(?:bearer\|basic\|token)\\s+([A-Za-z0-9._~+\\/=-]{8,})'` + `'\|\\bbearer\\s+([A-Za-z0-9._~+\\/=-]{16,})'` | group 1, else 2 |
 | 13b | `assignment` | `'(?<![A-Za-z0-9-])--?(?:' + KEYS + '\|key\|pass\|auth)(?![A-Za-z0-9])(?:=\|[ \\t]+)' + BARE` (a command-line flag) | group 1 |
-| 13c | `assignment` | `'(?<![A-Za-z0-9])(?:key\|token\|password\|passphrase\|secret\|credential)s?(?![A-Za-z0-9])[^\\n:]{0,40}:[ \\t]+'` + `'(?=[^\\s]*[0-9])(?=[^\\s]*[A-Za-z])([^\\s\'",;()\\[\\]{}]{12,4096})'` (prose: "the key you asked for: VALUE") | group 1 |
+| 13c | `assignment` | `'(?<![A-Za-z0-9])(?:key\|token\|password\|passphrase\|secret\|credential)s?(?![A-Za-z0-9])[^\\n:]{0,40}:[ \\t]+'` + `'(?![`]\|[A-Za-z]:[\\\\/]\|\\.{0,2}\\/)(?=[^\\s]*[0-9])(?=[^\\s]*[A-Za-z])([^\\s\'",;()\\[\\]{}]{12,4096})'` (prose: "the key you asked for: VALUE"; not a quoted or file path) | group 1 |
 | 14 | `assignment` | `'(?<![A-Za-z0-9])(?:' + KEYS + ')(?![A-Za-z0-9])["\']?\\s*[:=]\\s*'` + `'(?:"([^"\\n]{6,4096})"\|\'([^\'\\n]{6,4096})\'\|' + BARE + ')'` | group 1, 2 or 3 |
 
 (In the table, `\|` stands for a plain `|`; the backslash is only there because of the table format.)

@@ -44,7 +44,7 @@ const RULES: [string, RegExp, number[]][] = [
   ['assignment', new RegExp('(?<![A-Za-z0-9-])--?(?:' + KEYS + '|key|pass|auth)(?![A-Za-z0-9])(?:=|[ \\t]+)' + BARE, 'gi'), [1]],
   // "the key you asked for: VALUE", "token: VALUE" in prose: a value that mixes letters and digits, on the same line.
   ['assignment', new RegExp('(?<![A-Za-z0-9])(?:key|token|password|passphrase|secret|credential)s?(?![A-Za-z0-9])[^\\n:]{0,40}:[ \\t]+'
-    + '(?=[^\\s]*[0-9])(?=[^\\s]*[A-Za-z])([^\\s\'",;()\\[\\]{}]{12,4096})', 'gi'), [1]],
+    + '(?![`]|[A-Za-z]:[\\\\/]|\\.{0,2}\\/)(?=[^\\s]*[0-9])(?=[^\\s]*[A-Za-z])([^\\s\'",;()\\[\\]{}]{12,4096})', 'gi'), [1]],
   ['assignment', new RegExp('(?<![A-Za-z0-9])(?:' + KEYS + ')(?![A-Za-z0-9])["\']?\\s*[:=]\\s*'
     + '(?:"([^"\\n]{6,4096})"|\'([^\'\\n]{6,4096})\'|' + BARE + ')', 'gi'), [1, 2, 3]],
 ];

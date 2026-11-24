@@ -146,3 +146,38 @@ test('extract-with refuses a remote endpoint without --cloud-ok; extract reads i
     srv.close();
   } finally { rmSync(root, { recursive: true, force: true }); }
 });
+
+test('S3: backup-to reads the secret from stdin; a restore on a new machine (empty keychain) asks for it again', async () => {
+  const root = mkdtempSync(join(tmpdir(), 'synalla-cli-'));
+  const { createServer } = await import('node:http');
+  const objects = new Map();
+  const srv = createServer((req, res) => {
+    if (!/Credential=AK\//.test(req.headers.authorization ?? '')) return res.writeHead(403).end();
+    const u = new URL(req.url, 'http://x'); const key = decodeURIComponent(u.pathname.replace(/^\/bkt\/?/, ''));
+    const body = []; req.on('data', d => body.push(d)); req.on('end', () => {
+      if (req.method === 'GET' && u.searchParams.get('list-type')) {
+        const p = u.searchParams.get('prefix');
+        return res.end(`<R>${[...objects.keys()].filter(k => k.startsWith(p) && !k.slice(p.length).includes('/')).map(k => `<Contents><Key>${k}</Key></Contents>`).join('')}<IsTruncated>false</IsTruncated></R>`);
+      }
+      if (req.method === 'PUT') { objects.set(key, Buffer.concat(body)); return res.end(); }
+      if (req.method === 'GET') return objects.has(key) ? res.end(objects.get(key)) : res.writeHead(404).end();
+      if (req.method === 'DELETE') { objects.delete(key); return res.writeHead(204).end(); }
+    });
+  });
+  await new Promise(r => srv.listen(0, '127.0.0.1', r));
+  const endpoint = `http://127.0.0.1:${srv.address().port}`;
+  try {
+    const a = env(join(root, 'a'), { readStdin: async () => 'SECRET\n' });
+    assert.equal(await main(['init', '--dim', '8', '--no-embed'], a), 0);
+    const code = a.outText().match(/RECOVERY CODE[^\n]*\n\n\s+(\S+)/)[1];
+    assert.equal(await main(['backup-to', 's3', endpoint, 'bkt', 'eu-central-003', 'AK'], a), 0, a.errText());
+    assert.equal(await main(['backup'], a), 0, a.errText());
+    const noSecret = env(join(root, 'b0'));
+    assert.equal(await main(['restore', join(root, 'b0'), '--code', code, '--from', 's3', endpoint, 'bkt', 'eu-central-003', 'AK'], noSecret), 1);
+    assert.match(noSecret.errText(), /S3 secret key on stdin/);
+    const b = env(join(root, 'b'), { readStdin: async () => 'SECRET' });
+    assert.equal(await main(['restore', join(root, 'b'), '--code', code, '--from', 's3', endpoint, 'bkt', 'eu-central-003', 'AK'], b), 0, b.errText());
+    assert.equal(await main(['backup'], b), 0, 'the restored memory keeps backing up to the same place');
+    assert.match(b.outText(), /Snapshot 2:/);
+  } finally { srv.close(); rmSync(root, { recursive: true, force: true }); }
+});

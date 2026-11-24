@@ -14,7 +14,7 @@
 //   - changing B re-seals the manifests only; nothing is uploaded again.
 // Kept: the newest snapshot of each of the last 7 days that have one, and of each of the 4 ISO weeks before those.
 
-import { createHash, createCipheriv, createDecipheriv, hkdfSync, randomBytes } from 'node:crypto';
+import { createHash, createHmac, createCipheriv, createDecipheriv, hkdfSync, randomBytes } from 'node:crypto';
 import { closeSync, openSync, readSync, rmSync, statSync, writeFileSync, mkdtempSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
@@ -308,6 +308,104 @@ export function webdavTarget({ url, user, password, fetch: f = fetch }: WebDavOp
     },
     async delete(name) {
       const r = await req('DELETE', at(name));
+      if (!(r.ok || r.status === 404)) throw fail('delete', r.status);
+    },
+  };
+}
+
+export interface S3Options {
+  /** e.g. https://s3.eu-central-003.backblazeb2.com, https://s3.eu-central-1.amazonaws.com, http://localhost:9000 (MinIO) */
+  endpoint: string;
+  bucket: string;
+  region: string;
+  accessKeyId: string;
+  secretAccessKey: string;
+  /** Bucket in the path (MinIO, most S3-compatible services) instead of the host name. Default true. */
+  pathStyle?: boolean;
+  fetch?: typeof fetch;
+  now?: () => Date;
+}
+
+const hmac = (key: Buffer | string, data: string) => createHmac('sha256', key).update(data, 'utf8').digest();
+const sha256hex = (d: Uint8Array | string) => createHash('sha256').update(d).digest('hex');
+const s3enc = (s: string) => encodeURIComponent(s).replace(/[!'()*]/g, c => '%' + c.charCodeAt(0).toString(16).toUpperCase());
+
+/** AWS Signature Version 4 for one S3 request. Returns the headers to send (host excluded; fetch sets it). */
+export function signS3(o: { method: string; host: string; path: string; query?: [string, string][]; headers?: Record<string, string>;
+  payloadHash: string; region: string; accessKeyId: string; secretAccessKey: string; date: Date }): Record<string, string> {
+  const amzDate = o.date.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
+  const day = amzDate.slice(0, 8);
+  const headers: Record<string, string> = { host: o.host, 'x-amz-content-sha256': o.payloadHash, 'x-amz-date': amzDate };
+  for (const [k, v] of Object.entries(o.headers ?? {})) headers[k.toLowerCase()] = v.trim();
+  const names = Object.keys(headers).sort();
+  const canonicalQuery = [...(o.query ?? [])].map(([k, v]) => [s3enc(k), s3enc(v)] as const)
+    .sort((a, b) => (a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : a[1] < b[1] ? -1 : 1)).map(([k, v]) => `${k}=${v}`).join('&');
+  const canonical = [o.method, o.path, canonicalQuery, names.map(n => `${n}:${headers[n]}\n`).join(''), names.join(';'), o.payloadHash].join('\n');
+  const scope = `${day}/${o.region}/s3/aws4_request`;
+  const toSign = ['AWS4-HMAC-SHA256', amzDate, scope, sha256hex(canonical)].join('\n');
+  const kDate = hmac('AWS4' + o.secretAccessKey, day);
+  const kSigning = hmac(hmac(hmac(kDate, o.region), 's3'), 'aws4_request');
+  const signature = createHmac('sha256', kSigning).update(toSign, 'utf8').digest('hex');
+  const { host: _host, ...rest } = headers;
+  return { ...rest, authorization: `AWS4-HMAC-SHA256 Credential=${o.accessKeyId}/${scope}, SignedHeaders=${names.join(';')}, Signature=${signature}` };
+}
+
+/**
+ * An S3 target (Backblaze B2, AWS, Wasabi, MinIO). With a key that cannot delete (B2 without deleteFiles, or Object
+ * Lock), a thief holding the running device cannot destroy older snapshots; pruning then fails and says so.
+ */
+export function s3Target(o: S3Options): Target {
+  const f = o.fetch ?? fetch, now = o.now ?? (() => new Date());
+  const base = new URL(o.endpoint);
+  const local = ['localhost', '127.0.0.1', '[::1]'].includes(base.hostname);
+  if (base.protocol !== 'https:' && !(base.protocol === 'http:' && local)) throw new TypeError('S3 needs an https:// endpoint');
+  if (!/^[a-z0-9][a-z0-9.-]{1,61}[a-z0-9]$/.test(o.bucket)) throw new TypeError('bad bucket name');
+  const pathStyle = o.pathStyle ?? true;
+  const host = pathStyle ? base.host : `${o.bucket}.${base.host}`;
+  const keyPath = (name: string) => {
+    if (name.startsWith('/') || name.split('/').some(p => p === '..' || p === '' || p === '.')) throw new TypeError(`bad name ${name}`);
+    return (pathStyle ? `/${o.bucket}/` : '/') + name.split('/').map(s3enc).join('/');
+  };
+  async function req(method: string, path: string, query: [string, string][] = [], body?: Uint8Array) {
+    const payloadHash = sha256hex(body ?? '');
+    const headers = signS3({ method, host, path, query, payloadHash, region: o.region, accessKeyId: o.accessKeyId, secretAccessKey: o.secretAccessKey, date: now() });
+    const qs = query.map(([k, v]) => `${s3enc(k)}=${s3enc(v)}`).join('&');
+    const url = `${base.protocol}//${host}${path}${qs ? '?' + qs : ''}`;
+    return f(url, { method, headers, ...(body ? { body: body as unknown as BodyInit } : {}) });
+  }
+  const fail = (what: string, status: number) => new Error(`S3 ${what} failed: HTTP ${status}${status === 403 ? ' (key not allowed; a key without delete rights cannot prune)' : ''}`);
+  return {
+    async list(prefix) {
+      const p = prefix.endsWith('/') ? prefix : prefix + '/';
+      const out: string[] = [];
+      let token = '';
+      for (;;) {
+        const q: [string, string][] = [['list-type', '2'], ['prefix', p], ['delimiter', '/']];
+        if (token) q.push(['continuation-token', token]);
+        const r = await req('GET', pathStyle ? `/${o.bucket}` : '/', q);
+        if (!r.ok) throw fail('listing', r.status);
+        const xml = await r.text();
+        for (const m of xml.matchAll(/<Contents>[\s\S]*?<Key>([^<]+)<\/Key>[\s\S]*?<\/Contents>/g)) {
+          out.push((m[1] as string).replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&apos;/g, "'"));
+        }
+        const next = /<NextContinuationToken>([^<]+)<\/NextContinuationToken>/.exec(xml);
+        if (!/<IsTruncated>true<\/IsTruncated>/.test(xml) || !next) break;
+        token = next[1] as string;
+      }
+      return out.sort();
+    },
+    async get(name) {
+      const r = await req('GET', keyPath(name));
+      if (r.status === 404) return null;
+      if (!r.ok) throw fail('download', r.status);
+      return new Uint8Array(await r.arrayBuffer());
+    },
+    async put(name, data) {
+      const r = await req('PUT', keyPath(name), [], data);
+      if (!r.ok) throw fail('upload', r.status);
+    },
+    async delete(name) {
+      const r = await req('DELETE', keyPath(name));
       if (!(r.ok || r.status === 404)) throw fail('delete', r.status);
     },
   };

@@ -10,9 +10,10 @@
 //   extract [--limit N]      extract facts from items not yet read (then embeds them)
 //   recall <question>        search from the terminal
 //   serve                    run the MCP server on stdio (configure your agent to start this)
-//   backup-to folder <path> | webdav <url> <user>   choose where backups go (WebDAV app password read from stdin)
+//   backup-to folder <path> | webdav <url> <user> | s3 <endpoint> <bucket> <region> <access key id>
+//                            choose where backups go (WebDAV app password or S3 secret key read from stdin)
 //   backup                   take a snapshot now
-//   restore <dir> --code <recovery code> --from folder <path> | webdav <url> <user> [--before <date>]
+//   restore <dir> --code <recovery code> --from <place> [--before <date>]   (a place's secret is read from stdin)
 //   export --plain <dir>     write the readable copy to a folder
 //   koofr-login-done         record that you logged in to Koofr (its inactivity rule)
 //   status                   counts, last backup, reminders
@@ -30,7 +31,7 @@ import { readHermes, hermesDbPath } from './import_hermes.ts';
 import { httpEmbedder, type Embedder } from './embed.ts';
 import { ensureModels, startEmbedServer, EMBED_MODEL } from './models.ts';
 import { McpServer, serveStdio } from './mcp.ts';
-import { backup, restore, folderTarget, webdavTarget, listSnapshots, type Target } from './backup.ts';
+import { backup, restore, folderTarget, webdavTarget, s3Target, listSnapshots, type Target } from './backup.ts';
 import { exportPlain } from './export.ts';
 import { httpChatModel, extractPending } from './facts.ts';
 
@@ -42,7 +43,8 @@ export interface Config {
   embedUrl?: string;
   /** 'none': keyword search only, no model download. */
   embed?: 'builtin' | 'none';
-  backup?: { type: 'folder'; path: string } | { type: 'webdav'; url: string; user: string };
+  backup?: { type: 'folder'; path: string } | { type: 'webdav'; url: string; user: string }
+    | { type: 's3'; endpoint: string; bucket: string; region: string; accessKeyId: string };
   lastBackup?: string;
   koofrLoginAt?: string;
   claudeCodeSeen?: Record<string, number>;
@@ -118,14 +120,33 @@ async function embedMissing(store: MemoryStore, e: Embedder): Promise<number> {
   }
 }
 const isLocal = (url: string) => ['localhost', '127.0.0.1', '[::1]'].includes(new URL(url).hostname);
-async function target(env: Env, c: Pick<Config, 'id'>, spec: string[]): Promise<Target> {
-  if (spec[0] === 'folder' && spec[1]) return folderTarget(spec[1]);
-  if (spec[0] === 'webdav' && spec[1] && spec[2]) {
-    const pw = env.keychain.get(kname(c, 'webdav'));
-    if (!pw) throw new Error('no WebDAV app password stored; run `synalla-memory backup-to webdav ...` first');
-    return webdavTarget({ url: spec[1], user: spec[2], password: Buffer.from(pw).toString('utf8') });
+type BackupPlace = NonNullable<Config['backup']>;
+/** Parse `folder <path>` | `webdav <url> <user>` | `s3 <endpoint> <bucket> <region> <access key id>`. */
+function parsePlace(spec: string[]): BackupPlace {
+  const [kind, a, b, cc, d] = spec;
+  if (kind === 'folder' && a) return { type: 'folder', path: a };
+  if (kind === 'webdav' && a && b) return { type: 'webdav', url: a, user: b };
+  if (kind === 's3' && a && b && cc && d) return { type: 's3', endpoint: a, bucket: b, region: cc, accessKeyId: d };
+  throw new Error('place must be `folder <path>`, `webdav <url> <user>` or `s3 <endpoint> <bucket> <region> <access key id>`');
+}
+const describePlace = (p: BackupPlace) => (p.type === 'folder' ? p.path : p.type === 'webdav' ? p.url : `${p.endpoint}/${p.bucket}`);
+const secretName = (p: BackupPlace) => (p.type === 'webdav' ? 'webdav' : p.type === 's3' ? 's3' : null);
+const secretLabel = (p: BackupPlace) => (p.type === 'webdav' ? 'WebDAV app password' : 'S3 secret key');
+/** The target for a place. Its secret (WebDAV app password, S3 secret key) comes from the keychain, or from stdin when asked. */
+async function target(env: Env, c: Pick<Config, 'id'>, p: BackupPlace, opts: { askSecret?: boolean } = {}): Promise<Target> {
+  if (p.type === 'folder') return folderTarget(p.path);
+  const name = kname(c, secretName(p) as string);
+  let secret = env.keychain.get(name);
+  if (!secret && opts.askSecret) {
+    const s = (await env.readStdin()).trim();
+    if (!s) throw new Error(`give the ${secretLabel(p)} on stdin (for WebDAV an app password, never your account password)`);
+    secret = new Uint8Array(Buffer.from(s, 'utf8'));
+    env.keychain.set(name, secret);
   }
-  throw new Error('target must be `folder <path>` or `webdav <url> <user>`');
+  if (!secret) throw new Error(`no ${secretLabel(p)} stored; run \`synalla-memory backup-to ...\` again`);
+  const sec = Buffer.from(secret).toString('utf8');
+  return p.type === 'webdav' ? webdavTarget({ url: p.url, user: p.user, password: sec })
+    : s3Target({ endpoint: p.endpoint, bucket: p.bucket, region: p.region, accessKeyId: p.accessKeyId, secretAccessKey: sec });
 }
 const isKoofr = (c: Config) => c.backup?.type === 'webdav' && /(^|\.)koofr\.(net|eu)$/.test(new URL(c.backup.url).hostname);
 
@@ -219,21 +240,18 @@ export async function main(argv: string[], env: Env): Promise<number> {
       }
       case 'backup-to': {
         const c = load(env);
-        if (rest[0] === 'folder' && rest[1]) c.backup = { type: 'folder', path: rest[1] };
-        else if (rest[0] === 'webdav' && rest[1] && rest[2]) {
-          const pw = (await env.readStdin()).trim();
-          if (!pw) throw new Error('give the WebDAV app password on stdin (never your account password)');
-          env.keychain.set(kname(c, 'webdav'), new Uint8Array(Buffer.from(pw, 'utf8')));
-          c.backup = { type: 'webdav', url: rest[1], user: rest[2] };
-        } else throw new Error('usage: backup-to folder <path> | backup-to webdav <url> <user>');
+        const place = parsePlace(rest);
+        if (secretName(place)) env.keychain.delete(kname(c, secretName(place) as string));
+        await target(env, c, place, { askSecret: true }); // reads the secret from stdin into the keychain
+        c.backup = place;
         save(env, c);
-        env.out(`Backups will go to ${c.backup.type === 'folder' ? c.backup.path : c.backup.url}.\n`);
+        env.out(`Backups will go to ${describePlace(c.backup)}.\n`);
         return 0;
       }
       case 'backup': {
         const c = load(env);
         if (!c.backup) throw new Error('choose a place first: synalla-memory backup-to folder <path>');
-        const t = await target(env, c, c.backup.type === 'folder' ? ['folder', c.backup.path] : ['webdav', c.backup.url, c.backup.user]);
+        const t = await target(env, c, c.backup);
         const store = openStore(env, c);
         try {
           const r = await backup(store, need(env, c, 'store'), need(env, c, 'backup'), t, env.now());
@@ -246,10 +264,11 @@ export async function main(argv: string[], env: Env): Promise<number> {
       case 'restore': {
         const dir = rest[0];
         const ci = rest.indexOf('--code'), fi = rest.indexOf('--from'), bi = rest.indexOf('--before');
-        if (!dir || ci < 0 || fi < 0) throw new Error('usage: restore <dir> --code <recovery code> --from folder <path> | webdav <url> <user> [--before <date>]');
+        if (!dir || ci < 0 || fi < 0) throw new Error('usage: restore <dir> --code <recovery code> --from <place> [--before <date>]');
         const b = fromRecoveryCode(rest[ci + 1] ?? '');
         const id = randomBytes(4).toString('hex');
-        const t = await target(env, { id }, rest.slice(fi + 1, fi + 4).filter(x => !x.startsWith('--')));
+        const place = parsePlace(rest.slice(fi + 1, fi + 6).filter(x => !x.startsWith('--')));
+        const t = await target(env, { id }, place, { askSecret: true });
         const before = bi >= 0 ? new Date(rest[bi + 1] ?? '') : undefined;
         if (before && Number.isNaN(before.getTime())) throw new Error('--before needs a date such as 2026-11-20');
         mkdirSync(dir, { recursive: true });
@@ -258,7 +277,7 @@ export async function main(argv: string[], env: Env): Promise<number> {
         env.keychain.set(`store-${id}`, got.key);
         env.keychain.set(`backup-${id}`, b);
         const builtinFits = got.dim === EMBED_MODEL.dim;
-        writeFileSync(join(dir, 'config.json'), JSON.stringify({ id, dim: got.dim, ...(builtinFits ? {} : { embed: 'none' }) }, null, 2));
+        writeFileSync(join(dir, 'config.json'), JSON.stringify({ id, dim: got.dim, backup: place, ...(builtinFits ? {} : { embed: 'none' }) }, null, 2));
         env.out(`Restored snapshot ${got.seq} of ${got.createdAt} into ${dir}. Keys are in the ${env.keychain.kind}.\n`
           + (builtinFits ? '' : `Its vectors have ${got.dim} numbers, not the built-in model's ${EMBED_MODEL.dim}: recall uses keywords until you set embedUrl in config.json.\n`));
         return 0;
@@ -319,9 +338,9 @@ export async function main(argv: string[], env: Env): Promise<number> {
         try {
           const s = store.stats();
           env.out(`${s.items} item(s), ${s.chunks} chunk(s), ${s.vectors} with vectors. Keys: ${env.keychain.kind}.\n`);
-          env.out(`Backups: ${c.backup ? (c.backup.type === 'folder' ? c.backup.path : c.backup.url) : 'none chosen'}; last ${c.lastBackup ?? 'never'}.\n`);
+          env.out(`Backups: ${c.backup ? describePlace(c.backup) : 'none chosen'}; last ${c.lastBackup ?? 'never'}.\n`);
           if (c.backup && c.lastBackup) {
-            const t = await target(env, c, c.backup.type === 'folder' ? ['folder', c.backup.path] : ['webdav', c.backup.url, c.backup.user]);
+            const t = await target(env, c, c.backup);
             const snaps = await listSnapshots(t, need(env, c, 'backup'));
             if (snaps.length === 0) env.out('WARNING: no snapshot found at the backup place, although one was taken. Check it.\n');
             else env.out(`${snaps.length} snapshot(s) there, newest ${snaps[0]?.createdAt}.\n`);

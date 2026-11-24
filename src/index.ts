@@ -28,3 +28,5 @@ export type { Asset, Sidecar } from './models.ts';
 export { extractionPrompt, checkFacts, factLine, itemText, extractPending, httpChatModel, FACTS_SCHEMA, ITEM_CHARS, MAX_FACTS } from './facts.ts';
 export type { ChatModel, HttpChatOptions } from './facts.ts';
 export type { Fact, FactInput } from './store.ts';
+export { s3Target, signS3 } from './backup.ts';
+export type { S3Options } from './backup.ts';

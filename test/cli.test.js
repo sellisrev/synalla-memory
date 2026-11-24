@@ -26,7 +26,7 @@ test('init, import, recall, backup, then restore elsewhere with only the recover
     const rec = o => JSON.stringify({ sessionId: 's1', timestamp: '2026-11-20T09:00:00Z', ...o });
     writeFileSync(join(projects, 's1.jsonl'), [rec({ type: 'user', message: { content: 'Our landlord is Frau Kerschbaumer.' } }),
       rec({ type: 'assistant', message: { content: [{ type: 'text', text: 'Noted.' }] } })].join('\n'));
-    const a = env(join(root, 'home-a'), { claudeProjects: join(root, 'claude') });
+    const a = env(join(root, 'home-a'), { claudeProjects: join(root, 'claude'), hermesDb: join(root, 'no-hermes', 'state.db') });
     assert.equal(await main(['init', '--dim', '8'], a), 0);
     const code = a.outText().match(/RECOVERY CODE[^\n]*\n\n\s+(\S+)/)[1];
     const id = JSON.parse(readFileSync(join(root, 'home-a', 'config.json'), 'utf8')).id;

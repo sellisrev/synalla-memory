@@ -23,6 +23,7 @@ import { MemoryStore } from './store.ts';
 import { systemKeychain, type Keychain } from './keychain.ts';
 import { toRecoveryCode, fromRecoveryCode } from './recovery_code.ts';
 import { importClaudeCode } from './import_claude_code.ts';
+import { readHermes, hermesDbPath } from './import_hermes.ts';
 import { httpEmbedder, type Embedder } from './embed.ts';
 import { McpServer, serveStdio } from './mcp.ts';
 import { backup, restore, folderTarget, webdavTarget, listSnapshots, type Target } from './backup.ts';
@@ -37,6 +38,7 @@ export interface Config {
   lastBackup?: string;
   koofrLoginAt?: string;
   claudeCodeSeen?: Record<string, number>;
+  hermesSeen?: Record<string, string>;
 }
 
 export interface Env {
@@ -47,6 +49,7 @@ export interface Env {
   readStdin: () => Promise<string>;
   now: () => Date;
   claudeProjects?: string;
+  hermesDb?: string;
 }
 
 const YEAR_MS = 365 * 86400000;
@@ -137,9 +140,18 @@ export async function main(argv: string[], env: Env): Promise<number> {
           save(env, c);
           env.out(`Claude Code: ${r.imported.length} session(s) imported, ${r.skipped} unchanged, ${r.failed.length} failed.\n`);
           for (const f of r.failed) env.err(`  ${f.file}: ${f.error}\n`);
+          let hermesFailed = false;
+          try {
+            const hs = new Map(Object.entries(c.hermesSeen ?? {}));
+            const items = readHermes(env.hermesDb ?? hermesDbPath(), hs);
+            for (const it of items) store.addItem(it);
+            c.hermesSeen = Object.fromEntries(hs);
+            save(env, c);
+            if (hs.size > 0) env.out(`Hermes: ${items.length} session(s) imported.\n`);
+          } catch (e) { hermesFailed = true; env.err(`Hermes: ${(e as Error).message}\n`); }
           const e = embedder(c);
           if (e) env.out(`Embedded ${await embedMissing(store, e)} new chunk(s).\n`);
-          return r.failed.length > 0 ? 1 : 0;
+          return r.failed.length > 0 || hermesFailed ? 1 : 0;
         } finally { store.close(); }
       }
       case 'embed': {

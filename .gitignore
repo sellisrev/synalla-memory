@@ -7,3 +7,5 @@ reports/
 .stryker-tmp/
 reports_*.log
 dist/
+benchmark/agent-sessions/out/
+benchmark/agent-sessions/gen.log

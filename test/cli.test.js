@@ -3,7 +3,7 @@
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtempSync, mkdirSync, writeFileSync, rmSync, existsSync } from 'node:fs';
+import { mkdtempSync, mkdirSync, writeFileSync, rmSync, existsSync, readFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { main, reminders } from '../src/cli.ts';
@@ -29,7 +29,8 @@ test('init, import, recall, backup, then restore elsewhere with only the recover
     const a = env(join(root, 'home-a'), { claudeProjects: join(root, 'claude') });
     assert.equal(await main(['init', '--dim', '8'], a), 0);
     const code = a.outText().match(/RECOVERY CODE[^\n]*\n\n\s+(\S+)/)[1];
-    assert.deepEqual(fromRecoveryCode(code), a.keychain.get('backup'));
+    const id = JSON.parse(readFileSync(join(root, 'home-a', 'config.json'), 'utf8')).id;
+    assert.deepEqual(fromRecoveryCode(code), a.keychain.get(`backup-${id}`));
     assert.equal(await main(['init'], a), 1, 'refuses to init twice');
     assert.equal(await main(['import'], a), 0);
     assert.match(a.outText(), /1 session\(s\) imported/);
@@ -44,10 +45,11 @@ test('init, import, recall, backup, then restore elsewhere with only the recover
     assert.equal(await main(['status'], a), 0);
     assert.match(a.outText(), /1 snapshot\(s\) there/);
 
-    const b = env(join(root, 'home-b'));
+    const b = env(join(root, 'home-b'), { keychain: a.keychain }); // same machine, same keychain
     assert.equal(await main(['restore', join(root, 'home-b'), '--code', code.toLowerCase(), '--from', 'folder', cloud], b), 0, b.errText());
     assert.equal(await main(['recall', 'landlord'], b), 0);
     assert.match(b.outText(), /Frau Kerschbaumer/);
+    assert.equal(await main(['recall', 'landlord'], a), 0, 'the first memory still opens: keys are per memory');
     assert.equal(await main(['restore', join(root, 'home-b'), '--code', code, '--from', 'folder', cloud], b), 1, 'never overwrites');
 
     const wrong = env(join(root, 'home-c'));
@@ -74,7 +76,7 @@ test('without init every command says how to start; unknown commands print usage
 
 test('reminders: no backup place, stale backup, and the yearly Koofr login', () => {
   const now = new Date('2026-11-24T10:00:00Z');
-  assert.match(reminders({ dim: 8 }, now)[0], /No backup place/);
+  assert.match(reminders({ id: 'x', dim: 8 }, now)[0], /No backup place/);
   assert.match(reminders({ dim: 8, backup: { type: 'folder', path: 'x' }, lastBackup: '2026-11-01T00:00:00Z' }, now)[0], /last 3 days/);
   const koofr = { dim: 8, backup: { type: 'webdav', url: 'https://app.koofr.net/dav/Koofr', user: 'u' }, lastBackup: now.toISOString() };
   assert.match(reminders(koofr, now)[0], /Log in to Koofr/);

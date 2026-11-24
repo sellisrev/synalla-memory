@@ -1,0 +1,9038 @@
+[
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-08-24T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-09-12T10:00:00Z"
+},
+{
+"id": "it2",
+"date": ""
+},
+{
+"id": "it3",
+"date": "2026-04-10T10:00:00Z"
+},
+{
+"id": "it4",
+"date": "2026-04-10T10:00:00Z"
+},
+{
+"id": "it5",
+"date": "2026-02-18T10:00:00Z"
+},
+{
+"id": "it6",
+"date": "2026-09-28T10:00:00Z"
+},
+{
+"id": "it7",
+"date": "2026-01-10T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-08-24",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": "2026-11-01",
+"mentioned_at": "2026-05-14",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-08-24",
+"subject": "Bob",
+"predicate": "prefers",
+"object": "closed",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-03-10",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-08-24",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-06-24",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-08-24",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-08-18",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-09-12",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-02-19",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-09-12",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-08-22",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "",
+"subject": "Flat",
+"predicate": "status",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-05-20",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-08-25",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "open",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-07-13",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-04-10",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-04-24",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-04-10",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-02-16",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-04-10",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-03-14",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-04-10",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "closed",
+"valid_from": "2026-05-15",
+"valid_to": "2026-10-01",
+"mentioned_at": "2026-04-22",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-04-10",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "closed",
+"valid_from": "2026-08-12",
+"valid_to": null,
+"mentioned_at": "2026-05-17",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-04-10",
+"subject": "Flat",
+"predicate": "Lives_in",
+"object": "Wien",
+"valid_from": "2026-07-18",
+"valid_to": null,
+"mentioned_at": "2026-03-17",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-02-18",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-01-15",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-09-28",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-08-21",
+"quote": "q"
+},
+{
+"item": "it7",
+"item_date": "2026-01-10",
+"subject": "Flat",
+"predicate": "Lives_in",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-02-24",
+"quote": "q"
+},
+{
+"item": "it7",
+"item_date": "2026-01-10",
+"subject": "anna ",
+"predicate": "status",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": "2026-10-01",
+"mentioned_at": "2026-02-25",
+"quote": "q"
+},
+{
+"item": "it7",
+"item_date": "2026-01-10",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "open",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-01-12",
+"quote": "q"
+},
+{
+"item": "it7",
+"item_date": "2026-01-10",
+"subject": "Bob",
+"predicate": "status",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-08-24",
+"quote": "q"
+}
+],
+"ends": [
+"2026-11-01",
+null,
+null,
+null,
+"2026-05-15",
+null,
+null,
+null,
+"2026-08-12",
+"2026-05-15",
+"2026-05-15",
+"2026-08-18",
+"2026-10-01",
+"2026-08-21",
+null,
+null,
+null,
+null,
+"2026-10-01",
+null,
+null
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-02-26T10:00:00Z"
+},
+{
+"id": "it1",
+"date": ""
+},
+{
+"id": "it2",
+"date": "2026-01-14T10:00:00Z"
+},
+{
+"id": "it3",
+"date": "2026-03-22T10:00:00Z"
+},
+{
+"id": "it4",
+"date": "2026-09-20T10:00:00Z"
+},
+{
+"id": "it5",
+"date": "2026-03-27T10:00:00Z"
+},
+{
+"id": "it6",
+"date": "2026-03-27T10:00:00Z"
+},
+{
+"id": "it7",
+"date": "2026-01-11T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-02-26",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-08-25",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-02-26",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": "2026-05-10",
+"valid_to": null,
+"mentioned_at": "2026-08-25",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-02-26",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": "2026-04-20",
+"valid_to": null,
+"mentioned_at": "2026-04-22",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-02-26",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "Lyon",
+"valid_from": "2026-04-28",
+"valid_to": null,
+"mentioned_at": "2026-01-12",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "open",
+"valid_from": "2026-03-13",
+"valid_to": null,
+"mentioned_at": "2026-09-25",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "",
+"subject": "Flat",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": "2026-06-24",
+"valid_to": null,
+"mentioned_at": "2026-06-19",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-01-14",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-08-13",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-01-14",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-03-10",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-01-14",
+"subject": "anna ",
+"predicate": "status",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-09-26",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-03-22",
+"subject": "Bob",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-01-22",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-09-20",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "wien",
+"valid_from": null,
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-07-12",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-09-20",
+"subject": "Anna",
+"predicate": "status",
+"object": "closed",
+"valid_from": "2026-05-27",
+"valid_to": "2026-11-01",
+"mentioned_at": "2026-02-11",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-09-20",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-02-23",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-03-27",
+"subject": "Bob",
+"predicate": "prefers",
+"object": "closed",
+"valid_from": null,
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-02-17",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-03-27",
+"subject": "anna ",
+"predicate": "status",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": "2026-11-01",
+"mentioned_at": "2026-07-16",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-03-27",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "closed",
+"valid_from": "2026-05-28",
+"valid_to": null,
+"mentioned_at": "2026-07-10",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-03-27",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-03-12",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-03-27",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "open",
+"valid_from": "2026-09-24",
+"valid_to": null,
+"mentioned_at": "2026-03-20",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-03-27",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "closed",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-01-18",
+"quote": "q"
+},
+{
+"item": "it7",
+"item_date": "2026-01-11",
+"subject": "Flat",
+"predicate": "status",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-08-13",
+"quote": "q"
+}
+],
+"ends": [
+"2026-05-28",
+"2026-05-15",
+"2026-04-28",
+"2026-05-15",
+"2026-04-20",
+null,
+null,
+"2026-03-13",
+"2026-05-27",
+null,
+"2026-12-01",
+"2026-11-01",
+null,
+"2026-12-01",
+"2026-11-01",
+"2026-07-12",
+"2026-09-24",
+null,
+"2026-05-15",
+null
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-02-26T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-03-16T10:00:00Z"
+},
+{
+"id": "it2",
+"date": "2026-03-24T10:00:00Z"
+},
+{
+"id": "it3",
+"date": "2026-06-22T10:00:00Z"
+},
+{
+"id": "it4",
+"date": "2026-02-15T10:00:00Z"
+},
+{
+"id": "it5",
+"date": "2026-08-16T10:00:00Z"
+},
+{
+"id": "it6",
+"date": "2026-01-13T10:00:00Z"
+},
+{
+"id": "it7",
+"date": "2026-09-19T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-02-26",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-09-15",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-02-26",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "closed",
+"valid_from": "2026-05-15",
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-03-17",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-02-26",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "wien",
+"valid_from": "2026-06-15",
+"valid_to": null,
+"mentioned_at": "2026-02-14",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-02-26",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-07-27",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-03-16",
+"subject": "Flat",
+"predicate": "status",
+"object": "Wien",
+"valid_from": null,
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-09-20",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-03-16",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "closed",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-09-28",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-03-16",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-05-13",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-06-22",
+"subject": "Flat",
+"predicate": "lives_in",
+"object": "Wien",
+"valid_from": "2026-07-26",
+"valid_to": null,
+"mentioned_at": "2026-04-15",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-06-22",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "closed",
+"valid_from": "2026-07-24",
+"valid_to": null,
+"mentioned_at": "2026-03-13",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-06-22",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "closed",
+"valid_from": "2026-09-10",
+"valid_to": "2026-10-01",
+"mentioned_at": "2026-06-18",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-02-15",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-04-15",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-02-15",
+"subject": "Anna",
+"predicate": "status",
+"object": "closed",
+"valid_from": "2026-02-20",
+"valid_to": null,
+"mentioned_at": "2026-01-17",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-02-15",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "closed",
+"valid_from": "2026-05-19",
+"valid_to": "2026-10-01",
+"mentioned_at": "2026-02-22",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-01-13",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "open",
+"valid_from": "2026-02-17",
+"valid_to": null,
+"mentioned_at": "2026-01-13",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-01-13",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": "2026-05-18",
+"valid_to": null,
+"mentioned_at": "2026-02-27",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-01-13",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "closed",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-01-23",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-01-13",
+"subject": "Flat",
+"predicate": "status",
+"object": "closed",
+"valid_from": "2026-08-23",
+"valid_to": null,
+"mentioned_at": "2026-05-25",
+"quote": "q"
+},
+{
+"item": "it7",
+"item_date": "2026-09-19",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "open",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-01-20",
+"quote": "q"
+},
+{
+"item": "it7",
+"item_date": "2026-09-19",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-08-18",
+"quote": "q"
+}
+],
+"ends": [
+null,
+"2026-12-01",
+"2026-09-28",
+null,
+"2026-12-01",
+null,
+"2026-05-15",
+null,
+null,
+"2026-10-01",
+null,
+null,
+"2026-10-01",
+"2026-05-13",
+"2026-05-19",
+"2026-05-15",
+"2026-09-20",
+"2026-01-23",
+"2026-06-15"
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-02-24T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-02-21T10:00:00Z"
+},
+{
+"id": "it2",
+"date": "2026-01-11T10:00:00Z"
+},
+{
+"id": "it3",
+"date": "2026-05-12T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-02-24",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-01-21",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-02-21",
+"subject": "Bob",
+"predicate": "status",
+"object": "closed",
+"valid_from": "2026-03-23",
+"valid_to": null,
+"mentioned_at": "2026-03-19",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-02-21",
+"subject": "Flat",
+"predicate": "status",
+"object": "Lyon",
+"valid_from": "2026-03-17",
+"valid_to": null,
+"mentioned_at": "2026-05-28",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-02-21",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-01-18",
+"quote": "q"
+}
+],
+"ends": [
+null,
+null,
+null,
+null
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-06-25T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-08-24T10:00:00Z"
+},
+{
+"id": "it2",
+"date": "2026-05-24T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-06-25",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "Wien",
+"valid_from": "2026-06-16",
+"valid_to": null,
+"mentioned_at": "2026-08-16",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-06-25",
+"subject": "anna ",
+"predicate": "status",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-06-19",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-06-25",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "Lyon",
+"valid_from": "2026-09-15",
+"valid_to": null,
+"mentioned_at": "2026-02-27",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-08-24",
+"subject": "Anna",
+"predicate": "status",
+"object": "open",
+"valid_from": "2026-01-12",
+"valid_to": "2026-10-01",
+"mentioned_at": "2026-06-19",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-08-24",
+"subject": "Flat",
+"predicate": "status",
+"object": "Wien",
+"valid_from": "2026-03-17",
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-06-24",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-05-24",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": "2026-05-24",
+"valid_to": null,
+"mentioned_at": "2026-06-10",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-05-24",
+"subject": "Flat",
+"predicate": "prefers",
+"object": "closed",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-03-28",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-05-24",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "closed",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-01-27",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-05-24",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "closed",
+"valid_from": "2026-03-28",
+"valid_to": "2026-10-01",
+"mentioned_at": "2026-09-19",
+"quote": "q"
+}
+],
+"ends": [
+null,
+null,
+null,
+"2026-10-01",
+"2026-12-01",
+"2026-06-16",
+null,
+"2026-05-24",
+"2026-10-01"
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-05-13T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-02-11T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-05-13",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-04-25",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-05-13",
+"subject": "Flat",
+"predicate": "status",
+"object": "wien",
+"valid_from": "2026-09-20",
+"valid_to": null,
+"mentioned_at": "2026-08-25",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-02-11",
+"subject": "Anna",
+"predicate": "status",
+"object": "Wien",
+"valid_from": "2026-06-10",
+"valid_to": null,
+"mentioned_at": "2026-02-23",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-02-11",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-04-22",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-02-11",
+"subject": "Bob",
+"predicate": "status",
+"object": "Wien",
+"valid_from": "2026-07-26",
+"valid_to": null,
+"mentioned_at": "2026-05-14",
+"quote": "q"
+}
+],
+"ends": [
+null,
+null,
+null,
+null,
+null
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": ""
+},
+{
+"id": "it1",
+"date": "2026-04-22T10:00:00Z"
+},
+{
+"id": "it2",
+"date": "2026-03-22T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "wien",
+"valid_from": "2026-01-28",
+"valid_to": null,
+"mentioned_at": "2026-06-16",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-07-15",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "",
+"subject": "Bob",
+"predicate": "prefers",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-09-12",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-03-22",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-08-17",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-03-22",
+"subject": "anna ",
+"predicate": "status",
+"object": "closed",
+"valid_from": "2026-07-15",
+"valid_to": null,
+"mentioned_at": "2026-03-18",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-03-22",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-03-14",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-03-22",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "open",
+"valid_from": "2026-02-21",
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-02-28",
+"quote": "q"
+}
+],
+"ends": [
+null,
+null,
+null,
+null,
+null,
+null,
+"2026-12-01"
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-04-23T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-02-27T10:00:00Z"
+},
+{
+"id": "it2",
+"date": "2026-04-14T10:00:00Z"
+},
+{
+"id": "it3",
+"date": "2026-02-14T10:00:00Z"
+},
+{
+"id": "it4",
+"date": ""
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-04-23",
+"subject": "Bob",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-05-20",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-02-27",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": "2026-08-12",
+"valid_to": "2026-10-01",
+"mentioned_at": "2026-08-13",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-02-27",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": "2026-08-10",
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-02-24",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-04-14",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-04-16",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-04-14",
+"subject": "Bob",
+"predicate": "status",
+"object": "open",
+"valid_from": "2026-07-13",
+"valid_to": null,
+"mentioned_at": "2026-07-12",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-02-14",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "wien",
+"valid_from": "2026-03-16",
+"valid_to": null,
+"mentioned_at": "2026-01-15",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "wien",
+"valid_from": "2026-07-12",
+"valid_to": null,
+"mentioned_at": "2026-07-25",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "",
+"subject": "Bob",
+"predicate": "status",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": "2026-10-01",
+"mentioned_at": "2026-09-10",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "closed",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-07-16",
+"quote": "q"
+}
+],
+"ends": [
+null,
+"2026-10-01",
+"2026-12-01",
+"2026-07-16",
+null,
+null,
+"2026-08-12",
+"2026-10-01",
+"2026-08-10"
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-02-15T10:00:00Z"
+},
+{
+"id": "it1",
+"date": ""
+},
+{
+"id": "it2",
+"date": "2026-06-17T10:00:00Z"
+},
+{
+"id": "it3",
+"date": "2026-07-28T10:00:00Z"
+},
+{
+"id": "it4",
+"date": "2026-01-25T10:00:00Z"
+},
+{
+"id": "it5",
+"date": "2026-04-27T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-02-15",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "closed",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-04-28",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-02-15",
+"subject": "Bob",
+"predicate": "prefers",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-06-12",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "closed",
+"valid_from": null,
+"valid_to": "2026-11-01",
+"mentioned_at": "2026-09-27",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "",
+"subject": "Flat",
+"predicate": "Lives_in",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-01-19",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-06-17",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-07-15",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-06-17",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-07-24",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-06-17",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-09-14",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-06-17",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-08-13",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-07-28",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "closed",
+"valid_from": "2026-05-25",
+"valid_to": null,
+"mentioned_at": "2026-02-26",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-07-28",
+"subject": "Anna",
+"predicate": "status",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-05-23",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-07-28",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": "2026-07-20",
+"valid_to": null,
+"mentioned_at": "2026-04-26",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-04-27",
+"subject": "Flat",
+"predicate": "prefers",
+"object": "closed",
+"valid_from": null,
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-03-17",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-04-27",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "closed",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-08-10",
+"quote": "q"
+}
+],
+"ends": [
+"2026-05-15",
+null,
+"2026-11-01",
+null,
+null,
+"2026-05-15",
+"2026-05-25",
+null,
+null,
+null,
+"2026-08-10",
+"2026-12-01",
+null
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-05-10T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-01-16T10:00:00Z"
+},
+{
+"id": "it2",
+"date": "2026-05-13T10:00:00Z"
+},
+{
+"id": "it3",
+"date": "2026-04-19T10:00:00Z"
+},
+{
+"id": "it4",
+"date": "2026-01-10T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-05-10",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": "2026-03-12",
+"valid_to": null,
+"mentioned_at": "2026-04-11",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-05-10",
+"subject": "Flat",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": "2026-05-10",
+"valid_to": null,
+"mentioned_at": "2026-08-16",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-01-16",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "wien",
+"valid_from": null,
+"valid_to": "2026-10-01",
+"mentioned_at": "2026-01-13",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-01-16",
+"subject": "anna ",
+"predicate": "status",
+"object": "open",
+"valid_from": "2026-05-20",
+"valid_to": "2026-11-01",
+"mentioned_at": "2026-07-12",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-05-13",
+"subject": "Flat",
+"predicate": "status",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-09-13",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-04-19",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "Wien",
+"valid_from": null,
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-08-26",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-01-10",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": "2026-05-27",
+"valid_to": null,
+"mentioned_at": "2026-04-17",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-01-10",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-08-28",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-01-10",
+"subject": "Anna",
+"predicate": "status",
+"object": "Lyon",
+"valid_from": "2026-07-10",
+"valid_to": null,
+"mentioned_at": "2026-08-11",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-01-10",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-07-17",
+"quote": "q"
+}
+],
+"ends": [
+null,
+null,
+"2026-10-01",
+"2026-11-01",
+null,
+"2026-12-01",
+null,
+"2026-05-27",
+null,
+"2026-12-01"
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-05-17T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-01-12T10:00:00Z"
+},
+{
+"id": "it2",
+"date": ""
+},
+{
+"id": "it3",
+"date": "2026-01-10T10:00:00Z"
+},
+{
+"id": "it4",
+"date": "2026-04-19T10:00:00Z"
+},
+{
+"id": "it5",
+"date": "2026-04-22T10:00:00Z"
+},
+{
+"id": "it6",
+"date": "2026-05-26T10:00:00Z"
+},
+{
+"id": "it7",
+"date": "2026-05-23T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-05-17",
+"subject": "Bob",
+"predicate": "status",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-04-11",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-05-17",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "open",
+"valid_from": "2026-08-15",
+"valid_to": null,
+"mentioned_at": "2026-09-24",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-07-11",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "open",
+"valid_from": "2026-06-26",
+"valid_to": null,
+"mentioned_at": "2026-05-17",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-07-24",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-08-26",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-01-10",
+"subject": "Flat",
+"predicate": "prefers",
+"object": "open",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-02-11",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-04-19",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-05-20",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-04-19",
+"subject": "Anna",
+"predicate": "status",
+"object": "closed",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-03-24",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-04-22",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "open",
+"valid_from": "2026-01-16",
+"valid_to": null,
+"mentioned_at": "2026-04-22",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-04-22",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "open",
+"valid_from": "2026-04-24",
+"valid_to": null,
+"mentioned_at": "2026-04-27",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-04-22",
+"subject": "Flat",
+"predicate": "status",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": "2026-10-01",
+"mentioned_at": "2026-01-26",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-05-26",
+"subject": "anna ",
+"predicate": "status",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-04-13",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-05-26",
+"subject": "Bob",
+"predicate": "status",
+"object": "Lyon",
+"valid_from": "2026-01-20",
+"valid_to": null,
+"mentioned_at": "2026-09-11",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-05-26",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-09-14",
+"quote": "q"
+},
+{
+"item": "it7",
+"item_date": "2026-05-23",
+"subject": "Flat",
+"predicate": "status",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-07-14",
+"quote": "q"
+},
+{
+"item": "it7",
+"item_date": "2026-05-23",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-09-21",
+"quote": "q"
+},
+{
+"item": "it7",
+"item_date": "2026-05-23",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "Wien",
+"valid_from": "2026-04-13",
+"valid_to": null,
+"mentioned_at": "2026-01-25",
+"quote": "q"
+}
+],
+"ends": [
+null,
+null,
+"2026-05-15",
+null,
+"2026-05-15",
+"2026-05-15",
+null,
+"2026-06-26",
+"2026-04-13",
+"2026-04-13",
+"2026-05-15",
+"2026-10-01",
+null,
+"2026-04-11",
+"2026-05-20",
+null,
+null,
+"2026-05-15"
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-05-12T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-05-12",
+"subject": "anna ",
+"predicate": "status",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-07-13",
+"quote": "q"
+}
+],
+"ends": [
+null
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-08-22T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-09-19T10:00:00Z"
+},
+{
+"id": "it2",
+"date": ""
+},
+{
+"id": "it3",
+"date": "2026-02-22T10:00:00Z"
+},
+{
+"id": "it4",
+"date": "2026-06-10T10:00:00Z"
+},
+{
+"id": "it5",
+"date": "2026-06-18T10:00:00Z"
+},
+{
+"id": "it6",
+"date": "2026-04-21T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-08-22",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-08-15",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-08-22",
+"subject": "Flat",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": "2026-10-01",
+"mentioned_at": "2026-08-28",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-02-22",
+"subject": "Bob",
+"predicate": "status",
+"object": "Lyon",
+"valid_from": "2026-01-22",
+"valid_to": null,
+"mentioned_at": "2026-02-10",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-02-22",
+"subject": "Flat",
+"predicate": "status",
+"object": "wien",
+"valid_from": "2026-01-21",
+"valid_to": null,
+"mentioned_at": "2026-08-22",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-06-10",
+"subject": "Bob",
+"predicate": "prefers",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-05-12",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-06-10",
+"subject": "anna ",
+"predicate": "status",
+"object": "Lyon",
+"valid_from": "2026-08-24",
+"valid_to": null,
+"mentioned_at": "2026-08-21",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-06-10",
+"subject": "Flat",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-04-17",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-06-10",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "closed",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-02-27",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-06-18",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "wien",
+"valid_from": "2026-02-10",
+"valid_to": null,
+"mentioned_at": "2026-03-15",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-06-18",
+"subject": "Bob",
+"predicate": "status",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-09-25",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-04-21",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-02-24",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-04-21",
+"subject": "Bob",
+"predicate": "prefers",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-06-18",
+"quote": "q"
+}
+],
+"ends": [
+null,
+"2026-10-01",
+null,
+null,
+null,
+null,
+null,
+"2026-05-15",
+null,
+null,
+null,
+null
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-07-18T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-03-18T10:00:00Z"
+},
+{
+"id": "it2",
+"date": "2026-03-21T10:00:00Z"
+},
+{
+"id": "it3",
+"date": "2026-05-17T10:00:00Z"
+},
+{
+"id": "it4",
+"date": "2026-05-27T10:00:00Z"
+},
+{
+"id": "it5",
+"date": "2026-01-19T10:00:00Z"
+},
+{
+"id": "it6",
+"date": "2026-06-25T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-07-18",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-05-15",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-07-18",
+"subject": "Flat",
+"predicate": "Lives_in",
+"object": "wien",
+"valid_from": "2026-03-16",
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-01-25",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-03-18",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-03-13",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-03-18",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "Lyon",
+"valid_from": "2026-01-16",
+"valid_to": "2026-11-01",
+"mentioned_at": "2026-01-27",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-05-17",
+"subject": "anna ",
+"predicate": "status",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": "2026-11-01",
+"mentioned_at": "2026-08-15",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-05-17",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": "2026-02-27",
+"valid_to": null,
+"mentioned_at": "2026-01-18",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-05-17",
+"subject": "Flat",
+"predicate": "Lives_in",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-08-16",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-06-25",
+"subject": "Flat",
+"predicate": "prefers",
+"object": "closed",
+"valid_from": "2026-04-23",
+"valid_to": null,
+"mentioned_at": "2026-01-16",
+"quote": "q"
+}
+],
+"ends": [
+null,
+"2026-12-01",
+null,
+"2026-11-01",
+"2026-11-01",
+null,
+null,
+null
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-05-17T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-07-18T10:00:00Z"
+},
+{
+"id": "it2",
+"date": "2026-09-11T10:00:00Z"
+},
+{
+"id": "it3",
+"date": "2026-07-26T10:00:00Z"
+},
+{
+"id": "it4",
+"date": "2026-03-13T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-05-17",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-06-10",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-05-17",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-06-10",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-05-17",
+"subject": "Bob",
+"predicate": "status",
+"object": "closed",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-02-25",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-07-18",
+"subject": "Flat",
+"predicate": "prefers",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-09-18",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-07-18",
+"subject": "Anna",
+"predicate": "status",
+"object": "closed",
+"valid_from": "2026-06-24",
+"valid_to": null,
+"mentioned_at": "2026-02-18",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-07-18",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "closed",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-05-16",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-07-18",
+"subject": "Flat",
+"predicate": "status",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-07-10",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-09-11",
+"subject": "anna ",
+"predicate": "status",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-02-28",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-09-11",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": "2026-06-23",
+"valid_to": null,
+"mentioned_at": "2026-02-22",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-09-11",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "Wien",
+"valid_from": "2026-06-15",
+"valid_to": null,
+"mentioned_at": "2026-04-21",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-07-26",
+"subject": "Bob",
+"predicate": "prefers",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-07-22",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-07-26",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "closed",
+"valid_from": "2026-09-17",
+"valid_to": null,
+"mentioned_at": "2026-08-24",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-07-26",
+"subject": "Flat",
+"predicate": "Lives_in",
+"object": "closed",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-08-20",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-07-26",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-08-13",
+"quote": "q"
+}
+],
+"ends": [
+"2026-06-10",
+"2026-09-17",
+null,
+null,
+null,
+"2026-06-10",
+null,
+"2026-06-24",
+"2026-08-13",
+null,
+"2026-12-01",
+null,
+null,
+null
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": ""
+},
+{
+"id": "it1",
+"date": "2026-01-20T10:00:00Z"
+},
+{
+"id": "it2",
+"date": "2026-09-12T10:00:00Z"
+},
+{
+"id": "it3",
+"date": "2026-07-10T10:00:00Z"
+},
+{
+"id": "it4",
+"date": "2026-05-23T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it1",
+"item_date": "2026-01-20",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": "2026-09-21",
+"valid_to": null,
+"mentioned_at": "2026-08-18",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-01-20",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-08-11",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-09-12",
+"subject": "Flat",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-02-23",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-07-10",
+"subject": "anna ",
+"predicate": "status",
+"object": "wien",
+"valid_from": null,
+"valid_to": "2026-10-01",
+"mentioned_at": "2026-09-23",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-07-10",
+"subject": "Flat",
+"predicate": "Lives_in",
+"object": "wien",
+"valid_from": "2026-07-10",
+"valid_to": null,
+"mentioned_at": "2026-03-14",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-07-10",
+"subject": "Flat",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": "2026-03-28",
+"valid_to": null,
+"mentioned_at": "2026-06-21",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-07-10",
+"subject": "anna ",
+"predicate": "status",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": "2026-10-01",
+"mentioned_at": "2026-07-16",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-05-23",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": "2026-07-18",
+"valid_to": null,
+"mentioned_at": "2026-09-23",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-05-23",
+"subject": "Anna",
+"predicate": "status",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-08-17",
+"quote": "q"
+}
+],
+"ends": [
+null,
+null,
+null,
+"2026-10-01",
+null,
+"2026-07-10",
+"2026-10-01",
+null,
+"2026-07-16"
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-07-17T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-01-28T10:00:00Z"
+},
+{
+"id": "it2",
+"date": "2026-04-26T10:00:00Z"
+},
+{
+"id": "it3",
+"date": "2026-07-24T10:00:00Z"
+},
+{
+"id": "it4",
+"date": ""
+},
+{
+"id": "it5",
+"date": "2026-07-20T10:00:00Z"
+},
+{
+"id": "it6",
+"date": "2026-02-21T10:00:00Z"
+},
+{
+"id": "it7",
+"date": "2026-08-17T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-07-17",
+"subject": "Bob",
+"predicate": "status",
+"object": "Lyon",
+"valid_from": "2026-02-21",
+"valid_to": null,
+"mentioned_at": "2026-01-17",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-07-17",
+"subject": "Flat",
+"predicate": "prefers",
+"object": "open",
+"valid_from": "2026-01-23",
+"valid_to": null,
+"mentioned_at": "2026-05-20",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-07-17",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": null,
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-02-21",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-01-28",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "closed",
+"valid_from": "2026-01-14",
+"valid_to": null,
+"mentioned_at": "2026-06-25",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-01-28",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-02-24",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-04-26",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "Wien",
+"valid_from": "2026-04-25",
+"valid_to": null,
+"mentioned_at": "2026-01-15",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-04-26",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-06-10",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-04-26",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": "2026-02-21",
+"valid_to": null,
+"mentioned_at": "2026-09-28",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-04-26",
+"subject": "Anna",
+"predicate": "status",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-06-17",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "closed",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-03-14",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "Wien",
+"valid_from": "2026-09-15",
+"valid_to": null,
+"mentioned_at": "2026-04-14",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-08-19",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": "2026-09-11",
+"valid_to": null,
+"mentioned_at": "2026-09-13",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-07-20",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-05-18",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-07-20",
+"subject": "Bob",
+"predicate": "status",
+"object": "open",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-06-24",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-07-20",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "closed",
+"valid_from": "2026-02-11",
+"valid_to": null,
+"mentioned_at": "2026-06-22",
+"quote": "q"
+},
+{
+"item": "it7",
+"item_date": "2026-08-17",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-06-17",
+"quote": "q"
+},
+{
+"item": "it7",
+"item_date": "2026-08-17",
+"subject": "Anna",
+"predicate": "status",
+"object": "wien",
+"valid_from": "2026-06-21",
+"valid_to": null,
+"mentioned_at": "2026-08-13",
+"quote": "q"
+},
+{
+"item": "it7",
+"item_date": "2026-08-17",
+"subject": "Flat",
+"predicate": "status",
+"object": "open",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-06-22",
+"quote": "q"
+},
+{
+"item": "it7",
+"item_date": "2026-08-17",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-05-20",
+"quote": "q"
+}
+],
+"ends": [
+"2026-06-24",
+null,
+"2026-12-01",
+null,
+"2026-05-15",
+null,
+null,
+"2026-02-24",
+"2026-06-21",
+"2026-06-10",
+null,
+null,
+null,
+"2026-08-19",
+null,
+"2026-02-21",
+null,
+null,
+null,
+"2026-05-18"
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-03-19T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-03-19",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-01-16",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-03-19",
+"subject": "Flat",
+"predicate": "lives_in",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-02-24",
+"quote": "q"
+}
+],
+"ends": [
+null,
+null
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-08-23T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-02-13T10:00:00Z"
+},
+{
+"id": "it2",
+"date": ""
+}
+],
+"facts": [
+{
+"item": "it1",
+"item_date": "2026-02-13",
+"subject": "Flat",
+"predicate": "lives_in",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-02-23",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-02-13",
+"subject": "Flat",
+"predicate": "prefers",
+"object": "open",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-01-23",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "closed",
+"valid_from": "2026-08-25",
+"valid_to": null,
+"mentioned_at": "2026-03-28",
+"quote": "q"
+}
+],
+"ends": [
+null,
+null,
+null
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-06-15T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-02-18T10:00:00Z"
+},
+{
+"id": "it2",
+"date": "2026-02-17T10:00:00Z"
+},
+{
+"id": "it3",
+"date": "2026-06-20T10:00:00Z"
+},
+{
+"id": "it4",
+"date": "2026-05-18T10:00:00Z"
+},
+{
+"id": "it5",
+"date": "2026-01-12T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-06-15",
+"subject": "Bob",
+"predicate": "prefers",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-03-25",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-06-15",
+"subject": "anna ",
+"predicate": "status",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-07-28",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-02-18",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "closed",
+"valid_from": "2026-04-16",
+"valid_to": null,
+"mentioned_at": "2026-08-22",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-02-18",
+"subject": "Anna",
+"predicate": "status",
+"object": "closed",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-03-11",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-02-18",
+"subject": "Flat",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-08-21",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-02-17",
+"subject": "Flat",
+"predicate": "lives_in",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-04-28",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-06-20",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-01-15",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-06-20",
+"subject": "Flat",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-08-12",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-05-18",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "closed",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-05-19",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-05-18",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "open",
+"valid_from": "2026-01-23",
+"valid_to": null,
+"mentioned_at": "2026-06-21",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-05-18",
+"subject": "Flat",
+"predicate": "Lives_in",
+"object": "Wien",
+"valid_from": "2026-04-26",
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-09-13",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-05-18",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-05-21",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-01-12",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "closed",
+"valid_from": "2026-05-15",
+"valid_to": "2026-10-01",
+"mentioned_at": "2026-03-12",
+"quote": "q"
+}
+],
+"ends": [
+null,
+null,
+null,
+"2026-07-28",
+null,
+"2026-05-15",
+"2026-05-19",
+null,
+"2026-05-21",
+"2026-04-16",
+"2026-12-01",
+null,
+"2026-10-01"
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-04-13T10:00:00Z"
+},
+{
+"id": "it1",
+"date": ""
+},
+{
+"id": "it2",
+"date": "2026-05-19T10:00:00Z"
+},
+{
+"id": "it3",
+"date": "2026-03-15T10:00:00Z"
+},
+{
+"id": "it4",
+"date": "2026-05-26T10:00:00Z"
+},
+{
+"id": "it5",
+"date": "2026-07-12T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-04-13",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "closed",
+"valid_from": null,
+"valid_to": "2026-10-01",
+"mentioned_at": "2026-09-12",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-04-13",
+"subject": "Flat",
+"predicate": "Lives_in",
+"object": "closed",
+"valid_from": "2026-03-19",
+"valid_to": null,
+"mentioned_at": "2026-03-23",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-04-13",
+"subject": "Flat",
+"predicate": "Lives_in",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-09-15",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-03-15",
+"subject": "Flat",
+"predicate": "lives_in",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-07-17",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-03-15",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "wien",
+"valid_from": "2026-07-21",
+"valid_to": null,
+"mentioned_at": "2026-05-11",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-03-15",
+"subject": "Flat",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-07-15",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-03-15",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-03-17",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-05-26",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-09-20",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-05-26",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "open",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-04-11",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-05-26",
+"subject": "Flat",
+"predicate": "lives_in",
+"object": "Wien",
+"valid_from": null,
+"valid_to": "2026-11-01",
+"mentioned_at": "2026-07-14",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-05-26",
+"subject": "Flat",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": "2026-07-17",
+"valid_to": null,
+"mentioned_at": "2026-01-11",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-07-12",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-06-14",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-07-12",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-04-24",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-07-12",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-06-11",
+"quote": "q"
+}
+],
+"ends": [
+"2026-10-01",
+"2026-05-15",
+null,
+null,
+"2026-09-12",
+null,
+null,
+null,
+"2026-05-15",
+"2026-11-01",
+null,
+"2026-07-21",
+null,
+"2026-09-20"
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-03-28T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-09-27T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it1",
+"item_date": "2026-09-27",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "Wien",
+"valid_from": "2026-08-26",
+"valid_to": null,
+"mentioned_at": "2026-05-26",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-09-27",
+"subject": "Anna",
+"predicate": "status",
+"object": "open",
+"valid_from": "2026-03-15",
+"valid_to": null,
+"mentioned_at": "2026-08-21",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-09-27",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-07-27",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-09-27",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-01-17",
+"quote": "q"
+}
+],
+"ends": [
+null,
+null,
+null,
+"2026-07-27"
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-08-12T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-09-19T10:00:00Z"
+},
+{
+"id": "it2",
+"date": "2026-09-13T10:00:00Z"
+},
+{
+"id": "it3",
+"date": "2026-09-13T10:00:00Z"
+},
+{
+"id": "it4",
+"date": "2026-07-12T10:00:00Z"
+},
+{
+"id": "it5",
+"date": "2026-01-23T10:00:00Z"
+},
+{
+"id": "it6",
+"date": ""
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-08-12",
+"subject": "Flat",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": "2026-01-15",
+"valid_to": null,
+"mentioned_at": "2026-05-27",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-08-12",
+"subject": "Flat",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": "2026-06-25",
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-03-28",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-08-12",
+"subject": "Flat",
+"predicate": "status",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-04-15",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-09-19",
+"subject": "anna ",
+"predicate": "status",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-02-10",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-09-13",
+"subject": "Bob",
+"predicate": "prefers",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": "2026-10-01",
+"mentioned_at": "2026-08-28",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-09-13",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-01-18",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-09-13",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "closed",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-07-11",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-09-13",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-06-26",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-09-13",
+"subject": "Bob",
+"predicate": "status",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-04-18",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-09-13",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-09-20",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-07-12",
+"subject": "Flat",
+"predicate": "Lives_in",
+"object": "closed",
+"valid_from": "2026-02-18",
+"valid_to": null,
+"mentioned_at": "2026-05-14",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-01-23",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-06-11",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-01-23",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "closed",
+"valid_from": "2026-01-15",
+"valid_to": null,
+"mentioned_at": "2026-07-20",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-01-23",
+"subject": "Flat",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-06-11",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "",
+"subject": "Anna",
+"predicate": "status",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-05-16",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "closed",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-04-19",
+"quote": "q"
+}
+],
+"ends": [
+"2026-02-18",
+"2026-12-01",
+null,
+"2026-05-15",
+"2026-10-01",
+"2026-05-15",
+"2026-09-20",
+null,
+null,
+null,
+"2026-05-15",
+"2026-06-26",
+null,
+null,
+null,
+null
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": ""
+},
+{
+"id": "it1",
+"date": "2026-07-27T10:00:00Z"
+},
+{
+"id": "it2",
+"date": "2026-04-23T10:00:00Z"
+},
+{
+"id": "it3",
+"date": "2026-03-17T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "",
+"subject": "Flat",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": "2026-04-23",
+"valid_to": null,
+"mentioned_at": "2026-05-26",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-07-23",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-07-27",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-01-14",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-07-27",
+"subject": "Flat",
+"predicate": "status",
+"object": "Wien",
+"valid_from": "2026-03-27",
+"valid_to": null,
+"mentioned_at": "2026-01-24",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-07-27",
+"subject": "Flat",
+"predicate": "lives_in",
+"object": "closed",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-02-10",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-07-27",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-04-22",
+"quote": "q"
+}
+],
+"ends": [
+null,
+null,
+null,
+null,
+"2026-04-23",
+null
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-07-12T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-01-23T10:00:00Z"
+},
+{
+"id": "it2",
+"date": "2026-02-27T10:00:00Z"
+},
+{
+"id": "it3",
+"date": ""
+},
+{
+"id": "it4",
+"date": "2026-02-10T10:00:00Z"
+},
+{
+"id": "it5",
+"date": "2026-01-13T10:00:00Z"
+},
+{
+"id": "it6",
+"date": "2026-01-16T10:00:00Z"
+},
+{
+"id": "it7",
+"date": ""
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-07-12",
+"subject": "Bob",
+"predicate": "status",
+"object": "Wien",
+"valid_from": null,
+"valid_to": "2026-10-01",
+"mentioned_at": "2026-06-19",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-07-12",
+"subject": "Bob",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-05-11",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-07-12",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "open",
+"valid_from": "2026-02-18",
+"valid_to": null,
+"mentioned_at": "2026-07-20",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-01-23",
+"subject": "Bob",
+"predicate": "prefers",
+"object": "closed",
+"valid_from": "2026-05-15",
+"valid_to": "2026-11-01",
+"mentioned_at": "2026-07-12",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-01-23",
+"subject": "Bob",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-05-17",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-02-27",
+"subject": "Bob",
+"predicate": "status",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-05-12",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-02-27",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": "2026-07-17",
+"valid_to": null,
+"mentioned_at": "2026-01-16",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-02-27",
+"subject": "Flat",
+"predicate": "status",
+"object": "closed",
+"valid_from": "2026-05-15",
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-08-18",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-02-27",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "closed",
+"valid_from": "2026-05-27",
+"valid_to": null,
+"mentioned_at": "2026-06-26",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "",
+"subject": "Bob",
+"predicate": "prefers",
+"object": "Lyon",
+"valid_from": "2026-06-26",
+"valid_to": null,
+"mentioned_at": "2026-07-14",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": "2026-02-11",
+"valid_to": null,
+"mentioned_at": "2026-06-23",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-02-10",
+"subject": "Bob",
+"predicate": "status",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-06-28",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-02-10",
+"subject": "Bob",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-05-17",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-01-16",
+"subject": "Anna",
+"predicate": "status",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-04-21",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-01-16",
+"subject": "Flat",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": null,
+"valid_to": "2026-11-01",
+"mentioned_at": "2026-05-26",
+"quote": "q"
+},
+{
+"item": "it7",
+"item_date": "",
+"subject": "anna ",
+"predicate": "status",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-07-15",
+"quote": "q"
+}
+],
+"ends": [
+"2026-10-01",
+"2026-05-15",
+null,
+"2026-11-01",
+null,
+"2026-05-15",
+null,
+"2026-12-01",
+null,
+null,
+"2026-02-18",
+null,
+"2026-06-26",
+"2026-05-15",
+"2026-11-01",
+null
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": ""
+},
+{
+"id": "it1",
+"date": "2026-08-11T10:00:00Z"
+},
+{
+"id": "it2",
+"date": "2026-09-28T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "",
+"subject": "anna ",
+"predicate": "status",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-08-21",
+"quote": "q"
+}
+],
+"ends": [
+null
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-06-25T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-08-26T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-06-25",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "closed",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-05-11",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-06-25",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-04-21",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-06-25",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": "2026-01-17",
+"valid_to": null,
+"mentioned_at": "2026-05-23",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-06-25",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "closed",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-04-19",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-08-26",
+"subject": "Bob",
+"predicate": "prefers",
+"object": "closed",
+"valid_from": "2026-07-22",
+"valid_to": null,
+"mentioned_at": "2026-09-17",
+"quote": "q"
+}
+],
+"ends": [
+null,
+"2026-05-11",
+null,
+null,
+null
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-05-22T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-01-24T10:00:00Z"
+},
+{
+"id": "it2",
+"date": ""
+},
+{
+"id": "it3",
+"date": "2026-05-20T10:00:00Z"
+},
+{
+"id": "it4",
+"date": "2026-03-16T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it1",
+"item_date": "2026-01-24",
+"subject": "Bob",
+"predicate": "status",
+"object": "open",
+"valid_from": "2026-09-16",
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-02-22",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-01-24",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "Wien",
+"valid_from": null,
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-04-27",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "",
+"subject": "Flat",
+"predicate": "status",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-09-13",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "closed",
+"valid_from": "2026-01-14",
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-07-28",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": null,
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-04-25",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-04-12",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-05-20",
+"subject": "Flat",
+"predicate": "Lives_in",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-03-11",
+"quote": "q"
+}
+],
+"ends": [
+"2026-12-01",
+"2026-12-01",
+null,
+"2026-12-01",
+"2026-12-01",
+null,
+null
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-06-18T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-03-23T10:00:00Z"
+},
+{
+"id": "it2",
+"date": "2026-06-27T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-06-18",
+"subject": "Anna",
+"predicate": "status",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": "2026-10-01",
+"mentioned_at": "2026-05-22",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-03-23",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-05-15",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-03-23",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "Lyon",
+"valid_from": "2026-04-22",
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-08-10",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-03-23",
+"subject": "Anna",
+"predicate": "status",
+"object": "Wien",
+"valid_from": "2026-01-23",
+"valid_to": null,
+"mentioned_at": "2026-02-10",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-06-27",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "closed",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-01-25",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-06-27",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "closed",
+"valid_from": null,
+"valid_to": "2026-11-01",
+"mentioned_at": "2026-01-14",
+"quote": "q"
+}
+],
+"ends": [
+"2026-10-01",
+null,
+"2026-12-01",
+"2026-05-15",
+"2026-05-15",
+"2026-11-01"
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-04-23T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-09-13T10:00:00Z"
+},
+{
+"id": "it2",
+"date": "2026-02-27T10:00:00Z"
+},
+{
+"id": "it3",
+"date": "2026-06-28T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-04-23",
+"subject": "Flat",
+"predicate": "lives_in",
+"object": "wien",
+"valid_from": "2026-07-15",
+"valid_to": null,
+"mentioned_at": "2026-05-15",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-04-23",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-03-20",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-04-23",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "open",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-02-23",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-04-23",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "closed",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-07-23",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-09-13",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": "2026-01-25",
+"valid_to": null,
+"mentioned_at": "2026-01-23",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-09-13",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": "2026-11-01",
+"mentioned_at": "2026-06-13",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-09-13",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "wien",
+"valid_from": "2026-01-18",
+"valid_to": null,
+"mentioned_at": "2026-07-20",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-06-28",
+"subject": "anna ",
+"predicate": "status",
+"object": "open",
+"valid_from": "2026-05-17",
+"valid_to": null,
+"mentioned_at": "2026-08-28",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-06-28",
+"subject": "Flat",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-07-16",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-06-28",
+"subject": "anna ",
+"predicate": "status",
+"object": "closed",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-04-27",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-06-28",
+"subject": "Flat",
+"predicate": "lives_in",
+"object": "Wien",
+"valid_from": "2026-05-16",
+"valid_to": null,
+"mentioned_at": "2026-01-10",
+"quote": "q"
+}
+],
+"ends": [
+null,
+"2026-05-15",
+"2026-03-20",
+null,
+"2026-02-23",
+"2026-11-01",
+"2026-01-25",
+null,
+"2026-05-16",
+"2026-05-17",
+null
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-08-26T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-04-25T10:00:00Z"
+},
+{
+"id": "it2",
+"date": "2026-03-16T10:00:00Z"
+},
+{
+"id": "it3",
+"date": ""
+},
+{
+"id": "it4",
+"date": "2026-02-10T10:00:00Z"
+},
+{
+"id": "it5",
+"date": ""
+}
+],
+"facts": [
+{
+"item": "it1",
+"item_date": "2026-04-25",
+"subject": "Flat",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-06-24",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-03-16",
+"subject": "anna ",
+"predicate": "status",
+"object": "Wien",
+"valid_from": "2026-03-11",
+"valid_to": null,
+"mentioned_at": "2026-06-13",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "",
+"subject": "Bob",
+"predicate": "status",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-01-10",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-02-10",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "closed",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-06-13",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-02-10",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "closed",
+"valid_from": "2026-06-21",
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-06-19",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-02-10",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-08-18",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-02-10",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-06-13",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "",
+"subject": "Flat",
+"predicate": "prefers",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-07-25",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "wien",
+"valid_from": null,
+"valid_to": "2026-10-01",
+"mentioned_at": "2026-08-14",
+"quote": "q"
+}
+],
+"ends": [
+"2026-05-15",
+null,
+null,
+"2026-06-13",
+"2026-12-01",
+"2026-06-13",
+"2026-06-21",
+null,
+"2026-10-01"
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-04-14T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-06-25T10:00:00Z"
+},
+{
+"id": "it2",
+"date": "2026-03-18T10:00:00Z"
+},
+{
+"id": "it3",
+"date": "2026-04-23T10:00:00Z"
+},
+{
+"id": "it4",
+"date": "2026-07-11T10:00:00Z"
+},
+{
+"id": "it5",
+"date": "2026-07-18T10:00:00Z"
+},
+{
+"id": "it6",
+"date": "2026-01-26T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-04-14",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "wien",
+"valid_from": "2026-05-19",
+"valid_to": null,
+"mentioned_at": "2026-08-14",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-04-14",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "wien",
+"valid_from": null,
+"valid_to": "2026-10-01",
+"mentioned_at": "2026-06-24",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-04-14",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "Wien",
+"valid_from": "2026-03-11",
+"valid_to": null,
+"mentioned_at": "2026-02-27",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-06-25",
+"subject": "Bob",
+"predicate": "status",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-07-16",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-06-25",
+"subject": "anna ",
+"predicate": "status",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-07-11",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-06-25",
+"subject": "Flat",
+"predicate": "Lives_in",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-09-26",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-03-18",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-09-13",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-04-23",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "closed",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-04-14",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-04-23",
+"subject": "Bob",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-06-23",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-04-23",
+"subject": "Bob",
+"predicate": "status",
+"object": "closed",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-05-14",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-07-11",
+"subject": "Flat",
+"predicate": "prefers",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-03-26",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-07-11",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": "2026-02-27",
+"valid_to": null,
+"mentioned_at": "2026-08-16",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-07-18",
+"subject": "Flat",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-01-13",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-07-18",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "open",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-08-25",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-01-26",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": "2026-08-21",
+"valid_to": null,
+"mentioned_at": "2026-02-15",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-01-26",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-06-28",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-01-26",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": null,
+"valid_to": "2026-11-01",
+"mentioned_at": "2026-06-13",
+"quote": "q"
+}
+],
+"ends": [
+null,
+"2026-10-01",
+null,
+null,
+null,
+null,
+null,
+"2026-05-19",
+null,
+"2026-05-15",
+null,
+"2026-04-14",
+null,
+null,
+"2026-08-25",
+"2026-05-15",
+"2026-11-01"
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-07-26T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-03-16T10:00:00Z"
+},
+{
+"id": "it2",
+"date": "2026-07-28T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-07-26",
+"subject": "anna ",
+"predicate": "status",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-08-14",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-07-26",
+"subject": "Flat",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-07-10",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-07-26",
+"subject": "Anna",
+"predicate": "status",
+"object": "Lyon",
+"valid_from": "2026-08-27",
+"valid_to": null,
+"mentioned_at": "2026-03-23",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-07-26",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-01-24",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-03-16",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-08-24",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-03-16",
+"subject": "Anna",
+"predicate": "status",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": "2026-10-01",
+"mentioned_at": "2026-07-17",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-03-16",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": "2026-02-10",
+"valid_to": null,
+"mentioned_at": "2026-09-21",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-03-16",
+"subject": "Bob",
+"predicate": "status",
+"object": "closed",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-03-14",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-07-28",
+"subject": "anna ",
+"predicate": "status",
+"object": "Wien",
+"valid_from": null,
+"valid_to": "2026-11-01",
+"mentioned_at": "2026-02-20",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-07-28",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-03-15",
+"quote": "q"
+}
+],
+"ends": [
+"2026-08-27",
+null,
+null,
+null,
+null,
+"2026-10-01",
+null,
+null,
+"2026-11-01",
+"2026-05-15"
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-08-17T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-02-25T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-08-17",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-01-24",
+"quote": "q"
+}
+],
+"ends": [
+null
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": ""
+},
+{
+"id": "it1",
+"date": ""
+},
+{
+"id": "it2",
+"date": "2026-05-23T10:00:00Z"
+},
+{
+"id": "it3",
+"date": "2026-04-10T10:00:00Z"
+},
+{
+"id": "it4",
+"date": ""
+}
+],
+"facts": [
+{
+"item": "it1",
+"item_date": "",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-08-19",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-09-11",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "closed",
+"valid_from": "2026-01-19",
+"valid_to": null,
+"mentioned_at": "2026-07-12",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "",
+"subject": "Flat",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": "2026-07-17",
+"valid_to": null,
+"mentioned_at": "2026-08-12",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-05-23",
+"subject": "Flat",
+"predicate": "status",
+"object": "Wien",
+"valid_from": "2026-09-19",
+"valid_to": null,
+"mentioned_at": "2026-08-11",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-05-23",
+"subject": "Flat",
+"predicate": "lives_in",
+"object": "Wien",
+"valid_from": "2026-06-28",
+"valid_to": null,
+"mentioned_at": "2026-05-19",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-04-10",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": "2026-01-10",
+"valid_to": null,
+"mentioned_at": "2026-02-22",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-04-10",
+"subject": "Flat",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-05-24",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-04-10",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-07-10",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "",
+"subject": "Flat",
+"predicate": "prefers",
+"object": "Wien",
+"valid_from": "2026-05-14",
+"valid_to": "2026-10-01",
+"mentioned_at": "2026-06-17",
+"quote": "q"
+}
+],
+"ends": [
+null,
+"2026-08-19",
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+"2026-10-01"
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-05-12T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-05-10T10:00:00Z"
+},
+{
+"id": "it2",
+"date": "2026-02-11T10:00:00Z"
+},
+{
+"id": "it3",
+"date": "2026-09-13T10:00:00Z"
+},
+{
+"id": "it4",
+"date": "2026-03-19T10:00:00Z"
+},
+{
+"id": "it5",
+"date": "2026-05-12T10:00:00Z"
+},
+{
+"id": "it6",
+"date": "2026-07-13T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-05-12",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-08-17",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-05-12",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-03-18",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-05-12",
+"subject": "Bob",
+"predicate": "prefers",
+"object": "closed",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-08-26",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-05-10",
+"subject": "Bob",
+"predicate": "status",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": "2026-11-01",
+"mentioned_at": "2026-05-10",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-05-10",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-02-12",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-05-10",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-09-18",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-05-10",
+"subject": "anna ",
+"predicate": "status",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-03-17",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-02-11",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": "2026-10-01",
+"mentioned_at": "2026-01-26",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-02-11",
+"subject": "anna ",
+"predicate": "status",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-06-11",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-02-11",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-08-24",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-09-13",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "closed",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-03-10",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-03-19",
+"subject": "Anna",
+"predicate": "status",
+"object": "Wien",
+"valid_from": null,
+"valid_to": "2026-11-01",
+"mentioned_at": "2026-09-11",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-03-19",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "closed",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-06-21",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-03-19",
+"subject": "Bob",
+"predicate": "prefers",
+"object": "closed",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-04-11",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-03-19",
+"subject": "Anna",
+"predicate": "status",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": "2026-11-01",
+"mentioned_at": "2026-01-28",
+"quote": "q"
+}
+],
+"ends": [
+"2026-06-21",
+"2026-05-15",
+null,
+"2026-11-01",
+"2026-05-15",
+null,
+"2026-05-15",
+"2026-10-01",
+"2026-09-11",
+"2026-09-18",
+null,
+"2026-11-01",
+null,
+null,
+"2026-11-01"
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-01-20T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-05-11T10:00:00Z"
+},
+{
+"id": "it2",
+"date": "2026-08-24T10:00:00Z"
+},
+{
+"id": "it3",
+"date": "2026-01-20T10:00:00Z"
+},
+{
+"id": "it4",
+"date": "2026-06-16T10:00:00Z"
+},
+{
+"id": "it5",
+"date": "2026-01-10T10:00:00Z"
+},
+{
+"id": "it6",
+"date": "2026-05-10T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-01-20",
+"subject": "Flat",
+"predicate": "lives_in",
+"object": "closed",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-05-23",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-01-20",
+"subject": "Flat",
+"predicate": "status",
+"object": "Wien",
+"valid_from": "2026-05-20",
+"valid_to": null,
+"mentioned_at": "2026-07-21",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-01-20",
+"subject": "Anna",
+"predicate": "status",
+"object": "wien",
+"valid_from": "2026-05-14",
+"valid_to": null,
+"mentioned_at": "2026-04-13",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-01-20",
+"subject": "Bob",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-07-20",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-05-11",
+"subject": "Flat",
+"predicate": "lives_in",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-03-19",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-05-11",
+"subject": "anna ",
+"predicate": "status",
+"object": "Lyon",
+"valid_from": "2026-08-23",
+"valid_to": null,
+"mentioned_at": "2026-02-28",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-05-11",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "closed",
+"valid_from": null,
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-01-14",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-08-24",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-06-15",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-08-24",
+"subject": "Bob",
+"predicate": "status",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-05-21",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-08-24",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "Wien",
+"valid_from": "2026-02-22",
+"valid_to": null,
+"mentioned_at": "2026-08-11",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-01-20",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "wien",
+"valid_from": "2026-07-19",
+"valid_to": null,
+"mentioned_at": "2026-01-15",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-01-20",
+"subject": "Flat",
+"predicate": "status",
+"object": "wien",
+"valid_from": "2026-08-28",
+"valid_to": null,
+"mentioned_at": "2026-09-23",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-01-20",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-04-20",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-01-20",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "wien",
+"valid_from": "2026-04-17",
+"valid_to": null,
+"mentioned_at": "2026-09-25",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-01-10",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-06-27",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-01-10",
+"subject": "Flat",
+"predicate": "prefers",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-04-28",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-05-10",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": "2026-10-01",
+"mentioned_at": "2026-04-16",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-05-10",
+"subject": "Anna",
+"predicate": "status",
+"object": "open",
+"valid_from": "2026-02-25",
+"valid_to": null,
+"mentioned_at": "2026-01-26",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-05-10",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": "2026-11-01",
+"mentioned_at": "2026-02-24",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-05-10",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-08-23",
+"quote": "q"
+}
+],
+"ends": [
+null,
+null,
+"2026-08-23",
+null,
+"2026-05-15",
+null,
+"2026-12-01",
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+null,
+"2026-10-01",
+"2026-05-14",
+"2026-11-01",
+null
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": ""
+},
+{
+"id": "it1",
+"date": "2026-03-10T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it1",
+"item_date": "2026-03-10",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-09-10",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-03-10",
+"subject": "anna ",
+"predicate": "status",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": "2026-11-01",
+"mentioned_at": "2026-04-11",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-03-10",
+"subject": "Flat",
+"predicate": "status",
+"object": "open",
+"valid_from": "2026-08-24",
+"valid_to": null,
+"mentioned_at": "2026-05-16",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-03-10",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-08-12",
+"quote": "q"
+}
+],
+"ends": [
+null,
+"2026-11-01",
+null,
+null
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-04-12T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-03-28T10:00:00Z"
+},
+{
+"id": "it2",
+"date": "2026-01-16T10:00:00Z"
+},
+{
+"id": "it3",
+"date": "2026-04-17T10:00:00Z"
+},
+{
+"id": "it4",
+"date": "2026-03-24T10:00:00Z"
+},
+{
+"id": "it5",
+"date": "2026-04-21T10:00:00Z"
+},
+{
+"id": "it6",
+"date": "2026-09-19T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-04-12",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "open",
+"valid_from": "2026-08-26",
+"valid_to": null,
+"mentioned_at": "2026-02-14",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-04-12",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-02-12",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-04-12",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-06-23",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-01-16",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-07-10",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-01-16",
+"subject": "Flat",
+"predicate": "status",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-03-16",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-01-16",
+"subject": "Flat",
+"predicate": "status",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-05-16",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-01-16",
+"subject": "Anna",
+"predicate": "status",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-05-13",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-03-24",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "closed",
+"valid_from": null,
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-04-28",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-03-24",
+"subject": "Flat",
+"predicate": "Lives_in",
+"object": "open",
+"valid_from": "2026-06-13",
+"valid_to": null,
+"mentioned_at": "2026-03-17",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-09-19",
+"subject": "anna ",
+"predicate": "status",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-08-19",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-09-19",
+"subject": "Bob",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-02-17",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-09-19",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "closed",
+"valid_from": null,
+"valid_to": "2026-10-01",
+"mentioned_at": "2026-03-28",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-09-19",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-02-28",
+"quote": "q"
+}
+],
+"ends": [
+null,
+"2026-03-28",
+null,
+null,
+null,
+null,
+null,
+"2026-12-01",
+null,
+null,
+null,
+"2026-10-01",
+"2026-08-26"
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-09-16T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-04-23T10:00:00Z"
+},
+{
+"id": "it2",
+"date": ""
+},
+{
+"id": "it3",
+"date": "2026-04-16T10:00:00Z"
+},
+{
+"id": "it4",
+"date": "2026-02-21T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-09-16",
+"subject": "anna ",
+"predicate": "status",
+"object": "wien",
+"valid_from": "2026-05-21",
+"valid_to": "2026-11-01",
+"mentioned_at": "2026-09-25",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-09-16",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-01-20",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-04-23",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-08-25",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-04-23",
+"subject": "Flat",
+"predicate": "Lives_in",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-03-15",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-04-23",
+"subject": "Flat",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-01-27",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "",
+"subject": "Bob",
+"predicate": "status",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-09-25",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "",
+"subject": "Flat",
+"predicate": "Lives_in",
+"object": "closed",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-05-20",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": "2026-10-01",
+"mentioned_at": "2026-05-25",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-04-16",
+"subject": "Bob",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": "2026-04-23",
+"valid_to": null,
+"mentioned_at": "2026-04-27",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-04-16",
+"subject": "Bob",
+"predicate": "prefers",
+"object": "Lyon",
+"valid_from": "2026-06-21",
+"valid_to": "2026-11-01",
+"mentioned_at": "2026-05-22",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-04-16",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "closed",
+"valid_from": "2026-08-22",
+"valid_to": null,
+"mentioned_at": "2026-04-14",
+"quote": "q"
+}
+],
+"ends": [
+"2026-11-01",
+null,
+null,
+"2026-05-15",
+"2026-05-15",
+null,
+null,
+"2026-10-01",
+"2026-06-21",
+"2026-11-01",
+null
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-05-10T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-05-10",
+"subject": "Flat",
+"predicate": "lives_in",
+"object": "Wien",
+"valid_from": "2026-08-13",
+"valid_to": null,
+"mentioned_at": "2026-07-20",
+"quote": "q"
+}
+],
+"ends": [
+null
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-04-28T10:00:00Z"
+},
+{
+"id": "it1",
+"date": ""
+},
+{
+"id": "it2",
+"date": "2026-01-27T10:00:00Z"
+},
+{
+"id": "it3",
+"date": "2026-05-28T10:00:00Z"
+},
+{
+"id": "it4",
+"date": "2026-07-20T10:00:00Z"
+},
+{
+"id": "it5",
+"date": "2026-05-19T10:00:00Z"
+},
+{
+"id": "it6",
+"date": "2026-09-26T10:00:00Z"
+},
+{
+"id": "it7",
+"date": "2026-09-21T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it1",
+"item_date": "",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "open",
+"valid_from": "2026-04-25",
+"valid_to": null,
+"mentioned_at": "2026-08-17",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "Wien",
+"valid_from": "2026-04-15",
+"valid_to": null,
+"mentioned_at": "2026-04-11",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": "2026-11-01",
+"mentioned_at": "2026-05-11",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "",
+"subject": "anna ",
+"predicate": "status",
+"object": "Wien",
+"valid_from": "2026-06-17",
+"valid_to": null,
+"mentioned_at": "2026-02-11",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-05-28",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "closed",
+"valid_from": "2026-06-14",
+"valid_to": null,
+"mentioned_at": "2026-04-23",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-05-28",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-09-18",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-05-28",
+"subject": "Bob",
+"predicate": "status",
+"object": "Wien",
+"valid_from": "2026-05-10",
+"valid_to": "2026-11-01",
+"mentioned_at": "2026-08-22",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-07-20",
+"subject": "anna ",
+"predicate": "status",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-08-19",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-07-20",
+"subject": "Flat",
+"predicate": "prefers",
+"object": "Wien",
+"valid_from": "2026-09-14",
+"valid_to": null,
+"mentioned_at": "2026-04-20",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-07-20",
+"subject": "Bob",
+"predicate": "status",
+"object": "closed",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-02-25",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-05-19",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-03-10",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-05-19",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": "2026-03-27",
+"valid_to": "2026-11-01",
+"mentioned_at": "2026-01-27",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-05-19",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "closed",
+"valid_from": "2026-08-12",
+"valid_to": null,
+"mentioned_at": "2026-01-28",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-09-26",
+"subject": "Bob",
+"predicate": "prefers",
+"object": "open",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-08-23",
+"quote": "q"
+},
+{
+"item": "it7",
+"item_date": "2026-09-21",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-04-14",
+"quote": "q"
+}
+],
+"ends": [
+"2026-05-15",
+"2026-05-15",
+"2026-11-01",
+null,
+null,
+null,
+"2026-11-01",
+null,
+null,
+null,
+"2026-06-14",
+"2026-11-01",
+null,
+null,
+"2026-05-15"
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-07-17T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-01-27T10:00:00Z"
+},
+{
+"id": "it2",
+"date": "2026-01-28T10:00:00Z"
+},
+{
+"id": "it3",
+"date": "2026-06-17T10:00:00Z"
+},
+{
+"id": "it4",
+"date": "2026-06-19T10:00:00Z"
+},
+{
+"id": "it5",
+"date": "2026-02-10T10:00:00Z"
+},
+{
+"id": "it6",
+"date": "2026-05-20T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-07-17",
+"subject": "Flat",
+"predicate": "prefers",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-07-28",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-01-27",
+"subject": "Flat",
+"predicate": "status",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-05-23",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-01-27",
+"subject": "Flat",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-08-27",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-01-27",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-05-21",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-01-27",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-05-14",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-01-28",
+"subject": "anna ",
+"predicate": "status",
+"object": "closed",
+"valid_from": "2026-07-25",
+"valid_to": null,
+"mentioned_at": "2026-02-21",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-01-28",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "closed",
+"valid_from": "2026-08-11",
+"valid_to": null,
+"mentioned_at": "2026-09-18",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-01-28",
+"subject": "Anna",
+"predicate": "status",
+"object": "closed",
+"valid_from": "2026-05-28",
+"valid_to": null,
+"mentioned_at": "2026-07-14",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-01-28",
+"subject": "Bob",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-06-20",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-06-17",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": "2026-10-01",
+"mentioned_at": "2026-07-21",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-06-19",
+"subject": "Anna",
+"predicate": "status",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": "2026-11-01",
+"mentioned_at": "2026-05-15",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-06-19",
+"subject": "Flat",
+"predicate": "prefers",
+"object": "open",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-07-15",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-02-10",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-01-25",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-02-10",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "open",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-08-17",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-05-20",
+"subject": "Anna",
+"predicate": "status",
+"object": "open",
+"valid_from": null,
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-02-11",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-05-20",
+"subject": "Bob",
+"predicate": "status",
+"object": "Wien",
+"valid_from": "2026-03-22",
+"valid_to": null,
+"mentioned_at": "2026-06-10",
+"quote": "q"
+}
+],
+"ends": [
+null,
+null,
+null,
+"2026-07-21",
+null,
+null,
+"2026-08-17",
+null,
+null,
+"2026-10-01",
+"2026-11-01",
+"2026-07-28",
+null,
+null,
+"2026-12-01",
+null
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-08-12T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-06-26T10:00:00Z"
+},
+{
+"id": "it2",
+"date": "2026-04-25T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-08-12",
+"subject": "Flat",
+"predicate": "status",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-01-11",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-08-12",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-05-23",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-08-12",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-03-24",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-08-12",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "open",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-06-19",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-06-26",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": "2026-06-22",
+"valid_to": null,
+"mentioned_at": "2026-05-27",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-06-26",
+"subject": "Bob",
+"predicate": "prefers",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-06-24",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-04-25",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": "2026-10-01",
+"mentioned_at": "2026-06-26",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-04-25",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": "2026-09-22",
+"valid_to": null,
+"mentioned_at": "2026-05-27",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-04-25",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-08-19",
+"quote": "q"
+}
+],
+"ends": [
+null,
+null,
+"2026-06-19",
+"2026-09-22",
+null,
+null,
+"2026-10-01",
+null,
+"2026-12-01"
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-03-20T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-03-20",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "open",
+"valid_from": null,
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-02-15",
+"quote": "q"
+}
+],
+"ends": [
+"2026-12-01"
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-03-24T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-05-15T10:00:00Z"
+},
+{
+"id": "it2",
+"date": "2026-03-12T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-03-24",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-07-24",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-03-24",
+"subject": "Flat",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-02-11",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-03-12",
+"subject": "anna ",
+"predicate": "status",
+"object": "Wien",
+"valid_from": "2026-02-11",
+"valid_to": null,
+"mentioned_at": "2026-07-16",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-03-12",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "open",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-04-24",
+"quote": "q"
+}
+],
+"ends": [
+null,
+null,
+null,
+"2026-07-24"
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-08-12T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-06-10T10:00:00Z"
+},
+{
+"id": "it2",
+"date": "2026-04-10T10:00:00Z"
+},
+{
+"id": "it3",
+"date": "2026-05-16T10:00:00Z"
+},
+{
+"id": "it4",
+"date": "2026-05-10T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-08-12",
+"subject": "Bob",
+"predicate": "prefers",
+"object": "Wien",
+"valid_from": null,
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-08-23",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-08-12",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-08-25",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-06-10",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-05-21",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-06-10",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-08-10",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-04-10",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "closed",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-08-26",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-04-10",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-06-25",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-05-16",
+"subject": "Bob",
+"predicate": "status",
+"object": "Lyon",
+"valid_from": "2026-07-18",
+"valid_to": null,
+"mentioned_at": "2026-06-10",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-05-16",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-09-27",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-05-16",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": "2026-08-20",
+"valid_to": null,
+"mentioned_at": "2026-06-19",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-05-16",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "Wien",
+"valid_from": "2026-01-23",
+"valid_to": null,
+"mentioned_at": "2026-05-25",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-05-10",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": "2026-10-01",
+"mentioned_at": "2026-09-21",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-05-10",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "closed",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-03-14",
+"quote": "q"
+}
+],
+"ends": [
+"2026-12-01",
+null,
+null,
+"2026-08-20",
+null,
+"2026-08-26",
+null,
+"2026-08-10",
+null,
+"2026-03-14",
+"2026-10-01",
+"2026-05-15"
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-07-19T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-05-22T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-07-19",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "open",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-04-17",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-07-19",
+"subject": "Flat",
+"predicate": "lives_in",
+"object": "closed",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-08-12",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-07-19",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-08-14",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-07-19",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "closed",
+"valid_from": "2026-01-26",
+"valid_to": null,
+"mentioned_at": "2026-09-28",
+"quote": "q"
+}
+],
+"ends": [
+null,
+null,
+null,
+"2026-04-17"
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-08-14T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-03-25T10:00:00Z"
+},
+{
+"id": "it2",
+"date": "2026-09-14T10:00:00Z"
+},
+{
+"id": "it3",
+"date": "2026-09-28T10:00:00Z"
+},
+{
+"id": "it4",
+"date": "2026-07-21T10:00:00Z"
+},
+{
+"id": "it5",
+"date": "2026-08-16T10:00:00Z"
+},
+{
+"id": "it6",
+"date": "2026-09-19T10:00:00Z"
+},
+{
+"id": "it7",
+"date": "2026-07-25T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-08-14",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-02-24",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-03-25",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "closed",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-04-17",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-09-14",
+"subject": "Flat",
+"predicate": "Lives_in",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-04-25",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-09-14",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-05-14",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-07-21",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "closed",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-08-20",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-08-16",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": "2026-08-21",
+"valid_to": null,
+"mentioned_at": "2026-03-23",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-08-16",
+"subject": "Flat",
+"predicate": "prefers",
+"object": "open",
+"valid_from": "2026-07-13",
+"valid_to": null,
+"mentioned_at": "2026-01-26",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-08-16",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "closed",
+"valid_from": "2026-05-15",
+"valid_to": "2026-11-01",
+"mentioned_at": "2026-09-24",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-09-19",
+"subject": "anna ",
+"predicate": "status",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-01-20",
+"quote": "q"
+},
+{
+"item": "it7",
+"item_date": "2026-07-25",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "closed",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-03-26",
+"quote": "q"
+},
+{
+"item": "it7",
+"item_date": "2026-07-25",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-01-17",
+"quote": "q"
+},
+{
+"item": "it7",
+"item_date": "2026-07-25",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "closed",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-02-12",
+"quote": "q"
+}
+],
+"ends": [
+null,
+"2026-08-21",
+null,
+null,
+null,
+null,
+null,
+"2026-11-01",
+null,
+null,
+"2026-05-15",
+null
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-01-25T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-01-25",
+"subject": "Anna",
+"predicate": "status",
+"object": "Lyon",
+"valid_from": "2026-09-19",
+"valid_to": null,
+"mentioned_at": "2026-09-18",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-01-25",
+"subject": "Flat",
+"predicate": "status",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-01-12",
+"quote": "q"
+}
+],
+"ends": [
+null,
+null
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-04-13T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-06-16T10:00:00Z"
+},
+{
+"id": "it2",
+"date": "2026-04-21T10:00:00Z"
+},
+{
+"id": "it3",
+"date": "2026-04-10T10:00:00Z"
+},
+{
+"id": "it4",
+"date": "2026-03-20T10:00:00Z"
+},
+{
+"id": "it5",
+"date": "2026-06-17T10:00:00Z"
+},
+{
+"id": "it6",
+"date": "2026-09-13T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-04-13",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "closed",
+"valid_from": "2026-01-18",
+"valid_to": null,
+"mentioned_at": "2026-06-14",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-04-13",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "open",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-01-17",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-04-13",
+"subject": "Anna",
+"predicate": "status",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-02-11",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-04-13",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "Wien",
+"valid_from": "2026-06-15",
+"valid_to": null,
+"mentioned_at": "2026-02-14",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-06-16",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-06-10",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-06-16",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-02-13",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-06-16",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-08-26",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-06-16",
+"subject": "Flat",
+"predicate": "Lives_in",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-06-11",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-04-21",
+"subject": "anna ",
+"predicate": "status",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-08-18",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-04-21",
+"subject": "Flat",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-01-16",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-04-21",
+"subject": "anna ",
+"predicate": "status",
+"object": "wien",
+"valid_from": "2026-06-28",
+"valid_to": null,
+"mentioned_at": "2026-03-10",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-04-10",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-03-23",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-04-10",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "closed",
+"valid_from": "2026-06-10",
+"valid_to": null,
+"mentioned_at": "2026-04-23",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-06-17",
+"subject": "Flat",
+"predicate": "lives_in",
+"object": "closed",
+"valid_from": "2026-05-15",
+"valid_to": "2026-11-01",
+"mentioned_at": "2026-04-26",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-09-13",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "closed",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-02-11",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-09-13",
+"subject": "Flat",
+"predicate": "status",
+"object": "closed",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-08-25",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-09-13",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-06-11",
+"quote": "q"
+}
+],
+"ends": [
+"2026-03-23",
+"2026-01-18",
+"2026-05-15",
+"2026-08-26",
+null,
+null,
+null,
+null,
+"2026-06-28",
+"2026-05-15",
+null,
+"2026-05-15",
+"2026-06-10",
+"2026-11-01",
+"2026-05-15",
+null,
+"2026-06-10"
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-07-25T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-07-24T10:00:00Z"
+},
+{
+"id": "it2",
+"date": ""
+},
+{
+"id": "it3",
+"date": ""
+},
+{
+"id": "it4",
+"date": "2026-07-22T10:00:00Z"
+},
+{
+"id": "it5",
+"date": "2026-07-15T10:00:00Z"
+},
+{
+"id": "it6",
+"date": "2026-06-15T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-07-25",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "closed",
+"valid_from": "2026-01-18",
+"valid_to": null,
+"mentioned_at": "2026-07-27",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-07-24",
+"subject": "Flat",
+"predicate": "Lives_in",
+"object": "wien",
+"valid_from": "2026-09-12",
+"valid_to": null,
+"mentioned_at": "2026-08-21",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-07-24",
+"subject": "Bob",
+"predicate": "status",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-06-17",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "",
+"subject": "Flat",
+"predicate": "status",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-08-12",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-07-22",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": "2026-06-12",
+"valid_to": null,
+"mentioned_at": "2026-08-28",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-07-22",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": "2026-11-01",
+"mentioned_at": "2026-08-13",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-07-22",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-06-12",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-07-15",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "closed",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-04-23",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-07-15",
+"subject": "Bob",
+"predicate": "status",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-02-23",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-07-15",
+"subject": "Anna",
+"predicate": "status",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-06-26",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-06-15",
+"subject": "Flat",
+"predicate": "Lives_in",
+"object": "closed",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-04-13",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-06-15",
+"subject": "Flat",
+"predicate": "status",
+"object": "closed",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-07-12",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-06-15",
+"subject": "Flat",
+"predicate": "lives_in",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-06-18",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-06-15",
+"subject": "anna ",
+"predicate": "status",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-08-15",
+"quote": "q"
+}
+],
+"ends": [
+null,
+null,
+null,
+null,
+null,
+"2026-11-01",
+null,
+"2026-06-12",
+null,
+null,
+"2026-05-15",
+"2026-08-12",
+null,
+null
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-05-17T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-09-25T10:00:00Z"
+},
+{
+"id": "it2",
+"date": "2026-08-28T10:00:00Z"
+},
+{
+"id": "it3",
+"date": "2026-08-19T10:00:00Z"
+},
+{
+"id": "it4",
+"date": "2026-09-12T10:00:00Z"
+},
+{
+"id": "it5",
+"date": "2026-02-24T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-05-17",
+"subject": "Bob",
+"predicate": "status",
+"object": "closed",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-02-25",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-05-17",
+"subject": "Flat",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": "2026-09-21",
+"valid_to": null,
+"mentioned_at": "2026-02-25",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-09-25",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-08-13",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-09-25",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-02-10",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-09-25",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-08-22",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-09-25",
+"subject": "Flat",
+"predicate": "lives_in",
+"object": "closed",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-01-23",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-08-19",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-02-13",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-08-19",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "wien",
+"valid_from": "2026-01-13",
+"valid_to": null,
+"mentioned_at": "2026-01-13",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-08-19",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "closed",
+"valid_from": "2026-05-15",
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-09-25",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-09-12",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-03-14",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-09-12",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": "2026-06-15",
+"valid_to": null,
+"mentioned_at": "2026-09-27",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-02-24",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "Wien",
+"valid_from": "2026-04-13",
+"valid_to": null,
+"mentioned_at": "2026-05-11",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-02-24",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-06-11",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-02-24",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-01-25",
+"quote": "q"
+}
+],
+"ends": [
+null,
+null,
+null,
+"2026-05-15",
+"2026-06-15",
+"2026-09-21",
+"2026-05-15",
+"2026-01-25",
+"2026-12-01",
+"2026-05-15",
+"2026-08-13",
+null,
+null,
+"2026-04-13"
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-02-17T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-08-20T10:00:00Z"
+},
+{
+"id": "it2",
+"date": ""
+},
+{
+"id": "it3",
+"date": "2026-01-16T10:00:00Z"
+},
+{
+"id": "it4",
+"date": "2026-09-18T10:00:00Z"
+},
+{
+"id": "it5",
+"date": ""
+},
+{
+"id": "it6",
+"date": "2026-06-27T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-02-17",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": "2026-06-23",
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-07-24",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-08-20",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-01-18",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-08-20",
+"subject": "Flat",
+"predicate": "Lives_in",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-09-28",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-08-20",
+"subject": "anna ",
+"predicate": "status",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-05-28",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "",
+"subject": "Flat",
+"predicate": "Lives_in",
+"object": "open",
+"valid_from": "2026-05-24",
+"valid_to": null,
+"mentioned_at": "2026-06-24",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "",
+"subject": "Bob",
+"predicate": "prefers",
+"object": "Lyon",
+"valid_from": "2026-02-25",
+"valid_to": null,
+"mentioned_at": "2026-09-12",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "",
+"subject": "Bob",
+"predicate": "prefers",
+"object": "open",
+"valid_from": null,
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-09-18",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-01-16",
+"subject": "Flat",
+"predicate": "Lives_in",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-08-16",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-01-16",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-08-25",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-01-16",
+"subject": "Bob",
+"predicate": "prefers",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": "2026-10-01",
+"mentioned_at": "2026-06-27",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-09-18",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "closed",
+"valid_from": "2026-06-12",
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-09-19",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-06-27",
+"subject": "Flat",
+"predicate": "Lives_in",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-06-27",
+"quote": "q"
+}
+],
+"ends": [
+"2026-12-01",
+"2026-06-12",
+null,
+null,
+null,
+"2026-05-15",
+"2026-12-01",
+"2026-05-15",
+"2026-06-23",
+"2026-10-01",
+"2026-12-01",
+"2026-05-15"
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-09-27T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-01-12T10:00:00Z"
+},
+{
+"id": "it2",
+"date": "2026-06-24T10:00:00Z"
+},
+{
+"id": "it3",
+"date": "2026-06-17T10:00:00Z"
+},
+{
+"id": "it4",
+"date": "2026-02-22T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-09-27",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "Wien",
+"valid_from": "2026-05-18",
+"valid_to": null,
+"mentioned_at": "2026-09-26",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-09-27",
+"subject": "Flat",
+"predicate": "status",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-05-24",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-09-27",
+"subject": "Bob",
+"predicate": "prefers",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-02-16",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-01-12",
+"subject": "Flat",
+"predicate": "status",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-02-27",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-01-12",
+"subject": "Bob",
+"predicate": "prefers",
+"object": "closed",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-09-25",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-01-12",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-02-17",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-01-12",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": "2026-05-27",
+"valid_to": null,
+"mentioned_at": "2026-05-27",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-06-24",
+"subject": "Flat",
+"predicate": "lives_in",
+"object": "closed",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-02-11",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-06-17",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": "2026-01-17",
+"valid_to": null,
+"mentioned_at": "2026-05-15",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-06-17",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "open",
+"valid_from": "2026-06-26",
+"valid_to": null,
+"mentioned_at": "2026-01-15",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-06-17",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-02-16",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-02-22",
+"subject": "Flat",
+"predicate": "lives_in",
+"object": "closed",
+"valid_from": null,
+"valid_to": "2026-10-01",
+"mentioned_at": "2026-03-12",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-02-22",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-01-18",
+"quote": "q"
+}
+],
+"ends": [
+"2026-05-27",
+null,
+"2026-05-15",
+null,
+null,
+"2026-06-26",
+null,
+null,
+"2026-02-16",
+null,
+"2026-05-18",
+"2026-10-01",
+null
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-08-25T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-09-11T10:00:00Z"
+},
+{
+"id": "it2",
+"date": ""
+},
+{
+"id": "it3",
+"date": "2026-02-21T10:00:00Z"
+},
+{
+"id": "it4",
+"date": "2026-07-10T10:00:00Z"
+},
+{
+"id": "it5",
+"date": "2026-03-17T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-08-25",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": "2026-11-01",
+"mentioned_at": "2026-05-14",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-08-25",
+"subject": "Anna",
+"predicate": "status",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-01-17",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-09-11",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-05-20",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-09-11",
+"subject": "Bob",
+"predicate": "status",
+"object": "closed",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-02-27",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "closed",
+"valid_from": "2026-06-19",
+"valid_to": null,
+"mentioned_at": "2026-08-28",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "",
+"subject": "Flat",
+"predicate": "lives_in",
+"object": "closed",
+"valid_from": "2026-03-22",
+"valid_to": null,
+"mentioned_at": "2026-02-11",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-02-21",
+"subject": "Flat",
+"predicate": "status",
+"object": "closed",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-08-28",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-02-21",
+"subject": "Flat",
+"predicate": "status",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-05-15",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-02-21",
+"subject": "anna ",
+"predicate": "status",
+"object": "closed",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-07-18",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-02-21",
+"subject": "Flat",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": "2026-08-24",
+"valid_to": null,
+"mentioned_at": "2026-02-15",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-07-10",
+"subject": "anna ",
+"predicate": "status",
+"object": "open",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-09-27",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-07-10",
+"subject": "Flat",
+"predicate": "prefers",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-01-18",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-07-10",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-05-20",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-07-10",
+"subject": "Anna",
+"predicate": "status",
+"object": "open",
+"valid_from": "2026-05-27",
+"valid_to": "2026-11-01",
+"mentioned_at": "2026-09-11",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-03-17",
+"subject": "Flat",
+"predicate": "Lives_in",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-05-27",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-03-17",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-09-28",
+"quote": "q"
+}
+],
+"ends": [
+"2026-11-01",
+null,
+null,
+null,
+null,
+"2026-05-15",
+null,
+"2026-08-28",
+"2026-09-27",
+null,
+null,
+null,
+"2026-06-19",
+"2026-11-01",
+"2026-08-24",
+null
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-02-18T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-01-15T10:00:00Z"
+},
+{
+"id": "it2",
+"date": "2026-03-13T10:00:00Z"
+},
+{
+"id": "it3",
+"date": "2026-03-28T10:00:00Z"
+},
+{
+"id": "it4",
+"date": "2026-01-16T10:00:00Z"
+},
+{
+"id": "it5",
+"date": "2026-08-19T10:00:00Z"
+},
+{
+"id": "it6",
+"date": "2026-01-13T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it2",
+"item_date": "2026-03-13",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "closed",
+"valid_from": null,
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-04-16",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-03-13",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "Wien",
+"valid_from": "2026-06-27",
+"valid_to": null,
+"mentioned_at": "2026-01-27",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-03-13",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "Wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-07-20",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-03-28",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "open",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-09-11",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-03-28",
+"subject": "Anna",
+"predicate": "status",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-03-20",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-03-28",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-03-22",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-03-28",
+"subject": "Bob",
+"predicate": "status",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": "2026-11-01",
+"mentioned_at": "2026-07-18",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-01-16",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "Wien",
+"valid_from": "2026-01-23",
+"valid_to": "2026-10-01",
+"mentioned_at": "2026-01-21",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-01-16",
+"subject": "Flat",
+"predicate": "lives_in",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-09-13",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-01-16",
+"subject": "Flat",
+"predicate": "prefers",
+"object": "Lyon",
+"valid_from": "2026-05-24",
+"valid_to": null,
+"mentioned_at": "2026-04-23",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-08-19",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "open",
+"valid_from": "2026-09-21",
+"valid_to": null,
+"mentioned_at": "2026-02-19",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-08-19",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": "2026-10-01",
+"mentioned_at": "2026-09-16",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-08-19",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "closed",
+"valid_from": "2026-09-11",
+"valid_to": null,
+"mentioned_at": "2026-07-28",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-08-19",
+"subject": "Flat",
+"predicate": "status",
+"object": "Lyon",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-05-14",
+"quote": "q"
+},
+{
+"item": "it6",
+"item_date": "2026-01-13",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "closed",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-04-26",
+"quote": "q"
+}
+],
+"ends": [
+"2026-12-01",
+"2026-09-11",
+null,
+null,
+null,
+null,
+"2026-11-01",
+"2026-10-01",
+null,
+null,
+null,
+"2026-10-01",
+null,
+null,
+"2026-05-15"
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-09-24T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-07-17T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-09-24",
+"subject": "Flat",
+"predicate": "prefers",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-01-15",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-07-17",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": null,
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-03-21",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-07-17",
+"subject": "Bob",
+"predicate": "prefers",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-01-19",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-07-17",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": "2026-05-10",
+"valid_to": null,
+"mentioned_at": "2026-06-16",
+"quote": "q"
+}
+],
+"ends": [
+null,
+"2026-12-01",
+null,
+null
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-03-20T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-03-20",
+"subject": "Bob",
+"predicate": "status",
+"object": "Lyon",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-04-15",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-03-20",
+"subject": "Flat",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-07-24",
+"quote": "q"
+}
+],
+"ends": [
+null,
+"2026-12-01"
+]
+},
+{
+"items": [
+{
+"id": "it0",
+"date": "2026-09-26T10:00:00Z"
+},
+{
+"id": "it1",
+"date": "2026-01-21T10:00:00Z"
+},
+{
+"id": "it2",
+"date": "2026-01-25T10:00:00Z"
+},
+{
+"id": "it3",
+"date": "2026-08-14T10:00:00Z"
+},
+{
+"id": "it4",
+"date": "2026-03-13T10:00:00Z"
+},
+{
+"id": "it5",
+"date": "2026-02-10T10:00:00Z"
+}
+],
+"facts": [
+{
+"item": "it0",
+"item_date": "2026-09-26",
+"subject": "Bob",
+"predicate": "lives_in",
+"object": "closed",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-02-12",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-09-26",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": "2026-06-20",
+"valid_to": null,
+"mentioned_at": "2026-05-21",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-09-26",
+"subject": "Anna",
+"predicate": "status",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-07-24",
+"quote": "q"
+},
+{
+"item": "it0",
+"item_date": "2026-09-26",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "closed",
+"valid_from": "2026-06-20",
+"valid_to": null,
+"mentioned_at": "2026-03-27",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-01-21",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-07-26",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-01-21",
+"subject": "anna ",
+"predicate": "status",
+"object": "wien",
+"valid_from": "2026-07-15",
+"valid_to": null,
+"mentioned_at": "2026-05-26",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-01-21",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-03-19",
+"quote": "q"
+},
+{
+"item": "it1",
+"item_date": "2026-01-21",
+"subject": "Flat",
+"predicate": "prefers",
+"object": "Wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-03-15",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-01-25",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "closed",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-07-27",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-01-25",
+"subject": "Anna",
+"predicate": "prefers",
+"object": "closed",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-01-19",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-01-25",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "Lyon",
+"valid_from": "2026-03-17",
+"valid_to": "2026-12-01",
+"mentioned_at": "2026-06-22",
+"quote": "q"
+},
+{
+"item": "it2",
+"item_date": "2026-01-25",
+"subject": "anna ",
+"predicate": "Lives_in",
+"object": "Lyon",
+"valid_from": "2026-06-27",
+"valid_to": null,
+"mentioned_at": "2026-03-14",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-08-14",
+"subject": "anna ",
+"predicate": "prefers",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-09-11",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-08-14",
+"subject": "anna ",
+"predicate": "lives_in",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-01-14",
+"quote": "q"
+},
+{
+"item": "it3",
+"item_date": "2026-08-14",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "wien",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-07-18",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-03-13",
+"subject": "Anna",
+"predicate": "status",
+"object": "Lyon",
+"valid_from": "2026-02-22",
+"valid_to": null,
+"mentioned_at": "2026-02-16",
+"quote": "q"
+},
+{
+"item": "it4",
+"item_date": "2026-03-13",
+"subject": "Anna",
+"predicate": "Lives_in",
+"object": "closed",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-09-14",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-02-10",
+"subject": "Flat",
+"predicate": "status",
+"object": "wien",
+"valid_from": null,
+"valid_to": null,
+"mentioned_at": "2026-02-12",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-02-10",
+"subject": "Bob",
+"predicate": "Lives_in",
+"object": "Wien",
+"valid_from": "2026-01-20",
+"valid_to": null,
+"mentioned_at": "2026-07-11",
+"quote": "q"
+},
+{
+"item": "it5",
+"item_date": "2026-02-10",
+"subject": "Anna",
+"predicate": "lives_in",
+"object": "open",
+"valid_from": "2026-05-15",
+"valid_to": null,
+"mentioned_at": "2026-02-27",
+"quote": "q"
+}
+],
+"ends": [
+"2026-05-15",
+"2026-06-27",
+null,
+"2026-06-20",
+"2026-09-14",
+null,
+"2026-05-15",
+null,
+null,
+"2026-05-15",
+"2026-12-01",
+"2026-07-26",
+null,
+"2026-03-17",
+"2026-05-15",
+"2026-07-15",
+null,
+null,
+"2026-05-15",
+"2026-06-20"
+]
+}
+]

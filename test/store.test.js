@@ -61,7 +61,7 @@ test('vector search: cosine order on the int8 cache, ties by lower id, survives 
     s.setVectors([{ cid: ids[0], vec: v(1, 0) }, { cid: ids[1], vec: v(0, 1) }, { cid: ids[2], vec: v(5, 5) }, { cid: ids[3], vec: v(2, 0) }]);
     assert.deepEqual(s.vectorSearch(v(1, 0.01)), [1, 4, 3, 2]);
     assert.deepEqual(s.vectorSearch(v(1, 0), 2), [1, 4], 'equal cosine: lower id first');
-    assert.deepEqual(s.stats(), { items: 1, chunks: 4, vectors: 4 });
+    assert.deepEqual(s.stats(), { items: 1, chunks: 4, vectors: 4, facts: 0, factVectors: 0 });
     s.close();
     const r = MemoryStore.open(t.path, { key: k, dim: DIM });
     assert.deepEqual(r.vectorSearch(v(1, 0.01)), [1, 4, 3, 2]);

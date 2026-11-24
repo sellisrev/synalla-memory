@@ -28,7 +28,7 @@ test('initialize negotiates the protocol version and lists the tools', async () 
   assert.equal(unknown.result.protocolVersion, '2025-06-18');
   assert.equal(await s.handle({ jsonrpc: '2.0', method: 'notifications/initialized' }), null);
   const list = await s.handle({ jsonrpc: '2.0', id: 3, method: 'tools/list' });
-  assert.deepEqual(list.result.tools.map(t => t.name), ['recall', 'remember']);
+  assert.deepEqual(list.result.tools.map(t => t.name), ['recall', 'facts_about', 'what_changed', 'remember']);
   assert.deepEqual(await s.handle({ jsonrpc: '2.0', id: 4, method: 'ping' }), { jsonrpc: '2.0', id: 4, result: {} });
 });
 
@@ -104,4 +104,23 @@ test('httpEmbedder: query prefix, batching, order by index, and size checks', as
   const down = httpEmbedder({ url: 'http://x', dim: 4, fetch: async () => ({ ok: false, status: 503 }) });
   await assert.rejects(down.embed(['a'], 'passage'), /503/);
   assert.throws(() => httpEmbedder({ url: 'file:///x', dim: 4 }), TypeError);
+});
+
+test('recall returns the top facts with the passages; facts_about and what_changed read the fact layer', async () => {
+  const st = store();
+  st.addItem({ id: 'm', date: '2026-01-01', source: 'mail', title: '', chunks: ['Anna moved to Wien'], text: 'Anna moved to Wien' });
+  st.addItem({ id: 'n', date: '2026-06-01', source: 'mail', title: '', chunks: ['Anna lives in Lyon now'], text: 'Anna lives in Lyon now' });
+  const f = (object, d, quote) => ({ subject: 'Anna', predicate: 'lives_in', object, valid_from: d, valid_to: null, mentioned_at: d, quote });
+  st.setFacts('m', [f('Wien', '2026-01-01', 'moved to Wien')]);
+  st.setFacts('n', [f('Lyon', '2026-06-01', 'lives in Lyon')]);
+  const s = new McpServer(st);
+  const r = (await s.handle(call('recall', { question: 'Where does Anna live?' }))).result.structuredContent;
+  assert.deepEqual(r.facts.map(x => [x.object, x.ended, x.untrusted]).sort(), [['Lyon', null, true], ['Wien', '2026-06-01', true]]);
+  assert.match(r.facts.find(x => x.object === 'Wien').line, /superseded on 2026-06-01/);
+  const about = (await s.handle(call('facts_about', { subject: 'anna' }))).result.structuredContent;
+  assert.deepEqual(about.facts.map(x => x.object), ['Wien', 'Lyon']);
+  const changed = (await s.handle(call('what_changed', { since: '2026-05-01' }))).result.structuredContent;
+  assert.equal(changed.facts.length, 2);
+  assert.equal((await s.handle(call('what_changed', { since: 'May' }))).result.isError, true);
+  assert.equal((await s.handle(call('facts_about', {}))).result.isError, true);
 });

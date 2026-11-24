@@ -88,7 +88,7 @@ test('importClaudeCode: imports changed files only, replaces a session, reports 
     assert.deepEqual((await importClaudeCode(store, seen, root)).imported, ['claude-code:abc-123']);
     assert.deepEqual(store.keywordSearch('first'), []);
     assert.equal(store.keywordSearch('second').length, 1);
-    assert.deepEqual(store.stats(), { items: 1, chunks: 1, vectors: 0 });
+    assert.deepEqual(store.stats(), { items: 1, chunks: 1, vectors: 0, facts: 0, factVectors: 0 });
     assert.deepEqual(await importClaudeCode(store, new Map(), join(root, 'missing')), { imported: [], skipped: 0, failed: [] });
     store.close();
   } finally { rmSync(root, { recursive: true, force: true }); }

@@ -4,7 +4,10 @@
 // `synalla-memory`: one command for the memory package (pilot plan W1).
 //   init                     create the store, its key and the backup key (shown once as a recovery code)
 //   import                   import Claude Code sessions (and embed them if an embedding endpoint is set)
-//   embed                    embed chunks that have no vector yet
+//   embed                    embed chunks and facts that have no vector yet
+//   extract-with <url> <model> --owner <name> [--cloud-ok]   choose the chat model that extracts facts (API key, if
+//                            any, read from stdin; a non-local endpoint needs --cloud-ok: records are sent to it)
+//   extract [--limit N]      extract facts from items not yet read (then embeds them)
 //   recall <question>        search from the terminal
 //   serve                    run the MCP server on stdio (configure your agent to start this)
 //   backup-to folder <path> | webdav <url> <user>   choose where backups go (WebDAV app password read from stdin)
@@ -29,6 +32,7 @@ import { ensureModels, startEmbedServer, EMBED_MODEL } from './models.ts';
 import { McpServer, serveStdio } from './mcp.ts';
 import { backup, restore, folderTarget, webdavTarget, listSnapshots, type Target } from './backup.ts';
 import { exportPlain } from './export.ts';
+import { httpChatModel, extractPending } from './facts.ts';
 
 export interface Config {
   /** Names this memory's keys in the keychain, so two memories on one machine never share keys. */
@@ -43,6 +47,7 @@ export interface Config {
   koofrLoginAt?: string;
   claudeCodeSeen?: Record<string, number>;
   hermesSeen?: Record<string, string>;
+  extract?: { url: string; model: string; owner: string; cloudAgreedAt?: string };
 }
 
 export interface Env {
@@ -99,12 +104,20 @@ async function embedMissing(store: MemoryStore, e: Embedder): Promise<number> {
   let n = 0;
   for (;;) {
     const m = store.missingVectors(128);
-    if (m.length === 0) return n;
+    if (m.length === 0) break;
     const v = await e.embed(m.map(x => x.text), 'passage');
     store.setVectors(m.map((x, i) => ({ cid: x.cid, vec: v[i] as Float32Array })));
     n += m.length;
   }
+  for (;;) {
+    const m = store.missingFactVectors(128);
+    if (m.length === 0) return n;
+    const v = await e.embed(m.map(x => x.text), 'passage');
+    store.setFactVectors(m.map((x, i) => ({ fid: x.fid, vec: v[i] as Float32Array })));
+    n += m.length;
+  }
 }
+const isLocal = (url: string) => ['localhost', '127.0.0.1', '[::1]'].includes(new URL(url).hostname);
 async function target(env: Env, c: Pick<Config, 'id'>, spec: string[]): Promise<Target> {
   if (spec[0] === 'folder' && spec[1]) return folderTarget(spec[1]);
   if (spec[0] === 'webdav' && spec[1] && spec[2]) {
@@ -192,8 +205,10 @@ export async function main(argv: string[], env: Env): Promise<number> {
         try {
           const s = new McpServer(store, em.e ? { embedder: em.e } : {});
           const r = await s.handle({ jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name: 'recall', arguments: { question: q, limit: 5 } } }) as
-            { result: { structuredContent: { passages: { text: string }[] } } };
-          for (const p of r.result.structuredContent.passages) env.out(`---\n${p.text}\n`);
+            { result: { structuredContent: { passages: { text: string }[]; facts: { line: string }[] } } };
+          const { passages, facts } = r.result.structuredContent;
+          if (facts.length > 0) env.out(`Facts:\n${facts.slice(0, 10).map(f => f.line).join('\n')}\n`);
+          for (const p of passages) env.out(`---\n${p.text}\n`);
           return 0;
         } finally { store.close(); em.stop(); }
       }
@@ -257,6 +272,41 @@ export async function main(argv: string[], env: Env): Promise<number> {
           return 0;
         } finally { store.close(); }
       }
+      case 'extract-with': {
+        const c = load(env);
+        const [url, model] = rest;
+        const oi = rest.indexOf('--owner');
+        const owner = oi >= 0 ? (rest[oi + 1] ?? '').trim() : '';
+        if (!url || !model || url.startsWith('--') || !owner) throw new Error('usage: extract-with <url> <model> --owner <your name> [--cloud-ok]');
+        new URL(url);
+        const local = isLocal(url);
+        if (!local && !rest.includes('--cloud-ok')) {
+          throw new Error(`${url} is not on this machine: every record is sent there to extract facts. If you agree, run again with --cloud-ok.`);
+        }
+        const key = local ? '' : (await env.readStdin()).trim();
+        if (key) env.keychain.set(kname(c, 'extract'), new Uint8Array(Buffer.from(key, 'utf8')));
+        c.extract = { url, model, owner, ...(local ? {} : { cloudAgreedAt: env.now().toISOString() }) };
+        save(env, c);
+        env.out(`Facts will be extracted by ${model} at ${url}${local ? '' : ' (records leave this machine; you agreed)'}.\n`);
+        return 0;
+      }
+      case 'extract': {
+        const c = load(env);
+        if (!c.extract) throw new Error('choose a model first: synalla-memory extract-with <url> <model> --owner <your name>');
+        const li = rest.indexOf('--limit');
+        const limit = li >= 0 ? Number(rest[li + 1]) : 50;
+        if (!Number.isSafeInteger(limit) || limit < 1) throw new Error('--limit needs a positive whole number');
+        const key = env.keychain.get(kname(c, 'extract'));
+        const model = httpChatModel({ url: c.extract.url, model: c.extract.model, ...(key ? { apiKey: Buffer.from(key).toString('utf8') } : {}) });
+        const store = openStore(env, c);
+        try {
+          const r = await extractPending(store, model, c.extract.owner, { limit, now: env.now });
+          env.out(`Facts: ${r.facts} from ${r.items} item(s); ${r.failed} item(s) failed. ${store.pendingExtraction(1).length ? 'More items wait: run extract again.' : 'All items read.'}\n`);
+          const em = await embedder(env, c);
+          try { if (em.e) env.out(`Embedded ${await embedMissing(store, em.e)} new vector(s).\n`); } finally { em.stop(); }
+          return 0;
+        } finally { store.close(); }
+      }
       case 'koofr-login-done': {
         const c = load(env);
         c.koofrLoginAt = env.now().toISOString();
@@ -281,7 +331,7 @@ export async function main(argv: string[], env: Env): Promise<number> {
         } finally { store.close(); }
       }
       default:
-        env.out('usage: synalla-memory init | import | embed | recall <q> | serve | backup-to ... | backup | restore ... | export --plain <dir> | koofr-login-done | status\n');
+        env.out('usage: synalla-memory init | import | embed | extract-with ... | extract | recall <q> | serve | backup-to ... | backup | restore ... | export --plain <dir> | koofr-login-done | status\n');
         return cmd ? 2 : 0;
     }
   } catch (e) {

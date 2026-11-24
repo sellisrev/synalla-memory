@@ -117,3 +117,32 @@ test('the built-in embedder starts for import and recall and is always stopped',
     srv.close();
   } finally { rmSync(root, { recursive: true, force: true }); }
 });
+
+test('extract-with refuses a remote endpoint without --cloud-ok; extract reads items and stores checked facts', async () => {
+  const root = mkdtempSync(join(tmpdir(), 'synalla-cli-'));
+  try {
+    const { createServer } = await import('node:http');
+    const srv = createServer((req, res) => { let b = ''; req.on('data', d => b += d); req.on('end', () => {
+      const prompt = JSON.parse(b).messages[0].content;
+      const facts = prompt.includes('Lyon') ? [{ subject: 'Mamie', predicate: 'lives_in', object: 'Lyon', valid_from: '2026-11-20', valid_to: null, mentioned_at: '2026-11-20', quote: 'Mamie lives in Lyon' }] : [];
+      res.end(JSON.stringify({ choices: [{ message: { content: JSON.stringify({ facts }) } }] }));
+    }); });
+    await new Promise(r => srv.listen(0, '127.0.0.1', r));
+    const url = `http://127.0.0.1:${srv.address().port}`;
+    const projects = join(root, 'claude', 'C--p'); mkdirSync(projects, { recursive: true });
+    writeFileSync(join(projects, 's.jsonl'), JSON.stringify({ type: 'user', sessionId: 's', timestamp: '2026-11-20T09:00:00Z', message: { content: 'Mamie lives in Lyon' } }));
+    const e = env(join(root, 'home'), { claudeProjects: join(root, 'claude'), hermesDb: join(root, 'none.db') });
+    assert.equal(await main(['init', '--no-embed'], e), 0);
+    assert.equal(await main(['extract'], e), 1);
+    assert.match(e.errText(), /choose a model first/);
+    assert.equal(await main(['extract-with', 'https://api.example.com', 'm', '--owner', 'Maria'], e), 1);
+    assert.match(e.errText(), /not on this machine.*--cloud-ok/);
+    assert.equal(await main(['extract-with', url, 'daily', '--owner', 'Maria'], e), 0);
+    assert.equal(await main(['import'], e), 0);
+    assert.equal(await main(['extract'], e), 0, e.errText());
+    assert.match(e.outText(), /Facts: 1 from 1 item\(s\); 0 item\(s\) failed\. All items read\./);
+    assert.equal(await main(['recall', 'Where does Mamie live?'], e), 0);
+    assert.match(e.outText(), /Facts:\n- Mamie \| lives_in \| Lyon \(valid from 2026-11-20, current;/);
+    srv.close();
+  } finally { rmSync(root, { recursive: true, force: true }); }
+});

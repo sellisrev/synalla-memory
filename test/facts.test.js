@@ -128,3 +128,30 @@ test('itemWindows: the measured setting reads one window; more windows only when
   assert.ok(w[1].endsWith('b'.repeat(10)) && w[1].startsWith('Date: 2026-01-01'));
   assert.equal(itemWindows({ ...it, text: '' }, 5).length, 1);
 });
+
+test('extractPending reads whole items by default (up to 10 windows), dedupes, keeps facts of windows that worked', async () => {
+  const { MAX_WINDOWS } = await import('../src/facts.ts');
+  assert.equal(MAX_WINDOWS, 10);
+  const s = open();
+  const long = 'Anna lives in Wien. ' + 'x'.repeat(ITEM_CHARS) + ' Anna lives in Wien. Bob owns a bike.';
+  s.addItem({ id: 'a', date: '2026-01-01', source: 'mail', chunks: ['x'], text: long });
+  s.addItem({ id: 'b', date: '2026-01-02', source: 'mail', chunks: ['y'], text: 'FAILHERE ' + 'y'.repeat(ITEM_CHARS) });
+  const calls = [];
+  const model = { async complete(p) {
+    calls.push(p);
+    if (p.includes('yyyy')) { if (p.includes('FAILHERE')) throw new Error('boom'); return JSON.stringify({ facts: [] }); }
+    const fs = [fact({ quote: 'Anna lives in Wien' })];
+    if (p.includes('Bob owns')) fs.push(fact({ subject: 'Bob', predicate: 'owns', object: 'bike', quote: 'Bob owns a bike' }));
+    return JSON.stringify({ facts: fs });
+  } };
+  const r = await extractPending(s, model, 'Maria');
+  assert.deepEqual(r, { items: 2, facts: 2, failed: 0 });
+  assert.equal(calls.length, 4, 'two windows per item');
+  assert.deepEqual(s.factsAbout('anna').map(f => f.object), ['Wien'], 'the same fact from two windows is kept once');
+  assert.equal(s.factsAbout('bob').length, 1, 'a fact found only in the second window');
+  const s2 = open();
+  s2.addItem({ id: 'c', date: '2026-01-01', source: 'mail', chunks: ['x'], text: long });
+  await extractPending(s2, model, 'Maria', { maxWindows: 1 });
+  assert.equal(s2.factsAbout('bob').length, 0, 'maxWindows 1 is the old first-window-only setting');
+  s.close(); s2.close();
+});

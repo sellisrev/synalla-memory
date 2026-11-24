@@ -33,3 +33,4 @@ export type { S3Options } from './backup.ts';
 export { guardFetch, sameOrigin, domains, isLoopback, MODEL_HOSTS, egressLog, resetEgressLog, EgressRefused } from './egress.ts';
 export type { EgressKind, Allow } from './egress.ts';
 export { itemWindows } from './facts.ts';
+export { MAX_WINDOWS } from './facts.ts';

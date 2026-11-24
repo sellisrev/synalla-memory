@@ -144,28 +144,49 @@ export function httpChatModel({ url, model, apiKey, fetch: base }: HttpChatOptio
   };
 }
 
-/** Extract facts for up to `limit` pending items. A failed item is recorded with its error and not retried. */
+/** Windows read per item by default: whole items, at most 80,000 characters (CPU spike round 3, S8 = S6). */
+export const MAX_WINDOWS = 10;
+
+/**
+ * Extract facts for up to `limit` pending items, reading each item in up to `maxWindows` windows of 8,000 characters
+ * (each fact's quote must be in its own window). The same fact found in two windows is kept once. An item whose every
+ * window failed is recorded with the error and not retried; if some windows failed, the facts of the others are kept.
+ */
 export async function extractPending(
   store: { pendingExtraction(limit: number, opts?: { agentSessions?: boolean }): StoredItem[]; setFacts(item: string, facts: readonly FactInput[], at?: Date, error?: string | null): number[] },
   model: ChatModel, owner: string,
-  opts: { limit?: number; now?: () => Date; agentSessions?: boolean; onItem?: (id: string, kept: number, dropped: number, error?: string) => void } = {},
+  opts: { limit?: number; now?: () => Date; agentSessions?: boolean; maxWindows?: number; onItem?: (id: string, kept: number, dropped: number, error?: string) => void } = {},
 ): Promise<{ items: number; facts: number; failed: number }> {
   const now = opts.now ?? (() => new Date());
   let items = 0, facts = 0, failed = 0;
   // Agent sessions are not read for facts unless asked: the measured setting left their facts out as noise.
   for (const it of store.pendingExtraction(opts.limit ?? 50, { agentSessions: opts.agentSessions ?? false })) {
-    const text = itemText(it);
-    try {
-      const { kept, dropped } = checkFacts(await model.complete(extractionPrompt(owner) + text), text);
-      store.setFacts(it.id, kept, now());
-      items++; facts += kept.length;
-      opts.onItem?.(it.id, kept.length, dropped);
-    } catch (e) {
-      const msg = e instanceof Error ? e.message : String(e);
-      store.setFacts(it.id, [], now(), msg.slice(0, 300));
-      failed++;
-      opts.onItem?.(it.id, 0, 0, msg);
+    const kept: FactInput[] = [];
+    const seen = new Set<string>();
+    let dropped = 0, errors = 0, lastError = '';
+    const windows = itemWindows(it, opts.maxWindows ?? MAX_WINDOWS);
+    for (const text of windows) {
+      try {
+        const r = checkFacts(await model.complete(extractionPrompt(owner) + text), text);
+        dropped += r.dropped;
+        for (const f of r.kept) {
+          const k = [norm(f.subject), norm(f.predicate), norm(f.object), f.valid_from ?? ''].join('\u0000');
+          if (!seen.has(k)) { seen.add(k); kept.push(f); }
+        }
+      } catch (e) {
+        errors++;
+        lastError = e instanceof Error ? e.message : String(e);
+      }
     }
+    if (errors === windows.length) {
+      store.setFacts(it.id, [], now(), lastError.slice(0, 300));
+      failed++;
+      opts.onItem?.(it.id, 0, 0, lastError);
+      continue;
+    }
+    store.setFacts(it.id, kept, now(), errors ? `${errors} of ${windows.length} windows failed: ${lastError}`.slice(0, 300) : null);
+    items++; facts += kept.length;
+    opts.onItem?.(it.id, kept.length, dropped);
   }
   return { items, facts, failed };
 }

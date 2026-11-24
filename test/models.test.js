@@ -11,7 +11,7 @@ import { download, serverAssetKey, startEmbedServer, SERVER_ASSETS, EMBED_MODEL 
 import { httpEmbedder } from '../src/embed.ts';
 
 const body = Buffer.from('pretend model bytes '.repeat(1000));
-const asset = { url: 'https://example.org/m.gguf', size: body.length, sha256: createHash('sha256').update(body).digest('hex') };
+const asset = { url: 'https://huggingface.co/org/repo/resolve/main/m.gguf', size: body.length, sha256: createHash('sha256').update(body).digest('hex') };
 const serve = (bytes, status = 200) => async () => ({ ok: status === 200, status, body: (async function* () { for (let i = 0; i < bytes.length; i += 4096) yield bytes.subarray(i, i + 4096); })() });
 
 test('download: checks size and SHA-256 while streaming; a mismatch leaves nothing behind', async () => {

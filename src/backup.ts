@@ -18,6 +18,7 @@ import { createHash, createHmac, createCipheriv, createDecipheriv, hkdfSync, ran
 import { closeSync, openSync, readSync, rmSync, statSync, writeFileSync, mkdtempSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
+import { guardFetch, sameOrigin } from './egress.ts';
 
 export const PIECE = 1024 * 1024;
 const MAGIC = Buffer.from('SMB1');
@@ -255,8 +256,9 @@ export interface WebDavOptions {
 }
 
 /** A WebDAV target: Koofr (EU), Nextcloud, Hetzner Storage Box, a NAS. HTTPS only, except for localhost. */
-export function webdavTarget({ url, user, password, fetch: f = fetch }: WebDavOptions): Target {
+export function webdavTarget({ url, user, password, fetch: injected }: WebDavOptions): Target {
   const base = new URL(url.endsWith('/') ? url : url + '/');
+  const f = guardFetch('backup', sameOrigin(base), injected ? { base: injected } : {});
   const local = ['localhost', '127.0.0.1', '[::1]'].includes(base.hostname);
   if (base.protocol !== 'https:' && !(base.protocol === 'http:' && local)) throw new TypeError('WebDAV needs an https:// URL');
   const auth = 'Basic ' + Buffer.from(`${user}:${password}`).toString('base64');
@@ -355,13 +357,14 @@ export function signS3(o: { method: string; host: string; path: string; query?: 
  * Lock), a thief holding the running device cannot destroy older snapshots; pruning then fails and says so.
  */
 export function s3Target(o: S3Options): Target {
-  const f = o.fetch ?? fetch, now = o.now ?? (() => new Date());
+  const now = o.now ?? (() => new Date());
   const base = new URL(o.endpoint);
   const local = ['localhost', '127.0.0.1', '[::1]'].includes(base.hostname);
   if (base.protocol !== 'https:' && !(base.protocol === 'http:' && local)) throw new TypeError('S3 needs an https:// endpoint');
   if (!/^[a-z0-9][a-z0-9.-]{1,61}[a-z0-9]$/.test(o.bucket)) throw new TypeError('bad bucket name');
   const pathStyle = o.pathStyle ?? true;
   const host = pathStyle ? base.host : `${o.bucket}.${base.host}`;
+  const f = guardFetch('backup', u => u.protocol === base.protocol && u.host === host, o.fetch ? { base: o.fetch } : {});
   const keyPath = (name: string) => {
     if (name.startsWith('/') || name.split('/').some(p => p === '..' || p === '' || p === '.')) throw new TypeError(`bad name ${name}`);
     return (pathStyle ? `/${o.bucket}/` : '/') + name.split('/').map(s3enc).join('/');

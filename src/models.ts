@@ -15,6 +15,7 @@ import { spawn, spawnSync, type ChildProcess } from 'node:child_process';
 import { createWriteStream, existsSync, mkdirSync, readdirSync, renameSync, rmSync, statSync } from 'node:fs';
 import { createServer } from 'node:net';
 import { join } from 'node:path';
+import { guardFetch, isLoopback, MODEL_HOSTS } from './egress.ts';
 
 export const LLAMA_CPP_BUILD = 'b12110';
 
@@ -48,8 +49,8 @@ export type Progress = (done: number, total: number) => void;
 
 /** Download `asset` to `dest`, checking size and SHA-256 while streaming; a mismatch leaves nothing behind. */
 export async function download(asset: Asset, dest: string, opts: { fetch?: typeof fetch; progress?: Progress } = {}): Promise<void> {
-  const f = opts.fetch ?? fetch;
-  const r = await f(asset.url, { redirect: 'follow' });
+  const f = guardFetch('model-download', MODEL_HOSTS, { followRedirects: true, ...(opts.fetch ? { base: opts.fetch } : {}) });
+  const r = await f(asset.url);
   if (!r.ok || !r.body) throw new Error(`download failed: HTTP ${r.status} for ${asset.url}`);
   const tmp = `${dest}.part`;
   const hash = createHash('sha256');
@@ -140,7 +141,7 @@ export async function startEmbedServer(server: string, model: string, opts: { gp
   const stop = () => { if (child.exitCode === null && child.signalCode === null) child.kill(); };
   process.once('exit', stop);
   const url = `http://127.0.0.1:${port}`;
-  const f = opts.fetch ?? fetch;
+  const f = guardFetch('embed', isLoopback, opts.fetch ? { base: opts.fetch } : {});
   const until = Date.now() + (opts.timeoutMs ?? 120000);
   while (Date.now() < until) {
     if (child.exitCode !== null) throw new Error(`llama-server exited with code ${child.exitCode}`);

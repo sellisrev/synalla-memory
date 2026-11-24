@@ -2,9 +2,11 @@
 // SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Synalla-Commercial
 
 // Embeddings. The store and the MCP server only see the `Embedder` interface. This file gives the route through a
-// local OpenAI-compatible endpoint (llama-server, llama-swap, Ollama, LM Studio); the in-process route
-// (node-llama-cpp) implements the same interface. Questions get the instruction prefix the benchmark used
-// (Qwen3-Embedding); stored passages get none.
+// local OpenAI-compatible endpoint: the built-in llama-server sidecar (models.ts) or one the owner runs (llama-swap,
+// Ollama, LM Studio). Questions get the instruction prefix the benchmark used (Qwen3-Embedding); stored passages get
+// none. Calls reach only the configured endpoint (egress.ts).
+
+import { guardFetch, sameOrigin } from './egress.ts';
 
 export const QUERY_INSTRUCT = "Instruct: Given a question about a person's life, retrieve passages from their emails, notes and documents that answer it\nQuery: ";
 
@@ -24,8 +26,9 @@ export interface HttpEmbedderOptions {
   fetch?: typeof fetch;
 }
 
-export function httpEmbedder({ url, model = 'embed', dim, batch = 32, fetch: f = fetch }: HttpEmbedderOptions): Embedder {
+export function httpEmbedder({ url, model = 'embed', dim, batch = 32, fetch: base }: HttpEmbedderOptions): Embedder {
   const u = new URL(url);
+  const f = guardFetch('embed', sameOrigin(u), base ? { base } : {});
   if (u.protocol !== 'http:' && u.protocol !== 'https:') throw new TypeError('url must be http or https');
   if (!Number.isSafeInteger(dim) || dim < 1) throw new TypeError('dim must be a positive integer');
   const endpoint = new URL('v1/embeddings', u.href.endsWith('/') ? u.href : u.href + '/');

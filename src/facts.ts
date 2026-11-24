@@ -12,6 +12,7 @@
 // names the benchmark prompt used.
 
 import type { Fact, FactInput, StoredItem } from './store.ts';
+import { guardFetch, sameOrigin } from './egress.ts';
 
 export const ITEM_CHARS = 8000;
 export const MAX_FACTS = 15;
@@ -107,8 +108,9 @@ export interface HttpChatOptions {
 }
 
 /** Extraction through an OpenAI-compatible chat endpoint, with the JSON schema as structured output (as measured). */
-export function httpChatModel({ url, model, apiKey, fetch: f = fetch }: HttpChatOptions): ChatModel {
+export function httpChatModel({ url, model, apiKey, fetch: base }: HttpChatOptions): ChatModel {
   const u = new URL(url.endsWith('/') ? url : url + '/');
+  const f = guardFetch('extract', sameOrigin(u), base ? { base } : {});
   const endpoint = new URL('v1/chat/completions', u);
   return {
     async complete(prompt) {

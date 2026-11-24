@@ -30,3 +30,5 @@ export type { ChatModel, HttpChatOptions } from './facts.ts';
 export type { Fact, FactInput } from './store.ts';
 export { s3Target, signS3 } from './backup.ts';
 export type { S3Options } from './backup.ts';
+export { guardFetch, sameOrigin, domains, isLoopback, MODEL_HOSTS, egressLog, resetEgressLog, EgressRefused } from './egress.ts';
+export type { EgressKind, Allow } from './egress.ts';

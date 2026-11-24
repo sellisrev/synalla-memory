@@ -54,3 +54,12 @@ test('sidecar: starts llama-server on a free port (CPU) and embeds; stop ends it
   } finally { s.stop(); }
   await new Promise(r => s.process.once('exit', r));
 });
+
+test('sidecar failures say what to do: a missing system library names the package', async () => {
+  const { sidecarFailure } = await import('../src/models.ts');
+  const m = sidecarFailure(127, './llama-server: error while loading shared libraries: libgomp.so.1: cannot open shared object file: No such file or directory\n');
+  assert.match(m, /needs the system library libgomp\.so\.1 \(Debian\/Ubuntu: sudo apt install libgomp1; Fedora: sudo dnf install libgomp\)/);
+  assert.match(m, /--embed-url .*--no-embed/);
+  assert.match(sidecarFailure(1, 'line1\nline2\nload failed: bad model\n'), /exited with code 1: line1 \| line2 \| load failed: bad model$/);
+  assert.equal(sidecarFailure(2, ''), 'llama-server exited with code 2');
+});

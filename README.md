@@ -19,7 +19,8 @@ Status: early work, not released. Node 22.18 or later.
   Whole items are read (up to 80,000 characters each). Facts are read from mail, notes and what you ask it to `remember`; agent sessions only with `--agent-sessions`,
   because in our measurements facts from work sessions added more noise than help. Sessions are always searchable.
 - **Runs the embedding model locally** as a small llama.cpp server on a free local port. A pinned release and the
-  model file are downloaded on first use and checked against published checksums.
+  model file are downloaded on first use and checked against published checksums. On Linux it needs the system library
+  libgomp (`sudo apt install libgomp1` on Debian and Ubuntu; most desktops already have it).
 - **Keeps the store encrypted** (SQLCipher) with its key in your system's keychain (macOS Keychain, the Linux Secret
   Service, Windows DPAPI). On a machine with no keychain (a Linux server, WSL, a container), set
   `SYNALLA_MEMORY_PASSPHRASE` and the keys are kept in files sealed with that passphrase.

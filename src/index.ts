@@ -35,3 +35,4 @@ export type { EgressKind, Allow } from './egress.ts';
 export { itemWindows } from './facts.ts';
 export { MAX_WINDOWS } from './facts.ts';
 export { passphraseKeychain, linuxKeychain } from './keychain.ts';
+export { sidecarFailure } from './models.ts';

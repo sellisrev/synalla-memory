@@ -137,17 +137,35 @@ export async function startEmbedServer(server: string, model: string, opts: { gp
   const port = await freePort();
   const args = ['-m', model, '--embedding', '--pooling', 'last', '-ub', '8192', '-c', '8192', '--host', '127.0.0.1', '--port', String(port),
     '-ngl', String(opts.gpuLayers ?? 0)];
-  const child = spawn(server, args, { stdio: 'ignore', windowsHide: true });
+  const child = spawn(server, args, { stdio: ['ignore', 'ignore', 'pipe'], windowsHide: true });
+  let errTail = '';
+  child.stderr?.on('data', (d: Buffer) => { errTail = (errTail + d.toString('utf8')).slice(-4000); });
   const stop = () => { if (child.exitCode === null && child.signalCode === null) child.kill(); };
   process.once('exit', stop);
   const url = `http://127.0.0.1:${port}`;
   const f = guardFetch('embed', isLoopback, opts.fetch ? { base: opts.fetch } : {});
   const until = Date.now() + (opts.timeoutMs ?? 120000);
   while (Date.now() < until) {
-    if (child.exitCode !== null) throw new Error(`llama-server exited with code ${child.exitCode}`);
+    if (child.exitCode !== null) {
+      await new Promise(r => setTimeout(r, 50)); // let the last stderr lines arrive
+      throw new Error(sidecarFailure(child.exitCode, errTail));
+    }
     try { if ((await f(`${url}/health`)).ok) return { url, stop, process: child }; } catch { /* not up yet */ }
     await new Promise(r => setTimeout(r, 300));
   }
   stop();
   throw new Error('llama-server did not become healthy in time');
+}
+
+/** A failure message the owner can act on, from llama-server's exit code and the end of its error output. */
+export function sidecarFailure(code: number | null, stderr: string): string {
+  const lib = /error while loading shared libraries: ([^\s:]+)/.exec(stderr)?.[1];
+  if (lib) {
+    const pkg = /^libgomp\.so/.test(lib) ? 'libgomp1' : /^libvulkan\.so/.test(lib) ? 'libvulkan1' : null;
+    return `the built-in embedding server needs the system library ${lib}`
+      + (pkg ? ` (Debian/Ubuntu: sudo apt install ${pkg}; Fedora: sudo dnf install ${pkg === 'libgomp1' ? 'libgomp' : 'vulkan-loader'})` : '')
+      + '. Or run init with --embed-url <your embedding endpoint>, or --no-embed for keyword search only.';
+  }
+  const last = stderr.trim().split(/\r?\n/).slice(-3).join(' | ');
+  return `llama-server exited with code ${code}${last ? `: ${last}` : ''}`;
 }

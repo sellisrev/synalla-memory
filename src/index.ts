@@ -17,3 +17,5 @@ export { webdavTarget } from './backup.ts';
 export type { WebDavOptions } from './backup.ts';
 export { exportPlain, renderPlain, README as READABLE_README } from './export.ts';
 export type { StoredItem } from './store.ts';
+export { systemKeychain, macKeychain, linuxSecretService, windowsDpapi } from './keychain.ts';
+export type { Keychain, Runner } from './keychain.ts';

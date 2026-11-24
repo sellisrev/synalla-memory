@@ -21,7 +21,8 @@ Status: early work, not released. Node 22.18 or later.
 - **Runs the embedding model locally** as a small llama.cpp server on a free local port. A pinned release and the
   model file are downloaded on first use and checked against published checksums.
 - **Keeps the store encrypted** (SQLCipher) with its key in your system's keychain (macOS Keychain, the Linux Secret
-  Service, Windows DPAPI).
+  Service, Windows DPAPI). On a machine with no keychain (a Linux server, WSL, a container), set
+  `SYNALLA_MEMORY_PASSPHRASE` and the keys are kept in files sealed with that passphrase.
 - **Backs up** to a sync folder (iCloud Drive, Google Drive, OneDrive, Dropbox and others) or over WebDAV (Koofr,
   Nextcloud, a NAS). Backups are encrypted and incremental. Restoring on a new machine needs the recovery code shown
   once at setup.

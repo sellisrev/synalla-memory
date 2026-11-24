@@ -367,9 +367,10 @@ export async function main(argv: string[], env: Env): Promise<number> {
 }
 
 export function defaultEnv(): Env {
+  const home = process.env['SYNALLA_MEMORY_HOME'] ?? join(homedir(), '.synalla', 'memory');
   return {
-    home: process.env['SYNALLA_MEMORY_HOME'] ?? join(homedir(), '.synalla', 'memory'),
-    keychain: systemKeychain(),
+    home,
+    keychain: systemKeychain(process.platform, undefined, { dir: join(home, 'keys') }),
     out: s => process.stdout.write(s),
     err: s => process.stderr.write(s),
     readStdin: async () => { let s = ''; for await (const d of process.stdin) s += d; return s; },

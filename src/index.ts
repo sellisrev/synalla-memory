@@ -3,3 +3,4 @@
 
 export const VERSION = "0.0.1";
 export { KINDS, marker, scrub } from './scrub.ts';
+export { fuse, ftsQuery, RRF_K, DEFAULT_TOP, CANDIDATES } from './fusion.ts';

@@ -37,9 +37,14 @@ const RULES: [string, RegExp, number[]][] = [
   ['stripe-key', new RegExp(B + '(sk|rk)_(live|test)_[A-Za-z0-9]{16,}' + E, 'g'), []],
   ['slack-token', new RegExp(B + 'xox[abposr]-[A-Za-z0-9-]{10,}' + E, 'g'), []],
   ['google-api-key', new RegExp(B + 'AIza[A-Za-z0-9_-]{35}' + E, 'g'), []],
-  ['prefixed-token', new RegExp(B + '(hf_|glpat-|whsec_|npm_|gsk_|pypi-)[A-Za-z0-9_-]{20,}' + E, 'g'), []],
+  ['prefixed-token', new RegExp(B + '(hf_|glpat-|whsec_|npm_|gsk_|pypi-|dop_v1_|shp(?:at|ss|ca|pa)_)[A-Za-z0-9_-]{20,}' + E, 'g'), []],
+  ['prefixed-token', new RegExp(B + 'SG\\.[A-Za-z0-9_-]{16,}\\.[A-Za-z0-9_-]{16,}' + E, 'g'), []],
   ['nostr-secret', new RegExp(B + 'nsec1[02-9ac-hj-np-z]{58}' + E, 'g'), []],
   ['auth-header', new RegExp(AUTH, 'gi'), [1, 2]],
+  ['assignment', new RegExp('(?<![A-Za-z0-9-])--?(?:' + KEYS + '|key|pass|auth)(?![A-Za-z0-9])(?:=|[ \\t]+)' + BARE, 'gi'), [1]],
+  // "the key you asked for: VALUE", "token: VALUE" in prose: a value that mixes letters and digits, on the same line.
+  ['assignment', new RegExp('(?<![A-Za-z0-9])(?:key|token|password|passphrase|secret|credential)s?(?![A-Za-z0-9])[^\\n:]{0,40}:[ \\t]+'
+    + '(?=[^\\s]*[0-9])(?=[^\\s]*[A-Za-z])([^\\s\'",;()\\[\\]{}]{12,4096})', 'gi'), [1]],
   ['assignment', new RegExp('(?<![A-Za-z0-9])(?:' + KEYS + ')(?![A-Za-z0-9])["\']?\\s*[:=]\\s*'
     + '(?:"([^"\\n]{6,4096})"|\'([^\'\\n]{6,4096})\'|' + BARE + ')', 'gi'), [1, 2, 3]],
 ];
@@ -67,11 +72,11 @@ export function scrub(text: unknown): { text: string; found: { kind: string; sta
       if (free(start, start + value.length)) spans.push({ kind, start, end: start + value.length });
     }
   }
-  const tok = /[A-Za-z0-9+_-]+=*/g;
+  const tok = /[A-Za-z0-9+\/_-]+=*/g;
   for (let m = tok.exec(text); m !== null; m = tok.exec(text)) {
     const t = m[0];
     if (t.length >= 32 && /[0-9]/.test(t) && /[a-z]/.test(t) && /[A-Z]/.test(t) && /[A-Za-z0-9]{20}/.test(t)
-        && !/^(sha(1|256|384|512)-|AAAA)/.test(t) && entropy(t) >= 4.2 && free(m.index, m.index + t.length))
+        && !/^(sha(1|256|384|512)-|AAAA)/.test(t) && !/\/[a-z]+\/|^\/|\/$/.test(t) && entropy(t) >= 4.2 && free(m.index, m.index + t.length))
       spans.push({ kind: 'high-entropy', start: m.index, end: m.index + t.length });
   }
   spans.sort((a, b) => a.start - b.start);

@@ -81,9 +81,12 @@ The rules (the regex source is the concatenation shown; `+` joins pieces):
 | 8 | `stripe-key` | `B + '(sk\|rk)_(live\|test)_[A-Za-z0-9]{16,}' + E` | whole match |
 | 9 | `slack-token` | `B + 'xox[abposr]-[A-Za-z0-9-]{10,}' + E` | whole match |
 | 10 | `google-api-key` | `B + 'AIza[A-Za-z0-9_-]{35}' + E` | whole match |
-| 11 | `prefixed-token` | `B + '(hf_\|glpat-\|whsec_\|npm_\|gsk_\|pypi-)[A-Za-z0-9_-]{20,}' + E` | whole match |
+| 11 | `prefixed-token` | `B + '(hf_\|glpat-\|whsec_\|npm_\|gsk_\|pypi-\|dop_v1_\|shp(?:at\|ss\|ca\|pa)_)[A-Za-z0-9_-]{20,}' + E` | whole match |
+| 11b | `prefixed-token` | `B + 'SG\\.[A-Za-z0-9_-]{16,}\\.[A-Za-z0-9_-]{16,}' + E` (SendGrid) | whole match |
 | 12 | `nostr-secret` | `B + 'nsec1[02-9ac-hj-np-z]{58}' + E` | whole match |
 | 13 | `auth-header` | `'\\bauthorization\\s*[:=]\\s*["\']?(?:bearer\|basic\|token)\\s+([A-Za-z0-9._~+\\/=-]{8,})'` + `'\|\\bbearer\\s+([A-Za-z0-9._~+\\/=-]{16,})'` | group 1, else 2 |
+| 13b | `assignment` | `'(?<![A-Za-z0-9-])--?(?:' + KEYS + '\|key\|pass\|auth)(?![A-Za-z0-9])(?:=\|[ \\t]+)' + BARE` (a command-line flag) | group 1 |
+| 13c | `assignment` | `'(?<![A-Za-z0-9])(?:key\|token\|password\|passphrase\|secret\|credential)s?(?![A-Za-z0-9])[^\\n:]{0,40}:[ \\t]+'` + `'(?=[^\\s]*[0-9])(?=[^\\s]*[A-Za-z])([^\\s\'",;()\\[\\]{}]{12,4096})'` (prose: "the key you asked for: VALUE") | group 1 |
 | 14 | `assignment` | `'(?<![A-Za-z0-9])(?:' + KEYS + ')(?![A-Za-z0-9])["\']?\\s*[:=]\\s*'` + `'(?:"([^"\\n]{6,4096})"\|\'([^\'\\n]{6,4096})\'\|' + BARE + ')'` | group 1, 2 or 3 |
 
 (In the table, `\|` stands for a plain `|`; the backslash is only there because of the table format.)
@@ -94,13 +97,15 @@ starts with `$ % { < ( [ / ~ .`, is a type word (`string`, `true`, ...), or is o
 such as `hashedPassword` or `config.secret`); it needs at least one letter and one character that is not a letter or a
 dot, and it stops at whitespace, quotes, `,` `;` and brackets.
 
-Then the **high-entropy** step (kind `'high-entropy'`): run `/[A-Za-z0-9+_-]+=*/g` over the **input**. A match (a
+Then the **high-entropy** step (kind `'high-entropy'`): run `/[A-Za-z0-9+\/_-]+=*/g` over the **input** (`/` is a token
+character, so base64 secrets with `/` stay whole). A match (a
 "token") becomes a span if all hold:
 - its length is at least 32;
 - it contains a digit, a lowercase letter `a-z` and an uppercase letter `A-Z`;
 - it contains a run of at least 20 characters from `[A-Za-z0-9]` (so model names like
   `Qwen3-Coder-30B-A3B-Instruct-Q4_K_M` don't qualify: their pieces are short);
 - it does not start with `sha1-`, `sha256-`, `sha384-`, `sha512-` (integrity hashes) or `AAAA` (SSH public keys);
+- it does not look like a path: no `/lowercase/` segment, and it neither starts nor ends with `/`;
 - its Shannon entropy is at least 4.2 bits per character: `H = -Σ p·log2(p)` over the distinct characters of the
   token, where `p` is that character's count divided by the token's length (`Math.log2`);
 - it does not overlap a span already kept.
@@ -128,3 +133,10 @@ Finally sort the kept spans by `start` and build the output text.
 - `scrub('export ANTHROPIC_API_KEY=sk-ant-api03-AbCdEf0123456789_xyz').text` is
   `'export ANTHROPIC_API_KEY=[secret:anthropic-key]'` (rule 6 runs before rule 14).
 - `scrub('')` returns `{ text: '', found: [] }`.
+
+## Changes
+
+- 24 Nov 2026, after the held-out test (`benchmark/scrub/heldout.mjs`) caught 93.5% of 400 planted secrets: rules
+  11b, 13b and 13c, DigitalOcean and Shopify prefixes, and `/` inside high-entropy tokens (with the path exclusion).
+  The two golden scenarios this changed (23 and 26) had recorded the tail of an integrity hash after its `/` as a
+  secret, which the integrity-hash rule meant to exclude; they were re-recorded.

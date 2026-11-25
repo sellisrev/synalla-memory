@@ -21,7 +21,9 @@ Every person has work, family and people, home, health, money, hobbies, travel, 
 The structure of each life is fixed by code from a seed, before any text is written: a list of storylines, each with a
 pattern, a theme and dates. The local model fills the storylines with content that fits the person (what the thing
 is, its values), and code checks it: values specific and distinct, no storyline about the same thing as another, none
-giving the person something they still need, and a sense check of each "her dentist is Dr. Okafor" sentence. The
+giving the person something they still need, no value that is the person's name or a word from who they are (it
+would come up in every conversation), and a sense check of each "her dentist is Dr. Okafor" sentence. A storyline the
+model never fills correctly (at most 3 per person) is left out, and the list of what was left out is published. The
 needs are written by hand (`needs.py`), so their topics, and so the matching truth, are right. Code then computes the
 truth on every date. Patterns, per person:
 

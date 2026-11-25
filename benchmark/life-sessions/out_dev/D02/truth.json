@@ -1,0 +1,548 @@
+[
+ {
+  "id": "S01",
+  "pattern": "plain",
+  "thing": "monthly public transport pass",
+  "theme": "admin",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-03",
+    "950 euros"
+   ]
+  ],
+  "now": "950 euros"
+ },
+ {
+  "id": "S02",
+  "pattern": "plain",
+  "thing": "grandson's kindergarten teacher",
+  "theme": "family",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-31",
+    "Frau Weber"
+   ]
+  ],
+  "now": "Frau Weber"
+ },
+ {
+  "id": "S03",
+  "pattern": "plain",
+  "thing": "home address",
+  "theme": "home",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-17",
+    "Hafenstraße 42"
+   ]
+  ],
+  "now": "Hafenstraße 42"
+ },
+ {
+  "id": "S04",
+  "pattern": "plain",
+  "thing": "mortgage interest rate",
+  "theme": "home",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-17",
+    "3.5 percent"
+   ]
+  ],
+  "now": "3.5 percent"
+ },
+ {
+  "id": "S05",
+  "pattern": "plain",
+  "thing": "primary care doctor",
+  "theme": "health",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-11",
+    "Dr. Althoff"
+   ]
+  ],
+  "now": "Dr. Althoff"
+ },
+ {
+  "id": "S06",
+  "pattern": "plain",
+  "thing": "weekly grocery supplier",
+  "theme": "shopping",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-05",
+    "Edeka City"
+   ]
+  ],
+  "now": "Edeka City"
+ },
+ {
+  "id": "S07",
+  "pattern": "plain",
+  "thing": "bus depot location",
+  "theme": "work",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-17",
+    "Hamburg-Nord"
+   ]
+  ],
+  "now": "Hamburg-Nord"
+ },
+ {
+  "id": "S08",
+  "pattern": "plain",
+  "thing": "primary bank",
+  "theme": "admin",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-29",
+    "Sparkasse Hamburg"
+   ]
+  ],
+  "now": "Sparkasse Hamburg"
+ },
+ {
+  "id": "S09",
+  "pattern": "plain",
+  "thing": "monthly net salary",
+  "theme": "money",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-10",
+    "3200 euros"
+   ]
+  ],
+  "now": "3200 euros"
+ },
+ {
+  "id": "S10",
+  "pattern": "plain",
+  "thing": "grandson's birthday date",
+  "theme": "family",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-05",
+    "April 5th"
+   ]
+  ],
+  "now": "April 5th"
+ },
+ {
+  "id": "S11",
+  "pattern": "change",
+  "thing": "brass band rehearsal venue",
+  "theme": "hobbies",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-07",
+    "St. Pauli Hall"
+   ],
+   [
+    "2026-03-12",
+    "Hamburg Mitte Hall"
+   ]
+  ],
+  "now": "Hamburg Mitte Hall"
+ },
+ {
+  "id": "S12",
+  "pattern": "change",
+  "thing": "union representative contact",
+  "theme": "admin",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-30",
+    "Lukas Braun"
+   ],
+   [
+    "2026-04-08",
+    "Sandra Klein"
+   ]
+  ],
+  "now": "Sandra Klein"
+ },
+ {
+  "id": "S13",
+  "pattern": "change",
+  "thing": "grandson's weekend care provider",
+  "theme": "travel",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-27",
+    "Tante Ingrid"
+   ],
+   [
+    "2026-03-31",
+    "Kita Sonnenschein"
+   ]
+  ],
+  "now": "Kita Sonnenschein"
+ },
+ {
+  "id": "S14",
+  "pattern": "change",
+  "thing": "tuba maintenance technician",
+  "theme": "hobbies",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-23",
+    "Herr Müller"
+   ],
+   [
+    "2026-03-31",
+    "Herr Schmidt"
+   ]
+  ],
+  "now": "Herr Schmidt"
+ },
+ {
+  "id": "S15",
+  "pattern": "change",
+  "thing": "pain medication supplier",
+  "theme": "health",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-02",
+    "Apotheke am Markt"
+   ],
+   [
+    "2026-03-08",
+    "Apotheke Hafen"
+   ]
+  ],
+  "now": "Apotheke Hafen"
+ },
+ {
+  "id": "S16",
+  "pattern": "change",
+  "thing": "insurance policy number",
+  "theme": "admin",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-02",
+    "POL-8821"
+   ],
+   [
+    "2026-04-05",
+    "POL-9942"
+   ]
+  ],
+  "now": "POL-9942"
+ },
+ {
+  "id": "S17",
+  "pattern": "heart",
+  "thing": "newspaper delivery service",
+  "theme": "shopping",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-01",
+    "Hamburger Abendblatt"
+   ],
+   [
+    "2026-04-04",
+    "Die Welt"
+   ],
+   [
+    "2026-04-08",
+    "Hamburger Abendblatt"
+   ]
+  ],
+  "now": "Hamburger Abendblatt"
+ },
+ {
+  "id": "S18",
+  "pattern": "heart",
+  "thing": "commute route to work",
+  "theme": "travel",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-03",
+    "Route 21"
+   ],
+   [
+    "2026-03-06",
+    "Route 44"
+   ],
+   [
+    "2026-03-10",
+    "Route 21"
+   ]
+  ],
+  "now": "Route 21"
+ },
+ {
+  "id": "S19",
+  "pattern": "correction",
+  "thing": "grandson's school bus stop",
+  "theme": "travel",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-31",
+    "Hafenstraße 44"
+   ]
+  ],
+  "said_wrongly": [
+   "2026-03-31",
+   "Hafenstraße 40"
+  ],
+  "corrected_on": "2026-04-06",
+  "now": "Hafenstraße 44"
+ },
+ {
+  "id": "S20",
+  "pattern": "correction",
+  "thing": "home heating fuel type",
+  "theme": "home",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-27",
+    "natural gas"
+   ]
+  ],
+  "said_wrongly": [
+   "2026-03-27",
+   "gas oil"
+  ],
+  "corrected_on": "2026-04-01",
+  "now": "natural gas"
+ },
+ {
+  "id": "S21",
+  "pattern": "tentative_dropped",
+  "thing": "alternative grocery store",
+  "theme": "shopping",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-10",
+    "Rewe City"
+   ]
+  ],
+  "considered": [
+   "2026-03-17",
+   "Lidl Plus"
+  ],
+  "now": "Rewe City"
+ },
+ {
+  "id": "S22",
+  "pattern": "tentative_dropped",
+  "thing": "online banking provider",
+  "theme": "money",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-04",
+    "Deutsche Bank"
+   ]
+  ],
+  "considered": [
+   "2026-04-07",
+   "ING-DiBa"
+  ],
+  "now": "Deutsche Bank"
+ },
+ {
+  "id": "S23",
+  "pattern": "tentative_confirmed",
+  "thing": "weekend accommodation for band trip",
+  "theme": "travel",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-10",
+    "Hotel Elbphilharmonie"
+   ],
+   [
+    "2026-03-20",
+    "Gasthof Alsterufer"
+   ]
+  ],
+  "considered": [
+   "2026-03-14",
+   "Gasthof Alsterufer"
+  ],
+  "now": "Gasthof Alsterufer"
+ },
+ {
+  "id": "S24",
+  "pattern": "hypothetical",
+  "thing": "grandson's primary school",
+  "theme": "people",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-04",
+    "Grundschule Altona"
+   ]
+  ],
+  "imagined": [
+   "2026-04-12",
+   "Grundschule Ottensen"
+  ],
+  "now": "Grundschule Altona"
+ },
+ {
+  "id": "S25",
+  "pattern": "hypothetical",
+  "thing": "home heating system",
+  "theme": "home",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-02",
+    "Oil heating"
+   ]
+  ],
+  "imagined": [
+   "2026-04-08",
+   "Solar thermal"
+  ],
+  "now": "Oil heating"
+ },
+ {
+  "id": "S26",
+  "pattern": "lookalike",
+  "thing": "favorite jazz record collection",
+  "theme": "hobbies",
+  "other_person": "Finn (grandson)",
+  "history": [
+   [
+    "2026-03-25",
+    "Kind of Blue"
+   ]
+  ],
+  "other_value": [
+   "2026-04-01",
+   "A Love Supreme"
+  ],
+  "now": "Kind of Blue"
+ },
+ {
+  "id": "S27",
+  "pattern": "lookalike",
+  "thing": "regular hair salon",
+  "theme": "family",
+  "other_person": "Birgit (wife)",
+  "history": [
+   [
+    "2026-03-05",
+    "Barber Shop Hamburg"
+   ]
+  ],
+  "other_value": [
+   "2026-03-15",
+   "Stylist Studio Altona"
+  ],
+  "now": "Barber Shop Hamburg"
+ },
+ {
+  "id": "S28",
+  "pattern": "lookalike",
+  "thing": "work union branch number",
+  "theme": "work",
+  "other_person": "Lukas Braun (union rep)",
+  "history": [
+   [
+    "2026-03-18",
+    "Branch 44"
+   ]
+  ],
+  "other_value": [
+   "2026-03-22",
+   "Branch 12"
+  ],
+  "now": "Branch 44"
+ },
+ {
+  "id": "S29",
+  "pattern": "need_met",
+  "thing": "need",
+  "theme": "shopping",
+  "other_person": null,
+  "need": {
+   "what": "a babysitter for Finn on Saturday 14 March",
+   "topic": "babysitting",
+   "open_from": "2026-04-04",
+   "met_on": "2026-04-09",
+   "how": "his neighbour Anke Vogt looked after Finn"
+  }
+ },
+ {
+  "id": "S30",
+  "pattern": "need_met",
+  "thing": "need",
+  "theme": "people",
+  "other_person": null,
+  "need": {
+   "what": "a mechanic to look at the brakes on his old Passat",
+   "topic": "car-repair",
+   "open_from": "2026-03-25",
+   "met_on": "2026-04-03",
+   "how": "Werkstatt Yilmaz in Wilhelmsburg fixed the brakes"
+  }
+ },
+ {
+  "id": "S31",
+  "pattern": "need_open",
+  "thing": "need",
+  "theme": "work",
+  "other_person": null,
+  "need": {
+   "what": "tuba lessons to prepare for the band's summer concert",
+   "topic": "music-lessons",
+   "open_from": "2026-03-11",
+   "met_on": null
+  }
+ },
+ {
+  "id": "S32",
+  "pattern": "need_open",
+  "thing": "need",
+  "theme": "health",
+  "other_person": null,
+  "need": {
+   "what": "a physiotherapist for his shoulder after the long shifts",
+   "topic": "physiotherapy",
+   "open_from": "2026-04-06",
+   "met_on": null
+  }
+ },
+ {
+  "id": "S33",
+  "pattern": "need_other",
+  "thing": "need",
+  "theme": "family",
+  "other_person": "Birgit (wife)",
+  "need": {
+   "what": "a lift to the airport for her trip to Mallorca",
+   "topic": "lifts",
+   "open_from": "2026-03-17",
+   "met_on": null,
+   "not_the_persons": true
+  }
+ }
+]

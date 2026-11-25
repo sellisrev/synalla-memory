@@ -52,16 +52,21 @@ export const WANTS_SCHEMA = {
 } as const;
 
 export function wantsPrompt(owner: string, open: readonly Pick<Want, 'wid' | 'what'>[]): string {
-  return `You read one record from the personal memory of ${owner}, to find what ${owner} needs that someone they know
-could help with: something to borrow or buy second-hand, a person or professional to recommend, someone to do a task
-or cover for them, an introduction, advice from someone who has done it.
+  return `You read one record from the personal memory of ${owner}, to find what ${owner} needs from other people: help
+that someone they know could give and that ${owner} does not yet know how to get. That is: a person or professional to
+recommend, something to borrow or buy second-hand, someone to do a task or cover for them, an introduction, advice
+from someone who has done it.
+Not a need: shopping they can do in a shop or online (groceries, supplies, parts), an appointment or call with a
+provider they already have, a task the assistant can do or finishes in the record, information or instructions.
 
-1. "new": needs, wants or problems of ${owner} in this record that are still unmet. Only ${owner}'s own (not a family
-   member's, friend's or client's), only real ones (not a what-if or a plan only considered), not a task the assistant
-   finishes in the record, not one already listed as open below. For each: what, as a short phrase; topic, the closest
-   from the list; confidence from 0 to 1 that this is a real, unmet need of ${owner}; quote, an exact copy of the
-   shortest passage that shows it.
-2. "met": open needs below that this record shows as solved or no longer needed, with the quote that shows it.
+1. "new": such needs of ${owner} in this record that are still unmet. Only ${owner}'s own (not a family member's,
+   friend's or client's), only real ones (not a what-if or a plan only considered), not one already listed as open
+   below. For each: what, as a short phrase; topic, the closest from the list, by who could help (a lesson is a
+   lesson, whatever the instrument); confidence: 1 if ${owner} says they need or are looking for it and do not have
+   it, 0.6 if it is only implied, 0.3 if unsure; quote, an exact copy of the shortest passage that shows it.
+2. "met": open needs below that this record says are solved (they found the person or thing, it is done, or they no
+   longer need it), with the quote that names what solved it. A related topic, a reminder or a step in progress is not
+   met.
 
 Open needs:
 ${open.length ? open.map(w => `- id ${w.wid}: ${w.what}`).join('\n') : '- (none)'}

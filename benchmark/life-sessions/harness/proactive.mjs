@@ -17,9 +17,11 @@ import { httpChatModel } from '../../../src/facts.ts';
 import { scanWants, matchWants, WANTS_SCHEMA } from '../../../src/wants.ts';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
-const OUT = join(HERE, '..', 'out');
-const WORK = join(HERE, '..', 'work', 'proactive');
+const SET = process.env.LIFE_SET ?? 'test';  // dev: the tuning people, kept apart
+const OUT = join(HERE, '..', SET === 'test' ? 'out' : 'out_dev');
+const WORK = join(HERE, '..', 'work', SET === 'test' ? 'proactive' : 'proactive_dev');
 const PEOPLE = {
+  D01: ['Inés Navarro', 'seville'], D02: ['Tom Becker', 'hamburg'],
   L01: ['Claire Morel', 'lyon'], L02: ['Aisha Rahman', 'leeds'], L03: ['Mateo Fernández', 'valencia'], L04: ['Krzysztof Nowak', 'krakow'],
   L05: ['Ji-woo Park', 'seoul'], L06: ['Thandiwe Dlamini', 'cape-town'], L07: ['Lukas Brandt', 'berlin'], L08: ['Valentina Rossi', 'mendoza'],
   L09: ['Daniel Okoye', 'toronto'], L10: ['Priya Nair', 'bangalore'],

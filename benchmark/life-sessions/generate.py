@@ -15,10 +15,12 @@ SEED = 'synalla-life-sessions-2026-11-25'
 START = datetime.date(2026, 3, 2)
 DAYS = 42
 END = START + datetime.timedelta(days=DAYS - 1)
-OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'out')
+# LIFE_SET=dev: two extra people for tuning, kept apart from the test people (own output, needs and network)
+SET = os.environ.get('LIFE_SET', 'test')
+OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'out' if SET == 'test' else 'out_dev')
 
 # id, name, who they are; work = what "help with their work" means in a session
-PEOPLE = [
+TEST_PEOPLE = [
     ('L01', 'Claire Morel', 'ICU nurse, 38, in Lyon; rotating 12-hour shifts; married to Julien, two children (Inès 9, Hugo 5)', 'shift rota, care plans, handover notes, training'),
     ('L02', 'Aisha Rahman', 'primary school teacher, 31, in Leeds; teaches Year 4; lives alone with her cat; sings in a choir', 'lesson plans, parent emails, reports, school trips'),
     ('L03', 'Mateo Fernández', 'owner of a 30-seat restaurant in Valencia, 46; divorced, shared custody of his son Pablo (14)', 'supplier orders, staff rota, menu costing, licences'),
@@ -30,6 +32,11 @@ PEOPLE = [
     ('L09', 'Daniel Okoye', 'corporate lawyer, 36, in Toronto; on parental leave with his newborn, Ada; wife Grace back at work', 'staying in touch with the firm, a pro bono file, return-to-work plan'),
     ('L10', 'Priya Nair', 'founder of a 6-person ed-tech start-up in Bangalore, 33; raising a seed round; lives with her parents', 'fundraising, hiring, product decisions, investor updates'),
 ]
+DEV_PEOPLE = [
+    ('D01', 'Inés Navarro', 'social worker, 44, in Seville; divorced, two teenagers (Carmen 15, Diego 13); sings flamenco with friends', 'case visits, reports, court dates, a difficult team'),
+    ('D02', 'Tom Becker', 'bus driver, 55, in Hamburg; married to Birgit; a grandson, Finn (4); plays tuba in a brass band', 'shift plans, union matters, a route change, training new drivers'),
+]
+PEOPLE = TEST_PEOPLE if SET == 'test' else DEV_PEOPLE
 THEMES = ['work', 'family', 'people', 'home', 'health', 'money', 'hobbies', 'travel', 'shopping', 'admin']
 # pattern: (count per person, number of values the model fills, number of steps)
 PATTERNS = {
@@ -197,6 +204,11 @@ coffee tea lunch dinner breakfast yes none other same new old later soon early l
 spring summer autumn winter march april may june'''.split())
 
 
+# values used as examples in the fill prompt: never accepted as content
+EXAMPLES = {'dr. okafor', 'dr. haddad', '950 euros a month', 'the 7:40 bus', 'the ter from vienne', 'sara (sister)',
+            'marc (neighbour)', '55 euros', 'axa insurance', 'babysitter'}
+
+
 def key_parts(v):
     """The parts of a phrase that must appear when the phrase itself need not: names and numbers."""
     parts = re.findall(r"[A-Z][\w'\-]+(?:\s+[A-Z][\w'\-]+)*|\d[\d.,:/]*", v[1:]) if len(v.split()) > 2 else []
@@ -212,12 +224,17 @@ def item_problems(s, g, taken):
     for v in g['values']:
         if len(v.strip()) < 4:
             probs.append(f"value {v!r} is too short: write at least 4 characters, e.g. '55 euros', 'AXA insurance'")
-        clash = [t for t in taken if t == v.lower() or re.search(r'(?<!\w)' + re.escape(t) + r'(?!\w)', v.lower())
-                 or re.search(r'(?<!\w)' + re.escape(v.lower()) + r'(?!\w)', t)]
+        # a repeat: the same value, or one value of two or more words inside another ("Hamburg" alone inside
+        # "BlasWelt Hamburg" is not a repeat; "Kiné Bellecour" inside "booked at Kiné Bellecour" is)
+        clash = [t for t in taken if t == v.lower()
+                 or (len(t.split()) > 1 and re.search(r'(?<!\w)' + re.escape(t) + r'(?!\w)', v.lower()))
+                 or (len(v.split()) > 1 and re.search(r'(?<!\w)' + re.escape(v.lower()) + r'(?!\w)', t))]
         if clash:
             probs.append(f"value {v!r} repeats a value already used elsewhere ({clash[0]!r}): use different words")
         if not (re.search(r'\d', v) or re.search(r'[A-Z]', v) or len(v.split()) >= 2):
             probs.append(f"value {v!r} is not specific: use a name, a brand, an amount or a few words")
+        if v.strip().lower() in EXAMPLES:
+            probs.append(f"value {v!r} is an example from the instructions: invent your own")
         if v.strip().lower() in COMMON:
             probs.append(f"value {v!r} is a common word: make it specific (a name, a brand, an amount, a date)")
     if len(set(x.lower() for x in g['values'])) != len(g['values']):
@@ -243,15 +260,19 @@ def fill(a, pid, name, bio, work):
     full_sk = skeleton(pid)
     curated = needs_of(pid, full_sk)          # needs are written by hand (needs.py), the rest by the model
     sk = [s for s in full_sk if s['id'] not in curated]
-    for restart in range(2):
-        done, notes = fill_rounds(a, pid, name, bio, work, sk, restart, curated)
+    done = {}
+    for restart in range(2):  # a restart keeps what was accepted and tries the rest with new seeds
+        done, notes = fill_rounds(a, pid, name, bio, work, sk, restart, curated, done)
         if len(done) == len(sk):
             break
         print(f'{pid}: fill restart after 12 rounds: {notes}', flush=True)
-    else:
-        sys.exit(f'{pid}: storylines still invalid after two starts: {notes}')
+    dropped = [s['id'] for s in sk if s['id'] not in done]
+    if len(dropped) > 3:
+        sys.exit(f'{pid}: {len(dropped)} storylines still invalid after two starts: {notes}')
+    if dropped:  # a few storylines the model never got right are left out (published in storylines.json)
+        print(f'{pid}: dropped storylines {dropped}: {notes}', flush=True)
     done.update(curated)
-    full = [{**s, **{k: done[s['id']][k] for k in ('thing', 'values', 'other_person', 'keyword', 'topic')}} for s in full_sk]
+    full = [{**s, **{k: done[s['id']][k] for k in ('thing', 'values', 'other_person', 'keyword', 'topic')}} for s in full_sk if s['id'] in done]
     os.makedirs(os.path.dirname(path), exist_ok=True)
     json.dump(full, open(path, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     return full
@@ -299,8 +320,8 @@ def needs_of(pid, sk):
     return out
 
 
-def fill_rounds(a, pid, name, bio, work, sk, restart, curated):
-    done, notes = {}, {}
+def fill_rounds(a, pid, name, bio, work, sk, restart, curated, done=None):
+    done, notes = dict(done or {}), {}
     for attempt in range(12):
         todo = [s for s in sk if s['id'] not in done]
         if not todo:
@@ -317,6 +338,11 @@ def fill_rounds(a, pid, name, bio, work, sk, restart, curated):
             probs = ['missing'] if not g else item_problems(s, g, taken)
             if g and g['thing'].strip().lower() in {d['thing'].strip().lower() for d in done.values()}:
                 probs.append(f"another storyline is already about '{g['thing']}': pick a different thing")
+            bio_words = {w.lower().strip(',;()') for w in (name + ' ' + bio).split()}
+            if g and any(v.strip().lower() in bio_words or name.split()[0].lower() in v.lower() for v in g['values']):
+                probs.append("a value must not be the owner's name or a single word from who they are (their city, family, instrument): it would come up in every conversation")
+            if g and (name.split()[0].lower() in g['thing'].lower() or re.search(r'\b(tentative|hypothetical|imagined|own|considered)\b', g['thing'], re.I)):
+                probs.append("the thing must not contain the owner's name or words like tentative, hypothetical, own: name the kind of thing only")
             if g and g['other_person'] and g['other_person'].split()[0].lower() in g['thing'].lower():
                 probs.append("the thing must not name the other person: name the kind of thing only")
             if g:

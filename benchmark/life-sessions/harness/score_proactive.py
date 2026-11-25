@@ -11,7 +11,7 @@ import json, os, sys
 from collections import Counter, defaultdict
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(HERE, '..', 'out')
+OUT = os.path.join(HERE, '..', 'out' if os.environ.get('LIFE_SET', 'test') == 'test' else 'out_dev')
 
 
 def open_windows():
@@ -52,17 +52,42 @@ def score(path, needs):
             first_right.setdefault(n['need'], p['date'])
         elif n['met'] and p['date'] >= n['met']:
             kinds['after the need was met'] += 1
-        else:
-            kinds['before the need came up'] += 1
+        else:  # the text mentioned the need before its planned session (the writer let it slip early)
+            kinds['early'] += 1
     own = [n for n in needs.values() if n['person'] in people and n['pattern'] != 'need_other' and n['open']]
     from datetime import date
     lat = [(date.fromisoformat(first_right[n['need']]) - date.fromisoformat(n['open'])).days for n in own if n['need'] in first_right]
     total = len(props)
     lines = [f'## {os.path.basename(path)}', '', f'{len(people)} people, {len(own)} own needs, {total} proposals.', '',
              f'- needs found (at least one right proposal while open): {len(first_right)}/{len(own)} ({100 * len(first_right) / max(1, len(own)):.0f}%)',
-             f"- proposals right: {kinds['right']}/{total} ({100 * kinds['right'] / max(1, total):.0f}%)",
+             f"- proposals right: {kinds['right']}/{total} ({100 * kinds['right'] / max(1, total):.0f}%); "
+             f"not counting early ones (a need the text mentions before its planned day): {kinds['right']}/{total - kinds['early']} "
+             f"({100 * kinds['right'] / max(1, total - kinds['early']):.0f}%)",
              f'- days from first mention to first right proposal: ' + (f'median {sorted(lat)[len(lat) // 2]}, max {max(lat)}' if lat else 'n/a'),
-             '- false alarms: ' + (', '.join(f'{k} {v}' for k, v in kinds.items() if k != 'right') or 'none'), '']
+             '- other proposals: ' + (', '.join(f'{k} {v}' for k, v in kinds.items() if k != 'right') or 'none'), '']
+    # closing: map each want to the need its right proposals were for; a met need should be closed on or after
+    # the day it was met (within 7 days); an open need, or a met need closed before that day, is closed wrongly
+    wants = {(r['person'], r['wid']): r for r in rows if r['type'] == 'want'}
+    need_of = {}
+    for p in props:
+        n, how = by_entry.get(p['entry'], (None, None))
+        if n is not None and how == 'fit' and n['person'] == p['person']:
+            need_of.setdefault((p['person'], p['wid']), n)
+    closed_ok = closed_bad = not_closed = 0
+    for key, n in need_of.items():
+        w = wants.get(key)
+        if not w or n['pattern'] == 'need_other':
+            continue
+        c = w['closed_at']
+        if n['met'] is None:
+            closed_bad += c is not None
+        elif c is None:
+            not_closed += 1
+        elif n['met'] <= c and (date.fromisoformat(c) - date.fromisoformat(n['met'])).days <= 7:
+            closed_ok += 1
+        else:
+            closed_bad += 1
+    lines.insert(-1, f'- closing (needs met in the sessions): closed right {closed_ok}, not closed {not_closed}; closed wrongly {closed_bad}')
     missed = [f"  - {n['need']} ({n['pattern']}): {n['phrase']}" for n in own if n['need'] not in first_right]
     if missed:
         lines += ['Missed:', *missed, '']

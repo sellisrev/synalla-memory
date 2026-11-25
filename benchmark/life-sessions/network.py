@@ -15,10 +15,10 @@ import datetime, hashlib, json, os, random, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from needs import NEEDS  # noqa: E402
-from generate import PEOPLE, NEED_TOPICS, OUT, START, DAYS  # noqa: E402
+from generate import PEOPLE, NEED_TOPICS, OUT, START, DAYS  # noqa: E402  (LIFE_SET picks test or dev)
 
 SEED = 'synalla-life-network-2026-11-25'
-CITY = {'L01': 'lyon', 'L02': 'leeds', 'L03': 'valencia', 'L04': 'krakow', 'L05': 'seoul', 'L06': 'cape-town',
+CITY = {'D01': 'seville', 'D02': 'hamburg', 'L01': 'lyon', 'L02': 'leeds', 'L03': 'valencia', 'L04': 'krakow', 'L05': 'seoul', 'L06': 'cape-town',
         'L07': 'berlin', 'L08': 'mendoza', 'L09': 'toronto', 'L10': 'bangalore'}
 # what kind of circle/1 entry fits a topic (type only ranks in matching; topic decides)
 TYPE = {'second-hand-goods': 'offer', 'baby-gear': 'lend', 'camping-gear': 'lend', 'sports-equipment': 'lend', 'camera-gear': 'lend',
@@ -78,22 +78,27 @@ def main():
         m['entries'].append(e)
         return e['id']
 
-    cities = list(CITY.values())
     city_topics = {}
+    mine = {p[0] for p in PEOPLE}
+    cities = sorted({CITY[p] for p in mine} | {'madrid', 'vienna', 'oslo'})  # + cities where nobody in the set lives
     for pid, items in NEEDS.items():
+        if pid not in mine:
+            continue
         city_topics.setdefault(CITY[pid], set()).update(x[3] for x in items)
 
     def near_topic(topic, city):  # never a topic that is a real need in that city
         t = NEAR.get(topic)
-        while t is None or t in city_topics[city]:
+        while t is None or t in city_topics.get(city, set()):
             t = rnd.choice(NEED_TOPICS)
         return t
     for pid, items in NEEDS.items():
+        if pid not in mine:
+            continue
         city = CITY[pid]
         for i, (pat, phrase, kw, topic, extra) in enumerate(items):
             n_true = 2 if pat == 'need_open' else 1
             true_ids = [add(member(city), topic, city) for _ in range(n_true)]
-            other_city = rnd.choice([c for c in cities if c != city and topic not in city_topics[c]])
+            other_city = rnd.choice([c for c in cities if c != city and topic not in city_topics.get(c, set())])
             near = [add(member(other_city), topic, other_city),            # same topic, wrong place
                     add(member(city), topic, city, expired=True),          # same topic, expired
                     add(member(city), near_topic(topic, city), city)]  # neighbouring topic

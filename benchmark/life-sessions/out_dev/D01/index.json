@@ -1,0 +1,935 @@
+[
+ {
+  "n": 1,
+  "day": 0,
+  "steps": [
+   {
+    "story": "S13",
+    "step": 0,
+    "day": 0,
+    "said_late": false,
+    "text": "Inés's Carmen's school is Instituto Hispano.",
+    "must": [
+     "Instituto Hispano"
+    ]
+   }
+  ],
+  "date": "2026-03-02",
+  "kind": "life"
+ },
+ {
+  "n": 2,
+  "day": 1,
+  "steps": [],
+  "date": "2026-03-03",
+  "kind": "life"
+ },
+ {
+  "n": 3,
+  "day": 1,
+  "steps": [],
+  "date": "2026-03-03",
+  "kind": "life"
+ },
+ {
+  "n": 4,
+  "day": 2,
+  "steps": [
+   {
+    "story": "S11",
+    "step": 0,
+    "day": 2,
+    "said_late": false,
+    "text": "Inés's internet provider is Vodafone.",
+    "must": [
+     "Vodafone"
+    ]
+   },
+   {
+    "story": "S30",
+    "step": 0,
+    "day": 2,
+    "said_late": false,
+    "text": "Inés needs a maths tutor for Diego before his end-of-term exams (not sorted yet).",
+    "must": [
+     "tutor"
+    ]
+   }
+  ],
+  "date": "2026-03-04",
+  "kind": "life"
+ },
+ {
+  "n": 5,
+  "day": 3,
+  "steps": [],
+  "date": "2026-03-05",
+  "kind": "life"
+ },
+ {
+  "n": 6,
+  "day": 4,
+  "steps": [
+   {
+    "story": "S13",
+    "step": 1,
+    "day": 3,
+    "said_late": true,
+    "text": "Inés's Carmen's school has changed: now Colegio San José (it was Instituto Hispano).",
+    "must": [
+     "Colegio San José"
+    ]
+   },
+   {
+    "story": "S17",
+    "step": 0,
+    "day": 4,
+    "said_late": false,
+    "text": "Inés's Inés Navarro's preferred evening practice spot is Calle Sierpes 42.",
+    "must": [
+     "Calle Sierpes 42"
+    ]
+   }
+  ],
+  "date": "2026-03-06",
+  "kind": "life"
+ },
+ {
+  "n": 7,
+  "day": 5,
+  "steps": [
+   {
+    "story": "S21",
+    "step": 0,
+    "day": 2,
+    "said_late": false,
+    "text": "Inés's Inés Navarro's tentative weekend hiking partner is Elena Ruiz.",
+    "must": [
+     "Elena Ruiz"
+    ]
+   },
+   {
+    "story": "S28",
+    "step": 0,
+    "day": 4,
+    "said_late": false,
+    "text": "Inés's own legal advisor for social cases is Advocacy Group SE.",
+    "must": [
+     "Advocacy Group SE"
+    ]
+   }
+  ],
+  "date": "2026-03-07",
+  "kind": "work"
+ },
+ {
+  "n": 8,
+  "day": 6,
+  "steps": [
+   {
+    "story": "S32",
+    "step": 0,
+    "day": 0,
+    "said_late": true,
+    "text": "Inés needs a second-hand laptop for Carmen's school projects (not sorted yet).",
+    "must": [
+     "laptop"
+    ]
+   },
+   {
+    "story": "S12",
+    "step": 0,
+    "day": 5,
+    "said_late": false,
+    "text": "Inés's guitar instructor is Rafael de Utrera.",
+    "must": [
+     "Rafael de Utrera"
+    ]
+   }
+  ],
+  "date": "2026-03-08",
+  "kind": "life"
+ },
+ {
+  "n": 9,
+  "day": 7,
+  "steps": [
+   {
+    "story": "S21",
+    "step": 1,
+    "day": 6,
+    "said_late": true,
+    "text": "Inés is only thinking about changing the Inés Navarro's tentative weekend hiking partner to Marco Vega; nothing decided.",
+    "must": [
+     "Marco Vega"
+    ]
+   },
+   {
+    "story": "S17",
+    "step": 1,
+    "day": 7,
+    "said_late": false,
+    "text": "Inés has switched the Inés Navarro's preferred evening practice spot to Avenida de la Constitución 10.",
+    "must": [
+     "Avenida de la Constitución 10"
+    ]
+   }
+  ],
+  "date": "2026-03-09",
+  "kind": "life"
+ },
+ {
+  "n": 10,
+  "day": 8,
+  "steps": [
+   {
+    "story": "S11",
+    "step": 1,
+    "day": 7,
+    "said_late": true,
+    "text": "Inés's internet provider has changed: now Orange (it was Vodafone).",
+    "must": [
+     "Orange"
+    ]
+   },
+   {
+    "story": "S28",
+    "step": 1,
+    "day": 7,
+    "said_late": true,
+    "text": "Marc (neighbour)'s legal advisor for social cases is Collegium Legal (about Marc (neighbour), not Inés).",
+    "must": [
+     "Collegium Legal",
+     "Marc"
+    ]
+   }
+  ],
+  "date": "2026-03-10",
+  "kind": "work"
+ },
+ {
+  "n": 11,
+  "day": 9,
+  "steps": [
+   {
+    "story": "S33",
+    "step": 0,
+    "day": 7,
+    "said_late": true,
+    "text": "a need that is not Inés's own: a flat to rent near the university next year (Lola (niece)).",
+    "must": [
+     "university"
+    ]
+   },
+   {
+    "story": "S24",
+    "step": 0,
+    "day": 8,
+    "said_late": false,
+    "text": "Inés's court date location is Palacio de Justicia.",
+    "must": [
+     "Palacio de Justicia"
+    ]
+   }
+  ],
+  "date": "2026-03-11",
+  "kind": "work"
+ },
+ {
+  "n": 12,
+  "day": 10,
+  "steps": [
+   {
+    "story": "S20",
+    "step": 0,
+    "day": 5,
+    "said_late": false,
+    "text": "Inés's garden maintenance is Jardines del Sur.",
+    "must": [
+     "Jardines del Sur"
+    ]
+   },
+   {
+    "story": "S30",
+    "step": 1,
+    "day": 9,
+    "said_late": true,
+    "text": "Inés's need is sorted: Diego now sees the tutor Lucía Pérez on Mondays.",
+    "must": [
+     "Lucía Pérez",
+     "Mondays"
+    ]
+   }
+  ],
+  "date": "2026-03-12",
+  "kind": "life"
+ },
+ {
+  "n": 13,
+  "day": 11,
+  "steps": [
+   {
+    "story": "S08",
+    "step": 0,
+    "day": 10,
+    "said_late": false,
+    "text": "Inés's flamenco venue is Peña Flamenca La Platería.",
+    "must": [
+     "Peña Flamenca La Platería"
+    ]
+   }
+  ],
+  "date": "2026-03-13",
+  "kind": "life"
+ },
+ {
+  "n": 14,
+  "day": 11,
+  "steps": [
+   {
+    "story": "S27",
+    "step": 0,
+    "day": 7,
+    "said_late": false,
+    "text": "Inés's own dermatologist is Dr. Velasco.",
+    "must": [
+     "Dr. Velasco"
+    ]
+   },
+   {
+    "story": "S09",
+    "step": 0,
+    "day": 9,
+    "said_late": false,
+    "text": "Inés's utility provider is Iberdrola.",
+    "must": [
+     "Iberdrola"
+    ]
+   }
+  ],
+  "date": "2026-03-13",
+  "kind": "life"
+ },
+ {
+  "n": 15,
+  "day": 12,
+  "steps": [
+   {
+    "story": "S31",
+    "step": 0,
+    "day": 12,
+    "said_late": false,
+    "text": "Inés needs a lawyer who knows family law for the custody review in May (not sorted yet).",
+    "must": [
+     "lawyer"
+    ]
+   }
+  ],
+  "date": "2026-03-14",
+  "kind": "life"
+ },
+ {
+  "n": 16,
+  "day": 12,
+  "steps": [],
+  "date": "2026-03-14",
+  "kind": "work"
+ },
+ {
+  "n": 17,
+  "day": 13,
+  "steps": [
+   {
+    "story": "S15",
+    "step": 0,
+    "day": 9,
+    "said_late": false,
+    "text": "Inés's credit card is Visa Classic.",
+    "must": [
+     "Visa Classic"
+    ]
+   },
+   {
+    "story": "S12",
+    "step": 1,
+    "day": 13,
+    "said_late": false,
+    "text": "Inés's guitar instructor has changed: now Javier el de la Cruz (it was Rafael de Utrera).",
+    "must": [
+     "Javier el de la Cruz"
+    ]
+   }
+  ],
+  "date": "2026-03-15",
+  "kind": "life"
+ },
+ {
+  "n": 18,
+  "day": 14,
+  "steps": [
+   {
+    "story": "S15",
+    "step": 1,
+    "day": 13,
+    "said_late": true,
+    "text": "Inés's credit card has changed: now Mastercard Gold (it was Visa Classic).",
+    "must": [
+     "Mastercard Gold"
+    ]
+   },
+   {
+    "story": "S20",
+    "step": 1,
+    "day": 14,
+    "said_late": false,
+    "text": "Inés corrects an earlier slip: the garden maintenance is Jardines del Norte, not Jardines del Sur.",
+    "must": [
+     "Jardines del Norte"
+    ]
+   }
+  ],
+  "date": "2026-03-16",
+  "kind": "life"
+ },
+ {
+  "n": 19,
+  "day": 15,
+  "steps": [
+   {
+    "story": "S22",
+    "step": 0,
+    "day": 14,
+    "said_late": false,
+    "text": "Inés's case file system is Paper Filing.",
+    "must": [
+     "Paper Filing"
+    ]
+   },
+   {
+    "story": "S27",
+    "step": 1,
+    "day": 14,
+    "said_late": true,
+    "text": "Carmen Navarro (daughter)'s dermatologist is Dr. Soto (about Carmen Navarro (daughter), not Inés).",
+    "must": [
+     "Dr. Soto",
+     "Carmen"
+    ]
+   }
+  ],
+  "date": "2026-03-17",
+  "kind": "work"
+ },
+ {
+  "n": 20,
+  "day": 16,
+  "steps": [
+   {
+    "story": "S17",
+    "step": 2,
+    "day": 14,
+    "said_late": true,
+    "text": "Inés changes mind about the Inés Navarro's preferred evening practice spot: back to Calle Sierpes 42, not Avenida de la Constitución 10 any more.",
+    "must": [
+     "Calle Sierpes 42"
+    ]
+   },
+   {
+    "story": "S19",
+    "step": 0,
+    "day": 15,
+    "said_late": false,
+    "text": "Inés's Carmen's birthday is March 22nd.",
+    "must": [
+     "March 22nd"
+    ]
+   }
+  ],
+  "date": "2026-03-18",
+  "kind": "life"
+ },
+ {
+  "n": 21,
+  "day": 17,
+  "steps": [
+   {
+    "story": "S16",
+    "step": 0,
+    "day": 17,
+    "said_late": false,
+    "text": "Inés's Diego's school is Colegio Nuestra Señora.",
+    "must": [
+     "Colegio Nuestra Señora"
+    ]
+   },
+   {
+    "story": "S24",
+    "step": 1,
+    "day": 17,
+    "said_late": false,
+    "text": "Inés imagines a what-if: then the court date location would be Tribunal Provincial. Only an idea; nothing changes.",
+    "must": [
+     "Tribunal Provincial"
+    ]
+   }
+  ],
+  "date": "2026-03-19",
+  "kind": "life"
+ },
+ {
+  "n": 22,
+  "day": 18,
+  "steps": [],
+  "date": "2026-03-20",
+  "kind": "work"
+ },
+ {
+  "n": 23,
+  "day": 19,
+  "steps": [],
+  "date": "2026-03-21",
+  "kind": "work"
+ },
+ {
+  "n": 24,
+  "day": 20,
+  "steps": [],
+  "date": "2026-03-22",
+  "kind": "work"
+ },
+ {
+  "n": 25,
+  "day": 21,
+  "steps": [
+   {
+    "story": "S25",
+    "step": 0,
+    "day": 17,
+    "said_late": false,
+    "text": "Inés's flamenco recital venue is Casa de la Memoria.",
+    "must": [
+     "Casa de la Memoria"
+    ]
+   },
+   {
+    "story": "S23",
+    "step": 0,
+    "day": 21,
+    "said_late": false,
+    "text": "Inés's flamenco class is Tuesday Evening.",
+    "must": [
+     "Tuesday Evening"
+    ]
+   }
+  ],
+  "date": "2026-03-23",
+  "kind": "life"
+ },
+ {
+  "n": 26,
+  "day": 22,
+  "steps": [
+   {
+    "story": "S22",
+    "step": 1,
+    "day": 21,
+    "said_late": true,
+    "text": "Inés is only thinking about changing the case file system to Digital Archive; nothing decided.",
+    "must": [
+     "Digital Archive"
+    ]
+   }
+  ],
+  "date": "2026-03-24",
+  "kind": "work"
+ },
+ {
+  "n": 27,
+  "day": 23,
+  "steps": [
+   {
+    "story": "S04",
+    "step": 0,
+    "day": 23,
+    "said_late": false,
+    "text": "Inés's grocery supplier is Mercadona.",
+    "must": [
+     "Mercadona"
+    ]
+   }
+  ],
+  "date": "2026-03-25",
+  "kind": "life"
+ },
+ {
+  "n": 28,
+  "day": 24,
+  "steps": [
+   {
+    "story": "S16",
+    "step": 1,
+    "day": 21,
+    "said_late": true,
+    "text": "Inés's Diego's school has changed: now Instituto Buhaira (it was Colegio Nuestra Señora).",
+    "must": [
+     "Instituto Buhaira"
+    ]
+   },
+   {
+    "story": "S14",
+    "step": 0,
+    "day": 24,
+    "said_late": false,
+    "text": "Inés's appliance repair is Reparaciones López.",
+    "must": [
+     "Reparaciones López"
+    ]
+   }
+  ],
+  "date": "2026-03-26",
+  "kind": "life"
+ },
+ {
+  "n": 29,
+  "day": 25,
+  "steps": [
+   {
+    "story": "S02",
+    "step": 0,
+    "day": 22,
+    "said_late": false,
+    "text": "Inés's tax appointment is Agencia Tributaria.",
+    "must": [
+     "Agencia Tributaria"
+    ]
+   },
+   {
+    "story": "S18",
+    "step": 0,
+    "day": 24,
+    "said_late": false,
+    "text": "Inés's Inés Navarro's regular florist for home decor is Flores del Sur.",
+    "must": [
+     "Flores del Sur"
+    ]
+   }
+  ],
+  "date": "2026-03-27",
+  "kind": "life"
+ },
+ {
+  "n": 30,
+  "day": 26,
+  "steps": [
+   {
+    "story": "S19",
+    "step": 1,
+    "day": 24,
+    "said_late": true,
+    "text": "Inés corrects an earlier slip: the Carmen's birthday is April 15th, not March 22nd.",
+    "must": [
+     "April 15th"
+    ]
+   },
+   {
+    "story": "S29",
+    "step": 0,
+    "day": 25,
+    "said_late": true,
+    "text": "Inés needs a guitarist to play with her flamenco group at the April feria (not sorted yet).",
+    "must": [
+     "guitarist"
+    ]
+   }
+  ],
+  "date": "2026-03-28",
+  "kind": "life"
+ },
+ {
+  "n": 31,
+  "day": 27,
+  "steps": [
+   {
+    "story": "S25",
+    "step": 1,
+    "day": 26,
+    "said_late": true,
+    "text": "Inés imagines a what-if: then the flamenco recital venue would be Teatro Lope de Vega. Only an idea; nothing changes.",
+    "must": [
+     "Teatro Lope de Vega"
+    ]
+   }
+  ],
+  "date": "2026-03-29",
+  "kind": "life"
+ },
+ {
+  "n": 32,
+  "day": 28,
+  "steps": [
+   {
+    "story": "S03",
+    "step": 0,
+    "day": 28,
+    "said_late": false,
+    "text": "Inés's bank branch is CaixaBank San Bernardo.",
+    "must": [
+     "CaixaBank San Bernardo"
+    ]
+   },
+   {
+    "story": "S23",
+    "step": 1,
+    "day": 28,
+    "said_late": false,
+    "text": "Inés is thinking about changing the flamenco class to Thursday Morning; not decided yet.",
+    "must": [
+     "Thursday Morning"
+    ]
+   }
+  ],
+  "date": "2026-03-30",
+  "kind": "life"
+ },
+ {
+  "n": 33,
+  "day": 29,
+  "steps": [],
+  "date": "2026-03-31",
+  "kind": "life"
+ },
+ {
+  "n": 34,
+  "day": 30,
+  "steps": [
+   {
+    "story": "S29",
+    "step": 1,
+    "day": 30,
+    "said_late": false,
+    "text": "Inés's need is sorted: Rafa Montoya from the peña agreed to play.",
+    "must": [
+     "Montoya"
+    ]
+   }
+  ],
+  "date": "2026-04-01",
+  "kind": "life"
+ },
+ {
+  "n": 35,
+  "day": 30,
+  "steps": [],
+  "date": "2026-04-01",
+  "kind": "life"
+ },
+ {
+  "n": 36,
+  "day": 31,
+  "steps": [
+   {
+    "story": "S18",
+    "step": 1,
+    "day": 31,
+    "said_late": false,
+    "text": "Inés has switched the Inés Navarro's regular florist for home decor to Jardinería Triana.",
+    "must": [
+     "Jardinería Triana"
+    ]
+   }
+  ],
+  "date": "2026-04-02",
+  "kind": "life"
+ },
+ {
+  "n": 37,
+  "day": 32,
+  "steps": [],
+  "date": "2026-04-03",
+  "kind": "life"
+ },
+ {
+  "n": 38,
+  "day": 33,
+  "steps": [
+   {
+    "story": "S14",
+    "step": 1,
+    "day": 33,
+    "said_late": false,
+    "text": "Inés's appliance repair has changed: now ElectroServicio (it was Reparaciones López).",
+    "must": [
+     "ElectroServicio"
+    ]
+   }
+  ],
+  "date": "2026-04-04",
+  "kind": "life"
+ },
+ {
+  "n": 39,
+  "day": 33,
+  "steps": [],
+  "date": "2026-04-04",
+  "kind": "life"
+ },
+ {
+  "n": 40,
+  "day": 34,
+  "steps": [],
+  "date": "2026-04-05",
+  "kind": "life"
+ },
+ {
+  "n": 41,
+  "day": 35,
+  "steps": [
+   {
+    "story": "S06",
+    "step": 0,
+    "day": 35,
+    "said_late": false,
+    "text": "Inés's insurance provider is Mapfre.",
+    "must": [
+     "Mapfre"
+    ]
+   }
+  ],
+  "date": "2026-04-06",
+  "kind": "life"
+ },
+ {
+  "n": 42,
+  "day": 35,
+  "steps": [],
+  "date": "2026-04-06",
+  "kind": "work"
+ },
+ {
+  "n": 43,
+  "day": 36,
+  "steps": [],
+  "date": "2026-04-07",
+  "kind": "work"
+ },
+ {
+  "n": 44,
+  "day": 37,
+  "steps": [
+   {
+    "story": "S26",
+    "step": 0,
+    "day": 31,
+    "said_late": false,
+    "text": "Inés's own home insurance provider is Generali.",
+    "must": [
+     "Generali"
+    ]
+   },
+   {
+    "story": "S05",
+    "step": 0,
+    "day": 37,
+    "said_late": false,
+    "text": "Inés's pharmacy is Farmacia Central.",
+    "must": [
+     "Farmacia Central"
+    ]
+   }
+  ],
+  "date": "2026-04-08",
+  "kind": "life"
+ },
+ {
+  "n": 45,
+  "day": 38,
+  "steps": [
+   {
+    "story": "S07",
+    "step": 0,
+    "day": 37,
+    "said_late": false,
+    "text": "Inés's physiotherapist is Dr. Almagro.",
+    "must": [
+     "Dr. Almagro"
+    ]
+   },
+   {
+    "story": "S23",
+    "step": 2,
+    "day": 37,
+    "said_late": true,
+    "text": "Inés has now gone ahead: the flamenco class is Thursday Morning.",
+    "must": [
+     "Thursday Morning"
+    ]
+   }
+  ],
+  "date": "2026-04-09",
+  "kind": "life"
+ },
+ {
+  "n": 46,
+  "day": 39,
+  "steps": [
+   {
+    "story": "S26",
+    "step": 1,
+    "day": 38,
+    "said_late": true,
+    "text": "Elena Ruiz (friend)'s home insurance provider is Zurich (about Elena Ruiz (friend), not Inés).",
+    "must": [
+     "Zurich",
+     "Elena"
+    ]
+   },
+   {
+    "story": "S10",
+    "step": 0,
+    "day": 39,
+    "said_late": false,
+    "text": "Inés's mortgage lender is Santander.",
+    "must": [
+     "Santander"
+    ]
+   }
+  ],
+  "date": "2026-04-10",
+  "kind": "life"
+ },
+ {
+  "n": 47,
+  "day": 40,
+  "steps": [
+   {
+    "story": "S01",
+    "step": 0,
+    "day": 39,
+    "said_late": false,
+    "text": "Inés's flight to Madrid is Iberia 4521.",
+    "must": [
+     "Iberia 4521"
+    ]
+   },
+   {
+    "story": "S18",
+    "step": 2,
+    "day": 40,
+    "said_late": false,
+    "text": "Inés changes mind about the Inés Navarro's regular florist for home decor: back to Flores del Sur, not Jardinería Triana any more.",
+    "must": [
+     "Flores del Sur"
+    ]
+   }
+  ],
+  "date": "2026-04-11",
+  "kind": "life"
+ },
+ {
+  "n": 48,
+  "day": 41,
+  "steps": [],
+  "date": "2026-04-12",
+  "kind": "life"
+ }
+]

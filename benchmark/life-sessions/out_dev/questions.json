@@ -1,0 +1,788 @@
+[
+ {
+  "id": "D01-Q01",
+  "person": "D01",
+  "type": "fact",
+  "storyline": "S01",
+  "question": "What is my flight to Madrid?",
+  "gold": "Iberia 4521"
+ },
+ {
+  "id": "D01-Q02",
+  "person": "D01",
+  "type": "fact",
+  "storyline": "S02",
+  "question": "What is my tax appointment?",
+  "gold": "Agencia Tributaria"
+ },
+ {
+  "id": "D01-Q03",
+  "person": "D01",
+  "type": "fact",
+  "storyline": "S03",
+  "question": "What is my bank branch?",
+  "gold": "CaixaBank San Bernardo"
+ },
+ {
+  "id": "D01-Q04",
+  "person": "D01",
+  "type": "fact",
+  "storyline": "S04",
+  "question": "What is my grocery supplier?",
+  "gold": "Mercadona"
+ },
+ {
+  "id": "D01-Q05",
+  "person": "D01",
+  "type": "fact",
+  "storyline": "S05",
+  "question": "What is my pharmacy?",
+  "gold": "Farmacia Central"
+ },
+ {
+  "id": "D01-Q06",
+  "person": "D01",
+  "type": "fact",
+  "storyline": "S06",
+  "question": "What is my insurance provider?",
+  "gold": "Mapfre"
+ },
+ {
+  "id": "D01-Q07",
+  "person": "D01",
+  "type": "fact",
+  "storyline": "S07",
+  "question": "What is my physiotherapist?",
+  "gold": "Dr. Almagro"
+ },
+ {
+  "id": "D01-Q08",
+  "person": "D01",
+  "type": "fact",
+  "storyline": "S08",
+  "question": "What is my flamenco venue?",
+  "gold": "Peña Flamenca La Platería"
+ },
+ {
+  "id": "D01-Q09",
+  "person": "D01",
+  "type": "fact",
+  "storyline": "S09",
+  "question": "What is my utility provider?",
+  "gold": "Iberdrola"
+ },
+ {
+  "id": "D01-Q10",
+  "person": "D01",
+  "type": "fact",
+  "storyline": "S10",
+  "question": "What is my mortgage lender?",
+  "gold": "Santander"
+ },
+ {
+  "id": "D01-Q11",
+  "person": "D01",
+  "type": "now",
+  "storyline": "S11",
+  "question": "What is my internet provider now?",
+  "gold": "Orange (it was Vodafone)"
+ },
+ {
+  "id": "D01-Q12",
+  "person": "D01",
+  "type": "before",
+  "storyline": "S11",
+  "question": "What was my internet provider before it changed?",
+  "gold": "Vodafone"
+ },
+ {
+  "id": "D01-Q13",
+  "person": "D01",
+  "type": "when",
+  "storyline": "S11",
+  "question": "When did my internet provider change to Orange?",
+  "gold": "2026-03-09"
+ },
+ {
+  "id": "D01-Q14",
+  "person": "D01",
+  "type": "now",
+  "storyline": "S12",
+  "question": "What is my guitar instructor now?",
+  "gold": "Javier el de la Cruz (it was Rafael de Utrera)"
+ },
+ {
+  "id": "D01-Q15",
+  "person": "D01",
+  "type": "before",
+  "storyline": "S12",
+  "question": "What was my guitar instructor before it changed?",
+  "gold": "Rafael de Utrera"
+ },
+ {
+  "id": "D01-Q16",
+  "person": "D01",
+  "type": "when",
+  "storyline": "S12",
+  "question": "When did my guitar instructor change to Javier el de la Cruz?",
+  "gold": "2026-03-15"
+ },
+ {
+  "id": "D01-Q17",
+  "person": "D01",
+  "type": "now",
+  "storyline": "S13",
+  "question": "What is my Carmen's school now?",
+  "gold": "Colegio San José (it was Instituto Hispano)"
+ },
+ {
+  "id": "D01-Q18",
+  "person": "D01",
+  "type": "before",
+  "storyline": "S13",
+  "question": "What was my Carmen's school before it changed?",
+  "gold": "Instituto Hispano"
+ },
+ {
+  "id": "D01-Q19",
+  "person": "D01",
+  "type": "when",
+  "storyline": "S13",
+  "question": "When did my Carmen's school change to Colegio San José?",
+  "gold": "2026-03-05"
+ },
+ {
+  "id": "D01-Q20",
+  "person": "D01",
+  "type": "now",
+  "storyline": "S14",
+  "question": "What is my appliance repair now?",
+  "gold": "ElectroServicio (it was Reparaciones López)"
+ },
+ {
+  "id": "D01-Q21",
+  "person": "D01",
+  "type": "before",
+  "storyline": "S14",
+  "question": "What was my appliance repair before it changed?",
+  "gold": "Reparaciones López"
+ },
+ {
+  "id": "D01-Q22",
+  "person": "D01",
+  "type": "when",
+  "storyline": "S14",
+  "question": "When did my appliance repair change to ElectroServicio?",
+  "gold": "2026-04-04"
+ },
+ {
+  "id": "D01-Q23",
+  "person": "D01",
+  "type": "now",
+  "storyline": "S15",
+  "question": "What is my credit card now?",
+  "gold": "Mastercard Gold (it was Visa Classic)"
+ },
+ {
+  "id": "D01-Q24",
+  "person": "D01",
+  "type": "before",
+  "storyline": "S15",
+  "question": "What was my credit card before it changed?",
+  "gold": "Visa Classic"
+ },
+ {
+  "id": "D01-Q25",
+  "person": "D01",
+  "type": "when",
+  "storyline": "S15",
+  "question": "When did my credit card change to Mastercard Gold?",
+  "gold": "2026-03-15"
+ },
+ {
+  "id": "D01-Q26",
+  "person": "D01",
+  "type": "now",
+  "storyline": "S16",
+  "question": "What is my Diego's school now?",
+  "gold": "Instituto Buhaira (it was Colegio Nuestra Señora)"
+ },
+ {
+  "id": "D01-Q27",
+  "person": "D01",
+  "type": "before",
+  "storyline": "S16",
+  "question": "What was my Diego's school before it changed?",
+  "gold": "Colegio Nuestra Señora"
+ },
+ {
+  "id": "D01-Q28",
+  "person": "D01",
+  "type": "when",
+  "storyline": "S16",
+  "question": "When did my Diego's school change to Instituto Buhaira?",
+  "gold": "2026-03-23"
+ },
+ {
+  "id": "D01-Q29",
+  "person": "D01",
+  "type": "now",
+  "storyline": "S17",
+  "question": "What is my Inés Navarro's preferred evening practice spot now?",
+  "gold": "Calle Sierpes 42 (I switched to Avenida de la Constitución 10, then went back)"
+ },
+ {
+  "id": "D01-Q30",
+  "person": "D01",
+  "type": "now",
+  "storyline": "S18",
+  "question": "What is my Inés Navarro's regular florist for home decor now?",
+  "gold": "Flores del Sur (I switched to Jardinería Triana, then went back)"
+ },
+ {
+  "id": "D01-Q31",
+  "person": "D01",
+  "type": "now",
+  "storyline": "S19",
+  "question": "What is my Carmen's birthday?",
+  "gold": "April 15th (March 22nd was a slip, corrected on 2026-03-26)"
+ },
+ {
+  "id": "D01-Q32",
+  "person": "D01",
+  "type": "now",
+  "storyline": "S20",
+  "question": "What is my garden maintenance?",
+  "gold": "Jardines del Norte (Jardines del Sur was a slip, corrected on 2026-03-16)"
+ },
+ {
+  "id": "D01-Q33",
+  "person": "D01",
+  "type": "considered",
+  "storyline": "S21",
+  "question": "Did I change my Inés Navarro's tentative weekend hiking partner to Marco Vega?",
+  "gold": "No: I only thought about it; it is still Elena Ruiz"
+ },
+ {
+  "id": "D01-Q34",
+  "person": "D01",
+  "type": "considered",
+  "storyline": "S22",
+  "question": "Did I change my case file system to Digital Archive?",
+  "gold": "No: I only thought about it; it is still Paper Filing"
+ },
+ {
+  "id": "D01-Q35",
+  "person": "D01",
+  "type": "now",
+  "storyline": "S23",
+  "question": "What is my flamenco class now?",
+  "gold": "Thursday Morning (changed from Tuesday Evening after thinking about it)"
+ },
+ {
+  "id": "D01-Q36",
+  "person": "D01",
+  "type": "when",
+  "storyline": "S23",
+  "question": "When did I go ahead with Thursday Morning for my flamenco class?",
+  "gold": "2026-04-08"
+ },
+ {
+  "id": "D01-Q37",
+  "person": "D01",
+  "type": "now",
+  "storyline": "S24",
+  "question": "What is my court date location?",
+  "gold": "Palacio de Justicia (Tribunal Provincial was only a what-if)"
+ },
+ {
+  "id": "D01-Q38",
+  "person": "D01",
+  "type": "now",
+  "storyline": "S25",
+  "question": "What is my flamenco recital venue?",
+  "gold": "Casa de la Memoria (Teatro Lope de Vega was only a what-if)"
+ },
+ {
+  "id": "D01-Q39",
+  "person": "D01",
+  "type": "whose",
+  "storyline": "S26",
+  "question": "What is my home insurance provider?",
+  "gold": "Generali (Zurich is Elena Ruiz's)"
+ },
+ {
+  "id": "D01-Q40",
+  "person": "D01",
+  "type": "whose",
+  "storyline": "S26",
+  "question": "What is Elena Ruiz's home insurance provider?",
+  "gold": "Zurich"
+ },
+ {
+  "id": "D01-Q41",
+  "person": "D01",
+  "type": "whose",
+  "storyline": "S27",
+  "question": "What is my dermatologist?",
+  "gold": "Dr. Velasco (Dr. Soto is Carmen Navarro's)"
+ },
+ {
+  "id": "D01-Q42",
+  "person": "D01",
+  "type": "whose",
+  "storyline": "S27",
+  "question": "What is Carmen Navarro's dermatologist?",
+  "gold": "Dr. Soto"
+ },
+ {
+  "id": "D01-Q43",
+  "person": "D01",
+  "type": "whose",
+  "storyline": "S28",
+  "question": "What is my legal advisor for social cases?",
+  "gold": "Advocacy Group SE (Collegium Legal is Marc's)"
+ },
+ {
+  "id": "D01-Q44",
+  "person": "D01",
+  "type": "whose",
+  "storyline": "S28",
+  "question": "What is Marc's legal advisor for social cases?",
+  "gold": "Collegium Legal"
+ },
+ {
+  "id": "D01-Q45",
+  "person": "D01",
+  "type": "need",
+  "storyline": "S29",
+  "question": "Am I still looking for a guitarist to play with her flamenco group at the April feria?",
+  "gold": "No: sorted on 2026-04-01 (Rafa Montoya from the peña agreed to play)"
+ },
+ {
+  "id": "D01-Q46",
+  "person": "D01",
+  "type": "need",
+  "storyline": "S30",
+  "question": "Am I still looking for a maths tutor for Diego before his end-of-term exams?",
+  "gold": "No: sorted on 2026-03-11 (Diego now sees the tutor Lucía Pérez on Mondays)"
+ },
+ {
+  "id": "D01-Q47",
+  "person": "D01",
+  "type": "needs_now",
+  "storyline": null,
+  "question": "What am I looking for at the moment? List everything still open.",
+  "gold": "a lawyer who knows family law for the custody review in May; a second-hand laptop for Carmen's school projects",
+  "note": "not: needs already solved, or needs of someone else"
+ },
+ {
+  "id": "D01-Q48",
+  "person": "D01",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my grandmother's maiden name?",
+  "gold": "not in memory"
+ },
+ {
+  "id": "D01-Q49",
+  "person": "D01",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my licence plate?",
+  "gold": "not in memory"
+ },
+ {
+  "id": "D01-Q50",
+  "person": "D01",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my first car?",
+  "gold": "not in memory"
+ },
+ {
+  "id": "D02-Q01",
+  "person": "D02",
+  "type": "fact",
+  "storyline": "S01",
+  "question": "What is my monthly public transport pass?",
+  "gold": "950 euros"
+ },
+ {
+  "id": "D02-Q02",
+  "person": "D02",
+  "type": "fact",
+  "storyline": "S02",
+  "question": "What is my grandson's kindergarten teacher?",
+  "gold": "Frau Weber"
+ },
+ {
+  "id": "D02-Q03",
+  "person": "D02",
+  "type": "fact",
+  "storyline": "S03",
+  "question": "What is my home address?",
+  "gold": "Hafenstraße 42"
+ },
+ {
+  "id": "D02-Q04",
+  "person": "D02",
+  "type": "fact",
+  "storyline": "S04",
+  "question": "What is my mortgage interest rate?",
+  "gold": "3.5 percent"
+ },
+ {
+  "id": "D02-Q05",
+  "person": "D02",
+  "type": "fact",
+  "storyline": "S05",
+  "question": "What is my primary care doctor?",
+  "gold": "Dr. Althoff"
+ },
+ {
+  "id": "D02-Q06",
+  "person": "D02",
+  "type": "fact",
+  "storyline": "S06",
+  "question": "What is my weekly grocery supplier?",
+  "gold": "Edeka City"
+ },
+ {
+  "id": "D02-Q07",
+  "person": "D02",
+  "type": "fact",
+  "storyline": "S07",
+  "question": "What is my bus depot location?",
+  "gold": "Hamburg-Nord"
+ },
+ {
+  "id": "D02-Q08",
+  "person": "D02",
+  "type": "fact",
+  "storyline": "S08",
+  "question": "What is my primary bank?",
+  "gold": "Sparkasse Hamburg"
+ },
+ {
+  "id": "D02-Q09",
+  "person": "D02",
+  "type": "fact",
+  "storyline": "S09",
+  "question": "What is my monthly net salary?",
+  "gold": "3200 euros"
+ },
+ {
+  "id": "D02-Q10",
+  "person": "D02",
+  "type": "fact",
+  "storyline": "S10",
+  "question": "What is my grandson's birthday date?",
+  "gold": "April 5th"
+ },
+ {
+  "id": "D02-Q11",
+  "person": "D02",
+  "type": "now",
+  "storyline": "S11",
+  "question": "What is my brass band rehearsal venue now?",
+  "gold": "Hamburg Mitte Hall (it was St. Pauli Hall)"
+ },
+ {
+  "id": "D02-Q12",
+  "person": "D02",
+  "type": "before",
+  "storyline": "S11",
+  "question": "What was my brass band rehearsal venue before it changed?",
+  "gold": "St. Pauli Hall"
+ },
+ {
+  "id": "D02-Q13",
+  "person": "D02",
+  "type": "when",
+  "storyline": "S11",
+  "question": "When did my brass band rehearsal venue change to Hamburg Mitte Hall?",
+  "gold": "2026-03-12"
+ },
+ {
+  "id": "D02-Q14",
+  "person": "D02",
+  "type": "now",
+  "storyline": "S12",
+  "question": "What is my union representative contact now?",
+  "gold": "Sandra Klein (it was Lukas Braun)"
+ },
+ {
+  "id": "D02-Q15",
+  "person": "D02",
+  "type": "before",
+  "storyline": "S12",
+  "question": "What was my union representative contact before it changed?",
+  "gold": "Lukas Braun"
+ },
+ {
+  "id": "D02-Q16",
+  "person": "D02",
+  "type": "when",
+  "storyline": "S12",
+  "question": "When did my union representative contact change to Sandra Klein?",
+  "gold": "2026-04-08"
+ },
+ {
+  "id": "D02-Q17",
+  "person": "D02",
+  "type": "now",
+  "storyline": "S13",
+  "question": "What is my grandson's weekend care provider now?",
+  "gold": "Kita Sonnenschein (it was Tante Ingrid)"
+ },
+ {
+  "id": "D02-Q18",
+  "person": "D02",
+  "type": "before",
+  "storyline": "S13",
+  "question": "What was my grandson's weekend care provider before it changed?",
+  "gold": "Tante Ingrid"
+ },
+ {
+  "id": "D02-Q19",
+  "person": "D02",
+  "type": "when",
+  "storyline": "S13",
+  "question": "When did my grandson's weekend care provider change to Kita Sonnenschein?",
+  "gold": "2026-03-31"
+ },
+ {
+  "id": "D02-Q20",
+  "person": "D02",
+  "type": "now",
+  "storyline": "S14",
+  "question": "What is my tuba maintenance technician now?",
+  "gold": "Herr Schmidt (it was Herr Müller)"
+ },
+ {
+  "id": "D02-Q21",
+  "person": "D02",
+  "type": "before",
+  "storyline": "S14",
+  "question": "What was my tuba maintenance technician before it changed?",
+  "gold": "Herr Müller"
+ },
+ {
+  "id": "D02-Q22",
+  "person": "D02",
+  "type": "when",
+  "storyline": "S14",
+  "question": "When did my tuba maintenance technician change to Herr Schmidt?",
+  "gold": "2026-03-31"
+ },
+ {
+  "id": "D02-Q23",
+  "person": "D02",
+  "type": "now",
+  "storyline": "S15",
+  "question": "What is my pain medication supplier now?",
+  "gold": "Apotheke Hafen (it was Apotheke am Markt)"
+ },
+ {
+  "id": "D02-Q24",
+  "person": "D02",
+  "type": "before",
+  "storyline": "S15",
+  "question": "What was my pain medication supplier before it changed?",
+  "gold": "Apotheke am Markt"
+ },
+ {
+  "id": "D02-Q25",
+  "person": "D02",
+  "type": "when",
+  "storyline": "S15",
+  "question": "When did my pain medication supplier change to Apotheke Hafen?",
+  "gold": "2026-03-08"
+ },
+ {
+  "id": "D02-Q26",
+  "person": "D02",
+  "type": "now",
+  "storyline": "S16",
+  "question": "What is my insurance policy number now?",
+  "gold": "POL-9942 (it was POL-8821)"
+ },
+ {
+  "id": "D02-Q27",
+  "person": "D02",
+  "type": "before",
+  "storyline": "S16",
+  "question": "What was my insurance policy number before it changed?",
+  "gold": "POL-8821"
+ },
+ {
+  "id": "D02-Q28",
+  "person": "D02",
+  "type": "when",
+  "storyline": "S16",
+  "question": "When did my insurance policy number change to POL-9942?",
+  "gold": "2026-04-05"
+ },
+ {
+  "id": "D02-Q29",
+  "person": "D02",
+  "type": "now",
+  "storyline": "S17",
+  "question": "What is my newspaper delivery service now?",
+  "gold": "Hamburger Abendblatt (I switched to Die Welt, then went back)"
+ },
+ {
+  "id": "D02-Q30",
+  "person": "D02",
+  "type": "now",
+  "storyline": "S18",
+  "question": "What is my commute route to work now?",
+  "gold": "Route 21 (I switched to Route 44, then went back)"
+ },
+ {
+  "id": "D02-Q31",
+  "person": "D02",
+  "type": "now",
+  "storyline": "S19",
+  "question": "What is my grandson's school bus stop?",
+  "gold": "Hafenstraße 44 (Hafenstraße 40 was a slip, corrected on 2026-04-06)"
+ },
+ {
+  "id": "D02-Q32",
+  "person": "D02",
+  "type": "now",
+  "storyline": "S20",
+  "question": "What is my home heating fuel type?",
+  "gold": "natural gas (gas oil was a slip, corrected on 2026-04-01)"
+ },
+ {
+  "id": "D02-Q33",
+  "person": "D02",
+  "type": "considered",
+  "storyline": "S21",
+  "question": "Did I change my alternative grocery store to Lidl Plus?",
+  "gold": "No: I only thought about it; it is still Rewe City"
+ },
+ {
+  "id": "D02-Q34",
+  "person": "D02",
+  "type": "considered",
+  "storyline": "S22",
+  "question": "Did I change my online banking provider to ING-DiBa?",
+  "gold": "No: I only thought about it; it is still Deutsche Bank"
+ },
+ {
+  "id": "D02-Q35",
+  "person": "D02",
+  "type": "now",
+  "storyline": "S23",
+  "question": "What is my weekend accommodation for band trip now?",
+  "gold": "Gasthof Alsterufer (changed from Hotel Elbphilharmonie after thinking about it)"
+ },
+ {
+  "id": "D02-Q36",
+  "person": "D02",
+  "type": "when",
+  "storyline": "S23",
+  "question": "When did I go ahead with Gasthof Alsterufer for my weekend accommodation for band trip?",
+  "gold": "2026-03-20"
+ },
+ {
+  "id": "D02-Q37",
+  "person": "D02",
+  "type": "now",
+  "storyline": "S24",
+  "question": "What is my grandson's primary school?",
+  "gold": "Grundschule Altona (Grundschule Ottensen was only a what-if)"
+ },
+ {
+  "id": "D02-Q38",
+  "person": "D02",
+  "type": "now",
+  "storyline": "S25",
+  "question": "What is my home heating system?",
+  "gold": "Oil heating (Solar thermal was only a what-if)"
+ },
+ {
+  "id": "D02-Q39",
+  "person": "D02",
+  "type": "whose",
+  "storyline": "S26",
+  "question": "What is my favorite jazz record collection?",
+  "gold": "Kind of Blue (A Love Supreme is Finn's)"
+ },
+ {
+  "id": "D02-Q40",
+  "person": "D02",
+  "type": "whose",
+  "storyline": "S26",
+  "question": "What is Finn's favorite jazz record collection?",
+  "gold": "A Love Supreme"
+ },
+ {
+  "id": "D02-Q41",
+  "person": "D02",
+  "type": "whose",
+  "storyline": "S27",
+  "question": "What is my regular hair salon?",
+  "gold": "Barber Shop Hamburg (Stylist Studio Altona is Birgit's)"
+ },
+ {
+  "id": "D02-Q42",
+  "person": "D02",
+  "type": "whose",
+  "storyline": "S27",
+  "question": "What is Birgit's regular hair salon?",
+  "gold": "Stylist Studio Altona"
+ },
+ {
+  "id": "D02-Q43",
+  "person": "D02",
+  "type": "need",
+  "storyline": "S29",
+  "question": "Am I still looking for a babysitter for Finn on Saturday 14 March?",
+  "gold": "No: sorted on 2026-04-09 (his neighbour Anke Vogt looked after Finn)"
+ },
+ {
+  "id": "D02-Q44",
+  "person": "D02",
+  "type": "need",
+  "storyline": "S30",
+  "question": "Am I still looking for a mechanic to look at the brakes on his old Passat?",
+  "gold": "No: sorted on 2026-04-03 (Werkstatt Yilmaz in Wilhelmsburg fixed the brakes)"
+ },
+ {
+  "id": "D02-Q45",
+  "person": "D02",
+  "type": "needs_now",
+  "storyline": null,
+  "question": "What am I looking for at the moment? List everything still open.",
+  "gold": "tuba lessons to prepare for the band's summer concert; a physiotherapist for his shoulder after the long shifts",
+  "note": "not: needs already solved, or needs of someone else"
+ },
+ {
+  "id": "D02-Q46",
+  "person": "D02",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my gym locker number?",
+  "gold": "not in memory"
+ },
+ {
+  "id": "D02-Q47",
+  "person": "D02",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my first car?",
+  "gold": "not in memory"
+ },
+ {
+  "id": "D02-Q48",
+  "person": "D02",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my licence plate?",
+  "gold": "not in memory"
+ }
+]

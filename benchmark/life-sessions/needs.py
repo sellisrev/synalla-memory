@@ -54,3 +54,17 @@ NEEDS = {
             ('need_open', 'a startup lawyer to review the term sheet', 'lawyer', 'legal-advice', ''),
             ('need_other', 'a physiotherapist for his knee who can come home', 'physiotherapist', 'physiotherapy', 'her father')],
 }
+
+# Tuning people (LIFE_SET=dev): never used for test numbers.
+NEEDS.update({
+    'D01': [('need_met', 'a guitarist to play with her flamenco group at the April feria', 'guitarist', 'music-lessons', 'Rafa Montoya from the peña agreed to play'),
+            ('need_met', 'a maths tutor for Diego before his end-of-term exams', 'tutor', 'tutoring', 'Diego now sees the tutor Lucía Pérez on Mondays'),
+            ('need_open', 'a lawyer who knows family law for the custody review in May', 'lawyer', 'legal-advice', ''),
+            ('need_open', 'a second-hand laptop for Carmen\'s school projects', 'laptop', 'second-hand-goods', ''),
+            ('need_other', 'a flat to rent near the university next year', 'university', 'accommodation', 'Lola (niece)')],
+    'D02': [('need_met', 'a babysitter for Finn on Saturday 14 March', 'babysitter', 'babysitting', 'his neighbour Anke Vogt looked after Finn'),
+            ('need_met', 'a mechanic to look at the brakes on his old Passat', 'mechanic', 'car-repair', 'Werkstatt Yilmaz in Wilhelmsburg fixed the brakes'),
+            ('need_open', 'tuba lessons to prepare for the band\'s summer concert', 'lessons', 'music-lessons', ''),
+            ('need_open', 'a physiotherapist for his shoulder after the long shifts', 'physiotherapist', 'physiotherapy', ''),
+            ('need_other', 'a lift to the airport for her trip to Mallorca', 'airport', 'lifts', 'Birgit (wife)')],
+})

@@ -1,0 +1,939 @@
+[
+ {
+  "n": 1,
+  "day": 0,
+  "steps": [
+   {
+    "story": "S15",
+    "step": 0,
+    "day": 0,
+    "said_late": false,
+    "text": "Tom's pain medication supplier is Apotheke am Markt.",
+    "must": [
+     "Apotheke am Markt"
+    ]
+   }
+  ],
+  "date": "2026-03-02",
+  "kind": "life"
+ },
+ {
+  "n": 2,
+  "day": 1,
+  "steps": [
+   {
+    "story": "S18",
+    "step": 0,
+    "day": 1,
+    "said_late": false,
+    "text": "Tom's commute route to work is Route 21.",
+    "must": [
+     "Route 21"
+    ]
+   }
+  ],
+  "date": "2026-03-03",
+  "kind": "life"
+ },
+ {
+  "n": 3,
+  "day": 2,
+  "steps": [],
+  "date": "2026-03-04",
+  "kind": "life"
+ },
+ {
+  "n": 4,
+  "day": 3,
+  "steps": [
+   {
+    "story": "S27",
+    "step": 0,
+    "day": 3,
+    "said_late": false,
+    "text": "Tom's own regular hair salon is Barber Shop Hamburg.",
+    "must": [
+     "Barber Shop Hamburg"
+    ]
+   }
+  ],
+  "date": "2026-03-05",
+  "kind": "life"
+ },
+ {
+  "n": 5,
+  "day": 3,
+  "steps": [],
+  "date": "2026-03-05",
+  "kind": "life"
+ },
+ {
+  "n": 6,
+  "day": 4,
+  "steps": [
+   {
+    "story": "S18",
+    "step": 1,
+    "day": 4,
+    "said_late": false,
+    "text": "Tom has switched the commute route to work to Route 44.",
+    "must": [
+     "Route 44"
+    ]
+   }
+  ],
+  "date": "2026-03-06",
+  "kind": "life"
+ },
+ {
+  "n": 7,
+  "day": 5,
+  "steps": [],
+  "date": "2026-03-07",
+  "kind": "life"
+ },
+ {
+  "n": 8,
+  "day": 6,
+  "steps": [
+   {
+    "story": "S15",
+    "step": 1,
+    "day": 6,
+    "said_late": false,
+    "text": "Tom's pain medication supplier has changed: now Apotheke Hafen (it was Apotheke am Markt).",
+    "must": [
+     "Apotheke Hafen"
+    ]
+   }
+  ],
+  "date": "2026-03-08",
+  "kind": "life"
+ },
+ {
+  "n": 9,
+  "day": 7,
+  "steps": [],
+  "date": "2026-03-09",
+  "kind": "work"
+ },
+ {
+  "n": 10,
+  "day": 8,
+  "steps": [
+   {
+    "story": "S09",
+    "step": 0,
+    "day": 8,
+    "said_late": false,
+    "text": "Tom's monthly net salary is 3200 euros.",
+    "must": [
+     "3200 euros"
+    ]
+   },
+   {
+    "story": "S18",
+    "step": 2,
+    "day": 8,
+    "said_late": false,
+    "text": "Tom changes mind about the commute route to work: back to Route 21, not Route 44 any more.",
+    "must": [
+     "Route 21"
+    ]
+   }
+  ],
+  "date": "2026-03-10",
+  "kind": "life"
+ },
+ {
+  "n": 11,
+  "day": 9,
+  "steps": [
+   {
+    "story": "S23",
+    "step": 0,
+    "day": 8,
+    "said_late": false,
+    "text": "Tom's weekend accommodation for band trip is Hotel Elbphilharmonie.",
+    "must": [
+     "Hotel Elbphilharmonie"
+    ]
+   },
+   {
+    "story": "S05",
+    "step": 0,
+    "day": 9,
+    "said_late": false,
+    "text": "Tom's primary care doctor is Dr. Althoff.",
+    "must": [
+     "Dr. Althoff"
+    ]
+   }
+  ],
+  "date": "2026-03-11",
+  "kind": "life"
+ },
+ {
+  "n": 12,
+  "day": 10,
+  "steps": [
+   {
+    "story": "S31",
+    "step": 0,
+    "day": 9,
+    "said_late": true,
+    "text": "Tom needs tuba lessons to prepare for the band's summer concert (not sorted yet).",
+    "must": [
+     "lessons"
+    ]
+   }
+  ],
+  "date": "2026-03-12",
+  "kind": "work"
+ },
+ {
+  "n": 13,
+  "day": 11,
+  "steps": [
+   {
+    "story": "S11",
+    "step": 0,
+    "day": 5,
+    "said_late": false,
+    "text": "Tom's brass band rehearsal venue is St. Pauli Hall.",
+    "must": [
+     "St. Pauli Hall"
+    ]
+   }
+  ],
+  "date": "2026-03-13",
+  "kind": "life"
+ },
+ {
+  "n": 14,
+  "day": 12,
+  "steps": [
+   {
+    "story": "S21",
+    "step": 0,
+    "day": 8,
+    "said_late": false,
+    "text": "Tom's alternative grocery store is Rewe City.",
+    "must": [
+     "Rewe City"
+    ]
+   }
+  ],
+  "date": "2026-03-14",
+  "kind": "life"
+ },
+ {
+  "n": 15,
+  "day": 13,
+  "steps": [
+   {
+    "story": "S11",
+    "step": 1,
+    "day": 10,
+    "said_late": true,
+    "text": "Tom's brass band rehearsal venue has changed: now Hamburg Mitte Hall (it was St. Pauli Hall).",
+    "must": [
+     "Hamburg Mitte Hall"
+    ]
+   },
+   {
+    "story": "S23",
+    "step": 1,
+    "day": 12,
+    "said_late": true,
+    "text": "Tom is thinking about changing the weekend accommodation for band trip to Gasthof Alsterufer; not decided yet.",
+    "must": [
+     "Gasthof Alsterufer"
+    ]
+   }
+  ],
+  "date": "2026-03-15",
+  "kind": "life"
+ },
+ {
+  "n": 16,
+  "day": 14,
+  "steps": [
+   {
+    "story": "S27",
+    "step": 1,
+    "day": 13,
+    "said_late": true,
+    "text": "Birgit (wife)'s regular hair salon is Stylist Studio Altona (about Birgit (wife), not Tom).",
+    "must": [
+     "Stylist Studio Altona",
+     "Birgit"
+    ]
+   }
+  ],
+  "date": "2026-03-16",
+  "kind": "life"
+ },
+ {
+  "n": 17,
+  "day": 15,
+  "steps": [
+   {
+    "story": "S03",
+    "step": 0,
+    "day": 15,
+    "said_late": false,
+    "text": "Tom's home address is Hafenstraße 42.",
+    "must": [
+     "Hafenstraße 42"
+    ]
+   },
+   {
+    "story": "S04",
+    "step": 0,
+    "day": 15,
+    "said_late": false,
+    "text": "Tom's mortgage interest rate is 3.5 percent.",
+    "must": [
+     "3.5 percent"
+    ]
+   }
+  ],
+  "date": "2026-03-17",
+  "kind": "life"
+ },
+ {
+  "n": 18,
+  "day": 16,
+  "steps": [
+   {
+    "story": "S07",
+    "step": 0,
+    "day": 15,
+    "said_late": false,
+    "text": "Tom's bus depot location is Hamburg-Nord.",
+    "must": [
+     "Hamburg-Nord"
+    ]
+   },
+   {
+    "story": "S21",
+    "step": 1,
+    "day": 15,
+    "said_late": true,
+    "text": "Tom is only thinking about changing the alternative grocery store to Lidl Plus; nothing decided.",
+    "must": [
+     "Lidl Plus"
+    ]
+   }
+  ],
+  "date": "2026-03-18",
+  "kind": "work"
+ },
+ {
+  "n": 19,
+  "day": 17,
+  "steps": [
+   {
+    "story": "S33",
+    "step": 0,
+    "day": 15,
+    "said_late": true,
+    "text": "a need that is not Tom's own: a lift to the airport for her trip to Mallorca (Birgit (wife)).",
+    "must": [
+     "airport"
+    ]
+   },
+   {
+    "story": "S28",
+    "step": 0,
+    "day": 16,
+    "said_late": false,
+    "text": "Tom's own work union branch number is Branch 44.",
+    "must": [
+     "Branch 44"
+    ]
+   }
+  ],
+  "date": "2026-03-19",
+  "kind": "work"
+ },
+ {
+  "n": 20,
+  "day": 17,
+  "steps": [],
+  "date": "2026-03-19",
+  "kind": "life"
+ },
+ {
+  "n": 21,
+  "day": 18,
+  "steps": [],
+  "date": "2026-03-20",
+  "kind": "life"
+ },
+ {
+  "n": 22,
+  "day": 19,
+  "steps": [],
+  "date": "2026-03-21",
+  "kind": "life"
+ },
+ {
+  "n": 23,
+  "day": 20,
+  "steps": [
+   {
+    "story": "S23",
+    "step": 2,
+    "day": 18,
+    "said_late": true,
+    "text": "Tom has now gone ahead: the weekend accommodation for band trip is Gasthof Alsterufer.",
+    "must": [
+     "Gasthof Alsterufer"
+    ]
+   }
+  ],
+  "date": "2026-03-22",
+  "kind": "life"
+ },
+ {
+  "n": 24,
+  "day": 21,
+  "steps": [],
+  "date": "2026-03-23",
+  "kind": "life"
+ },
+ {
+  "n": 25,
+  "day": 22,
+  "steps": [],
+  "date": "2026-03-24",
+  "kind": "life"
+ },
+ {
+  "n": 26,
+  "day": 23,
+  "steps": [
+   {
+    "story": "S26",
+    "step": 0,
+    "day": 23,
+    "said_late": false,
+    "text": "Tom's own favorite jazz record collection is Kind of Blue.",
+    "must": [
+     "Kind of Blue"
+    ]
+   },
+   {
+    "story": "S30",
+    "step": 0,
+    "day": 23,
+    "said_late": false,
+    "text": "Tom needs a mechanic to look at the brakes on his old Passat (not sorted yet).",
+    "must": [
+     "mechanic"
+    ]
+   }
+  ],
+  "date": "2026-03-25",
+  "kind": "life"
+ },
+ {
+  "n": 27,
+  "day": 24,
+  "steps": [
+   {
+    "story": "S14",
+    "step": 0,
+    "day": 21,
+    "said_late": false,
+    "text": "Tom's tuba maintenance technician is Herr Müller.",
+    "must": [
+     "Herr Müller"
+    ]
+   }
+  ],
+  "date": "2026-03-26",
+  "kind": "life"
+ },
+ {
+  "n": 28,
+  "day": 25,
+  "steps": [],
+  "date": "2026-03-27",
+  "kind": "work"
+ },
+ {
+  "n": 29,
+  "day": 26,
+  "steps": [
+   {
+    "story": "S28",
+    "step": 1,
+    "day": 20,
+    "said_late": true,
+    "text": "Lukas Braun (union rep)'s work union branch number is Branch 12 (about Lukas Braun (union rep), not Tom).",
+    "must": [
+     "Branch 12",
+     "Lukas"
+    ]
+   }
+  ],
+  "date": "2026-03-28",
+  "kind": "work"
+ },
+ {
+  "n": 30,
+  "day": 27,
+  "steps": [
+   {
+    "story": "S08",
+    "step": 0,
+    "day": 27,
+    "said_late": false,
+    "text": "Tom's primary bank is Sparkasse Hamburg.",
+    "must": [
+     "Sparkasse Hamburg"
+    ]
+   }
+  ],
+  "date": "2026-03-29",
+  "kind": "life"
+ },
+ {
+  "n": 31,
+  "day": 28,
+  "steps": [
+   {
+    "story": "S13",
+    "step": 0,
+    "day": 25,
+    "said_late": false,
+    "text": "Tom's grandson's weekend care provider is Tante Ingrid.",
+    "must": [
+     "Tante Ingrid"
+    ]
+   },
+   {
+    "story": "S12",
+    "step": 0,
+    "day": 28,
+    "said_late": false,
+    "text": "Tom's union representative contact is Lukas Braun.",
+    "must": [
+     "Lukas Braun"
+    ]
+   }
+  ],
+  "date": "2026-03-30",
+  "kind": "life"
+ },
+ {
+  "n": 32,
+  "day": 29,
+  "steps": [
+   {
+    "story": "S02",
+    "step": 0,
+    "day": 29,
+    "said_late": false,
+    "text": "Tom's grandson's kindergarten teacher is Frau Weber.",
+    "must": [
+     "Frau Weber"
+    ]
+   },
+   {
+    "story": "S13",
+    "step": 1,
+    "day": 29,
+    "said_late": false,
+    "text": "Tom's grandson's weekend care provider has changed: now Kita Sonnenschein (it was Tante Ingrid).",
+    "must": [
+     "Kita Sonnenschein"
+    ]
+   }
+  ],
+  "date": "2026-03-31",
+  "kind": "life"
+ },
+ {
+  "n": 33,
+  "day": 30,
+  "steps": [
+   {
+    "story": "S20",
+    "step": 0,
+    "day": 25,
+    "said_late": false,
+    "text": "Tom's home heating fuel type is gas oil.",
+    "must": [
+     "gas oil"
+    ]
+   },
+   {
+    "story": "S14",
+    "step": 1,
+    "day": 29,
+    "said_late": true,
+    "text": "Tom's tuba maintenance technician has changed: now Herr Schmidt (it was Herr Müller).",
+    "must": [
+     "Herr Schmidt"
+    ]
+   }
+  ],
+  "date": "2026-04-01",
+  "kind": "life"
+ },
+ {
+  "n": 34,
+  "day": 31,
+  "steps": [
+   {
+    "story": "S19",
+    "step": 0,
+    "day": 29,
+    "said_late": false,
+    "text": "Tom's grandson's school bus stop is Hafenstraße 40.",
+    "must": [
+     "Hafenstraße 40"
+    ]
+   },
+   {
+    "story": "S17",
+    "step": 0,
+    "day": 30,
+    "said_late": false,
+    "text": "Tom's newspaper delivery service is Hamburger Abendblatt.",
+    "must": [
+     "Hamburger Abendblatt"
+    ]
+   }
+  ],
+  "date": "2026-04-02",
+  "kind": "life"
+ },
+ {
+  "n": 35,
+  "day": 32,
+  "steps": [
+   {
+    "story": "S20",
+    "step": 1,
+    "day": 30,
+    "said_late": true,
+    "text": "Tom corrects an earlier slip: the home heating fuel type is natural gas, not gas oil.",
+    "must": [
+     "natural gas"
+    ]
+   },
+   {
+    "story": "S26",
+    "step": 1,
+    "day": 30,
+    "said_late": true,
+    "text": "Finn (grandson)'s favorite jazz record collection is A Love Supreme (about Finn (grandson), not Tom).",
+    "must": [
+     "A Love Supreme",
+     "Finn"
+    ]
+   }
+  ],
+  "date": "2026-04-03",
+  "kind": "life"
+ },
+ {
+  "n": 36,
+  "day": 32,
+  "steps": [
+   {
+    "story": "S16",
+    "step": 0,
+    "day": 31,
+    "said_late": false,
+    "text": "Tom's insurance policy number is POL-8821.",
+    "must": [
+     "POL-8821"
+    ]
+   },
+   {
+    "story": "S01",
+    "step": 0,
+    "day": 32,
+    "said_late": false,
+    "text": "Tom's monthly public transport pass is 950 euros.",
+    "must": [
+     "950 euros"
+    ]
+   }
+  ],
+  "date": "2026-04-03",
+  "kind": "life"
+ },
+ {
+  "n": 37,
+  "day": 33,
+  "steps": [
+   {
+    "story": "S25",
+    "step": 0,
+    "day": 31,
+    "said_late": false,
+    "text": "Tom's home heating system is Oil heating.",
+    "must": [
+     "Oil heating"
+    ]
+   },
+   {
+    "story": "S30",
+    "step": 1,
+    "day": 32,
+    "said_late": true,
+    "text": "Tom's need is sorted: Werkstatt Yilmaz in Wilhelmsburg fixed the brakes.",
+    "must": [
+     "Yilmaz",
+     "Wilhelmsburg"
+    ]
+   }
+  ],
+  "date": "2026-04-04",
+  "kind": "life"
+ },
+ {
+  "n": 38,
+  "day": 34,
+  "steps": [
+   {
+    "story": "S17",
+    "step": 1,
+    "day": 33,
+    "said_late": true,
+    "text": "Tom has switched the newspaper delivery service to Die Welt.",
+    "must": [
+     "Die Welt"
+    ]
+   },
+   {
+    "story": "S22",
+    "step": 0,
+    "day": 33,
+    "said_late": false,
+    "text": "Tom's online banking provider is Deutsche Bank.",
+    "must": [
+     "Deutsche Bank"
+    ]
+   }
+  ],
+  "date": "2026-04-05",
+  "kind": "life"
+ },
+ {
+  "n": 39,
+  "day": 35,
+  "steps": [
+   {
+    "story": "S24",
+    "step": 0,
+    "day": 33,
+    "said_late": false,
+    "text": "Tom's grandson's primary school is Grundschule Altona.",
+    "must": [
+     "Grundschule Altona"
+    ]
+   },
+   {
+    "story": "S29",
+    "step": 0,
+    "day": 33,
+    "said_late": true,
+    "text": "Tom needs a babysitter for Finn on Saturday 14 March (not sorted yet).",
+    "must": [
+     "babysitter"
+    ]
+   }
+  ],
+  "date": "2026-04-06",
+  "kind": "life"
+ },
+ {
+  "n": 40,
+  "day": 36,
+  "steps": [
+   {
+    "story": "S10",
+    "step": 0,
+    "day": 34,
+    "said_late": false,
+    "text": "Tom's grandson's birthday date is April 5th.",
+    "must": [
+     "April 5th"
+    ]
+   },
+   {
+    "story": "S16",
+    "step": 1,
+    "day": 34,
+    "said_late": true,
+    "text": "Tom's insurance policy number has changed: now POL-9942 (it was POL-8821).",
+    "must": [
+     "POL-9942"
+    ]
+   }
+  ],
+  "date": "2026-04-07",
+  "kind": "life"
+ },
+ {
+  "n": 41,
+  "day": 36,
+  "steps": [
+   {
+    "story": "S19",
+    "step": 1,
+    "day": 35,
+    "said_late": true,
+    "text": "Tom corrects an earlier slip: the grandson's school bus stop is Hafenstraße 44, not Hafenstraße 40.",
+    "must": [
+     "Hafenstraße 44"
+    ]
+   },
+   {
+    "story": "S32",
+    "step": 0,
+    "day": 35,
+    "said_late": true,
+    "text": "Tom needs a physiotherapist for his shoulder after the long shifts (not sorted yet).",
+    "must": [
+     "physiotherapist"
+    ]
+   }
+  ],
+  "date": "2026-04-07",
+  "kind": "life"
+ },
+ {
+  "n": 42,
+  "day": 37,
+  "steps": [
+   {
+    "story": "S06",
+    "step": 0,
+    "day": 34,
+    "said_late": false,
+    "text": "Tom's weekly grocery supplier is Edeka City.",
+    "must": [
+     "Edeka City"
+    ]
+   },
+   {
+    "story": "S17",
+    "step": 2,
+    "day": 37,
+    "said_late": false,
+    "text": "Tom changes mind about the newspaper delivery service: back to Hamburger Abendblatt, not Die Welt any more.",
+    "must": [
+     "Hamburger Abendblatt"
+    ]
+   }
+  ],
+  "date": "2026-04-08",
+  "kind": "life"
+ },
+ {
+  "n": 43,
+  "day": 38,
+  "steps": [
+   {
+    "story": "S25",
+    "step": 1,
+    "day": 37,
+    "said_late": true,
+    "text": "Tom imagines a what-if: then the home heating system would be Solar thermal. Only an idea; nothing changes.",
+    "must": [
+     "Solar thermal"
+    ]
+   },
+   {
+    "story": "S29",
+    "step": 1,
+    "day": 38,
+    "said_late": false,
+    "text": "Tom's need is sorted: his neighbour Anke Vogt looked after Finn.",
+    "must": [
+     "Anke Vogt",
+     "Finn"
+    ]
+   }
+  ],
+  "date": "2026-04-09",
+  "kind": "life"
+ },
+ {
+  "n": 44,
+  "day": 38,
+  "steps": [],
+  "date": "2026-04-09",
+  "kind": "work"
+ },
+ {
+  "n": 45,
+  "day": 39,
+  "steps": [
+   {
+    "story": "S22",
+    "step": 1,
+    "day": 36,
+    "said_late": true,
+    "text": "Tom is only thinking about changing the online banking provider to ING-DiBa; nothing decided.",
+    "must": [
+     "ING-DiBa"
+    ]
+   }
+  ],
+  "date": "2026-04-10",
+  "kind": "life"
+ },
+ {
+  "n": 46,
+  "day": 40,
+  "steps": [],
+  "date": "2026-04-11",
+  "kind": "life"
+ },
+ {
+  "n": 47,
+  "day": 41,
+  "steps": [
+   {
+    "story": "S24",
+    "step": 1,
+    "day": 41,
+    "said_late": false,
+    "text": "Tom imagines a what-if: then the grandson's primary school would be Grundschule Ottensen. Only an idea; nothing changes.",
+    "must": [
+     "Grundschule Ottensen"
+    ]
+   }
+  ],
+  "date": "2026-04-12",
+  "kind": "life"
+ },
+ {
+  "n": 48,
+  "day": 41,
+  "steps": [
+   {
+    "story": "S12",
+    "step": 1,
+    "day": 37,
+    "said_late": true,
+    "text": "Tom's union representative contact has changed: now Sandra Klein (it was Lukas Braun).",
+    "must": [
+     "Sandra Klein"
+    ]
+   }
+  ],
+  "date": "2026-04-12",
+  "kind": "life"
+ }
+]

@@ -1,0 +1,540 @@
+[
+ {
+  "id": "S01",
+  "pattern": "plain",
+  "theme": "admin",
+  "days": [
+   32
+  ],
+  "thing": "monthly public transport pass",
+  "values": [
+   "950 euros"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S02",
+  "pattern": "plain",
+  "theme": "family",
+  "days": [
+   29
+  ],
+  "thing": "grandson's kindergarten teacher",
+  "values": [
+   "Frau Weber"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S03",
+  "pattern": "plain",
+  "theme": "home",
+  "days": [
+   15
+  ],
+  "thing": "home address",
+  "values": [
+   "Hafenstraße 42"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S04",
+  "pattern": "plain",
+  "theme": "home",
+  "days": [
+   15
+  ],
+  "thing": "mortgage interest rate",
+  "values": [
+   "3.5 percent"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S05",
+  "pattern": "plain",
+  "theme": "health",
+  "days": [
+   9
+  ],
+  "thing": "primary care doctor",
+  "values": [
+   "Dr. Althoff"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S06",
+  "pattern": "plain",
+  "theme": "shopping",
+  "days": [
+   34
+  ],
+  "thing": "weekly grocery supplier",
+  "values": [
+   "Edeka City"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S07",
+  "pattern": "plain",
+  "theme": "work",
+  "days": [
+   15
+  ],
+  "thing": "bus depot location",
+  "values": [
+   "Hamburg-Nord"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S08",
+  "pattern": "plain",
+  "theme": "admin",
+  "days": [
+   27
+  ],
+  "thing": "primary bank",
+  "values": [
+   "Sparkasse Hamburg"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S09",
+  "pattern": "plain",
+  "theme": "money",
+  "days": [
+   8
+  ],
+  "thing": "monthly net salary",
+  "values": [
+   "3200 euros"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S10",
+  "pattern": "plain",
+  "theme": "family",
+  "days": [
+   34
+  ],
+  "thing": "grandson's birthday date",
+  "values": [
+   "April 5th"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S11",
+  "pattern": "change",
+  "theme": "hobbies",
+  "days": [
+   5,
+   10
+  ],
+  "thing": "brass band rehearsal venue",
+  "values": [
+   "St. Pauli Hall",
+   "Hamburg Mitte Hall"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S12",
+  "pattern": "change",
+  "theme": "admin",
+  "days": [
+   28,
+   37
+  ],
+  "thing": "union representative contact",
+  "values": [
+   "Lukas Braun",
+   "Sandra Klein"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S13",
+  "pattern": "change",
+  "theme": "travel",
+  "days": [
+   25,
+   29
+  ],
+  "thing": "grandson's weekend care provider",
+  "values": [
+   "Tante Ingrid",
+   "Kita Sonnenschein"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S14",
+  "pattern": "change",
+  "theme": "hobbies",
+  "days": [
+   21,
+   29
+  ],
+  "thing": "tuba maintenance technician",
+  "values": [
+   "Herr Müller",
+   "Herr Schmidt"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S15",
+  "pattern": "change",
+  "theme": "health",
+  "days": [
+   0,
+   6
+  ],
+  "thing": "pain medication supplier",
+  "values": [
+   "Apotheke am Markt",
+   "Apotheke Hafen"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S16",
+  "pattern": "change",
+  "theme": "admin",
+  "days": [
+   31,
+   34
+  ],
+  "thing": "insurance policy number",
+  "values": [
+   "POL-8821",
+   "POL-9942"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S17",
+  "pattern": "heart",
+  "theme": "shopping",
+  "days": [
+   30,
+   33,
+   37
+  ],
+  "thing": "newspaper delivery service",
+  "values": [
+   "Hamburger Abendblatt",
+   "Die Welt"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S18",
+  "pattern": "heart",
+  "theme": "travel",
+  "days": [
+   1,
+   4,
+   8
+  ],
+  "thing": "commute route to work",
+  "values": [
+   "Route 21",
+   "Route 44"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S19",
+  "pattern": "correction",
+  "theme": "travel",
+  "days": [
+   29,
+   35
+  ],
+  "thing": "grandson's school bus stop",
+  "values": [
+   "Hafenstraße 40",
+   "Hafenstraße 44"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S20",
+  "pattern": "correction",
+  "theme": "home",
+  "days": [
+   25,
+   30
+  ],
+  "thing": "home heating fuel type",
+  "values": [
+   "gas oil",
+   "natural gas"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S21",
+  "pattern": "tentative_dropped",
+  "theme": "shopping",
+  "days": [
+   8,
+   15
+  ],
+  "thing": "alternative grocery store",
+  "values": [
+   "Rewe City",
+   "Lidl Plus"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S22",
+  "pattern": "tentative_dropped",
+  "theme": "money",
+  "days": [
+   33,
+   36
+  ],
+  "thing": "online banking provider",
+  "values": [
+   "Deutsche Bank",
+   "ING-DiBa"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S23",
+  "pattern": "tentative_confirmed",
+  "theme": "travel",
+  "days": [
+   8,
+   12,
+   18
+  ],
+  "thing": "weekend accommodation for band trip",
+  "values": [
+   "Hotel Elbphilharmonie",
+   "Gasthof Alsterufer"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S24",
+  "pattern": "hypothetical",
+  "theme": "people",
+  "days": [
+   33,
+   41
+  ],
+  "thing": "grandson's primary school",
+  "values": [
+   "Grundschule Altona",
+   "Grundschule Ottensen"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S25",
+  "pattern": "hypothetical",
+  "theme": "home",
+  "days": [
+   31,
+   37
+  ],
+  "thing": "home heating system",
+  "values": [
+   "Oil heating",
+   "Solar thermal"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S26",
+  "pattern": "lookalike",
+  "theme": "hobbies",
+  "days": [
+   23,
+   30
+  ],
+  "thing": "favorite jazz record collection",
+  "values": [
+   "Kind of Blue",
+   "A Love Supreme"
+  ],
+  "other_person": "Finn (grandson)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S27",
+  "pattern": "lookalike",
+  "theme": "family",
+  "days": [
+   3,
+   13
+  ],
+  "thing": "regular hair salon",
+  "values": [
+   "Barber Shop Hamburg",
+   "Stylist Studio Altona"
+  ],
+  "other_person": "Birgit (wife)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S28",
+  "pattern": "lookalike",
+  "theme": "work",
+  "days": [
+   16,
+   20
+  ],
+  "thing": "work union branch number",
+  "values": [
+   "Branch 44",
+   "Branch 12"
+  ],
+  "other_person": "Lukas Braun (union rep)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S29",
+  "pattern": "need_met",
+  "theme": "shopping",
+  "days": [
+   33,
+   38
+  ],
+  "thing": "need",
+  "values": [
+   "a babysitter for Finn on Saturday 14 March",
+   "his neighbour Anke Vogt looked after Finn"
+  ],
+  "other_person": "",
+  "keyword": "babysitter",
+  "topic": "babysitting"
+ },
+ {
+  "id": "S30",
+  "pattern": "need_met",
+  "theme": "people",
+  "days": [
+   23,
+   32
+  ],
+  "thing": "need",
+  "values": [
+   "a mechanic to look at the brakes on his old Passat",
+   "Werkstatt Yilmaz in Wilhelmsburg fixed the brakes"
+  ],
+  "other_person": "",
+  "keyword": "mechanic",
+  "topic": "car-repair"
+ },
+ {
+  "id": "S31",
+  "pattern": "need_open",
+  "theme": "work",
+  "days": [
+   9
+  ],
+  "thing": "need",
+  "values": [
+   "tuba lessons to prepare for the band's summer concert"
+  ],
+  "other_person": "",
+  "keyword": "lessons",
+  "topic": "music-lessons"
+ },
+ {
+  "id": "S32",
+  "pattern": "need_open",
+  "theme": "health",
+  "days": [
+   35
+  ],
+  "thing": "need",
+  "values": [
+   "a physiotherapist for his shoulder after the long shifts"
+  ],
+  "other_person": "",
+  "keyword": "physiotherapist",
+  "topic": "physiotherapy"
+ },
+ {
+  "id": "S33",
+  "pattern": "need_other",
+  "theme": "family",
+  "days": [
+   15
+  ],
+  "thing": "need",
+  "values": [
+   "a lift to the airport for her trip to Mallorca"
+  ],
+  "other_person": "Birgit (wife)",
+  "keyword": "airport",
+  "topic": "lifts"
+ }
+]

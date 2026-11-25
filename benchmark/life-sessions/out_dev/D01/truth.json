@@ -1,0 +1,548 @@
+[
+ {
+  "id": "S01",
+  "pattern": "plain",
+  "thing": "flight to Madrid",
+  "theme": "travel",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-10",
+    "Iberia 4521"
+   ]
+  ],
+  "now": "Iberia 4521"
+ },
+ {
+  "id": "S02",
+  "pattern": "plain",
+  "thing": "tax appointment",
+  "theme": "admin",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-24",
+    "Agencia Tributaria"
+   ]
+  ],
+  "now": "Agencia Tributaria"
+ },
+ {
+  "id": "S03",
+  "pattern": "plain",
+  "thing": "bank branch",
+  "theme": "admin",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-30",
+    "CaixaBank San Bernardo"
+   ]
+  ],
+  "now": "CaixaBank San Bernardo"
+ },
+ {
+  "id": "S04",
+  "pattern": "plain",
+  "thing": "grocery supplier",
+  "theme": "shopping",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-25",
+    "Mercadona"
+   ]
+  ],
+  "now": "Mercadona"
+ },
+ {
+  "id": "S05",
+  "pattern": "plain",
+  "thing": "pharmacy",
+  "theme": "health",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-08",
+    "Farmacia Central"
+   ]
+  ],
+  "now": "Farmacia Central"
+ },
+ {
+  "id": "S06",
+  "pattern": "plain",
+  "thing": "insurance provider",
+  "theme": "money",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-06",
+    "Mapfre"
+   ]
+  ],
+  "now": "Mapfre"
+ },
+ {
+  "id": "S07",
+  "pattern": "plain",
+  "thing": "physiotherapist",
+  "theme": "health",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-08",
+    "Dr. Almagro"
+   ]
+  ],
+  "now": "Dr. Almagro"
+ },
+ {
+  "id": "S08",
+  "pattern": "plain",
+  "thing": "flamenco venue",
+  "theme": "hobbies",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-12",
+    "Peña Flamenca La Platería"
+   ]
+  ],
+  "now": "Peña Flamenca La Platería"
+ },
+ {
+  "id": "S09",
+  "pattern": "plain",
+  "thing": "utility provider",
+  "theme": "admin",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-11",
+    "Iberdrola"
+   ]
+  ],
+  "now": "Iberdrola"
+ },
+ {
+  "id": "S10",
+  "pattern": "plain",
+  "thing": "mortgage lender",
+  "theme": "money",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-10",
+    "Santander"
+   ]
+  ],
+  "now": "Santander"
+ },
+ {
+  "id": "S11",
+  "pattern": "change",
+  "thing": "internet provider",
+  "theme": "shopping",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-04",
+    "Vodafone"
+   ],
+   [
+    "2026-03-09",
+    "Orange"
+   ]
+  ],
+  "now": "Orange"
+ },
+ {
+  "id": "S12",
+  "pattern": "change",
+  "thing": "guitar instructor",
+  "theme": "hobbies",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-07",
+    "Rafael de Utrera"
+   ],
+   [
+    "2026-03-15",
+    "Javier el de la Cruz"
+   ]
+  ],
+  "now": "Javier el de la Cruz"
+ },
+ {
+  "id": "S13",
+  "pattern": "change",
+  "thing": "Carmen's school",
+  "theme": "family",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-02",
+    "Instituto Hispano"
+   ],
+   [
+    "2026-03-05",
+    "Colegio San José"
+   ]
+  ],
+  "now": "Colegio San José"
+ },
+ {
+  "id": "S14",
+  "pattern": "change",
+  "thing": "appliance repair",
+  "theme": "home",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-26",
+    "Reparaciones López"
+   ],
+   [
+    "2026-04-04",
+    "ElectroServicio"
+   ]
+  ],
+  "now": "ElectroServicio"
+ },
+ {
+  "id": "S15",
+  "pattern": "change",
+  "thing": "credit card",
+  "theme": "money",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-11",
+    "Visa Classic"
+   ],
+   [
+    "2026-03-15",
+    "Mastercard Gold"
+   ]
+  ],
+  "now": "Mastercard Gold"
+ },
+ {
+  "id": "S16",
+  "pattern": "change",
+  "thing": "Diego's school",
+  "theme": "family",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-19",
+    "Colegio Nuestra Señora"
+   ],
+   [
+    "2026-03-23",
+    "Instituto Buhaira"
+   ]
+  ],
+  "now": "Instituto Buhaira"
+ },
+ {
+  "id": "S17",
+  "pattern": "heart",
+  "thing": "Inés Navarro's preferred evening practice spot",
+  "theme": "home",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-06",
+    "Calle Sierpes 42"
+   ],
+   [
+    "2026-03-09",
+    "Avenida de la Constitución 10"
+   ],
+   [
+    "2026-03-16",
+    "Calle Sierpes 42"
+   ]
+  ],
+  "now": "Calle Sierpes 42"
+ },
+ {
+  "id": "S18",
+  "pattern": "heart",
+  "thing": "Inés Navarro's regular florist for home decor",
+  "theme": "shopping",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-26",
+    "Flores del Sur"
+   ],
+   [
+    "2026-04-02",
+    "Jardinería Triana"
+   ],
+   [
+    "2026-04-11",
+    "Flores del Sur"
+   ]
+  ],
+  "now": "Flores del Sur"
+ },
+ {
+  "id": "S19",
+  "pattern": "correction",
+  "thing": "Carmen's birthday",
+  "theme": "family",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-17",
+    "April 15th"
+   ]
+  ],
+  "said_wrongly": [
+   "2026-03-17",
+   "March 22nd"
+  ],
+  "corrected_on": "2026-03-26",
+  "now": "April 15th"
+ },
+ {
+  "id": "S20",
+  "pattern": "correction",
+  "thing": "garden maintenance",
+  "theme": "home",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-07",
+    "Jardines del Norte"
+   ]
+  ],
+  "said_wrongly": [
+   "2026-03-07",
+   "Jardines del Sur"
+  ],
+  "corrected_on": "2026-03-16",
+  "now": "Jardines del Norte"
+ },
+ {
+  "id": "S21",
+  "pattern": "tentative_dropped",
+  "thing": "Inés Navarro's tentative weekend hiking partner",
+  "theme": "people",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-04",
+    "Elena Ruiz"
+   ]
+  ],
+  "considered": [
+   "2026-03-08",
+   "Marco Vega"
+  ],
+  "now": "Elena Ruiz"
+ },
+ {
+  "id": "S22",
+  "pattern": "tentative_dropped",
+  "thing": "case file system",
+  "theme": "work",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-16",
+    "Paper Filing"
+   ]
+  ],
+  "considered": [
+   "2026-03-23",
+   "Digital Archive"
+  ],
+  "now": "Paper Filing"
+ },
+ {
+  "id": "S23",
+  "pattern": "tentative_confirmed",
+  "thing": "flamenco class",
+  "theme": "hobbies",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-23",
+    "Tuesday Evening"
+   ],
+   [
+    "2026-04-08",
+    "Thursday Morning"
+   ]
+  ],
+  "considered": [
+   "2026-03-30",
+   "Thursday Morning"
+  ],
+  "now": "Thursday Morning"
+ },
+ {
+  "id": "S24",
+  "pattern": "hypothetical",
+  "thing": "court date location",
+  "theme": "admin",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-10",
+    "Palacio de Justicia"
+   ]
+  ],
+  "imagined": [
+   "2026-03-19",
+   "Tribunal Provincial"
+  ],
+  "now": "Palacio de Justicia"
+ },
+ {
+  "id": "S25",
+  "pattern": "hypothetical",
+  "thing": "flamenco recital venue",
+  "theme": "hobbies",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-19",
+    "Casa de la Memoria"
+   ]
+  ],
+  "imagined": [
+   "2026-03-28",
+   "Teatro Lope de Vega"
+  ],
+  "now": "Casa de la Memoria"
+ },
+ {
+  "id": "S26",
+  "pattern": "lookalike",
+  "thing": "home insurance provider",
+  "theme": "home",
+  "other_person": "Elena Ruiz (friend)",
+  "history": [
+   [
+    "2026-04-02",
+    "Generali"
+   ]
+  ],
+  "other_value": [
+   "2026-04-09",
+   "Zurich"
+  ],
+  "now": "Generali"
+ },
+ {
+  "id": "S27",
+  "pattern": "lookalike",
+  "thing": "dermatologist",
+  "theme": "health",
+  "other_person": "Carmen Navarro (daughter)",
+  "history": [
+   [
+    "2026-03-09",
+    "Dr. Velasco"
+   ]
+  ],
+  "other_value": [
+   "2026-03-16",
+   "Dr. Soto"
+  ],
+  "now": "Dr. Velasco"
+ },
+ {
+  "id": "S28",
+  "pattern": "lookalike",
+  "thing": "legal advisor for social cases",
+  "theme": "work",
+  "other_person": "Marc (neighbour)",
+  "history": [
+   [
+    "2026-03-06",
+    "Advocacy Group SE"
+   ]
+  ],
+  "other_value": [
+   "2026-03-09",
+   "Collegium Legal"
+  ],
+  "now": "Advocacy Group SE"
+ },
+ {
+  "id": "S29",
+  "pattern": "need_met",
+  "thing": "need",
+  "theme": "people",
+  "other_person": null,
+  "need": {
+   "what": "a guitarist to play with her flamenco group at the April feria",
+   "topic": "music-lessons",
+   "open_from": "2026-03-27",
+   "met_on": "2026-04-01",
+   "how": "Rafa Montoya from the peña agreed to play"
+  }
+ },
+ {
+  "id": "S30",
+  "pattern": "need_met",
+  "thing": "need",
+  "theme": "family",
+  "other_person": null,
+  "need": {
+   "what": "a maths tutor for Diego before his end-of-term exams",
+   "topic": "tutoring",
+   "open_from": "2026-03-04",
+   "met_on": "2026-03-11",
+   "how": "Diego now sees the tutor Lucía Pérez on Mondays"
+  }
+ },
+ {
+  "id": "S31",
+  "pattern": "need_open",
+  "thing": "need",
+  "theme": "people",
+  "other_person": null,
+  "need": {
+   "what": "a lawyer who knows family law for the custody review in May",
+   "topic": "legal-advice",
+   "open_from": "2026-03-14",
+   "met_on": null
+  }
+ },
+ {
+  "id": "S32",
+  "pattern": "need_open",
+  "thing": "need",
+  "theme": "travel",
+  "other_person": null,
+  "need": {
+   "what": "a second-hand laptop for Carmen's school projects",
+   "topic": "second-hand-goods",
+   "open_from": "2026-03-02",
+   "met_on": null
+  }
+ },
+ {
+  "id": "S33",
+  "pattern": "need_other",
+  "thing": "need",
+  "theme": "work",
+  "other_person": "Lola (niece)",
+  "need": {
+   "what": "a flat to rent near the university next year",
+   "topic": "accommodation",
+   "open_from": "2026-03-09",
+   "met_on": null,
+   "not_the_persons": true
+  }
+ }
+]

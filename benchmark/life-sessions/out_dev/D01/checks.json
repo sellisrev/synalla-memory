@@ -1,0 +1,252 @@
+{
+ "2": [
+  [
+   "states 'Tuesday Evening'"
+  ]
+ ],
+ "7": [
+  [
+   "states 'Thursday Morning'"
+  ]
+ ],
+ "9": [
+  [
+   "states 'Mercadona'"
+  ],
+  [
+   "missing 'Marco Vega'"
+  ],
+  [
+   "date 2026-03-08 not said"
+  ],
+  [
+   "missing 'Marco Vega'"
+  ],
+  [
+   "states 'Farmacia Central'"
+  ],
+  [
+   "states 'Mercadona'",
+   "date 2026-03-08 not said"
+  ],
+  [
+   "missing 'Marco Vega'"
+  ],
+  [
+   "date 2026-03-08 not said"
+  ],
+  [
+   "missing 'Marco Vega'"
+  ],
+  [
+   "date 2026-03-08 not said"
+  ],
+  [
+   "missing 'Marco Vega'"
+  ],
+  [
+   "date 2026-03-08 not said"
+  ]
+ ],
+ "12": [
+  [
+   "missing 'Mondays'"
+  ],
+  [
+   "judge: S20: Remember, it’s Jardines del Sur who comes every second Thursday. (Inés states the garden maintenance is Jardines del Sur, but S20 states that she corrected this earlier to Jardines del N)",
+   "judge: S30: It’s Lucía Pérez, right? I want to make sure I don’t double-book her slot with my own meetings. (The user mentions the tutoring is sorted and mentions Lucía Pérez. However, the fact S30 is dated 2026-03-11, which is a)",
+   "judge: S17: Avenida de la Constitución 10. (Inés refers to her practice spot as Avenida de la Constitución 10, but S17 (dated 2026-03-09) notes she switched her pre)"
+  ],
+  [
+   "judge: S30: I remember being so stressed back on Wednesday 11 March when we finally got everything set up with her. (The conversation takes place on 2026-03-12. The user mentions a past date of March 11th being when the tutor was sorted,)"
+  ],
+  [
+   "states 'Thursday Morning'"
+  ],
+  [
+   "missing 'Mondays'"
+  ]
+ ],
+ "21": [
+  [
+   "states 'Mercadona'"
+  ],
+  [
+   "judge: S16: Regarding Diego, is the school event at Colegio Nuestra Señora this week? (The conversation is dated 2026-03-19. According to fact S16, Diego's school was changed to Instituto Buhaira on 2026-03-)"
+  ]
+ ],
+ "27": [
+  [
+   "states 'Thursday Morning'"
+  ]
+ ],
+ "29": [
+  [
+   "states 'Thursday Morning'"
+  ]
+ ],
+ "30": [
+  [
+   "date 2026-03-27 not said"
+  ],
+  [
+   "date 2026-03-26 not said"
+  ]
+ ],
+ "31": [
+  [
+   "date 2026-03-28 not said"
+  ],
+  [
+   "date 2026-03-28 not said"
+  ],
+  [
+   "date 2026-03-28 not said"
+  ],
+  [
+   "date 2026-03-28 not said"
+  ],
+  [
+   "date 2026-03-28 not said"
+  ]
+ ],
+ "33": [
+  [
+   "states 'Thursday Morning'"
+  ]
+ ],
+ "35": [
+  [
+   "states 'Thursday Morning'"
+  ]
+ ],
+ "1": [
+  [
+   "judge: S13: Carmen’s school, Instituto Hispano, sent a digital form that I completely forgot to sign by last Friday. (The conversation is dated 2026-03-02. The fact S13 states that Carmen's school is Instituto Hispano on this date, but la)",
+   "judge: S13: And please set a reminder for me to leave for Instituto Hispano tomorrow morning to drop Carmen off, so I don’t forget a (The user mentions Instituto Hispano. While this is part of the S13 storyline, the user is referring to the school for 't)"
+  ],
+  [
+   "states 'Mercadona'"
+  ],
+  [
+   "judge: S13: Can you draft a quick email to the coordinator at Instituto Hispano? (The conversation is dated 2026-03-02. While S13 (Carmen's school is Instituto Hispano) is true on this date, the instruc)"
+  ]
+ ],
+ "4": [
+  [
+   "judge: S13: Would you like me to look for options near your home or closer to Instituto Hispano? (The conversation is dated 2026-03-04. While the fact S13 (Carmen's school is Instituto Hispano) is known, the user's men)",
+   "judge: S23: I have to leave for my flamenco class at 7 PM with the group. (The conversation is dated 2026-03-04. The fact S23 (flamenco class is Tuesday Evening) is dated 2026-03-23. Mentioning a)"
+  ]
+ ],
+ "5": [
+  [
+   "judge: S30: I have Carmen’s math tutor on Wednesday (The user states Carmen has a math tutor, but the facts state that Diego is the one who needs a maths tutor (S30).)",
+   "judge: S30: I have Carmen’s math tutor on Wednesday (The conversation occurs on 2026-03-05. According to the facts, the need for a maths tutor was not sorted until 2026-03-1)"
+  ]
+ ],
+ "6": [
+  [
+   "judge: S13: I can certainly help with that. Here is a draft you can send:\n\nSubject: Enrollment Confirmation – Carmen Navarro\n\nDear O (The conversation states the transition to Colegio San José occurred on Thursday 5 March, but according to the facts, the)",
+   "judge: S17: The recurring event is set for Fridays from 19:00 to 20:30 at Calle Sierpes 42. I’ve noted in the description that this  (The assistant states the recurring event is at Calle Sierpes 42. However, the fact S17 (from 2026-03-06) says this is th)"
+  ],
+  [
+   "judge: S17: I practice every Friday evening at Calle Sierpes 42 (The user claims to practice every Friday evening, but the conversation date is 2026-03-06 and the fact S17 (from 2026-03)"
+  ],
+  [
+   "missing 'Calle Sierpes 42'"
+  ]
+ ],
+ "8": [
+  [
+   "judge: S19: Can you look up the recipe for the paella I wanted to make for Carmen’s birthday next week? (The conversation is dated 2026-03-08. According to fact S19, Carmen's birthday is April 15th, so it is not 'next week)"
+  ]
+ ],
+ "17": [
+  [
+   "judge: S15: Tengo registrado tu tarjeta Visa Classic como método predeterminado. (The conversation is dated 2026-03-15. According to fact S15, the credit card was changed to Mastercard Gold on 2026-03-1)",
+   "judge: S24: Me voy a preparar para ir a ver a Carmen al Palacio de Justicia a las dos, luego ya veremos. (The user mentions going to see Carmen at the Palacio de Justicia. However, S24 states that the Palacio de Justicia is th)"
+  ],
+  [
+   "judge: S15: Can you check if my Visa Classic is active and ready for a small purchase? (The user mentions using a Visa Classic, but as of the conversation date (2026-03-15), the fact S15 states the credit car)",
+   "judge: S12: Your current guitar instructor is Javier el de la Cruz. You switched to him last year after Rafael de Utrera moved away. (The assistant states the switch to Javier happened 'last year', but the facts show the switch to Javier happened on 2026)",
+   "judge: S19: I can draft a summary email to Carmen explaining the breakdown so she knows exactly what she owes. (The assistant mentions Carmen (daughter) paying her share of the utilities. While not a direct contradiction, the conver)"
+  ]
+ ],
+ "18": [
+  [
+   "judge: S20: I've corrected the provider to Jardines del Norte and scheduled the appointment for this Friday, March 16, at 10 AM. I'v (The assistant states it has scheduled an appointment for Friday, March 16, but the conversation date is 2026-03-16, mean)"
+  ]
+ ],
+ "19": [
+  [
+   "judge: S24: I have that court hearing for the Garcia case on Thursday, March 19th (The user mentions a court date on March 19th, but the fact S24 (from 2026-03-19) indicates the user only imagines the lo)",
+   "judge: S27: I remember something about Carmen’s doctor earlier this week, but I can't recall the details. (The user is asking about Carmen's doctor, but the fact S27 (from 2026-03-16) specifies that Dr. Soto is Carmen's dermato)"
+  ],
+  [
+   "date 2026-03-16 not said"
+  ],
+  [
+   "judge: S27: My daughter Carmen’s dermatologist, Dr. Soto, just sent over a new prescription and care plan last Monday, the 16th, and (The conversation is dated 2026-03-17. The fact S27 states that Dr. Soto is the dermatologist for Carmen Navarro, but the)",
+   "judge: S27: My daughter Carmen’s dermatologist, Dr. Soto, just sent over a new prescription and care plan last Monday, the 16th, and (The statement mentions a detail (Carmen's dermatologist is Dr. Soto) which is a fact, but it is dated March 16th, which )"
+  ],
+  [
+   "missing 'Dr. Soto'"
+  ],
+  [
+   "judge: S17: After that, I just need to get to Avenida de la Constitución 10 for my practice. (The user claims to be going to Avenida de la Constitución 10 for practice, but the fact from 2026-03-16 states that Inés)",
+   "judge: S17: I’ve also noted your evening practice spot at Avenida de la Constitución 10. (The assistant incorrectly identifies the practice spot as Avenida de la Constitución 10, contradicting the fact from 202)"
+  ]
+ ],
+ "20": [
+  [
+   "judge: S19: Carmen's birthday is March 22nd. (This contradicts the corrected fact that Carmen's birthday is April 15th (S19, from 2026-03-26).)",
+   "judge: S19: That's this Saturday, just four days from now. (This refers to a date (March 22nd) which is part of a storyline (S19) that was later corrected; however, it also relates)"
+  ],
+  [
+   "judge: S17: It’s Calle Sierves 42. (Spelling error in the street name (Sierves instead of Sierpes), though this is minor, it is technically a different valu)",
+   "judge: S19: Carmen's birthday is March 22nd. (This is a detail of a fact (Carmen's birthday) that was corrected on 2026-03-26 to April 15th, and the conversation occu)"
+  ]
+ ],
+ "28": [
+  [
+   "judge: S14: You contacted Reparaciones López. They are scheduled to come this Tuesday. (Reparaciones López is no longer Inés's appliance repair provider; she switched to ElectroServicio on 2026-04-04.)",
+   "judge: S14: Can you remind me who I called last week for the kitchen sink? It’s leaking again. (The conversation takes place on 2026-03-26, but the assistant refers to Reparaciones López as the current provider, wher)"
+  ],
+  [
+   "judge: S16: Everyone is still saying 'Colegio Nuestra Señora' but it’s been Instituto Buhaira since Monday 23 March. (The user states it has been Instituto Buhaira since March 23rd, but the facts show Diego's school changed to Instituto B)"
+  ],
+  [
+   "date 2026-03-23 not said"
+  ]
+ ],
+ "36": [
+  [
+   "judge: S18: Just to confirm, you want to send this to Jardinería Triana, correct? I’ll keep the tone friendly and casual since you’v (The assistant claims Inés has been shopping with Jardinería Triana for a while, but S18 shows Inés only switched to Jard)",
+   "judge: S10: I see a reminder from your insurance provider for the quarterly payment due on April 10th. (The assistant mentions a payment due on April 10th, but the conversation is dated 2026-04-02, and the fact regarding the)"
+  ],
+  [
+   "judge: S18: But wait—I changed my regular florist for home decor to Jardinería Triana. Please make sure the order goes there, not to (The user states they changed their florist to Jardinería Triana, but the conversation date is 2026-04-02. According to S)",
+   "judge: S18: But wait—I changed my regular florist for home decor to Jardinería Triana. Please make sure the order goes there, not to (No contradiction, this is consistent with facts for 2026-04-02.)"
+  ],
+  [
+   "judge: S02: remind me about the Agencia Tributaria appointment I have next week. (The conversation is dated 2026-04-02. The appointment with Agencia Tributaria (S02) is a known fact, but the user's ment)"
+  ]
+ ],
+ "39": [
+  [
+   "judge: none: I also need to remember the *sofrito*. Do I have enough olive oil? And should I pick up some paprika? (This is a general query and does not contradict any known facts; it is a request for information regarding her personal )",
+   "judge: S23: Can you swap that line? Also, I need to send a quick message to my friend Elena to confirm if she’s coming for the flame (The user mentions flamenco practice on Tuesday, but according to S23, the flamenco class is on Tuesday Evening. While th)"
+  ]
+ ],
+ "41": [
+  [
+   "judge: S06: can you check if I have any pending paperwork with Mapfre? (The user refers to Mapfre as their insurance provider, but Mapfre's date of knowledge is 2026-04-08, which is after the )"
+  ]
+ ],
+ "45": [
+  [
+   "judge: S05: I need to pick up my prescription refill from Dr. Almagro’s office, not the pharmacy, actually. (The user states they need to pick up a prescription at Dr. Almagro's office, but the facts state the pharmacy is Farmaci)",
+   "judge: S22: I’ll handle the receipts with Diego. He’s been helping me with the scanning app. (The user mentions Diego helping with a scanning app, but the facts state that Inés's case file system is Paper Filing (S)"
+  ]
+ ]
+}

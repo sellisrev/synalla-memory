@@ -61,7 +61,13 @@ Return {{"problems": []}} if there is none.
 
 CONVERSATION
 {text}"""
-    return G.post(a, prompt, SCHEMA, G.num('judge', x['date'], len(text)) % 100000, 3000)['problems']
+    for k in range(2):
+        try:
+            return G.post(a, prompt, SCHEMA, (G.num('judge', x['date'], len(text)) + k) % 100000, 6000)['problems']
+        except (ValueError, KeyError):
+            continue
+    # two unreadable replies (usually a list too long to finish): the session is rewritten
+    return [{'quote': text[:60], 'fact': '?', 'why': 'judge reply unreadable twice'}]
 
 
 def norm(s):
@@ -94,7 +100,11 @@ def main():
             if judged.get(str(x['n']), {}).get('hash') == h:
                 continue
             text = text_of(path)
-            probs = [p for p in judge(a, name, bio, stories, x, text) if norm(p['quote']) and norm(p['quote'])[:60] in norm(text)]
+            own = {st['story'] for st in x['steps']}
+            # the session's own storylines are checked by code (their values must be there and right); the judge
+            # often flags them as early or contradictory because they are new, so its view on them is ignored
+            probs = [p for p in judge(a, name, bio, stories, x, text)
+                     if p['fact'].strip() not in own and norm(p['quote']) and norm(p['quote'])[:60] in norm(text)]
             total += 1
             judged[str(x['n'])] = {'hash': h, 'problems': probs}
             if probs:

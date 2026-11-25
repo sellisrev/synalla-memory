@@ -1,0 +1,196 @@
+[
+ {
+  "person": "D01",
+  "need": "D01-N1",
+  "pattern": "need_met",
+  "phrase": "a guitarist to play with her flamenco group at the April feria",
+  "topic": "music-lessons",
+  "city": "seville",
+  "true": [
+   "M001-e1"
+  ],
+  "would_fit": [
+   "M001-e1"
+  ],
+  "near_misses": [
+   "M002-e1",
+   "M003-e1",
+   "M004-e1"
+  ]
+ },
+ {
+  "person": "D01",
+  "need": "D01-N2",
+  "pattern": "need_met",
+  "phrase": "a maths tutor for Diego before his end-of-term exams",
+  "topic": "tutoring",
+  "city": "seville",
+  "true": [
+   "M005-e1"
+  ],
+  "would_fit": [
+   "M005-e1"
+  ],
+  "near_misses": [
+   "M006-e1",
+   "M007-e1",
+   "M008-e1"
+  ]
+ },
+ {
+  "person": "D01",
+  "need": "D01-N3",
+  "pattern": "need_open",
+  "phrase": "a lawyer who knows family law for the custody review in May",
+  "topic": "legal-advice",
+  "city": "seville",
+  "true": [
+   "M009-e1",
+   "M010-e1"
+  ],
+  "would_fit": [
+   "M009-e1",
+   "M010-e1"
+  ],
+  "near_misses": [
+   "M011-e1",
+   "M012-e1",
+   "M013-e1"
+  ]
+ },
+ {
+  "person": "D01",
+  "need": "D01-N4",
+  "pattern": "need_open",
+  "phrase": "a second-hand laptop for Carmen's school projects",
+  "topic": "second-hand-goods",
+  "city": "seville",
+  "true": [
+   "M014-e1",
+   "M015-e1"
+  ],
+  "would_fit": [
+   "M014-e1",
+   "M015-e1"
+  ],
+  "near_misses": [
+   "M016-e1",
+   "M017-e1",
+   "M018-e1"
+  ]
+ },
+ {
+  "person": "D01",
+  "need": "D01-N5",
+  "pattern": "need_other",
+  "phrase": "a flat to rent near the university next year",
+  "topic": "accommodation",
+  "city": "seville",
+  "true": [],
+  "would_fit": [
+   "M019-e1"
+  ],
+  "near_misses": [
+   "M020-e1",
+   "M021-e1",
+   "M022-e1"
+  ]
+ },
+ {
+  "person": "D02",
+  "need": "D02-N1",
+  "pattern": "need_met",
+  "phrase": "a babysitter for Finn on Saturday 14 March",
+  "topic": "babysitting",
+  "city": "hamburg",
+  "true": [
+   "M023-e1"
+  ],
+  "would_fit": [
+   "M023-e1"
+  ],
+  "near_misses": [
+   "M024-e1",
+   "M025-e1",
+   "M026-e1"
+  ]
+ },
+ {
+  "person": "D02",
+  "need": "D02-N2",
+  "pattern": "need_met",
+  "phrase": "a mechanic to look at the brakes on his old Passat",
+  "topic": "car-repair",
+  "city": "hamburg",
+  "true": [
+   "M027-e1"
+  ],
+  "would_fit": [
+   "M027-e1"
+  ],
+  "near_misses": [
+   "M028-e1",
+   "M029-e1",
+   "M030-e1"
+  ]
+ },
+ {
+  "person": "D02",
+  "need": "D02-N3",
+  "pattern": "need_open",
+  "phrase": "tuba lessons to prepare for the band's summer concert",
+  "topic": "music-lessons",
+  "city": "hamburg",
+  "true": [
+   "M031-e1",
+   "M032-e1"
+  ],
+  "would_fit": [
+   "M031-e1",
+   "M032-e1"
+  ],
+  "near_misses": [
+   "M033-e1",
+   "M034-e1",
+   "M035-e1"
+  ]
+ },
+ {
+  "person": "D02",
+  "need": "D02-N4",
+  "pattern": "need_open",
+  "phrase": "a physiotherapist for his shoulder after the long shifts",
+  "topic": "physiotherapy",
+  "city": "hamburg",
+  "true": [
+   "M036-e1",
+   "M037-e1"
+  ],
+  "would_fit": [
+   "M036-e1",
+   "M037-e1"
+  ],
+  "near_misses": [
+   "M038-e1",
+   "M039-e1",
+   "M040-e1"
+  ]
+ },
+ {
+  "person": "D02",
+  "need": "D02-N5",
+  "pattern": "need_other",
+  "phrase": "a lift to the airport for her trip to Mallorca",
+  "topic": "lifts",
+  "city": "hamburg",
+  "true": [],
+  "would_fit": [
+   "M041-e1"
+  ],
+  "near_misses": [
+   "M042-e1",
+   "M043-e1",
+   "M044-e1"
+  ]
+ }
+]

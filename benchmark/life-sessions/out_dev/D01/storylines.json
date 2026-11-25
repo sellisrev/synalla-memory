@@ -1,0 +1,540 @@
+[
+ {
+  "id": "S01",
+  "pattern": "plain",
+  "theme": "travel",
+  "days": [
+   39
+  ],
+  "thing": "flight to Madrid",
+  "values": [
+   "Iberia 4521"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S02",
+  "pattern": "plain",
+  "theme": "admin",
+  "days": [
+   22
+  ],
+  "thing": "tax appointment",
+  "values": [
+   "Agencia Tributaria"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S03",
+  "pattern": "plain",
+  "theme": "admin",
+  "days": [
+   28
+  ],
+  "thing": "bank branch",
+  "values": [
+   "CaixaBank San Bernardo"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S04",
+  "pattern": "plain",
+  "theme": "shopping",
+  "days": [
+   23
+  ],
+  "thing": "grocery supplier",
+  "values": [
+   "Mercadona"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S05",
+  "pattern": "plain",
+  "theme": "health",
+  "days": [
+   37
+  ],
+  "thing": "pharmacy",
+  "values": [
+   "Farmacia Central"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S06",
+  "pattern": "plain",
+  "theme": "money",
+  "days": [
+   35
+  ],
+  "thing": "insurance provider",
+  "values": [
+   "Mapfre"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S07",
+  "pattern": "plain",
+  "theme": "health",
+  "days": [
+   37
+  ],
+  "thing": "physiotherapist",
+  "values": [
+   "Dr. Almagro"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S08",
+  "pattern": "plain",
+  "theme": "hobbies",
+  "days": [
+   10
+  ],
+  "thing": "flamenco venue",
+  "values": [
+   "Peña Flamenca La Platería"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S09",
+  "pattern": "plain",
+  "theme": "admin",
+  "days": [
+   9
+  ],
+  "thing": "utility provider",
+  "values": [
+   "Iberdrola"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S10",
+  "pattern": "plain",
+  "theme": "money",
+  "days": [
+   39
+  ],
+  "thing": "mortgage lender",
+  "values": [
+   "Santander"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S11",
+  "pattern": "change",
+  "theme": "shopping",
+  "days": [
+   2,
+   7
+  ],
+  "thing": "internet provider",
+  "values": [
+   "Vodafone",
+   "Orange"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S12",
+  "pattern": "change",
+  "theme": "hobbies",
+  "days": [
+   5,
+   13
+  ],
+  "thing": "guitar instructor",
+  "values": [
+   "Rafael de Utrera",
+   "Javier el de la Cruz"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S13",
+  "pattern": "change",
+  "theme": "family",
+  "days": [
+   0,
+   3
+  ],
+  "thing": "Carmen's school",
+  "values": [
+   "Instituto Hispano",
+   "Colegio San José"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S14",
+  "pattern": "change",
+  "theme": "home",
+  "days": [
+   24,
+   33
+  ],
+  "thing": "appliance repair",
+  "values": [
+   "Reparaciones López",
+   "ElectroServicio"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S15",
+  "pattern": "change",
+  "theme": "money",
+  "days": [
+   9,
+   13
+  ],
+  "thing": "credit card",
+  "values": [
+   "Visa Classic",
+   "Mastercard Gold"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S16",
+  "pattern": "change",
+  "theme": "family",
+  "days": [
+   17,
+   21
+  ],
+  "thing": "Diego's school",
+  "values": [
+   "Colegio Nuestra Señora",
+   "Instituto Buhaira"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S17",
+  "pattern": "heart",
+  "theme": "home",
+  "days": [
+   4,
+   7,
+   14
+  ],
+  "thing": "Inés Navarro's preferred evening practice spot",
+  "values": [
+   "Calle Sierpes 42",
+   "Avenida de la Constitución 10"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S18",
+  "pattern": "heart",
+  "theme": "shopping",
+  "days": [
+   24,
+   31,
+   40
+  ],
+  "thing": "Inés Navarro's regular florist for home decor",
+  "values": [
+   "Flores del Sur",
+   "Jardinería Triana"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S19",
+  "pattern": "correction",
+  "theme": "family",
+  "days": [
+   15,
+   24
+  ],
+  "thing": "Carmen's birthday",
+  "values": [
+   "March 22nd",
+   "April 15th"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S20",
+  "pattern": "correction",
+  "theme": "home",
+  "days": [
+   5,
+   14
+  ],
+  "thing": "garden maintenance",
+  "values": [
+   "Jardines del Sur",
+   "Jardines del Norte"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S21",
+  "pattern": "tentative_dropped",
+  "theme": "people",
+  "days": [
+   2,
+   6
+  ],
+  "thing": "Inés Navarro's tentative weekend hiking partner",
+  "values": [
+   "Elena Ruiz",
+   "Marco Vega"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S22",
+  "pattern": "tentative_dropped",
+  "theme": "work",
+  "days": [
+   14,
+   21
+  ],
+  "thing": "case file system",
+  "values": [
+   "Paper Filing",
+   "Digital Archive"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S23",
+  "pattern": "tentative_confirmed",
+  "theme": "hobbies",
+  "days": [
+   21,
+   28,
+   37
+  ],
+  "thing": "flamenco class",
+  "values": [
+   "Tuesday Evening",
+   "Thursday Morning"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S24",
+  "pattern": "hypothetical",
+  "theme": "admin",
+  "days": [
+   8,
+   17
+  ],
+  "thing": "court date location",
+  "values": [
+   "Palacio de Justicia",
+   "Tribunal Provincial"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S25",
+  "pattern": "hypothetical",
+  "theme": "hobbies",
+  "days": [
+   17,
+   26
+  ],
+  "thing": "flamenco recital venue",
+  "values": [
+   "Casa de la Memoria",
+   "Teatro Lope de Vega"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S26",
+  "pattern": "lookalike",
+  "theme": "home",
+  "days": [
+   31,
+   38
+  ],
+  "thing": "home insurance provider",
+  "values": [
+   "Generali",
+   "Zurich"
+  ],
+  "other_person": "Elena Ruiz (friend)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S27",
+  "pattern": "lookalike",
+  "theme": "health",
+  "days": [
+   7,
+   14
+  ],
+  "thing": "dermatologist",
+  "values": [
+   "Dr. Velasco",
+   "Dr. Soto"
+  ],
+  "other_person": "Carmen Navarro (daughter)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S28",
+  "pattern": "lookalike",
+  "theme": "work",
+  "days": [
+   4,
+   7
+  ],
+  "thing": "legal advisor for social cases",
+  "values": [
+   "Advocacy Group SE",
+   "Collegium Legal"
+  ],
+  "other_person": "Marc (neighbour)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S29",
+  "pattern": "need_met",
+  "theme": "people",
+  "days": [
+   25,
+   30
+  ],
+  "thing": "need",
+  "values": [
+   "a guitarist to play with her flamenco group at the April feria",
+   "Rafa Montoya from the peña agreed to play"
+  ],
+  "other_person": "",
+  "keyword": "guitarist",
+  "topic": "music-lessons"
+ },
+ {
+  "id": "S30",
+  "pattern": "need_met",
+  "theme": "family",
+  "days": [
+   2,
+   9
+  ],
+  "thing": "need",
+  "values": [
+   "a maths tutor for Diego before his end-of-term exams",
+   "Diego now sees the tutor Lucía Pérez on Mondays"
+  ],
+  "other_person": "",
+  "keyword": "tutor",
+  "topic": "tutoring"
+ },
+ {
+  "id": "S31",
+  "pattern": "need_open",
+  "theme": "people",
+  "days": [
+   12
+  ],
+  "thing": "need",
+  "values": [
+   "a lawyer who knows family law for the custody review in May"
+  ],
+  "other_person": "",
+  "keyword": "lawyer",
+  "topic": "legal-advice"
+ },
+ {
+  "id": "S32",
+  "pattern": "need_open",
+  "theme": "travel",
+  "days": [
+   0
+  ],
+  "thing": "need",
+  "values": [
+   "a second-hand laptop for Carmen's school projects"
+  ],
+  "other_person": "",
+  "keyword": "laptop",
+  "topic": "second-hand-goods"
+ },
+ {
+  "id": "S33",
+  "pattern": "need_other",
+  "theme": "work",
+  "days": [
+   7
+  ],
+  "thing": "need",
+  "values": [
+   "a flat to rent near the university next year"
+  ],
+  "other_person": "Lola (niece)",
+  "keyword": "university",
+  "topic": "accommodation"
+ }
+]

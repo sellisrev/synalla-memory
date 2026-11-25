@@ -10,3 +10,6 @@ dist/
 benchmark/agent-sessions/out/
 benchmark/agent-sessions/gen.log
 benchmark/agent-sessions/out_rejected/
+benchmark/circle/out/
+benchmark/circle/gen.log
+benchmark/circle/out_rejected_entries/

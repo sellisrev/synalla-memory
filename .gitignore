@@ -9,3 +9,4 @@ reports_*.log
 dist/
 benchmark/agent-sessions/out/
 benchmark/agent-sessions/gen.log
+benchmark/agent-sessions/out_rejected/

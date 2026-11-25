@@ -62,7 +62,16 @@ deadlines, people they work with by name), and their life (appointments, purchas
 plans). Each fact is one specific, checkable sentence with names, numbers or dates (not vague). At least 6 events
 change an earlier one (a moved deadline, a replaced library, a new phone number, a cancelled trip): for those, set
 "replaces" to the earlier event's id; otherwise null. Ids are E01, E02, ... Dates are YYYY-MM-DD within the 6 weeks."""
-    t = post(a.url, a.model, prompt, TIMELINE_SCHEMA, num('timeline', pid) % 100000, 8000)
+    best = None
+    for attempt in range(5):  # RULES.md: at least 6 events change an earlier one; retry with another seed if not
+        t = post(a.url, a.model, prompt, TIMELINE_SCHEMA, (num('timeline', pid) + attempt) % 100000, 8000)
+        changes = sum(1 for e in t['events'] if e['replaces'])
+        print(f'{pid} timeline attempt {attempt + 1}: {changes} changes', flush=True)
+        if best is None or changes > sum(1 for e in best['events'] if e['replaces']):
+            best = t
+        if changes >= 6:
+            break
+    t = best
     os.makedirs(os.path.dirname(path), exist_ok=True)
     json.dump(t, open(path, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     return t

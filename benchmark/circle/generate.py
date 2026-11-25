@@ -112,13 +112,20 @@ Items, in this order (return exactly {len(m['offers'])} sentences):
             if os.path.exists(path):
                 continue
             mine = [x for i, x in enumerate(items) if i % 6 == n - 1]
-            lines = '\n'.join(f'- {"they need" if k == "need" else "they could offer others"}: {x["type"]} about {x["topic"].replace("-", " ")}' for k, x in mine) or '- (nothing in particular)'
+            offer_text = {e['id']: e['text'] for e in (json.load(open(ep, encoding='utf-8')) if os.path.exists(ep) else [])}
+            lines = '\n'.join(
+                f'- NEED: the developer asks the agent whether anyone they know could help them with {x["topic"].replace("-", " ")}, because they lack it themselves'
+                if k == 'need' else
+                f'- OFFER: the developer mentions, in their own words, something they already have or can do for others: "{offer_text.get(x["id"].lower(), x["topic"])}"'
+                for k, x in mine) or '- (nothing in particular)'
             date = (datetime.date(2026, 9, 1) + datetime.timedelta(days=7 * n + num('d', m['id'], n) % 5)).isoformat()
             t0 = time.time()
             try:
                 s = post(a, f"""Write a realistic session between a developer living in {m['city']} and their AI agent on {date}: mostly
 ordinary work or planning. These things should come up naturally, in passing, as the developer's own situation (never as
-a list, never mentioning a "circle" or "network"):
+a list, never mentioning a "circle" or "network"). Keep each one's direction exactly as marked: a NEED is something
+the developer lacks and is looking for; an OFFER is something the developer already has or can do, never something they
+are looking for. Use your own varied wording:
 {lines}
 4 to 10 turns, alternating, starting with the user. Give a short title.""", SESSION_SCHEMA, num('s', m['id'], n) % 100000, 5000)
             except Exception as e:

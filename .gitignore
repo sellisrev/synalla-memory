@@ -13,3 +13,5 @@ benchmark/agent-sessions/out_rejected/
 benchmark/circle/out/
 benchmark/circle/gen.log
 benchmark/circle/out_rejected_entries/
+benchmark/circle/out_rejected_sessions/
+benchmark/circle/*.log

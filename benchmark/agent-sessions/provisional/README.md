@@ -16,3 +16,8 @@ Known weaknesses of the generated set, to fix before the public questions are wr
 - sessions invent facts that contradict the timeline, inside event sessions too (P2 #037 saves with ConfigFile again);
 - session dates lag the timeline dates by days to weeks (P2 E42 is dated 22 Mar, its session 8 Apr), so a date taken
   from the timeline is not what the sessions say; reference dates must come from the session text.
+- six references were found wrong or ambiguous while grading the first run, because the sessions tell a different or
+  double story: P1-05 (session 027 gives a different cause and fix for the support-reported failures), P2-06 (an overlap
+  check and the snap-to-grid fix both appear), P3-08 (the vet visit dated 16 and 22 March), P5-04 (a deadlock in one
+  session, an O(n^2) loop in another), P6-07 (fillna(-1) for transaction_type; the mode fill was another column),
+  P8-07 (the sessions never say Amine fixed the leak). Results are reported with and without them.

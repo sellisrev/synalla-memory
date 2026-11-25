@@ -17,3 +17,4 @@ benchmark/circle/out_rejected_sessions/
 benchmark/circle/*.log
 benchmark/agent-sessions/work/
 benchmark/agent-sessions/runs/
+__pycache__/

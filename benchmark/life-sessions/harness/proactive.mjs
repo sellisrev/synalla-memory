@@ -18,10 +18,10 @@ import { scanWants, matchWants, WANTS_SCHEMA } from '../../../src/wants.ts';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const SET = process.env.LIFE_SET ?? 'test';  // dev: the tuning people, kept apart
-const OUT = join(HERE, '..', SET === 'test' ? 'out' : 'out_dev');
-const WORK = join(HERE, '..', 'work', SET === 'test' ? 'proactive' : 'proactive_dev');
+const OUT = join(HERE, '..', { test: 'out', dev: 'out_dev', val: 'out_val' }[SET]);
+const WORK = join(HERE, '..', 'work', SET === 'test' ? 'proactive' : `proactive_${SET}`);
 const PEOPLE = {
-  D01: ['Inés Navarro', 'seville'], D02: ['Tom Becker', 'hamburg'],
+  D01: ['Inés Navarro', 'seville'], D02: ['Tom Becker', 'hamburg'], V01: ['Oskar Lindqvist', 'gothenburg'], V02: ['Fatima Haddad', 'marseille'],
   L01: ['Claire Morel', 'lyon'], L02: ['Aisha Rahman', 'leeds'], L03: ['Mateo Fernández', 'valencia'], L04: ['Krzysztof Nowak', 'krakow'],
   L05: ['Ji-woo Park', 'seoul'], L06: ['Thandiwe Dlamini', 'cape-town'], L07: ['Lukas Brandt', 'berlin'], L08: ['Valentina Rossi', 'mendoza'],
   L09: ['Daniel Okoye', 'toronto'], L10: ['Priya Nair', 'bangalore'],

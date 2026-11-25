@@ -46,7 +46,13 @@ export interface Chunk { cid: number; item: string; n: number; date: string; sou
 export interface FactInput {
   subject: string; predicate: string; object: string;
   valid_from: string | null; valid_to: string | null; mentioned_at: string; quote: string;
+  /** Extraction v2: the subject has one value of this at a time, so a later value replaces it (null: not said). */
+  one_value?: boolean | null;
+  /** Extraction v2: 'true', 'considered' (thought about, not decided) or 'what_if' (imagined); null: not said. */
+  status?: FactStatus | null;
 }
+export type FactStatus = 'true' | 'considered' | 'what_if';
+export const FACT_STATUSES: readonly FactStatus[] = Object.freeze(['true', 'considered', 'what_if']);
 export interface Fact {
   fid: number; item: string; subject: string; predicate: string; object: string; valid_from: string | null;
   /** The end date the record itself gave. */
@@ -54,6 +60,7 @@ export interface Fact {
   /** Set when a later fact for the same subject and predicate has another value. */
   superseded_on: string | null;
   mentioned_at: string; quote: string;
+  one_value: boolean | null; status: FactStatus | null;
 }
 /** A need, want or problem of the owner that someone on their network could help with (wants.ts). */
 export interface WantInput { what: string; topic: string; confidence: number; quote: string }
@@ -83,7 +90,8 @@ CREATE TRIGGER IF NOT EXISTS chunks_ad AFTER DELETE ON chunks BEGIN
   INSERT INTO fts(fts, rowid, text) VALUES ('delete', old.cid, old.text); END;
 CREATE TABLE IF NOT EXISTS facts(fid INTEGER PRIMARY KEY, item TEXT NOT NULL REFERENCES items(id) ON DELETE CASCADE,
   subject TEXT NOT NULL, predicate TEXT NOT NULL, object TEXT NOT NULL, valid_from TEXT, valid_to TEXT,
-  superseded_on TEXT, mentioned_at TEXT NOT NULL, quote TEXT NOT NULL, item_date TEXT NOT NULL, gkey TEXT NOT NULL, vec BLOB);
+  superseded_on TEXT, mentioned_at TEXT NOT NULL, quote TEXT NOT NULL, item_date TEXT NOT NULL, gkey TEXT NOT NULL, vec BLOB,
+  one_value INTEGER, status TEXT);
 CREATE INDEX IF NOT EXISTS facts_item ON facts(item);
 CREATE INDEX IF NOT EXISTS facts_gkey ON facts(gkey);
 CREATE VIRTUAL TABLE IF NOT EXISTS facts_fts USING fts5(body, tokenize='unicode61 remove_diacritics 2');
@@ -233,6 +241,10 @@ export class MemoryStore {
       db.pragma('journal_mode=WAL');
       db.pragma('foreign_keys=ON');
       db.exec(SCHEMA);
+      // stores made before extraction v2 get its two fact columns (null: not said, read as before)
+      const cols = new Set((db.prepare('PRAGMA table_info(facts)').all() as { name: string }[]).map(c => c.name));
+      if (!cols.has('one_value')) db.exec('ALTER TABLE facts ADD COLUMN one_value INTEGER');
+      if (!cols.has('status')) db.exec('ALTER TABLE facts ADD COLUMN status TEXT');
       const row = db.prepare(`SELECT v FROM meta WHERE k='dim'`).get() as { v: string } | undefined;
       if (row && Number(row.v) !== dim) throw new RangeError(`store was built with dim ${row.v}, not ${dim}`);
       if (!row) {
@@ -349,7 +361,8 @@ export class MemoryStore {
     for (const f of facts) {
       if (!f || typeof f.subject !== 'string' || typeof f.predicate !== 'string' || typeof f.object !== 'string'
         || typeof f.quote !== 'string' || typeof f.mentioned_at !== 'string'
-        || (f.valid_from !== null && typeof f.valid_from !== 'string') || (f.valid_to !== null && typeof f.valid_to !== 'string')) {
+        || (f.valid_from !== null && typeof f.valid_from !== 'string') || (f.valid_to !== null && typeof f.valid_to !== 'string')
+        || (f.one_value != null && typeof f.one_value !== 'boolean') || (f.status != null && !FACT_STATUSES.includes(f.status))) {
         throw new TypeError('bad fact shape');
       }
     }
@@ -357,15 +370,16 @@ export class MemoryStore {
       const old = this.#db.prepare('SELECT fid, gkey FROM facts WHERE item = ?').all(item) as { fid: number; gkey: string }[];
       this.#db.prepare('DELETE FROM facts WHERE item = ?').run(item);
       this.#factVecs.drop(old.map(o => o.fid));
-      const ins = this.#db.prepare(`INSERT INTO facts(item, subject, predicate, object, valid_from, valid_to, mentioned_at, quote, item_date, gkey)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`);
+      const ins = this.#db.prepare(`INSERT INTO facts(item, subject, predicate, object, valid_from, valid_to, mentioned_at, quote, item_date, gkey, one_value, status)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`);
       const keys = new Set(old.map(o => o.gkey));
       const fids = facts.map(f => {
         const subject = scrub(f.subject).text, predicate = scrub(f.predicate).text;
         const gkey = norm(subject) + '\u0000' + norm(predicate);
         keys.add(gkey);
         return Number(ins.run(item, subject, predicate, scrub(f.object).text, f.valid_from || null, f.valid_to || null,
-          f.mentioned_at, scrub(f.quote).text, (it.date || '').slice(0, 10), gkey).lastInsertRowid);
+          f.mentioned_at, scrub(f.quote).text, (it.date || '').slice(0, 10), gkey,
+          f.one_value == null ? null : f.one_value ? 1 : 0, f.status ?? null).lastInsertRowid);
       });
       this.#db.prepare('INSERT OR REPLACE INTO extracted(item, at, facts, error) VALUES (?, ?, ?, ?)').run(item, at.toISOString(), fids.length, error);
       this.#resupersede(keys);
@@ -374,17 +388,21 @@ export class MemoryStore {
   }
 
   #resupersede(keys: Set<string>): void {
-    const sel = this.#db.prepare('SELECT fid, object, valid_from, valid_to, mentioned_at, item_date FROM facts WHERE gkey = ? ORDER BY fid');
+    const sel = this.#db.prepare('SELECT fid, object, valid_from, valid_to, mentioned_at, item_date, one_value, status FROM facts WHERE gkey = ? ORDER BY fid');
     const upd = this.#db.prepare('UPDATE facts SET superseded_on = ? WHERE fid = ?');
     for (const k of keys) {
-      const rows = sel.all(k) as { fid: number; object: string; valid_from: string | null; valid_to: string | null; mentioned_at: string; item_date: string }[];
+      const all = sel.all(k) as { fid: number; object: string; valid_from: string | null; valid_to: string | null; mentioned_at: string; item_date: string; one_value: number | null; status: string | null }[];
+      // something only considered or imagined never replaces a value, and is never replaced (it was never the value)
+      const rows = all.filter(r => r.status === null || r.status === 'true');
+      for (const r of all) if (!rows.includes(r)) upd.run(null, r.fid);
       const key = (r: typeof rows[number]) => [r.valid_from || r.mentioned_at || r.item_date || '', r.mentioned_at || ''] as const;
       const sorted = rows.map((r, i) => ({ r, i })).sort((a, b) => {
         const [a1, a2] = key(a.r), [b1, b2] = key(b.r);
         return a1 < b1 ? -1 : a1 > b1 ? 1 : a2 < b2 ? -1 : a2 > b2 ? 1 : a.i - b.i;
       }).map(x => x.r);
       const sup = new Map<number, string | null>(rows.map(r => [r.fid, null]));
-      const single = isFunctional(k.slice(k.indexOf('\u0000') + 1));
+      // one value at a time: a predicate known to be (the measured list), or one the extraction model said is (v2)
+      const single = isFunctional(k.slice(k.indexOf('\u0000') + 1)) || rows.some(r => r.one_value === 1);
       for (let i = 1; single && i < sorted.length; i++) {
         const prev = sorted[i - 1] as typeof rows[number], cur = sorted[i] as typeof rows[number];
         if (norm(prev.object) !== norm(cur.object) && !prev.valid_to && sup.get(prev.fid) === null) sup.set(prev.fid, cur.valid_from || cur.mentioned_at);
@@ -461,8 +479,9 @@ export class MemoryStore {
 
   facts(fids: readonly number[]): Fact[] {
     if (fids.length === 0) return [];
-    const rows = this.#db.prepare(`SELECT fid, item, subject, predicate, object, valid_from, valid_to, superseded_on, mentioned_at, quote
-      FROM facts WHERE fid IN (${fids.map(() => '?').join(',')})`).all(...fids) as Fact[];
+    const rows = (this.#db.prepare(`SELECT fid, item, subject, predicate, object, valid_from, valid_to, superseded_on, mentioned_at, quote, one_value, status
+      FROM facts WHERE fid IN (${fids.map(() => '?').join(',')})`).all(...fids) as (Omit<Fact, 'one_value'> & { one_value: number | null })[])
+      .map(r => ({ ...r, one_value: r.one_value === null ? null : r.one_value === 1 }));
     const by = new Map(rows.map(r => [r.fid, r]));
     return fids.flatMap(f => (by.has(f) ? [by.get(f) as Fact] : []));
   }

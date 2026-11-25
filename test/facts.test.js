@@ -155,3 +155,36 @@ test('extractPending reads whole items by default (up to 10 windows), dedupes, k
   assert.equal(s2.factsAbout('bob').length, 0, 'maxWindows 1 is the old first-window-only setting');
   s.close(); s2.close();
 });
+
+test('extraction v2: one_value makes any predicate single-valued; considered and what-if facts never replace or get replaced', () => {
+  const s = open();
+  for (const [id, d] of [['a', '2026-03-01'], ['b', '2026-03-10'], ['c', '2026-03-20'], ['d', '2026-03-25']]) s.addItem({ id, date: d, source: 'mail', chunks: [id] });
+  const [fa] = s.setFacts('a', [fact({ predicate: 'dentist', object: 'Dr. Ruiz', mentioned_at: '2026-03-01', one_value: true, status: 'true' })]);
+  const [fb] = s.setFacts('b', [fact({ predicate: 'dentist', object: 'Dr. Soto', mentioned_at: '2026-03-10', one_value: true, status: 'considered' })]);
+  const [fc] = s.setFacts('c', [fact({ predicate: 'dentist', object: 'Dr. Vega', mentioned_at: '2026-03-20', one_value: true, status: 'what_if' })]);
+  let [a, b, c] = s.facts([fa, fb, fc]);
+  assert.equal(a.superseded_on, null);                      // still the dentist: the others were never the value
+  assert.equal(b.superseded_on, null); assert.equal(b.status, 'considered'); assert.equal(b.one_value, true);
+  assert.match(factLine(b), /only considered, not decided/);
+  assert.match(factLine(c), /only a what-if, not real/);
+  const [fd] = s.setFacts('d', [fact({ predicate: 'dentist', object: 'Dr. Soto', mentioned_at: '2026-03-25', one_value: true, status: 'true' })]);
+  [a] = s.facts([fa]);
+  assert.equal(a.superseded_on, '2026-03-25');              // decided: now it replaces
+  assert.equal(s.facts([fd])[0].superseded_on, null);
+  // without one_value (v1 facts), a predicate outside the measured list still accumulates
+  const [x] = s.setFacts('a', [fact({ predicate: 'gym', object: 'A', mentioned_at: '2026-03-01' })]);
+  s.setFacts('b', [fact({ predicate: 'gym', object: 'B', mentioned_at: '2026-03-10' })]);
+  assert.equal(s.facts([x])[0].superseded_on, null);
+  assert.throws(() => s.setFacts('a', [fact({ status: 'maybe' })]), TypeError);
+});
+
+test('checkFacts keeps the v2 fields when given and drops a fact with a bad status', () => {
+  const text = 'Anna moved to Lyon. She might switch gym.';
+  const reply = JSON.stringify({ facts: [
+    { ...fact({ object: 'Lyon', quote: 'Anna moved to Lyon' }), one_value: true, status: 'true' },
+    { ...fact({ predicate: 'gym', object: 'X', quote: 'She might switch gym' }), one_value: true, status: 'perhaps' },
+  ] });
+  const r = checkFacts(reply, text);
+  assert.equal(r.kept.length, 1); assert.equal(r.dropped, 1);
+  assert.equal(r.kept[0].one_value, true); assert.equal(r.kept[0].status, 'true');
+});

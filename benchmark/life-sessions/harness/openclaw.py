@@ -18,11 +18,11 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 SET = os.environ.get('LIFE_SET', 'test')  # dev: the tuning people, kept apart
-OUT = HERE.parent / ('out' if SET == 'test' else 'out_dev')
-WORK = HERE.parent / 'work' / 'openclaw' if SET == 'test' else HERE.parent / 'work' / ('openclaw_dev')
+OUT = HERE.parent / {'test': 'out', 'dev': 'out_dev', 'val': 'out_val'}[SET]
+WORK = HERE.parent / 'work' / ('openclaw' if SET == 'test' else f'openclaw_{SET}')
 OPENCLAW = Path(r'C:\AI\tools\openclaw-runtime\node_modules\openclaw\openclaw.mjs')
 TODAY = '2026-04-13'
-PERSONAS = [f'L{i:02d}' for i in range(1, 11)] if SET == 'test' else ['D01', 'D02']
+PERSONAS = {'test': [f'L{i:02d}' for i in range(1, 11)], 'dev': ['D01', 'D02'], 'val': ['V01', 'V02']}[SET]
 
 AGENTS = f"""# Rules
 

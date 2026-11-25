@@ -11,7 +11,8 @@
 // parameter ("their" for "his"), and the example subject names are neutral stand-ins of the same shape for the private
 // names the benchmark prompt used.
 
-import type { Fact, FactInput, StoredItem } from './store.ts';
+import type { Fact, FactInput, FactStatus, StoredItem } from './store.ts';
+import { FACT_STATUSES } from './store.ts';
 import { guardFetch, sameOrigin } from './egress.ts';
 
 export const ITEM_CHARS = 8000;
@@ -38,6 +39,34 @@ RECORD
 `;
 }
 
+/**
+ * Extraction v2 (life-session benchmark, tuned on its dev people only): the same facts, plus, per fact, whether the
+ * subject has one value of it at a time (so a later value replaces it) and whether it is true, only considered or a
+ * what-if; predicates named after what the value is, so the same attribute gets the same name in every record.
+ */
+export function extractionPromptV2(owner: string): string {
+  return `You extract lasting facts about the owner of these records (${owner}) and the people, things and plans in their life, for their personal memory. The memory must always know what is true now, so a later value has to replace an earlier one.
+
+Keep facts that would still matter weeks later: family and people (names, ages, relations, birthdays), home and places, money (accounts, purchases, prices, salaries, investments, bills), health, work and projects (roles, employers, clients, decisions, status), the people and services they use (doctor, bank, providers, shops, teachers, venues), schedules, preferences and dislikes, plans, bookings and appointments, things owned.
+Skip marketing, newsletters, generic notifications and anything about strangers.
+
+For each fact give:
+- subject: who or what it is about, with a stable name ("${owner}", "Anna", "Acme job offer", "apartment Main Street"). Something that belongs to someone else (a friend's dentist, a sister's car) has that person as subject.
+- predicate: a short snake_case name of what the value is, the same every time for the same kind of thing ("home_address", "bank", "dentist", "internet_provider", "gym", "employer", "rehearsal_venue", "class_day", "child_of", "booked"). Name the attribute, not how it was said: not "switched_to", "has_new", "uses", "is_now".
+- object: the value, short.
+- one_value: true if the subject has only one of these at a time (an address, a provider, a doctor, a venue, a schedule, a price, a status), so a new value replaces the old one; false if several hold together (friends, things owned, preferences, appointments, bookings).
+- status: "true" if the record says it is so; "considered" if the owner is only thinking about it, weighing options or has not decided; "what_if" if it is imagined or hypothetical ("if I ever...", "imagine..."). When the record corrects an earlier slip, give only the corrected value, as true.
+- valid_from: ISO date (YYYY-MM-DD) from which it is true, or the record date if unknown.
+- valid_to: ISO date when it stops being true if the record says so, else null.
+- mentioned_at: the record date (YYYY-MM-DD).
+- quote: an exact copy, character for character, of the shortest passage in the record (at most 200 characters) that shows the fact. Do not translate, fix or shorten inside the quote.
+
+Return at most 15 facts, the most important first. Return {"facts": []} if there is nothing lasting.
+
+RECORD
+`;
+}
+
 export const FACTS_SCHEMA = {
   type: 'object', additionalProperties: false, required: ['facts'],
   properties: {
@@ -47,6 +76,24 @@ export const FACTS_SCHEMA = {
         required: ['subject', 'predicate', 'object', 'valid_from', 'valid_to', 'mentioned_at', 'quote'],
         properties: {
           subject: { type: 'string' }, predicate: { type: 'string' }, object: { type: 'string' },
+          valid_from: { type: 'string' }, valid_to: { type: ['string', 'null'] },
+          mentioned_at: { type: 'string' }, quote: { type: 'string' },
+        },
+      },
+    },
+  },
+} as const;
+
+export const FACTS_SCHEMA_V2 = {
+  type: 'object', additionalProperties: false, required: ['facts'],
+  properties: {
+    facts: {
+      type: 'array', maxItems: MAX_FACTS, items: {
+        type: 'object', additionalProperties: false,
+        required: ['subject', 'predicate', 'object', 'one_value', 'status', 'valid_from', 'valid_to', 'mentioned_at', 'quote'],
+        properties: {
+          subject: { type: 'string' }, predicate: { type: 'string' }, object: { type: 'string' },
+          one_value: { type: 'boolean' }, status: { type: 'string', enum: [...FACT_STATUSES] },
           valid_from: { type: 'string' }, valid_to: { type: ['string', 'null'] },
           mentioned_at: { type: 'string' }, quote: { type: 'string' },
         },
@@ -86,22 +133,27 @@ export function checkFacts(reply: string, text: string): { kept: FactInput[]; dr
   for (const f of facts.slice(0, MAX_FACTS) as Record<string, unknown>[]) {
     const ok = f && typeof f === 'object' && ['subject', 'predicate', 'object', 'mentioned_at', 'quote'].every(k => typeof f[k] === 'string')
       && (f['valid_from'] === null || f['valid_from'] === undefined || typeof f['valid_from'] === 'string')
-      && (f['valid_to'] === null || f['valid_to'] === undefined || typeof f['valid_to'] === 'string');
+      && (f['valid_to'] === null || f['valid_to'] === undefined || typeof f['valid_to'] === 'string')
+      && (f['one_value'] === null || f['one_value'] === undefined || typeof f['one_value'] === 'boolean')
+      && (f['status'] === null || f['status'] === undefined || FACT_STATUSES.includes(f['status'] as FactStatus));
     const quote = ok ? (f['quote'] as string) : '';
     if (!ok || !quote.trim() || !hay.includes(norm(quote))) { dropped++; continue; }
     kept.push({
       subject: f['subject'] as string, predicate: f['predicate'] as string, object: f['object'] as string,
       valid_from: (f['valid_from'] as string | null | undefined) || null, valid_to: (f['valid_to'] as string | null | undefined) || null,
       mentioned_at: f['mentioned_at'] as string, quote,
+      ...(typeof f['one_value'] === 'boolean' ? { one_value: f['one_value'] } : {}),
+      ...(typeof f['status'] === 'string' ? { status: f['status'] as FactStatus } : {}),
     });
   }
   return { kept, dropped };
 }
 
 /** One fact as the answering model sees it (memory_ab/answer.py). */
-export function factLine(f: Pick<Fact, 'subject' | 'predicate' | 'object' | 'valid_from' | 'valid_to' | 'superseded_on' | 'mentioned_at' | 'quote'>): string {
+export function factLine(f: Pick<Fact, 'subject' | 'predicate' | 'object' | 'valid_from' | 'valid_to' | 'superseded_on' | 'mentioned_at' | 'quote'> & Partial<Pick<Fact, 'status'>>): string {
   const end = f.valid_to ?? f.superseded_on;
-  const state = end ? `superseded on ${end}` : 'current';
+  const state = f.status === 'considered' ? 'only considered, not decided' : f.status === 'what_if' ? 'only a what-if, not real'
+    : end ? `superseded on ${end}` : 'current';
   return `- ${f.subject} | ${f.predicate} | ${f.object} (valid from ${f.valid_from || '?'}, ${state}; mentioned ${f.mentioned_at}; quote: "${f.quote.slice(0, 200)}")`;
 }
 
@@ -157,7 +209,7 @@ export const MAX_WINDOWS = 10;
 export async function extractPending(
   store: { pendingExtraction(limit: number, opts?: { agentSessions?: boolean }): StoredItem[]; setFacts(item: string, facts: readonly FactInput[], at?: Date, error?: string | null): number[] },
   model: ChatModel, owner: string,
-  opts: { limit?: number; now?: () => Date; agentSessions?: boolean; maxWindows?: number; onItem?: (id: string, kept: number, dropped: number, error?: string) => void } = {},
+  opts: { limit?: number; now?: () => Date; agentSessions?: boolean; maxWindows?: number; version?: 1 | 2; onItem?: (id: string, kept: number, dropped: number, error?: string) => void } = {},
 ): Promise<{ items: number; facts: number; failed: number }> {
   const now = opts.now ?? (() => new Date());
   let items = 0, facts = 0, failed = 0;
@@ -169,7 +221,7 @@ export async function extractPending(
     const windows = itemWindows(it, opts.maxWindows ?? MAX_WINDOWS);
     for (const text of windows) {
       try {
-        const r = checkFacts(await model.complete(extractionPrompt(owner) + text), text);
+        const r = checkFacts(await model.complete((opts.version === 2 ? extractionPromptV2(owner) : extractionPrompt(owner)) + text), text);
         dropped += r.dropped;
         for (const f of r.kept) {
           const k = [norm(f.subject), norm(f.predicate), norm(f.object), f.valid_from ?? ''].join('\u0000');

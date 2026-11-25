@@ -18,7 +18,7 @@ from needs import NEEDS  # noqa: E402
 from generate import PEOPLE, NEED_TOPICS, OUT, START, DAYS  # noqa: E402  (LIFE_SET picks test or dev)
 
 SEED = 'synalla-life-network-2026-11-25'
-CITY = {'D01': 'seville', 'D02': 'hamburg', 'L01': 'lyon', 'L02': 'leeds', 'L03': 'valencia', 'L04': 'krakow', 'L05': 'seoul', 'L06': 'cape-town',
+CITY = {'D01': 'seville', 'D02': 'hamburg', 'V01': 'gothenburg', 'V02': 'marseille', 'L01': 'lyon', 'L02': 'leeds', 'L03': 'valencia', 'L04': 'krakow', 'L05': 'seoul', 'L06': 'cape-town',
         'L07': 'berlin', 'L08': 'mendoza', 'L09': 'toronto', 'L10': 'bangalore'}
 # what kind of circle/1 entry fits a topic (type only ranks in matching; topic decides)
 TYPE = {'second-hand-goods': 'offer', 'baby-gear': 'lend', 'camping-gear': 'lend', 'sports-equipment': 'lend', 'camera-gear': 'lend',

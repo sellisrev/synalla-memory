@@ -16,6 +16,11 @@ teacher, a restaurant owner, a retired engineer, an architecture student, a free
 developer, a vineyard owner, a lawyer on parental leave, a start-up founder. Different countries, ages and households.
 Every person has work, family and people, home, health, money, hobbies, travel, shopping and admin in their weeks.
 
+Two more groups are made the same way and published, but never counted: **dev** (2 people: a social worker in
+Seville, a bus driver in Hamburg), on which the systems may be tuned, and **val** (2 people: a translator in Gothenburg,
+a pharmacist in Marseille), never looked at while tuning: a change found on dev is kept only if it does not lose on
+val. The 10 test people are run once, after tuning ends.
+
 ## Ground truth is computed, not claimed
 
 The structure of each life is fixed by code from a seed, before any text is written: a list of storylines, each with a

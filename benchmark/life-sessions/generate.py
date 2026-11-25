@@ -17,7 +17,8 @@ DAYS = 42
 END = START + datetime.timedelta(days=DAYS - 1)
 # LIFE_SET=dev: two extra people for tuning, kept apart from the test people (own output, needs and network)
 SET = os.environ.get('LIFE_SET', 'test')
-OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'out' if SET == 'test' else 'out_dev')
+# LIFE_SET=val: two more people, never tuned on, to check that a change found on the dev people holds elsewhere
+OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), {'test': 'out', 'dev': 'out_dev', 'val': 'out_val'}[SET])
 
 # id, name, who they are; work = what "help with their work" means in a session
 TEST_PEOPLE = [
@@ -36,7 +37,11 @@ DEV_PEOPLE = [
     ('D01', 'Inés Navarro', 'social worker, 44, in Seville; divorced, two teenagers (Carmen 15, Diego 13); sings flamenco with friends', 'case visits, reports, court dates, a difficult team'),
     ('D02', 'Tom Becker', 'bus driver, 55, in Hamburg; married to Birgit; a grandson, Finn (4); plays tuba in a brass band', 'shift plans, union matters, a route change, training new drivers'),
 ]
-PEOPLE = TEST_PEOPLE if SET == 'test' else DEV_PEOPLE
+VAL_PEOPLE = [
+    ('V01', 'Oskar Lindqvist', 'freelance translator (German to Swedish), 39, in Gothenburg; lives with his partner Maja and their daughter Elsa (7); sails a small dinghy', 'client deadlines, invoices, a book translation, terminology lists'),
+    ('V02', 'Fatima Haddad', 'pharmacist, 52, who runs a neighbourhood pharmacy in Marseille; married to Karim; three grown-up children; volunteers at a food bank', 'stock orders, staff rota, an inspection, a new prescription system'),
+]
+PEOPLE = {'test': TEST_PEOPLE, 'dev': DEV_PEOPLE, 'val': VAL_PEOPLE}[SET]
 THEMES = ['work', 'family', 'people', 'home', 'health', 'money', 'hobbies', 'travel', 'shopping', 'admin']
 # pattern: (count per person, number of values the model fills, number of steps)
 PATTERNS = {
@@ -215,6 +220,20 @@ def key_parts(v):
     return [x for x in parts if x.lower() not in COMMON and len(x) >= 2] or [v]
 
 
+THING_STOP = {'my', 'the', 'a', 'an', 'of', 'for', 'and', 'to', 'next', 'weekly', 'monthly', 'regular', 'usual', 'preferred', 'current'}
+
+
+def thing_words(t):
+    return set(re.findall(r"[a-z]+", t.lower().replace("'s", ''))) - THING_STOP
+
+
+def overlaps(a, b):
+    """Two things a question could confuse: the words of one are all in the other ("insurance provider" and "home
+    insurance provider")."""
+    x, y = thing_words(a), thing_words(b)
+    return bool(x) and bool(y) and (x <= y or y <= x)
+
+
 def item_problems(s, g, taken):
     """What is wrong with one filled storyline; `taken` = values (lowercase) already used by accepted storylines."""
     probs = []
@@ -259,6 +278,9 @@ def fill(a, pid, name, bio, work):
         return json.load(open(path, encoding='utf-8'))
     full_sk = skeleton(pid)
     curated = needs_of(pid, full_sk)          # needs are written by hand (needs.py), the rest by the model
+    for s in full_sk:
+        if s['id'] in curated:
+            s['days'] = before_deadline(s['days'], curated[s['id']]['values'][0])
     sk = [s for s in full_sk if s['id'] not in curated]
     done = {}
     for restart in range(2):  # a restart keeps what was accepted and tries the rest with new seeds
@@ -304,6 +326,17 @@ def sense_check(a, pid, name, filled, sk_by_id, attempt):
         return []
 
 
+def before_deadline(days, phrase):
+    """A need for a given date ("a babysitter on Saturday 21 March") comes up, and is met, before that date: the steps
+    move earlier, keeping their gaps, so the last is two days before it."""
+    m = re.search(r'\b(\d{1,2}) (March|April|May)\b', phrase)
+    if not m:
+        return days
+    deadline = (datetime.date(START.year, {'March': 3, 'April': 4, 'May': 5}[m.group(2)], int(m.group(1))) - START).days
+    shift = max(0, days[-1] - (deadline - 2))
+    return [max(0, d - shift) for d in days]
+
+
 def needs_of(pid, sk):
     """Map the skeleton's need storylines to the hand-written needs, in order per pattern."""
     pool = {}
@@ -338,10 +371,12 @@ def fill_rounds(a, pid, name, bio, work, sk, restart, curated, done=None):
             probs = ['missing'] if not g else item_problems(s, g, taken)
             if g and g['thing'].strip().lower() in {d['thing'].strip().lower() for d in done.values()}:
                 probs.append(f"another storyline is already about '{g['thing']}': pick a different thing")
+            elif g and (near := next((d['thing'] for d in done.values() if overlaps(g['thing'], d['thing'])), None)):
+                probs.append(f"'{g['thing']}' could be confused with another storyline's '{near}': pick a clearly different thing")
             bio_words = {w.lower().strip(',;()') for w in (name + ' ' + bio).split()}
             if g and any(v.strip().lower() in bio_words or name.split()[0].lower() in v.lower() for v in g['values']):
                 probs.append("a value must not be the owner's name or a single word from who they are (their city, family, instrument): it would come up in every conversation")
-            if g and (name.split()[0].lower() in g['thing'].lower() or re.search(r'\b(tentative|hypothetical|imagined|own|considered)\b', g['thing'], re.I)):
+            if g and (name.split()[0].lower() in g['thing'].lower() or re.search(r'\b(tentative|hypothetical|imagined|own|considered|potential|possible|planned)\b', g['thing'], re.I)):
                 probs.append("the thing must not contain the owner's name or words like tentative, hypothetical, own: name the kind of thing only")
             if g and g['other_person'] and g['other_person'].split()[0].lower() in g['thing'].lower():
                 probs.append("the thing must not name the other person: name the kind of thing only")

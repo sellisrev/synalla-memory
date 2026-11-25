@@ -16,19 +16,23 @@ import { createHash } from 'node:crypto';
 import { MemoryStore } from '../../../src/store.ts';
 import { importClaudeCode } from '../../../src/import_claude_code.ts';
 import { httpEmbedder } from '../../../src/embed.ts';
-import { httpChatModel, extractPending } from '../../../src/facts.ts';
+import { httpChatModel, extractPending, FACTS_SCHEMA_V2 } from '../../../src/facts.ts';
 import { McpServer } from '../../../src/mcp.ts';
 // questions carry `person` (life sessions) instead of `persona`
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const SET = process.env.LIFE_SET ?? 'test';
-const OUT = join(HERE, '..', SET === 'test' ? 'out' : 'out_dev');
-const WORK = join(HERE, '..', 'work', SET === 'test' ? 'synalla' : 'synalla_dev');
+const OUT = join(HERE, '..', { test: 'out', dev: 'out_dev', val: 'out_val' }[SET]);
+const argv0 = process.argv.slice(2);
+// --variant v2: extraction v2 (facts.ts extractionPromptV2), stores in their own folder
+const VARIANT = argv0.includes('--variant') ? argv0[argv0.indexOf('--variant') + 1] : '';
+if (VARIANT && VARIANT !== 'v2') throw new Error(`unknown variant ${VARIANT}`);
+const WORK = join(HERE, '..', 'work', (SET === 'test' ? 'synalla' : `synalla_${SET}`) + (VARIANT ? `_${VARIANT}` : ''));
 const LLM = 'http://127.0.0.1:9090';
 const TODAY = '2026-04-13'; // the day after the six simulated weeks
-const ALL = { D01: 'Inés Navarro', D02: 'Tom Becker', L01: 'Claire Morel', L02: 'Aisha Rahman', L03: 'Mateo Fernández', L04: 'Krzysztof Nowak',
+const ALL = { D01: 'Inés Navarro', D02: 'Tom Becker', V01: 'Oskar Lindqvist', V02: 'Fatima Haddad', L01: 'Claire Morel', L02: 'Aisha Rahman', L03: 'Mateo Fernández', L04: 'Krzysztof Nowak',
   L05: 'Ji-woo Park', L06: 'Thandiwe Dlamini', L07: 'Lukas Brandt', L08: 'Valentina Rossi', L09: 'Daniel Okoye', L10: 'Priya Nair' };
-const OWNERS = Object.fromEntries(Object.entries(ALL).filter(([p]) => (SET === 'test') === p.startsWith('L')));
+const OWNERS = Object.fromEntries(Object.entries(ALL).filter(([p]) => p[0] === { test: 'L', dev: 'D', val: 'V' }[SET]));
 const DIM = 1024;
 // synthetic data only: a fixed, published key per persona so anyone can open the stores
 const keyFor = p => new Uint8Array(createHash('sha256').update(`synalla-life-benchmark-${p}`).digest());
@@ -64,9 +68,9 @@ async function build() {
       if (r.failed.length) throw new Error(`${p}: ${r.failed.length} sessions failed to import: ${r.failed[0].error}`);
       log(`${p} imported ${r.imported.length}, embedded ${await embedAll(store)}`);
       if (args.includes('--no-facts')) continue;
-      const model = httpChatModel({ url: LLM, model: 'daily' });
+      const model = httpChatModel({ url: LLM, model: 'daily', ...(VARIANT === 'v2' ? { schema: { name: 'facts', schema: FACTS_SCHEMA_V2 } } : {}) });
       const t0 = Date.now();
-      const res = await extractPending(store, model, OWNERS[p], { limit: 1000, agentSessions: true,
+      const res = await extractPending(store, model, OWNERS[p], { limit: 1000, agentSessions: true, version: VARIANT === 'v2' ? 2 : 1,
         onItem: (id, kept, dropped, err) => log(`${p} facts ${id.slice(-12)} kept ${kept} dropped ${dropped}${err ? ' ERROR ' + err.slice(0, 120) : ''}`) });
       log(`${p} extraction: ${res.items} items, ${res.facts} facts, ${res.failed} failed, ${Math.round((Date.now() - t0) / 1000)} s; embedded ${await embedAll(store)}`);
       if (res.failed > 0) throw new Error(`${p}: ${res.failed} items failed extraction`);

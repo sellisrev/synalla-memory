@@ -11,12 +11,14 @@ import json, os, sys
 from collections import Counter, defaultdict
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(HERE, '..', 'out' if os.environ.get('LIFE_SET', 'test') == 'test' else 'out_dev')
+OUT = os.path.join(HERE, '..', {'test': 'out', 'dev': 'out_dev', 'val': 'out_val'}[os.environ.get('LIFE_SET', 'test')])
 
 
 def open_windows():
     """need id -> (person, pattern, open day, met day or None), from the session plan of each person."""
     truth = json.load(open(os.path.join(OUT, 'network_truth.json'), encoding='utf-8'))
+    sp = os.path.join(OUT, 'questions_skipped.json')
+    skipped = {(x['person'], x['storyline']) for x in (json.load(open(sp, encoding='utf-8')) if os.path.exists(sp) else [])}
     out = {}
     for t in truth:
         pid = t['person']
@@ -24,7 +26,8 @@ def open_windows():
         index = json.load(open(os.path.join(OUT, pid, 'index.json'), encoding='utf-8'))
         s = next(s for s in stories if s['pattern'].startswith('need') and s['values'][0] == t['phrase'])
         when = {st['step']: x['date'] for x in index for st in x['steps'] if st['story'] == s['id']}
-        out[t['need']] = {**t, 'open': when.get(0), 'met': when.get(1)}
+        # skip: not counted (questions_skipped.json, e.g. it comes up after its own date); proposals for it are ignored
+        out[t['need']] = {**t, 'open': when.get(0), 'met': when.get(1), 'skip': (pid, s['id']) in skipped}
     return out
 
 
@@ -39,6 +42,7 @@ def score(path, needs):
         for e in n['near_misses']:
             by_entry.setdefault(e, (n, 'near'))
     kinds, first_right = Counter(), {}
+    props = [p for p in props if not (by_entry.get(p['entry'], (None,))[0] or {}).get('skip')]
     for p in props:
         n, how = by_entry.get(p['entry'], (None, None))
         if n is None or n['person'] != p['person']:
@@ -54,7 +58,7 @@ def score(path, needs):
             kinds['after the need was met'] += 1
         else:  # the text mentioned the need before its planned session (the writer let it slip early)
             kinds['early'] += 1
-    own = [n for n in needs.values() if n['person'] in people and n['pattern'] != 'need_other' and n['open']]
+    own = [n for n in needs.values() if n['person'] in people and n['pattern'] != 'need_other' and n['open'] and not n['skip']]
     from datetime import date
     lat = [(date.fromisoformat(first_right[n['need']]) - date.fromisoformat(n['open'])).days for n in own if n['need'] in first_right]
     total = len(props)

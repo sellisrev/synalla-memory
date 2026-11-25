@@ -55,6 +55,20 @@ NEEDS = {
             ('need_other', 'a physiotherapist for his knee who can come home', 'physiotherapist', 'physiotherapy', 'her father')],
 }
 
+# Validation people (LIFE_SET=val): never tuned on; a change kept on dev must not lose here.
+NEEDS.update({
+    'V01': [('need_met', 'someone to pick Elsa up from school on the Thursdays he works in Stockholm', 'school', 'childcare', "Maja's colleague Linnea Berg picks Elsa up on Thursdays"),
+            ('need_met', 'a second-hand outboard motor for his sailing dinghy', 'outboard', 'sports-equipment', 'bought a used Tohatsu from Nils Ek at the sailing club'),
+            ('need_open', 'a reviewer who knows maritime law terms for the shipping manual he is translating', 'maritime', 'translation', ''),
+            ('need_open', 'a dentist in Gothenburg who takes new patients, for his cracked tooth', 'dentist', 'dentist', ''),
+            ('need_other', 'a cheap flat in Gothenburg for his brother Anders, who is moving back', 'flat', 'accommodation', 'Anders (brother)')],
+    'V02': [('need_met', 'a replacement pharmacist to cover the pharmacy during her week off in April', 'replacement', 'hiring', 'hired Sophie Arnaud, a locum, through the regional union'),
+            ('need_met', 'a plumber to fix the leak under the sink in the pharmacy back room', 'plumber', 'plumbing', 'the plumber Marc Giraud fixed the leak'),
+            ('need_open', 'someone to build a website with online ordering for the pharmacy', 'website', 'website', ''),
+            ('need_open', 'a running group for beginners near the Vieux-Port', 'running', 'running-group', ''),
+            ('need_other', 'a vet for her old dog, who has stopped eating', 'vet', 'vet-advice', 'Leïla (daughter)')],
+})
+
 # Tuning people (LIFE_SET=dev): never used for test numbers.
 NEEDS.update({
     'D01': [('need_met', 'a guitarist to play with her flamenco group at the April feria', 'guitarist', 'music-lessons', 'Rafa Montoya from the peña agreed to play'),

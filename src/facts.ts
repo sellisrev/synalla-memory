@@ -117,10 +117,12 @@ export interface HttpChatOptions {
   /** Sent as a bearer token (a cloud key; the CLI asks for consent before using one). */
   apiKey?: string;
   fetch?: typeof fetch;
+  /** Structured output asked for (default: the facts schema). */
+  schema?: { name: string; schema: object };
 }
 
 /** Extraction through an OpenAI-compatible chat endpoint, with the JSON schema as structured output (as measured). */
-export function httpChatModel({ url, model, apiKey, fetch: base }: HttpChatOptions): ChatModel {
+export function httpChatModel({ url, model, apiKey, fetch: base, schema }: HttpChatOptions): ChatModel {
   const u = new URL(url.endsWith('/') ? url : url + '/');
   const f = guardFetch('extract', sameOrigin(u), base ? { base } : {});
   const endpoint = new URL('v1/chat/completions', u);
@@ -132,7 +134,7 @@ export function httpChatModel({ url, model, apiKey, fetch: base }: HttpChatOptio
         body: JSON.stringify({
           model, messages: [{ role: 'user', content: prompt }], max_tokens: 6000, temperature: 0.1,
           chat_template_kwargs: { enable_thinking: false },
-          response_format: { type: 'json_schema', json_schema: { name: 'facts', schema: FACTS_SCHEMA, strict: true } },
+          response_format: { type: 'json_schema', json_schema: { name: schema?.name ?? 'facts', schema: schema?.schema ?? FACTS_SCHEMA, strict: true } },
         }),
       });
       if (!r.ok) throw new Error(`chat endpoint answered ${r.status}`);

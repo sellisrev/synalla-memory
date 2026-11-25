@@ -55,6 +55,12 @@ export interface Fact {
   superseded_on: string | null;
   mentioned_at: string; quote: string;
 }
+/** A need, want or problem of the owner that someone on their network could help with (wants.ts). */
+export interface WantInput { what: string; topic: string; confidence: number; quote: string }
+export interface Want extends WantInput {
+  wid: number; item: string; opened_at: string; closed_at: string | null; closed_by: string | null; closed_quote: string | null;
+}
+
 export interface StoreOptions {
   /** 32-byte key. */
   key: Uint8Array;
@@ -87,6 +93,11 @@ CREATE TRIGGER IF NOT EXISTS facts_ad AFTER DELETE ON facts BEGIN
   DELETE FROM facts_fts WHERE rowid = old.fid; END;
 CREATE TABLE IF NOT EXISTS extracted(item TEXT PRIMARY KEY REFERENCES items(id) ON DELETE CASCADE, at TEXT NOT NULL,
   facts INTEGER NOT NULL, error TEXT);
+CREATE TABLE IF NOT EXISTS wants(wid INTEGER PRIMARY KEY, item TEXT NOT NULL REFERENCES items(id) ON DELETE CASCADE,
+  what TEXT NOT NULL, topic TEXT NOT NULL, confidence REAL NOT NULL, quote TEXT NOT NULL, opened_at TEXT NOT NULL,
+  closed_at TEXT, closed_by TEXT, closed_quote TEXT);
+CREATE TABLE IF NOT EXISTS want_scans(item TEXT PRIMARY KEY REFERENCES items(id) ON DELETE CASCADE, at TEXT NOT NULL,
+  opened INTEGER NOT NULL, closed INTEGER NOT NULL, error TEXT);
 `;
 
 /** Normalise to unit length, then quantise to int8 (round(x * 127)). Dot products of these rank like cosine. */
@@ -380,6 +391,48 @@ export class MemoryStore {
       }
       for (const [fid, v] of sup) upd.run(v, fid);
     }
+  }
+
+  /** Items not yet read for wants (oldest first); agent sessions only when asked, as for facts. */
+  pendingWantScan(limit = 50, opts: { agentSessions?: boolean } = {}): StoredItem[] {
+    const skip = opts.agentSessions ? [] : [...AGENT_SESSION_SOURCES];
+    return this.#db.prepare(`SELECT id, date, source, title, text FROM items WHERE id NOT IN (SELECT item FROM want_scans)
+      AND source NOT IN (${skip.map(() => '?').join(',') || "''"}) ORDER BY date, id LIMIT ?`).all(...skip, limit) as StoredItem[];
+  }
+
+  /** Wants not closed yet, oldest first. */
+  openWants(): Want[] {
+    return this.#db.prepare('SELECT * FROM wants WHERE closed_at IS NULL ORDER BY opened_at, wid').all() as Want[];
+  }
+
+  /** Every want, open or closed, oldest first. */
+  allWants(): Want[] {
+    return this.#db.prepare('SELECT * FROM wants ORDER BY opened_at, wid').all() as Want[];
+  }
+
+  /**
+   * What reading one item for wants found: new wants (opened on the item's date) and open wants it shows as met
+   * (closed on the item's date, with the quote). Records the item as read; closing a want that is not open is ignored.
+   */
+  recordWants(item: string, opened: readonly WantInput[], closed: readonly { wid: number; quote: string }[],
+    at: Date = new Date(), error: string | null = null): number[] {
+    const it = this.#db.prepare('SELECT date FROM items WHERE id = ?').get(item) as { date: string } | undefined;
+    if (!it) throw new RangeError(`no item ${item}`);
+    for (const w of opened) {
+      if (!w || typeof w.what !== 'string' || typeof w.topic !== 'string' || typeof w.quote !== 'string'
+        || typeof w.confidence !== 'number' || !(w.confidence >= 0 && w.confidence <= 1)) throw new TypeError('bad want shape');
+    }
+    const day = (it.date || '').slice(0, 10);
+    return this.#db.transaction(() => {
+      const ins = this.#db.prepare('INSERT INTO wants(item, what, topic, confidence, quote, opened_at) VALUES (?, ?, ?, ?, ?, ?)');
+      const wids = opened.map(w => Number(ins.run(item, scrub(w.what).text, w.topic, w.confidence, scrub(w.quote).text, day).lastInsertRowid));
+      const close = this.#db.prepare('UPDATE wants SET closed_at = ?, closed_by = ?, closed_quote = ? WHERE wid = ? AND closed_at IS NULL');
+      let n = 0;
+      for (const c of closed) n += close.run(day, item, scrub(c.quote).text, c.wid).changes;
+      this.#db.prepare('INSERT OR REPLACE INTO want_scans(item, at, opened, closed, error) VALUES (?, ?, ?, ?, ?)')
+        .run(item, at.toISOString(), wids.length, n, error);
+      return wids;
+    })();
   }
 
   /** Items whose facts were not extracted yet (oldest first). */

@@ -115,11 +115,10 @@
   "id": "P2-02",
   "persona": "P2",
   "type": "now",
-  "question": "How does the save system serialize game state now?",
-  "gold": "A custom JSON serializer (it replaced ConfigFile, which broke on Vector2)",
+  "question": "Which library does the HUD use for text formatting now?",
+  "gold": "GDScript-FMT (it replaced Godot Dialog, too heavy for the HUD)",
   "sessions": [
-   9,
-   10
+   5
   ]
  },
  {
@@ -196,9 +195,9 @@
  {
   "id": "P2-10",
   "persona": "P2",
-  "type": "when",
-  "question": "When did I cancel the weekend trip to Dresden, and why?",
-  "gold": "15 March 2026, because Lea had the flu",
+  "type": "fact",
+  "question": "Why did I cancel the weekend trip to Dresden?",
+  "gold": "Lea had the flu",
   "sessions": [
    23
   ]
@@ -773,7 +772,7 @@
   "persona": "P8",
   "type": "when",
   "question": "When did the family get back from the Beaujolais trip?",
-  "gold": "22 March 2026, at 6 PM",
+  "gold": "3 April 2026, at 6 PM",
   "sessions": [
    32
   ]

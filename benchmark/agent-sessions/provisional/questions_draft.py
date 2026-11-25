@@ -12,7 +12,7 @@ Q = [
 ('P1','none','Which hotel did Tomas stay at in Barcelona?','not in memory',[],[]),
 ('P1','fact','Where are Tomas and I going on summer vacation?','The Algarve, in July',[40],[['algarve']]),
 ('P2','fact','How much did I pay for the second-hand Switch Lite, and where did I buy it?','150 EUR on eBay Kleinanzeigen',[13],[['150'],['kleinanzeigen']]),
-('P2','now','How does the save system serialize game state now?','A custom JSON serializer (it replaced ConfigFile, which broke on Vector2)',[9,10],[['json']]),
+('P2','now','Which library does the HUD use for text formatting now?','GDScript-FMT (it replaced Godot Dialog, too heavy for the HUD)',[5],[['gdscript-fmt']]),  # was the save system: session 37 (8 Apr) uses ConfigFile again
 ('P2','fact',"Who is Lea's piano teacher?",'Frau Schmidt at Musikschule Leipzig',[12],[['schmidt']]),
 ('P2','multi','What was wrong with the AI-generated hint system and what replaced it?','The hints were too generic; replaced with hand-written hint templates for levels 1-3',[15,16],[['generic'],['template']]),
 ('P2','when',"When was Lea's piano recital?",'20 March 2026',[34],[['recital']]),
@@ -20,7 +20,7 @@ Q = [
 ('P2','multi','Who playtested the game, where did I meet them, and what did the playtest change?','Anna Vogel, met at the indie dev meetup at Kaffeeboy; she found Time Rewind confusing in Level 3, so I added a tutorial overlay',[16,35,36],[['anna'],['kaffeeboy'],['overlay','tutorial']]),
 ('P2','none','What price did I set for Chronos Key on Steam?','not in memory',[],[]),
 ('P2','fact','How did I fix the rounding error in the star rating time bonus?','Integer arithmetic instead of floating point',[26],[['integer']]),
-('P2','when','When did I cancel the weekend trip to Dresden, and why?','15 March 2026, because Lea had the flu',[23],[['dresden'],['flu']]),
+('P2','fact','Why did I cancel the weekend trip to Dresden?','Lea had the flu',[23],[['dresden'],['flu']]),  # the session gives no date
 ('P3','now','Which DataFrame library does the MediFlow-2 preprocessing use now?','Polars (it replaced Pandas, which had replaced the plan to use Dask)',[17,18],[['polars']]),
 ('P3','fact','What mobile number did I put as my emergency contact on the hospital HR portal?','+44 7911 123456',[16],[['7911']]),
 ('P3','when',"When and where was my mother's birthday dinner?",'15 March 2026 at The French Table',[9,23],[['french table']]),
@@ -76,7 +76,7 @@ Q = [
 ('P8','multi','How was the race condition in the data ingestion service fixed and tested?','A RabbitMQ message queue; Sophie wrote unit tests with 95% coverage',[24,25,26],[['rabbitmq'],['95']]),
 ('P8','when',"When was Chloe's dentist appointment rescheduled to?",'12 March 2026',[12],[['12']]),
 ('P8','fact','Which database did we move the soil sensor backend to?','TimescaleDB (from PostgreSQL)',[1],[['timescale']]),
-('P8','when','When did the family get back from the Beaujolais trip?','22 March 2026, at 6 PM',[32],[['beaujolais']]),
+('P8','when','When did the family get back from the Beaujolais trip?','3 April 2026, at 6 PM',[32],[['beaujolais'],['6 pm']]),  # session of 4 Apr: home at 6 PM yesterday
 ('P8','fact','Who fixed the memory leak in the image processing pipeline, and how?','Amine Boudia, by patching the Rust bindings',[9],[['amine'],['rust']]),
 ('P8','none',"What is our company lawyer's name?",'not in memory',[],[]),
 ('P8','fact','How much was the hotel in Beaujolais?','EUR 120',[28,34],[['120']]),

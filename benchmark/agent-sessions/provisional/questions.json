@@ -1,0 +1,820 @@
+[
+ {
+  "id": "P1-01",
+  "persona": "P1",
+  "type": "fact",
+  "question": "How much did the ergonomic keyboard I bought from PCTech cost?",
+  "gold": "EUR 145.50",
+  "sessions": [
+   13
+  ]
+ },
+ {
+  "id": "P1-02",
+  "persona": "P1",
+  "type": "fact",
+  "question": "Which library did I use to fix the memory leak in the database connection pool?",
+  "gold": "deadpool (deadpool-rust connection pooling)",
+  "sessions": [
+   24
+  ]
+ },
+ {
+  "id": "P1-03",
+  "persona": "P1",
+  "type": "now",
+  "question": "Which async runtime does the Rust ledger service use now?",
+  "gold": "async-std (switched from Tokio on 17 March)",
+  "sessions": [
+   3,
+   16
+  ]
+ },
+ {
+  "id": "P1-04",
+  "persona": "P1",
+  "type": "when",
+  "question": "When was the beta of the new ledger service deployed to production?",
+  "gold": "27 March 2026",
+  "sessions": [
+   25
+  ]
+ },
+ {
+  "id": "P1-05",
+  "persona": "P1",
+  "type": "multi",
+  "question": "What caused the rise in failed transactions that support reported, and how did I fix it?",
+  "gold": "A bottleneck in the logging subsystem causing timeouts (5% more failed transactions); fixed by switching to asynchronous logging with tracing",
+  "sessions": [
+   27,
+   29,
+   30
+  ]
+ },
+ {
+  "id": "P1-06",
+  "persona": "P1",
+  "type": "now",
+  "question": "What is the beta release deadline now?",
+  "gold": "27 March (Sofia moved it from 20 March)",
+  "sessions": [
+   9
+  ]
+ },
+ {
+  "id": "P1-07",
+  "persona": "P1",
+  "type": "when",
+  "question": "When did I run the half-marathon in Cascais, and what was my time?",
+  "gold": "20 March 2026, 2 hours 15 minutes",
+  "sessions": [
+   19
+  ]
+ },
+ {
+  "id": "P1-08",
+  "persona": "P1",
+  "type": "multi",
+  "question": "Who reported the race condition in the transaction retry logic, and who signed off the fix?",
+  "gold": "João Silva reported it and João Silva signed off on staging (21 March)",
+  "sessions": [
+   15,
+   20
+  ]
+ },
+ {
+  "id": "P1-09",
+  "persona": "P1",
+  "type": "none",
+  "question": "Which hotel did Tomas stay at in Barcelona?",
+  "gold": "not in memory",
+  "sessions": []
+ },
+ {
+  "id": "P1-10",
+  "persona": "P1",
+  "type": "fact",
+  "question": "Where are Tomas and I going on summer vacation?",
+  "gold": "The Algarve, in July",
+  "sessions": [
+   40
+  ]
+ },
+ {
+  "id": "P2-01",
+  "persona": "P2",
+  "type": "fact",
+  "question": "How much did I pay for the second-hand Switch Lite, and where did I buy it?",
+  "gold": "150 EUR on eBay Kleinanzeigen",
+  "sessions": [
+   13
+  ]
+ },
+ {
+  "id": "P2-02",
+  "persona": "P2",
+  "type": "now",
+  "question": "How does the save system serialize game state now?",
+  "gold": "A custom JSON serializer (it replaced ConfigFile, which broke on Vector2)",
+  "sessions": [
+   9,
+   10
+  ]
+ },
+ {
+  "id": "P2-03",
+  "persona": "P2",
+  "type": "fact",
+  "question": "Who is Lea's piano teacher?",
+  "gold": "Frau Schmidt at Musikschule Leipzig",
+  "sessions": [
+   12
+  ]
+ },
+ {
+  "id": "P2-04",
+  "persona": "P2",
+  "type": "multi",
+  "question": "What was wrong with the AI-generated hint system and what replaced it?",
+  "gold": "The hints were too generic; replaced with hand-written hint templates for levels 1-3",
+  "sessions": [
+   15,
+   16
+  ]
+ },
+ {
+  "id": "P2-05",
+  "persona": "P2",
+  "type": "when",
+  "question": "When was Lea's piano recital?",
+  "gold": "20 March 2026",
+  "sessions": [
+   34
+  ]
+ },
+ {
+  "id": "P2-06",
+  "persona": "P2",
+  "type": "fact",
+  "question": "How did I fix the player getting stuck in walls when rewinding fast?",
+  "gold": "A snap-to-grid on rewind so the player always lands on a valid tile",
+  "sessions": [
+   20
+  ]
+ },
+ {
+  "id": "P2-07",
+  "persona": "P2",
+  "type": "multi",
+  "question": "Who playtested the game, where did I meet them, and what did the playtest change?",
+  "gold": "Anna Vogel, met at the indie dev meetup at Kaffeeboy; she found Time Rewind confusing in Level 3, so I added a tutorial overlay",
+  "sessions": [
+   16,
+   35,
+   36
+  ]
+ },
+ {
+  "id": "P2-08",
+  "persona": "P2",
+  "type": "none",
+  "question": "What price did I set for Chronos Key on Steam?",
+  "gold": "not in memory",
+  "sessions": []
+ },
+ {
+  "id": "P2-09",
+  "persona": "P2",
+  "type": "fact",
+  "question": "How did I fix the rounding error in the star rating time bonus?",
+  "gold": "Integer arithmetic instead of floating point",
+  "sessions": [
+   26
+  ]
+ },
+ {
+  "id": "P2-10",
+  "persona": "P2",
+  "type": "when",
+  "question": "When did I cancel the weekend trip to Dresden, and why?",
+  "gold": "15 March 2026, because Lea had the flu",
+  "sessions": [
+   23
+  ]
+ },
+ {
+  "id": "P3-01",
+  "persona": "P3",
+  "type": "now",
+  "question": "Which DataFrame library does the MediFlow-2 preprocessing use now?",
+  "gold": "Polars (it replaced Pandas, which had replaced the plan to use Dask)",
+  "sessions": [
+   17,
+   18
+  ]
+ },
+ {
+  "id": "P3-02",
+  "persona": "P3",
+  "type": "fact",
+  "question": "What mobile number did I put as my emergency contact on the hospital HR portal?",
+  "gold": "+44 7911 123456",
+  "sessions": [
+   16
+  ]
+ },
+ {
+  "id": "P3-03",
+  "persona": "P3",
+  "type": "when",
+  "question": "When and where was my mother's birthday dinner?",
+  "gold": "15 March 2026 at The French Table",
+  "sessions": [
+   9,
+   23
+  ]
+ },
+ {
+  "id": "P3-04",
+  "persona": "P3",
+  "type": "now",
+  "question": "Which FastAPI version is MediFlow-2 on now?",
+  "gold": "0.109.0 (upgraded from 0.68.0 after the security alert)",
+  "sessions": [
+   31,
+   32
+  ]
+ },
+ {
+  "id": "P3-05",
+  "persona": "P3",
+  "type": "multi",
+  "question": "What did Dr. Emily Stone ask for, and what did I do about each request?",
+  "gold": "Faster anonymization: moved to an async worker thread, 40% lower latency; a clinical_notes field: added, encrypted with AES-256",
+  "sessions": [
+   24,
+   37,
+   38
+  ]
+ },
+ {
+  "id": "P3-06",
+  "persona": "P3",
+  "type": "fact",
+  "question": "Where is the MediFlow-2 staging environment deployed?",
+  "gold": "AWS Elastic Beanstalk, us-east-1",
+  "sessions": [
+   30
+  ]
+ },
+ {
+  "id": "P3-07",
+  "persona": "P3",
+  "type": "none",
+  "question": "What is David Chen's phone number?",
+  "gold": "not in memory",
+  "sessions": []
+ },
+ {
+  "id": "P3-08",
+  "persona": "P3",
+  "type": "when",
+  "question": "When did I take Barnaby to the vet for his follow-up, and what did it cost?",
+  "gold": "22 March 2026, GBP 60",
+  "sessions": [
+   35
+  ]
+ },
+ {
+  "id": "P3-09",
+  "persona": "P3",
+  "type": "fact",
+  "question": "How did I fix the Polars memory leak that crashed the service after 10,000 records?",
+  "gold": "Batch processing with df.iter_rows() instead of df.collect()",
+  "sessions": [
+   20
+  ]
+ },
+ {
+  "id": "P3-10",
+  "persona": "P3",
+  "type": "fact",
+  "question": "Which logging library did I switch MediFlow-2 to?",
+  "gold": "Loguru (replacing the standard logging module)",
+  "sessions": [
+   27
+  ]
+ },
+ {
+  "id": "P4-01",
+  "persona": "P4",
+  "type": "now",
+  "question": "What is the FinTechFlow beta release deadline now?",
+  "gold": "25 March (moved from 15 to 20, then to 25 for a compliance audit)",
+  "sessions": [
+   7,
+   21
+  ]
+ },
+ {
+  "id": "P4-02",
+  "persona": "P4",
+  "type": "fact",
+  "question": "What limit did Intesa Sanpaolo pre-approve for my mortgage?",
+  "gold": "EUR 280,000",
+  "sessions": [
+   26
+  ]
+ },
+ {
+  "id": "P4-03",
+  "persona": "P4",
+  "type": "multi",
+  "question": "Which flat am I buying, and what steps have I taken on it?",
+  "gold": "Via Cernaia 45: viewed it (asked for the APE), mortgage pre-approval EUR 280,000, signed the compromesso on 4 April, paid the EUR 2,000 notary deposit",
+  "sessions": [
+   6,
+   26,
+   34,
+   37
+  ]
+ },
+ {
+  "id": "P4-04",
+  "persona": "P4",
+  "type": "fact",
+  "question": "What is my mother's phone number?",
+  "gold": "+39 011 555 0142",
+  "sessions": [
+   3
+  ]
+ },
+ {
+  "id": "P4-05",
+  "persona": "P4",
+  "type": "multi",
+  "question": "Why did David Chen reject my FinTechFlow pull request, and what did I do about it?",
+  "gold": "Unit test coverage dropped below 80%; I wrote 15 new tests for the payment gateway, raising it to 85%",
+  "sessions": [
+   15,
+   17
+  ]
+ },
+ {
+  "id": "P4-06",
+  "persona": "P4",
+  "type": "when",
+  "question": "When did I publish EcoTrack 2.1.0 to the App Store?",
+  "gold": "5 April 2026",
+  "sessions": [
+   35
+  ]
+ },
+ {
+  "id": "P4-07",
+  "persona": "P4",
+  "type": "now",
+  "question": "Which fl_chart version does EcoTrack use now?",
+  "gold": "0.67.0 (upgraded from 0.66.2 to fix a memory leak)",
+  "sessions": [
+   9,
+   10
+  ]
+ },
+ {
+  "id": "P4-08",
+  "persona": "P4",
+  "type": "fact",
+  "question": "Which auth provider is FinTechFlow's authentication moving to?",
+  "gold": "Supabase Auth (from Auth0)",
+  "sessions": [
+   1
+  ]
+ },
+ {
+  "id": "P4-09",
+  "persona": "P4",
+  "type": "none",
+  "question": "What is my landlord's IBAN?",
+  "gold": "not in memory",
+  "sessions": []
+ },
+ {
+  "id": "P4-10",
+  "persona": "P4",
+  "type": "when",
+  "question": "When did Sofia and I have dinner at Al Ponte, and what did it cost?",
+  "gold": "14 March 2026, EUR 85",
+  "sessions": [
+   13
+  ]
+ },
+ {
+  "id": "P5-01",
+  "persona": "P5",
+  "type": "fact",
+  "question": "Which library did I switch to for date parsing to fix the timezone offset bug?",
+  "gold": "jinzhu/now (instead of time.Parse)",
+  "sessions": [
+   22
+  ]
+ },
+ {
+  "id": "P5-02",
+  "persona": "P5",
+  "type": "now",
+  "question": "What is the shipping API migration deadline now?",
+  "gold": "10 April 2026 (moved from 1 April); the migration was completed on 10 April",
+  "sessions": [
+   24,
+   38
+  ]
+ },
+ {
+  "id": "P5-03",
+  "persona": "P5",
+  "type": "fact",
+  "question": "What rate limit did I set for the staging environment?",
+  "gold": "500 requests per minute (up from 100)",
+  "sessions": [
+   14
+  ]
+ },
+ {
+  "id": "P5-04",
+  "persona": "P5",
+  "type": "multi",
+  "question": "What caused the CPU alert on the shipping pods, and what did I do?",
+  "gold": "CPU over 90% from an inefficient O(n^2) loop in AI-generated address validation; scaled from 3 to 5 replicas, then refactored it to O(n)",
+  "sessions": [
+   36,
+   37,
+   39
+  ]
+ },
+ {
+  "id": "P5-05",
+  "persona": "P5",
+  "type": "when",
+  "question": "When is my mother's 60th birthday?",
+  "gold": "15 May 2026",
+  "sessions": [
+   40
+  ]
+ },
+ {
+  "id": "P5-06",
+  "persona": "P5",
+  "type": "fact",
+  "question": "How much did the cleaning at Koda Dental cost?",
+  "gold": "850 SEK (partly covered by insurance)",
+  "sessions": [
+   17
+  ]
+ },
+ {
+  "id": "P5-07",
+  "persona": "P5",
+  "type": "fact",
+  "question": "What latency reduction did Erik confirm after the migration?",
+  "gold": "40%",
+  "sessions": [
+   38
+  ]
+ },
+ {
+  "id": "P5-08",
+  "persona": "P5",
+  "type": "none",
+  "question": "How long is my Duolingo streak?",
+  "gold": "not in memory",
+  "sessions": []
+ },
+ {
+  "id": "P5-09",
+  "persona": "P5",
+  "type": "when",
+  "question": "When did I add the missing ConfigMap so the dry run passed?",
+  "gold": "31 March 2026",
+  "sessions": [
+   30
+  ]
+ },
+ {
+  "id": "P5-10",
+  "persona": "P5",
+  "type": "fact",
+  "question": "Which library replaced testcontainers-go for the integration tests?",
+  "gold": "wiremock-go",
+  "sessions": [
+   9
+  ]
+ },
+ {
+  "id": "P6-01",
+  "persona": "P6",
+  "type": "now",
+  "question": "Which library does the production model layer at my fintech internship use now?",
+  "gold": "LightGBM (replaced TensorFlow after John Mensah rejected the PR for latency)",
+  "sessions": [
+   10,
+   11
+  ]
+ },
+ {
+  "id": "P6-02",
+  "persona": "P6",
+  "type": "fact",
+  "question": "What classification threshold did I set to improve recall?",
+  "gold": "0.3 (from 0.5; recall had been 65%, below the 80% target)",
+  "sessions": [
+   18,
+   19
+  ]
+ },
+ {
+  "id": "P6-03",
+  "persona": "P6",
+  "type": "when",
+  "question": "When did I submit the final thesis draft to Dr. Osei?",
+  "gold": "27 March 2026 at 5 PM, by email",
+  "sessions": [
+   32
+  ]
+ },
+ {
+  "id": "P6-04",
+  "persona": "P6",
+  "type": "multi",
+  "question": "What has Dr. Osei asked me to add to the thesis?",
+  "gold": "SMOTE for class imbalance, and a comparison with an Isolation Forest baseline",
+  "sessions": [
+   8,
+   35
+  ]
+ },
+ {
+  "id": "P6-05",
+  "persona": "P6",
+  "type": "fact",
+  "question": "Which hotel did Akua and I stay at in Cape Coast, and what did it cost?",
+  "gold": "Koko Palace Hotel, 600 GHS",
+  "sessions": [
+   38
+  ]
+ },
+ {
+  "id": "P6-06",
+  "persona": "P6",
+  "type": "now",
+  "question": "What is the fintech internal API deployment deadline now?",
+  "gold": "22 March 2026 (moved from 20 March for server maintenance)",
+  "sessions": [
+   16
+  ]
+ },
+ {
+  "id": "P6-07",
+  "persona": "P6",
+  "type": "fact",
+  "question": "How did I fix the bug with null values in transaction_type?",
+  "gold": "A fillna step with the column's mode",
+  "sessions": [
+   27
+  ]
+ },
+ {
+  "id": "P6-08",
+  "persona": "P6",
+  "type": "none",
+  "question": "What grade did I get on my thesis?",
+  "gold": "not in memory",
+  "sessions": []
+ },
+ {
+  "id": "P6-09",
+  "persona": "P6",
+  "type": "fact",
+  "question": "How much did my gym membership cost, and where?",
+  "gold": "450 GHS for 3 months at Virgin Active in Osu",
+  "sessions": [
+   6
+  ]
+ },
+ {
+  "id": "P6-10",
+  "persona": "P6",
+  "type": "when",
+  "question": "When did we visit Cape Coast Castle?",
+  "gold": "8 April 2026",
+  "sessions": [
+   39
+  ]
+ },
+ {
+  "id": "P7-01",
+  "persona": "P7",
+  "type": "now",
+  "question": "Which bundler does Astral use now?",
+  "gold": "esbuild: rolldown was reverted on 2 April over the CSS scoping bug; rolldown 0.17.0-beta.1 is now allowed as an optional peer dependency for v12",
+  "sessions": [
+   31,
+   38
+  ]
+ },
+ {
+  "id": "P7-02",
+  "persona": "P7",
+  "type": "fact",
+  "question": "Which esbuild version did I pin for the v11.5 release?",
+  "gold": "0.24.2",
+  "sessions": [
+   9
+  ]
+ },
+ {
+  "id": "P7-03",
+  "persona": "P7",
+  "type": "when",
+  "question": "When did I publish Astral v11.5.0?",
+  "gold": "20 March 2026",
+  "sessions": [
+   19
+  ]
+ },
+ {
+  "id": "P7-04",
+  "persona": "P7",
+  "type": "fact",
+  "question": "Whose PR fixed the WebP memory leak in the img-optimize plugin?",
+  "gold": "Lin Wei, PR #415",
+  "sessions": [
+   12
+  ]
+ },
+ {
+  "id": "P7-05",
+  "persona": "P7",
+  "type": "multi",
+  "question": "What happened to the bugs I reported to the rolldown team?",
+  "gold": "Issue #891 (HMR crash): fixed in 0.16.0-alpha.3; CSS scoping bug: fixed in 0.17.0-beta.1",
+  "sessions": [
+   8,
+   16,
+   30,
+   37
+  ]
+ },
+ {
+  "id": "P7-06",
+  "persona": "P7",
+  "type": "fact",
+  "question": "How much was the deposit on my new apartment, and when do I move in?",
+  "gold": "25,000 JPY; move-in on 1 May 2026 (Nishinari)",
+  "sessions": [
+   40
+  ]
+ },
+ {
+  "id": "P7-07",
+  "persona": "P7",
+  "type": "when",
+  "question": "When is the v12 kickoff meeting?",
+  "gold": "20 April 2026",
+  "sessions": [
+   40
+  ]
+ },
+ {
+  "id": "P7-08",
+  "persona": "P7",
+  "type": "none",
+  "question": "What is Kenji Sato's GitHub username?",
+  "gold": "not in memory",
+  "sessions": []
+ },
+ {
+  "id": "P7-09",
+  "persona": "P7",
+  "type": "fact",
+  "question": "Which headphones did I buy, and how much were they?",
+  "gold": "Sony WH-1000XM6, 48,000 JPY at Yodobashi Camera Umeda",
+  "sessions": [
+   21
+  ]
+ },
+ {
+  "id": "P7-10",
+  "persona": "P7",
+  "type": "fact",
+  "question": "What did Maria Garcia's PR #420 add?",
+  "gold": "Support for the Tailwind CSS v4 JIT engine",
+  "sessions": [
+   23,
+   25
+  ]
+ },
+ {
+  "id": "P8-01",
+  "persona": "P8",
+  "type": "now",
+  "question": "Which Kubernetes version is the staging cluster on now?",
+  "gold": "1.28 (upgraded to 1.30, reverted after a deployment failure on 13 March)",
+  "sessions": [
+   6,
+   19
+  ]
+ },
+ {
+  "id": "P8-02",
+  "persona": "P8",
+  "type": "fact",
+  "question": "Which school does Chloe go to?",
+  "gold": "École Primaire Saint-Irénée",
+  "sessions": [
+   16
+  ]
+ },
+ {
+  "id": "P8-03",
+  "persona": "P8",
+  "type": "multi",
+  "question": "How was the race condition in the data ingestion service fixed and tested?",
+  "gold": "A RabbitMQ message queue; Sophie wrote unit tests with 95% coverage",
+  "sessions": [
+   24,
+   25,
+   26
+  ]
+ },
+ {
+  "id": "P8-04",
+  "persona": "P8",
+  "type": "when",
+  "question": "When was Chloe's dentist appointment rescheduled to?",
+  "gold": "12 March 2026",
+  "sessions": [
+   12
+  ]
+ },
+ {
+  "id": "P8-05",
+  "persona": "P8",
+  "type": "fact",
+  "question": "Which database did we move the soil sensor backend to?",
+  "gold": "TimescaleDB (from PostgreSQL)",
+  "sessions": [
+   1
+  ]
+ },
+ {
+  "id": "P8-06",
+  "persona": "P8",
+  "type": "when",
+  "question": "When did the family get back from the Beaujolais trip?",
+  "gold": "22 March 2026, at 6 PM",
+  "sessions": [
+   32
+  ]
+ },
+ {
+  "id": "P8-07",
+  "persona": "P8",
+  "type": "fact",
+  "question": "Who fixed the memory leak in the image processing pipeline, and how?",
+  "gold": "Amine Boudia, by patching the Rust bindings",
+  "sessions": [
+   9
+  ]
+ },
+ {
+  "id": "P8-08",
+  "persona": "P8",
+  "type": "none",
+  "question": "What is our company lawyer's name?",
+  "gold": "not in memory",
+  "sessions": []
+ },
+ {
+  "id": "P8-09",
+  "persona": "P8",
+  "type": "fact",
+  "question": "How much was the hotel in Beaujolais?",
+  "gold": "EUR 120",
+  "sessions": [
+   28,
+   34
+  ]
+ },
+ {
+  "id": "P8-10",
+  "persona": "P8",
+  "type": "fact",
+  "question": "Which gym am I a member of?",
+  "gold": "Basic-Fit Lyon Part-Dieu (EUR 29.99)",
+  "sessions": [
+   11
+  ]
+ }
+]

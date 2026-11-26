@@ -1,0 +1,945 @@
+[
+ {
+  "n": 1,
+  "day": 0,
+  "steps": [],
+  "date": "2026-03-02",
+  "kind": "work"
+ },
+ {
+  "n": 2,
+  "day": 1,
+  "steps": [],
+  "date": "2026-03-03",
+  "kind": "life"
+ },
+ {
+  "n": 3,
+  "day": 2,
+  "steps": [],
+  "date": "2026-03-04",
+  "kind": "life"
+ },
+ {
+  "n": 4,
+  "day": 3,
+  "steps": [],
+  "date": "2026-03-05",
+  "kind": "life"
+ },
+ {
+  "n": 5,
+  "day": 4,
+  "steps": [
+   {
+    "story": "S22",
+    "step": 0,
+    "day": 4,
+    "said_late": false,
+    "text": "Oskar's potential weekend renovation contractor is Stenwall Bygg AB.",
+    "must": [
+     "Stenwall Bygg AB"
+    ]
+   }
+  ],
+  "date": "2026-03-06",
+  "kind": "life"
+ },
+ {
+  "n": 6,
+  "day": 4,
+  "steps": [],
+  "date": "2026-03-06",
+  "kind": "work"
+ },
+ {
+  "n": 7,
+  "day": 5,
+  "steps": [
+   {
+    "story": "S02",
+    "step": 0,
+    "day": 5,
+    "said_late": false,
+    "text": "Oskar's general practitioner is Dr. Eklund.",
+    "must": [
+     "Dr. Eklund"
+    ]
+   },
+   {
+    "story": "S04",
+    "step": 0,
+    "day": 5,
+    "said_late": false,
+    "text": "Oskar's annual checkup is 2026-03-07.",
+    "must": [
+     "2026-03-07"
+    ]
+   }
+  ],
+  "date": "2026-03-07",
+  "kind": "life"
+ },
+ {
+  "n": 8,
+  "day": 6,
+  "steps": [
+   {
+    "story": "S14",
+    "step": 0,
+    "day": 6,
+    "said_late": false,
+    "text": "Oskar's client contact is Thomas Bergström.",
+    "must": [
+     "Thomas Bergström"
+    ]
+   },
+   {
+    "story": "S15",
+    "step": 0,
+    "day": 6,
+    "said_late": false,
+    "text": "Oskar's mortgage rate is 3.25 percent.",
+    "must": [
+     "3.25 percent"
+    ]
+   }
+  ],
+  "date": "2026-03-08",
+  "kind": "work"
+ },
+ {
+  "n": 9,
+  "day": 7,
+  "steps": [
+   {
+    "story": "S16",
+    "step": 0,
+    "day": 5,
+    "said_late": false,
+    "text": "Oskar's sailing club membership is Göta Kanals Segelsällskap.",
+    "must": [
+     "Göta Kanals Segelsällskap"
+    ]
+   },
+   {
+    "story": "S11",
+    "step": 0,
+    "day": 7,
+    "said_late": false,
+    "text": "Oskar's bank account is SE45 5000 0000 0034 5667 8901.",
+    "must": [
+     "SE45 5000 0000 0034 5667 8901"
+    ]
+   }
+  ],
+  "date": "2026-03-09",
+  "kind": "work"
+ },
+ {
+  "n": 10,
+  "day": 8,
+  "steps": [
+   {
+    "story": "S30",
+    "step": 0,
+    "day": 7,
+    "said_late": true,
+    "text": "Oskar needs a second-hand outboard motor for his sailing dinghy (not sorted yet).",
+    "must": [
+     "outboard"
+    ]
+   }
+  ],
+  "date": "2026-03-10",
+  "kind": "life"
+ },
+ {
+  "n": 11,
+  "day": 9,
+  "steps": [],
+  "date": "2026-03-11",
+  "kind": "life"
+ },
+ {
+  "n": 12,
+  "day": 10,
+  "steps": [],
+  "date": "2026-03-12",
+  "kind": "work"
+ },
+ {
+  "n": 13,
+  "day": 11,
+  "steps": [
+   {
+    "story": "S22",
+    "step": 1,
+    "day": 11,
+    "said_late": false,
+    "text": "Oskar is only thinking about changing the potential weekend renovation contractor to Nordic Remodeling Co; nothing decided.",
+    "must": [
+     "Nordic Remodeling Co"
+    ]
+   }
+  ],
+  "date": "2026-03-13",
+  "kind": "life"
+ },
+ {
+  "n": 14,
+  "day": 12,
+  "steps": [],
+  "date": "2026-03-14",
+  "kind": "life"
+ },
+ {
+  "n": 15,
+  "day": 13,
+  "steps": [
+   {
+    "story": "S20",
+    "step": 0,
+    "day": 13,
+    "said_late": false,
+    "text": "Oskar's project deadline is 2026-03-20.",
+    "must": [
+     "2026-03-20"
+    ]
+   },
+   {
+    "story": "S30",
+    "step": 1,
+    "day": 13,
+    "said_late": false,
+    "text": "Oskar's need is sorted: bought a used Tohatsu from Nils Ek at the sailing club.",
+    "must": [
+     "Tohatsu",
+     "Nils Ek"
+    ]
+   }
+  ],
+  "date": "2026-03-15",
+  "kind": "work"
+ },
+ {
+  "n": 16,
+  "day": 14,
+  "steps": [
+   {
+    "story": "S06",
+    "step": 0,
+    "day": 14,
+    "said_late": false,
+    "text": "Oskar's partner's workplace is Kontoret på Avenyn.",
+    "must": [
+     "Kontoret på Avenyn"
+    ]
+   },
+   {
+    "story": "S11",
+    "step": 1,
+    "day": 14,
+    "said_late": false,
+    "text": "Oskar's bank account has changed: now SE89 9000 0000 0034 5667 8912 (it was SE45 5000 0000 0034 5667 8901).",
+    "must": [
+     "SE89 9000 0000 0034 5667 8912"
+    ]
+   }
+  ],
+  "date": "2026-03-16",
+  "kind": "work"
+ },
+ {
+  "n": 17,
+  "day": 15,
+  "steps": [
+   {
+    "story": "S31",
+    "step": 0,
+    "day": 11,
+    "said_late": true,
+    "text": "Oskar needs a reviewer who knows maritime law terms for the shipping manual he is translating (not sorted yet).",
+    "must": [
+     "maritime"
+    ]
+   },
+   {
+    "story": "S14",
+    "step": 1,
+    "day": 13,
+    "said_late": true,
+    "text": "Oskar's client contact has changed: now Anna Lindgren (it was Thomas Bergström).",
+    "must": [
+     "Anna Lindgren"
+    ]
+   }
+  ],
+  "date": "2026-03-17",
+  "kind": "work"
+ },
+ {
+  "n": 18,
+  "day": 16,
+  "steps": [
+   {
+    "story": "S21",
+    "step": 0,
+    "day": 16,
+    "said_late": false,
+    "text": "Oskar's internet provider is Telia.",
+    "must": [
+     "Telia"
+    ]
+   }
+  ],
+  "date": "2026-03-18",
+  "kind": "life"
+ },
+ {
+  "n": 19,
+  "day": 17,
+  "steps": [
+   {
+    "story": "S15",
+    "step": 1,
+    "day": 13,
+    "said_late": true,
+    "text": "Oskar's mortgage rate has changed: now 3.40 percent (it was 3.25 percent).",
+    "must": [
+     "3.40 percent"
+    ]
+   },
+   {
+    "story": "S12",
+    "step": 0,
+    "day": 15,
+    "said_late": false,
+    "text": "Oskar's insurance provider is Trygg Hansa.",
+    "must": [
+     "Trygg Hansa"
+    ]
+   }
+  ],
+  "date": "2026-03-19",
+  "kind": "life"
+ },
+ {
+  "n": 20,
+  "day": 18,
+  "steps": [
+   {
+    "story": "S20",
+    "step": 1,
+    "day": 17,
+    "said_late": true,
+    "text": "Oskar corrects an earlier slip: the project deadline is 2026-03-25, not 2026-03-20.",
+    "must": [
+     "2026-03-25"
+    ]
+   },
+   {
+    "story": "S28",
+    "step": 0,
+    "day": 17,
+    "said_late": false,
+    "text": "Oskar's own regular dry cleaner is Pressbyrån Kalltorp.",
+    "must": [
+     "Pressbyrån Kalltorp"
+    ]
+   }
+  ],
+  "date": "2026-03-20",
+  "kind": "work"
+ },
+ {
+  "n": 21,
+  "day": 19,
+  "steps": [
+   {
+    "story": "S16",
+    "step": 1,
+    "day": 14,
+    "said_late": true,
+    "text": "Oskar's sailing club membership has changed: now Kungliga Svenska Segelsällskapet (it was Göta Kanals Segelsällskap).",
+    "must": [
+     "Kungliga Svenska Segelsällskapet"
+    ]
+   },
+   {
+    "story": "S33",
+    "step": 0,
+    "day": 18,
+    "said_late": true,
+    "text": "a need that is not Oskar's own: a cheap flat in Gothenburg for his brother Anders, who is moving back (Anders (brother)).",
+    "must": [
+     "flat"
+    ]
+   }
+  ],
+  "date": "2026-03-21",
+  "kind": "life"
+ },
+ {
+  "n": 22,
+  "day": 20,
+  "steps": [
+   {
+    "story": "S09",
+    "step": 0,
+    "day": 19,
+    "said_late": false,
+    "text": "Oskar's commute route is The 55 bus.",
+    "must": [
+     "The 55 bus"
+    ]
+   },
+   {
+    "story": "S23",
+    "step": 0,
+    "day": 19,
+    "said_late": false,
+    "text": "Oskar's gym membership is Sparrow Fitness.",
+    "must": [
+     "Sparrow Fitness"
+    ]
+   }
+  ],
+  "date": "2026-03-22",
+  "kind": "life"
+ },
+ {
+  "n": 23,
+  "day": 21,
+  "steps": [
+   {
+    "story": "S19",
+    "step": 0,
+    "day": 18,
+    "said_late": false,
+    "text": "Oskar's car registration plate is ABC 123.",
+    "must": [
+     "ABC 123"
+    ]
+   },
+   {
+    "story": "S32",
+    "step": 0,
+    "day": 19,
+    "said_late": true,
+    "text": "Oskar needs a dentist in Gothenburg who takes new patients, for his cracked tooth (not sorted yet).",
+    "must": [
+     "dentist"
+    ]
+   }
+  ],
+  "date": "2026-03-23",
+  "kind": "life"
+ },
+ {
+  "n": 24,
+  "day": 22,
+  "steps": [
+   {
+    "story": "S10",
+    "step": 0,
+    "day": 21,
+    "said_late": false,
+    "text": "Oskar's bookstore visit is Libris on Stureplan.",
+    "must": [
+     "Libris on Stureplan"
+    ]
+   },
+   {
+    "story": "S18",
+    "step": 0,
+    "day": 21,
+    "said_late": false,
+    "text": "Oskar's preferred coffee shop is Stadsbiblioteket Kaffé.",
+    "must": [
+     "Stadsbiblioteket Kaffé"
+    ]
+   }
+  ],
+  "date": "2026-03-24",
+  "kind": "life"
+ },
+ {
+  "n": 25,
+  "day": 23,
+  "steps": [],
+  "date": "2026-03-25",
+  "kind": "work"
+ },
+ {
+  "n": 26,
+  "day": 23,
+  "steps": [
+   {
+    "story": "S21",
+    "step": 1,
+    "day": 21,
+    "said_late": true,
+    "text": "Oskar is only thinking about changing the internet provider to Bredbandsbolaget; nothing decided.",
+    "must": [
+     "Bredbandsbolaget"
+    ]
+   }
+  ],
+  "date": "2026-03-25",
+  "kind": "life"
+ },
+ {
+  "n": 27,
+  "day": 24,
+  "steps": [
+   {
+    "story": "S19",
+    "step": 1,
+    "day": 24,
+    "said_late": false,
+    "text": "Oskar corrects an earlier slip: the car registration plate is DEF 456, not ABC 123.",
+    "must": [
+     "DEF 456"
+    ]
+   }
+  ],
+  "date": "2026-03-26",
+  "kind": "life"
+ },
+ {
+  "n": 28,
+  "day": 25,
+  "steps": [
+   {
+    "story": "S17",
+    "step": 0,
+    "day": 19,
+    "said_late": false,
+    "text": "Oskar's savings account balance is 150000 SEK.",
+    "must": [
+     "150000 SEK"
+    ]
+   },
+   {
+    "story": "S12",
+    "step": 1,
+    "day": 25,
+    "said_late": false,
+    "text": "Oskar's insurance provider has changed: now Försäkringskassan (it was Trygg Hansa).",
+    "must": [
+     "Försäkringskassan"
+    ]
+   }
+  ],
+  "date": "2026-03-27",
+  "kind": "life"
+ },
+ {
+  "n": 29,
+  "day": 26,
+  "steps": [
+   {
+    "story": "S17",
+    "step": 1,
+    "day": 25,
+    "said_late": true,
+    "text": "Oskar has switched the savings account balance to 145000 SEK.",
+    "must": [
+     "145000 SEK"
+    ]
+   }
+  ],
+  "date": "2026-03-28",
+  "kind": "life"
+ },
+ {
+  "n": 30,
+  "day": 27,
+  "steps": [
+   {
+    "story": "S18",
+    "step": 1,
+    "day": 27,
+    "said_late": false,
+    "text": "Oskar has switched the preferred coffee shop to Lilla Caféet.",
+    "must": [
+     "Lilla Caféet"
+    ]
+   },
+   {
+    "story": "S28",
+    "step": 1,
+    "day": 27,
+    "said_late": false,
+    "text": "Maja (partner)'s regular dry cleaner is Cleaners on Kungsgatan (about Maja (partner), not Oskar).",
+    "must": [
+     "Cleaners on Kungsgatan",
+     "Maja"
+    ]
+   }
+  ],
+  "date": "2026-03-29",
+  "kind": "life"
+ },
+ {
+  "n": 31,
+  "day": 28,
+  "steps": [
+   {
+    "story": "S05",
+    "step": 0,
+    "day": 26,
+    "said_late": false,
+    "text": "Oskar's sailing gear supplier is Helly Hansen.",
+    "must": [
+     "Helly Hansen"
+    ]
+   },
+   {
+    "story": "S08",
+    "step": 0,
+    "day": 28,
+    "said_late": false,
+    "text": "Oskar's son's birthday is 2026-04-30.",
+    "must": [
+     "2026-04-30"
+    ]
+   }
+  ],
+  "date": "2026-03-30",
+  "kind": "life"
+ },
+ {
+  "n": 32,
+  "day": 29,
+  "steps": [],
+  "date": "2026-03-31",
+  "kind": "work"
+ },
+ {
+  "n": 33,
+  "day": 30,
+  "steps": [
+   {
+    "story": "S23",
+    "step": 1,
+    "day": 25,
+    "said_late": true,
+    "text": "Oskar is thinking about changing the gym membership to Anytime Fitness; not decided yet.",
+    "must": [
+     "Anytime Fitness"
+    ]
+   },
+   {
+    "story": "S13",
+    "step": 0,
+    "day": 30,
+    "said_late": false,
+    "text": "Oskar's tax ID number is 19860512-4455.",
+    "must": [
+     "19860512-4455"
+    ]
+   }
+  ],
+  "date": "2026-04-01",
+  "kind": "life"
+ },
+ {
+  "n": 34,
+  "day": 31,
+  "steps": [
+   {
+    "story": "S29",
+    "step": 0,
+    "day": 31,
+    "said_late": false,
+    "text": "Oskar needs someone to pick Elsa up from school on the Thursdays he works in Stockholm (not sorted yet).",
+    "must": [
+     "school"
+    ]
+   }
+  ],
+  "date": "2026-04-02",
+  "kind": "life"
+ },
+ {
+  "n": 35,
+  "day": 32,
+  "steps": [
+   {
+    "story": "S03",
+    "step": 0,
+    "day": 32,
+    "said_late": false,
+    "text": "Oskar's Elsa's preschool pickup contact is Maja Lindqvist.",
+    "must": [
+     "Maja Lindqvist"
+    ]
+   },
+   {
+    "story": "S23",
+    "step": 2,
+    "day": 32,
+    "said_late": false,
+    "text": "Oskar has now gone ahead: the gym membership is Anytime Fitness.",
+    "must": [
+     "Anytime Fitness"
+    ]
+   }
+  ],
+  "date": "2026-04-03",
+  "kind": "life"
+ },
+ {
+  "n": 36,
+  "day": 32,
+  "steps": [
+   {
+    "story": "S25",
+    "step": 0,
+    "day": 26,
+    "said_late": false,
+    "text": "Oskar's weekend trip destination is Djurgården.",
+    "must": [
+     "Djurgården"
+    ]
+   },
+   {
+    "story": "S27",
+    "step": 0,
+    "day": 30,
+    "said_late": false,
+    "text": "Oskar's own personal identity number is 19860512-9988.",
+    "must": [
+     "19860512-9988"
+    ]
+   }
+  ],
+  "date": "2026-04-03",
+  "kind": "life"
+ },
+ {
+  "n": 37,
+  "day": 33,
+  "steps": [
+   {
+    "story": "S26",
+    "step": 0,
+    "day": 32,
+    "said_late": false,
+    "text": "Oskar's own primary bank account number is SE45 9900 1122 3344 5566 7788.",
+    "must": [
+     "SE45 9900 1122 3344 5566 7788"
+    ]
+   },
+   {
+    "story": "S13",
+    "step": 1,
+    "day": 33,
+    "said_late": false,
+    "text": "Oskar's tax ID number has changed: now 19860512-4456 (it was 19860512-4455).",
+    "must": [
+     "19860512-4456"
+    ]
+   }
+  ],
+  "date": "2026-04-04",
+  "kind": "life"
+ },
+ {
+  "n": 38,
+  "day": 34,
+  "steps": [
+   {
+    "story": "S17",
+    "step": 2,
+    "day": 34,
+    "said_late": false,
+    "text": "Oskar changes mind about the savings account balance: back to 150000 SEK, not 145000 SEK any more.",
+    "must": [
+     "150000 SEK"
+    ]
+   },
+   {
+    "story": "S25",
+    "step": 1,
+    "day": 34,
+    "said_late": false,
+    "text": "Oskar imagines a what-if: then the weekend trip destination would be Visby. Only an idea; nothing changes.",
+    "must": [
+     "Visby"
+    ]
+   }
+  ],
+  "date": "2026-04-05",
+  "kind": "life"
+ },
+ {
+  "n": 39,
+  "day": 34,
+  "steps": [],
+  "date": "2026-04-05",
+  "kind": "life"
+ },
+ {
+  "n": 40,
+  "day": 35,
+  "steps": [
+   {
+    "story": "S27",
+    "step": 1,
+    "day": 35,
+    "said_late": false,
+    "text": "Maja (partner)'s personal identity number is 19860512-7766 (about Maja (partner), not Oskar).",
+    "must": [
+     "19860512-7766",
+     "Maja"
+    ]
+   }
+  ],
+  "date": "2026-04-06",
+  "kind": "life"
+ },
+ {
+  "n": 41,
+  "day": 36,
+  "steps": [],
+  "date": "2026-04-07",
+  "kind": "work"
+ },
+ {
+  "n": 42,
+  "day": 37,
+  "steps": [
+   {
+    "story": "S24",
+    "step": 0,
+    "day": 36,
+    "said_late": false,
+    "text": "Oskar's home address is Malmöhamngatan 45.",
+    "must": [
+     "Malmöhamngatan 45"
+    ]
+   },
+   {
+    "story": "S26",
+    "step": 1,
+    "day": 37,
+    "said_late": false,
+    "text": "Maja (partner)'s primary bank account number is SE89 8877 6655 4433 2211 0099 (about Maja (partner), not Oskar).",
+    "must": [
+     "SE89 8877 6655 4433 2211 0099",
+     "Maja"
+    ]
+   }
+  ],
+  "date": "2026-04-08",
+  "kind": "life"
+ },
+ {
+  "n": 43,
+  "day": 38,
+  "steps": [
+   {
+    "story": "S07",
+    "step": 0,
+    "day": 38,
+    "said_late": false,
+    "text": "Oskar's hotel booking is Scandic Slottskajen.",
+    "must": [
+     "Scandic Slottskajen"
+    ]
+   }
+  ],
+  "date": "2026-04-09",
+  "kind": "life"
+ },
+ {
+  "n": 44,
+  "day": 38,
+  "steps": [
+   {
+    "story": "S18",
+    "step": 2,
+    "day": 32,
+    "said_late": true,
+    "text": "Oskar changes mind about the preferred coffee shop: back to Stadsbiblioteket Kaffé, not Lilla Caféet any more.",
+    "must": [
+     "Stadsbiblioteket Kaffé"
+    ]
+   }
+  ],
+  "date": "2026-04-09",
+  "kind": "life"
+ },
+ {
+  "n": 45,
+  "day": 39,
+  "steps": [],
+  "date": "2026-04-10",
+  "kind": "life"
+ },
+ {
+  "n": 46,
+  "day": 40,
+  "steps": [],
+  "date": "2026-04-11",
+  "kind": "work"
+ },
+ {
+  "n": 47,
+  "day": 40,
+  "steps": [],
+  "date": "2026-04-11",
+  "kind": "life"
+ },
+ {
+  "n": 48,
+  "day": 41,
+  "steps": [
+   {
+    "story": "S01",
+    "step": 0,
+    "day": 40,
+    "said_late": false,
+    "text": "Oskar's return flight is SK 947.",
+    "must": [
+     "SK 947"
+    ]
+   },
+   {
+    "story": "S24",
+    "step": 1,
+    "day": 41,
+    "said_late": false,
+    "text": "Oskar imagines a what-if: then the home address would be Storgatan 12. Only an idea; nothing changes.",
+    "must": [
+     "Storgatan 12"
+    ]
+   }
+  ],
+  "date": "2026-04-12",
+  "kind": "life"
+ },
+ {
+  "n": 49,
+  "day": 41,
+  "steps": [
+   {
+    "story": "S29",
+    "step": 1,
+    "day": 41,
+    "said_late": false,
+    "text": "Oskar's need is sorted: Maja's colleague Linnea Berg picks Elsa up on Thursdays.",
+    "must": [
+     "Linnea Berg",
+     "Elsa",
+     "Thursdays"
+    ]
+   }
+  ],
+  "date": "2026-04-12",
+  "kind": "life"
+ }
+]

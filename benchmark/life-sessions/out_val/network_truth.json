@@ -1,0 +1,196 @@
+[
+ {
+  "person": "V01",
+  "need": "V01-N1",
+  "pattern": "need_met",
+  "phrase": "someone to pick Elsa up from school on the Thursdays he works in Stockholm",
+  "topic": "childcare",
+  "city": "gothenburg",
+  "true": [
+   "M001-e1"
+  ],
+  "would_fit": [
+   "M001-e1"
+  ],
+  "near_misses": [
+   "M002-e1",
+   "M003-e1",
+   "M004-e1"
+  ]
+ },
+ {
+  "person": "V01",
+  "need": "V01-N2",
+  "pattern": "need_met",
+  "phrase": "a second-hand outboard motor for his sailing dinghy",
+  "topic": "sports-equipment",
+  "city": "gothenburg",
+  "true": [
+   "M005-e1"
+  ],
+  "would_fit": [
+   "M005-e1"
+  ],
+  "near_misses": [
+   "M006-e1",
+   "M007-e1",
+   "M008-e1"
+  ]
+ },
+ {
+  "person": "V01",
+  "need": "V01-N3",
+  "pattern": "need_open",
+  "phrase": "a reviewer who knows maritime law terms for the shipping manual he is translating",
+  "topic": "translation",
+  "city": "gothenburg",
+  "true": [
+   "M009-e1",
+   "M010-e1"
+  ],
+  "would_fit": [
+   "M009-e1",
+   "M010-e1"
+  ],
+  "near_misses": [
+   "M011-e1",
+   "M012-e1",
+   "M013-e1"
+  ]
+ },
+ {
+  "person": "V01",
+  "need": "V01-N4",
+  "pattern": "need_open",
+  "phrase": "a dentist in Gothenburg who takes new patients, for his cracked tooth",
+  "topic": "dentist",
+  "city": "gothenburg",
+  "true": [
+   "M014-e1",
+   "M015-e1"
+  ],
+  "would_fit": [
+   "M014-e1",
+   "M015-e1"
+  ],
+  "near_misses": [
+   "M016-e1",
+   "M017-e1",
+   "M018-e1"
+  ]
+ },
+ {
+  "person": "V01",
+  "need": "V01-N5",
+  "pattern": "need_other",
+  "phrase": "a cheap flat in Gothenburg for his brother Anders, who is moving back",
+  "topic": "accommodation",
+  "city": "gothenburg",
+  "true": [],
+  "would_fit": [
+   "M019-e1"
+  ],
+  "near_misses": [
+   "M020-e1",
+   "M021-e1",
+   "M022-e1"
+  ]
+ },
+ {
+  "person": "V02",
+  "need": "V02-N1",
+  "pattern": "need_met",
+  "phrase": "a replacement pharmacist to cover the pharmacy during her week off in April",
+  "topic": "hiring",
+  "city": "marseille",
+  "true": [
+   "M023-e1"
+  ],
+  "would_fit": [
+   "M023-e1"
+  ],
+  "near_misses": [
+   "M024-e1",
+   "M025-e1",
+   "M026-e1"
+  ]
+ },
+ {
+  "person": "V02",
+  "need": "V02-N2",
+  "pattern": "need_met",
+  "phrase": "a plumber to fix the leak under the sink in the pharmacy back room",
+  "topic": "plumbing",
+  "city": "marseille",
+  "true": [
+   "M027-e1"
+  ],
+  "would_fit": [
+   "M027-e1"
+  ],
+  "near_misses": [
+   "M028-e1",
+   "M029-e1",
+   "M030-e1"
+  ]
+ },
+ {
+  "person": "V02",
+  "need": "V02-N3",
+  "pattern": "need_open",
+  "phrase": "someone to build a website with online ordering for the pharmacy",
+  "topic": "website",
+  "city": "marseille",
+  "true": [
+   "M031-e1",
+   "M032-e1"
+  ],
+  "would_fit": [
+   "M031-e1",
+   "M032-e1"
+  ],
+  "near_misses": [
+   "M033-e1",
+   "M034-e1",
+   "M035-e1"
+  ]
+ },
+ {
+  "person": "V02",
+  "need": "V02-N4",
+  "pattern": "need_open",
+  "phrase": "a running group for beginners near the Vieux-Port",
+  "topic": "running-group",
+  "city": "marseille",
+  "true": [
+   "M036-e1",
+   "M037-e1"
+  ],
+  "would_fit": [
+   "M036-e1",
+   "M037-e1"
+  ],
+  "near_misses": [
+   "M038-e1",
+   "M039-e1",
+   "M040-e1"
+  ]
+ },
+ {
+  "person": "V02",
+  "need": "V02-N5",
+  "pattern": "need_other",
+  "phrase": "a vet for her old dog, who has stopped eating",
+  "topic": "vet-advice",
+  "city": "marseille",
+  "true": [],
+  "would_fit": [
+   "M041-e1"
+  ],
+  "near_misses": [
+   "M042-e1",
+   "M043-e1",
+   "M044-e1"
+  ]
+ }
+]

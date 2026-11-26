@@ -1,0 +1,38 @@
+[
+ {
+  "person": "D01",
+  "storyline": "S06",
+  "thing": "insurance provider",
+  "why": "could be confused with another storyline"
+ },
+ {
+  "person": "D01",
+  "storyline": "S08",
+  "thing": "flamenco venue",
+  "why": "could be confused with another storyline"
+ },
+ {
+  "person": "D01",
+  "storyline": "S17",
+  "thing": "Inés Navarro's preferred evening practice spot",
+  "why": "the thing names the owner or says it was only considered"
+ },
+ {
+  "person": "D01",
+  "storyline": "S18",
+  "thing": "Inés Navarro's regular florist for home decor",
+  "why": "the thing names the owner or says it was only considered"
+ },
+ {
+  "person": "D01",
+  "storyline": "S21",
+  "thing": "Inés Navarro's tentative weekend hiking partner",
+  "why": "the thing names the owner or says it was only considered"
+ },
+ {
+  "person": "D02",
+  "storyline": "S29",
+  "thing": "a babysitter for Finn on Saturday 14 March",
+  "why": "the need comes up after its own date"
+ }
+]

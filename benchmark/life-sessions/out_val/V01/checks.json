@@ -1,0 +1,64 @@
+{
+ "6": [
+  [
+   "states '2026-03-20'"
+  ],
+  [
+   "judge: S20: The final deadline is March 20th. (The assistant states the deadline is March 20th, but according to fact S20 (as corrected by S19), the deadline is March )"
+  ]
+ ],
+ "20": [
+  [
+   "missing 'Pressbyrån Kalltorp'"
+  ]
+ ],
+ "49": [
+  [
+   "missing 'Thursdays'"
+  ]
+ ],
+ "3": [
+  [
+   "judge: S11: The IBAN is SE45 5000 0000 0067 8912 3456 and the SWIFT code is SWABSESS. (The bank account number provided (SE45 5000 0000 0067 8912 3456) is incorrect and does not match any of Oskar's known ba)"
+  ],
+  [
+   "judge: S32: I have that dentist appointment on Friday, right? (The user mentions having a dentist appointment on Friday, but according to the facts, the need for a dentist is still 'n)"
+  ]
+ ],
+ "9": [
+  [
+   "judge: S20: The deadline is indeed this Thursday, March 12th. (The assistant states the deadline is March 12th, but the user's project deadline (S20) was corrected to March 25th (and )",
+   "judge: S26: Use my main account, SE45 5000 0000 0034 5667 8901. (The user identifies this as his 'main account', but S26 states his primary bank account number is SE45 9900 1122 3344 55)"
+  ]
+ ],
+ "23": [
+  [
+   "judge: S15: I remember it’s 3.40 percent right now, but I want to see if it’s worth refinancing. (The mortgage rate was 3.25 percent until 2026-03-15, and became 3.40 percent on 2026-03-15. While 3.40 is the current ra)"
+  ],
+  [
+   "judge: S20: I have a deadline for the German translation on Friday morning. (The project deadline was corrected on 2026-03-19 to be 2026-03-25, which is a Friday, but the conversation date is 2026-)"
+  ],
+  [
+   "judge: S20: You have a deadline for the Lindqvist & Co. German technical manual at 16:00. (The deadline for the project is 2026-03-25, not 16:00 on 2026-03-23.)"
+  ]
+ ],
+ "33": [
+  [
+   "judge: S18: Maybe I’ll stop by Lilla Caféet for a quick espresso first. (The user mentions Lilla Caféet, but fact S18 states he changed his mind back to Stadsbiblioteket Kaffé on 2026-04-03.)"
+  ],
+  [
+   "judge: S17: I need to update my bank details for the tax authority. My savings account balance is a bit tight right now because of E (Oskar's savings account balance was updated to 150000 SEK on 2026-04-05, which is a fact dated after the conversation da)"
+  ]
+ ],
+ "43": [
+  [
+   "judge: S01: I’ll be there from the 12th to the 15th of May. (The user mentions a trip in May, whereas the facts provided for the conversation's context only go up to 2026-04-12; spe)"
+  ]
+ ],
+ "48": [
+  [
+   "judge: S08: What’s on the grocery list? I need to buy something for Elsa’s birthday dinner on Saturday. (The user mentions Elsa's birthday dinner is this Saturday (which would be 2026-04-18), but the fact states Elsa's birthd)",
+   "judge: S08: I’ve added a chocolate cake with strawberries and a mix of fresh berries to your shopping list for Saturday. (The assistant confirms adding items for a birthday dinner on Saturday (2026-04-18), which contradicts the fact that Elsa)"
+  ]
+ ]
+}

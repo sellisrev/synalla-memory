@@ -1,0 +1,540 @@
+[
+ {
+  "id": "S01",
+  "pattern": "plain",
+  "theme": "family",
+  "days": [
+   13
+  ],
+  "thing": "eldest daughter's wedding anniversary",
+  "values": [
+   "2026-03-15"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S02",
+  "pattern": "plain",
+  "theme": "home",
+  "days": [
+   2
+  ],
+  "thing": "mortgage lender",
+  "values": [
+   "Crédit Agricole"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S03",
+  "pattern": "plain",
+  "theme": "money",
+  "days": [
+   26
+  ],
+  "thing": "insurance premium",
+  "values": [
+   "145 euros a month"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S04",
+  "pattern": "plain",
+  "theme": "hobbies",
+  "days": [
+   38
+  ],
+  "thing": "gardening club membership",
+  "values": [
+   "Jardiniers du Vieux-Port"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S05",
+  "pattern": "plain",
+  "theme": "family",
+  "days": [
+   7
+  ],
+  "thing": "son's graduation date",
+  "values": [
+   "2026-03-09"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S06",
+  "pattern": "plain",
+  "theme": "family",
+  "days": [
+   11
+  ],
+  "thing": "daughter's birthday",
+  "values": [
+   "2026-03-13"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S07",
+  "pattern": "plain",
+  "theme": "hobbies",
+  "days": [
+   16
+  ],
+  "thing": "yoga studio",
+  "values": [
+   "Soleil Levant"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S08",
+  "pattern": "plain",
+  "theme": "travel",
+  "days": [
+   9
+  ],
+  "thing": "flight booking reference",
+  "values": [
+   "L7K9M2"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S09",
+  "pattern": "plain",
+  "theme": "work",
+  "days": [
+   1
+  ],
+  "thing": "pharmacy supplier",
+  "values": [
+   "PharmaDirect"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S10",
+  "pattern": "plain",
+  "theme": "shopping",
+  "days": [
+   3
+  ],
+  "thing": "weekly market day",
+  "values": [
+   "Saturday morning"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S11",
+  "pattern": "change",
+  "theme": "family",
+  "days": [
+   26,
+   31
+  ],
+  "thing": "family dinner location",
+  "values": [
+   "Le Petit Nice",
+   "La Table d'Ami"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S12",
+  "pattern": "change",
+  "theme": "work",
+  "days": [
+   37,
+   41
+  ],
+  "thing": "pharmacy software version",
+  "values": [
+   "PharmaSoft 4",
+   "PharmaSoft 5"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S13",
+  "pattern": "change",
+  "theme": "travel",
+  "days": [
+   33,
+   41
+  ],
+  "thing": "hotel reservation city",
+  "values": [
+   "Nice",
+   "Aix-en-Provence"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S14",
+  "pattern": "change",
+  "theme": "work",
+  "days": [
+   23,
+   29
+  ],
+  "thing": "staff rota coordinator",
+  "values": [
+   "Julien",
+   "Marie"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S15",
+  "pattern": "change",
+  "theme": "hobbies",
+  "days": [
+   10,
+   20
+  ],
+  "thing": "pottery class instructor",
+  "values": [
+   "Pierre",
+   "Claire"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S16",
+  "pattern": "change",
+  "theme": "money",
+  "days": [
+   16,
+   25
+  ],
+  "thing": "charity donation amount",
+  "values": [
+   "20 euros",
+   "50 euros"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S17",
+  "pattern": "heart",
+  "theme": "travel",
+  "days": [
+   1,
+   8,
+   15
+  ],
+  "thing": "commute bicycle",
+  "values": [
+   "Cannondale",
+   "VanMoof"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S18",
+  "pattern": "heart",
+  "theme": "money",
+  "days": [
+   9,
+   16,
+   26
+  ],
+  "thing": "mortgage payment",
+  "values": [
+   "1,200 euros a month",
+   "1,350 euros a month"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S19",
+  "pattern": "correction",
+  "theme": "admin",
+  "days": [
+   11,
+   16
+  ],
+  "thing": "pharmacy license number",
+  "values": [
+   "04-11-22334",
+   "04-11-22335"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S20",
+  "pattern": "correction",
+  "theme": "admin",
+  "days": [
+   1,
+   9
+  ],
+  "thing": "tax office reference",
+  "values": [
+   "75-12-34567",
+   "13-05-89012"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S21",
+  "pattern": "tentative_dropped",
+  "theme": "hobbies",
+  "days": [
+   33,
+   39
+  ],
+  "thing": "weekend hike destination",
+  "values": [
+   "Calanques",
+   "Sainte-Victoire"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S22",
+  "pattern": "tentative_dropped",
+  "theme": "shopping",
+  "days": [
+   17,
+   23
+  ],
+  "thing": "courier service",
+  "values": [
+   "La Poste",
+   "Chronopost"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S23",
+  "pattern": "tentative_confirmed",
+  "theme": "home",
+  "days": [
+   16,
+   22,
+   28
+  ],
+  "thing": "internet provider",
+  "values": [
+   "Orange",
+   "Free"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S24",
+  "pattern": "hypothetical",
+  "theme": "home",
+  "days": [
+   14,
+   21
+  ],
+  "thing": "home heating fuel",
+  "values": [
+   "Natural gas",
+   "Electricity"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S25",
+  "pattern": "hypothetical",
+  "theme": "people",
+  "days": [
+   13,
+   20
+  ],
+  "thing": "children's primary school",
+  "values": [
+   "École des Chartreux",
+   "École Notre-Dame"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S26",
+  "pattern": "lookalike",
+  "theme": "money",
+  "days": [
+   26,
+   30
+  ],
+  "thing": "insurance provider",
+  "values": [
+   "MMA Assurances",
+   "AXA Assurances"
+  ],
+  "other_person": "Sophie (sister)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S27",
+  "pattern": "lookalike",
+  "theme": "travel",
+  "days": [
+   1,
+   7
+  ],
+  "thing": "dentist",
+  "values": [
+   "Dr. El-Masri",
+   "Dr. Bouchet"
+  ],
+  "other_person": "Karim (husband)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S28",
+  "pattern": "lookalike",
+  "theme": "shopping",
+  "days": [
+   32,
+   36
+  ],
+  "thing": "grocery delivery app",
+  "values": [
+   "Carrefour",
+   "Leclerc"
+  ],
+  "other_person": "Karim (husband)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S29",
+  "pattern": "need_met",
+  "theme": "health",
+  "days": [
+   26,
+   31
+  ],
+  "thing": "need",
+  "values": [
+   "a replacement pharmacist to cover the pharmacy during her week off in April",
+   "hired Sophie Arnaud, a locum, through the regional union"
+  ],
+  "other_person": "",
+  "keyword": "replacement",
+  "topic": "hiring"
+ },
+ {
+  "id": "S30",
+  "pattern": "need_met",
+  "theme": "people",
+  "days": [
+   36,
+   41
+  ],
+  "thing": "need",
+  "values": [
+   "a plumber to fix the leak under the sink in the pharmacy back room",
+   "the plumber Marc Giraud fixed the leak"
+  ],
+  "other_person": "",
+  "keyword": "plumber",
+  "topic": "plumbing"
+ },
+ {
+  "id": "S31",
+  "pattern": "need_open",
+  "theme": "work",
+  "days": [
+   18
+  ],
+  "thing": "need",
+  "values": [
+   "someone to build a website with online ordering for the pharmacy"
+  ],
+  "other_person": "",
+  "keyword": "website",
+  "topic": "website"
+ },
+ {
+  "id": "S32",
+  "pattern": "need_open",
+  "theme": "people",
+  "days": [
+   31
+  ],
+  "thing": "need",
+  "values": [
+   "a running group for beginners near the Vieux-Port"
+  ],
+  "other_person": "",
+  "keyword": "running",
+  "topic": "running-group"
+ },
+ {
+  "id": "S33",
+  "pattern": "need_other",
+  "theme": "admin",
+  "days": [
+   41
+  ],
+  "thing": "need",
+  "values": [
+   "a vet for her old dog, who has stopped eating"
+  ],
+  "other_person": "Leïla (daughter)",
+  "keyword": "vet",
+  "topic": "vet-advice"
+ }
+]

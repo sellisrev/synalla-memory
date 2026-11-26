@@ -1,0 +1,944 @@
+[
+ {
+  "n": 1,
+  "day": 0,
+  "steps": [],
+  "date": "2026-03-02",
+  "kind": "life"
+ },
+ {
+  "n": 2,
+  "day": 1,
+  "steps": [
+   {
+    "story": "S09",
+    "step": 0,
+    "day": 1,
+    "said_late": false,
+    "text": "Fatima's pharmacy supplier is PharmaDirect.",
+    "must": [
+     "PharmaDirect"
+    ]
+   },
+   {
+    "story": "S17",
+    "step": 0,
+    "day": 1,
+    "said_late": false,
+    "text": "Fatima's commute bicycle is Cannondale.",
+    "must": [
+     "Cannondale"
+    ]
+   }
+  ],
+  "date": "2026-03-03",
+  "kind": "work"
+ },
+ {
+  "n": 3,
+  "day": 2,
+  "steps": [
+   {
+    "story": "S20",
+    "step": 0,
+    "day": 1,
+    "said_late": false,
+    "text": "Fatima's tax office reference is 75-12-34567.",
+    "must": [
+     "75-12-34567"
+    ]
+   }
+  ],
+  "date": "2026-03-04",
+  "kind": "life"
+ },
+ {
+  "n": 4,
+  "day": 3,
+  "steps": [
+   {
+    "story": "S10",
+    "step": 0,
+    "day": 3,
+    "said_late": false,
+    "text": "Fatima's weekly market day is Saturday morning.",
+    "must": [
+     "Saturday morning"
+    ]
+   }
+  ],
+  "date": "2026-03-05",
+  "kind": "life"
+ },
+ {
+  "n": 5,
+  "day": 4,
+  "steps": [
+   {
+    "story": "S27",
+    "step": 0,
+    "day": 1,
+    "said_late": false,
+    "text": "Fatima's own dentist is Dr. El-Masri.",
+    "must": [
+     "Dr. El-Masri"
+    ]
+   }
+  ],
+  "date": "2026-03-06",
+  "kind": "life"
+ },
+ {
+  "n": 6,
+  "day": 5,
+  "steps": [],
+  "date": "2026-03-07",
+  "kind": "work"
+ },
+ {
+  "n": 7,
+  "day": 6,
+  "steps": [],
+  "date": "2026-03-08",
+  "kind": "life"
+ },
+ {
+  "n": 8,
+  "day": 7,
+  "steps": [
+   {
+    "story": "S02",
+    "step": 0,
+    "day": 2,
+    "said_late": false,
+    "text": "Fatima's mortgage lender is Crédit Agricole.",
+    "must": [
+     "Crédit Agricole"
+    ]
+   },
+   {
+    "story": "S05",
+    "step": 0,
+    "day": 7,
+    "said_late": false,
+    "text": "Fatima's son's graduation date is 2026-03-09.",
+    "must": [
+     "2026-03-09"
+    ]
+   }
+  ],
+  "date": "2026-03-09",
+  "kind": "life"
+ },
+ {
+  "n": 9,
+  "day": 8,
+  "steps": [
+   {
+    "story": "S27",
+    "step": 1,
+    "day": 7,
+    "said_late": true,
+    "text": "Karim (husband)'s dentist is Dr. Bouchet (about Karim (husband), not Fatima).",
+    "must": [
+     "Dr. Bouchet",
+     "Karim"
+    ]
+   }
+  ],
+  "date": "2026-03-10",
+  "kind": "life"
+ },
+ {
+  "n": 10,
+  "day": 8,
+  "steps": [],
+  "date": "2026-03-10",
+  "kind": "life"
+ },
+ {
+  "n": 11,
+  "day": 9,
+  "steps": [
+   {
+    "story": "S18",
+    "step": 0,
+    "day": 9,
+    "said_late": false,
+    "text": "Fatima's mortgage payment is 1,200 euros a month.",
+    "must": [
+     "1,200 euros a month"
+    ]
+   },
+   {
+    "story": "S20",
+    "step": 1,
+    "day": 9,
+    "said_late": false,
+    "text": "Fatima corrects an earlier slip: the tax office reference is 13-05-89012, not 75-12-34567.",
+    "must": [
+     "13-05-89012"
+    ]
+   }
+  ],
+  "date": "2026-03-11",
+  "kind": "life"
+ },
+ {
+  "n": 12,
+  "day": 9,
+  "steps": [],
+  "date": "2026-03-11",
+  "kind": "work"
+ },
+ {
+  "n": 13,
+  "day": 10,
+  "steps": [
+   {
+    "story": "S15",
+    "step": 0,
+    "day": 10,
+    "said_late": false,
+    "text": "Fatima's pottery class instructor is Pierre.",
+    "must": [
+     "Pierre"
+    ]
+   }
+  ],
+  "date": "2026-03-12",
+  "kind": "life"
+ },
+ {
+  "n": 14,
+  "day": 11,
+  "steps": [
+   {
+    "story": "S06",
+    "step": 0,
+    "day": 11,
+    "said_late": false,
+    "text": "Fatima's daughter's birthday is 2026-03-13.",
+    "must": [
+     "2026-03-13"
+    ]
+   },
+   {
+    "story": "S19",
+    "step": 0,
+    "day": 11,
+    "said_late": false,
+    "text": "Fatima's pharmacy license number is 04-11-22334.",
+    "must": [
+     "04-11-22334"
+    ]
+   }
+  ],
+  "date": "2026-03-13",
+  "kind": "life"
+ },
+ {
+  "n": 15,
+  "day": 12,
+  "steps": [],
+  "date": "2026-03-14",
+  "kind": "life"
+ },
+ {
+  "n": 16,
+  "day": 12,
+  "steps": [
+   {
+    "story": "S17",
+    "step": 1,
+    "day": 8,
+    "said_late": true,
+    "text": "Fatima has switched the commute bicycle to VanMoof.",
+    "must": [
+     "VanMoof"
+    ]
+   }
+  ],
+  "date": "2026-03-14",
+  "kind": "life"
+ },
+ {
+  "n": 17,
+  "day": 13,
+  "steps": [
+   {
+    "story": "S01",
+    "step": 0,
+    "day": 13,
+    "said_late": false,
+    "text": "Fatima's eldest daughter's wedding anniversary is 2026-03-15.",
+    "must": [
+     "2026-03-15"
+    ]
+   },
+   {
+    "story": "S25",
+    "step": 0,
+    "day": 13,
+    "said_late": false,
+    "text": "Fatima's children's primary school is École des Chartreux.",
+    "must": [
+     "École des Chartreux"
+    ]
+   }
+  ],
+  "date": "2026-03-15",
+  "kind": "life"
+ },
+ {
+  "n": 18,
+  "day": 14,
+  "steps": [
+   {
+    "story": "S08",
+    "step": 0,
+    "day": 9,
+    "said_late": false,
+    "text": "Fatima's flight booking reference is L7K9M2.",
+    "must": [
+     "L7K9M2"
+    ]
+   },
+   {
+    "story": "S24",
+    "step": 0,
+    "day": 14,
+    "said_late": false,
+    "text": "Fatima's home heating fuel is Natural gas.",
+    "must": [
+     "Natural gas"
+    ]
+   }
+  ],
+  "date": "2026-03-16",
+  "kind": "life"
+ },
+ {
+  "n": 19,
+  "day": 15,
+  "steps": [
+   {
+    "story": "S17",
+    "step": 2,
+    "day": 15,
+    "said_late": false,
+    "text": "Fatima changes mind about the commute bicycle: back to Cannondale, not VanMoof any more.",
+    "must": [
+     "Cannondale"
+    ]
+   }
+  ],
+  "date": "2026-03-17",
+  "kind": "life"
+ },
+ {
+  "n": 20,
+  "day": 16,
+  "steps": [
+   {
+    "story": "S16",
+    "step": 0,
+    "day": 16,
+    "said_late": false,
+    "text": "Fatima's charity donation amount is 20 euros.",
+    "must": [
+     "20 euros"
+    ]
+   },
+   {
+    "story": "S18",
+    "step": 1,
+    "day": 16,
+    "said_late": false,
+    "text": "Fatima has switched the mortgage payment to 1,350 euros a month.",
+    "must": [
+     "1,350 euros a month"
+    ]
+   }
+  ],
+  "date": "2026-03-18",
+  "kind": "life"
+ },
+ {
+  "n": 21,
+  "day": 17,
+  "steps": [
+   {
+    "story": "S19",
+    "step": 1,
+    "day": 16,
+    "said_late": true,
+    "text": "Fatima corrects an earlier slip: the pharmacy license number is 04-11-22335, not 04-11-22334.",
+    "must": [
+     "04-11-22335"
+    ]
+   },
+   {
+    "story": "S23",
+    "step": 0,
+    "day": 16,
+    "said_late": false,
+    "text": "Fatima's internet provider is Orange.",
+    "must": [
+     "Orange"
+    ]
+   }
+  ],
+  "date": "2026-03-19",
+  "kind": "life"
+ },
+ {
+  "n": 22,
+  "day": 18,
+  "steps": [
+   {
+    "story": "S22",
+    "step": 0,
+    "day": 17,
+    "said_late": false,
+    "text": "Fatima's courier service is La Poste.",
+    "must": [
+     "La Poste"
+    ]
+   },
+   {
+    "story": "S31",
+    "step": 0,
+    "day": 18,
+    "said_late": false,
+    "text": "Fatima needs someone to build a website with online ordering for the pharmacy (not sorted yet).",
+    "must": [
+     "website"
+    ]
+   }
+  ],
+  "date": "2026-03-20",
+  "kind": "work"
+ },
+ {
+  "n": 23,
+  "day": 19,
+  "steps": [],
+  "date": "2026-03-21",
+  "kind": "life"
+ },
+ {
+  "n": 24,
+  "day": 20,
+  "steps": [
+   {
+    "story": "S15",
+    "step": 1,
+    "day": 20,
+    "said_late": false,
+    "text": "Fatima's pottery class instructor has changed: now Claire (it was Pierre).",
+    "must": [
+     "Claire"
+    ]
+   },
+   {
+    "story": "S25",
+    "step": 1,
+    "day": 20,
+    "said_late": false,
+    "text": "Fatima imagines a what-if: then the children's primary school would be École Notre-Dame. Only an idea; nothing changes.",
+    "must": [
+     "École Notre-Dame"
+    ]
+   }
+  ],
+  "date": "2026-03-22",
+  "kind": "life"
+ },
+ {
+  "n": 25,
+  "day": 21,
+  "steps": [
+   {
+    "story": "S07",
+    "step": 0,
+    "day": 16,
+    "said_late": false,
+    "text": "Fatima's yoga studio is Soleil Levant.",
+    "must": [
+     "Soleil Levant"
+    ]
+   },
+   {
+    "story": "S24",
+    "step": 1,
+    "day": 21,
+    "said_late": false,
+    "text": "Fatima imagines a what-if: then the home heating fuel would be Electricity. Only an idea; nothing changes.",
+    "must": [
+     "Electricity"
+    ]
+   }
+  ],
+  "date": "2026-03-23",
+  "kind": "life"
+ },
+ {
+  "n": 26,
+  "day": 22,
+  "steps": [
+   {
+    "story": "S23",
+    "step": 1,
+    "day": 22,
+    "said_late": false,
+    "text": "Fatima is thinking about changing the internet provider to Free; not decided yet.",
+    "must": [
+     "Free"
+    ]
+   }
+  ],
+  "date": "2026-03-24",
+  "kind": "life"
+ },
+ {
+  "n": 27,
+  "day": 23,
+  "steps": [
+   {
+    "story": "S22",
+    "step": 1,
+    "day": 23,
+    "said_late": false,
+    "text": "Fatima is only thinking about changing the courier service to Chronopost; nothing decided.",
+    "must": [
+     "Chronopost"
+    ]
+   }
+  ],
+  "date": "2026-03-25",
+  "kind": "life"
+ },
+ {
+  "n": 28,
+  "day": 24,
+  "steps": [],
+  "date": "2026-03-26",
+  "kind": "life"
+ },
+ {
+  "n": 29,
+  "day": 25,
+  "steps": [
+   {
+    "story": "S16",
+    "step": 1,
+    "day": 25,
+    "said_late": false,
+    "text": "Fatima's charity donation amount has changed: now 50 euros (it was 20 euros).",
+    "must": [
+     "50 euros"
+    ]
+   }
+  ],
+  "date": "2026-03-27",
+  "kind": "life"
+ },
+ {
+  "n": 30,
+  "day": 26,
+  "steps": [
+   {
+    "story": "S14",
+    "step": 0,
+    "day": 23,
+    "said_late": false,
+    "text": "Fatima's staff rota coordinator is Julien.",
+    "must": [
+     "Julien"
+    ]
+   },
+   {
+    "story": "S03",
+    "step": 0,
+    "day": 26,
+    "said_late": false,
+    "text": "Fatima's insurance premium is 145 euros a month.",
+    "must": [
+     "145 euros a month"
+    ]
+   }
+  ],
+  "date": "2026-03-28",
+  "kind": "work"
+ },
+ {
+  "n": 31,
+  "day": 26,
+  "steps": [
+   {
+    "story": "S11",
+    "step": 0,
+    "day": 26,
+    "said_late": false,
+    "text": "Fatima's family dinner location is Le Petit Nice.",
+    "must": [
+     "Le Petit Nice"
+    ]
+   },
+   {
+    "story": "S18",
+    "step": 2,
+    "day": 26,
+    "said_late": false,
+    "text": "Fatima changes mind about the mortgage payment: back to 1,200 euros a month, not 1,350 euros a month any more.",
+    "must": [
+     "1,200 euros a month"
+    ]
+   }
+  ],
+  "date": "2026-03-28",
+  "kind": "life"
+ },
+ {
+  "n": 32,
+  "day": 27,
+  "steps": [
+   {
+    "story": "S26",
+    "step": 0,
+    "day": 26,
+    "said_late": false,
+    "text": "Fatima's own insurance provider is MMA Assurances.",
+    "must": [
+     "MMA Assurances"
+    ]
+   },
+   {
+    "story": "S29",
+    "step": 0,
+    "day": 26,
+    "said_late": true,
+    "text": "Fatima needs a replacement pharmacist to cover the pharmacy during her week off in April (not sorted yet).",
+    "must": [
+     "replacement"
+    ]
+   }
+  ],
+  "date": "2026-03-29",
+  "kind": "life"
+ },
+ {
+  "n": 33,
+  "day": 27,
+  "steps": [],
+  "date": "2026-03-29",
+  "kind": "life"
+ },
+ {
+  "n": 34,
+  "day": 28,
+  "steps": [
+   {
+    "story": "S23",
+    "step": 2,
+    "day": 28,
+    "said_late": false,
+    "text": "Fatima has now gone ahead: the internet provider is Free.",
+    "must": [
+     "Free"
+    ]
+   }
+  ],
+  "date": "2026-03-30",
+  "kind": "life"
+ },
+ {
+  "n": 35,
+  "day": 29,
+  "steps": [
+   {
+    "story": "S14",
+    "step": 1,
+    "day": 29,
+    "said_late": false,
+    "text": "Fatima's staff rota coordinator has changed: now Marie (it was Julien).",
+    "must": [
+     "Marie"
+    ]
+   }
+  ],
+  "date": "2026-03-31",
+  "kind": "work"
+ },
+ {
+  "n": 36,
+  "day": 30,
+  "steps": [
+   {
+    "story": "S26",
+    "step": 1,
+    "day": 30,
+    "said_late": false,
+    "text": "Sophie (sister)'s insurance provider is AXA Assurances (about Sophie (sister), not Fatima).",
+    "must": [
+     "AXA Assurances",
+     "Sophie"
+    ]
+   }
+  ],
+  "date": "2026-04-01",
+  "kind": "life"
+ },
+ {
+  "n": 37,
+  "day": 31,
+  "steps": [
+   {
+    "story": "S11",
+    "step": 1,
+    "day": 31,
+    "said_late": false,
+    "text": "Fatima's family dinner location has changed: now La Table d'Ami (it was Le Petit Nice).",
+    "must": [
+     "La Table d'Ami"
+    ]
+   },
+   {
+    "story": "S29",
+    "step": 1,
+    "day": 31,
+    "said_late": false,
+    "text": "Fatima's need is sorted: hired Sophie Arnaud, a locum, through the regional union.",
+    "must": [
+     "Sophie Arnaud"
+    ]
+   }
+  ],
+  "date": "2026-04-02",
+  "kind": "life"
+ },
+ {
+  "n": 38,
+  "day": 32,
+  "steps": [
+   {
+    "story": "S32",
+    "step": 0,
+    "day": 31,
+    "said_late": true,
+    "text": "Fatima needs a running group for beginners near the Vieux-Port (not sorted yet).",
+    "must": [
+     "running"
+    ]
+   },
+   {
+    "story": "S28",
+    "step": 0,
+    "day": 32,
+    "said_late": false,
+    "text": "Fatima's own grocery delivery app is Carrefour.",
+    "must": [
+     "Carrefour"
+    ]
+   }
+  ],
+  "date": "2026-04-03",
+  "kind": "life"
+ },
+ {
+  "n": 39,
+  "day": 33,
+  "steps": [
+   {
+    "story": "S13",
+    "step": 0,
+    "day": 33,
+    "said_late": false,
+    "text": "Fatima's hotel reservation city is Nice.",
+    "must": [
+     "Nice"
+    ]
+   }
+  ],
+  "date": "2026-04-04",
+  "kind": "life"
+ },
+ {
+  "n": 40,
+  "day": 34,
+  "steps": [],
+  "date": "2026-04-05",
+  "kind": "life"
+ },
+ {
+  "n": 41,
+  "day": 35,
+  "steps": [],
+  "date": "2026-04-06",
+  "kind": "life"
+ },
+ {
+  "n": 42,
+  "day": 36,
+  "steps": [
+   {
+    "story": "S21",
+    "step": 0,
+    "day": 33,
+    "said_late": false,
+    "text": "Fatima's weekend hike destination is Calanques.",
+    "must": [
+     "Calanques"
+    ]
+   },
+   {
+    "story": "S28",
+    "step": 1,
+    "day": 36,
+    "said_late": false,
+    "text": "Karim (husband)'s grocery delivery app is Leclerc (about Karim (husband), not Fatima).",
+    "must": [
+     "Leclerc",
+     "Karim"
+    ]
+   }
+  ],
+  "date": "2026-04-07",
+  "kind": "life"
+ },
+ {
+  "n": 43,
+  "day": 37,
+  "steps": [
+   {
+    "story": "S30",
+    "step": 0,
+    "day": 36,
+    "said_late": true,
+    "text": "Fatima needs a plumber to fix the leak under the sink in the pharmacy back room (not sorted yet).",
+    "must": [
+     "plumber"
+    ]
+   },
+   {
+    "story": "S12",
+    "step": 0,
+    "day": 37,
+    "said_late": false,
+    "text": "Fatima's pharmacy software version is PharmaSoft 4.",
+    "must": [
+     "PharmaSoft 4"
+    ]
+   }
+  ],
+  "date": "2026-04-08",
+  "kind": "work"
+ },
+ {
+  "n": 44,
+  "day": 38,
+  "steps": [],
+  "date": "2026-04-09",
+  "kind": "life"
+ },
+ {
+  "n": 45,
+  "day": 39,
+  "steps": [
+   {
+    "story": "S21",
+    "step": 1,
+    "day": 39,
+    "said_late": false,
+    "text": "Fatima is only thinking about changing the weekend hike destination to Sainte-Victoire; nothing decided.",
+    "must": [
+     "Sainte-Victoire"
+    ]
+   }
+  ],
+  "date": "2026-04-10",
+  "kind": "life"
+ },
+ {
+  "n": 46,
+  "day": 40,
+  "steps": [],
+  "date": "2026-04-11",
+  "kind": "life"
+ },
+ {
+  "n": 47,
+  "day": 41,
+  "steps": [
+   {
+    "story": "S04",
+    "step": 0,
+    "day": 38,
+    "said_late": false,
+    "text": "Fatima's gardening club membership is Jardiniers du Vieux-Port.",
+    "must": [
+     "Jardiniers du Vieux-Port"
+    ]
+   },
+   {
+    "story": "S12",
+    "step": 1,
+    "day": 41,
+    "said_late": false,
+    "text": "Fatima's pharmacy software version has changed: now PharmaSoft 5 (it was PharmaSoft 4).",
+    "must": [
+     "PharmaSoft 5"
+    ]
+   }
+  ],
+  "date": "2026-04-12",
+  "kind": "work"
+ },
+ {
+  "n": 48,
+  "day": 41,
+  "steps": [
+   {
+    "story": "S13",
+    "step": 1,
+    "day": 41,
+    "said_late": false,
+    "text": "Fatima's hotel reservation city has changed: now Aix-en-Provence (it was Nice).",
+    "must": [
+     "Aix-en-Provence"
+    ]
+   },
+   {
+    "story": "S30",
+    "step": 1,
+    "day": 41,
+    "said_late": false,
+    "text": "Fatima's need is sorted: the plumber Marc Giraud fixed the leak.",
+    "must": [
+     "Marc Giraud"
+    ]
+   }
+  ],
+  "date": "2026-04-12",
+  "kind": "life"
+ },
+ {
+  "n": 49,
+  "day": 41,
+  "steps": [
+   {
+    "story": "S33",
+    "step": 0,
+    "day": 41,
+    "said_late": false,
+    "text": "a need that is not Fatima's own: a vet for her old dog, who has stopped eating (Leïla (daughter)).",
+    "must": [
+     "vet"
+    ]
+   }
+  ],
+  "date": "2026-04-12",
+  "kind": "life"
+ }
+]

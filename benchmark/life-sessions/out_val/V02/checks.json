@@ -1,0 +1,214 @@
+{
+ "1": [
+  [
+   "states 'Nice'"
+  ]
+ ],
+ "3": [
+  [
+   "states 'Nice'"
+  ]
+ ],
+ "8": [
+  [
+   "missing '2026-03-09'"
+  ]
+ ],
+ "11": [
+  [
+   "missing '1,200 euros a month'"
+  ]
+ ],
+ "17": [
+  [
+   "missing '2026-03-15'"
+  ],
+  [
+   "missing '2026-03-15'"
+  ],
+  [
+   "missing '2026-03-15'"
+  ],
+  [
+   "judge: S19: I see your volunteer shift at the food bank is set for this afternoon, and you have a pharmacy license renewal reminder  (The pharmacy license number is 04-11-22335, as corrected on 2026-03-18. The number 04-11-22334 is an incorrect value fro)"
+  ],
+  [
+   "missing '2026-03-15'"
+  ],
+  [
+   "missing '2026-03-15'"
+  ],
+  [
+   "missing '2026-03-15'",
+   "states 'Free'",
+   "states 'Carrefour'"
+  ],
+  [
+   "judge: S17: Oh, and remind me to check the VanMoof app for any firmware updates later. I rode it to work this morning and it felt a  (The user claims to have ridden a VanMoof bicycle to work this morning, but according to the facts, Fatima changed her mi)"
+  ],
+  [
+   "states 'Carrefour'"
+  ],
+  [
+   "missing '2026-03-15'"
+  ],
+  [
+   "missing '2026-03-15'"
+  ]
+ ],
+ "25": [
+  [
+   "states 'Free'"
+  ]
+ ],
+ "27": [
+  [
+   "states 'Nice'"
+  ]
+ ],
+ "31": [
+  [
+   "states 'Nice'"
+  ],
+  [
+   "states 'Nice'"
+  ],
+  [
+   "states 'Nice'"
+  ],
+  [
+   "states 'Nice'"
+  ],
+  [
+   "states 'Nice'",
+   "states 'Carrefour'"
+  ],
+  [
+   "states 'Nice'"
+  ],
+  [
+   "states 'Nice'"
+  ],
+  [
+   "states 'Nice'"
+  ],
+  [
+   "states 'Nice'"
+  ],
+  [
+   "states 'Nice'",
+   "states 'Free'"
+  ],
+  [
+   "states 'Nice'"
+  ],
+  [
+   "states 'Nice'"
+  ],
+  [
+   "states 'Nice'"
+  ],
+  [
+   "states 'Nice'"
+  ],
+  [
+   "states 'Nice'"
+  ],
+  [
+   "states 'Nice'"
+  ],
+  [
+   "states 'Nice'"
+  ],
+  [
+   "states 'Nice'"
+  ],
+  [
+   "states 'Nice'"
+  ],
+  [
+   "states 'Nice'"
+  ],
+  [
+   "states 'Nice'"
+  ],
+  [
+   "states 'Nice'"
+  ],
+  [
+   "states 'Nice'"
+  ],
+  [
+   "states 'Nice'"
+  ]
+ ],
+ "32": [
+  [
+   "missing 'replacement'"
+  ],
+  [
+   "states 'Electricity'",
+   "states 'Carrefour'"
+  ],
+  [
+   "date 2026-03-28 not said"
+  ],
+  [
+   "missing 'replacement'"
+  ],
+  [
+   "missing 'replacement'"
+  ]
+ ],
+ "33": [
+  [
+   "states 'Nice'"
+  ]
+ ],
+ "37": [
+  [
+   "states 'Nice'"
+  ],
+  [
+   "states 'Nice'"
+  ],
+  [
+   "states 'Nice'",
+   "states 'Carrefour'"
+  ],
+  [
+   "states 'Nice'"
+  ]
+ ],
+ "38": [
+  [
+   "states 'Electricity'"
+  ]
+ ],
+ "39": [
+  [
+   "states 'Electricity'"
+  ]
+ ],
+ "9": [
+  [
+   "judge: S20: I see your tax office reference is 75-12-34567. (The tax office reference was corrected to 13-05-89012 on 2026-03-11.)"
+  ]
+ ],
+ "10": [
+  [
+   "judge: S20: My reference is 75-12-34567. (Fatima corrected this reference to 13-05-89012 on 2026-03-11, making the value 75-12-34567 incorrect after that date; ho)"
+  ]
+ ],
+ "42": [
+  [
+   "judge: S13: Can you look up the weather forecast for Nice for our hotel stay next month? (The user asks about the hotel stay in Nice, but the fact S13 (updated on 2026-04-12) states the hotel reservation city h)"
+  ]
+ ],
+ "44": [
+  [
+   "judge: S12: PharmaSoft 4 is acting up again on the stock count for the new batch of Lisinopril. (The conversation is dated 2026-04-09, and while S12 states the software version changed to PharmaSoft 5 on 2026-04-12, t)",
+   "judge: S12: PharmaSoft 4 is acting up again on the stock count for the new batch of Lisinopril. (The conversation is dated 2026-04-09. Fact S12 states the version changed to PharmaSoft 5 on 2026-04-12. Therefore, on 2)"
+  ]
+ ]
+}

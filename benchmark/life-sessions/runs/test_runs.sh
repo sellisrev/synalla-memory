@@ -1,6 +1,6 @@
 #!/bin/bash
 # The one test run (10 people, after tuning ended on dev; RULES.md). Usage: bash runs/test_runs.sh <facts variant: v1|v2>
-# Arms: A (passages, shipped default), D (facts of the chosen extraction), H (Hermes), O (OpenClaw); then the
+# Arms: A (passages, shipped default), D (facts of the chosen extraction; $R/D_ARGS may add --wants: the needs layer), H (Hermes), O (OpenClaw); then the
 # proactive track; then blind grading by Gemma. Each step stops the chain on failure; every step resumes.
 set -u
 V=${1:?facts variant v1 or v2}
@@ -14,9 +14,10 @@ HPY='C:\AI\hermes\installs\4cc947a3e5ab212d\environments\711a9273c71745809ddc303
 until [ -f $Q ] && grep -q "test DONE" benchmark/life-sessions/gen.log; do sleep 60; done
 cp $Q $R/questions.json
 say "build synalla $V"; node --import ./tools/ts-resolve.mjs benchmark/life-sessions/harness/synalla.mjs build $VA >> $R/build_$V.log 2>&1 || { say "FAILED build"; exit 1; }
+say "wants"; node --import ./tools/ts-resolve.mjs benchmark/life-sessions/harness/synalla.mjs wants >> $R/wants.log 2>&1 || { say "FAILED wants"; exit 1; }
 until [ -f $R/REVIEWED ]; do sleep 60; done  # the wording review of the questions (questions_review.json) is applied
 cp $Q $R/questions.json
-say "answer D"; node --import ./tools/ts-resolve.mjs benchmark/life-sessions/harness/synalla.mjs answer $VA --arm D --questions $Q --out $R/answers_D.jsonl >> $R/answer_D.log 2>&1 || { say "FAILED D"; exit 1; }
+DARGS=$(cat $R/D_ARGS 2>/dev/null); say "answer D $DARGS"; node --import ./tools/ts-resolve.mjs benchmark/life-sessions/harness/synalla.mjs answer $VA $DARGS --arm D --questions $Q --out $R/answers_D.jsonl >> $R/answer_D.log 2>&1 || { say "FAILED D"; exit 1; }
 say "answer A"; node --import ./tools/ts-resolve.mjs benchmark/life-sessions/harness/synalla.mjs answer $VA --arm A --questions $Q --out $R/answers_A.jsonl >> $R/answer_A.log 2>&1 || { say "FAILED A"; exit 1; }
 say "build H"; (cd /c/AI/tools/src/hermes-agent && HERMES_RUNTIME_DIR='C:\AI\tools\hermes-runtime' "$HPY" -X utf8 'C:\Claude\synalla-memory\benchmark\life-sessions\harness\hermes.py' build) >> $R/build_H.log 2>&1 || { say "FAILED build H"; exit 1; }
 say "answer H"; (cd /c/AI/tools/src/hermes-agent && HERMES_RUNTIME_DIR='C:\AI\tools\hermes-runtime' "$HPY" -X utf8 'C:\Claude\synalla-memory\benchmark\life-sessions\harness\hermes.py' answer --questions 'C:\Claude\synalla-memory\benchmark\life-sessions\out\questions.json' --out 'C:\Claude\synalla-memory\benchmark\life-sessions\runs\test1\answers_H.jsonl') >> $R/answer_H.log 2>&1 || { say "FAILED H"; exit 1; }

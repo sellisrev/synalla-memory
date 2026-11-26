@@ -1,6 +1,6 @@
 [
  {
-  "id": "D01-Q01",
+  "id": "D01-S01-1",
   "person": "D01",
   "type": "fact",
   "storyline": "S01",
@@ -8,7 +8,7 @@
   "gold": "Iberia 4521"
  },
  {
-  "id": "D01-Q02",
+  "id": "D01-S02-1",
   "person": "D01",
   "type": "fact",
   "storyline": "S02",
@@ -16,7 +16,7 @@
   "gold": "Agencia Tributaria"
  },
  {
-  "id": "D01-Q03",
+  "id": "D01-S03-1",
   "person": "D01",
   "type": "fact",
   "storyline": "S03",
@@ -24,7 +24,7 @@
   "gold": "CaixaBank San Bernardo"
  },
  {
-  "id": "D01-Q04",
+  "id": "D01-S04-1",
   "person": "D01",
   "type": "fact",
   "storyline": "S04",
@@ -32,7 +32,7 @@
   "gold": "Mercadona"
  },
  {
-  "id": "D01-Q05",
+  "id": "D01-S05-1",
   "person": "D01",
   "type": "fact",
   "storyline": "S05",
@@ -40,15 +40,7 @@
   "gold": "Farmacia Central"
  },
  {
-  "id": "D01-Q06",
-  "person": "D01",
-  "type": "fact",
-  "storyline": "S06",
-  "question": "What is my insurance provider?",
-  "gold": "Mapfre"
- },
- {
-  "id": "D01-Q07",
+  "id": "D01-S07-1",
   "person": "D01",
   "type": "fact",
   "storyline": "S07",
@@ -56,15 +48,7 @@
   "gold": "Dr. Almagro"
  },
  {
-  "id": "D01-Q08",
-  "person": "D01",
-  "type": "fact",
-  "storyline": "S08",
-  "question": "What is my flamenco venue?",
-  "gold": "Peña Flamenca La Platería"
- },
- {
-  "id": "D01-Q09",
+  "id": "D01-S09-1",
   "person": "D01",
   "type": "fact",
   "storyline": "S09",
@@ -72,7 +56,7 @@
   "gold": "Iberdrola"
  },
  {
-  "id": "D01-Q10",
+  "id": "D01-S10-1",
   "person": "D01",
   "type": "fact",
   "storyline": "S10",
@@ -80,7 +64,7 @@
   "gold": "Santander"
  },
  {
-  "id": "D01-Q11",
+  "id": "D01-S11-1",
   "person": "D01",
   "type": "now",
   "storyline": "S11",
@@ -88,7 +72,7 @@
   "gold": "Orange (it was Vodafone)"
  },
  {
-  "id": "D01-Q12",
+  "id": "D01-S11-2",
   "person": "D01",
   "type": "before",
   "storyline": "S11",
@@ -96,7 +80,7 @@
   "gold": "Vodafone"
  },
  {
-  "id": "D01-Q13",
+  "id": "D01-S11-3",
   "person": "D01",
   "type": "when",
   "storyline": "S11",
@@ -104,7 +88,7 @@
   "gold": "2026-03-09"
  },
  {
-  "id": "D01-Q14",
+  "id": "D01-S12-1",
   "person": "D01",
   "type": "now",
   "storyline": "S12",
@@ -112,7 +96,7 @@
   "gold": "Javier el de la Cruz (it was Rafael de Utrera)"
  },
  {
-  "id": "D01-Q15",
+  "id": "D01-S12-2",
   "person": "D01",
   "type": "before",
   "storyline": "S12",
@@ -120,7 +104,7 @@
   "gold": "Rafael de Utrera"
  },
  {
-  "id": "D01-Q16",
+  "id": "D01-S12-3",
   "person": "D01",
   "type": "when",
   "storyline": "S12",
@@ -128,7 +112,7 @@
   "gold": "2026-03-15"
  },
  {
-  "id": "D01-Q17",
+  "id": "D01-S13-1",
   "person": "D01",
   "type": "now",
   "storyline": "S13",
@@ -136,7 +120,7 @@
   "gold": "Colegio San José (it was Instituto Hispano)"
  },
  {
-  "id": "D01-Q18",
+  "id": "D01-S13-2",
   "person": "D01",
   "type": "before",
   "storyline": "S13",
@@ -144,7 +128,7 @@
   "gold": "Instituto Hispano"
  },
  {
-  "id": "D01-Q19",
+  "id": "D01-S13-3",
   "person": "D01",
   "type": "when",
   "storyline": "S13",
@@ -152,7 +136,7 @@
   "gold": "2026-03-05"
  },
  {
-  "id": "D01-Q20",
+  "id": "D01-S14-1",
   "person": "D01",
   "type": "now",
   "storyline": "S14",
@@ -160,7 +144,7 @@
   "gold": "ElectroServicio (it was Reparaciones López)"
  },
  {
-  "id": "D01-Q21",
+  "id": "D01-S14-2",
   "person": "D01",
   "type": "before",
   "storyline": "S14",
@@ -168,7 +152,7 @@
   "gold": "Reparaciones López"
  },
  {
-  "id": "D01-Q22",
+  "id": "D01-S14-3",
   "person": "D01",
   "type": "when",
   "storyline": "S14",
@@ -176,7 +160,7 @@
   "gold": "2026-04-04"
  },
  {
-  "id": "D01-Q23",
+  "id": "D01-S15-1",
   "person": "D01",
   "type": "now",
   "storyline": "S15",
@@ -184,7 +168,7 @@
   "gold": "Mastercard Gold (it was Visa Classic)"
  },
  {
-  "id": "D01-Q24",
+  "id": "D01-S15-2",
   "person": "D01",
   "type": "before",
   "storyline": "S15",
@@ -192,7 +176,7 @@
   "gold": "Visa Classic"
  },
  {
-  "id": "D01-Q25",
+  "id": "D01-S15-3",
   "person": "D01",
   "type": "when",
   "storyline": "S15",
@@ -200,7 +184,7 @@
   "gold": "2026-03-15"
  },
  {
-  "id": "D01-Q26",
+  "id": "D01-S16-1",
   "person": "D01",
   "type": "now",
   "storyline": "S16",
@@ -208,7 +192,7 @@
   "gold": "Instituto Buhaira (it was Colegio Nuestra Señora)"
  },
  {
-  "id": "D01-Q27",
+  "id": "D01-S16-2",
   "person": "D01",
   "type": "before",
   "storyline": "S16",
@@ -216,7 +200,7 @@
   "gold": "Colegio Nuestra Señora"
  },
  {
-  "id": "D01-Q28",
+  "id": "D01-S16-3",
   "person": "D01",
   "type": "when",
   "storyline": "S16",
@@ -224,23 +208,7 @@
   "gold": "2026-03-23"
  },
  {
-  "id": "D01-Q29",
-  "person": "D01",
-  "type": "now",
-  "storyline": "S17",
-  "question": "What is my Inés Navarro's preferred evening practice spot now?",
-  "gold": "Calle Sierpes 42 (I switched to Avenida de la Constitución 10, then went back)"
- },
- {
-  "id": "D01-Q30",
-  "person": "D01",
-  "type": "now",
-  "storyline": "S18",
-  "question": "What is my Inés Navarro's regular florist for home decor now?",
-  "gold": "Flores del Sur (I switched to Jardinería Triana, then went back)"
- },
- {
-  "id": "D01-Q31",
+  "id": "D01-S19-1",
   "person": "D01",
   "type": "now",
   "storyline": "S19",
@@ -248,7 +216,7 @@
   "gold": "April 15th (March 22nd was a slip, corrected on 2026-03-26)"
  },
  {
-  "id": "D01-Q32",
+  "id": "D01-S20-1",
   "person": "D01",
   "type": "now",
   "storyline": "S20",
@@ -256,15 +224,7 @@
   "gold": "Jardines del Norte (Jardines del Sur was a slip, corrected on 2026-03-16)"
  },
  {
-  "id": "D01-Q33",
-  "person": "D01",
-  "type": "considered",
-  "storyline": "S21",
-  "question": "Did I change my Inés Navarro's tentative weekend hiking partner to Marco Vega?",
-  "gold": "No: I only thought about it; it is still Elena Ruiz"
- },
- {
-  "id": "D01-Q34",
+  "id": "D01-S22-1",
   "person": "D01",
   "type": "considered",
   "storyline": "S22",
@@ -272,7 +232,7 @@
   "gold": "No: I only thought about it; it is still Paper Filing"
  },
  {
-  "id": "D01-Q35",
+  "id": "D01-S23-1",
   "person": "D01",
   "type": "now",
   "storyline": "S23",
@@ -280,7 +240,7 @@
   "gold": "Thursday Morning (changed from Tuesday Evening after thinking about it)"
  },
  {
-  "id": "D01-Q36",
+  "id": "D01-S23-2",
   "person": "D01",
   "type": "when",
   "storyline": "S23",
@@ -288,7 +248,7 @@
   "gold": "2026-04-08"
  },
  {
-  "id": "D01-Q37",
+  "id": "D01-S24-1",
   "person": "D01",
   "type": "now",
   "storyline": "S24",
@@ -296,7 +256,7 @@
   "gold": "Palacio de Justicia (Tribunal Provincial was only a what-if)"
  },
  {
-  "id": "D01-Q38",
+  "id": "D01-S25-1",
   "person": "D01",
   "type": "now",
   "storyline": "S25",
@@ -304,7 +264,7 @@
   "gold": "Casa de la Memoria (Teatro Lope de Vega was only a what-if)"
  },
  {
-  "id": "D01-Q39",
+  "id": "D01-S26-1",
   "person": "D01",
   "type": "whose",
   "storyline": "S26",
@@ -312,7 +272,7 @@
   "gold": "Generali (Zurich is Elena Ruiz's)"
  },
  {
-  "id": "D01-Q40",
+  "id": "D01-S26-2",
   "person": "D01",
   "type": "whose",
   "storyline": "S26",
@@ -320,7 +280,7 @@
   "gold": "Zurich"
  },
  {
-  "id": "D01-Q41",
+  "id": "D01-S27-1",
   "person": "D01",
   "type": "whose",
   "storyline": "S27",
@@ -328,7 +288,7 @@
   "gold": "Dr. Velasco (Dr. Soto is Carmen Navarro's)"
  },
  {
-  "id": "D01-Q42",
+  "id": "D01-S27-2",
   "person": "D01",
   "type": "whose",
   "storyline": "S27",
@@ -336,7 +296,7 @@
   "gold": "Dr. Soto"
  },
  {
-  "id": "D01-Q43",
+  "id": "D01-S28-1",
   "person": "D01",
   "type": "whose",
   "storyline": "S28",
@@ -344,7 +304,7 @@
   "gold": "Advocacy Group SE (Collegium Legal is Marc's)"
  },
  {
-  "id": "D01-Q44",
+  "id": "D01-S28-2",
   "person": "D01",
   "type": "whose",
   "storyline": "S28",
@@ -352,15 +312,15 @@
   "gold": "Collegium Legal"
  },
  {
-  "id": "D01-Q45",
+  "id": "D01-S29-1",
   "person": "D01",
   "type": "need",
   "storyline": "S29",
-  "question": "Am I still looking for a guitarist to play with her flamenco group at the April feria?",
+  "question": "Am I still looking for a guitarist to play with my flamenco group at the April feria?",
   "gold": "No: sorted on 2026-04-01 (Rafa Montoya from the peña agreed to play)"
  },
  {
-  "id": "D01-Q46",
+  "id": "D01-S30-1",
   "person": "D01",
   "type": "need",
   "storyline": "S30",
@@ -368,16 +328,16 @@
   "gold": "No: sorted on 2026-03-11 (Diego now sees the tutor Lucía Pérez on Mondays)"
  },
  {
-  "id": "D01-Q47",
+  "id": "D01-needs_now-1",
   "person": "D01",
   "type": "needs_now",
   "storyline": null,
-  "question": "What am I looking for at the moment? List everything still open.",
+  "question": "Which of my needs are still open: things I am looking for someone to provide or help with (a person, a service, an item)? List them all.",
   "gold": "a lawyer who knows family law for the custody review in May; a second-hand laptop for Carmen's school projects",
   "note": "not: needs already solved, or needs of someone else"
  },
  {
-  "id": "D01-Q48",
+  "id": "D01-none-1",
   "person": "D01",
   "type": "none",
   "storyline": null,
@@ -385,7 +345,7 @@
   "gold": "not in memory"
  },
  {
-  "id": "D01-Q49",
+  "id": "D01-none-2",
   "person": "D01",
   "type": "none",
   "storyline": null,
@@ -393,7 +353,7 @@
   "gold": "not in memory"
  },
  {
-  "id": "D01-Q50",
+  "id": "D01-none-3",
   "person": "D01",
   "type": "none",
   "storyline": null,
@@ -401,7 +361,7 @@
   "gold": "not in memory"
  },
  {
-  "id": "D02-Q01",
+  "id": "D02-S01-1",
   "person": "D02",
   "type": "fact",
   "storyline": "S01",
@@ -409,7 +369,7 @@
   "gold": "950 euros"
  },
  {
-  "id": "D02-Q02",
+  "id": "D02-S02-1",
   "person": "D02",
   "type": "fact",
   "storyline": "S02",
@@ -417,7 +377,7 @@
   "gold": "Frau Weber"
  },
  {
-  "id": "D02-Q03",
+  "id": "D02-S03-1",
   "person": "D02",
   "type": "fact",
   "storyline": "S03",
@@ -425,7 +385,7 @@
   "gold": "Hafenstraße 42"
  },
  {
-  "id": "D02-Q04",
+  "id": "D02-S04-1",
   "person": "D02",
   "type": "fact",
   "storyline": "S04",
@@ -433,7 +393,7 @@
   "gold": "3.5 percent"
  },
  {
-  "id": "D02-Q05",
+  "id": "D02-S05-1",
   "person": "D02",
   "type": "fact",
   "storyline": "S05",
@@ -441,7 +401,7 @@
   "gold": "Dr. Althoff"
  },
  {
-  "id": "D02-Q06",
+  "id": "D02-S06-1",
   "person": "D02",
   "type": "fact",
   "storyline": "S06",
@@ -449,7 +409,7 @@
   "gold": "Edeka City"
  },
  {
-  "id": "D02-Q07",
+  "id": "D02-S07-1",
   "person": "D02",
   "type": "fact",
   "storyline": "S07",
@@ -457,7 +417,7 @@
   "gold": "Hamburg-Nord"
  },
  {
-  "id": "D02-Q08",
+  "id": "D02-S08-1",
   "person": "D02",
   "type": "fact",
   "storyline": "S08",
@@ -465,7 +425,7 @@
   "gold": "Sparkasse Hamburg"
  },
  {
-  "id": "D02-Q09",
+  "id": "D02-S09-1",
   "person": "D02",
   "type": "fact",
   "storyline": "S09",
@@ -473,7 +433,7 @@
   "gold": "3200 euros"
  },
  {
-  "id": "D02-Q10",
+  "id": "D02-S10-1",
   "person": "D02",
   "type": "fact",
   "storyline": "S10",
@@ -481,7 +441,7 @@
   "gold": "April 5th"
  },
  {
-  "id": "D02-Q11",
+  "id": "D02-S11-1",
   "person": "D02",
   "type": "now",
   "storyline": "S11",
@@ -489,7 +449,7 @@
   "gold": "Hamburg Mitte Hall (it was St. Pauli Hall)"
  },
  {
-  "id": "D02-Q12",
+  "id": "D02-S11-2",
   "person": "D02",
   "type": "before",
   "storyline": "S11",
@@ -497,7 +457,7 @@
   "gold": "St. Pauli Hall"
  },
  {
-  "id": "D02-Q13",
+  "id": "D02-S11-3",
   "person": "D02",
   "type": "when",
   "storyline": "S11",
@@ -505,7 +465,7 @@
   "gold": "2026-03-12"
  },
  {
-  "id": "D02-Q14",
+  "id": "D02-S12-1",
   "person": "D02",
   "type": "now",
   "storyline": "S12",
@@ -513,7 +473,7 @@
   "gold": "Sandra Klein (it was Lukas Braun)"
  },
  {
-  "id": "D02-Q15",
+  "id": "D02-S12-2",
   "person": "D02",
   "type": "before",
   "storyline": "S12",
@@ -521,7 +481,7 @@
   "gold": "Lukas Braun"
  },
  {
-  "id": "D02-Q16",
+  "id": "D02-S12-3",
   "person": "D02",
   "type": "when",
   "storyline": "S12",
@@ -529,7 +489,7 @@
   "gold": "2026-04-08"
  },
  {
-  "id": "D02-Q17",
+  "id": "D02-S13-1",
   "person": "D02",
   "type": "now",
   "storyline": "S13",
@@ -537,7 +497,7 @@
   "gold": "Kita Sonnenschein (it was Tante Ingrid)"
  },
  {
-  "id": "D02-Q18",
+  "id": "D02-S13-2",
   "person": "D02",
   "type": "before",
   "storyline": "S13",
@@ -545,7 +505,7 @@
   "gold": "Tante Ingrid"
  },
  {
-  "id": "D02-Q19",
+  "id": "D02-S13-3",
   "person": "D02",
   "type": "when",
   "storyline": "S13",
@@ -553,7 +513,7 @@
   "gold": "2026-03-31"
  },
  {
-  "id": "D02-Q20",
+  "id": "D02-S14-1",
   "person": "D02",
   "type": "now",
   "storyline": "S14",
@@ -561,7 +521,7 @@
   "gold": "Herr Schmidt (it was Herr Müller)"
  },
  {
-  "id": "D02-Q21",
+  "id": "D02-S14-2",
   "person": "D02",
   "type": "before",
   "storyline": "S14",
@@ -569,7 +529,7 @@
   "gold": "Herr Müller"
  },
  {
-  "id": "D02-Q22",
+  "id": "D02-S14-3",
   "person": "D02",
   "type": "when",
   "storyline": "S14",
@@ -577,7 +537,7 @@
   "gold": "2026-03-31"
  },
  {
-  "id": "D02-Q23",
+  "id": "D02-S15-1",
   "person": "D02",
   "type": "now",
   "storyline": "S15",
@@ -585,7 +545,7 @@
   "gold": "Apotheke Hafen (it was Apotheke am Markt)"
  },
  {
-  "id": "D02-Q24",
+  "id": "D02-S15-2",
   "person": "D02",
   "type": "before",
   "storyline": "S15",
@@ -593,7 +553,7 @@
   "gold": "Apotheke am Markt"
  },
  {
-  "id": "D02-Q25",
+  "id": "D02-S15-3",
   "person": "D02",
   "type": "when",
   "storyline": "S15",
@@ -601,7 +561,7 @@
   "gold": "2026-03-08"
  },
  {
-  "id": "D02-Q26",
+  "id": "D02-S16-1",
   "person": "D02",
   "type": "now",
   "storyline": "S16",
@@ -609,7 +569,7 @@
   "gold": "POL-9942 (it was POL-8821)"
  },
  {
-  "id": "D02-Q27",
+  "id": "D02-S16-2",
   "person": "D02",
   "type": "before",
   "storyline": "S16",
@@ -617,7 +577,7 @@
   "gold": "POL-8821"
  },
  {
-  "id": "D02-Q28",
+  "id": "D02-S16-3",
   "person": "D02",
   "type": "when",
   "storyline": "S16",
@@ -625,7 +585,7 @@
   "gold": "2026-04-05"
  },
  {
-  "id": "D02-Q29",
+  "id": "D02-S17-1",
   "person": "D02",
   "type": "now",
   "storyline": "S17",
@@ -633,7 +593,7 @@
   "gold": "Hamburger Abendblatt (I switched to Die Welt, then went back)"
  },
  {
-  "id": "D02-Q30",
+  "id": "D02-S18-1",
   "person": "D02",
   "type": "now",
   "storyline": "S18",
@@ -641,7 +601,7 @@
   "gold": "Route 21 (I switched to Route 44, then went back)"
  },
  {
-  "id": "D02-Q31",
+  "id": "D02-S19-1",
   "person": "D02",
   "type": "now",
   "storyline": "S19",
@@ -649,7 +609,7 @@
   "gold": "Hafenstraße 44 (Hafenstraße 40 was a slip, corrected on 2026-04-06)"
  },
  {
-  "id": "D02-Q32",
+  "id": "D02-S20-1",
   "person": "D02",
   "type": "now",
   "storyline": "S20",
@@ -657,7 +617,7 @@
   "gold": "natural gas (gas oil was a slip, corrected on 2026-04-01)"
  },
  {
-  "id": "D02-Q33",
+  "id": "D02-S21-1",
   "person": "D02",
   "type": "considered",
   "storyline": "S21",
@@ -665,7 +625,7 @@
   "gold": "No: I only thought about it; it is still Rewe City"
  },
  {
-  "id": "D02-Q34",
+  "id": "D02-S22-1",
   "person": "D02",
   "type": "considered",
   "storyline": "S22",
@@ -673,7 +633,7 @@
   "gold": "No: I only thought about it; it is still Deutsche Bank"
  },
  {
-  "id": "D02-Q35",
+  "id": "D02-S23-1",
   "person": "D02",
   "type": "now",
   "storyline": "S23",
@@ -681,7 +641,7 @@
   "gold": "Gasthof Alsterufer (changed from Hotel Elbphilharmonie after thinking about it)"
  },
  {
-  "id": "D02-Q36",
+  "id": "D02-S23-2",
   "person": "D02",
   "type": "when",
   "storyline": "S23",
@@ -689,7 +649,7 @@
   "gold": "2026-03-20"
  },
  {
-  "id": "D02-Q37",
+  "id": "D02-S24-1",
   "person": "D02",
   "type": "now",
   "storyline": "S24",
@@ -697,7 +657,7 @@
   "gold": "Grundschule Altona (Grundschule Ottensen was only a what-if)"
  },
  {
-  "id": "D02-Q38",
+  "id": "D02-S25-1",
   "person": "D02",
   "type": "now",
   "storyline": "S25",
@@ -705,7 +665,7 @@
   "gold": "Oil heating (Solar thermal was only a what-if)"
  },
  {
-  "id": "D02-Q39",
+  "id": "D02-S26-1",
   "person": "D02",
   "type": "whose",
   "storyline": "S26",
@@ -713,7 +673,7 @@
   "gold": "Kind of Blue (A Love Supreme is Finn's)"
  },
  {
-  "id": "D02-Q40",
+  "id": "D02-S26-2",
   "person": "D02",
   "type": "whose",
   "storyline": "S26",
@@ -721,7 +681,7 @@
   "gold": "A Love Supreme"
  },
  {
-  "id": "D02-Q41",
+  "id": "D02-S27-1",
   "person": "D02",
   "type": "whose",
   "storyline": "S27",
@@ -729,7 +689,7 @@
   "gold": "Barber Shop Hamburg (Stylist Studio Altona is Birgit's)"
  },
  {
-  "id": "D02-Q42",
+  "id": "D02-S27-2",
   "person": "D02",
   "type": "whose",
   "storyline": "S27",
@@ -737,32 +697,24 @@
   "gold": "Stylist Studio Altona"
  },
  {
-  "id": "D02-Q43",
-  "person": "D02",
-  "type": "need",
-  "storyline": "S29",
-  "question": "Am I still looking for a babysitter for Finn on Saturday 14 March?",
-  "gold": "No: sorted on 2026-04-09 (his neighbour Anke Vogt looked after Finn)"
- },
- {
-  "id": "D02-Q44",
+  "id": "D02-S30-1",
   "person": "D02",
   "type": "need",
   "storyline": "S30",
-  "question": "Am I still looking for a mechanic to look at the brakes on his old Passat?",
+  "question": "Am I still looking for a mechanic to look at the brakes on my old Passat?",
   "gold": "No: sorted on 2026-04-03 (Werkstatt Yilmaz in Wilhelmsburg fixed the brakes)"
  },
  {
-  "id": "D02-Q45",
+  "id": "D02-needs_now-1",
   "person": "D02",
   "type": "needs_now",
   "storyline": null,
-  "question": "What am I looking for at the moment? List everything still open.",
+  "question": "Which of my needs are still open: things I am looking for someone to provide or help with (a person, a service, an item)? List them all.",
   "gold": "tuba lessons to prepare for the band's summer concert; a physiotherapist for his shoulder after the long shifts",
   "note": "not: needs already solved, or needs of someone else"
  },
  {
-  "id": "D02-Q46",
+  "id": "D02-none-1",
   "person": "D02",
   "type": "none",
   "storyline": null,
@@ -770,7 +722,7 @@
   "gold": "not in memory"
  },
  {
-  "id": "D02-Q47",
+  "id": "D02-none-2",
   "person": "D02",
   "type": "none",
   "storyline": null,
@@ -778,7 +730,7 @@
   "gold": "not in memory"
  },
  {
-  "id": "D02-Q48",
+  "id": "D02-none-3",
   "person": "D02",
   "type": "none",
   "storyline": null,

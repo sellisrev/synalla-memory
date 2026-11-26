@@ -1,0 +1,540 @@
+[
+ {
+  "id": "S01",
+  "pattern": "plain",
+  "theme": "travel",
+  "days": [
+   40
+  ],
+  "thing": "return flight",
+  "values": [
+   "SK 947"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S02",
+  "pattern": "plain",
+  "theme": "health",
+  "days": [
+   5
+  ],
+  "thing": "general practitioner",
+  "values": [
+   "Dr. Eklund"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S03",
+  "pattern": "plain",
+  "theme": "family",
+  "days": [
+   32
+  ],
+  "thing": "Elsa's preschool pickup contact",
+  "values": [
+   "Maja Lindqvist"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S04",
+  "pattern": "plain",
+  "theme": "health",
+  "days": [
+   5
+  ],
+  "thing": "annual checkup",
+  "values": [
+   "2026-03-07"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S05",
+  "pattern": "plain",
+  "theme": "shopping",
+  "days": [
+   26
+  ],
+  "thing": "sailing gear supplier",
+  "values": [
+   "Helly Hansen"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S06",
+  "pattern": "plain",
+  "theme": "people",
+  "days": [
+   14
+  ],
+  "thing": "partner's workplace",
+  "values": [
+   "Kontoret på Avenyn"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S07",
+  "pattern": "plain",
+  "theme": "travel",
+  "days": [
+   38
+  ],
+  "thing": "hotel booking",
+  "values": [
+   "Scandic Slottskajen"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S08",
+  "pattern": "plain",
+  "theme": "family",
+  "days": [
+   28
+  ],
+  "thing": "son's birthday",
+  "values": [
+   "2026-04-30"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S09",
+  "pattern": "plain",
+  "theme": "travel",
+  "days": [
+   19
+  ],
+  "thing": "commute route",
+  "values": [
+   "The 55 bus"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S10",
+  "pattern": "plain",
+  "theme": "shopping",
+  "days": [
+   21
+  ],
+  "thing": "bookstore visit",
+  "values": [
+   "Libris on Stureplan"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S11",
+  "pattern": "change",
+  "theme": "work",
+  "days": [
+   7,
+   14
+  ],
+  "thing": "bank account",
+  "values": [
+   "SE45 5000 0000 0034 5667 8901",
+   "SE89 9000 0000 0034 5667 8912"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S12",
+  "pattern": "change",
+  "theme": "admin",
+  "days": [
+   15,
+   25
+  ],
+  "thing": "insurance provider",
+  "values": [
+   "Trygg Hansa",
+   "Försäkringskassan"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S13",
+  "pattern": "change",
+  "theme": "admin",
+  "days": [
+   30,
+   33
+  ],
+  "thing": "tax ID number",
+  "values": [
+   "19860512-4455",
+   "19860512-4456"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S14",
+  "pattern": "change",
+  "theme": "work",
+  "days": [
+   6,
+   13
+  ],
+  "thing": "client contact",
+  "values": [
+   "Thomas Bergström",
+   "Anna Lindgren"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S15",
+  "pattern": "change",
+  "theme": "home",
+  "days": [
+   6,
+   13
+  ],
+  "thing": "mortgage rate",
+  "values": [
+   "3.25 percent",
+   "3.40 percent"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S16",
+  "pattern": "change",
+  "theme": "hobbies",
+  "days": [
+   5,
+   14
+  ],
+  "thing": "sailing club membership",
+  "values": [
+   "Göta Kanals Segelsällskap",
+   "Kungliga Svenska Segelsällskapet"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S17",
+  "pattern": "heart",
+  "theme": "money",
+  "days": [
+   19,
+   25,
+   34
+  ],
+  "thing": "savings account balance",
+  "values": [
+   "150000 SEK",
+   "145000 SEK"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S18",
+  "pattern": "heart",
+  "theme": "hobbies",
+  "days": [
+   21,
+   27,
+   32
+  ],
+  "thing": "preferred coffee shop",
+  "values": [
+   "Stadsbiblioteket Kaffé",
+   "Lilla Caféet"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S19",
+  "pattern": "correction",
+  "theme": "hobbies",
+  "days": [
+   18,
+   24
+  ],
+  "thing": "car registration plate",
+  "values": [
+   "ABC 123",
+   "DEF 456"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S20",
+  "pattern": "correction",
+  "theme": "work",
+  "days": [
+   13,
+   17
+  ],
+  "thing": "project deadline",
+  "values": [
+   "2026-03-20",
+   "2026-03-25"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S21",
+  "pattern": "tentative_dropped",
+  "theme": "admin",
+  "days": [
+   16,
+   21
+  ],
+  "thing": "internet provider",
+  "values": [
+   "Telia",
+   "Bredbandsbolaget"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S22",
+  "pattern": "tentative_dropped",
+  "theme": "home",
+  "days": [
+   4,
+   11
+  ],
+  "thing": "potential weekend renovation contractor",
+  "values": [
+   "Stenwall Bygg AB",
+   "Nordic Remodeling Co"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S23",
+  "pattern": "tentative_confirmed",
+  "theme": "admin",
+  "days": [
+   19,
+   25,
+   32
+  ],
+  "thing": "gym membership",
+  "values": [
+   "Sparrow Fitness",
+   "Anytime Fitness"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S24",
+  "pattern": "hypothetical",
+  "theme": "home",
+  "days": [
+   36,
+   41
+  ],
+  "thing": "home address",
+  "values": [
+   "Malmöhamngatan 45",
+   "Storgatan 12"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S25",
+  "pattern": "hypothetical",
+  "theme": "family",
+  "days": [
+   26,
+   34
+  ],
+  "thing": "weekend trip destination",
+  "values": [
+   "Djurgården",
+   "Visby"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S26",
+  "pattern": "lookalike",
+  "theme": "travel",
+  "days": [
+   32,
+   37
+  ],
+  "thing": "primary bank account number",
+  "values": [
+   "SE45 9900 1122 3344 5566 7788",
+   "SE89 8877 6655 4433 2211 0099"
+  ],
+  "other_person": "Maja (partner)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S27",
+  "pattern": "lookalike",
+  "theme": "people",
+  "days": [
+   30,
+   35
+  ],
+  "thing": "personal identity number",
+  "values": [
+   "19860512-9988",
+   "19860512-7766"
+  ],
+  "other_person": "Maja (partner)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S28",
+  "pattern": "lookalike",
+  "theme": "shopping",
+  "days": [
+   17,
+   27
+  ],
+  "thing": "regular dry cleaner",
+  "values": [
+   "Pressbyrån Kalltorp",
+   "Cleaners on Kungsgatan"
+  ],
+  "other_person": "Maja (partner)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S29",
+  "pattern": "need_met",
+  "theme": "shopping",
+  "days": [
+   31,
+   41
+  ],
+  "thing": "need",
+  "values": [
+   "someone to pick Elsa up from school on the Thursdays he works in Stockholm",
+   "Maja's colleague Linnea Berg picks Elsa up on Thursdays"
+  ],
+  "other_person": "",
+  "keyword": "school",
+  "topic": "childcare"
+ },
+ {
+  "id": "S30",
+  "pattern": "need_met",
+  "theme": "people",
+  "days": [
+   7,
+   13
+  ],
+  "thing": "need",
+  "values": [
+   "a second-hand outboard motor for his sailing dinghy",
+   "bought a used Tohatsu from Nils Ek at the sailing club"
+  ],
+  "other_person": "",
+  "keyword": "outboard",
+  "topic": "sports-equipment"
+ },
+ {
+  "id": "S31",
+  "pattern": "need_open",
+  "theme": "home",
+  "days": [
+   11
+  ],
+  "thing": "need",
+  "values": [
+   "a reviewer who knows maritime law terms for the shipping manual he is translating"
+  ],
+  "other_person": "",
+  "keyword": "maritime",
+  "topic": "translation"
+ },
+ {
+  "id": "S32",
+  "pattern": "need_open",
+  "theme": "people",
+  "days": [
+   19
+  ],
+  "thing": "need",
+  "values": [
+   "a dentist in Gothenburg who takes new patients, for his cracked tooth"
+  ],
+  "other_person": "",
+  "keyword": "dentist",
+  "topic": "dentist"
+ },
+ {
+  "id": "S33",
+  "pattern": "need_other",
+  "theme": "money",
+  "days": [
+   18
+  ],
+  "thing": "need",
+  "values": [
+   "a cheap flat in Gothenburg for his brother Anders, who is moving back"
+  ],
+  "other_person": "Anders (brother)",
+  "keyword": "flat",
+  "topic": "accommodation"
+ }
+]

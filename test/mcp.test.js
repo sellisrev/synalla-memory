@@ -124,3 +124,22 @@ test('recall returns the top facts with the passages; facts_about and what_chang
   assert.equal((await s.handle(call('what_changed', { since: 'May' }))).result.isError, true);
   assert.equal((await s.handle(call('facts_about', {}))).result.isError, true);
 });
+
+test('recall carries the owner\'s needs: open ones and met ones, at the matching threshold only', async () => {
+  const st = store();
+  st.addItem({ id: 'a', date: '2026-03-01', source: 'notes', title: 'a', chunks: ['need a dentist'] });
+  st.addItem({ id: 'b', date: '2026-03-05', source: 'notes', title: 'b', chunks: ['found a plumber'] });
+  const [dentist, plumber] = st.recordWants('a', [
+    { what: 'a dentist', topic: 'dentist', confidence: 1, quote: 'need a dentist' },
+    { what: 'a plumber', topic: 'plumbing', confidence: 1, quote: 'need a plumber' },
+    { what: 'maybe a bike', topic: 'second-hand-goods', confidence: 0.3, quote: 'maybe a bike' },
+  ], [], new Date('2026-03-01T10:00:00Z'));
+  st.recordWants('b', [], [{ wid: plumber, quote: 'found a plumber' }], new Date('2026-03-05T10:00:00Z'));
+  const s = new McpServer(st, { now: NOW });
+  const r = await s.handle({ jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name: 'recall', arguments: { question: 'what do I need' } } });
+  const w = r.result.structuredContent.wants;
+  assert.equal(w.length, 2);
+  assert.match(w.find(x => x.what === 'a dentist').line, /^- open since 2026-03-01: a dentist/);
+  assert.match(w.find(x => x.what === 'a plumber').line, /^- met on 2026-03-05: a plumber .*found a plumber/);
+  assert.equal(dentist > 0, true);
+});

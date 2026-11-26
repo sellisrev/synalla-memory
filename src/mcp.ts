@@ -12,7 +12,8 @@ import type { Embedder } from './embed.ts';
 import { itemChunks } from './chunk.ts';
 import { DEFAULT_TOP } from './fusion.ts';
 import { factLine } from './facts.ts';
-import type { Fact } from './store.ts';
+import type { Fact, Want } from './store.ts';
+import { WANT_THRESHOLD } from './wants.ts';
 import { VERSION } from './version.ts';
 
 export const PROTOCOL_VERSIONS = ['2025-06-18', '2025-03-26', '2024-11-05'];
@@ -27,6 +28,8 @@ interface StoreLike {
   facts(fids: readonly number[]): Fact[];
   factsAbout(subject: string): Fact[];
   changedSince(since: string, limit?: number): Fact[];
+  /** The wants layer (wants.ts), when the store has one. */
+  allWants?(): Want[];
 }
 
 type Json = null | boolean | number | string | Json[] | { [k: string]: Json };
@@ -74,6 +77,13 @@ const TOOLS = [
 ] as const;
 
 class ToolError extends Error {}
+
+/** One want of the owner as the agent sees it: open since a date, or met on a date with what met it. */
+export function wantLine(w: Pick<Want, 'what' | 'topic' | 'opened_at' | 'closed_at' | 'closed_quote' | 'quote'>): string {
+  return w.closed_at
+    ? `- met on ${w.closed_at.slice(0, 10)}: ${w.what} (${w.topic}; what met it: "${(w.closed_quote ?? '').slice(0, 160)}")`
+    : `- open since ${w.opened_at.slice(0, 10)}: ${w.what} (${w.topic}; quote: "${w.quote.slice(0, 160)}")`;
+}
 
 const factJson = (f: Fact): Json => ({
   line: factLine(f), subject: f.subject, predicate: f.predicate, object: f.object, valid_from: f.valid_from,
@@ -164,7 +174,11 @@ export class McpServer {
     const passages = this.#store.chunks(cids).map(c => ({ source: c.source, date: c.date, item: c.item, text: c.text, untrusted: true }));
     // The measured setting passes the top 20 facts with the passages, one line each (memory_ab arm B).
     const facts = this.#store.facts(this.#store.searchFacts(q, qv, 20)).map(factJson);
-    return { mode, passages, facts };
+    // The owner's needs (wants layer): all open ones and those met, so "what am I still looking for" has the whole
+    // list, which no search over passages gives. Only wants at the matching threshold, as for proposals.
+    const wants = (this.#store.allWants?.() ?? []).filter(w => w.confidence >= WANT_THRESHOLD)
+      .map(w => ({ line: wantLine(w), what: w.what, topic: w.topic, open: w.closed_at === null, since: w.opened_at, met_on: w.closed_at, untrusted: true }));
+    return { mode, passages, facts, wants };
   }
 
   #factsAbout(args: Record<string, unknown>): Json {

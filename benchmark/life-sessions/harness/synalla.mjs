@@ -19,6 +19,7 @@ import { httpEmbedder } from '../../../src/embed.ts';
 import { httpChatModel, extractPending, FACTS_SCHEMA_V2 } from '../../../src/facts.ts';
 import { McpServer } from '../../../src/mcp.ts';
 import { waitFast, waiting } from './gpu_lock.mjs';
+import { scanWants, WANTS_SCHEMA } from '../../../src/wants.ts';
 // questions carry `person` (life sessions) instead of `persona`
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -79,13 +80,30 @@ async function build() {
   }
 }
 
-function prompt(q, passages, facts) {
+// wants: read every session for the owner's needs (the wants layer, as in the proactive track), into the same store
+async function wants() {
+  const only = opt('--persona');
+  const model = waiting(httpChatModel({ url: LLM, model: 'daily', schema: { name: 'wants', schema: WANTS_SCHEMA } }));
+  for (const p of Object.keys(OWNERS)) {
+    if (only && p !== only) continue;
+    const store = open(p);
+    try {
+      const t0 = Date.now();
+      const r = await scanWants(store, model, OWNERS[p], { limit: 1000, agentSessions: true });
+      log(`${p} wants: ${r.items} items, ${r.opened} opened, ${r.met} met, ${r.failed} failed, ${Math.round((Date.now() - t0) / 1000)} s`);
+      if (r.failed > 0) throw new Error(`${p}: ${r.failed} items failed the wants scan`);
+    } finally { store.close(); }
+  }
+}
+
+function prompt(q, passages, facts, needs = []) {
   const parts = [`Today is ${TODAY}. Answer the question about the owner of these records, using only what is below.`,
     'If the records do not contain the answer, reply exactly: not in memory.',
     'When something changed over time, give the latest value unless the question asks about the past. Be brief: one or two sentences.', '',
     'RECORDS (each starts with its date and source):'];
   passages.forEach((p, i) => parts.push(`--- ${i + 1}\n${p.text}`));
   if (facts.length) parts.push('', 'FACTS EXTRACTED FROM THE RECORDS (automatic hints; they can be wrong. When a fact and a record disagree, trust the record):', ...facts.map(f => f.line));
+  if (needs.length) parts.push('', "THE OWNER'S NEEDS (things they asked others for, found automatically in the records; open ones are still unmet, met ones were solved):", ...needs.map(w => w.line));
   parts.push('', `QUESTION: ${q}`);
   return parts.join('\n');
 }
@@ -104,17 +122,18 @@ async function answer() {
       const t0 = Date.now();
       const mcp = new McpServer(store, { embedder });
       const r = await mcp.handle({ jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name: 'recall', arguments: { question: q.question } } });
-      const { passages, facts } = r.result.structuredContent;
+      const { passages, facts, wants: needs } = r.result.structuredContent;
       const useFacts = arm === 'D' ? facts : [];
+      const useNeeds = args.includes('--wants') ? needs : [];
       await waitFast();
       const res = await fetch(`${LLM}/v1/chat/completions`, { method: 'POST', headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ model: 'daily', messages: [{ role: 'user', content: prompt(q.question, passages, useFacts) }], max_tokens: 8000, temperature: 0.2 }),
+        body: JSON.stringify({ model: 'daily', messages: [{ role: 'user', content: prompt(q.question, passages, useFacts, useNeeds) }], max_tokens: 8000, temperature: 0.2 }),
         signal: AbortSignal.timeout(900_000) });
       if (!res.ok) throw new Error(`answering model answered ${res.status}`);
       const body = await res.json();
       const text = (body.choices?.[0]?.message?.content ?? '').trim();
       if (text.includes('????????')) throw new Error(`garbage output on ${q.id}`);
-      const row = { id: q.id, arm, answer: text, passages: passages.map(p => p.item), facts: useFacts.length, seconds: Math.round((Date.now() - t0) / 100) / 10, usage: body.usage ?? {} };
+      const row = { id: q.id, arm, answer: text, passages: passages.map(p => p.item), facts: useFacts.length, needs: useNeeds.length, seconds: Math.round((Date.now() - t0) / 100) / 10, usage: body.usage ?? {} };
       appendFileSync(out, JSON.stringify(row) + '\n');
       log(`${q.id} ${arm} ${row.seconds} s: ${text.slice(0, 100).replace(/\n/g, ' ')}`);
     }
@@ -122,5 +141,5 @@ async function answer() {
 }
 
 const cmd = args[0];
-(cmd === 'build' ? build() : cmd === 'answer' ? answer() : Promise.reject(new Error('build | answer')))
+(cmd === 'build' ? build() : cmd === 'wants' ? wants() : cmd === 'answer' ? answer() : Promise.reject(new Error('build | wants | answer')))
   .then(() => process.exit(0), e => { log(`FAILED ${e.stack ?? e}`); process.exit(1); });

@@ -15,6 +15,7 @@ import { MemoryStore } from '../../../src/store.ts';
 import { importClaudeCode } from '../../../src/import_claude_code.ts';
 import { httpChatModel } from '../../../src/facts.ts';
 import { scanWants, matchWants, WANTS_SCHEMA } from '../../../src/wants.ts';
+import { waiting } from './gpu_lock.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const SET = process.env.LIFE_SET ?? 'test';  // dev: the tuning people, kept apart
@@ -37,7 +38,7 @@ mkdirSync(dirname(outFile), { recursive: true });
 const done = new Set(existsSync(outFile) ? readFileSync(outFile, 'utf8').split('\n').filter(Boolean).map(l => JSON.parse(l)).filter(r => r.type === 'done').map(r => r.person) : []);
 const net = JSON.parse(readFileSync(join(OUT, 'network.json'), 'utf8'));
 const entries = net.members.flatMap(m => m.entries);
-const model = httpChatModel({ url: 'http://127.0.0.1:9090', model: modelName, schema: { name: 'wants', schema: WANTS_SCHEMA } });
+const model = waiting(httpChatModel({ url: 'http://127.0.0.1:9090', model: modelName, schema: { name: 'wants', schema: WANTS_SCHEMA } }));
 
 for (const [pid, [owner, city]] of Object.entries(PEOPLE)) {
   if ((opt('--person') && pid !== opt('--person')) || done.has(pid) || !existsSync(join(OUT, pid, 'sessions'))) continue;

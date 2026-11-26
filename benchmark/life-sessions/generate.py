@@ -84,7 +84,16 @@ def day(i):
     return (START + datetime.timedelta(days=i)).isoformat()
 
 
+def wait_fast():
+    """Wait while a job on the other model holds work/fast.lock (gpu_lock.py); a lock untouched for 20 min is stale."""
+    lock = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'work', 'fast.lock')
+    while os.path.exists(lock) and time.time() - os.path.getmtime(lock) < 1200:
+        time.sleep(15)
+
+
 def post(a, prompt, schema, seed, max_tokens):
+    if a.model != 'fast':
+        wait_fast()
     body = {'model': a.model, 'messages': [{'role': 'user', 'content': prompt}], 'max_tokens': max_tokens, 'temperature': 0.7,
             'seed': seed, 'chat_template_kwargs': {'enable_thinking': False},
             'response_format': {'type': 'json_schema', 'json_schema': {'name': 'out', 'schema': schema, 'strict': True}}}

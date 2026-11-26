@@ -18,6 +18,7 @@ import { importClaudeCode } from '../../../src/import_claude_code.ts';
 import { httpEmbedder } from '../../../src/embed.ts';
 import { httpChatModel, extractPending, FACTS_SCHEMA_V2 } from '../../../src/facts.ts';
 import { McpServer } from '../../../src/mcp.ts';
+import { waitFast, waiting } from './gpu_lock.mjs';
 // questions carry `person` (life sessions) instead of `persona`
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -70,7 +71,7 @@ async function build() {
       if (args.includes('--no-facts')) continue;
       const model = httpChatModel({ url: LLM, model: 'daily', ...(VARIANT === 'v2' ? { schema: { name: 'facts', schema: FACTS_SCHEMA_V2 } } : {}) });
       const t0 = Date.now();
-      const res = await extractPending(store, model, OWNERS[p], { limit: 1000, agentSessions: true, version: VARIANT === 'v2' ? 2 : 1,
+      const res = await extractPending(store, waiting(model), OWNERS[p], { limit: 1000, agentSessions: true, version: VARIANT === 'v2' ? 2 : 1,
         onItem: (id, kept, dropped, err) => log(`${p} facts ${id.slice(-12)} kept ${kept} dropped ${dropped}${err ? ' ERROR ' + err.slice(0, 120) : ''}`) });
       log(`${p} extraction: ${res.items} items, ${res.facts} facts, ${res.failed} failed, ${Math.round((Date.now() - t0) / 1000)} s; embedded ${await embedAll(store)}`);
       if (res.failed > 0) throw new Error(`${p}: ${res.failed} items failed extraction`);
@@ -105,6 +106,7 @@ async function answer() {
       const r = await mcp.handle({ jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name: 'recall', arguments: { question: q.question } } });
       const { passages, facts } = r.result.structuredContent;
       const useFacts = arm === 'D' ? facts : [];
+      await waitFast();
       const res = await fetch(`${LLM}/v1/chat/completions`, { method: 'POST', headers: { 'content-type': 'application/json' },
         body: JSON.stringify({ model: 'daily', messages: [{ role: 'user', content: prompt(q.question, passages, useFacts) }], max_tokens: 8000, temperature: 0.2 }),
         signal: AbortSignal.timeout(900_000) });

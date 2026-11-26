@@ -44,12 +44,20 @@ def make(run, arms, questions):
 
 
 def local(run, model):
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+    import gpu_lock
+    with gpu_lock.holding():
+        _local(run, model, gpu_lock)
+
+
+def _local(run, model, gpu_lock):
     data = json.load(open(run / 'grading_input.json', encoding='utf-8'))
     out = run / f'grades_local_{model}.json'
     grades = json.load(open(out, encoding='utf-8')) if out.exists() else {}
     for it in data['items']:
         if it['id'] in grades:
             continue
+        gpu_lock.touch()
         letters = [L for L in LETTERS if L in it]
         prompt = (f"{data['rules']}\n\nQUESTION: {it['question']}\nREFERENCE: {it['reference']}\n\n"
                   + '\n'.join(f'ANSWER {L}: {it[L]}' for L in letters)

@@ -13,6 +13,7 @@ import argparse, hashlib, json, os, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import generate as G  # noqa: E402
+import gpu_lock  # noqa: E402
 
 SCHEMA = {'type': 'object', 'additionalProperties': False, 'required': ['problems'], 'properties': {'problems': {
     'type': 'array', 'items': {'type': 'object', 'additionalProperties': False, 'required': ['quote', 'fact', 'why'],
@@ -64,7 +65,7 @@ CONVERSATION
     for k in range(2):
         try:
             return G.post(a, prompt, SCHEMA, (G.num('judge', x['date'], len(text)) + k) % 100000, 6000)['problems']
-        except (ValueError, KeyError):
+        except (ValueError, KeyError, TimeoutError, OSError):
             continue
     # two unreadable replies (usually a list too long to finish): the session is rewritten
     return [{'quote': text[:60], 'fact': '?', 'why': 'judge reply unreadable twice'}]
@@ -99,6 +100,7 @@ def main():
             h = hashlib.sha256(open(path, 'rb').read()).hexdigest()[:16]
             if judged.get(str(x['n']), {}).get('hash') == h:
                 continue
+            gpu_lock.touch()
             text = text_of(path)
             own = {st['story'] for st in x['steps']}
             # the session's own storylines are checked by code (their values must be there and right); the judge
@@ -121,4 +123,5 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    with gpu_lock.holding():
+        main()

@@ -7,7 +7,7 @@ model wrote. Every person also gets a question about their open needs (the whole
 answer is not in the sessions. Wording is plain on purpose; the reviewer rephrases. Only storylines whose steps all
 made it into a kept session are used (a session the checks gave up on drops its storylines).
 """
-import json, os, random, re, sys
+import json, os, random, re, sys, unicodedata
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from generate import PEOPLE, OUT, num, day, thing_words, before_deadline  # noqa: E402
@@ -29,6 +29,13 @@ OWN_WORDS = {'a maths tutor for Pablo before his June exams': "a maths tutor for
              "a maths tutor for Diego before his end-of-term exams": "a maths tutor for Diego before his end-of-term exams"}
 
 
+DATE = re.compile(r'^(\d{4}-\d{2}-\d{2}|\d{1,2}(st|nd|rd|th)? (January|February|March|April|May|June|July|August|September|October|November|December)|(January|February|March|April|May|June|July|August|September|October|November|December) \d{1,2}(st|nd|rd|th)?)$')
+TITLE = re.compile(r'^(Dr|Mr|Mrs|Ms|Monsieur|Madame|Herr|Frau|Doña|Don|Lic)\.? ')
+ROLES = {'doctor', 'dentist', 'cardiologist', 'pediatrician', 'paediatrician', 'physiotherapist', 'therapist', 'teacher', 'tutor',
+         'director', 'headteacher', 'partner', 'advisor', 'adviser', 'leader', 'instructor', 'coach', 'technician',
+         'representative', 'lawyer', 'accountant', 'mechanic', 'stylist', 'hairdresser', 'agent', 'optometrist', 'vet'}
+
+
 def mine(phrase):
     """A need phrase (written about the owner in the third person) as the owner says it."""
     import re
@@ -48,6 +55,30 @@ def for_person(pid, name, stories, truth, sessions, have):
     rnd = random.Random(num('questions', pid))
     q = []
     tby = {t['id']: t for t in truth}
+    bio = next(b for p_, n_, b, w_ in PEOPLE if p_ == pid)
+    # household names in the bio: "two children (Inès 9, Hugo 5)", "married to Julien", "their daughter Elsa (7)"
+    nfc = lambda x: unicodedata.normalize('NFC', x)
+    names_in_bio = set(re.findall(r"(?:\(|, )([A-Z][a-z" + "\u00e0-\u00ff" + r"-]+) \d", nfc(bio))) | set(
+        re.findall(r"(?:married to|partner|son|daughter|grandson|granddaughter|wife|husband|brother|sister|newborn),? ([A-Z][a-z" + "\u00e0-\u00ff" + r"-]+)", nfc(bio)))
+
+    def my(th):
+        """"my dentist", but "Inès's music teacher" and "Hugo's pediatrician" (a person of the household)."""
+        th = unicodedata.normalize('NFC', th)
+        w = th.split()[0]
+        if w.endswith("'s") and w[:1].isupper():
+            return th
+        if w in names_in_bio:
+            return f"{w}'s {th[len(w) + 1:]}"
+        return 'my ' + th
+
+    def wh(th, vals):
+        """When for a dated thing (an appointment whose value is a date), Who for a person, else What."""
+        if any(DATE.match(x.strip()) for x in vals) and not re.search(r'date|birthday|deadline|day', th, re.I):
+            return 'When'
+        if (thing_words(th) and sorted(thing_words(th), key=th.lower().find)[-1] in ROLES) or any(TITLE.match(x) for x in vals):
+            return 'Who'
+        return 'What'
+
 
     def add(kind, story, question, gold, **extra):
         # ids stay the same when another storyline is skipped: person, storyline, the question's place in it
@@ -77,26 +108,28 @@ def for_person(pid, name, stories, truth, sessions, have):
             continue  # a step of this storyline is in a session that was never kept
         p, v, th, t = s['pattern'], s['values'], s['thing'], tby[s['id']]
         o = (s['other_person'] or '').split(' (')[0]
+        W = wh(th, v)
         if p == 'plain':
-            add('fact', s['id'], f'What is my {th}?', v[0])
+            add('fact', s['id'], f'{W} is {my(th)}?', v[0])
         elif p == 'change':
-            add('now', s['id'], f'What is my {th} now?', f'{v[1]} (it was {v[0]})')
-            add('before', s['id'], f'What was my {th} before it changed?', v[0])
-            add('when', s['id'], f'When did my {th} change to {v[1]}?', date_of(sessions, s['id'], 1))
+            add('now', s['id'], f'{W} is {my(th)} now?', f'{v[1]} (it was {v[0]})')
+            add('before', s['id'], f'{W} was {my(th)} before it changed?', v[0])
+            if W != 'When':  # "when did my appointment change to 9 March" mixes the two dates up
+                add('when', s['id'], f'When did {my(th)} change to {v[1]}?', date_of(sessions, s['id'], 1))
         elif p == 'heart':
-            add('now', s['id'], f'What is my {th} now?', f'{v[0]} (I switched to {v[1]}, then went back)')
+            add('now', s['id'], f'{W} is {my(th)} now?', f'{v[0]} (I switched to {v[1]}, then went back)')
         elif p == 'correction':
-            add('now', s['id'], f'What is my {th}?', f'{v[1]} ({v[0]} was a slip, corrected on {t["corrected_on"]})')
+            add('now', s['id'], f'{W} is {my(th)}?', f'{v[1]} ({v[0]} was a slip, corrected on {t["corrected_on"]})')
         elif p == 'tentative_dropped':
-            add('considered', s['id'], f'Did I change my {th} to {v[1]}?', f'No: I only thought about it; it is still {v[0]}')
+            add('considered', s['id'], f'Did I change {my(th)} to {v[1]}?', f'No: I only thought about it; it is still {v[0]}')
         elif p == 'tentative_confirmed':
-            add('now', s['id'], f'What is my {th} now?', f'{v[1]} (changed from {v[0]} after thinking about it)')
-            add('when', s['id'], f'When did I go ahead with {v[1]} for my {th}?', date_of(sessions, s['id'], 2))
+            add('now', s['id'], f'{W} is {my(th)} now?', f'{v[1]} (changed from {v[0]} after thinking about it)')
+            add('when', s['id'], f'When did I go ahead with {v[1]} for {my(th)}?', date_of(sessions, s['id'], 2))
         elif p == 'hypothetical':
-            add('now', s['id'], f'What is my {th}?', f'{v[0]} ({v[1]} was only a what-if)')
+            add('now', s['id'], f'{W} is {my(th)}?', f'{v[0]} ({v[1]} was only a what-if)')
         elif p == 'lookalike':
-            add('whose', s['id'], f'What is my {th}?', f'{v[0]} ({v[1]} is {o}\'s)')
-            add('whose', s['id'], f"What is {o}'s {th}?", v[1])
+            add('whose', s['id'], f'{W} is {my(th)}?', f'{v[0]} ({v[1]} is {o}\'s)')
+            add('whose', s['id'], f"{W} is {o}'s {th}?", v[1])
         elif p == 'need_met':
             add('need', s['id'], f'Am I still looking for {mine(v[0])}?', f'No: sorted on {t["need"]["met_on"]} ({v[1]})')
     gone = {x['storyline'] for x in skipped if x['person'] == pid}
@@ -104,8 +137,9 @@ def for_person(pid, name, stories, truth, sessions, have):
     if open_needs:
         add('needs_now', None, 'Which of my needs are still open: things I am looking for someone to provide or help with (a person, a service, an item)? List them all.',
             '; '.join(s['values'][0] for s in open_needs), note='not: needs already solved, or needs of someone else')
-    used = ' '.join(s['thing'].lower() for s in stories)
-    for th in rnd.sample([a for a in ABSENT if a not in used], 3):
+    spell = lambda t: thing_words(t.replace('licence', 'license').replace('favourite', 'favorite'))
+    used = set().union(*(spell(s['thing']) for s in stories))
+    for th in rnd.sample([a for a in ABSENT if not (spell(a) - {'first', 'best', 'number'}) & used], 3):
         add('none', None, f'What is my {th}?', 'not in memory')
     return q
 

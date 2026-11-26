@@ -1,0 +1,29 @@
+{
+ "L04-S10-1": {
+  "drop": "the value (a person's name) is not a gift"
+ },
+ "L04-S25-1": {
+  "drop": "'pension office contact' can be confused with 'pension office phone number' (S28)"
+ },
+ "L04-S03-1": {
+  "question": "Where do I do my weekly grocery shopping?"
+ },
+ "L04-S06-1": {
+  "question": "Where do I submit my pension documents?"
+ },
+ "L05-S15-1": {
+  "question": "Where is my father's retirement party now?"
+ },
+ "L06-S28-1": {
+  "question": "Which banking app do I use?"
+ },
+ "L06-S28-2": {
+  "question": "Which banking app does Sipho use?"
+ },
+ "L05-S15-2": {
+  "question": "Where was my father's retirement party going to be before it changed?"
+ },
+ "L05-S15-3": {
+  "question": "When did my father's retirement party move to Lotte Hotel World?"
+ }
+}

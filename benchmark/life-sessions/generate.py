@@ -394,6 +394,9 @@ def fill_rounds(a, pid, name, bio, work, sk, restart, curated, done=None):
                     kw = c['keyword'].lower()
                     if any(re.search(r'(?<!\w)' + re.escape(kw) + r'(?!\w)', t.lower()) for t in [g['thing']] + g['values']):
                         probs.append(f"conflicts with a need: {name.split()[0]} is still looking for {c['values'][0]}; pick another thing")
+                    # a value named in a need ("the Easter week she is in Lisbon") could not be kept back until its day
+                    elif any(has(c['values'][0].lower(), v) for v in g['values'] if v[:1].isupper()):
+                        probs.append(f"a value is named in a need ({c['values'][0]}): pick other values")
             if probs:
                 notes[s['id']] = probs
             else:

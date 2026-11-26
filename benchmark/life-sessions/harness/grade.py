@@ -18,7 +18,8 @@ LETTERS = 'XYZWVUTS'
 RULES = ('Grade each answer against the reference. 1 = correct and complete; 0.5 = partly correct or missing an asked-for '
          'part; 0 = wrong, invented, or "not in memory" when the reference has an answer. When the reference is "not in '
          'memory", 1 only if the answer says the information is not available. Extra detail that does not contradict the '
-         'reference is fine. Dates may be written in any format.')
+         'reference is fine. Dates may be written in any format, with or without the year or weekday; a date is wrong only if '
+         'the day or month differs.')
 
 
 def load(run, arm):
@@ -97,7 +98,7 @@ def score(run, files, questions):
             if len(vals) > 1 and max(vals.values()) - min(vals.values()) > 0.5:
                 disagreements.append((qid, arm, vals))
     n = len(key)
-    lines = ['# Agent-session benchmark: results', '', f'{n} questions. Scores in % (1 / 0.5 / 0 per answer).', '',
+    lines = ['# Life-session benchmark: results', '', f'{n} questions. Scores in % (1 / 0.5 / 0 per answer).', '',
              '| Grader | ' + ' | '.join(arms) + ' |', '|---|' + '---:|' * len(arms)]
     for g in graders:
         lines.append(f'| {g} | ' + ' | '.join(f'{100 * tot[g][a] / n:.0f}' for a in arms) + ' |')
@@ -116,7 +117,7 @@ if __name__ == '__main__':
     questions = Path(__file__).resolve().parent.parent / 'out' / 'questions.json'  # life sessions: generated from the truth
     if '--questions' in sys.argv:
         questions = Path(sys.argv[sys.argv.index('--questions') + 1])
-    rest = [a for a in sys.argv[3:] if not a.startswith('--') and a != str(questions)]
+    rest = [a for a in sys.argv[3:] if not a.startswith('--') and Path(a).resolve() != questions.resolve()]
     if cmd == 'make':
         make(run, rest, questions)
     elif cmd == 'local':

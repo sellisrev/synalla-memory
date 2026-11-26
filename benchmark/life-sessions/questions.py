@@ -121,6 +121,18 @@ def main():
         sessions = json.load(open(os.path.join(root, 'index.json'), encoding='utf-8'))
         have = {x['n'] for x in sessions if os.path.exists(os.path.join(root, 'sessions', f"{x['n']:03d}.jsonl"))}
         allq += for_person(pid, name, stories, truth, sessions, have)
+    # the wording review (questions_review.json, published): {id: {"question": new wording} | {"drop": reason}}
+    rp = os.path.join(OUT, 'questions_review.json')
+    review = json.load(open(rp, encoding='utf-8')) if os.path.exists(rp) else {}
+    unknown = set(review) - {q['id'] for q in allq}
+    assert not unknown, f'review names unknown questions: {sorted(unknown)}'
+    for q in allq:
+        r = review.get(q['id'], {})
+        if 'question' in r:
+            q['plain'], q['question'] = q['question'], r['question']
+        if 'drop' in r:
+            skipped.append({'person': q['person'], 'storyline': q['storyline'], 'question': q['question'], 'why': 'review: ' + r['drop']})
+    allq = [q for q in allq if 'drop' not in review.get(q['id'], {})]
     json.dump(allq, open(os.path.join(OUT, 'questions.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     json.dump(skipped, open(os.path.join(OUT, 'questions_skipped.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     print(f'{len(skipped)} storylines not asked (could be confused with another)')

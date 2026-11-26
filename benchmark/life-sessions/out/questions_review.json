@@ -25,5 +25,44 @@
  },
  "L05-S15-3": {
   "question": "When did my father's retirement party move to Lotte Hotel World?"
+ },
+ "L09-S19-1": {
+  "question": "Who is my pediatrician?"
+ },
+ "L09-S08-1": {
+  "question": "When is my jazz concert?"
+ },
+ "L09-S06-1": {
+  "question": "When is my mother-in-law's visit?"
+ },
+ "L09-S16-1": {
+  "question": "When is my father's weekend visit now?"
+ },
+ "L09-S16-2": {
+  "question": "When was my father's weekend visit before it changed?"
+ },
+ "L10-S26-1": {
+  "drop": "the other person's trainer is named after that person (Ananya Reddy for Ananya): confusing"
+ },
+ "L10-S26-2": {
+  "drop": "the other person's trainer is named after that person (Ananya Reddy for Ananya): confusing"
+ },
+ "L10-S18-1": {
+  "question": "Who is my bookkeeper now?"
+ },
+ "L10-S14-1": {
+  "question": "Who is my chartered accountant for tax filing now?"
+ },
+ "L10-S14-2": {
+  "question": "Who was my chartered accountant for tax filing before it changed?"
+ },
+ "L10-S14-3": {
+  "question": "When did my chartered accountant for tax filing change to Mehta & Co Chartered Accountants?"
+ },
+ "L10-S19-1": {
+  "question": "How much has my start-up raised in this round?"
+ },
+ "L10-S05-1": {
+  "question": "Where is my annual health checkup?"
  }
 }

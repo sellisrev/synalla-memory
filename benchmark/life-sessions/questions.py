@@ -169,7 +169,7 @@ def main():
     allq = [q for q in allq if 'drop' not in review.get(q['id'], {})]
     json.dump(allq, open(os.path.join(OUT, 'questions.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     json.dump(skipped, open(os.path.join(OUT, 'questions_skipped.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
-    print(f'{len(skipped)} storylines not asked (could be confused with another)')
+    print(f'{len(skipped)} storylines or questions not asked (reasons in questions_skipped.json)')
     by = {}
     for x in allq:
         by[x['type']] = by.get(x['type'], 0) + 1

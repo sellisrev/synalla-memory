@@ -14,7 +14,7 @@ HPY='C:\AI\hermes\installs\4cc947a3e5ab212d\environments\711a9273c71745809ddc303
 until [ -f $Q ] && grep -q "test DONE" benchmark/life-sessions/gen.log; do sleep 60; done
 cp $Q $R/questions.json
 say "build synalla $V"; node --import ./tools/ts-resolve.mjs benchmark/life-sessions/harness/synalla.mjs build $VA >> $R/build_$V.log 2>&1 || { say "FAILED build"; exit 1; }
-say "wants"; node --import ./tools/ts-resolve.mjs benchmark/life-sessions/harness/synalla.mjs wants >> $R/wants.log 2>&1 || { say "FAILED wants"; exit 1; }
+say "wants"; node --import ./tools/ts-resolve.mjs benchmark/life-sessions/harness/synalla.mjs wants $VA >> $R/wants.log 2>&1 || { say "FAILED wants"; exit 1; }
 until [ -f $R/REVIEWED ]; do sleep 60; done  # the wording review of the questions (questions_review.json) is applied
 cp $Q $R/questions.json
 DARGS=$(cat $R/D_ARGS 2>/dev/null); say "answer D $DARGS"; node --import ./tools/ts-resolve.mjs benchmark/life-sessions/harness/synalla.mjs answer $VA $DARGS --arm D --questions $Q --out $R/answers_D.jsonl >> $R/answer_D.log 2>&1 || { say "FAILED D"; exit 1; }

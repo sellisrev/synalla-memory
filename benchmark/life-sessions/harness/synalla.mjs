@@ -43,7 +43,8 @@ const args = process.argv.slice(2);
 const opt = (name, d) => { const i = args.indexOf(name); return i >= 0 ? args[i + 1] : d; };
 const log = s => process.stderr.write(`${new Date().toISOString()} ${s}\n`);
 const embedder = httpEmbedder({ url: 'http://127.0.0.1:5941', dim: DIM });
-const open = p => { mkdirSync(join(WORK, p), { recursive: true }); return MemoryStore.open(join(WORK, p, 'memory.db'), { key: keyFor(p), dim: DIM }); };
+// only build makes a store: wants and answer on a missing one would read an empty store and score nothing
+const open = (p, make = false) => { if (!make && !existsSync(join(WORK, p, 'memory.db'))) throw new Error(`no store at ${join(WORK, p)} (built? --variant?)`); mkdirSync(join(WORK, p), { recursive: true }); return MemoryStore.open(join(WORK, p, 'memory.db'), { key: keyFor(p), dim: DIM }); };
 
 async function embedAll(store) {
   let n = 0;
@@ -67,7 +68,7 @@ async function build() {
     // a finished person is skipped: re-importing replaces every session and re-extracts its facts
     const done = join(WORK, p, 'built');
     if (existsSync(done) && !args.includes('--no-facts')) { log(`${p} built before, skipped`); continue; }
-    const store = open(p);
+    const store = open(p, true);
     try {
       const r = await importClaudeCode(store, new Map(), join(OUT, p));
       if (r.failed.length) throw new Error(`${p}: ${r.failed.length} sessions failed to import: ${r.failed[0].error}`);

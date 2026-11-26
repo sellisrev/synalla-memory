@@ -9,7 +9,7 @@
 // model with --agent-sessions (the sessions are the persona's own records here), then fact vectors.
 // answer: arm A = passages only (the shipped default reads no facts from agent sessions); arm D = passages + facts.
 // The answer prompt and model settings are those of agent-network/experiments/memory_ab/answer.py.
-import { existsSync, mkdirSync, readFileSync, appendFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, appendFileSync, writeFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
@@ -64,6 +64,9 @@ async function build() {
   const only = opt('--persona');
   for (const p of Object.keys(OWNERS)) {
     if (only && p !== only) continue;
+    // a finished person is skipped: re-importing replaces every session and re-extracts its facts
+    const done = join(WORK, p, 'built');
+    if (existsSync(done) && !args.includes('--no-facts')) { log(`${p} built before, skipped`); continue; }
     const store = open(p);
     try {
       const r = await importClaudeCode(store, new Map(), join(OUT, p));
@@ -76,6 +79,7 @@ async function build() {
         onItem: (id, kept, dropped, err) => log(`${p} facts ${id.slice(-12)} kept ${kept} dropped ${dropped}${err ? ' ERROR ' + err.slice(0, 120) : ''}`) });
       log(`${p} extraction: ${res.items} items, ${res.facts} facts, ${res.failed} failed, ${Math.round((Date.now() - t0) / 1000)} s; embedded ${await embedAll(store)}`);
       if (res.failed > 0) throw new Error(`${p}: ${res.failed} items failed extraction`);
+      writeFileSync(done, new Date().toISOString() + '\n');
     } finally { store.close(); }
   }
 }

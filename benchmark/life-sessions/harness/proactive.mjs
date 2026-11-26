@@ -40,8 +40,41 @@ const net = JSON.parse(readFileSync(join(OUT, 'network.json'), 'utf8'));
 const entries = net.members.flatMap(m => m.entries);
 const model = waiting(httpChatModel({ url: 'http://127.0.0.1:9090', model: modelName, schema: { name: 'wants', schema: WANTS_SCHEMA } }));
 
+// --from-store <dir> (or the path in <out dir>/PROACTIVE_FROM): replay from QA stores that were already read for wants
+// (synalla.mjs wants: the same scan, one item at a time in date order, wants dated by their record). After each item's
+// day, the wants open then (opened on or before it, not met by it) are matched as below: the same proposals as a fresh
+// scan, without reading every session a second time.
+const pf = join(dirname(outFile), 'PROACTIVE_FROM');
+const fromStore = opt('--from-store') ?? (existsSync(pf) ? readFileSync(pf, 'utf8').trim() : null);
+if (fromStore) log(`replaying wants from the stores in ${fromStore}`);
+
 for (const [pid, [owner, city]] of Object.entries(PEOPLE)) {
   if ((opt('--person') && pid !== opt('--person')) || done.has(pid) || !existsSync(join(OUT, pid, 'sessions'))) continue;
+  if (fromStore) {
+    const store = MemoryStore.open(join(fromStore, pid, 'memory.db'), { key: keyFor(pid), dim: 1024 });
+    try {
+      if (store.pendingWantScan(1, { agentSessions: true }).length) throw new Error(`${pid}: the store in ${fromStore} was not fully read for wants`);
+      const wants = store.allWants();
+      const days = [...new Set([...store.items()].map(i => i.date.slice(0, 10)))].sort();
+      const proposed = new Set();
+      for (const d of days) {
+        const open = wants.filter(w => w.opened_at <= d && (w.closed_at === null || w.closed_at > d));
+        for (const m of matchWants(open, entries, Math.floor(Date.parse(d) / 1000), { place: [city] })) {
+          const w = open.find(x => x.wid === m.wid);
+          for (const e of m.entries) {
+            const k = `${m.wid}|${e.id}`;
+            if (proposed.has(k)) continue;
+            proposed.add(k);
+            appendFileSync(outFile, JSON.stringify({ type: 'proposal', person: pid, date: d, wid: w.wid, what: w.what, topic: w.topic, confidence: w.confidence, entry: e.id }) + '\n');
+          }
+        }
+      }
+      for (const w of wants) appendFileSync(outFile, JSON.stringify({ type: 'want', person: pid, ...w }) + '\n');
+      appendFileSync(outFile, JSON.stringify({ type: 'done', person: pid, items: days.length, wants: wants.length, proposals: proposed.size, replayed_from: fromStore }) + '\n');
+      log(`${pid}: replayed ${wants.length} wants, ${proposed.size} proposals`);
+    } finally { store.close(); }
+    continue;
+  }
   const dir = join(WORK, pid);
   rmSync(dir, { recursive: true, force: true });
   mkdirSync(dir, { recursive: true });

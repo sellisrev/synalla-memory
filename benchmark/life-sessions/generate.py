@@ -549,6 +549,18 @@ def carries(text, v):
     return bool(toks) and all(has(text, w) for w in toks)
 
 
+def names(raw, v):
+    """Whether the raw text names value v. A one-word capitalised value that is also an everyday word (the shop
+    "Next", the city "Nice") counts only with its capital and not at the start of a sentence."""
+    if ' ' not in v.strip() and v[:1].isupper() and v[1:].islower():
+        for m in re.finditer(r'\b' + re.escape(v) + r'\b', raw):
+            before = raw[:m.start()].rstrip()
+            if before and before[-1] not in '.!?:"*-':
+                return True
+        return False
+    return has(raw.lower(), v)
+
+
 def has(text, v):
     return re.search(r'(?<![\w])' + re.escape(v.lower()) + r'(?![\w])', text) is not None
 
@@ -582,9 +594,10 @@ Write the way people talk, not in labels. Do not mention that this is synthetic.
 
 
 def session_problems(stories, sessions, x, s):
-    text = ' '.join(t['text'] for t in s['turns']).lower()
+    raw = '\n'.join(t['text'] for t in s['turns'])
+    text = raw.replace('\n', ' ').lower()
     probs = [f'missing {m!r}' for st in x['steps'] for m in st['must'] if not carries(text, m)]
-    probs += [f'states {v!r}' for v in forbidden(stories, sessions, x) if has(text, v)]
+    probs += [f'states {v!r}' for v in forbidden(stories, sessions, x) if names(raw, v)]
     if any(st['said_late'] for st in x['steps']):
         for st in x['steps']:
             if st['said_late']:

@@ -1,0 +1,13 @@
+Synalla commercial licence
+
+Copyright 2026 Serge Versillé
+
+The files marked "AGPL-3.0-only OR LicenseRef-Synalla-Commercial" are also
+available under a commercial licence from the copyright holder. That licence
+is granted only by a separate written agreement signed by the copyright holder.
+This file grants no rights by itself.
+
+Without such an agreement, these files may be used only under the GNU Affero
+General Public License, version 3 (see LICENSES/AGPL-3.0-only.txt).
+
+To ask for a commercial licence, see LICENSING.md.

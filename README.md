@@ -58,4 +58,4 @@ MCP tools: `recall`, `remember`, `facts_about`, `what_changed`. Setting it up in
 
 ## Licence
 
-AGPL-3.0-only, or a commercial licence.
+AGPL-3.0-only, or a commercial licence: see [LICENSING.md](LICENSING.md).

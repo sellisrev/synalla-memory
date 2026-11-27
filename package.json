@@ -21,7 +21,10 @@
     "dist",
     "bin",
     "README.md",
-    "docs"
+    "docs",
+    "LICENSE",
+    "LICENSES",
+    "LICENSING.md"
   ],
   "scripts": {
     "test": "node --import ./tools/ts-resolve.mjs --test --test-timeout=120000 --test-force-exit \"test/*.test.js\"",

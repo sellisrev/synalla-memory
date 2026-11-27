@@ -18,18 +18,20 @@ const THINK = process.env.SCRUB_THINK === '1'; // thinking on: about 15 s a line
 const URL_ = process.env.SCRUB_MODEL_URL ?? 'http://127.0.0.1:9090/v1/chat/completions', MODEL = process.env.SCRUB_MODEL ?? 'fast';
 // One cache folder per model (the first runs, with `fast`, used the folder itself).
 const CACHE = MODEL === 'fast' ? join(HERE, 'cache') : join(HERE, 'cache', MODEL); mkdirSync(CACHE, { recursive: true });
+// The answer's shape is enforced, as in src/checks.ts (a small model may misspell keys without it).
+const SCHEMA = { type: 'json_schema', json_schema: { name: 'check', strict: true, schema: { type: 'object', properties: { secrets: { type: 'array', items: { type: 'string' } } }, required: ['secrets'], additionalProperties: false } } };
 export const stats = { asked: 0, cached: 0, secs: 0 };
 
 const kinds = t => +/[A-Za-z]/.test(t) + +/[0-9]/.test(t) + +/[^A-Za-z0-9]/.test(t);
 const candidate = line => line.split(/\s+/).some(t => t.length >= 8 && kinds(t.replace(/[.,;:!?)"'»]+$/, '')) >= 2);
 
 async function ask(context, line) {
-  const key = createHash('sha256').update(PROMPT + '\0' + context + '\0' + line + (THINK ? '' : '\0nothink')).digest('hex');
+  const key = createHash('sha256').update(PROMPT + '\0' + context + '\0' + line + (THINK ? '' : '\0nothink') + '\0schema').digest('hex');
   const f = join(CACHE, key + '.json');
   if (existsSync(f)) { stats.cached++; return JSON.parse(readFileSync(f, 'utf8')); }
   const t0 = Date.now();
   const r = await fetch(URL_, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({
-    model: MODEL, temperature: 0, max_tokens: THINK ? 1500 : 300, ...(THINK ? {} : { chat_template_kwargs: { enable_thinking: false } }), response_format: { type: 'json_object' },
+    model: MODEL, temperature: 0, max_tokens: THINK ? 1500 : 300, ...(THINK ? {} : { chat_template_kwargs: { enable_thinking: false } }), response_format: SCHEMA,
     messages: [{ role: 'system', content: PROMPT }, { role: 'user', content: (context ? `CONTEXT:\n${context}\n\n` : '') + `LINE:\n${line}` }] }) });
   const j = await r.json(); const txt = j.choices?.[0]?.message?.content ?? '';
   let secrets = [];

@@ -14,13 +14,15 @@ const HERE = dirname(fileURLToPath(import.meta.url));
 const PROMPT = readFileSync(join(HERE, 'prompt.txt'), 'utf8');
 const CACHE = join(HERE, 'cache'); mkdirSync(CACHE, { recursive: true });
 const URL_ = process.env.INJ_MODEL_URL ?? 'http://127.0.0.1:9090/v1/chat/completions', MODEL = process.env.INJ_MODEL ?? 'fast';
+// The answer's shape is enforced, as in src/checks.ts (Gemma 4 E4B wrote "instruct_ai" without it).
+const SCHEMA = { type: 'json_schema', json_schema: { name: 'check', strict: true, schema: { type: 'object', properties: { instructs_ai: { type: 'boolean' } }, required: ['instructs_ai'], additionalProperties: false } } };
 let asked = 0, secs = 0;
 async function ask(text) {
-  const f = join(CACHE, createHash('sha256').update(PROMPT + '\0' + MODEL + '\0' + text).digest('hex') + '.json');
+  const f = join(CACHE, createHash('sha256').update(PROMPT + '\0' + MODEL + '\0schema\0' + text).digest('hex') + '.json');
   if (existsSync(f)) return JSON.parse(readFileSync(f, 'utf8'));
   const t0 = Date.now();
   const r = await fetch(URL_, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ model: MODEL, temperature: 0,
-    max_tokens: 50, chat_template_kwargs: { enable_thinking: false }, messages: [{ role: 'system', content: PROMPT }, { role: 'user', content: text }] }) });
+    max_tokens: 50, chat_template_kwargs: { enable_thinking: false }, response_format: SCHEMA, messages: [{ role: 'system', content: PROMPT }, { role: 'user', content: text }] }) });
   const j = await r.json(); const t = j.choices?.[0]?.message?.content ?? '';
   const yes = /"instructs_ai"\s*:\s*true/.test(t);
   asked++; secs += (Date.now() - t0) / 1000; writeFileSync(f, JSON.stringify(yes)); return yes;

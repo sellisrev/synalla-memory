@@ -20,3 +20,11 @@ Models: Gemma 4 E4B and Gemma 4 E2B (Q4_0, llama.cpp b12613), the same prompts a
 
 A model that meets every bar may be recommended. If none does, the README says so and keeps the large model as the
 measured setup. Changing a prompt for a small model would need a new, unseen set for the final number.
+
+## Change before the reported runs (27 Nov, 22:15)
+
+The first E4B pass on the injection set marked 0 of 798 records: E4B answers `{"instruct_ai": true}`, the key without
+its "s", and the parser read every answer as no. The secrets pass had no such failure on set 4 (96.8% caught, 4.6% of
+harmless text changed), but could have it. Fix, the same for every model and in the package: each answer's shape is
+enforced with a JSON schema (`{"secrets": [...]}`, `{"instructs_ai": true|false}`), a grammar on llama.cpp. The prompts
+are unchanged. Every model below, the 26B one included, is measured again with it, so all numbers compare.

@@ -29,7 +29,13 @@ Decide whether this record contains such text aimed at an AI assistant, agent or
 Answer with JSON only: {"instructs_ai": true} or {"instructs_ai": false}.
 `;
 
-export interface CheckModel { ask(system: string, user: string, json: boolean, maxTokens: number): Promise<string> }
+/** `json`: true for any JSON object, or a JSON schema the answer must follow (a grammar on llama.cpp). */
+export interface CheckModel { ask(system: string, user: string, json: boolean | object, maxTokens: number): Promise<string> }
+
+// The answers' shapes, enforced: a small model may otherwise misspell a key ("instruct_ai", found with Gemma 4 E4B,
+// benchmark/small_models.md) and its every answer would read as no.
+const SECRETS_SCHEMA = { type: 'object', properties: { secrets: { type: 'array', items: { type: 'string' } } }, required: ['secrets'], additionalProperties: false };
+const INJECTION_SCHEMA = { type: 'object', properties: { instructs_ai: { type: 'boolean' } }, required: ['instructs_ai'], additionalProperties: false };
 
 /**
  * An OpenAI-compatible chat model (llama.cpp, llama-swap, Ollama, or a cloud API). Only its own host is reachable; a
@@ -48,7 +54,8 @@ export function checkModel(url: string, model: string, opts: { cloud?: boolean; 
         model, temperature: 0, max_tokens: maxTokens,
         // llama.cpp's switch for thinking models; cloud APIs may refuse unknown fields, so it is sent only locally.
         ...(local ? { chat_template_kwargs: { enable_thinking: false } } : {}),
-        ...(json ? { response_format: { type: 'json_object' } } : {}),
+        ...(json === true ? { response_format: { type: 'json_object' } } : json
+          ? { response_format: { type: 'json_schema', json_schema: { name: 'check', schema: json, strict: true } } } : {}),
         messages: [{ role: 'system', content: system }, { role: 'user', content: user }] }) });
       if (!r.ok) throw new Error(`check model answered ${r.status}`);
       const body = (await r.json()) as { choices?: { message?: { content?: string } }[] };
@@ -85,7 +92,7 @@ export async function scrubWithModel(text: string, m: CheckModel, memo = new Map
     if (!found) {
       found = [];
       try {
-        const o = JSON.parse((await m.ask(SECRET_PROMPT, (ctx ? `CONTEXT:\n${ctx}\n\n` : '') + `LINE:\n${line}`, true, 300))
+        const o = JSON.parse((await m.ask(SECRET_PROMPT, (ctx ? `CONTEXT:\n${ctx}\n\n` : '') + `LINE:\n${line}`, SECRETS_SCHEMA, 300))
           .replace(/^```(?:json)?\s*|\s*```$/g, '')) as { secrets?: unknown };
         if (Array.isArray(o.secrets)) found = o.secrets.filter((s): s is string => typeof s === 'string');
       } catch { /* an unreadable answer adds nothing: the rules' result stands */ }
@@ -107,5 +114,5 @@ export async function scrubItemWithModel<T extends { title: string; text: string
 
 /** True when the model reads the record as speaking to an AI assistant. Errors count as no answer (null). */
 export async function speaksToAgentModel(text: string, m: CheckModel): Promise<boolean | null> {
-  try { return /"instructs_ai"\s*:\s*true/.test(await m.ask(INJECTION_PROMPT, text.slice(0, 12000), false, 50)); } catch { return null; }
+  try { return /"instructs_ai"\s*:\s*true/.test(await m.ask(INJECTION_PROMPT, text.slice(0, 12000), INJECTION_SCHEMA, 50)); } catch { return null; }
 }

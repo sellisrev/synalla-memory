@@ -85,7 +85,7 @@ test('import with check-with: the second pass and the injection mark reach the s
     e.o.length = 0;
     assert.equal(await main(['recall', 'cellar door code'], e), 0);
     assert.doesNotMatch(e.o.join(''), /Hq8vT3nLw2Rp/);
-    assert.match(e.o.join(''), /door code for the cellar is \[secret:(?:model|[a-z-]+)\]/);
+    assert.match(e.o.join(''), /door code for the cellar is ⟦door code \d+⟧/);
     e.o.length = 0;
     assert.equal(await main(['recall', 'dentist Leoben'], e), 0);
     assert.match(e.o.join(''), /Synalla: this record speaks to an AI assistant \(the local check model read it so\)/);
@@ -142,7 +142,7 @@ test('with check-with, agent sessions get the second pass too, and are never ask
     assert.equal(await main(['import'], e), 0, e.r.join(''));
     e.o.length = 0;
     assert.equal(await main(['recall', 'staging deploy phrase'], e), 0);
-    assert.match(e.o.join(''), /staging box still takes \[secret:model\] as the deploy phrase/);
+    assert.match(e.o.join(''), /staging box still takes ⟦secret \d+⟧ as the deploy phrase/);
     assert.equal(injectionAsked.length, 0);
   } finally { srv.close(); rmSync(root, { recursive: true, force: true }); }
 });
@@ -177,6 +177,6 @@ test('check-with builtin: the sidecar starts once to set it up, runs during an i
     assert.equal(running, 0);
     e.o.length = 0;
     assert.equal(await main(['recall', 'cellar door code'], e), 0);
-    assert.match(e.o.join(''), /door code for the cellar is \[secret:model\]/);
+    assert.match(e.o.join(''), /door code for the cellar is ⟦door code \d+⟧/);
   } finally { srv.close(); rmSync(root, { recursive: true, force: true }); }
 });

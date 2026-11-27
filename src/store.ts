@@ -7,13 +7,15 @@
 // vector index. Vector search is brute force over an int8 copy held in RAM (about 1 KB per vector at 1024 dimensions,
 // so 200k chunks fit in about 200 MB), which is the measured CPU default's scale.
 //
-// Every text is scrubbed of secrets before it is written (scrub.ts), so the store, any extraction model and any
-// backup never see them. The key is 32 random bytes held by the caller (the OS keychain in the CLI); a wrong key
+// Every text has its secrets and its money and ID numbers replaced by typed stand-ins before it is written
+// (pseudonyms.ts): "⟦IBAN 2⟧". The values are kept in the encrypted table `pseudonyms` (keys in a provider's format are
+// dropped), so text read from the store, by an agent or an extraction model, carries only stand-ins. The key is 32 random bytes held by the caller (the OS keychain in the CLI); a wrong key
 // fails at open.
 
 import { createRequire } from 'node:module';
-import { createHash } from 'node:crypto';
+import { createHash, createHmac } from 'node:crypto';
 import { scrub } from './scrub.ts';
+import { pseudonymize, reveal, standIn, STAND_IN, type Vault } from './pseudonyms.ts';
 import { ftsQuery, fuse, CANDIDATES, DEFAULT_TOP } from './fusion.ts';
 
 const require = createRequire(import.meta.url);
@@ -40,6 +42,8 @@ export interface Item {
   id: string; date: string; source: string; title?: string; chunks: readonly string[];
   /** The whole text, for the readable export (chunks overlap and carry headers). */
   text?: string;
+  /** Further values to hide wherever they occur (the check model's second pass). */
+  hidden?: readonly string[];
 }
 export interface StoredItem { id: string; date: string; source: string; title: string; text: string }
 export interface Chunk { cid: number; item: string; n: number; date: string; source: string; text: string }
@@ -80,6 +84,8 @@ const SCHEMA = `
 CREATE TABLE IF NOT EXISTS meta(k TEXT PRIMARY KEY, v TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS items(id TEXT PRIMARY KEY, date TEXT NOT NULL, source TEXT NOT NULL, title TEXT NOT NULL,
   text TEXT NOT NULL DEFAULT '');
+CREATE TABLE IF NOT EXISTS pseudonyms(token TEXT PRIMARY KEY, label TEXT NOT NULL, n INTEGER NOT NULL,
+  mac TEXT NOT NULL UNIQUE, value TEXT);
 CREATE TABLE IF NOT EXISTS item_checks(item TEXT PRIMARY KEY REFERENCES items(id) ON DELETE CASCADE,
   rules_hash TEXT NOT NULL, speaks_to_agent INTEGER);
 CREATE TABLE IF NOT EXISTS chunks(cid INTEGER PRIMARY KEY, item TEXT NOT NULL REFERENCES items(id) ON DELETE CASCADE,
@@ -222,9 +228,30 @@ export class MemoryStore {
   #db: Db;
   #chunkVecs: VectorIndex;
   #factVecs: VectorIndex;
+  #vault: Vault;
+  /** Keyed hash of a hidden value, so the same value finds its stand-in again and the table has no plain index. */
+  #mac: (v: string) => string;
 
-  private constructor(db: Db, dim: number, path: string) {
+  private constructor(db: Db, dim: number, path: string, key: Uint8Array) {
     this.#db = db; this.dim = dim; this.path = path;
+    const macKey = createHmac('sha256', Buffer.from(key)).update('synalla pseudonyms').digest();
+    this.#mac = v => createHmac('sha256', macKey).update(v).digest('hex');
+    this.#vault = {
+      standInFor: (value, label, keep, allocate) => {
+        const m = this.#mac(value);
+        const r = db.prepare('SELECT token FROM pseudonyms WHERE mac = ?').get(m) as { token: string } | undefined;
+        if (r) return r.token;
+        if (!allocate) return null;
+        const n = ((db.prepare('SELECT max(n) AS n FROM pseudonyms WHERE label = ?').get(label) as { n: number | null }).n ?? 0) + 1;
+        const token = standIn(label, n);
+        db.prepare('INSERT INTO pseudonyms(token, label, n, mac, value) VALUES (?, ?, ?, ?, ?)').run(token, label, n, m, keep ? value : null);
+        return token;
+      },
+      valueOf: t => {
+        const r = db.prepare('SELECT value FROM pseudonyms WHERE token = ?').get(t) as { value: string | null } | undefined;
+        return r ? r.value : undefined;
+      },
+    };
     this.#chunkVecs = new VectorIndex(db, 'chunks', 'cid', dim);
     this.#factVecs = new VectorIndex(db, 'facts', 'fid', dim);
   }
@@ -260,13 +287,38 @@ export class MemoryStore {
       }
       throw e;
     }
-    const store = new MemoryStore(db, dim, path);
+    const store = new MemoryStore(db, dim, path, key);
     store.#chunkVecs.load();
     store.#factVecs.load();
     return store;
   }
 
-  /** Add (or replace) an item with its chunks, scrubbed. Returns the new chunk ids, in order. */
+  /** Text as stored: secrets and money and ID numbers replaced by their stand-ins (see the header). */
+  #hide(text: string, extra: readonly string[] = []): string {
+    return pseudonymize(text, this.#vault, extra) as string;
+  }
+
+  /** `text` with its stand-ins replaced by the kept values. For this machine only: never return it to an agent. */
+  reveal(text: string): string { return reveal(text, this.#vault); }
+
+  /**
+   * A query with any hidden value it contains replaced by that value's stand-in, so that an owner who types a real
+   * number finds the records that hold it. Kept values are found in the text; dropped ones word by word.
+   */
+  queryStandIns(q: string): string {
+    let out = q;
+    const kept = this.#db.prepare('SELECT token, value FROM pseudonyms WHERE value IS NOT NULL ORDER BY length(value) DESC').all() as { token: string; value: string }[];
+    for (const r of kept) if (r.value.length >= 4 && out.includes(r.value)) out = out.split(r.value).join(r.token);
+    return out.replace(/\S{8,}/g, w => {
+      const r = this.#db.prepare('SELECT token FROM pseudonyms WHERE mac = ?').get(this.#mac(w)) as { token: string } | undefined;
+      return r ? r.token : w;
+    });
+  }
+
+  /** The stand-ins in `text` that this store knows. */
+  standInsIn(text: string): string[] { return [...new Set([...text.matchAll(STAND_IN)].map(m => m[0]))].filter(t => this.#vault.valueOf(t) !== undefined); }
+
+  /** Add (or replace) an item with its chunks, values hidden. Returns the new chunk ids, in order. */
   addItem(item: Item): number[] {
     if (!item || typeof item.id !== 'string' || item.id === '') throw new TypeError('item id must be a non-empty string');
     if (!Array.isArray(item.chunks) || item.chunks.some(c => typeof c !== 'string')) throw new TypeError('chunks must be strings');
@@ -275,9 +327,9 @@ export class MemoryStore {
     const run = this.#db.transaction(() => {
       this.#removeItem(item.id);
       this.#db.prepare('INSERT INTO items(id, date, source, title, text) VALUES (?, ?, ?, ?, ?)')
-        .run(item.id, date, source, scrub(item.title ?? '').text, scrub(item.text ?? '').text);
+        .run(item.id, date, source, this.#hide(item.title ?? '', item.hidden), this.#hide(item.text ?? '', item.hidden));
       const ins = this.#db.prepare('INSERT INTO chunks(item, n, date, source, text) VALUES (?, ?, ?, ?, ?)');
-      return item.chunks.map((text, n) => Number(ins.run(item.id, n, date, source, scrub(text).text).lastInsertRowid));
+      return item.chunks.map((text, n) => Number(ins.run(item.id, n, date, source, this.#hide(text, item.hidden)).lastInsertRowid));
     });
     return run();
   }
@@ -299,7 +351,8 @@ export class MemoryStore {
   hasSameItem(item: { id: string; date?: string; title?: string; text?: string }): boolean {
     const r = this.#db.prepare('SELECT date, title, text FROM items WHERE id = ?').get(item.id) as { date: string; title: string; text: string } | undefined;
     if (!r) return false;
-    if (r.date === String(item.date ?? '') && r.title === scrub(item.title ?? '').text && r.text === scrub(item.text ?? '').text) return true;
+    if (r.date === String(item.date ?? '') && r.title === pseudonymize(item.title ?? '', this.#vault, [], false)
+      && r.text === pseudonymize(item.text ?? '', this.#vault, [], false)) return true;
     // Stored after the model checks: its text differs from the rules' result, so compare the rules' result by hash.
     const c = this.#db.prepare('SELECT rules_hash FROM item_checks WHERE item = ?').get(item.id) as { rules_hash: string } | undefined;
     return !!c && c.rules_hash === rulesHash(item);
@@ -403,11 +456,11 @@ export class MemoryStore {
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`);
       const keys = new Set(old.map(o => o.gkey));
       const fids = facts.map(f => {
-        const subject = scrub(f.subject).text, predicate = scrub(f.predicate).text;
+        const subject = this.#hide(f.subject), predicate = this.#hide(f.predicate);
         const gkey = norm(subject) + '\u0000' + norm(predicate);
         keys.add(gkey);
-        return Number(ins.run(item, subject, predicate, scrub(f.object).text, f.valid_from || null, f.valid_to || null,
-          f.mentioned_at, scrub(f.quote).text, (it.date || '').slice(0, 10), gkey,
+        return Number(ins.run(item, subject, predicate, this.#hide(f.object), f.valid_from || null, f.valid_to || null,
+          f.mentioned_at, this.#hide(f.quote), (it.date || '').slice(0, 10), gkey,
           f.one_value == null ? null : f.one_value ? 1 : 0, f.status ?? null).lastInsertRowid);
       });
       this.#db.prepare('INSERT OR REPLACE INTO extracted(item, at, facts, error) VALUES (?, ?, ?, ?)').run(item, at.toISOString(), fids.length, error);
@@ -472,10 +525,10 @@ export class MemoryStore {
     const day = (it.date || '').slice(0, 10);
     return this.#db.transaction(() => {
       const ins = this.#db.prepare('INSERT INTO wants(item, what, topic, confidence, quote, opened_at) VALUES (?, ?, ?, ?, ?, ?)');
-      const wids = opened.map(w => Number(ins.run(item, scrub(w.what).text, w.topic, w.confidence, scrub(w.quote).text, day).lastInsertRowid));
+      const wids = opened.map(w => Number(ins.run(item, this.#hide(w.what), w.topic, w.confidence, this.#hide(w.quote), day).lastInsertRowid));
       const close = this.#db.prepare('UPDATE wants SET closed_at = ?, closed_by = ?, closed_quote = ? WHERE wid = ? AND closed_at IS NULL');
       let n = 0;
-      for (const c of closed) n += close.run(day, item, scrub(c.quote).text, c.wid).changes;
+      for (const c of closed) n += close.run(day, item, this.#hide(c.quote), c.wid).changes;
       this.#db.prepare('INSERT OR REPLACE INTO want_scans(item, at, opened, closed, error) VALUES (?, ?, ?, ?, ?)')
         .run(item, at.toISOString(), wids.length, n, error);
       return wids;

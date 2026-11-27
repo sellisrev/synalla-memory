@@ -79,13 +79,14 @@ function keep(s: string, line: string): boolean {
 }
 
 /**
- * Rules, then the model on each line that still needs it; values the model names (and the scrubber does not see as a
- * placeholder or public) become `[secret:model]`. `memo` keeps answers per line within one import.
+ * The values the model names as secrets in `text`, after the rules: it is asked about each line that still holds a
+ * mixed token, and a value counts only if the scrubber does not see it as a placeholder or public. `memo` keeps answers
+ * per line within one import.
  */
-export async function scrubWithModel(text: string, m: CheckModel, memo = new Map<string, string[]>()): Promise<string> {
-  const lines = scrub(text).text.split('\n');
+export async function secretsByModel(text: string, m: CheckModel, memo = new Map<string, string[]>()): Promise<string[]> {
+  const lines = scrub(text).text.split('\n'), out = new Set<string>();
   for (let i = 0; i < lines.length; i++) {
-    let line = lines[i] as string;
+    const line = lines[i] as string;
     if (!candidate(line)) continue;
     const ctx = lines.slice(Math.max(0, i - 3), i).join('\n'), key = ctx + '\0' + line;
     let found = memo.get(key);
@@ -98,18 +99,27 @@ export async function scrubWithModel(text: string, m: CheckModel, memo = new Map
       } catch { /* an unreadable answer adds nothing: the rules' result stands */ }
       memo.set(key, found);
     }
-    for (const s of found) if (keep(s, line)) line = line.split(s).join('[secret:model]');
-    lines[i] = line;
+    for (const s of found) if (keep(s, line)) out.add(s);
   }
-  return lines.join('\n');
+  return [...out];
 }
 
-/** An item with the second pass applied to its title, text and each chunk (one call at a time, for a local server). */
+/** Rules, then the model's values replaced by `[secret:model]` (the measured benchmark form; the store uses stand-ins). */
+export async function scrubWithModel(text: string, m: CheckModel, memo = new Map<string, string[]>()): Promise<string> {
+  let out = scrub(text).text;
+  for (const s of await secretsByModel(text, m, memo)) out = out.split(s).join('[secret:model]');
+  return out;
+}
+
+/**
+ * An item with the model's secrets from its title, text and chunks listed in `hidden`, so the store gives them
+ * stand-ins wherever they occur (one call at a time, for a local server).
+ */
 export async function scrubItemWithModel<T extends { title: string; text: string; chunks: string[] }>(it: T, m: CheckModel,
-  memo = new Map<string, string[]>()): Promise<T> {
-  const chunks: string[] = [];
-  for (const ch of it.chunks) chunks.push(await scrubWithModel(ch, m, memo));
-  return { ...it, title: await scrubWithModel(it.title, m, memo), text: await scrubWithModel(it.text, m, memo), chunks };
+  memo = new Map<string, string[]>()): Promise<T & { hidden: string[] }> {
+  const hidden = new Set<string>();
+  for (const t of [it.title, it.text, ...it.chunks]) for (const s of await secretsByModel(t, m, memo)) hidden.add(s);
+  return { ...it, hidden: [...hidden] };
 }
 
 /** True when the model reads the record as speaking to an AI assistant. Errors count as no answer (null). */

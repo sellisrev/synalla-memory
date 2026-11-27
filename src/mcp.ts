@@ -10,6 +10,7 @@
 import { randomUUID } from 'node:crypto';
 import type { Embedder } from './embed.ts';
 import { itemChunks } from './chunk.ts';
+import { speaksToAgent, AGENT_WARNING } from './speaks_to_agent.ts';
 import { DEFAULT_TOP } from './fusion.ts';
 import { factLine } from './facts.ts';
 import type { Fact, Want } from './store.ts';
@@ -171,7 +172,14 @@ export class McpServer {
       cids = this.#store.keywordSearch(q, limit as number);
       mode = 'keyword';
     }
-    const passages = this.#store.chunks(cids).map(c => ({ source: c.source, date: c.date, item: c.item, text: c.text, untrusted: true }));
+    // Mail and notes that speak to an AI assistant get a mark and a warning before their text (prompt injection; the
+    // owner's own sessions and remember records are never marked). benchmark/injection/README.md, "Defence test".
+    const passages = this.#store.chunks(cids).map((c): Json => {
+      const why = c.source === 'mail' || c.source === 'notes' ? speaksToAgent(c.text) : null;
+      return why ? { source: c.source, date: c.date, item: c.item, text: `${AGENT_WARNING.replace('{why}', why)}\n${c.text}`,
+        untrusted: true, speaks_to_agent: why }
+        : { source: c.source, date: c.date, item: c.item, text: c.text, untrusted: true };
+    });
     // The measured setting passes the top 20 facts with the passages, one line each (memory_ab arm B).
     const facts = this.#store.facts(this.#store.searchFacts(q, qv, 20)).map(factJson);
     // The owner's needs (wants layer): all open ones and those met, so "what am I still looking for" has the whole

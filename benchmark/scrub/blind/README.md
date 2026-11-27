@@ -87,6 +87,28 @@ different kind of check, not a round 4 of rules: a general one (a random-looking
 secret, or a small local model asked about the lines rules leave alone), designed without reading set 3's misses,
 then measured on set 3 once and confirmed on a fresh set 4. Until then the published number is 90.9%.
 
+## Round 4 design (27 Nov, written before it was run on set 3; set 3's misses not read)
+
+One general check, last in the scrubber: on a line that names a secret, any value that looks random is hidden.
+
+- **Secret words:** password, passphrase, secret, token, credential, cookie, session, salt, seed, PSK and their
+  French and German forms are *strong*; key, code, PIN, auth, login and clé / Schlüssel are *weak*.
+- **Random-looking:** 10 to 256 characters with no spaces; not a URL, e-mail address, path or file name, date,
+  version, or plain word; and either three kinds of characters (lower case, upper case, digits, symbols) with a digit
+  or symbol inside the value (not only at its end), or at least 16 characters of two kinds with an entropy of at
+  least 3.5 bits per character. After a weak word only the second form counts.
+- **Where:** the same line, or the next line when the line ends with a colon. Public material, placeholders and
+  everything the earlier rules already hid stay as they are.
+- **Measured:** first on the held-out and tuning sets and sets 1 and 2 (false positives must not rise there by more
+  than one snippet each), then once on set 3, then on a fresh set 4 with new themes as the release number.
+
+**Result: failed at the first gate, not run on set 3, reverted.** Caught rose (set 1 96.2 → 97.4%, set 2 99.3 →
+99.5%), but harmless snippets changed rose from 1.2% to 10.4% (set 1) and 0.8% to 12.3% (set 2), plus 1 on the tuning
+set. A secret word somewhere on the line is too weak a signal: the values it hid were commit hashes, UUIDs, GPG key
+ids, container digests, Vault paths (`secret/data/...`), `user@host` comments of SSH keys, OAuth client ids and German
+words read as symbols (umlauts). Telling those from secrets needs what the line *means*, which points to the second
+option: a small local model asked only about the lines the rules leave alone, measured the same way.
+
 The sets themselves are kept out of the public repository: their invented keys look real enough that GitHub's push
 protection (and any secret scanner copying the repository) treats them as leaks. The writers' replies are kept
 locally and can be shared on request; `write.mjs` writes a new set of the same kind.

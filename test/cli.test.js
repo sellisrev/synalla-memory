@@ -186,3 +186,28 @@ test('S3: backup-to reads the secret from stdin; a restore on a new machine (emp
     assert.match(b.outText(), /Snapshot 2:/);
   } finally { srv.close(); rmSync(root, { recursive: true, force: true }); }
 });
+
+test('import-mail and import-notes: recallable, and a second import changes nothing', async () => {
+  const root = mkdtempSync(join(tmpdir(), 'synalla-cli-'));
+  try {
+    const mbox = join(root, 'mail.mbox');
+    writeFileSync(mbox, ['From 1@x Thu Nov 13 09:00:00 +0000 2026', 'From: Ines <ines@example.org>', 'Subject: Keys',
+      'Date: Thu, 13 Nov 2026 10:00:00 +0100', 'Message-ID: <k@example.org>', '', 'The keys are with Frau Gruenwald.', ''].join('\n'));
+    const notes = join(root, 'notes'); mkdirSync(notes);
+    writeFileSync(join(notes, 'garden.md'), '# Garden\nTomatoes along the south wall.');
+    const e = env(join(root, 'home'), { claudeProjects: join(root, 'claude'), hermesDb: join(root, 'none.db') });
+    assert.equal(await main(['init', '--dim', '8', '--no-embed'], e), 0);
+    assert.equal(await main(['import-mail', mbox], e), 0, e.errText());
+    assert.match(e.outText(), /Mail: 1 message\(s\) read, 1 imported, 0 unchanged/);
+    assert.equal(await main(['import-mail', mbox], e), 0);
+    assert.match(e.outText(), /Mail: 1 message\(s\) read, 0 imported, 1 unchanged/);
+    assert.equal(await main(['import-notes', notes], e), 0);
+    assert.match(e.outText(), /Notes: 1 imported, 0 unchanged/);
+    assert.equal(await main(['recall', 'Gruenwald keys'], e), 0);
+    assert.match(e.outText(), /Frau Gruenwald/);
+    assert.equal(await main(['recall', 'tomatoes'], e), 0);
+    assert.match(e.outText(), /south wall/);
+    assert.equal(await main(['import-mail', join(root, 'missing.mbox')], e), 1);
+    assert.match(e.errText(), /not found/);
+  } finally { rmSync(root, { recursive: true, force: true }); }
+});

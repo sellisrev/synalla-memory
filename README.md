@@ -11,6 +11,8 @@ Status: early work, not released. Node 22.18 or later.
 - **Imports** your Claude Code, Hermes and OpenClaw sessions: what you wrote and what the agent answered. Tool output, the
   agent's reasoning and subagent runs are left out. Secrets (API keys, tokens, private keys, passwords) are replaced
   by a marker before anything is stored.
+- **Imports mail and notes** on request: an mbox file (one item per message, the readable body without quoted
+  replies, signatures or attachments; spam and trash left out) and a folder of Markdown or text notes.
 - **Answers `recall`** with passages found by keywords and by meaning, merged, plus dated facts that say what is true
   now and what was replaced, each with the quote it came from. On a laptop CPU a recall takes milliseconds; your
   agent's own model reads the results.
@@ -34,6 +36,8 @@ Status: early work, not released. Node 22.18 or later.
 ```
 synalla-memory init                 # creates the store and shows your recovery code once
 synalla-memory import               # reads your sessions
+synalla-memory import-mail <file.mbox>  # your mail, e.g. a Google Takeout export
+synalla-memory import-notes <folder>    # Markdown and text notes
 synalla-memory serve                # the MCP server: add this command to your agent's MCP settings
 synalla-memory backup-to folder <your cloud folder>
 synalla-memory backup

@@ -291,6 +291,13 @@ export class MemoryStore {
     return n;
   }
 
+  /** Whether this item is stored with the same date, title and text (as scrubbed), so a re-import can skip it and keep
+   *  its vectors and facts. */
+  hasSameItem(item: { id: string; date?: string; title?: string; text?: string }): boolean {
+    const r = this.#db.prepare('SELECT date, title, text FROM items WHERE id = ?').get(item.id) as { date: string; title: string; text: string } | undefined;
+    return !!r && r.date === String(item.date ?? '') && r.title === scrub(item.title ?? '').text && r.text === scrub(item.text ?? '').text;
+  }
+
   /** Delete an item and its chunks. Returns whether it existed. */
   deleteItem(id: string): boolean {
     return this.#db.transaction(() => this.#removeItem(id))() > 0;

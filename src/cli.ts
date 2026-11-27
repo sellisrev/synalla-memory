@@ -31,6 +31,7 @@ import { toRecoveryCode, fromRecoveryCode } from './recovery_code.ts';
 import { importClaudeCode } from './import_claude_code.ts';
 import { readHermes, hermesDbPath } from './import_hermes.ts';
 import { readOpenClaw, openclawStateDir } from './import_openclaw.ts';
+import { readMbox, readNotes, type MailStats } from './import_mail.ts';
 import { httpEmbedder, type Embedder } from './embed.ts';
 import { ensureModels, startEmbedServer, EMBED_MODEL } from './models.ts';
 import { McpServer, serveStdio } from './mcp.ts';
@@ -232,6 +233,29 @@ export async function main(argv: string[], env: Env): Promise<number> {
           return r.failed.length > 0 || hermesFailed || openclawFailed ? 1 : 0;
         } finally { store.close(); }
       }
+      case 'import-mail':
+      case 'import-notes': {
+        const path = rest[0];
+        if (!path) throw new Error(cmd === 'import-mail' ? 'usage: synalla-memory import-mail <file.mbox>' : 'usage: synalla-memory import-notes <folder>');
+        if (!existsSync(path)) throw new Error(`not found: ${path}`);
+        const c = load(env), store = openStore(env, c);
+        try {
+          const stats: MailStats = { seen: 0, kept: 0, spamTrash: 0, badDate: 0, bulkHeadersOnly: 0, empty: 0, errors: 0 };
+          const items = cmd === 'import-mail' ? readMbox(path, stats) : readNotes(path);
+          let added = 0, same = 0;
+          for (const it of items) {
+            if (store.hasSameItem(it)) { same++; continue; }
+            store.addItem(it); added++;
+          }
+          if (cmd === 'import-mail') {
+            env.out(`Mail: ${stats.seen} message(s) read, ${added} imported, ${same} unchanged; left out: ${stats.spamTrash} spam or trash, `
+              + `${stats.badDate} without a date, ${stats.empty} empty, ${stats.errors} unreadable.\n`);
+          } else env.out(`Notes: ${added} imported, ${same} unchanged.\n`);
+          const em = await embedder(env, c);
+          try { if (em.e) env.out(`Embedded ${await embedMissing(store, em.e)} new chunk(s).\n`); } finally { em.stop(); }
+          return stats.errors > 0 ? 1 : 0;
+        } finally { store.close(); }
+      }
       case 'embed': {
         const c = load(env);
         if (!c.embedUrl && c.embed === 'none') throw new Error('this memory uses keyword search only (--no-embed)');
@@ -371,7 +395,7 @@ export async function main(argv: string[], env: Env): Promise<number> {
         } finally { store.close(); }
       }
       default:
-        env.out('usage: synalla-memory init | import | embed | extract-with ... | extract | recall <q> | serve | backup-to ... | backup | restore ... | export --plain <dir> | koofr-login-done | status\n');
+        env.out('usage: synalla-memory init | import | import-mail <mbox> | import-notes <folder> | embed | extract-with ... | extract | recall <q> | serve | backup-to ... | backup | restore ... | export --plain <dir> | koofr-login-done | status\n');
         return cmd ? 2 : 0;
     }
   } catch (e) {

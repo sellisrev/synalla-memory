@@ -98,6 +98,13 @@ async function embedder(env: Env, c: Config): Promise<{ e?: Embedder; stop(): vo
   const s = await (env.startBuiltin ?? builtin(env))(env.home, c.dim, c.embedGpu);
   return { e: httpEmbedder({ url: s.url, dim: c.dim }), stop: s.stop };
 }
+/** For recall and serve: when the embedder cannot start, say why and search by keywords instead of failing. */
+async function embedderOrKeywords(env: Env, c: Config): Promise<{ e?: Embedder; stop(): void }> {
+  try { return await embedder(env, c); } catch (e) {
+    env.err(`synalla-memory: vector search is off for now (${(e as Error).message}). Searching by keywords.\n`);
+    return { stop: () => {} };
+  }
+}
 function builtin(env: Env) {
   return async (home: string, dim: number, gpu?: 'vulkan') => {
     if (dim !== EMBED_MODEL.dim) throw new Error(`the built-in model makes ${EMBED_MODEL.dim}-number vectors, this memory uses ${dim}; set embedUrl`);
@@ -228,7 +235,7 @@ export async function main(argv: string[], env: Env): Promise<number> {
             if (os.size > 0) env.out(`OpenClaw: ${o.items.length} session(s) imported.\n`);
             for (const f of o.failed) { openclawFailed = true; env.err(`OpenClaw (agent ${f.agent}): ${f.error}\n`); }
           } catch (e) { openclawFailed = true; env.err(`OpenClaw: ${(e as Error).message}\n`); }
-          const em = await embedder(env, c);
+          const em = await embedderOrKeywords(env, c); // the items are saved; vectors can follow with `embed`
           try { if (em.e) env.out(`Embedded ${await embedMissing(store, em.e)} new chunk(s).\n`); } finally { em.stop(); }
           return r.failed.length > 0 || hermesFailed || openclawFailed ? 1 : 0;
         } finally { store.close(); }
@@ -256,7 +263,7 @@ export async function main(argv: string[], env: Env): Promise<number> {
               + `${stats.badDate} without a date, ${stats.empty} empty, ${stats.duplicates ?? 0} duplicate copies, ${stats.errors} unreadable`
               + `${stats.truncated ? `; ${stats.truncated} over 64 MB read in part` : ''}.\n`);
           } else env.out(`Notes: ${added} imported, ${same} unchanged${notes.skipped ? `, ${notes.skipped} skipped (unreadable or over 1 MB)` : ''}.\n`);
-          const em = await embedder(env, c);
+          const em = await embedderOrKeywords(env, c); // the items are saved; vectors can follow with `embed`
           try { if (em.e) env.out(`Embedded ${await embedMissing(store, em.e)} new chunk(s).\n`); } finally { em.stop(); }
           return stats.errors > 0 ? 1 : 0;
         } finally { store.close(); }
@@ -264,14 +271,14 @@ export async function main(argv: string[], env: Env): Promise<number> {
       case 'embed': {
         const c = load(env);
         if (!c.embedUrl && c.embed === 'none') throw new Error('this memory uses keyword search only (--no-embed)');
-        const store = openStore(env, c), em = await embedder(env, c);
+        const store = openStore(env, c), em = await embedder(env, c).catch(e => { store.close(); throw e; });
         try { env.out(`Embedded ${await embedMissing(store, em.e as Embedder)} chunk(s).\n`); return 0; } finally { store.close(); em.stop(); }
       }
       case 'recall': {
         const q = rest.join(' ').trim();
         if (!q) throw new Error('usage: synalla-memory recall <question>');
         const c = load(env), store = openStore(env, c);
-        const em = await embedder(env, c).catch(e => { store.close(); throw e; });
+        const em = await embedderOrKeywords(env, c);
         try {
           const s = new McpServer(store, em.e ? { embedder: em.e } : {});
           const r = await s.handle({ jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name: 'recall', arguments: { question: q, limit: 5 } } }) as
@@ -284,7 +291,7 @@ export async function main(argv: string[], env: Env): Promise<number> {
       }
       case 'serve': {
         const c = load(env), store = openStore(env, c);
-        const em = await embedder(env, c).catch(e => { store.close(); throw e; });
+        const em = await embedderOrKeywords(env, c);
         try { await serveStdio(new McpServer(store, em.e ? { embedder: em.e } : {})); return 0; } finally { store.close(); em.stop(); }
       }
       case 'backup-to': {
@@ -371,7 +378,7 @@ export async function main(argv: string[], env: Env): Promise<number> {
           const r = await extractPending(store, model, c.extract.owner, { limit, now: env.now, agentSessions: rest.includes('--agent-sessions') });
           const more = store.pendingExtraction(1, { agentSessions: rest.includes('--agent-sessions') }).length > 0;
           env.out(`Facts: ${r.facts} from ${r.items} item(s); ${r.failed} item(s) failed. ${more ? 'More items wait: run extract again.' : 'All items read.'}\n`);
-          const em = await embedder(env, c);
+          const em = await embedderOrKeywords(env, c); // the items are saved; vectors can follow with `embed`
           try { if (em.e) env.out(`Embedded ${await embedMissing(store, em.e)} new vector(s).\n`); } finally { em.stop(); }
           return 0;
         } finally { store.close(); }

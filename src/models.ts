@@ -166,6 +166,13 @@ export function sidecarFailure(code: number | null, stderr: string): string {
       + (pkg ? ` (Debian/Ubuntu: sudo apt install ${pkg}; Fedora: sudo dnf install ${pkg === 'libgomp1' ? 'libgomp' : 'vulkan-loader'})` : '')
       + '. Or run init with --embed-url <your embedding endpoint>, or --no-embed for keyword search only.';
   }
+  // Windows STATUS_DLL_NOT_FOUND: llama.cpp's Windows build needs the Microsoft Visual C++ runtime, which a new PC
+  // may not have (found on a clean Windows Sandbox, 27 Nov 2026).
+  if (code === 3221225781 || code === -1073741515) {
+    return 'the built-in embedding server needs the Microsoft Visual C++ runtime, which this PC does not have. Install it with'
+      + ' `winget install Microsoft.VCRedist.2015+.x64` (or from https://aka.ms/vs/17/release/vc_redist.x64.exe), then try again.'
+      + ' Or run init with --embed-url <your embedding endpoint>, or --no-embed for keyword search only.';
+  }
   const last = stderr.trim().split(/\r?\n/).slice(-3).join(' | ');
   return `llama-server exited with code ${code}${last ? `: ${last}` : ''}`;
 }

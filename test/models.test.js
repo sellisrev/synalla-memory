@@ -62,4 +62,5 @@ test('sidecar failures say what to do: a missing system library names the packag
   assert.match(m, /--embed-url .*--no-embed/);
   assert.match(sidecarFailure(1, 'line1\nline2\nload failed: bad model\n'), /exited with code 1: line1 \| line2 \| load failed: bad model$/);
   assert.equal(sidecarFailure(2, ''), 'llama-server exited with code 2');
+  for (const code of [3221225781, -1073741515]) assert.match(sidecarFailure(code, ''), /Microsoft Visual C\+\+ runtime.*winget install Microsoft\.VCRedist\.2015\+\.x64.*--no-embed/);
 });

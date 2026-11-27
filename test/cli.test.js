@@ -120,6 +120,23 @@ test('the built-in embedder starts for import and recall and is always stopped',
   } finally { srvs.forEach(x => x.close()); rmSync(root, { recursive: true, force: true }); }
 });
 
+test('when the built-in embedder cannot start, import and recall still work by keywords; embed says why', async () => {
+  // Found on a clean Windows Sandbox (27 Nov 2026): llama-server exits with STATUS_DLL_NOT_FOUND without the VC++ runtime.
+  const root = mkdtempSync(join(tmpdir(), 'synalla-cli-'));
+  try {
+    const projects = join(root, 'claude', 'C--p'); mkdirSync(projects, { recursive: true });
+    writeFileSync(join(projects, 's.jsonl'), JSON.stringify({ type: 'user', sessionId: 's', timestamp: '2026-11-20T09:00:00Z', message: { content: 'Mamie lives in Lyon' } }));
+    const e = env(join(root, 'home'), { claudeProjects: join(root, 'claude'), hermesDb: join(root, 'none.db'),
+      startBuiltin: async () => { throw new Error('the built-in embedding server needs the Microsoft Visual C++ runtime'); } });
+    assert.equal(await main(['init'], e), 0);
+    assert.equal(await main(['import'], e), 0);
+    assert.equal(await main(['recall', 'Where does Mamie live?'], e), 0);
+    assert.match(e.outText(), /Mamie lives in Lyon/);
+    assert.match(e.errText(), /vector search is off for now \(the built-in embedding server needs the Microsoft Visual C\+\+ runtime\)\. Searching by keywords/);
+    assert.notEqual(await main(['embed'], e), 0);
+  } finally { rmSync(root, { recursive: true, force: true }); }
+});
+
 test('extract-with refuses a remote endpoint without --cloud-ok; extract skips agent sessions unless asked', async () => {
   const root = mkdtempSync(join(tmpdir(), 'synalla-cli-'));
   const srvs = [];

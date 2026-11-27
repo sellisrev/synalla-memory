@@ -47,6 +47,10 @@ synalla-memory status
 MCP tools: `recall`, `remember`, `facts_about`, `what_changed`. Setting it up in Claude Code, Hermes or OpenClaw:
 [docs/agents.md](docs/agents.md).
 
+On Windows, search by meaning (the built-in embedding model) needs the Microsoft Visual C++ runtime, which a new PC
+may not have: `winget install Microsoft.VCRedist.2015+.x64`. Without it, everything works and search goes by
+keywords; the commands say so. Checked on a clean Windows Sandbox with `tools/sandbox/run.ps1`.
+
 ## Limits
 
 - Results reach your agent as records marked untrusted; this package cannot see what the agent's model does with them.

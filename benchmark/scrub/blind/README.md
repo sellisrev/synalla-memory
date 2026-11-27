@@ -76,6 +76,17 @@ counts by its password); a harmless snippet changed at all is a false positive; 
 theme; the bar is at least 95% caught, false positives published. The number is recorded here before any miss or false
 positive is read.
 
+**Result (27 Nov, recorded before any miss was read; scrubber as frozen in 49b919b):** 996 snippets (0 dropped),
+**551 of 606 secrets caught = 90.9% (95% interval 88.4–93.0%); 17 of 497 harmless snippets changed = 3.4%
+(2.1–5.4%)**. Sonnet's snippets 266/299, Opus's 285/307. The M1 bar (95% caught) is **not met**.
+
+What the three blind sets say together: on its tuning set each round of rules reaches 96–99%, and on the next set of
+new themes it falls back to about 90% (set 2: 90.2%, set 3: 90.9%). Rules for the classes already seen do not reach
+the classes a new theme brings. More rounds of the same kind would keep chasing the next theme, so the next step is a
+different kind of check, not a round 4 of rules: a general one (a random-looking value anywhere on a line that names a
+secret, or a small local model asked about the lines rules leave alone), designed without reading set 3's misses,
+then measured on set 3 once and confirmed on a fresh set 4. Until then the published number is 90.9%.
+
 The sets themselves are kept out of the public repository: their invented keys look real enough that GitHub's push
 protection (and any secret scanner copying the repository) treats them as leaks. The writers' replies are kept
 locally and can be shared on request; `write.mjs` writes a new set of the same kind.

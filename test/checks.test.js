@@ -4,11 +4,11 @@
 // The optional import checks with a local chat model (src/checks.ts), with a fake model in place of the real one.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtempSync, mkdirSync, rmSync, writeFileSync } from 'node:fs';
+import { mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { createServer } from 'node:http';
-import { scrubWithModel, speaksToAgentModel, localCheckModel, SECRET_PROMPT } from '../src/checks.ts';
+import { scrubWithModel, speaksToAgentModel, checkModel, SECRET_PROMPT } from '../src/checks.ts';
 import { main } from '../src/cli.ts';
 
 const fake = names => ({ asked: [], async ask(system, user) { this.asked.push(user); return JSON.stringify({ secrets: names(user) }); } });
@@ -35,9 +35,20 @@ test('injection question: yes, no, and no answer on errors', async () => {
   assert.equal(await speaksToAgentModel('x', { async ask() { throw new Error('down'); } }), null);
 });
 
-test('the check model must be on this machine', () => {
-  assert.throws(() => localCheckModel('https://api.example.com/', 'm'), /not on this machine/);
-  assert.doesNotThrow(() => localCheckModel('http://127.0.0.1:9090/', 'fast'));
+test('a check model off this machine needs the owner agreeing and https, and reaches only its own host', async () => {
+  assert.throws(() => checkModel('https://api.example.com/', 'm'), /not on this machine/);
+  assert.throws(() => checkModel('http://api.example.com/', 'm', { cloud: true }), /https/);
+  assert.doesNotThrow(() => checkModel('http://127.0.0.1:9090/', 'fast'));
+  const sent = [];
+  const base = async (u, init) => { sent.push({ u: String(u), init }); return new Response(JSON.stringify({ choices: [{ message: { content: '{"secrets":[]}' } }] })); };
+  const m = checkModel('https://api.example.com/', 'm', { cloud: true, apiKey: 'k-123', base });
+  await m.ask('s', 'u', true, 10);
+  assert.equal(sent[0].u, 'https://api.example.com/v1/chat/completions');
+  assert.equal(sent[0].init.headers.authorization, 'Bearer k-123');
+  assert.equal('chat_template_kwargs' in JSON.parse(sent[0].init.body), false); // a llama.cpp field, not sent to a cloud API
+  const l = checkModel('http://127.0.0.1:9090/', 'fast', { base });
+  await l.ask('s', 'u', true, 10);
+  assert.deepEqual(JSON.parse(sent[1].init.body).chat_template_kwargs, { enable_thinking: false });
 });
 
 test('import with check-with: the second pass and the injection mark reach the store and recall; re-import is a no-op', async () => {
@@ -59,7 +70,16 @@ test('import with check-with: the second pass and the injection mark reach the s
     assert.equal(await main(['init', '--no-embed'], e), 0);
     assert.notEqual(await main(['check-with', 'https://api.example.com/', 'm'], e), 0);
     assert.match(e.r.join(''), /not on this machine/);
+    const stored = [], set = e.keychain.set; e.keychain.set = (n, v) => { stored.push(Buffer.from(v).toString('utf8')); set(n, v); };
+    e.readStdin = async () => 'cloud-key\n';
+    assert.equal(await main(['check-with', 'https://api.example.com/', 'm', '--cloud-ok'], e), 0);
+    assert.match(e.o.join(''), /leaves this machine \(you agreed\)/);
+    assert.equal(JSON.parse(readFileSync(join(e.home, 'config.json'), 'utf8')).check.cloudAgreedAt, '2026-11-27T10:00:00.000Z');
+    assert.ok(stored.includes('cloud-key')); // the key goes to the keychain, never into config.json
+    assert.doesNotMatch(readFileSync(join(e.home, 'config.json'), 'utf8'), /cloud-key/);
+    e.readStdin = async () => '';
     assert.equal(await main(['check-with', `http://127.0.0.1:${srv.address().port}/`, 'fake'], e), 0);
+    assert.equal(JSON.parse(readFileSync(join(e.home, 'config.json'), 'utf8')).check.cloudAgreedAt, undefined);
     assert.equal(await main(['import-notes', notes], e), 0);
     assert.match(e.o.join(''), /Checked with fake: 1 record\(s\) that speak to an AI assistant/);
     e.o.length = 0;

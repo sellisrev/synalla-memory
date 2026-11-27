@@ -7,9 +7,10 @@
 //   1.4% harmless changed; rules alone 94.0%), benchmark/scrub/blind/README.md, rounds 5 and set 4;
 // - prompt injection: does this mail or note speak to an AI assistant (blind set: 99.5% of 393 attacks, 1.2% of
 //   harmless; owner's 1,907 real mails: 0.2%), benchmark/injection/README.md, round 2.
-// The model sees raw text, secrets included, so the endpoint must be on this machine; never a cloud model.
+// The model sees raw text. The recommended setup is a small model on this machine; a cloud model is the owner's choice,
+// made explicitly (`check-with ... --cloud-ok`), and only that one host is reachable.
 
-import { guardFetch, isLoopback } from './egress.ts';
+import { guardFetch, isLoopback, sameOrigin } from './egress.ts';
 import { scrub } from './scrub.ts';
 
 export const SECRET_PROMPT = `You check one line of text for secrets before it is stored in a personal memory. A secret is a value someone could use to log in, sign, decrypt or call a service as its owner: a password or passphrase, an API key or access token, a client secret, a recovery or backup code, a PIN, a private key, a session cookie value, a Wi-Fi key, a TOTP seed.
@@ -30,16 +31,23 @@ Answer with JSON only: {"instructs_ai": true} or {"instructs_ai": false}.
 
 export interface CheckModel { ask(system: string, user: string, json: boolean, maxTokens: number): Promise<string> }
 
-/** A chat model on this machine (OpenAI-compatible, e.g. llama.cpp or llama-swap). Refuses any other host. */
-export function localCheckModel(url: string, model: string, base?: typeof fetch): CheckModel {
-  const u = new URL(url.endsWith('/') ? url : url + '/');
-  if (!isLoopback(u)) throw new Error(`${url} is not on this machine: the checks see raw text, secrets included`);
-  const f = guardFetch('check', isLoopback, base ? { base } : {});
+/**
+ * An OpenAI-compatible chat model (llama.cpp, llama-swap, Ollama, or a cloud API). Only its own host is reachable; a
+ * host that is not on this machine needs `cloud: true` (the owner agreed) and https.
+ */
+export function checkModel(url: string, model: string, opts: { cloud?: boolean; apiKey?: string; base?: typeof fetch } = {}): CheckModel {
+  const u = new URL(url.endsWith('/') ? url : url + '/'), local = isLoopback(u);
+  if (!local && !opts.cloud) throw new Error(`${url} is not on this machine: every checked record is sent there in full. If you agree, add --cloud-ok.`);
+  if (!local && u.protocol !== 'https:') throw new Error(`${url}: a model off this machine must use https`);
+  const f = guardFetch('check', local ? isLoopback : sameOrigin(u), opts.base ? { base: opts.base } : {});
   const endpoint = new URL('v1/chat/completions', u);
   return {
     async ask(system, user, json, maxTokens) {
-      const r = await f(endpoint, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({
-        model, temperature: 0, max_tokens: maxTokens, chat_template_kwargs: { enable_thinking: false },
+      const r = await f(endpoint, { method: 'POST', headers: { 'content-type': 'application/json',
+        ...(opts.apiKey ? { authorization: `Bearer ${opts.apiKey}` } : {}) }, body: JSON.stringify({
+        model, temperature: 0, max_tokens: maxTokens,
+        // llama.cpp's switch for thinking models; cloud APIs may refuse unknown fields, so it is sent only locally.
+        ...(local ? { chat_template_kwargs: { enable_thinking: false } } : {}),
         ...(json ? { response_format: { type: 'json_object' } } : {}),
         messages: [{ role: 'system', content: system }, { role: 'user', content: user }] }) });
       if (!r.ok) throw new Error(`check model answered ${r.status}`);

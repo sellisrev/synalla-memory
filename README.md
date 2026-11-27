@@ -38,18 +38,20 @@ synalla-memory init                 # creates the store and shows your recovery 
 synalla-memory import               # reads your sessions
 synalla-memory import-mail <file.mbox>  # your mail, e.g. a Google Takeout export
 synalla-memory import-notes <folder>    # Markdown and text notes
-synalla-memory check-with <url> <model>  # optional: a chat model on this machine checks imports (below)
+synalla-memory check-with <url> <model>  # optional: a chat model checks imports (below)
 synalla-memory serve                # the MCP server: add this command to your agent's MCP settings
 synalla-memory backup-to folder <your cloud folder>
 synalla-memory backup
 synalla-memory status
 ```
 
-If you run a local chat model (llama.cpp, llama-swap, Ollama), `check-with` lets it check what you import: a second
+With a chat model, `check-with` lets it check what you import: a second
 look for passwords and keys the rules miss, and a warning on mail and notes that try to give orders to your AI
 assistant (prompt injection). Measured with Gemma 4 26B-A4B: secrets caught 97.1% instead of 94.0% on text it never
 saw, 1.4% of harmless lines changed; injections marked 99.5%, harmless mail 1.2% (0.2% of a real mailbox). The model
-sees raw text, so only an endpoint on this machine is accepted. Without it the rules still run. Agent sessions get
+reads your mail and notes in full, so the recommended setup is a model on this machine (llama.cpp, llama-swap,
+Ollama). A cloud model works too if you choose it: `check-with <https url> <model> --cloud-ok`, with its API key on
+standard input (kept in the keychain). Without a model the rules still run. Agent sessions get
 the secrets pass too (about an hour of a local GPU for 250 sessions the first time, then only new ones).
 
 MCP tools: `recall`, `remember`, `facts_about`, `what_changed`. Setting it up in Claude Code, Hermes or OpenClaw:

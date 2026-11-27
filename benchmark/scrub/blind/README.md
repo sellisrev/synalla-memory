@@ -147,3 +147,14 @@ locally and can be shared on request; `write.mjs` writes a new set of the same k
 
 Run: `node benchmark/scrub/blind/write.mjs [--set 2|3]`, then
 `node --import ./tools/ts-resolve.mjs benchmark/scrub/blind/eval.mjs [--set 2|3]` from the repo root.
+
+## Set 4 (27 Nov): the release number
+
+Ten new themes (`THEMES_4`), the same writers and rules, written after round 5 was frozen (03aed2d). 993 snippets
+(7 Opus batches failed on a usage limit and were rewritten by the same command). Recorded before any miss was read:
+
+- **Rules + local model: 579 of 596 secrets caught = 97.1% (95% interval 95.5–98.2%); 7 of 495 harmless snippets
+  changed = 1.4% (0.7–2.9%).** Rules alone on the same set: 94.0% caught, 1.4% changed.
+- **The M1 bar (95% caught) is met with the model pass**, and the whole interval is above it. Without a local chat
+  model the scrubber stays at about 90–94% on new themes, and that is the number to publish for that setup.
+- Cost: 1,292 lines asked, 0.44 s each alone on the GPU (1.29 s here, sharing it with another job).

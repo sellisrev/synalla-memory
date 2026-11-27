@@ -17,6 +17,19 @@ const SET = arg('--set', '1'), SUFFIX = SET === '1' ? '' : SET; // set 1: set.js
 const ONLY = arg('--themes', '') ? arg('--themes', '').split(',').map(Number) : null;
 const CLAUDE = process.platform === 'win32' ? 'claude.exe' : 'claude';
 
+export const THEMES_4 = [
+  'nonprofits and associations (donation platforms, member databases, a volunteer sharing the club account)',
+  'restaurants, cafés and small retail (POS systems, delivery platforms, booking tools, the shop Wi-Fi)',
+  'construction, architecture and engineering offices (CAD licences, project portals, site cameras, plotters)',
+  'law firms and notaries (document management, court portals, e-signature, client file shares)',
+  'local government and public services (citizen portals, GIS servers, case management, a clerk mailing logins)',
+  'journalism and publishing (CMS, newsletter tools, wire service feeds, social media accounts of a newsroom)',
+  'sports clubs, gyms and fitness apps (member apps, wearables APIs, booking systems, a coach sharing access)',
+  'cars, bikes and mobility (connected car apps, charging station accounts, fleet tools, e-scooter APIs)',
+  'crypto and personal finance tools (exchange API keys, wallet seed phrases, budgeting apps, broker logins)',
+  'translation, freelance writing and design work (client portals, font and stock licences, cloud drives, invoicing)',
+];
+
 export const THEMES_3 = [
   'IoT and embedded devices (ESP32 and Raspberry Pi projects, MQTT brokers, firmware updates over the air, cloud IoT hubs)',
   'marketing and analytics tools (Google Analytics, Meta Ads, HubSpot, Mailchimp, Segment, tracking pixels)',
@@ -87,7 +100,7 @@ function ask(text, model) {
 }
 
 async function main() {
-  const T = SET === '3' ? THEMES_3 : SET === '2' ? THEMES_2 : THEMES;
+  const T = SET === '4' ? THEMES_4 : SET === '3' ? THEMES_3 : SET === '2' ? THEMES_2 : THEMES;
   const raw = join(HERE, 'raw' + SUFFIX); mkdirSync(raw, { recursive: true });
   const todo = WRITERS.flatMap(w => T.map((t, i) => [w, i])).filter(([, i]) => !ONLY || ONLY.includes(i));
   let next = 0;

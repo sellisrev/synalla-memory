@@ -47,9 +47,11 @@ synalla-memory status
 MCP tools: `recall`, `remember`, `facts_about`, `what_changed`. Setting it up in Claude Code, Hermes or OpenClaw:
 [docs/agents.md](docs/agents.md).
 
-On Windows, search by meaning (the built-in embedding model) needs the Microsoft Visual C++ runtime, which a new PC
-may not have: `winget install Microsoft.VCRedist.2015+.x64`. Without it, everything works and search goes by
-keywords; the commands say so. Checked on a clean Windows Sandbox with `tools/sandbox/run.ps1`.
+On Windows, search by meaning runs llama.cpp, which needs the Microsoft Visual C++ runtime. A new PC may not have it,
+so the package downloads Microsoft's three runtime files next to the server on first use (pinned and checked, from
+[our release](https://github.com/sellisrev/synalla-memory/releases/tag/vcruntime-14.44.35211)); nothing to install.
+If that download is blocked, everything still works and search goes by keywords; the commands say so. Checked on a
+clean Windows Sandbox with `tools/sandbox/run.ps1`.
 
 ## Limits
 

@@ -64,3 +64,24 @@ test('sidecar failures say what to do: a missing system library names the packag
   assert.equal(sidecarFailure(2, ''), 'llama-server exited with code 2');
   for (const code of [3221225781, -1073741515]) assert.match(sidecarFailure(code, ''), /Microsoft Visual C\+\+ runtime.*winget install Microsoft\.VCRedist\.2015\+\.x64.*--no-embed/);
 });
+
+test('Windows: the VC++ runtime goes next to llama-server from the pinned release, checked; present files are kept', { skip: process.platform !== 'win32' }, async () => {
+  const { ensureModels, WIN_RUNTIME, LLAMA_CPP_BUILD, EMBED_MODEL } = await import('../src/models.ts');
+  const fs = await import('node:fs'); const { join } = await import('node:path'); const os = await import('node:os');
+  assert.deepEqual(WIN_RUNTIME.map(d => d.file), ['msvcp140.dll', 'vcruntime140.dll', 'vcruntime140_1.dll']);
+  for (const d of WIN_RUNTIME) assert.match(d.url, /^https:\/\/github\.com\/sellisrev\/synalla-memory\/releases\/download\/vcruntime-14\.44\.35211\//);
+  const dir = fs.mkdtempSync(join(os.tmpdir(), 'synalla-models-'));
+  try {
+    const bin = join(dir, `llama.cpp-${LLAMA_CPP_BUILD}-win32-x64-cpu`); fs.mkdirSync(bin, { recursive: true });
+    fs.writeFileSync(join(bin, 'llama-server.exe'), 'x');
+    fs.writeFileSync(join(dir, EMBED_MODEL.file), Buffer.alloc(0)); // wrong size: but the runtime comes first and fails
+    const asked = [];
+    const bad = async url => { asked.push(String(url)); return new Response(new Uint8Array(10)); };
+    await assert.rejects(ensureModels(dir, { fetch: bad }), /checksum mismatch/);
+    assert.equal(asked[0], WIN_RUNTIME[0].url);
+    assert.deepEqual(fs.readdirSync(bin).sort(), ['llama-server.exe']); // nothing half-written left behind
+    for (const d of WIN_RUNTIME) fs.writeFileSync(join(bin, d.file), Buffer.alloc(d.size));
+    const none = async url => { if (WIN_RUNTIME.some(d => d.url === String(url))) throw new Error('downloaded again'); return new Response(new Uint8Array(10)); };
+    await assert.rejects(ensureModels(dir, { fetch: none }), /checksum mismatch for https:\/\/huggingface/); // runtime kept, model next
+  } finally { fs.rmSync(dir, { recursive: true, force: true }); }
+});

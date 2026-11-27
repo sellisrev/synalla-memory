@@ -19,7 +19,7 @@ Step 'init' { synalla-memory init }
 Step 'import-notes' { synalla-memory import-notes "$in\notes" }
 Step 'import (no sessions yet)' { synalla-memory import }
 Step 'recall' { synalla-memory recall 'dentist appointment' }
-Step 'status' { synalla-memory status }
+Step 'status' { $o = synalla-memory status; $o; if ("$o" -notmatch '2 chunk\(s\), 2 with vectors') { 'search by meaning is OFF'; $global:LASTEXITCODE = 1 } }
 Step 'mcp serve probe' { node "$in\mcp_probe.mjs" synalla-memory }
 Step 'backup-to folder' { New-Item -ItemType Directory C:\out\bk | Out-Null; synalla-memory backup-to folder C:\out\bk }
 Step 'backup' { synalla-memory backup; Get-ChildItem C:\out\bk -Recurse | Select-Object FullName, Length }

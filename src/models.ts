@@ -7,14 +7,14 @@
 // dependencies on caret ranges and 14 platform packages; the sidecar is one pinned release archive per platform from
 // ggml-org/llama.cpp plus one model file, both checked against published SHA-256 digests before use.
 //
-// Downloads come only from the two pinned URLs below (github.com release assets and huggingface.co), on first use,
+// Downloads come only from the pinned URLs below (github.com release assets and huggingface.co), on first use,
 // with a progress callback. Unpacking uses the system `tar` (bsdtar on Windows 10+ also reads .zip).
 
 import { createHash } from 'node:crypto';
 import { spawn, spawnSync, type ChildProcess } from 'node:child_process';
 import { createWriteStream, existsSync, mkdirSync, readdirSync, renameSync, rmSync, statSync } from 'node:fs';
 import { createServer } from 'node:net';
-import { join } from 'node:path';
+import { dirname, join } from 'node:path';
 import { guardFetch, isLoopback, MODEL_HOSTS } from './egress.ts';
 
 export const LLAMA_CPP_BUILD = 'b12110';
@@ -31,6 +31,18 @@ export const SERVER_ASSETS: Record<string, Asset> = {
   'linux-x64-cpu': { url: GH + 'ubuntu-x64.tar.gz', size: 23051958, sha256: '368227edcc229be5f9bed16a2223d79b5e41d0ac2e19bcf5825e82291c060e55' },
   'linux-x64-vulkan': { url: GH + 'ubuntu-vulkan-x64.tar.gz', size: 35858360, sha256: 'a5d741940956ec62e8783aee7e5a4c7c761af867d6f027c3277a51e1a3ac59b0' },
 };
+
+/**
+ * The Microsoft Visual C++ runtime that llama.cpp's Windows builds need and a new PC may not have (STATUS_DLL_NOT_FOUND
+ * on a clean Windows, 27 Nov 2026). Microsoft's redistributable files, unchanged and signed, from the Visual Studio
+ * 2022 redist folder, published on our own release; they go next to llama-server.exe, where Windows looks first.
+ */
+const VCRT = 'https://github.com/sellisrev/synalla-memory/releases/download/vcruntime-14.44.35211/';
+export const WIN_RUNTIME: (Asset & { file: string })[] = [
+  { file: 'msvcp140.dll', url: VCRT + 'msvcp140.dll', size: 557728, sha256: '0f885b509a685d2bbfa652fed26b5fb31d88fbdab0a978c641d1c7b8aa460aa9' },
+  { file: 'vcruntime140.dll', url: VCRT + 'vcruntime140.dll', size: 124544, sha256: 'd5e4d9a3e835fa679450145d6a7d94e36573a509317111904d9b3712c30d9066' },
+  { file: 'vcruntime140_1.dll', url: VCRT + 'vcruntime140_1.dll', size: 49792, sha256: '1f2d41c4aa5db0bc33ebf7b66d72943a817d7ce6cbe880502a9403823633093f' },
+];
 
 /** Qwen3-Embedding-0.6B, Q8_0, the embedder of the measured CPU default (official Qwen release; LFS sha256). */
 export const EMBED_MODEL: Asset & { file: string; dim: number } = {
@@ -110,6 +122,15 @@ export async function ensureModels(dir: string, opts: { gpu?: 'cpu' | 'vulkan'; 
     rmSync(archive, { force: true });
     server = findServer(binDir);
     if (!server) throw new Error('llama-server not found in the pinned archive');
+  }
+  if (key.startsWith('win32-')) { // also for servers unpacked before the runtime was shipped
+    const at = dirname(server);
+    for (const dll of WIN_RUNTIME) {
+      const p = join(at, dll.file);
+      if (!existsSync(p) || statSync(p).size !== dll.size) {
+        await download(dll, p, { ...(opts.fetch ? { fetch: opts.fetch } : {}), progress: (d, t) => opts.progress?.('Visual C++ runtime', d, t) });
+      }
+    }
   }
   const model = join(dir, EMBED_MODEL.file);
   if (!existsSync(model) || statSync(model).size !== EMBED_MODEL.size) {

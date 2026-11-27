@@ -19,7 +19,7 @@ Copy-Item "$out\bk" C:\bk2 -Recurse
 Step 'restore' { synalla-memory restore C:\restored --code $code --from folder C:\bk2 }
 $env:SYNALLA_MEMORY_HOME = 'C:\restored'
 Step 'status after restore' { synalla-memory status }
-Step 'recall after restore' { synalla-memory recall 'bike chain' }
+Step 'recall after restore' { $o = synalla-memory recall 'bike chain' 2>&1; $o; if ("$o" -match 'vector search is off') { $global:LASTEXITCODE = 1 } }
 Step 'wrong code refused' { $bad = $code.Substring(0, $code.Length - 1) + $(if ($code[-1] -eq 'A') { 'B' } else { 'A' }); synalla-memory restore C:\restored2 --code $bad --from folder C:\bk2; if ($LASTEXITCODE -ne 0) { $global:LASTEXITCODE = 0; 'refused as expected' } else { $global:LASTEXITCODE = 1 } }
 "end $(Get-Date -Format o)" | Out-File $log -Append -Encoding utf8
 New-Item "$out\DONE2" | Out-Null

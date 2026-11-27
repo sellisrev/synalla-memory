@@ -22,7 +22,7 @@
 // Settings live in <home>/config.json; keys live in the OS keychain.
 
 import { randomBytes } from 'node:crypto';
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { join } from 'node:path';
 import { MemoryStore } from './store.ts';
@@ -238,10 +238,14 @@ export async function main(argv: string[], env: Env): Promise<number> {
         const path = rest[0];
         if (!path) throw new Error(cmd === 'import-mail' ? 'usage: synalla-memory import-mail <file.mbox>' : 'usage: synalla-memory import-notes <folder>');
         if (!existsSync(path)) throw new Error(`not found: ${path}`);
+        const isDir = statSync(path).isDirectory();
+        if (cmd === 'import-mail' && isDir) throw new Error(`${path} is a folder: give the mbox file (in a Google Takeout export, Mail/*.mbox)`);
+        if (cmd === 'import-notes' && !isDir) throw new Error(`${path} is a file: give the folder that holds your notes`);
         const c = load(env), store = openStore(env, c);
         try {
           const stats: MailStats = { seen: 0, kept: 0, spamTrash: 0, badDate: 0, bulkHeadersOnly: 0, empty: 0, errors: 0 };
-          const items = cmd === 'import-mail' ? readMbox(path, stats) : readNotes(path);
+          const notes = { skipped: 0 };
+          const items = cmd === 'import-mail' ? readMbox(path, stats) : readNotes(path, notes);
           let added = 0, same = 0;
           for (const it of items) {
             if (store.hasSameItem(it)) { same++; continue; }
@@ -249,8 +253,9 @@ export async function main(argv: string[], env: Env): Promise<number> {
           }
           if (cmd === 'import-mail') {
             env.out(`Mail: ${stats.seen} message(s) read, ${added} imported, ${same} unchanged; left out: ${stats.spamTrash} spam or trash, `
-              + `${stats.badDate} without a date, ${stats.empty} empty, ${stats.errors} unreadable.\n`);
-          } else env.out(`Notes: ${added} imported, ${same} unchanged.\n`);
+              + `${stats.badDate} without a date, ${stats.empty} empty, ${stats.duplicates ?? 0} duplicate copies, ${stats.errors} unreadable`
+              + `${stats.truncated ? `; ${stats.truncated} over 64 MB read in part` : ''}.\n`);
+          } else env.out(`Notes: ${added} imported, ${same} unchanged${notes.skipped ? `, ${notes.skipped} skipped (unreadable or over 1 MB)` : ''}.\n`);
           const em = await embedder(env, c);
           try { if (em.e) env.out(`Embedded ${await embedMissing(store, em.e)} new chunk(s).\n`); } finally { em.stop(); }
           return stats.errors > 0 ? 1 : 0;

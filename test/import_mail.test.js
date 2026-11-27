@@ -143,8 +143,69 @@ test('notes: text files in a folder, one item each, dated by their change; hidde
     writeFileSync(join(dir, 'node_modules', 'x.md'), '# dep');
     utimesSync(join(dir, 'todo.txt'), new Date('2026-10-01T12:00:00Z'), new Date('2026-10-01T12:00:00Z'));
     const items = readNotes(dir);
-    assert.deepEqual(items.map(i => [i.id, i.title, i.source]), [['notes:garden/plan.md', 'Vegetable plan', 'notes'], ['notes:todo.txt', 'todo', 'notes']]);
+    assert.deepEqual(items.map(i => [i.id.replace(/^notes:[0-9a-f]{8}:/, 'notes:'), i.title, i.source]), [['notes:garden/plan.md', 'Vegetable plan', 'notes'], ['notes:todo.txt', 'todo', 'notes']]);
     assert.equal(items[1].date, '2026-10-01T12:00:00.000Z');
     assert.equal(items[0].text, '# Vegetable plan\n\nTomatoes along the south wall.');
+  } finally { rmSync(dir, { recursive: true, force: true }); }
+});
+
+// Regression tests from the 27 Nov adversarial review (each was a confirmed defect).
+import { mailItem, decodeHeader as dh, parseMailDate } from '../src/import_mail.ts';
+const msg = (head, body) => head.join('\n') + '\n\n' + body;
+const one = (bin, sep = '') => mailItem(bin, sep, new Set());
+
+test('review: hostile inputs stay linear (unclosed brace with semicolon CSV, unclosed tags)', () => {
+  const csv = 'Export {draft\n' + 'Dupont;Jean;12 rue X;Paris\n'.repeat(8000);
+  let t0 = Date.now(); cleanBody(csv); assert.ok(Date.now() - t0 < 1500, `cleanBody took ${Date.now() - t0} ms`);
+  t0 = Date.now(); htmlToText('<a '.repeat(20000)); htmlToText('<style '.repeat(20000)); htmlToText('<p title="'.repeat(20000));
+  assert.ok(Date.now() - t0 < 1500, `htmlToText took ${Date.now() - t0} ms`);
+  assert.equal(cleanBody('p { color: red; }\nHello'), 'Hello', 'style rules still removed');
+});
+
+test('review: bad numeric entities, RFC 2231 file names, unclosed multipart, split encoded words, rfc822, eml', () => {
+  assert.equal(htmlToText('<p>Hello&#99999999; &#0; &#xD83D; &#150; world</p>').trim(), 'Hello� � � – world');
+  const attach = one(msg(['Date: Thu, 13 Nov 2026 10:00:00 +0000', 'Subject: s', 'Content-Type: multipart/mixed; boundary=B'],
+    "--B\nContent-Type: text/plain\n\nbody\n--B\nContent-Type: text/plain\nContent-Disposition: inline; filename*=utf-8''Kontoausz%C3%BCge.csv\n\nIBAN;DE89\n--B--\n"));
+  assert.equal(attach.text, 'body');
+  const open = one(msg(['Date: Thu, 13 Nov 2026 10:00:00 +0000', 'Subject: s', 'Content-Type: multipart/alternative; boundary=XX'], '--XX\nContent-Type: text/plain\n\nThe actual body text\n'));
+  assert.equal(open.text, 'The actual body text');
+  assert.equal(dh('=?UTF-8?B?Y2Fmww==?= =?UTF-8?B?qQ==?='), 'café');
+  assert.equal(dh('=?UTF-8?Q?caf=C3?= =?UTF-8?Q?=A9?= ok'), 'café ok');
+  const fwd = one(msg(['Date: Thu, 13 Nov 2026 10:00:00 +0000', 'Subject: Fwd', 'Content-Type: multipart/mixed; boundary=F'],
+    '--F\nContent-Type: text/plain\n\nFYI below.\n--F\nContent-Type: message/rfc822\n\nSubject: inner\nContent-Type: text/plain\n\nInner body kept.\n--F--\n'));
+  assert.equal(fwd.text, 'FYI below.\n\nInner body kept.');
+  const dir = mkdtempSync(join(tmpdir(), 'synalla-eml-'));
+  try {
+    writeFileSync(join(dir, 'one.eml'), msg(['From: a@b.example', 'Subject: single', 'Date: Thu, 13 Nov 2026 10:00:00 +0000', 'Message-ID: <e@x>'], 'Just one message.'));
+    const st = { seen: 0, kept: 0, spamTrash: 0, badDate: 0, bulkHeadersOnly: 0, empty: 0, errors: 0 };
+    const items = [...readMbox(join(dir, 'one.eml'), st)];
+    assert.equal(items.length, 1); assert.equal(items[0].text, 'Just one message.');
+    const dup = m => 'From x@y Thu Nov 13 09:00:00 +0000 2026\n' + msg(['Subject: d', 'Date: Thu, 13 Nov 2026 10:00:00 +0000', 'Message-ID: <dup@x>'], m) + '\n';
+    writeFileSync(join(dir, 'dup.mbox'), dup('first') + '\n' + dup('first') + '\n' + dup('second'));
+    const st2 = { seen: 0, kept: 0, spamTrash: 0, badDate: 0, bulkHeadersOnly: 0, empty: 0, errors: 0 };
+    const d = [...readMbox(join(dir, 'dup.mbox'), st2)];
+    assert.equal(st2.duplicates, 1); assert.equal(d.length, 2); assert.notEqual(d[0].id, d[1].id);
+    assert.deepEqual([...readMbox(join(dir, 'dup.mbox'), { ...st2, duplicates: 0 })].map(x => x.id), d.map(x => x.id), 'ids stable');
+  } finally { rmSync(dir, { recursive: true, force: true }); }
+});
+
+test('review: dates are strict and never local; long text is cut on a whole character', () => {
+  assert.equal(parseMailDate('Mon, 1 Jan 2024 10:00:00').toISOString(), '2024-01-01T10:00:00.000Z');
+  assert.equal(parseMailDate('Thu, 13 Nov 2026 10:00:00 CEST').toISOString(), '2026-11-13T08:00:00.000Z');
+  assert.equal(parseMailDate('1'), null);
+  const tb = one(msg(['Subject: tb', 'Date: nonsense'], 'x'), 'From - Thu Nov 13 09:00:00 2026');
+  assert.equal(tb.date, '2026-11-13T09:00:00.000Z');
+  const long = one(msg(['Subject: l', 'Date: Thu, 13 Nov 2026 10:00:00 +0000'], 'a'.repeat(199999) + '\u{1F600}'));
+  assert.ok(!/[\uD800-\uDBFF]$/.test(long.text), 'no lone surrogate at the cut');
+});
+
+test('review: two note folders keep their own ids; an unreadable file is skipped, not fatal; 1252 notes decode', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'synalla-notes2-'));
+  try {
+    for (const d of ['n1', 'n2']) { mkdirSync(join(dir, d)); writeFileSync(join(dir, d, 'todo.md'), `# ${d}`); }
+    writeFileSync(join(dir, 'n1', 'old.txt'), Buffer.from([0x63, 0x61, 0x66, 0xe9])); // "café" in Windows-1252
+    const a = readNotes(join(dir, 'n1')), b = readNotes(join(dir, 'n2'));
+    assert.notEqual(a.find(x => x.id.endsWith(':todo.md')).id, b[0].id);
+    assert.equal(a.find(x => x.id.endsWith(':old.txt')).text, 'café');
   } finally { rmSync(dir, { recursive: true, force: true }); }
 });

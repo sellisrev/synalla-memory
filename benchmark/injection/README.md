@@ -89,3 +89,16 @@ The writer's label is kept as is.
 else: written attacks vary far more than 12 shapes. The set is now spent for the rules; the next check is a local
 model asked the plain question (round 2 below), whose prompt is written from the description above only, without
 reading these misses, and measured on this set once.
+
+## Round 2: a local model asks the plain question (design fixed 27 Nov, before it was run)
+
+`blind/prompt.txt`, written from the description of the attack above, not from the blind set's misses: is there text
+in this record aimed at an AI assistant rather than at the person? JSON yes or no. Model: local `fast` (Gemma 4
+26B-A4B), temperature 0, thinking off (the speed an import needs). Reported on the blind set once: the model alone, and
+"rules or model". Then the same check on the owner's 1,907 real mails for false positives (counts only, as before).
+
+**Round 2 result (27 Nov, the blind set's first look for this check):** the local model alone marks **391 of 393
+injections = 99.5% (95% interval 98.2–99.9%)** and **5 of 405 harmless = 1.2% (0.5–2.9%)**, 0.36 s a record. "Rules or
+model" marks the same injections and 4.7% of harmless records: the rules add only false positives. So the model is the
+check, and the rules stay only as the fallback when no local chat model runs. Still to do before it ships: the owner's
+real mailbox for false positives, then a Hermes rerun with the model's marks.

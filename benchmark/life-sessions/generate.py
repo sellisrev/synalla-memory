@@ -475,7 +475,7 @@ def plan(pid, stories, name):
         x = cands[0] if not late else rnd.choice(cands)
         pat = next(s['pattern'] for s in stories if s['id'] == sid)
         dated = k > 0 or pat.startswith('need')  # a change, a correction, a need: its day is asked about
-        x['steps'].append({'story': sid, 'step': k, 'day': d, 'said_late': x['day'] > d and dated, 'text': text, 'must': must})
+        x['steps'].append({'story': sid, 'step': k, 'day': d, 'said_late': x['day'] > d and dated, 'dated': dated, 'text': text, 'must': must})
         last[sid] = x['n']
     # a story's steps stay in order: a later step never lands in an earlier session than the step before it
     pos = {}
@@ -579,7 +579,8 @@ def write_session(a, pid, name, bio, work, stories, sessions, x, attempt):
     known = [k for k in known if not k.startswith('still looking for')]  # open needs are not repeated as background
     r = random.Random(num('known', pid, x['n'], attempt))  # at most one, in half the sessions: background invites invented detail
     known = r.sample(known, min(1, len(known))) if r.random() < 0.5 else []
-    steps = '\n'.join(f"- {st['text']}" + (f" This happened on {datetime.date.fromisoformat(day(st['day'])):%A} {datetime.date.fromisoformat(day(st['day'])).day} {datetime.date.fromisoformat(day(st['day'])):%B}: say that date as people do (\"on Thursday 5 March\", \"last Monday, the 9th\")." if st['said_late'] else '') for st in x['steps'])
+    steps = '\n'.join(f"- {st['text']}" + (f" This happened on {datetime.date.fromisoformat(day(st['day'])):%A} {datetime.date.fromisoformat(day(st['day'])).day} {datetime.date.fromisoformat(day(st['day'])):%B}: say that date as people do (\"on Thursday 5 March\", \"last Monday, the 9th\")." if st['said_late']
+        else " This happens today: say it as today's news, never as something from last week or a while back." if st.get('dated') else '') for st in x['steps'])
     task = (f'help with their work ({work})' if x['kind'] == 'work' else
             'everyday help (a message to write, planning, shopping, cooking, a health or money question, paperwork, travel, a hobby)')
     prompt = f"""Write one realistic conversation between {name} ({bio}) and their personal AI agent on {x['date']}
@@ -608,7 +609,19 @@ def session_problems(stories, sessions, x, s):
                 forms = [dt.isoformat(), f'{dt.day} {dt:%B}'.lower(), f'{dt:%B} {dt.day}'.lower(), f'{dt.day}th', f'{dt.day}st', f'{dt.day}nd', f'{dt.day}rd']
                 if not any(f in text for f in forms):
                     probs.append(f"date {dt} not said")
+    # A dated step on its own day must not be told as older news: its day is what "when" questions ask (27 Nov audit).
+    sentences = re.split(r'(?<=[.!?])\s+', text)
+    for st in x['steps']:
+        if st.get('dated') and not st['said_late']:
+            for sen in sentences:
+                if any(carries(sen, m) for m in st['must']) and VAGUE_PAST.search(sen):
+                    probs.append(f"step told as older news: {VAGUE_PAST.search(sen).group(0)!r}")
+                    break
     return probs
+
+
+VAGUE_PAST = re.compile(r"\b(last (?:week|month|year|weekend)|a (?:while|few (?:days|weeks)) (?:back|ago)|weeks? ago|"
+                        r"days ago|lately|recently|for a while now|since last|the other day)\b")
 
 
 def to_jsonl(pid, x, s):

@@ -78,6 +78,8 @@ export interface Env {
   openclawDir?: string;
   /** Starts the built-in embedding server (tests inject a fake; the default downloads pinned files on first use). */
   startBuiltin?: (home: string, dim: number, gpu?: 'vulkan') => Promise<{ url: string; stop(): void }>;
+  /** The user's home folder, where agents keep their skills (tests point it elsewhere). */
+  userHome?: string;
   /** Starts the built-in check model (tests inject a fake; the default downloads the pinned model on first use). */
   startCheck?: (home: string, name: CheckModelName, gpu?: 'vulkan') => Promise<{ url: string; stop(): void }>;
 }
@@ -470,6 +472,27 @@ export async function main(argv: string[], env: Env): Promise<number> {
         env.out('Noted. Next reminder in a year.\n');
         return 0;
       }
+      case 'install-skill': {
+        // The skill that tells an agent how to use this memory and its stand-ins (skills/synalla-memory/SKILL.md), copied
+        // where each agent looks for skills. --print writes it out instead, for clients without skill folders.
+        const skill = readFileSync(new URL('../skills/synalla-memory/SKILL.md', import.meta.url), 'utf8');
+        const who = rest[0];
+        if (who === '--print') { env.out(skill); return 0; }
+        const base = env.userHome ?? homedir();
+        const dirs: Record<string, string> = {
+          'claude-code': join(base, '.claude', 'skills'),
+          hermes: join(process.env['HERMES_HOME'] ?? join(base, '.hermes'), 'skills'),
+          openclaw: join(env.openclawDir ?? openclawStateDir(), 'skills'),
+          codex: join(process.env['CODEX_HOME'] ?? join(base, '.codex'), 'skills'),
+        };
+        const at = who ? dirs[who] : undefined;
+        if (!at) throw new Error(`usage: install-skill ${Object.keys(dirs).join(' | ')} | --print`);
+        const dest = join(at, 'synalla-memory');
+        mkdirSync(dest, { recursive: true });
+        writeFileSync(join(dest, 'SKILL.md'), skill);
+        env.out(`Installed the Synalla memory skill for ${who} in ${dest}. Start a new session for it to load.\n`);
+        return 0;
+      }
       case 'status': {
         const c = load(env), store = openStore(env, c);
         try {
@@ -487,7 +510,7 @@ export async function main(argv: string[], env: Env): Promise<number> {
         } finally { store.close(); }
       }
       default:
-        env.out('usage: synalla-memory init | import | import-mail <mbox> | import-notes <folder> | embed | check-with builtin | <url> <model> [--cloud-ok] | extract-with ... | extract | recall <q> | serve | backup-to ... | backup | restore ... | export --plain <dir> | koofr-login-done | status\n');
+        env.out('usage: synalla-memory init | import | import-mail <mbox> | import-notes <folder> | embed | check-with builtin | <url> <model> [--cloud-ok] | install-skill <agent> | extract-with ... | extract | recall <q> | serve | backup-to ... | backup | restore ... | export --plain <dir> | koofr-login-done | status\n');
         return cmd ? 2 : 0;
     }
   } catch (e) {

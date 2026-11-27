@@ -9,8 +9,13 @@ Status: early work, not released. Node 22.18 or later.
 ## What it does
 
 - **Imports** your Claude Code, Hermes and OpenClaw sessions: what you wrote and what the agent answered. Tool output, the
-  agent's reasoning and subagent runs are left out. Secrets (API keys, tokens, private keys, passwords) are replaced
-  by a marker before anything is stored.
+  agent's reasoning and subagent runs are left out.
+- **Hides private values behind stand-ins** before anything is stored: secrets (passwords, keys, codes) and money and
+  ID numbers (IBAN, card, social security, tax and passport numbers). Each becomes a stand-in that says what it is and
+  stays the same everywhere, like `⟦IBAN 2⟧` or `⟦Wi-Fi password 1⟧`, so your agent can still reason with it. The
+  values stay in the encrypted store (keys in a provider's own format are dropped). When you need one, your agent
+  gives you a link to a page on your own computer that shows its answer with the values back; they never pass
+  through the agent's session. Names, phone numbers and addresses stay readable.
 - **Imports mail and notes** on request: an mbox file (one item per message, the readable body without quoted
   replies, signatures or attachments; spam and trash left out) and a folder of Markdown or text notes.
 - **Answers `recall`** with passages found by keywords and by meaning, merged, plus dated facts that say what is true
@@ -54,7 +59,8 @@ Ollama). A cloud model works too if you choose it: `check-with <https url> <mode
 standard input (kept in the keychain). Without a model the rules still run. Agent sessions get
 the secrets pass too (about an hour of a local GPU for 250 sessions the first time, then only new ones).
 
-MCP tools: `recall`, `remember`, `facts_about`, `what_changed`. Setting it up in Claude Code, Hermes or OpenClaw:
+MCP tools: `recall`, `remember`, `facts_about`, `what_changed`, `show_to_owner`. Setting it up in Claude Code, Hermes,
+OpenClaw or Codex, with the skill that tells the agent how to handle stand-ins (`synalla-memory install-skill <agent>`):
 [docs/agents.md](docs/agents.md).
 
 On Windows, search by meaning runs llama.cpp, which needs the Microsoft Visual C++ runtime. A new PC may not have it,

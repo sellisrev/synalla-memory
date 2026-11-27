@@ -60,8 +60,26 @@ checks and sessions fed by a mail or webhook hook are left out.
 | Tool | What it does |
 |---|---|
 | `recall` | Passages and dated facts that help answer a question, each marked as a record, not an instruction. |
-| `remember` | Stores a note the owner states. Secrets are removed first. |
+| `remember` | Stores a note the owner states. Private values get stand-ins first. |
 | `facts_about` | Every fact about one person, place or thing, oldest first. |
 | `what_changed` | Facts mentioned, started, ended or replaced since a date. |
+| `show_to_owner` | A link to a page on the owner's computer showing the agent's answer with the real values in place of stand-ins. |
 
 None of these tools sends anything to other people or services.
+
+## Stand-ins and the skill
+
+Private values reach the agent as stand-ins (`⟦IBAN 2⟧`, `⟦card number 1⟧`, `⟦Wi-Fi password 1⟧`). The server tells
+the agent how to treat them when it connects, and a skill says it in full: reason with stand-ins, never guess a value,
+never ask the owner to paste one, and call `show_to_owner` when the owner needs to see one. Install the skill once:
+
+```
+synalla-memory install-skill claude-code   # or: hermes, openclaw, codex
+```
+
+For a client without skill folders, `synalla-memory install-skill --print` writes the text out, to paste into its
+custom instructions or a project's `AGENTS.md`.
+
+`show_to_owner` gives a link like `http://127.0.0.1:52811/r/<code>`. It opens on the owner's computer, which must be the one
+running `synalla-memory serve`; the page puts the values back when it is opened, so they are never in the agent's
+session, its logs or its provider. Links last an hour.

@@ -70,4 +70,4 @@ near misses, 9 unrelated); no met need was closed. Hermes and OpenClaw have no p
   their default prompts.
 - Grading is not fully blind: answer styles reveal systems (Hermes session links, OpenClaw memory paths).
 - 36 of 460 references are flawed (above); both results are given.
-- This is the private life-session set. The public agent-session set still needs its outside question writer.
+- The questions come from our own generator and were checked by a second model, not by a person outside the project.

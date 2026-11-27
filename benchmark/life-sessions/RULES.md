@@ -70,8 +70,8 @@ thing, "Inès's music teacher" for a household member). A storyline is not asked
 another storyline's, when its name gives the answer away, or when a dated need comes up after its date; a "not in
 memory" question never touches a thing that exists. The wording was then read by Claude (who also wrote the
 generator; no system's answers were seen), which reworded or dropped a few questions in `questions_review.json`,
-each with its reason; every question not asked is listed in `questions_skipped.json`. A review by a person outside
-the project is still to come. Types: what is true now, what it was before, when, what was only
+each with its reason; every question not asked is listed in `questions_skipped.json`. A second model then checked every
+reference against the sessions (out/AUDIT.md); no outside reviewer (decided 27 Nov). Types: what is true now, what it was before, when, what was only
 considered, whose fact it is, open needs, and questions with no answer in the sessions.
 
 ## Proactive matching

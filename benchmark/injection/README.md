@@ -102,3 +102,8 @@ injections = 99.5% (95% interval 98.2–99.9%)** and **5 of 405 harmless = 1.2% 
 model" marks the same injections and 4.7% of harmless records: the rules add only false positives. So the model is the
 check, and the rules stay only as the fallback when no local chat model runs. Still to do before it ships: the owner's
 real mailbox for false positives, then a Hermes rerun with the model's marks.
+
+**Round 2, owner's real mailbox (27 Nov):** the model marks **4 of 1,907 messages = 0.2%**, all wrong when read (a
+sponsor block in a newsletter, a note the owner mailed to himself about AI words, a train-booking verification code,
+a public-service account notice). Under the 1% bar. Mail the owner sent himself will not be checked at all, as with
+his own sessions.

@@ -43,21 +43,29 @@ synalla-memory init                 # creates the store and shows your recovery 
 synalla-memory import               # reads your sessions
 synalla-memory import-mail <file.mbox>  # your mail, e.g. a Google Takeout export
 synalla-memory import-notes <folder>    # Markdown and text notes
-synalla-memory check-with <url> <model>  # optional: a chat model checks imports (below)
+synalla-memory check-with builtin      # optional: a small local model checks imports (below)
 synalla-memory serve                # the MCP server: add this command to your agent's MCP settings
 synalla-memory backup-to folder <your cloud folder>
 synalla-memory backup
 synalla-memory status
 ```
 
-With a chat model, `check-with` lets it check what you import: a second
-look for passwords and keys the rules miss, and a warning on mail and notes that try to give orders to your AI
-assistant (prompt injection). Measured with Gemma 4 26B-A4B: secrets caught 97.1% instead of 94.0% on text it never
-saw, 1.4% of harmless lines changed; injections marked 99.5%, harmless mail 1.2% (0.2% of a real mailbox). The model
-reads your mail and notes in full, so the recommended setup is a model on this machine (llama.cpp, llama-swap,
-Ollama). A cloud model works too if you choose it: `check-with <https url> <model> --cloud-ok`, with its API key on
-standard input (kept in the keychain). Without a model the rules still run. Agent sessions get
-the secrets pass too (about an hour of a local GPU for 250 sessions the first time, then only new ones).
+`check-with` lets a chat model check what you import: a second look for passwords and keys the rules miss, and a
+warning on mail and notes that try to give orders to your AI assistant (prompt injection).
+
+- `check-with builtin`: the recommended setup. It downloads Gemma 4 E4B (Google's own release, 5 GB, checked against
+  its published checksum) and runs it on your computer's processor, on the llama.cpp server the package already
+  uses, during imports only. On text it never saw: secrets caught 96.8% instead of 94.0% with the rules alone, 4.4%
+  of harmless lines hidden by mistake; injections marked 99.2%, 5.2% of harmless test mail, 0.16% of a real mailbox.
+  A wrong hide costs little: the value is kept behind its stand-in and your agent can show it to you. About a second
+  a record on a fast desktop processor; a first import of years of mail takes hours on a laptop.
+- `check-with <url> <model>`: a model you run yourself (llama.cpp, llama-swap, Ollama). With Gemma 4 26B-A4B on a
+  GPU: secrets 97.0% caught, 1.4% hidden by mistake; injections 99.7%, 1.2%.
+- `check-with <https url> <model> --cloud-ok`: a cloud model, if you choose it. Each checked record is sent there in
+  full; its API key is read from standard input and kept in the keychain.
+
+Without a model the rules still run. Agent sessions get the secrets pass too. Measurements:
+[benchmark/small_models.md](benchmark/small_models.md).
 
 MCP tools: `recall`, `remember`, `facts_about`, `what_changed`, `show_to_owner`. Setting it up in Claude Code, Hermes,
 OpenClaw or Codex, with the skill that tells the agent how to handle stand-ins (`synalla-memory install-skill <agent>`):

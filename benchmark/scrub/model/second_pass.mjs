@@ -14,9 +14,10 @@ const isPlaceholder = v => !v.includes('"') && scrub(`password = "${v}"`).found.
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const PROMPT = readFileSync(join(HERE, 'prompt.txt'), 'utf8');
-const CACHE = join(HERE, 'cache'); mkdirSync(CACHE, { recursive: true });
 const THINK = process.env.SCRUB_THINK === '1'; // thinking on: about 15 s a line with fast; off: about 1 s
 const URL_ = process.env.SCRUB_MODEL_URL ?? 'http://127.0.0.1:9090/v1/chat/completions', MODEL = process.env.SCRUB_MODEL ?? 'fast';
+// One cache folder per model (the first runs, with `fast`, used the folder itself).
+const CACHE = MODEL === 'fast' ? join(HERE, 'cache') : join(HERE, 'cache', MODEL); mkdirSync(CACHE, { recursive: true });
 export const stats = { asked: 0, cached: 0, secs: 0 };
 
 const kinds = t => +/[A-Za-z]/.test(t) + +/[0-9]/.test(t) + +/[^A-Za-z0-9]/.test(t);

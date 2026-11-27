@@ -33,12 +33,13 @@ import { readHermes, hermesDbPath } from './import_hermes.ts';
 import { readOpenClaw, openclawStateDir } from './import_openclaw.ts';
 import { readMbox, readNotes, type MailStats } from './import_mail.ts';
 import { httpEmbedder, type Embedder } from './embed.ts';
-import { ensureModels, startEmbedServer, EMBED_MODEL } from './models.ts';
+import { ensureModels, startEmbedServer, startChatServer, ensureCheckModel, isCheckModelName, CHECK_MODELS, EMBED_MODEL,
+  type CheckModelName } from './models.ts';
 import { McpServer, serveStdio } from './mcp.ts';
 import { backup, restore, folderTarget, webdavTarget, s3Target, listSnapshots, type Target } from './backup.ts';
 import { exportPlain } from './export.ts';
 import { httpChatModel, extractPending } from './facts.ts';
-import { checkModel, scrubItemWithModel, speaksToAgentModel } from './checks.ts';
+import { checkModel, type CheckModel, scrubItemWithModel, speaksToAgentModel } from './checks.ts';
 
 export interface Config {
   /** Names this memory's keys in the keychain, so two memories on one machine never share keys. */
@@ -48,7 +49,7 @@ export interface Config {
   embedUrl?: string;
   /** A chat model for the import checks (secrets second pass, prompt injection); see checks.ts. Off this machine only
    *  with the owner's agreement (cloudAgreedAt); its key, if any, is in the keychain. */
-  check?: { url: string; model: string; cloudAgreedAt?: string };
+  check?: { url: string; model: string; cloudAgreedAt?: string } | { builtin: CheckModelName };
   /** 'none': keyword search only, no model download. */
   embed?: 'builtin' | 'none';
   /** Run the built-in embedder on the GPU (Vulkan build of llama.cpp); default CPU. */
@@ -76,6 +77,8 @@ export interface Env {
   openclawDir?: string;
   /** Starts the built-in embedding server (tests inject a fake; the default downloads pinned files on first use). */
   startBuiltin?: (home: string, dim: number, gpu?: 'vulkan') => Promise<{ url: string; stop(): void }>;
+  /** Starts the built-in check model (tests inject a fake; the default downloads the pinned model on first use). */
+  startCheck?: (home: string, name: CheckModelName, gpu?: 'vulkan') => Promise<{ url: string; stop(): void }>;
 }
 
 const YEAR_MS = 365 * 86400000;
@@ -109,18 +112,26 @@ async function embedderOrKeywords(env: Env, c: Config): Promise<{ e?: Embedder; 
     return { stop: () => {} };
   }
 }
+function progressLine(env: Env) {
+  let last = '';
+  return (what: string, d: number, t: number) => {
+    const line = `Downloading ${what} (first use only): ${Math.floor((100 * d) / t)}%`;
+    if (line !== last) { env.err(`\r${line}`); last = line; if (d === t) env.err('\n'); }
+  };
+}
 function builtin(env: Env) {
   return async (home: string, dim: number, gpu?: 'vulkan') => {
     if (dim !== EMBED_MODEL.dim) throw new Error(`the built-in model makes ${EMBED_MODEL.dim}-number vectors, this memory uses ${dim}; set embedUrl`);
-    let last = '';
-    const { server, model } = await ensureModels(join(home, 'models'), {
-      gpu: gpu ?? 'cpu',
-      progress: (what, d, t) => {
-        const line = `Downloading ${what} (first use only): ${Math.floor((100 * d) / t)}%`;
-        if (line !== last) { env.err(`\r${line}`); last = line; if (d === t) env.err('\n'); }
-      },
-    });
+    const { server, model } = await ensureModels(join(home, 'models'), { gpu: gpu ?? 'cpu', progress: progressLine(env) });
     return startEmbedServer(server, model, { gpuLayers: gpu ? 99 : 0 });
+  };
+}
+function builtinCheck(env: Env) {
+  return async (home: string, name: CheckModelName, gpu?: 'vulkan') => {
+    const p = progressLine(env);
+    const { server } = await ensureModels(join(home, 'models'), { gpu: gpu ?? 'cpu', progress: p });
+    const model = await ensureCheckModel(join(home, 'models'), name, { progress: (d, t) => p(`check model ${name}`, d, t) });
+    return startChatServer(server, model, { gpuLayers: gpu ? 99 : 0 });
   };
 }
 async function embedMissing(store: MemoryStore, e: Embedder): Promise<number> {
@@ -140,11 +151,23 @@ async function embedMissing(store: MemoryStore, e: Embedder): Promise<number> {
     n += m.length;
   }
 }
-/** The configured check model, with its key from the keychain when it is off this machine. */
-function checkWith(env: Env, c: Config, ch: NonNullable<Config['check']>) {
+/**
+ * The configured check model and a function that releases it: the built-in one runs as a sidecar for the import; an
+ * endpoint off this machine gets its key from the keychain. Null when no check model is set.
+ */
+async function openCheck(env: Env, c: Config): Promise<{ m: CheckModel; name: string; stop(): void } | null> {
+  const ch = c.check;
+  if (!ch) return null;
+  if ('builtin' in ch) {
+    const s = await (env.startCheck ?? builtinCheck(env))(env.home, ch.builtin, c.embedGpu);
+    try { return { m: checkModel(s.url, 'check'), name: ch.builtin, stop: s.stop }; } catch (e) { s.stop(); throw e; }
+  }
   const key = ch.cloudAgreedAt ? env.keychain.get(kname(c, 'check')) : null;
-  return checkModel(ch.url, ch.model, { cloud: !!ch.cloudAgreedAt, ...(key ? { apiKey: Buffer.from(key).toString('utf8') } : {}) });
+  return { m: checkModel(ch.url, ch.model, { cloud: !!ch.cloudAgreedAt, ...(key ? { apiKey: Buffer.from(key).toString('utf8') } : {}) }),
+    name: ch.model, stop: () => {} };
 }
+/** The recommended built-in check model (benchmark/small_models.md). */
+const DEFAULT_CHECK: CheckModelName = 'gemma-4-e4b';
 const isLocal = (url: string) => ['localhost', '127.0.0.1', '[::1]'].includes(new URL(url).hostname);
 type BackupPlace = NonNullable<Config['backup']>;
 /** Parse `folder <path>` | `webdav <url> <user>` | `s3 <endpoint> <bucket> <region> <access key id>`. */
@@ -222,33 +245,34 @@ export async function main(argv: string[], env: Env): Promise<number> {
           const seen = new Map(Object.entries(c.claudeCodeSeen ?? {}));
           // With check-with, sessions get the model's second pass for secrets too (not the injection question: they are
           // the owner's own conversations).
-          const cm = c.check ? checkWith(env, c, c.check) : null, memo = new Map<string, string[]>();
-          const add = async (it: Parameters<MemoryStore['addItem']>[0] & { title: string; text: string; chunks: string[] }) =>
-            store.addItem(cm ? await scrubItemWithModel(it, cm, memo) : it);
-          const r = await importClaudeCode({ addItem: add }, seen, env.claudeProjects);
-          c.claudeCodeSeen = Object.fromEntries(seen);
-          save(env, c);
-          env.out(`Claude Code: ${r.imported.length} session(s) imported, ${r.skipped} unchanged, ${r.failed.length} failed.\n`);
-          for (const f of r.failed) env.err(`  ${f.file}: ${f.error}\n`);
-          let hermesFailed = false;
+          const ck = await openCheck(env, c), cm = ck?.m ?? null, memo = new Map<string, string[]>();
+          let r: Awaited<ReturnType<typeof importClaudeCode>>, hermesFailed = false, openclawFailed = false;
           try {
-            const hs = new Map(Object.entries(c.hermesSeen ?? {}));
-            const items = readHermes(env.hermesDb ?? hermesDbPath(), hs);
-            for (const it of items) await add(it);
-            c.hermesSeen = Object.fromEntries(hs);
+            const add = async (it: Parameters<MemoryStore['addItem']>[0] & { title: string; text: string; chunks: string[] }) =>
+              store.addItem(cm ? await scrubItemWithModel(it, cm, memo) : it);
+            r = await importClaudeCode({ addItem: add }, seen, env.claudeProjects);
+            c.claudeCodeSeen = Object.fromEntries(seen);
             save(env, c);
-            if (hs.size > 0) env.out(`Hermes: ${items.length} session(s) imported.\n`);
-          } catch (e) { hermesFailed = true; env.err(`Hermes: ${(e as Error).message}\n`); }
-          let openclawFailed = false;
-          try {
-            const os = new Map(Object.entries(c.openclawSeen ?? {}));
-            const o = readOpenClaw(env.openclawDir ?? openclawStateDir(), os);
-            for (const it of o.items) await add(it);
-            c.openclawSeen = Object.fromEntries(os);
-            save(env, c);
-            if (os.size > 0) env.out(`OpenClaw: ${o.items.length} session(s) imported.\n`);
-            for (const f of o.failed) { openclawFailed = true; env.err(`OpenClaw (agent ${f.agent}): ${f.error}\n`); }
-          } catch (e) { openclawFailed = true; env.err(`OpenClaw: ${(e as Error).message}\n`); }
+            env.out(`Claude Code: ${r.imported.length} session(s) imported, ${r.skipped} unchanged, ${r.failed.length} failed.\n`);
+            for (const f of r.failed) env.err(`  ${f.file}: ${f.error}\n`);
+            try {
+              const hs = new Map(Object.entries(c.hermesSeen ?? {}));
+              const items = readHermes(env.hermesDb ?? hermesDbPath(), hs);
+              for (const it of items) await add(it);
+              c.hermesSeen = Object.fromEntries(hs);
+              save(env, c);
+              if (hs.size > 0) env.out(`Hermes: ${items.length} session(s) imported.\n`);
+            } catch (e) { hermesFailed = true; env.err(`Hermes: ${(e as Error).message}\n`); }
+            try {
+              const os = new Map(Object.entries(c.openclawSeen ?? {}));
+              const o = readOpenClaw(env.openclawDir ?? openclawStateDir(), os);
+              for (const it of o.items) await add(it);
+              c.openclawSeen = Object.fromEntries(os);
+              save(env, c);
+              if (os.size > 0) env.out(`OpenClaw: ${o.items.length} session(s) imported.\n`);
+              for (const f of o.failed) { openclawFailed = true; env.err(`OpenClaw (agent ${f.agent}): ${f.error}\n`); }
+            } catch (e) { openclawFailed = true; env.err(`OpenClaw: ${(e as Error).message}\n`); }
+          } finally { ck?.stop(); }
           const em = await embedderOrKeywords(env, c); // the items are saved; vectors can follow with `embed`
           try { if (em.e) env.out(`Embedded ${await embedMissing(store, em.e)} new chunk(s).\n`); } finally { em.stop(); }
           return r.failed.length > 0 || hermesFailed || openclawFailed ? 1 : 0;
@@ -268,19 +292,21 @@ export async function main(argv: string[], env: Env): Promise<number> {
           const notes = { skipped: 0 };
           const items = cmd === 'import-mail' ? readMbox(path, stats) : readNotes(path, notes);
           let added = 0, same = 0;
-          const cm = c.check ? checkWith(env, c, c.check) : null, memo = new Map<string, string[]>();
+          const ck = await openCheck(env, c), cm = ck?.m ?? null, memo = new Map<string, string[]>();
           let marked = 0;
-          for (const it of items) {
-            if (store.hasSameItem(it)) { same++; continue; }
-            if (!cm) { store.addItem(it); added++; continue; }
-            // The model checks: a second pass for secrets, and whether the record speaks to an AI assistant (never for
-            // mail the owner sent). The rules have already run inside each call; the store's scrub leaves markers be.
-            const checked = await scrubItemWithModel(it, cm, memo);
-            const speaks = (it as { sent?: boolean }).sent ? null : await speaksToAgentModel(`${it.title}\n${it.text}`, cm);
-            if (speaks) marked++;
-            store.addItem(checked); store.setChecks(it, speaks); added++;
-          }
-          if (cm) env.out(`Checked with ${c.check?.model}: ${marked} record(s) that speak to an AI assistant will carry a warning.\n`);
+          try {
+            for (const it of items) {
+              if (store.hasSameItem(it)) { same++; continue; }
+              if (!cm) { store.addItem(it); added++; continue; }
+              // The model checks: a second pass for secrets, and whether the record speaks to an AI assistant (never for
+              // mail the owner sent). The rules have already run inside each call; the store's scrub leaves markers be.
+              const checked = await scrubItemWithModel(it, cm, memo);
+              const speaks = (it as { sent?: boolean }).sent ? null : await speaksToAgentModel(`${it.title}\n${it.text}`, cm);
+              if (speaks) marked++;
+              store.addItem(checked); store.setChecks(it, speaks); added++;
+            }
+          } finally { ck?.stop(); }
+          if (ck) env.out(`Checked with ${ck.name}: ${marked} record(s) that speak to an AI assistant will carry a warning.\n`);
           if (cmd === 'import-mail') {
             env.out(`Mail: ${stats.seen} message(s) read, ${added} imported, ${same} unchanged; left out: ${stats.spamTrash} spam or trash, `
               + `${stats.badDate} without a date, ${stats.empty} empty, ${stats.duplicates ?? 0} duplicate copies, ${stats.errors} unreadable`
@@ -373,8 +399,19 @@ export async function main(argv: string[], env: Env): Promise<number> {
       case 'check-with': {
         const c = load(env);
         if (rest[0] === 'off') { delete c.check; save(env, c); env.out('Import checks with a chat model are off; the rules still run.\n'); return 0; }
+        if (rest[0] === 'builtin') {
+          // The recommended setup: a small pinned model run by the package's own llama.cpp, downloaded now (first use).
+          const name = rest[1] ?? DEFAULT_CHECK;
+          if (!isCheckModelName(name)) throw new Error(`unknown built-in check model ${name}: ${Object.keys(CHECK_MODELS).join(', ')}`);
+          const s = await (env.startCheck ?? builtinCheck(env))(env.home, name, c.embedGpu);
+          s.stop(); // it starts: downloaded, checked, and this machine can run it
+          c.check = { builtin: name };
+          save(env, c);
+          env.out(`Imports will be checked with the built-in ${name} on this machine (secrets and prompt injection). Records already stored are not re-checked.\n`);
+          return 0;
+        }
         const [url, model] = rest;
-        if (!url || !model || url.startsWith('--')) throw new Error('usage: check-with <url> <model> [--cloud-ok] | check-with off');
+        if (!url || !model || url.startsWith('--')) throw new Error('usage: check-with builtin [model] | check-with <url> <model> [--cloud-ok] | check-with off');
         const local = isLocal(url);
         checkModel(url, model, { cloud: rest.includes('--cloud-ok') }); // off this machine: needs --cloud-ok and https
         const key = local ? '' : (await env.readStdin()).trim();
@@ -445,7 +482,7 @@ export async function main(argv: string[], env: Env): Promise<number> {
         } finally { store.close(); }
       }
       default:
-        env.out('usage: synalla-memory init | import | import-mail <mbox> | import-notes <folder> | embed | check-with <url> <model> [--cloud-ok] | extract-with ... | extract | recall <q> | serve | backup-to ... | backup | restore ... | export --plain <dir> | koofr-login-done | status\n');
+        env.out('usage: synalla-memory init | import | import-mail <mbox> | import-notes <folder> | embed | check-with builtin | <url> <model> [--cloud-ok] | extract-with ... | extract | recall <q> | serve | backup-to ... | backup | restore ... | export --plain <dir> | koofr-login-done | status\n');
         return cmd ? 2 : 0;
     }
   } catch (e) {

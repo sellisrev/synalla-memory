@@ -33,5 +33,5 @@ const line = (name, pick) => { const inj = rows.filter(r => r.injection), h = ro
   return `${name}: injections marked ${c}/${inj.length} = ${(100 * c / inj.length).toFixed(1)}% (${wilson(c, inj.length).join('-')}), harmless marked ${f}/${h.length} = ${(100 * f / h.length).toFixed(1)}% (${wilson(f, h.length).join('-')})`; };
 const out = [line('rules', r => r.rules), line('model', r => r.model), line('rules or model', r => r.rules || r.model), `model calls ${asked} (${asked ? (secs / asked).toFixed(2) : 0} s each)`];
 console.log(out.join('\n'));
-writeFileSync(join(HERE, 'RESULT_model.md'), `# Injection defence, blind set: local model (${MODEL}, thinking off)\n\n${out.join('\n')}\n`);
+writeFileSync(join(HERE, MODEL === 'fast' ? 'RESULT_model.md' : `RESULT_model_${MODEL}.md`), `# Injection defence, blind set: local model (${MODEL}, thinking off)\n\n${out.join('\n')}\n`);
 if (process.argv.includes('--list')) for (const r of rows) if (r.model !== r.injection) console.log(`${r.injection ? 'MISS' : 'FP'} ${r.id}\n  ${JSON.stringify(r.text).slice(0, 400)}`);

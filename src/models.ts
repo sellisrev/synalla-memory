@@ -51,6 +51,22 @@ export const EMBED_MODEL: Asset & { file: string; dim: number } = {
   sha256: '06507c7b42688469c4e7298b0a1e16deff06caf291cf0a5b278c308249c3e439',
 };
 
+/**
+ * Chat models for the built-in import checks (`check-with builtin`): Google's own QAT Q4_0 GGUF releases of Gemma 4,
+ * Apache 2.0, not gated (LFS sha256 from the Hugging Face API, matched against the files measured in
+ * benchmark/small_models.md).
+ */
+export const CHECK_MODELS = {
+  'gemma-4-e4b': { file: 'gemma-4-E4B_q4_0-it.gguf', size: 5154941280,
+    url: 'https://huggingface.co/google/gemma-4-E4B-it-qat-q4_0-gguf/resolve/main/gemma-4-E4B_q4_0-it.gguf',
+    sha256: '676c35070db6dbe52f93e9c864ee0fba4eddea94b9c875d9cb10daff453fbaee' },
+  'gemma-4-e2b': { file: 'gemma-4-E2B_q4_0-it.gguf', size: 3349516256,
+    url: 'https://huggingface.co/google/gemma-4-E2B-it-qat-q4_0-gguf/resolve/main/gemma-4-E2B_q4_0-it.gguf',
+    sha256: 'fa401b55b07ee70a54c6dae3903c783a6e65064312529ea57175cb5f8dec6634' },
+} satisfies Record<string, Asset & { file: string }>;
+export type CheckModelName = keyof typeof CHECK_MODELS;
+export const isCheckModelName = (s: string): s is CheckModelName => Object.hasOwn(CHECK_MODELS, s);
+
 export function serverAssetKey(platform: NodeJS.Platform = process.platform, arch: string = process.arch, gpu: 'cpu' | 'vulkan' = 'cpu'): string {
   const key = `${platform}-${arch}-${platform === 'darwin' ? 'cpu' : gpu}`; // macOS builds use Metal by themselves
   if (!SERVER_ASSETS[key]) throw new Error(`no pinned llama.cpp build for ${key}; point embedUrl at your own local endpoint instead`);
@@ -140,6 +156,16 @@ export async function ensureModels(dir: string, opts: { gpu?: 'cpu' | 'vulkan'; 
   return { server, model };
 }
 
+/** Make sure the pinned check model is in `dir`; download it if not (first use only). Returns its path. */
+export async function ensureCheckModel(dir: string, name: CheckModelName, opts: { fetch?: typeof fetch; progress?: Progress } = {}): Promise<string> {
+  const a = CHECK_MODELS[name], p = join(dir, a.file);
+  if (!existsSync(p) || statSync(p).size !== a.size) {
+    mkdirSync(dir, { recursive: true });
+    await download(a, p, { ...(opts.fetch ? { fetch: opts.fetch } : {}), ...(opts.progress ? { progress: opts.progress } : {}) });
+  }
+  return p;
+}
+
 async function freePort(): Promise<number> {
   return new Promise((res, rej) => {
     const s = createServer();
@@ -155,9 +181,20 @@ export interface Sidecar { url: string; stop(): void; process: ChildProcess }
  * the measured setting (last-token pooling, 8,192-token batches). `gpuLayers` 0 keeps it on the CPU.
  */
 export async function startEmbedServer(server: string, model: string, opts: { gpuLayers?: number; timeoutMs?: number; fetch?: typeof fetch } = {}): Promise<Sidecar> {
+  return startServer(server, ['-m', model, '--embedding', '--pooling', 'last', '-ub', '8192', '-c', '8192', '-ngl', String(opts.gpuLayers ?? 0)], opts);
+}
+
+/**
+ * Start llama-server with a check model (chat) on a free localhost port: one request at a time, an 8,192-token window
+ * (records are cut at 12,000 characters), the model's own chat template. `gpuLayers` 0 keeps it on the CPU.
+ */
+export async function startChatServer(server: string, model: string, opts: { gpuLayers?: number; timeoutMs?: number; fetch?: typeof fetch } = {}): Promise<Sidecar> {
+  return startServer(server, ['-m', model, '-c', '8192', '-np', '1', '--jinja', '-ngl', String(opts.gpuLayers ?? 0)], opts);
+}
+
+async function startServer(server: string, base: string[], opts: { timeoutMs?: number; fetch?: typeof fetch }): Promise<Sidecar> {
   const port = await freePort();
-  const args = ['-m', model, '--embedding', '--pooling', 'last', '-ub', '8192', '-c', '8192', '--host', '127.0.0.1', '--port', String(port),
-    '-ngl', String(opts.gpuLayers ?? 0)];
+  const args = [...base, '--host', '127.0.0.1', '--port', String(port)];
   const child = spawn(server, args, { stdio: ['ignore', 'ignore', 'pipe'], windowsHide: true });
   let errTail = '';
   child.stderr?.on('data', (d: Buffer) => { errTail = (errTail + d.toString('utf8')).slice(-4000); });
@@ -183,14 +220,14 @@ export function sidecarFailure(code: number | null, stderr: string): string {
   const lib = /error while loading shared libraries: ([^\s:]+)/.exec(stderr)?.[1];
   if (lib) {
     const pkg = /^libgomp\.so/.test(lib) ? 'libgomp1' : /^libvulkan\.so/.test(lib) ? 'libvulkan1' : null;
-    return `the built-in embedding server needs the system library ${lib}`
+    return `the built-in llama.cpp server needs the system library ${lib}`
       + (pkg ? ` (Debian/Ubuntu: sudo apt install ${pkg}; Fedora: sudo dnf install ${pkg === 'libgomp1' ? 'libgomp' : 'vulkan-loader'})` : '')
       + '. Or run init with --embed-url <your embedding endpoint>, or --no-embed for keyword search only.';
   }
   // Windows STATUS_DLL_NOT_FOUND: llama.cpp's Windows build needs the Microsoft Visual C++ runtime, which a new PC
   // may not have (found on a clean Windows Sandbox, 27 Nov 2026).
   if (code === 3221225781 || code === -1073741515) {
-    return 'the built-in embedding server needs the Microsoft Visual C++ runtime, which this PC does not have. Install it with'
+    return 'the built-in llama.cpp server needs the Microsoft Visual C++ runtime, which this PC does not have. Install it with'
       + ' `winget install Microsoft.VCRedist.2015+.x64` (or from https://aka.ms/vs/17/release/vc_redist.x64.exe), then try again.'
       + ' Or run init with --embed-url <your embedding endpoint>, or --no-embed for keyword search only.';
   }

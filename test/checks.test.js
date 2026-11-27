@@ -146,3 +146,37 @@ test('with check-with, agent sessions get the second pass too, and are never ask
     assert.equal(injectionAsked.length, 0);
   } finally { srv.close(); rmSync(root, { recursive: true, force: true }); }
 });
+
+test('check-with builtin: the sidecar starts once to set it up, runs during an import and is stopped after', async () => {
+  const root = mkdtempSync(join(tmpdir(), 'synalla-checks-'));
+  const srv = createServer((req, res) => { let b = ''; req.on('data', d => b += d); req.on('end', () => {
+    const { messages } = JSON.parse(b), sys = messages[0].content, user = messages[1].content;
+    const content = sys === SECRET_PROMPT ? JSON.stringify({ secrets: user.includes('Hq8vT3nLw2Rp') ? ['Hq8vT3nLw2Rp'] : [] })
+      : JSON.stringify({ instructs_ai: false });
+    res.end(JSON.stringify({ choices: [{ message: { content } }] }));
+  }); });
+  await new Promise(r => srv.listen(0, '127.0.0.1', r));
+  const starts = []; let running = 0;
+  try {
+    const notes = join(root, 'notes'); mkdirSync(notes);
+    writeFileSync(join(notes, 'safe.md'), '# Safe\nThe door code for the cellar is Hq8vT3nLw2Rp since March.');
+    const e = { home: join(root, 'home'), keychain: (() => { const m = new Map(); return { kind: 't', get: n => m.get(n) ?? null, set: (n, v) => m.set(n, v), delete: n => m.delete(n) }; })(),
+      out: s => e.o.push(s), err: s => e.r.push(s), o: [], r: [], readStdin: async () => '', now: () => new Date('2026-11-27T10:00:00Z'),
+      openclawDir: join(root, 'no-openclaw'),
+      startCheck: async (home, name) => { starts.push(name); running++; return { url: `http://127.0.0.1:${srv.address().port}`, stop: () => { running--; } }; } };
+    assert.equal(await main(['init', '--no-embed'], e), 0);
+    assert.notEqual(await main(['check-with', 'builtin', 'no-such-model'], e), 0);
+    assert.match(e.r.join(''), /unknown built-in check model no-such-model: gemma-4-e4b, gemma-4-e2b/);
+    assert.equal(await main(['check-with', 'builtin'], e), 0);
+    assert.deepEqual(starts, ['gemma-4-e4b']);
+    assert.equal(running, 0);
+    assert.deepEqual(JSON.parse(readFileSync(join(e.home, 'config.json'), 'utf8')).check, { builtin: 'gemma-4-e4b' });
+    assert.equal(await main(['import-notes', notes], e), 0);
+    assert.match(e.o.join(''), /Checked with gemma-4-e4b: 0 record\(s\)/);
+    assert.equal(starts.length, 2);
+    assert.equal(running, 0);
+    e.o.length = 0;
+    assert.equal(await main(['recall', 'cellar door code'], e), 0);
+    assert.match(e.o.join(''), /door code for the cellar is \[secret:model\]/);
+  } finally { srv.close(); rmSync(root, { recursive: true, force: true }); }
+});

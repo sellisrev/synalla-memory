@@ -7,7 +7,8 @@ import { createHash } from 'node:crypto';
 import { mkdtempSync, rmSync, readFileSync, existsSync, readdirSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { download, serverAssetKey, startEmbedServer, SERVER_ASSETS, EMBED_MODEL } from '../src/models.ts';
+import { download, serverAssetKey, startEmbedServer, SERVER_ASSETS, EMBED_MODEL, CHECK_MODELS, ensureCheckModel } from '../src/models.ts';
+import { MODEL_HOSTS } from '../src/egress.ts';
 import { httpEmbedder } from '../src/embed.ts';
 
 const body = Buffer.from('pretend model bytes '.repeat(1000));
@@ -84,4 +85,17 @@ test('Windows: the VC++ runtime goes next to llama-server from the pinned releas
     const none = async url => { if (WIN_RUNTIME.some(d => d.url === String(url))) throw new Error('downloaded again'); return new Response(new Uint8Array(10)); };
     await assert.rejects(ensureModels(dir, { fetch: none }), /checksum mismatch for https:\/\/huggingface/); // runtime kept, model next
   } finally { fs.rmSync(dir, { recursive: true, force: true }); }
+});
+
+test('the built-in check models are pinned to Google\'s own Hugging Face releases, and a wrong file is refused', async () => {
+  for (const a of Object.values(CHECK_MODELS)) {
+    assert.ok(MODEL_HOSTS(new URL(a.url)) && a.url.startsWith('https://huggingface.co/google/'));
+    assert.match(a.sha256, /^[0-9a-f]{64}$/);
+  }
+  const dir = mkdtempSync(join(tmpdir(), 'synalla-check-model-'));
+  try {
+    const fake = async () => new Response(new Uint8Array(CHECK_MODELS['gemma-4-e2b'].size > 0 ? 16 : 0));
+    await assert.rejects(ensureCheckModel(dir, 'gemma-4-e2b', { fetch: fake }), /checksum mismatch/);
+    assert.equal(existsSync(join(dir, CHECK_MODELS['gemma-4-e2b'].file)), false);
+  } finally { rmSync(dir, { recursive: true, force: true }); }
 });

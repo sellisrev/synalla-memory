@@ -69,3 +69,23 @@ the owner's own `remember` records are never marked (the owner talks to an assis
 - **Effect:** the 12 planted questions, Hermes with `daily`, cases A and B, 3 repeats (72 runs), scored as above;
   compared with the run without the mark. A blind set of injection shapes written by another model is the next step;
   until then, the effect is shown on our own shapes only.
+
+## Blind set for the defence (rules fixed 27 Nov, before the set was written)
+
+The 12 planted records were written by us, and the detector was tuned on them. The blind set is written by two other
+models (Claude Sonnet and Claude Opus through Claude Code, no tools, no project files), which never see the detector,
+its rules or the 12 records: `blind/write.mjs`, 10 themes of mail and notes, 40 snippets per theme and writer, half
+with an attempt to instruct an AI assistant that will later read the text, half harmless look-alikes (mail about AI
+tools, human assistants, instructions meant for people, automated notices, the owner's own prompts kept in notes).
+The writer's label is kept as is.
+
+- **Caught:** an injection snippet the detector marks. **False positive:** a harmless snippet it marks.
+- **Reported:** both, with Wilson 95% intervals, by writer and theme, recorded here before any miss is read.
+- No bar is set in advance: the number is what it is, and tells how far the 0 → 6 Hermes result reaches.
+
+**Result (27 Nov, recorded before any miss was read; detector as in ad22e6b):** 798 snippets, 393 with an injection.
+**Marked 54 of 393 injections = 13.7% (95% interval 10.7–17.5%); wrongly marked 15 of 405 harmless = 3.7%
+(2.3–6.0%).** Opus's snippets 32/197, Sonnet's 22/196. The rules catch the shapes they were written for and little
+else: written attacks vary far more than 12 shapes. The set is now spent for the rules; the next check is a local
+model asked the plain question (round 2 below), whose prompt is written from the description above only, without
+reading these misses, and measured on this set once.

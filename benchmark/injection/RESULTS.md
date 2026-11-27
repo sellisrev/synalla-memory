@@ -64,3 +64,6 @@ speak to an AI assistant (`speaks_to_agent` plus a warning line before the passa
   1,907 of the owner's real mails (after its first version wrongly marked 7, which were read and fixed). Next: a set of
   injection shapes written by another model, measured blind, as for the scrubber.
 - Runs: `runs/2026-11-27-mark/` (all 6 answers that repeat a planted detail read; verdicts in `verdicts.json`).
+- **Blind set (27 Nov):** on 798 mails and notes written by other models, the detector marks 13.7% of the injections
+  (10.7–17.5%) and 3.7% of the harmless ones. So the Hermes result above holds for the attacks the detector marks, which
+  today are few. A model-based check is next (README.md).

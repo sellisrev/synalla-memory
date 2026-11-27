@@ -13,9 +13,17 @@ import { fileURLToPath } from 'node:url';
 import { scrub } from '../../../src/scrub.ts';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
-const set = JSON.parse(readFileSync(join(HERE, 'set.json'), 'utf8'));
+const SET2 = process.argv.includes('--set') && process.argv[process.argv.indexOf('--set') + 1] === '2';
+const set = JSON.parse(readFileSync(join(HERE, SET2 ? 'set2.json' : 'set.json'), 'utf8'));
+
+/** Set 2 rule: a URL with a password counts by its password only. */
+function credential(secret) {
+  const m = /^[a-z][a-z0-9+.-]*:\/\/[^\s:@\/]*:([^\s@\/]+)@/i.exec(secret);
+  return SET2 && m ? m[1] : secret;
+}
 
 function leaks(secret, out) {
+  secret = credential(secret);
   if (secret.length < 8) return out.includes(secret);
   for (let i = 0; i + 8 <= secret.length; i++) if (out.includes(secret.slice(i, i + 8))) return true;
   return false;
@@ -48,7 +56,7 @@ const by = key => {
 };
 lines.push('| Writer | Caught | Harmless changed |', '|---|---:|---:|', ...by('writer'), '', '| Theme | Caught | Harmless changed |', '|---|---:|---:|', ...by('theme'));
 console.log(lines.join('\n'));
-writeFileSync(join(HERE, 'RESULT.md'), `# Secret scrubber, blind set\n\n${lines.join('\n')}\n`);
+writeFileSync(join(HERE, SET2 ? 'RESULT2.md' : 'RESULT.md'), `# Secret scrubber, blind set\n\n${lines.join('\n')}\n`);
 if (process.argv.includes('--list')) {
   for (const r of sec.filter(r => !r.ok)) console.log(`MISS ${r.id}: ${JSON.stringify(r.secret)}\n  in: ${JSON.stringify(r.text).slice(0, 300)}\n  out: ${JSON.stringify(r.out).slice(0, 300)}`);
   for (const r of harm.filter(r => !r.ok)) console.log(`FP ${r.id}:\n  in: ${JSON.stringify(r.text).slice(0, 300)}\n  out: ${JSON.stringify(r.out).slice(0, 300)}`);

@@ -14,15 +14,16 @@ const impl = await import(pathToFileURL(implPath).href);
 const { KINDS, marker, scrub } = impl;
 const kinds = s => scrub(s).found.map(f => f.kind);
 const ALL = ['private-key', 'url-password', 'jwt', 'aws-access-key', 'github-token', 'anthropic-key', 'openai-key', 'stripe-key',
-  'slack-token', 'google-api-key', 'prefixed-token', 'nostr-secret', 'auth-header', 'assignment', 'high-entropy'];
+  'slack-token', 'google-api-key', 'prefixed-token', 'nostr-secret', 'auth-header', 'assignment', 'high-entropy',
+  'webhook', 'recovery-code', 'password'];
 
-test('the file meets the final check: words, at most 120 lines, no line over 200 characters, no repeated block', () => {
+test('the file meets the final check: words, at most 300 lines, no line over 200 characters, no repeated block', () => {
   const raw = fs.readFileSync(implPath, 'utf8');
   const BANNED = [/\bimport\b/, /\bfrom\s*['"`]/, /\brequire\b/, /\bprocess\b/, /\bglobalThis\b/, /\bglobal\b/, /\beval\b/, /\bFunction\s*\(/,
     /\.constructor\b/, /\bfetch\b/, /\bMath\.random\b/, /\bDate\b/, /\bperformance\b/, /\bcrypto\b/, /\bconsole\b/];
   for (const re of BANNED) assert.ok(!re.test(raw), 'banned word or pattern ' + re);
   const lines = raw.split('\n');
-  assert.ok(lines.length <= 120, `${lines.length} lines (max 120)`);
+  assert.ok(lines.length <= 300, `${lines.length} lines (max 300; 120 before the 27 Nov rules)`);
   lines.forEach((l, i) => assert.ok(l.length <= 200, `line ${i + 1} has ${l.length} characters (max 200)`));
   const code = raw.replace(/\/\*[\s\S]*?\*\//g, '').replace(/(^|[^:'"`])\/\/.*$/gm, '$1');
   const norm = code.split('\n').map(l => l.trim()).filter(l => l.length > 2), seen = new Map();
@@ -58,7 +59,7 @@ test('scrub: the spec examples', () => {
   assert.equal(scrub('postgres://admin:S3cr3tPass!@db.local:5432/app').text, 'postgres://admin:[secret:url-password]@db.local:5432/app');
   assert.equal(scrub('redis://:hunter22@host').text, 'redis://:[secret:url-password]@host');
   assert.equal(scrub('https://abc:abc@x.io').text, 'https://abc:[secret:url-password]@x.io');
-  assert.deepEqual(scrub('key AKIAIOSFODNN7EXAMPLE here').found, [{ kind: 'aws-access-key', start: 4, end: 24 }]);
+  assert.deepEqual(scrub('key AKIAQ3EGTX7L5PZRW2NB here').found, [{ kind: 'aws-access-key', start: 4, end: 24 }]);
   assert.equal(scrub('Authorization: Basic dXNlcjpwYXNz').text, 'Authorization: Basic [secret:auth-header]');
   assert.deepEqual(scrub('commit 3f786850e387550fdab836ed7e6dc881de23001b').found, []);
   assert.equal(scrub('export ANTHROPIC_API_KEY=sk-ant-api03-AbCdEf0123456789_xyz').text, 'export ANTHROPIC_API_KEY=[secret:anthropic-key]');
@@ -119,7 +120,7 @@ test('scrub: rule order and span-only overlap', () => {
 });
 
 test('scrub: offsets count UTF-16 code units', () => {
-  assert.deepEqual(scrub('👍 AKIAIOSFODNN7EXAMPLE').found, [{ kind: 'aws-access-key', start: 3, end: 23 }]);
+  assert.deepEqual(scrub('👍 AKIAQ3EGTX7L5PZRW2NB').found, [{ kind: 'aws-access-key', start: 3, end: 23 }]);
 });
 
 test('scrub: a megabyte of awkward text takes well under two seconds', () => {

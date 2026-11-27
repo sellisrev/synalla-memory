@@ -13,8 +13,22 @@ import { fileURLToPath } from 'node:url';
 const HERE = dirname(fileURLToPath(import.meta.url));
 const arg = (k, d) => { const i = process.argv.indexOf(k); return i > 0 ? process.argv[i + 1] : d; };
 const WRITERS = arg('--writers', 'sonnet,opus').split(','), JOBS = Number(arg('--jobs', '4'));
+const SET2 = arg('--set', '1') === '2';
 const ONLY = arg('--themes', '') ? arg('--themes', '').split(',').map(Number) : null;
 const CLAUDE = process.platform === 'win32' ? 'claude.exe' : 'claude';
+
+export const THEMES_2 = [
+  'hospital and clinic IT (EHR integrations, HL7/FHIR endpoints, lab systems, staff accounts)',
+  'online shops and marketplaces (Shopify, WooCommerce, Etsy, payment terminals, shipping label APIs)',
+  'game development and game servers (Steam, Epic, Unity services, Discord bots, dedicated server configs)',
+  'accounting, invoicing and banking tools (DATEV, Xero, QuickBooks, open banking APIs, a bookkeeper e-mail)',
+  'schools and universities (LMS like Moodle, student portals, exam software, a teacher sharing logins)',
+  'open-source maintainers (release signing, package registries, CI secrets, bots on GitHub and GitLab)',
+  'data engineering (Airflow, dbt, Snowflake, BigQuery service accounts, Kafka Connect, S3 buckets)',
+  'home lab and self-hosting (Proxmox, TrueNAS, Home Assistant, Nextcloud, Pi-hole, Tailscale, Vaultwarden)',
+  'travel and booking integrations (airline and hotel APIs, Amadeus, Booking.com, maps and geocoding keys)',
+  'freelancers and small agencies (client CMS logins, hosting panels, FTP, domain registrars, shared Google accounts)',
+];
 
 export const THEMES = [
   'deploying web services to cloud providers (AWS, GCP, Azure, Fly, Vercel, Hetzner)',
@@ -60,8 +74,9 @@ function ask(text, model) {
 }
 
 async function main() {
-  const raw = join(HERE, 'raw'); mkdirSync(raw, { recursive: true });
-  const todo = WRITERS.flatMap(w => THEMES.map((t, i) => [w, i])).filter(([, i]) => !ONLY || ONLY.includes(i));
+  const T = SET2 ? THEMES_2 : THEMES;
+  const raw = join(HERE, SET2 ? 'raw2' : 'raw'); mkdirSync(raw, { recursive: true });
+  const todo = WRITERS.flatMap(w => (SET2 ? THEMES_2 : THEMES).map((t, i) => [w, i])).filter(([, i]) => !ONLY || ONLY.includes(i));
   let next = 0;
   await Promise.all(Array.from({ length: JOBS }, async () => {
     while (next < todo.length) {
@@ -70,11 +85,11 @@ async function main() {
       if (existsSync(f)) continue;
       for (let attempt = 1; attempt <= 3; attempt++) {
         try {
-          const r = JSON.parse(await ask(prompt(THEMES[i]), w));
+          const r = JSON.parse(await ask(prompt(T[i]), w));
           const t = String(r.result ?? '');
           const j = JSON.parse(t.slice(t.indexOf('{'), t.lastIndexOf('}') + 1));
           if (!Array.isArray(j.snippets)) throw new Error('no snippets array');
-          writeFileSync(f, JSON.stringify({ writer: w, theme: THEMES[i], snippets: j.snippets, cost: r.total_cost_usd ?? null }, null, 1));
+          writeFileSync(f, JSON.stringify({ writer: w, theme: T[i], snippets: j.snippets, cost: r.total_cost_usd ?? null }, null, 1));
           console.log(`${w} theme ${i}: ${j.snippets.length} snippets`);
           break;
         } catch (e) { console.log(`${w} theme ${i} attempt ${attempt}: ${e.message.slice(0, 160)}`); }
@@ -90,7 +105,7 @@ async function main() {
       (ok ? set : dropped).push({ id: `${f.replace('.json', '')}-${n}`, writer: j.writer, theme: j.theme, text: s?.text, secrets: s?.secrets });
     });
   }
-  writeFileSync(join(HERE, 'set.json'), JSON.stringify(set, null, 1));
+  writeFileSync(join(HERE, SET2 ? 'set2.json' : 'set.json'), JSON.stringify(set, null, 1));
   console.log(`set: ${set.length} snippets (${set.filter(s => s.secrets.length).length} with secrets, ${set.reduce((a, s) => a + s.secrets.length, 0)} secrets); dropped ${dropped.length} whose secrets were not in the text`);
 }
 

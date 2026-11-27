@@ -12,5 +12,7 @@ anyone can rerun it: `node --import ../../tools/ts-resolve.mjs heldout.mjs`.
 
 The misses were secrets with no known prefix, in a command-line flag or a sentence. The new rules (see the changes
 at the end of `test/fixtures/scrub/SPEC.md`) were tuned on a second set with another seed (`tuning.mjs`: 99.3%,
-0 false positives). This set is therefore no longer blind; a fresh set written by someone outside the project will
-back the release claim.
+0 false positives). This set is therefore no longer blind, and it turned out to be far too easy: on a set written blind by another
+model (27 Nov, [blind/](blind/README.md)) the same scrubber caught only 54.8% of secrets and changed 16.9% of
+harmless snippets. That set is now the tuning set for the 27 Nov rules; the release number comes from the second
+blind set in [blind/](blind/README.md), and a set by someone outside the project is still to come.

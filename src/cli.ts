@@ -159,7 +159,9 @@ async function openCheck(env: Env, c: Config): Promise<{ m: CheckModel; name: st
   const ch = c.check;
   if (!ch) return null;
   if ('builtin' in ch) {
-    const s = await (env.startCheck ?? builtinCheck(env))(env.home, ch.builtin, c.embedGpu);
+    // On the CPU even when the embedder uses the GPU: Gemma 4 E4B crashed AMD's Vulkan driver (amdvlk64.dll) on a real
+    // mail, every time, with both llama.cpp builds tried (27 Nov 2026); the CPU answered it.
+    const s = await (env.startCheck ?? builtinCheck(env))(env.home, ch.builtin);
     try { return { m: checkModel(s.url, 'check'), name: ch.builtin, stop: s.stop }; } catch (e) { s.stop(); throw e; }
   }
   const key = ch.cloudAgreedAt ? env.keychain.get(kname(c, 'check')) : null;
@@ -403,7 +405,7 @@ export async function main(argv: string[], env: Env): Promise<number> {
           // The recommended setup: a small pinned model run by the package's own llama.cpp, downloaded now (first use).
           const name = rest[1] ?? DEFAULT_CHECK;
           if (!isCheckModelName(name)) throw new Error(`unknown built-in check model ${name}: ${Object.keys(CHECK_MODELS).join(', ')}`);
-          const s = await (env.startCheck ?? builtinCheck(env))(env.home, name, c.embedGpu);
+          const s = await (env.startCheck ?? builtinCheck(env))(env.home, name);
           s.stop(); // it starts: downloaded, checked, and this machine can run it
           c.check = { builtin: name };
           save(env, c);

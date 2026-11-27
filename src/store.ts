@@ -12,6 +12,7 @@
 // fails at open.
 
 import { createRequire } from 'node:module';
+import { createHash } from 'node:crypto';
 import { scrub } from './scrub.ts';
 import { ftsQuery, fuse, CANDIDATES, DEFAULT_TOP } from './fusion.ts';
 
@@ -79,6 +80,8 @@ const SCHEMA = `
 CREATE TABLE IF NOT EXISTS meta(k TEXT PRIMARY KEY, v TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS items(id TEXT PRIMARY KEY, date TEXT NOT NULL, source TEXT NOT NULL, title TEXT NOT NULL,
   text TEXT NOT NULL DEFAULT '');
+CREATE TABLE IF NOT EXISTS item_checks(item TEXT PRIMARY KEY REFERENCES items(id) ON DELETE CASCADE,
+  rules_hash TEXT NOT NULL, speaks_to_agent INTEGER);
 CREATE TABLE IF NOT EXISTS chunks(cid INTEGER PRIMARY KEY, item TEXT NOT NULL REFERENCES items(id) ON DELETE CASCADE,
   n INTEGER NOT NULL, date TEXT NOT NULL, source TEXT NOT NULL, text TEXT NOT NULL, vec BLOB);
 CREATE INDEX IF NOT EXISTS chunks_item ON chunks(item);
@@ -295,7 +298,26 @@ export class MemoryStore {
    *  its vectors and facts. */
   hasSameItem(item: { id: string; date?: string; title?: string; text?: string }): boolean {
     const r = this.#db.prepare('SELECT date, title, text FROM items WHERE id = ?').get(item.id) as { date: string; title: string; text: string } | undefined;
-    return !!r && r.date === String(item.date ?? '') && r.title === scrub(item.title ?? '').text && r.text === scrub(item.text ?? '').text;
+    if (!r) return false;
+    if (r.date === String(item.date ?? '') && r.title === scrub(item.title ?? '').text && r.text === scrub(item.text ?? '').text) return true;
+    // Stored after the model checks: its text differs from the rules' result, so compare the rules' result by hash.
+    const c = this.#db.prepare('SELECT rules_hash FROM item_checks WHERE item = ?').get(item.id) as { rules_hash: string } | undefined;
+    return !!c && c.rules_hash === rulesHash(item);
+  }
+
+  /** Records that an item went through the model checks: the hash of its rules-only form and the injection answer. */
+  setChecks(item: { id: string; date?: string; title?: string; text?: string }, speaksToAgent: boolean | null): void {
+    this.#db.prepare('INSERT INTO item_checks(item, rules_hash, speaks_to_agent) VALUES (?, ?, ?) ON CONFLICT(item) DO UPDATE SET '
+      + 'rules_hash = excluded.rules_hash, speaks_to_agent = excluded.speaks_to_agent')
+      .run(item.id, rulesHash(item), speaksToAgent === null ? null : Number(speaksToAgent));
+  }
+
+  /** The model's injection answer per item, for the items it was asked about (true: speaks to an AI assistant). */
+  agentChecks(items: readonly string[]): Map<string, boolean> {
+    if (items.length === 0) return new Map();
+    const rows = this.#db.prepare(`SELECT item, speaks_to_agent FROM item_checks WHERE speaks_to_agent IS NOT NULL AND item IN (${items.map(() => '?').join(',')})`)
+      .all(...items) as { item: string; speaks_to_agent: number }[];
+    return new Map(rows.map(r => [r.item, r.speaks_to_agent === 1]));
   }
 
   /** Delete an item and its chunks. Returns whether it existed. */
@@ -531,4 +553,9 @@ export class MemoryStore {
   }
 
   close(): void { this.#db.close(); }
+}
+
+/** Hash of an item's date, title and text as the rules alone scrub them. */
+function rulesHash(item: { date?: string; title?: string; text?: string }): string {
+  return createHash('sha256').update(String(item.date ?? '') + '\0' + scrub(item.title ?? '').text + '\0' + scrub(item.text ?? '').text).digest('hex');
 }

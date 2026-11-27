@@ -23,6 +23,8 @@ interface StoreLike {
   addItem(i: { id: string; date: string; source: string; title: string; chunks: string[]; text?: string }): number[];
   setVectors(v: { cid: number; vec: Float32Array }[]): void;
   keywordSearch(q: string, k?: number): number[];
+  /** The local check model's injection answer per item, where it was asked (checks.ts). */
+  agentChecks?(items: readonly string[]): Map<string, boolean>;
   search(q: string, v: Float32Array, top?: number): number[];
   chunks(cids: readonly number[]): { cid: number; item: string; date: string; source: string; text: string }[];
   searchFacts(q: string, v: Float32Array | null, top?: number): number[];
@@ -174,8 +176,13 @@ export class McpServer {
     }
     // Mail and notes that speak to an AI assistant get a mark and a warning before their text (prompt injection; the
     // owner's own sessions and remember records are never marked). benchmark/injection/README.md, "Defence test".
-    const passages = this.#store.chunks(cids).map((c): Json => {
-      const why = c.source === 'mail' || c.source === 'notes' ? speaksToAgent(c.text) : null;
+    // Where the local check model was asked at import, its answer stands (blind set: 99.5% of attacks, 1.2% false);
+    // otherwise the rules, which catch the known shapes only.
+    const rows = this.#store.chunks(cids), model = this.#store.agentChecks?.([...new Set(rows.map(c => c.item))]) ?? new Map<string, boolean>();
+    const passages = rows.map((c): Json => {
+      const asked = model.get(c.item);
+      const why = c.source !== 'mail' && c.source !== 'notes' ? null
+        : asked === undefined ? speaksToAgent(c.text) : asked ? 'the local check model read it so' : null;
       return why ? { source: c.source, date: c.date, item: c.item, text: `${AGENT_WARNING.replace('{why}', why)}\n${c.text}`,
         untrusted: true, speaks_to_agent: why }
         : { source: c.source, date: c.date, item: c.item, text: c.text, untrusted: true };

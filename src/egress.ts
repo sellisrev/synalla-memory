@@ -10,7 +10,7 @@
 // No other call follows a redirect. Every call is counted by kind and host, so a test or the status command can show
 // exactly where the package sent anything. A test fails the build if source code calls fetch outside this file.
 
-export type EgressKind = 'model-download' | 'embed' | 'extract' | 'backup';
+export type EgressKind = 'model-download' | 'embed' | 'extract' | 'check' | 'backup';
 export type Allow = (url: URL) => boolean;
 
 const LOOPBACK = new Set(['localhost', '127.0.0.1', '[::1]']);

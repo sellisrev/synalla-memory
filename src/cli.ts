@@ -38,6 +38,7 @@ import { McpServer, serveStdio } from './mcp.ts';
 import { backup, restore, folderTarget, webdavTarget, s3Target, listSnapshots, type Target } from './backup.ts';
 import { exportPlain } from './export.ts';
 import { httpChatModel, extractPending } from './facts.ts';
+import { localCheckModel, scrubWithModel, speaksToAgentModel } from './checks.ts';
 
 export interface Config {
   /** Names this memory's keys in the keychain, so two memories on one machine never share keys. */
@@ -45,6 +46,8 @@ export interface Config {
   dim: number;
   /** An OpenAI-compatible embedding endpoint you run yourself; otherwise the built-in llama.cpp sidecar. */
   embedUrl?: string;
+  /** A chat model on this machine for the import checks (secrets second pass, prompt injection); see checks.ts. */
+  check?: { url: string; model: string };
   /** 'none': keyword search only, no model download. */
   embed?: 'builtin' | 'none';
   /** Run the built-in embedder on the GPU (Vulkan build of llama.cpp); default CPU. */
@@ -254,10 +257,21 @@ export async function main(argv: string[], env: Env): Promise<number> {
           const notes = { skipped: 0 };
           const items = cmd === 'import-mail' ? readMbox(path, stats) : readNotes(path, notes);
           let added = 0, same = 0;
+          const cm = c.check ? localCheckModel(c.check.url, c.check.model) : null, memo = new Map<string, string[]>();
+          let marked = 0;
           for (const it of items) {
             if (store.hasSameItem(it)) { same++; continue; }
-            store.addItem(it); added++;
+            if (!cm) { store.addItem(it); added++; continue; }
+            // The model checks: a second pass for secrets, and whether the record speaks to an AI assistant (never for
+            // mail the owner sent). The rules have already run inside each call; the store's scrub leaves markers be.
+            const chunks: string[] = [];
+            for (const ch of it.chunks) chunks.push(await scrubWithModel(ch, cm, memo)); // one at a time: a local server
+            const checked = { ...it, title: await scrubWithModel(it.title, cm, memo), text: await scrubWithModel(it.text, cm, memo), chunks };
+            const speaks = (it as { sent?: boolean }).sent ? null : await speaksToAgentModel(`${it.title}\n${it.text}`, cm);
+            if (speaks) marked++;
+            store.addItem(checked); store.setChecks(it, speaks); added++;
           }
+          if (cm) env.out(`Checked with ${c.check?.model}: ${marked} record(s) that speak to an AI assistant will carry a warning.\n`);
           if (cmd === 'import-mail') {
             env.out(`Mail: ${stats.seen} message(s) read, ${added} imported, ${same} unchanged; left out: ${stats.spamTrash} spam or trash, `
               + `${stats.badDate} without a date, ${stats.empty} empty, ${stats.duplicates ?? 0} duplicate copies, ${stats.errors} unreadable`
@@ -347,6 +361,17 @@ export async function main(argv: string[], env: Env): Promise<number> {
           return 0;
         } finally { store.close(); }
       }
+      case 'check-with': {
+        const c = load(env);
+        if (rest[0] === 'off') { delete c.check; save(env, c); env.out('Import checks with a chat model are off; the rules still run.\n'); return 0; }
+        const [url, model] = rest;
+        if (!url || !model) throw new Error('usage: check-with <url of a chat model on this machine> <model> | check-with off');
+        localCheckModel(url, model); // refuses anything not on this machine
+        c.check = { url, model };
+        save(env, c);
+        env.out(`Imports will be checked with ${model} at ${url} (secrets and prompt injection). Records already stored are not re-checked.\n`);
+        return 0;
+      }
       case 'extract-with': {
         const c = load(env);
         const [url, model] = rest;
@@ -407,7 +432,7 @@ export async function main(argv: string[], env: Env): Promise<number> {
         } finally { store.close(); }
       }
       default:
-        env.out('usage: synalla-memory init | import | import-mail <mbox> | import-notes <folder> | embed | extract-with ... | extract | recall <q> | serve | backup-to ... | backup | restore ... | export --plain <dir> | koofr-login-done | status\n');
+        env.out('usage: synalla-memory init | import | import-mail <mbox> | import-notes <folder> | embed | check-with <url> <model> | extract-with ... | extract | recall <q> | serve | backup-to ... | backup | restore ... | export --plain <dir> | koofr-login-done | status\n');
         return cmd ? 2 : 0;
     }
   } catch (e) {

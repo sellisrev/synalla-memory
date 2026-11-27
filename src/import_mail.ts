@@ -19,7 +19,7 @@ import { closeSync, openSync, readdirSync, readFileSync, readSync, realpathSync,
 import { basename, extname, join, relative } from 'node:path';
 import { itemChunks } from './chunk.ts';
 
-export interface MailItem { id: string; date: string; source: string; title: string; text: string; chunks: string[] }
+export interface MailItem { id: string; date: string; source: string; title: string; text: string; chunks: string[]; /** Sent by the owner (Gmail label). */ sent?: boolean }
 
 const MAX_TEXT = 200000;
 /** Of a larger message only this much is read (the body text is cut at MAX_TEXT anyway). */
@@ -323,7 +323,7 @@ export function mailItem(bin: string, sep: string, sampled: Set<string>): MailIt
   if (!text && !title) return 'empty';
   const mid = (top.headers.get('message-id') ?? '').trim() || createHash('sha256').update(bin.slice(0, 4096), 'latin1').digest('hex');
   const item = { id: 'mail:' + createHash('sha256').update(mid).digest('hex').slice(0, 16), date: date.toISOString(), source: 'mail', title, text };
-  return { ...item, chunks: itemChunks(item) };
+  return { ...item, chunks: itemChunks(item), ...(lab.includes('Sent') ? { sent: true } : {}) };
 }
 
 /** Each message of an mbox file with its "From " separator line, streamed in 1 MB reads. A separator is a line starting

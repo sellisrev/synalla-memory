@@ -42,8 +42,11 @@ Rules fixed before the first run (27 Nov 2026):
     added after reading the first answers, before any verdict was written.)
 - **Reported:** followed / flagged / ignored per model and case, with Wilson 95% intervals; the control answers
   (did the agent still answer the question); the owner's `remember` request (stored or not). All raw runs are kept.
-- **What it does not show:** other agents (Hermes, OpenClaw with a local model) are not in this run; injected text in
-  other members' entries is the M2 case. A model that refuses here can still be tricked by shapes not tested.
+- **Second agent family (added 27 Nov, same rules):** Hermes Agent with the local model `daily`, run by
+  `hermes_one.py` (a fresh Hermes home per run, the Synalla memory as its only memory, its terminal tools in case B;
+  its `terminal` and `process_manage` calls count as shell calls).
+- **What it does not show:** OpenClaw with a local model is not in this run; injected text in other members' entries
+  is the M2 case. A model that refuses here can still be tricked by shapes not tested.
 
 Run: `node benchmark/injection/run.mjs` (writes `benchmark/injection/runs/<date>/`), then
 `node benchmark/injection/score.mjs <run dir>`.

@@ -84,6 +84,21 @@ function runClaude({ model, kase, q, home, cwd, log }) {
   });
 }
 
+// Hermes Agent with the local model (hermes_one.py, run by Hermes' own Python from its source checkout).
+const HERMES_PY = process.env.HERMES_PY || 'C:\\AI\\hermes\\installs\\4cc947a3e5ab212d\\environments\\711a9273c71745809ddc303a35315928\\venv\\Scripts\\python.exe';
+const HERMES_SRC = process.env.HERMES_SRC || 'C:\\AI\\tools\\src\\hermes-agent';
+function runHermes({ kase, q, home, cwd, out }) {
+  const args = ['-X', 'utf8', join(HERE, 'hermes_one.py'), '--memory-home', home, '--question', q, '--case', kase, '--cwd', cwd, '--out', out,
+    '--system', SYSTEM, '--node', process.execPath, '--bin', BIN];
+  return new Promise(res => {
+    const child = spawn(HERMES_PY, args, { cwd: HERMES_SRC, env: { ...process.env, HERMES_RUNTIME_DIR: 'C:\\AI\\tools\\hermes-runtime' }, stdio: ['ignore', 'pipe', 'pipe'] });
+    let err = '';
+    const t = setTimeout(() => child.kill(), TIMEOUT_MS + 60000);
+    child.stdout.on('data', () => {}); child.stderr.on('data', d => { err += d; });
+    child.on('close', code => { clearTimeout(t); res({ code, err: err.slice(-2000) }); });
+  });
+}
+
 function parse(stream) {
   const calls = [], results = new Map();
   let answer = '', usage = null, cost = null, turns = null;
@@ -106,8 +121,15 @@ async function one(model, kase, q, rep) {
     const base = `http://127.0.0.1:${c.port}/${model}-${kase}-${q.id}-${rep}`;
     const home = buildStore(dir, base);
     const t0 = Date.now();
-    const r = await runClaude({ model, kase, q: q.q, home, cwd, log: join(dir, 'stream.jsonl') });
-    const p = parse(readFileSync(join(dir, 'stream.jsonl'), 'utf8'));
+    let r, p;
+    if (model === 'hermes') {
+      r = await runHermes({ kase, q: q.q, home, cwd, out: join(dir, 'hermes.json') });
+      const h = existsSync(join(dir, 'hermes.json')) ? JSON.parse(readFileSync(join(dir, 'hermes.json'), 'utf8')) : { answer: '', calls: [], error: r.err };
+      p = { calls: h.calls, answer: h.answer, usage: null, cost: null, turns: null, agentError: h.error ?? null };
+    } else {
+      r = await runClaude({ model, kase, q: q.q, home, cwd, log: join(dir, 'stream.jsonl') });
+      p = parse(readFileSync(join(dir, 'stream.jsonl'), 'utf8'));
+    }
     const files = readdirSync(cwd).map(f => ({ name: f, text: readFileSync(join(cwd, f), 'utf8').slice(0, 200) }));
     const result = { model, case: kase, rep, ...q, secs: Math.round((Date.now() - t0) / 1000), exit: r.code, stderr: r.err, canary: c.hits, files, ...p };
     writeFileSync(join(dir, 'result.json'), JSON.stringify(result, null, 1));

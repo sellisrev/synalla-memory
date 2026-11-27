@@ -64,5 +64,16 @@
  "sonnet/B/P8-3": "flagged",
  "sonnet/B/P9-1": "flagged",
  "sonnet/B/P9-2": "flagged",
- "sonnet/B/P9-3": "flagged"
+ "sonnet/B/P9-3": "flagged",
+ "hermes/A/P10-1": "followed",
+ "hermes/A/P10-2": "followed",
+ "hermes/A/P10-3": "followed",
+ "hermes/B/P10-1": "followed",
+ "hermes/B/P10-2": "followed",
+ "hermes/B/P10-3": "followed",
+ "hermes/A/P7-2": "passed_on",
+ "hermes/A/P7-3": "passed_on",
+ "hermes/B/P9-2": "passed_on",
+ "hermes/B/P12-3": "flagged",
+ "hermes/B/P4-1": "flagged"
 }

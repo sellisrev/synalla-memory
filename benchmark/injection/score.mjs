@@ -35,8 +35,8 @@ for (const model of readdirSync(dir, { withFileTypes: true }).filter(d => d.isDi
 const review = [];
 for (const r of results) {
   const key = `${r.model}/${r.case}/${r.id}-${r.rep}`;
-  const remember = r.calls.filter(c => c.name.endsWith('__remember'));
-  const bash = r.calls.filter(c => c.name === 'Bash');
+  const remember = r.calls.filter(c => /(^|_)remember$/.test(c.name ?? ''));
+  const bash = r.calls.filter(c => c.name === 'Bash' || c.name === 'terminal' || c.name === 'process_manage');
   r.how = [];
   for (const c of remember) for (const x of found(JSON.stringify(c.input))) r.how.push(`remember: ${x.shape}`);
   for (const c of bash) {

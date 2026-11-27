@@ -38,7 +38,7 @@ import { McpServer, serveStdio } from './mcp.ts';
 import { backup, restore, folderTarget, webdavTarget, s3Target, listSnapshots, type Target } from './backup.ts';
 import { exportPlain } from './export.ts';
 import { httpChatModel, extractPending } from './facts.ts';
-import { localCheckModel, scrubWithModel, speaksToAgentModel } from './checks.ts';
+import { localCheckModel, scrubItemWithModel, speaksToAgentModel } from './checks.ts';
 
 export interface Config {
   /** Names this memory's keys in the keychain, so two memories on one machine never share keys. */
@@ -214,7 +214,12 @@ export async function main(argv: string[], env: Env): Promise<number> {
         const c = load(env), store = openStore(env, c);
         try {
           const seen = new Map(Object.entries(c.claudeCodeSeen ?? {}));
-          const r = await importClaudeCode(store, seen, env.claudeProjects);
+          // With check-with, sessions get the model's second pass for secrets too (not the injection question: they are
+          // the owner's own conversations).
+          const cm = c.check ? localCheckModel(c.check.url, c.check.model) : null, memo = new Map<string, string[]>();
+          const add = async (it: Parameters<MemoryStore['addItem']>[0] & { title: string; text: string; chunks: string[] }) =>
+            store.addItem(cm ? await scrubItemWithModel(it, cm, memo) : it);
+          const r = await importClaudeCode({ addItem: add }, seen, env.claudeProjects);
           c.claudeCodeSeen = Object.fromEntries(seen);
           save(env, c);
           env.out(`Claude Code: ${r.imported.length} session(s) imported, ${r.skipped} unchanged, ${r.failed.length} failed.\n`);
@@ -223,7 +228,7 @@ export async function main(argv: string[], env: Env): Promise<number> {
           try {
             const hs = new Map(Object.entries(c.hermesSeen ?? {}));
             const items = readHermes(env.hermesDb ?? hermesDbPath(), hs);
-            for (const it of items) store.addItem(it);
+            for (const it of items) await add(it);
             c.hermesSeen = Object.fromEntries(hs);
             save(env, c);
             if (hs.size > 0) env.out(`Hermes: ${items.length} session(s) imported.\n`);
@@ -232,7 +237,7 @@ export async function main(argv: string[], env: Env): Promise<number> {
           try {
             const os = new Map(Object.entries(c.openclawSeen ?? {}));
             const o = readOpenClaw(env.openclawDir ?? openclawStateDir(), os);
-            for (const it of o.items) store.addItem(it);
+            for (const it of o.items) await add(it);
             c.openclawSeen = Object.fromEntries(os);
             save(env, c);
             if (os.size > 0) env.out(`OpenClaw: ${o.items.length} session(s) imported.\n`);
@@ -264,9 +269,7 @@ export async function main(argv: string[], env: Env): Promise<number> {
             if (!cm) { store.addItem(it); added++; continue; }
             // The model checks: a second pass for secrets, and whether the record speaks to an AI assistant (never for
             // mail the owner sent). The rules have already run inside each call; the store's scrub leaves markers be.
-            const chunks: string[] = [];
-            for (const ch of it.chunks) chunks.push(await scrubWithModel(ch, cm, memo)); // one at a time: a local server
-            const checked = { ...it, title: await scrubWithModel(it.title, cm, memo), text: await scrubWithModel(it.text, cm, memo), chunks };
+            const checked = await scrubItemWithModel(it, cm, memo);
             const speaks = (it as { sent?: boolean }).sent ? null : await speaksToAgentModel(`${it.title}\n${it.text}`, cm);
             if (speaks) marked++;
             store.addItem(checked); store.setChecks(it, speaks); added++;

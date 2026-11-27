@@ -99,3 +99,30 @@ test('mail the owner sent is never asked the injection question', async () => {
     assert.match(e.o.join(''), /1 record\(s\) that speak to an AI assistant/);
   } finally { srv.close(); rmSync(root, { recursive: true, force: true }); }
 });
+
+test('with check-with, agent sessions get the second pass too, and are never asked the injection question', async () => {
+  const root = mkdtempSync(join(tmpdir(), 'synalla-checks-'));
+  const injectionAsked = [];
+  const srv = createServer((req, res) => { let b = ''; req.on('data', d => b += d); req.on('end', () => {
+    const { messages } = JSON.parse(b), user = messages[1].content;
+    if (messages[0].content !== SECRET_PROMPT) injectionAsked.push(user);
+    const content = messages[0].content === SECRET_PROMPT ? JSON.stringify({ secrets: user.includes('Wq4nZ8xKp2Lt') ? ['Wq4nZ8xKp2Lt'] : [] }) : '{"instructs_ai": true}';
+    res.end(JSON.stringify({ choices: [{ message: { content } }] }));
+  }); });
+  await new Promise(r => srv.listen(0, '127.0.0.1', r));
+  try {
+    const projects = join(root, 'claude', 'C--p'); mkdirSync(projects, { recursive: true });
+    writeFileSync(join(projects, 's.jsonl'), JSON.stringify({ type: 'user', sessionId: 's', timestamp: '2026-11-20T09:00:00Z',
+      message: { content: 'the staging box still takes Wq4nZ8xKp2Lt as the deploy phrase, can you script it?' } }));
+    const e = { home: join(root, 'home'), keychain: (() => { const m = new Map(); return { kind: 't', get: n => m.get(n) ?? null, set: (n, v) => m.set(n, v), delete: n => m.delete(n) }; })(),
+      out: s => e.o.push(s), err: s => e.r.push(s), o: [], r: [], readStdin: async () => '', now: () => new Date('2026-11-27T10:00:00Z'),
+      claudeProjects: join(root, 'claude'), hermesDb: join(root, 'none.db'), openclawDir: join(root, 'no-openclaw') };
+    assert.equal(await main(['init', '--no-embed'], e), 0);
+    assert.equal(await main(['check-with', `http://127.0.0.1:${srv.address().port}/`, 'fake'], e), 0);
+    assert.equal(await main(['import'], e), 0, e.r.join(''));
+    e.o.length = 0;
+    assert.equal(await main(['recall', 'staging deploy phrase'], e), 0);
+    assert.match(e.o.join(''), /staging box still takes \[secret:model\] as the deploy phrase/);
+    assert.equal(injectionAsked.length, 0);
+  } finally { srv.close(); rmSync(root, { recursive: true, force: true }); }
+});

@@ -99,7 +99,7 @@ export interface ImportResult { imported: string[]; skipped: number; failed: { f
  * changed is reported in `failed` and keeps its earlier copy.
  */
 export async function importClaudeCode(
-  store: { addItem(i: { id: string; date: string; source: string; title: string; chunks: string[]; text: string }): number[] },
+  store: { addItem(i: { id: string; date: string; source: string; title: string; chunks: string[]; text: string }): number[] | Promise<number[]> },
   seen: Map<string, number>,
   projectsDir?: string,
 ): Promise<ImportResult> {
@@ -119,7 +119,7 @@ export async function importClaudeCode(
       if (seen.get(path) === mtime) { res.skipped++; continue; }
       try {
         const s = parseSession(await readFile(path, 'utf8'));
-        if (s) { store.addItem(toStoreItem(s)); res.imported.push(s.id); }
+        if (s) { await store.addItem(toStoreItem(s)); res.imported.push(s.id); }
         seen.set(path, mtime);
       } catch (e) {
         res.failed.push({ file: path, error: e instanceof Error ? e.message : String(e) });

@@ -49,7 +49,8 @@ If you run a local chat model (llama.cpp, llama-swap, Ollama), `check-with` lets
 look for passwords and keys the rules miss, and a warning on mail and notes that try to give orders to your AI
 assistant (prompt injection). Measured with Gemma 4 26B-A4B: secrets caught 97.1% instead of 94.0% on text it never
 saw, 1.4% of harmless lines changed; injections marked 99.5%, harmless mail 1.2% (0.2% of a real mailbox). The model
-sees raw text, so only an endpoint on this machine is accepted. Without it the rules still run.
+sees raw text, so only an endpoint on this machine is accepted. Without it the rules still run. Agent sessions get
+the secrets pass too (about an hour of a local GPU for 250 sessions the first time, then only new ones).
 
 MCP tools: `recall`, `remember`, `facts_about`, `what_changed`. Setting it up in Claude Code, Hermes or OpenClaw:
 [docs/agents.md](docs/agents.md).

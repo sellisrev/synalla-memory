@@ -89,6 +89,14 @@ export async function scrubWithModel(text: string, m: CheckModel, memo = new Map
   return lines.join('\n');
 }
 
+/** An item with the second pass applied to its title, text and each chunk (one call at a time, for a local server). */
+export async function scrubItemWithModel<T extends { title: string; text: string; chunks: string[] }>(it: T, m: CheckModel,
+  memo = new Map<string, string[]>()): Promise<T> {
+  const chunks: string[] = [];
+  for (const ch of it.chunks) chunks.push(await scrubWithModel(ch, m, memo));
+  return { ...it, title: await scrubWithModel(it.title, m, memo), text: await scrubWithModel(it.text, m, memo), chunks };
+}
+
 /** True when the model reads the record as speaking to an AI assistant. Errors count as no answer (null). */
 export async function speaksToAgentModel(text: string, m: CheckModel): Promise<boolean | null> {
   try { return /"instructs_ai"\s*:\s*true/.test(await m.ask(INJECTION_PROMPT, text.slice(0, 12000), false, 50)); } catch { return null; }

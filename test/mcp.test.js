@@ -28,7 +28,7 @@ test('initialize negotiates the protocol version and lists the tools', async () 
   assert.equal(unknown.result.protocolVersion, '2025-06-18');
   assert.equal(await s.handle({ jsonrpc: '2.0', method: 'notifications/initialized' }), null);
   const list = await s.handle({ jsonrpc: '2.0', id: 3, method: 'tools/list' });
-  assert.deepEqual(list.result.tools.map(t => t.name), ['recall', 'facts_about', 'what_changed', 'remember']);
+  assert.deepEqual(list.result.tools.map(t => t.name), ['recall', 'facts_about', 'what_changed', 'show_to_owner', 'remember']);
   assert.deepEqual(await s.handle({ jsonrpc: '2.0', id: 4, method: 'ping' }), { jsonrpc: '2.0', id: 4, result: {} });
 });
 

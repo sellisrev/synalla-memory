@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Synalla-Commercial
 
 // The MCP server (stdio, JSON-RPC 2.0, one message per line), written against the MCP spec without the SDK so the
-// package has no protocol dependency tree. Tools: `recall`, `remember`, `facts_about`, `what_changed`. Results reach the agent as
+// package has no protocol dependency tree. Tools: `recall`, `remember`, `facts_about`, `what_changed`, `show_to_owner`. Results reach the agent as
 // structured fields with `untrusted: true`, never as text spliced into the prompt (pilot plan W1). Recall also returns
 // the top 20 facts, as measured; `facts_about` and `what_changed` read the fact layer. `propose_share` comes with the
 // daemon.
@@ -16,6 +16,7 @@ import { factLine } from './facts.ts';
 import type { Fact, Want } from './store.ts';
 import { WANT_THRESHOLD } from './wants.ts';
 import { VERSION } from './version.ts';
+import type { RevealPage } from './reveal_page.ts';
 
 export const PROTOCOL_VERSIONS = ['2025-06-18', '2025-03-26', '2024-11-05'];
 
@@ -33,7 +34,19 @@ interface StoreLike {
   changedSince(since: string, limit?: number): Fact[];
   /** The wants layer (wants.ts), when the store has one. */
   allWants?(): Want[];
+  /** A query with real hidden values turned into their stand-ins (pseudonyms.ts), when the store has them. */
+  queryStandIns?(q: string): string;
 }
+
+/** What the agent is told about stand-ins and the local page (initialize instructions; also in the shipped skill). */
+export const INSTRUCTIONS = "Use `recall` before answering questions about the owner's past work, decisions, people or plans; "
+  + 'use `remember` when the owner states something worth keeping.\n\n'
+  + 'Private values in the memory reach you as stand-ins that say what they are and stay the same everywhere: '
+  + '⟦IBAN 2⟧, ⟦card number 1⟧, ⟦Wi-Fi password 1⟧, ⟦tax ID 1⟧. Reason with them as with the values ("the rent goes to ⟦IBAN 2⟧"), '
+  + 'quote them exactly, never guess or reconstruct a value, and never ask the owner to paste one into this conversation. '
+  + 'When the owner needs to see the real values, call `show_to_owner` with your answer as written (stand-ins included) and give '
+  + 'the owner the link it returns: it opens a page on their own computer with the values put back, which never passes through '
+  + 'this session. If the owner types a real value, recall finds it under its stand-in.';
 
 type Json = null | boolean | number | string | Json[] | { [k: string]: Json };
 interface Request { jsonrpc: '2.0'; id?: string | number | null; method: string; params?: Record<string, unknown> }
@@ -65,9 +78,22 @@ const TOOLS = [
     inputSchema: { type: 'object', properties: { since: { type: 'string', description: 'A date, YYYY-MM-DD.' } }, required: ['since'] },
   },
   {
+    name: 'show_to_owner',
+    description: 'Give the owner a link to see your answer with the real values in place of stand-ins like ⟦IBAN 2⟧. The page is '
+      + "on the owner's computer and the values never reach this conversation. Pass your answer exactly as you wrote it.",
+    inputSchema: {
+      type: 'object',
+      properties: {
+        text: { type: 'string', description: 'Your answer, with the stand-ins exactly as recall gave them.' },
+        title: { type: 'string', description: 'A short title for the page (optional).' },
+      },
+      required: ['text'],
+    },
+  },
+  {
     name: 'remember',
     description: "Store a note in the owner's memory, e.g. a decision, a preference or a fact the owner stated. "
-      + 'Secrets (keys, tokens, passwords) are removed before storing.',
+      + 'Secrets and money and ID numbers are replaced by stand-ins before storing; stand-ins you pass stay as they are.',
     inputSchema: {
       type: 'object',
       properties: {
@@ -97,12 +123,18 @@ export class McpServer {
   #store: StoreLike;
   #embedder: Embedder | undefined;
   #now: () => Date;
+  #startPage: (() => Promise<RevealPage>) | undefined;
+  #page: Promise<RevealPage> | undefined;
 
-  constructor(store: StoreLike, opts: { embedder?: Embedder; now?: () => Date } = {}) {
+  constructor(store: StoreLike, opts: { embedder?: Embedder; now?: () => Date; revealPage?: () => Promise<RevealPage> } = {}) {
     this.#store = store;
     this.#embedder = opts.embedder;
     this.#now = opts.now ?? (() => new Date());
+    this.#startPage = opts.revealPage;
   }
+
+  /** Stop the local page, if it was started. */
+  async close(): Promise<void> { if (this.#page) (await this.#page).close(); }
 
   /** Handle one JSON-RPC message. Returns the response, or null for a notification. */
   async handle(msg: unknown): Promise<Json | null> {
@@ -132,8 +164,7 @@ export class McpServer {
           protocolVersion: PROTOCOL_VERSIONS.includes(asked) ? asked : (PROTOCOL_VERSIONS[0] as string),
           capabilities: { tools: { listChanged: false } },
           serverInfo: { name: 'synalla-memory', version: VERSION },
-          instructions: "Use `recall` before answering questions about the owner's past work, decisions, people or plans; "
-            + 'use `remember` when the owner states something worth keeping.',
+          instructions: INSTRUCTIONS,
         };
       }
       case 'notifications/initialized': case 'notifications/cancelled': return null;
@@ -149,7 +180,8 @@ export class McpServer {
     const args = (params['arguments'] ?? {}) as Record<string, unknown>;
     try {
       const data = name === 'recall' ? await this.#recall(args) : name === 'remember' ? await this.#remember(args)
-        : name === 'facts_about' ? this.#factsAbout(args) : name === 'what_changed' ? this.#whatChanged(args) : null;
+        : name === 'facts_about' ? this.#factsAbout(args) : name === 'what_changed' ? this.#whatChanged(args)
+        : name === 'show_to_owner' ? await this.#showToOwner(args) : null;
       if (data === null) throw new ToolError(`unknown tool: ${String(name)}`);
       return { content: [{ type: 'text', text: JSON.stringify(data) }], structuredContent: data };
     } catch (e) {
@@ -159,10 +191,11 @@ export class McpServer {
   }
 
   async #recall(args: Record<string, unknown>): Promise<Json> {
-    const q = args['question'];
-    if (typeof q !== 'string' || !q.trim()) throw new ToolError('question must be a non-empty string');
+    const asked = args['question'];
+    if (typeof asked !== 'string' || !asked.trim()) throw new ToolError('question must be a non-empty string');
     const limit = args['limit'] === undefined ? DEFAULT_TOP : args['limit'];
     if (!Number.isSafeInteger(limit) || (limit as number) < 1 || (limit as number) > 50) throw new ToolError('limit must be an integer from 1 to 50');
+    const q = this.#store.queryStandIns?.(asked) ?? asked; // a real value the owner typed is searched as its stand-in
     let cids: number[];
     let mode: string;
     let qv: Float32Array | null = null;
@@ -199,13 +232,24 @@ export class McpServer {
   #factsAbout(args: Record<string, unknown>): Json {
     const subject = args['subject'];
     if (typeof subject !== 'string' || !subject.trim()) throw new ToolError('subject must be a non-empty string');
-    return { subject, facts: this.#store.factsAbout(subject).map(factJson) };
+    return { subject, facts: this.#store.factsAbout(this.#store.queryStandIns?.(subject) ?? subject).map(factJson) };
   }
 
   #whatChanged(args: Record<string, unknown>): Json {
     const since = args['since'];
     if (typeof since !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(since)) throw new ToolError('since must be a date like 2026-11-01');
     return { since, facts: this.#store.changedSince(since).map(factJson) };
+  }
+
+  async #showToOwner(args: Record<string, unknown>): Promise<Json> {
+    const text = args['text'], title = args['title'] ?? 'From your memory';
+    if (typeof text !== 'string' || !text.trim()) throw new ToolError('text must be a non-empty string');
+    if (typeof title !== 'string') throw new ToolError('title must be a string');
+    if (text.length > 50000) throw new ToolError('text is longer than 50,000 characters');
+    if (!this.#startPage) throw new ToolError('this memory server has no local page (it runs without one in tests or on another machine)');
+    this.#page ??= this.#startPage();
+    const link = await (await this.#page).publish(text, title.slice(0, 120));
+    return { link, valid_for: '1 hour', note: 'Give the owner this link. It opens on their computer only and shows your answer with the real values.' };
   }
 
   async #remember(args: Record<string, unknown>): Promise<Json> {

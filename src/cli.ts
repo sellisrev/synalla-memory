@@ -35,6 +35,7 @@ import { readMbox, readNotes, type MailStats } from './import_mail.ts';
 import { httpEmbedder, type Embedder } from './embed.ts';
 import { ensureModels, startEmbedServer, startChatServer, ensureCheckModel, isCheckModelName, CHECK_MODELS, EMBED_MODEL,
   type CheckModelName } from './models.ts';
+import { startRevealPage } from './reveal_page.ts';
 import { McpServer, serveStdio } from './mcp.ts';
 import { backup, restore, folderTarget, webdavTarget, s3Target, listSnapshots, type Target } from './backup.ts';
 import { exportPlain } from './export.ts';
@@ -343,7 +344,9 @@ export async function main(argv: string[], env: Env): Promise<number> {
       case 'serve': {
         const c = load(env), store = openStore(env, c);
         const em = await embedderOrKeywords(env, c);
-        try { await serveStdio(new McpServer(store, em.e ? { embedder: em.e } : {})); return 0; } finally { store.close(); em.stop(); }
+        // The local page that shows stand-ins' real values to the owner, started on the first show_to_owner call.
+        const srv = new McpServer(store, { ...(em.e ? { embedder: em.e } : {}), revealPage: () => startRevealPage(t => store.reveal(t)) });
+        try { await serveStdio(srv); return 0; } finally { await srv.close(); store.close(); em.stop(); }
       }
       case 'backup-to': {
         const c = load(env);

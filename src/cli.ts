@@ -30,6 +30,7 @@ import { systemKeychain, type Keychain } from './keychain.ts';
 import { toRecoveryCode, fromRecoveryCode } from './recovery_code.ts';
 import { importClaudeCode } from './import_claude_code.ts';
 import { readHermes, hermesDbPath } from './import_hermes.ts';
+import { readOpenClaw, openclawStateDir } from './import_openclaw.ts';
 import { httpEmbedder, type Embedder } from './embed.ts';
 import { ensureModels, startEmbedServer, EMBED_MODEL } from './models.ts';
 import { McpServer, serveStdio } from './mcp.ts';
@@ -53,6 +54,7 @@ export interface Config {
   koofrLoginAt?: string;
   claudeCodeSeen?: Record<string, number>;
   hermesSeen?: Record<string, string>;
+  openclawSeen?: Record<string, string>;
   extract?: { url: string; model: string; owner: string; cloudAgreedAt?: string };
 }
 
@@ -65,6 +67,8 @@ export interface Env {
   now: () => Date;
   claudeProjects?: string;
   hermesDb?: string;
+  /** OpenClaw's state directory (default OPENCLAW_STATE_DIR or ~/.openclaw). */
+  openclawDir?: string;
   /** Starts the built-in embedding server (tests inject a fake; the default downloads pinned files on first use). */
   startBuiltin?: (home: string, dim: number, gpu?: 'vulkan') => Promise<{ url: string; stop(): void }>;
 }
@@ -213,9 +217,19 @@ export async function main(argv: string[], env: Env): Promise<number> {
             save(env, c);
             if (hs.size > 0) env.out(`Hermes: ${items.length} session(s) imported.\n`);
           } catch (e) { hermesFailed = true; env.err(`Hermes: ${(e as Error).message}\n`); }
+          let openclawFailed = false;
+          try {
+            const os = new Map(Object.entries(c.openclawSeen ?? {}));
+            const o = readOpenClaw(env.openclawDir ?? openclawStateDir(), os);
+            for (const it of o.items) store.addItem(it);
+            c.openclawSeen = Object.fromEntries(os);
+            save(env, c);
+            if (os.size > 0) env.out(`OpenClaw: ${o.items.length} session(s) imported.\n`);
+            for (const f of o.failed) { openclawFailed = true; env.err(`OpenClaw (agent ${f.agent}): ${f.error}\n`); }
+          } catch (e) { openclawFailed = true; env.err(`OpenClaw: ${(e as Error).message}\n`); }
           const em = await embedder(env, c);
           try { if (em.e) env.out(`Embedded ${await embedMissing(store, em.e)} new chunk(s).\n`); } finally { em.stop(); }
-          return r.failed.length > 0 || hermesFailed ? 1 : 0;
+          return r.failed.length > 0 || hermesFailed || openclawFailed ? 1 : 0;
         } finally { store.close(); }
       }
       case 'embed': {

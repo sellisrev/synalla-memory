@@ -8,7 +8,7 @@ Status: early work, not released. Node 22.18 or later.
 
 ## What it does
 
-- **Imports** your Claude Code and Hermes sessions: what you wrote and what the agent answered. Tool output, the
+- **Imports** your Claude Code, Hermes and OpenClaw sessions: what you wrote and what the agent answered. Tool output, the
   agent's reasoning and subagent runs are left out. Secrets (API keys, tokens, private keys, passwords) are replaced
   by a marker before anything is stored.
 - **Answers `recall`** with passages found by keywords and by meaning, merged, plus dated facts that say what is true

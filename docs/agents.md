@@ -51,6 +51,10 @@ With a passphrase, add `--env SYNALLA_MEMORY_PASSPHRASE=...`. The config lands i
 `mcp.servers`. `openclaw mcp add` probes the server before saving and refuses while the Gateway is running: stop the
 Gateway first, or add `--no-probe`.
 
+`synalla-memory import` reads every agent's sessions from `~/.openclaw/agents/*/agent/openclaw-agent.sqlite`
+(or under `OPENCLAW_STATE_DIR`), including windows OpenClaw moved to cold storage. Subagent runs, the Gateway's model
+checks and sessions fed by a mail or webhook hook are left out.
+
 ## What the agent gets
 
 | Tool | What it does |

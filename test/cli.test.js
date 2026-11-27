@@ -16,7 +16,8 @@ function fakeKeychain() {
 function env(home, extra = {}) {
   const out = [], err = [];
   return { home, keychain: fakeKeychain(), out: s => out.push(s), err: s => err.push(s), readStdin: async () => '',
-    now: () => new Date('2026-11-24T10:00:00Z'), outText: () => out.join(''), errText: () => err.join(''), ...extra };
+    now: () => new Date('2026-11-24T10:00:00Z'), outText: () => out.join(''), errText: () => err.join(''),
+    openclawDir: join(home, 'no-openclaw'), ...extra };
 }
 
 test('init, import, recall, backup, then restore elsewhere with only the recovery code', async () => {

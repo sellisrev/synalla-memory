@@ -1,0 +1,522 @@
+[
+ {
+  "id": "S01",
+  "pattern": "plain",
+  "theme": "hobbies",
+  "days": [
+   30
+  ],
+  "thing": "weekly running club",
+  "values": [
+   "Spandau Runners"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S02",
+  "pattern": "plain",
+  "theme": "health",
+  "days": [
+   35
+  ],
+  "thing": "annual eye exam doctor",
+  "values": [
+   "Dr. Elena Kovic"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S03",
+  "pattern": "plain",
+  "theme": "travel",
+  "days": [
+   39
+  ],
+  "thing": "flight to Lyon",
+  "values": [
+   "Air France AF7204"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S04",
+  "pattern": "plain",
+  "theme": "money",
+  "days": [
+   17
+  ],
+  "thing": "monthly apartment rent",
+  "values": [
+   "1450 euros"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S05",
+  "pattern": "plain",
+  "theme": "shopping",
+  "days": [
+   35
+  ],
+  "thing": "weekly yoga instructor",
+  "values": [
+   "Maria Gonzalez"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S06",
+  "pattern": "plain",
+  "theme": "admin",
+  "days": [
+   24
+  ],
+  "thing": "internet service provider",
+  "values": [
+   "Deutsche Telekom"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S07",
+  "pattern": "plain",
+  "theme": "people",
+  "days": [
+   40
+  ],
+  "thing": "girlfriend's name",
+  "values": [
+   "Clara Weber"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S08",
+  "pattern": "plain",
+  "theme": "hobbies",
+  "days": [
+   17
+  ],
+  "thing": "weekly cycling route",
+  "values": [
+   "Tempelhofer Feld loop"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S09",
+  "pattern": "plain",
+  "theme": "hobbies",
+  "days": [
+   22
+  ],
+  "thing": "weekly gym membership",
+  "values": [
+   "Bodyworks Mitte"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S10",
+  "pattern": "plain",
+  "theme": "health",
+  "days": [
+   24
+  ],
+  "thing": "primary care doctor",
+  "values": [
+   "Dr. Hans Muller"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S11",
+  "pattern": "change",
+  "theme": "home",
+  "days": [
+   22,
+   26
+  ],
+  "thing": "Go runtime version",
+  "values": [
+   "1.21.5",
+   "1.22.1"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S12",
+  "pattern": "change",
+  "theme": "people",
+  "days": [
+   4,
+   12
+  ],
+  "thing": "regular massage therapist",
+  "values": [
+   "Elena Vogel",
+   "Marcus Klein"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S13",
+  "pattern": "change",
+  "theme": "home",
+  "days": [
+   36,
+   41
+  ],
+  "thing": "commuter vehicle brand",
+  "values": [
+   "VanMoof",
+   "Trek"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S14",
+  "pattern": "change",
+  "theme": "work",
+  "days": [
+   30,
+   39
+  ],
+  "thing": "primary database engine",
+  "values": [
+   "PostgreSQL",
+   "CockroachDB"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S15",
+  "pattern": "change",
+  "theme": "health",
+  "days": [
+   37,
+   41
+  ],
+  "thing": "vitamin D dosage",
+  "values": [
+   "2000 IU",
+   "4000 IU"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S16",
+  "pattern": "change",
+  "theme": "work",
+  "days": [
+   26,
+   33
+  ],
+  "thing": "cloud infrastructure provider",
+  "values": [
+   "Google Cloud",
+   "Digital Ocean"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S17",
+  "pattern": "heart",
+  "theme": "shopping",
+  "days": [
+   24,
+   27,
+   30
+  ],
+  "thing": "coffee shop choice",
+  "values": [
+   "The Barn",
+   "Bonanza Coffee"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S18",
+  "pattern": "heart",
+  "theme": "money",
+  "days": [
+   30,
+   36,
+   41
+  ],
+  "thing": "streaming subscription",
+  "values": [
+   "Netflix",
+   "Amazon Prime"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S19",
+  "pattern": "correction",
+  "theme": "travel",
+  "days": [
+   36,
+   41
+  ],
+  "thing": "train departure time",
+  "values": [
+   "14:30",
+   "15:45"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S20",
+  "pattern": "correction",
+  "theme": "people",
+  "days": [
+   21,
+   31
+  ],
+  "thing": "girlfriend's passport number",
+  "values": [
+   "X8849201",
+   "Y9910382"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S21",
+  "pattern": "tentative_dropped",
+  "theme": "family",
+  "days": [
+   24,
+   30
+  ],
+  "thing": "mother's preferred bakery",
+  "values": [
+   "Backstube Mitte",
+   "Bäckerei Kroll"
+  ],
+  "other_person": "Ingrid Brandt (mother)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S22",
+  "pattern": "tentative_dropped",
+  "theme": "hobbies",
+  "days": [
+   3,
+   8
+  ],
+  "thing": "alternative weekend activity",
+  "values": [
+   "kayaking on the Spree",
+   "photography walk"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S24",
+  "pattern": "hypothetical",
+  "theme": "admin",
+  "days": [
+   18,
+   28
+  ],
+  "thing": "monthly car insurance premium",
+  "values": [
+   "120 euros",
+   "180 euros"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S25",
+  "pattern": "hypothetical",
+  "theme": "family",
+  "days": [
+   22,
+   25
+  ],
+  "thing": "monthly mobile phone cost",
+  "values": [
+   "25 euros",
+   "15 euros"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S26",
+  "pattern": "lookalike",
+  "theme": "shopping",
+  "days": [
+   24,
+   28
+  ],
+  "thing": "Espresso machine brand",
+  "values": [
+   "La Marzocco",
+   "Breville"
+  ],
+  "other_person": "Clara Weber (girlfriend)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S27",
+  "pattern": "lookalike",
+  "theme": "home",
+  "days": [
+   23,
+   31
+  ],
+  "thing": "apartment floor number",
+  "values": [
+   "third floor",
+   "fifth floor"
+  ],
+  "other_person": "Clara Weber (girlfriend)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S28",
+  "pattern": "lookalike",
+  "theme": "travel",
+  "days": [
+   23,
+   30
+  ],
+  "thing": "nearest train station",
+  "values": [
+   "Berlin Ostkreuz",
+   "Munich Hauptbahnhof"
+  ],
+  "other_person": "Jonas Keller (friend)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S29",
+  "pattern": "need_met",
+  "theme": "shopping",
+  "days": [
+   3,
+   7
+  ],
+  "thing": "need",
+  "values": [
+   "a climbing partner for Tuesday evenings at Berta Block",
+   "now climbs with Jonas Keller"
+  ],
+  "other_person": "",
+  "keyword": "climbing",
+  "topic": "fitness-partner"
+ },
+ {
+  "id": "S30",
+  "pattern": "need_met",
+  "theme": "travel",
+  "days": [
+   7,
+   11
+  ],
+  "thing": "need",
+  "values": [
+   "a Postgres expert to review the table partitioning plan",
+   "Svenja Roth from the Go meetup reviewed it"
+  ],
+  "other_person": "",
+  "keyword": "Postgres",
+  "topic": "tech-advice"
+ },
+ {
+  "id": "S31",
+  "pattern": "need_open",
+  "theme": "money",
+  "days": [
+   12
+  ],
+  "thing": "need",
+  "values": [
+   "a cheap sublet in Berlin for his girlfriend's visit in May"
+  ],
+  "other_person": "",
+  "keyword": "sublet",
+  "topic": "accommodation"
+ },
+ {
+  "id": "S32",
+  "pattern": "need_open",
+  "theme": "work",
+  "days": [
+   1
+  ],
+  "thing": "need",
+  "values": [
+   "a lift to Fontainebleau for the Easter climbing trip"
+  ],
+  "other_person": "",
+  "keyword": "Fontainebleau",
+  "topic": "lifts"
+ },
+ {
+  "id": "S33",
+  "pattern": "need_other",
+  "theme": "admin",
+  "days": [
+   25
+  ],
+  "thing": "need",
+  "values": [
+   "a Portuguese tutor, if he moved to Lisbon"
+  ],
+  "other_person": "",
+  "keyword": "Portuguese",
+  "topic": "language-exchange"
+ }
+]

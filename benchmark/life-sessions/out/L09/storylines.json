@@ -1,0 +1,540 @@
+[
+ {
+  "id": "S01",
+  "pattern": "plain",
+  "theme": "admin",
+  "days": [
+   2
+  ],
+  "thing": "pro bono case deadline",
+  "values": [
+   "2026-03-04"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S02",
+  "pattern": "plain",
+  "theme": "admin",
+  "days": [
+   41
+  ],
+  "thing": "return to work date",
+  "values": [
+   "2026-04-12"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S03",
+  "pattern": "plain",
+  "theme": "hobbies",
+  "days": [
+   34
+  ],
+  "thing": "running club meeting",
+  "values": [
+   "2026-04-05"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S04",
+  "pattern": "plain",
+  "theme": "people",
+  "days": [
+   30
+  ],
+  "thing": "brother birthday",
+  "values": [
+   "2026-04-01"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S05",
+  "pattern": "plain",
+  "theme": "shopping",
+  "days": [
+   18
+  ],
+  "thing": "baby monitor subscription",
+  "values": [
+   "12.99 CAD a month"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S06",
+  "pattern": "plain",
+  "theme": "family",
+  "days": [
+   20
+  ],
+  "thing": "mother in law visit",
+  "values": [
+   "2026-03-22"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S07",
+  "pattern": "plain",
+  "theme": "people",
+  "days": [
+   29
+  ],
+  "thing": "firm partner lunch",
+  "values": [
+   "2026-03-31"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S08",
+  "pattern": "plain",
+  "theme": "hobbies",
+  "days": [
+   37
+  ],
+  "thing": "jazz concert ticket",
+  "values": [
+   "2026-04-08"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S09",
+  "pattern": "plain",
+  "theme": "health",
+  "days": [
+   30
+  ],
+  "thing": "annual physical appointment",
+  "values": [
+   "2026-04-15"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S10",
+  "pattern": "plain",
+  "theme": "people",
+  "days": [
+   7
+  ],
+  "thing": "brother's graduation venue",
+  "values": [
+   "Harbourfront Centre"
+  ],
+  "other_person": "Tunde (brother)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S11",
+  "pattern": "change",
+  "theme": "home",
+  "days": [
+   36,
+   41
+  ],
+  "thing": "home office chair",
+  "values": [
+   "Herman Miller Aeron",
+   "Steelcase Leap"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S12",
+  "pattern": "change",
+  "theme": "home",
+  "days": [
+   10,
+   17
+  ],
+  "thing": "grocery delivery app",
+  "values": [
+   "Instacart",
+   "Amazon Fresh"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S13",
+  "pattern": "change",
+  "theme": "travel",
+  "days": [
+   17,
+   24
+  ],
+  "thing": "commute route to firm",
+  "values": [
+   "Queen Street car",
+   "TTC streetcar"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S14",
+  "pattern": "change",
+  "theme": "travel",
+  "days": [
+   6,
+   9
+  ],
+  "thing": "parking spot rental",
+  "values": [
+   "Bay Street garage",
+   "Yonge Street lot"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S15",
+  "pattern": "change",
+  "theme": "money",
+  "days": [
+   13,
+   21
+  ],
+  "thing": "childcare tax credit amount",
+  "values": [
+   "450 CAD",
+   "520 CAD"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S16",
+  "pattern": "change",
+  "theme": "family",
+  "days": [
+   10,
+   19
+  ],
+  "thing": "father weekend visit",
+  "values": [
+   "2026-03-12",
+   "2026-03-21"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S17",
+  "pattern": "heart",
+  "theme": "shopping",
+  "days": [
+   8,
+   13,
+   18
+  ],
+  "thing": "baby monitor app",
+  "values": [
+   "Nanit",
+   "Owlet"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S18",
+  "pattern": "heart",
+  "theme": "health",
+  "days": [
+   20,
+   29,
+   39
+  ],
+  "thing": "sleep pattern",
+  "values": [
+   "8 hours straight",
+   "two 3-hour blocks"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S19",
+  "pattern": "correction",
+  "theme": "health",
+  "days": [
+   23,
+   32
+  ],
+  "thing": "pediatrician name",
+  "values": [
+   "Dr. Evans",
+   "Dr. Patel"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S20",
+  "pattern": "correction",
+  "theme": "work",
+  "days": [
+   9,
+   13
+  ],
+  "thing": "pro bono case file number",
+  "values": [
+   "PB-9021",
+   "PB-9024"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S21",
+  "pattern": "tentative_dropped",
+  "theme": "hobbies",
+  "days": [
+   9,
+   15
+  ],
+  "thing": "weekend hiking trail",
+  "values": [
+   "Bruce Trail",
+   "Rouge Park"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S22",
+  "pattern": "tentative_dropped",
+  "theme": "money",
+  "days": [
+   21,
+   25
+  ],
+  "thing": "investment account provider",
+  "values": [
+   "Wealthsimple",
+   "Questrade"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S23",
+  "pattern": "tentative_confirmed",
+  "theme": "work",
+  "days": [
+   23,
+   28,
+   32
+  ],
+  "thing": "pro bono filing method",
+  "values": [
+   "online portal",
+   "courthouse drop-off"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S24",
+  "pattern": "hypothetical",
+  "theme": "family",
+  "days": [
+   4,
+   8
+  ],
+  "thing": "family vacation destination",
+  "values": [
+   "Niagara Falls",
+   "Banff National Park"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S25",
+  "pattern": "hypothetical",
+  "theme": "shopping",
+  "days": [
+   17,
+   22
+  ],
+  "thing": "baby clothing brand",
+  "values": [
+   "Carter's",
+   "Hanna Andersson"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S26",
+  "pattern": "lookalike",
+  "theme": "people",
+  "days": [
+   37,
+   40
+  ],
+  "thing": "jazz club membership",
+  "values": [
+   "The Rex Jazz Bar",
+   "Smalls Jazz Club"
+  ],
+  "other_person": "Elena (colleague)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S27",
+  "pattern": "lookalike",
+  "theme": "home",
+  "days": [
+   24,
+   31
+  ],
+  "thing": "weekly dry cleaner pickup",
+  "values": [
+   "Green Earth Cleaners",
+   "Press & Fold"
+  ],
+  "other_person": "Marcus (neighbor)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S28",
+  "pattern": "lookalike",
+  "theme": "money",
+  "days": [
+   3,
+   6
+  ],
+  "thing": "family health insurance provider",
+  "values": [
+   "Manulife Financial",
+   "Sun Life"
+  ],
+  "other_person": "Grace (wife)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S29",
+  "pattern": "need_met",
+  "theme": "money",
+  "days": [
+   4,
+   14
+  ],
+  "thing": "need",
+  "values": [
+   "a second-hand stroller that folds small enough for the TTC",
+   "bought a used UPPAbaby from Nadia Chen"
+  ],
+  "other_person": "",
+  "keyword": "stroller",
+  "topic": "baby-gear"
+ },
+ {
+  "id": "S30",
+  "pattern": "need_met",
+  "theme": "admin",
+  "days": [
+   0,
+   8
+  ],
+  "thing": "need",
+  "values": [
+   "a lactation consultant who does home visits",
+   "Grace booked Megan Ross for home visits"
+  ],
+  "other_person": "",
+  "keyword": "lactation",
+  "topic": "doctor-recommendation"
+ },
+ {
+  "id": "S31",
+  "pattern": "need_open",
+  "theme": "shopping",
+  "days": [
+   12
+  ],
+  "thing": "need",
+  "values": [
+   "a daycare spot for Ada from January"
+  ],
+  "other_person": "",
+  "keyword": "daycare",
+  "topic": "childcare"
+ },
+ {
+  "id": "S32",
+  "pattern": "need_open",
+  "theme": "work",
+  "days": [
+   20
+  ],
+  "thing": "need",
+  "values": [
+   "a mentor who went back to Bay Street after parental leave"
+  ],
+  "other_person": "",
+  "keyword": "mentor",
+  "topic": "mentoring"
+ },
+ {
+  "id": "S33",
+  "pattern": "need_other",
+  "theme": "travel",
+  "days": [
+   29
+  ],
+  "thing": "need",
+  "values": [
+   "a French interpreter for her hearing on 2 April"
+  ],
+  "other_person": "Mrs. Diallo (pro bono client)",
+  "keyword": "interpreter",
+  "topic": "translation"
+ }
+]

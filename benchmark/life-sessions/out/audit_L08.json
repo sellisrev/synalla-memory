@@ -1,0 +1,231 @@
+{
+ "person": "L08",
+ "model": "opus",
+ "verdicts": {
+  "L08-S01-1": {
+   "verdict": "ok",
+   "why": "Session 003 gives the mother's birthday as 1948-05-12, and sessions 015 and 042 repeat it."
+  },
+  "L08-S02-1": {
+   "verdict": "ok",
+   "why": "Session 041 confirms the user's Tuesday yoga session with Lina Torres."
+  },
+  "L08-S03-1": {
+   "verdict": "ok",
+   "why": "Fretex Cargo handles the export containers in session 020 and the Chile export invoice in session 041."
+  },
+  "L08-S04-1": {
+   "verdict": "ok",
+   "why": "Session 028 books Taxi Airport 500 for the airport, and session 048 calls it the taxi service usually used for the airport."
+  },
+  "L08-S05-1": {
+   "verdict": "ok",
+   "why": "Session 046 names the user's SecurHome Plus system."
+  },
+  "L08-S06-1": {
+   "verdict": "ok",
+   "why": "Session 035 names Agustín Rivas for the crop insurance renewal."
+  },
+  "L08-S07-1": {
+   "verdict": "ok",
+   "why": "Session 032 gives Marco's birthday as 1970-09-15, and session 034 repeats it."
+  },
+  "L08-S08-1": {
+   "verdict": "ok",
+   "why": "Session 036 gives flight AR1240 for the Buenos Aires trip."
+  },
+  "L08-S09-1": {
+   "verdict": "ok",
+   "why": "Sessions 035 and 043 give a 4.5% annual interest rate."
+  },
+  "L08-S10-1": {
+   "verdict": "ok",
+   "why": "Sessions 038 and 047 give the annual property tax as 120000 pesos."
+  },
+  "L08-S11-1": {
+   "verdict": "ok",
+   "why": "The mother sees Dr. Elena Gomez in session 039. Session 047 then has Dr. Lucas Vega, with the name change mentioned."
+  },
+  "L08-S11-2": {
+   "verdict": "ok",
+   "why": "Session 039 has the mother's appointment with Dr. Elena Gomez."
+  },
+  "L08-S11-3": {
+   "verdict": "ok",
+   "why": "Session 047 (2026-04-11) is where the change to Dr. Lucas Vega appears and is recorded."
+  },
+  "L08-S12-1": {
+   "verdict": "ok",
+   "why": "Gráfica Mendoza handles the label proofs in session 041. Session 047 says providers switched and names PrintArt Sur."
+  },
+  "L08-S12-2": {
+   "verdict": "ok",
+   "why": "Session 041 has Gráfica Mendoza doing the Malbec label proofs."
+  },
+  "L08-S12-3": {
+   "verdict": "unsupported",
+   "why": "No session dates the switch. 9 April is when quality control passed, not when the label supplier changed. The switch falls somewhere between 2026-04-05 (still Gráfica Mendoza) and 2026-04-11, when it is described only as 'a while back'.",
+   "quote": "I know we switched providers a while back.",
+   "session": "047",
+   "better_reference": "Date not stated; PrintArt Sur is first named on 2026-04-11 (Gráfica Mendoza was still in use on 2026-04-05)",
+   "quote_found": true
+  },
+  "L08-S13-1": {
+   "verdict": "ok",
+   "why": "The user orders from Dunlop Cork in session 015 and then from Natural Cork Co in session 025."
+  },
+  "L08-S13-2": {
+   "verdict": "ok",
+   "why": "Session 015 has the order from Dunlop Cork."
+  },
+  "L08-S13-3": {
+   "verdict": "ok",
+   "why": "Natural Cork Co first appears in session 025 (2026-03-21)."
+  },
+  "L08-S14-1": {
+   "verdict": "ok",
+   "why": "Session 038 records the switch from Radio Taxi 456 to Uber Business, and session 044 calls Uber Business the regular service."
+  },
+  "L08-S14-2": {
+   "verdict": "ok",
+   "why": "Session 031 uses Radio Taxi 456, and session 038 names it as the old service."
+  },
+  "L08-S14-3": {
+   "verdict": "ok",
+   "why": "In session 038 the user gives the date: 'It was Wednesday 1 April. Yes, that’s when I cancelled the old line.'"
+  },
+  "L08-S15-1": {
+   "verdict": "ok",
+   "why": "Session 029 has Centro Salud Espalda; session 037 later names Clínica del Deporte."
+  },
+  "L08-S15-2": {
+   "verdict": "ok",
+   "why": "Session 029 has the physiotherapy session at Centro Salud Espalda."
+  },
+  "L08-S15-3": {
+   "verdict": "unsupported",
+   "why": "No session states when the clinic changed. Session 029 put the 26 March appointment at Centro Salud Espalda. Session 037, dated 2026-04-01, then puts a 'Thursday 26 March' session at Clínica del Deporte, which is inconsistent.",
+   "quote": "Your next session is on Thursday 26 March at Clínica del Deporte. It’s in two days.",
+   "session": "037",
+   "better_reference": "Date not stated; Clínica del Deporte is first mentioned on 2026-04-01",
+   "quote_found": true
+  },
+  "L08-S16-1": {
+   "verdict": "ok",
+   "why": "Session 023 has Parque General San Martín; in session 033 the user switches to Viñedo Ruta 40."
+  },
+  "L08-S16-2": {
+   "verdict": "ok",
+   "why": "Sessions 023 and 033 both name Parque General San Martín."
+  },
+  "L08-S16-3": {
+   "verdict": "ok",
+   "why": "The switch is made 'today' in session 033, dated 2026-03-28."
+  },
+  "L08-S17-1": {
+   "verdict": "ok",
+   "why": "The user goes to La Trattoria in session 033, switches to El Olivo in session 040, and goes back to La Trattoria in session 044."
+  },
+  "L08-S18-1": {
+   "verdict": "ok",
+   "why": "The user switches to Estética Moderna in session 039 and goes back to Salón Belleza Clara in session 044."
+  },
+  "L08-S19-1": {
+   "verdict": "ok",
+   "why": "Session 019 (2026-03-16) corrects the cardiologist to Dr. Sofia Alvarez."
+  },
+  "L08-S20-1": {
+   "verdict": "wrong",
+   "why": "GarageFix Mendoza is right, but the date is wrong. The correction was made in session 042 on 2026-04-06; 4 April is the day GarageFix came out.",
+   "quote": "The one who actually came out last Saturday, April 4th, was GarageFix Mendoza. It wasn’t Puertas Seguras.",
+   "session": "042",
+   "better_reference": "GarageFix Mendoza (Puertas Seguras was a slip, corrected on 2026-04-06; GarageFix came out on 2026-04-04)",
+   "quote_found": true
+  },
+  "L08-S21-1": {
+   "verdict": "incomplete",
+   "why": "The switch to Nature's Best that was only considered was for the mother's multivitamin, not the user's own supplement. VitaLife Daily is the user's own (session 042). A reader could fairly answer that the consideration concerned the mother.",
+   "quote": "I want to switch her prescription from the current multivitamin to Nature's Best.",
+   "session": "048",
+   "better_reference": "No: only considered (on 2026-04-11), and it was for her mother's multivitamin; the user's own supplement is still VitaLife Daily",
+   "quote_found": true
+  },
+  "L08-S22-1": {
+   "verdict": "ok",
+   "why": "In session 009 FreshMarket Online is only being thought about, and Mercado Express is still used afterwards."
+  },
+  "L08-S23-1": {
+   "verdict": "ok",
+   "why": "Sessions 023 and 030 use VinoLog Pro. The user considers TasteTracker in session 026 and completes the migration in session 034."
+  },
+  "L08-S23-2": {
+   "verdict": "ok",
+   "why": "Session 034 gives the migration completion as 'Saturday 28 March'."
+  },
+  "L08-S24-1": {
+   "verdict": "ok",
+   "why": "Session 034 has the 4500-peso deduction, and session 043 calls 3000 pesos only a what-if."
+  },
+  "L08-S25-1": {
+   "verdict": "ok",
+   "why": "Sessions 024 and 033 give Calle Los Andes 45, and session 030 calls Av. San Martín 120 only an idea."
+  },
+  "L08-S26-1": {
+   "verdict": "ok",
+   "why": "Session 043 says Grooming Paws Mendoza is used for Luna, and session 048 says Canine Care Club is Marco's groomer."
+  },
+  "L08-S26-2": {
+   "verdict": "ok",
+   "why": "Session 048 says 'Marco’s pet groomer, Canine Care Club'."
+  },
+  "L08-S27-1": {
+   "verdict": "unsupported",
+   "why": "No session calls Carlos Mendez a leader; he is only 'from the running club'. The only person named as running club leader is Ana Gutierrez (session 040), and the user thanks her for organizing the user's trail run. A reader could answer Ana Gutierrez.",
+   "quote": "I have that meeting with Carlos Mendez from the running club on Thursday morning.",
+   "session": "032",
+   "better_reference": "Not clearly established; Carlos Mendez is only a member of the running club, and Ana Gutierrez is named as the running club leader (the user thanks her for organizing the trail run)",
+   "quote_found": true
+  },
+  "L08-S27-2": {
+   "verdict": "unsupported",
+   "why": "The sentence says Lina's yoga instructor reported who the running club leader is. It never says Ana leads a club of Lina's. The user thanking Ana for the trail run points to the user's own club.",
+   "quote": "Lina’s yoga instructor mentioned that the running club leader is Ana Gutierrez. I need to send a thank you note to Ana for organizing the last trail run.",
+   "session": "040",
+   "better_reference": "Not established; Ana Gutierrez is named as the running club leader (apparently the user's club), and Lina is not said to have one",
+   "quote_found": true
+  },
+  "L08-S28-1": {
+   "verdict": "ok",
+   "why": "Session 010 names Lic. Javier Torres as the user's tax advisor, and session 014 names Maria Fernandez as Marco's."
+  },
+  "L08-S28-2": {
+   "verdict": "ok",
+   "why": "Session 014 says 'Marco's tax advisor is Lic. Maria Fernandez.'"
+  },
+  "L08-S29-1": {
+   "verdict": "ok",
+   "why": "In session 015 (2026-03-14) the user hires a crew of six through Raúl Gómez."
+  },
+  "L08-S30-1": {
+   "verdict": "ok",
+   "why": "Session 036 says Doña Elena Ruiz agreed to come on Thursdays, and that it happened on Saturday 28 March."
+  },
+  "L08-needs_now-1": {
+   "verdict": "ok",
+   "why": "The bottling machine search (session 010) is never resolved. In session 046 the German importer deal is 'not sorted yet'. The other needs were met."
+  },
+  "L08-none-1": {
+   "verdict": "ok",
+   "why": "No session mentions a first car."
+  },
+  "L08-none-2": {
+   "verdict": "ok",
+   "why": "No session mentions the grandmother's maiden name."
+  },
+  "L08-none-3": {
+   "verdict": "ok",
+   "why": "No session mentions a favourite film."
+  }
+ },
+ "cost": 0.5507502
+}

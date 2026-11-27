@@ -1,0 +1,88 @@
+{
+ "8": [
+  [
+   "states 'PostgreSQL'"
+  ]
+ ],
+ "22": [
+  [
+   "states '180 euros'"
+  ]
+ ],
+ "26": [
+  [
+   "states '14:30'"
+  ]
+ ],
+ "30": [
+  [
+   "date 2026-03-27 not said"
+  ]
+ ],
+ "32": [
+  [
+   "missing 'Google Cloud'",
+   "date 2026-03-27 not said"
+  ]
+ ],
+ "38": [
+  [
+   "date 2026-04-01 not said"
+  ],
+  [
+   "judge: S31: Tell him I’ve got the apartment sorted and I’ll pick him up. (Lukas says he has the apartment sorted, but S31 states the cheap sublet for his girlfriend's visit in May is still not s)",
+   "judge: S29: Tomorrow, Sunday 5 April, your climbing session is scheduled for 10:00 AM at the East Side Climbing Center. (The assistant mentions a climbing session at East Side Climbing Center on April 5th, but the facts only mention Lukas cl)"
+  ],
+  [
+   "date 2026-04-01 not said"
+  ]
+ ],
+ "41": [
+  [
+   "states '15 euros'"
+  ]
+ ],
+ "42": [
+  [
+   "date 2026-04-02 not said"
+  ],
+  [
+   "date 2026-04-02 not said"
+  ]
+ ],
+ "9": [
+  [
+   "judge: None: I noticed you have chicken breast and quinoa in the fridge. (This is an extra detail about a known thing (food in fridge) and does not conflict with any fact.)"
+  ],
+  [
+   "missing 'Jonas Keller'"
+  ],
+  [
+   "missing 'Jonas Keller'"
+  ],
+  [
+   "judge: S12: I've cancelled the recurring appointment with Elena Vogel and added the climbing session with Jonas Keller for Saturday, (The assistant confirms cancelling the appointment with Elena Vogel, but the fact S12 states that Elena Vogel was the reg)"
+  ],
+  [
+   "missing 'Jonas Keller'"
+  ],
+  [
+   "missing 'Jonas Keller'"
+  ]
+ ],
+ "17": [
+  [
+   "judge: S12: You also have a massage with Marcus on Sunday evening. (The assistant mentions a massage with Marcus on Sunday, but the fact S12 (from 2026-03-14) states Marcus Klein is the re)"
+  ]
+ ],
+ "25": [
+  [
+   "judge: S14: Since you're using Postgres 15 (The assistant mentions Lukas is using Postgres 15, but the facts state that as of 2026-04-10, Lukas's primary database e)"
+  ]
+ ],
+ "35": [
+  [
+   "judge: S06: I won’t make any changes to your current contract with Deutsche Telekom. (The assistant incorrectly attributes the car insurance provider to Deutsche Telekom; Deutsche Telekom is Lukas's interne)"
+  ]
+ ]
+}

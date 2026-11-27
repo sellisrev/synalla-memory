@@ -1,0 +1,940 @@
+[
+ {
+  "n": 1,
+  "day": 0,
+  "steps": [],
+  "date": "2026-03-02",
+  "kind": "work"
+ },
+ {
+  "n": 2,
+  "day": 1,
+  "steps": [],
+  "date": "2026-03-03",
+  "kind": "work"
+ },
+ {
+  "n": 3,
+  "day": 2,
+  "steps": [],
+  "date": "2026-03-04",
+  "kind": "work"
+ },
+ {
+  "n": 4,
+  "day": 3,
+  "steps": [],
+  "date": "2026-03-05",
+  "kind": "life"
+ },
+ {
+  "n": 5,
+  "day": 3,
+  "steps": [
+   {
+    "story": "S02",
+    "step": 0,
+    "day": 2,
+    "said_late": false,
+    "text": "Thandiwe's mother's birthday is 2026-03-04.",
+    "must": [
+     "2026-03-04"
+    ]
+   }
+  ],
+  "date": "2026-03-05",
+  "kind": "life"
+ },
+ {
+  "n": 6,
+  "day": 4,
+  "steps": [
+   {
+    "story": "S15",
+    "step": 0,
+    "day": 3,
+    "said_late": false,
+    "text": "Thandiwe's weekly running route is Signal Hill.",
+    "must": [
+     "Signal Hill"
+    ]
+   },
+   {
+    "story": "S13",
+    "step": 0,
+    "day": 4,
+    "said_late": false,
+    "text": "Thandiwe's monthly rent amount is 12000 ZAR.",
+    "must": [
+     "12000 ZAR"
+    ]
+   }
+  ],
+  "date": "2026-03-06",
+  "kind": "life"
+ },
+ {
+  "n": 7,
+  "day": 5,
+  "steps": [
+   {
+    "story": "S11",
+    "step": 0,
+    "day": 3,
+    "said_late": false,
+    "text": "Thandiwe's primary banking provider is FirstRand Bank.",
+    "must": [
+     "FirstRand Bank"
+    ]
+   },
+   {
+    "story": "S14",
+    "step": 0,
+    "day": 4,
+    "said_late": false,
+    "text": "Thandiwe's physiotherapy clinic is Cape Town Physio.",
+    "must": [
+     "Cape Town Physio"
+    ]
+   }
+  ],
+  "date": "2026-03-07",
+  "kind": "life"
+ },
+ {
+  "n": 8,
+  "day": 6,
+  "steps": [
+   {
+    "story": "S21",
+    "step": 0,
+    "day": 5,
+    "said_late": false,
+    "text": "Thandiwe's alternative studio space for portfolio is The Foundry Warehouse.",
+    "must": [
+     "The Foundry Warehouse"
+    ]
+   }
+  ],
+  "date": "2026-03-08",
+  "kind": "work"
+ },
+ {
+  "n": 9,
+  "day": 7,
+  "steps": [],
+  "date": "2026-03-09",
+  "kind": "life"
+ },
+ {
+  "n": 10,
+  "day": 8,
+  "steps": [],
+  "date": "2026-03-10",
+  "kind": "work"
+ },
+ {
+  "n": 11,
+  "day": 9,
+  "steps": [],
+  "date": "2026-03-11",
+  "kind": "life"
+ },
+ {
+  "n": 12,
+  "day": 10,
+  "steps": [
+   {
+    "story": "S13",
+    "step": 1,
+    "day": 10,
+    "said_late": false,
+    "text": "Thandiwe's monthly rent amount has changed: now 12500 ZAR (it was 12000 ZAR).",
+    "must": [
+     "12500 ZAR"
+    ]
+   }
+  ],
+  "date": "2026-03-12",
+  "kind": "life"
+ },
+ {
+  "n": 13,
+  "day": 10,
+  "steps": [],
+  "date": "2026-03-12",
+  "kind": "work"
+ },
+ {
+  "n": 14,
+  "day": 11,
+  "steps": [
+   {
+    "story": "S12",
+    "step": 0,
+    "day": 11,
+    "said_late": false,
+    "text": "Thandiwe's preferred coffee shop is The Daily Grind.",
+    "must": [
+     "The Daily Grind"
+    ]
+   }
+  ],
+  "date": "2026-03-13",
+  "kind": "life"
+ },
+ {
+  "n": 15,
+  "day": 12,
+  "steps": [],
+  "date": "2026-03-14",
+  "kind": "life"
+ },
+ {
+  "n": 16,
+  "day": 13,
+  "steps": [
+   {
+    "story": "S11",
+    "step": 1,
+    "day": 13,
+    "said_late": false,
+    "text": "Thandiwe's primary banking provider has changed: now Capitec Bank (it was FirstRand Bank).",
+    "must": [
+     "Capitec Bank"
+    ]
+   },
+   {
+    "story": "S14",
+    "step": 1,
+    "day": 13,
+    "said_late": false,
+    "text": "Thandiwe's physiotherapy clinic has changed: now Wellness Hub (it was Cape Town Physio).",
+    "must": [
+     "Wellness Hub"
+    ]
+   }
+  ],
+  "date": "2026-03-15",
+  "kind": "life"
+ },
+ {
+  "n": 17,
+  "day": 14,
+  "steps": [
+   {
+    "story": "S15",
+    "step": 1,
+    "day": 13,
+    "said_late": true,
+    "text": "Thandiwe's weekly running route has changed: now Llandudny Beach (it was Signal Hill).",
+    "must": [
+     "Llandudny Beach"
+    ]
+   },
+   {
+    "story": "S21",
+    "step": 1,
+    "day": 13,
+    "said_late": true,
+    "text": "Thandiwe is only thinking about changing the alternative studio space for portfolio to Cape Town Art Space; nothing decided.",
+    "must": [
+     "Cape Town Art Space"
+    ]
+   }
+  ],
+  "date": "2026-03-16",
+  "kind": "work"
+ },
+ {
+  "n": 18,
+  "day": 15,
+  "steps": [],
+  "date": "2026-03-17",
+  "kind": "life"
+ },
+ {
+  "n": 19,
+  "day": 16,
+  "steps": [
+   {
+    "story": "S31",
+    "step": 0,
+    "day": 13,
+    "said_late": true,
+    "text": "Thandiwe needs a 70-200mm lens to rent for a weekend in April (not sorted yet).",
+    "must": [
+     "lens"
+    ]
+   }
+  ],
+  "date": "2026-03-18",
+  "kind": "life"
+ },
+ {
+  "n": 20,
+  "day": 17,
+  "steps": [
+   {
+    "story": "S29",
+    "step": 0,
+    "day": 17,
+    "said_late": false,
+    "text": "Thandiwe needs a second shooter for the Fourie wedding on 28 March (not sorted yet).",
+    "must": [
+     "shooter"
+    ]
+   },
+   {
+    "story": "S32",
+    "step": 0,
+    "day": 17,
+    "said_late": false,
+    "text": "Thandiwe needs an accountant who handles provisional tax for freelancers (not sorted yet).",
+    "must": [
+     "accountant"
+    ]
+   }
+  ],
+  "date": "2026-03-19",
+  "kind": "life"
+ },
+ {
+  "n": 21,
+  "day": 18,
+  "steps": [
+   {
+    "story": "S12",
+    "step": 1,
+    "day": 18,
+    "said_late": false,
+    "text": "Thandiwe's preferred coffee shop has changed: now Biscuiteer (it was The Daily Grind).",
+    "must": [
+     "Biscuiteer"
+    ]
+   }
+  ],
+  "date": "2026-03-20",
+  "kind": "life"
+ },
+ {
+  "n": 22,
+  "day": 19,
+  "steps": [
+   {
+    "story": "S06",
+    "step": 0,
+    "day": 19,
+    "said_late": false,
+    "text": "Thandiwe's dentist appointment is 2026-03-21.",
+    "must": [
+     "2026-03-21"
+    ]
+   }
+  ],
+  "date": "2026-03-21",
+  "kind": "life"
+ },
+ {
+  "n": 23,
+  "day": 20,
+  "steps": [
+   {
+    "story": "S08",
+    "step": 0,
+    "day": 18,
+    "said_late": false,
+    "text": "Thandiwe's camera strap purchase is 2026-03-20.",
+    "must": [
+     "2026-03-20"
+    ]
+   }
+  ],
+  "date": "2026-03-22",
+  "kind": "life"
+ },
+ {
+  "n": 24,
+  "day": 21,
+  "steps": [
+   {
+    "story": "S03",
+    "step": 0,
+    "day": 21,
+    "said_late": false,
+    "text": "Thandiwe's tax filing deadline is 2026-03-23.",
+    "must": [
+     "2026-03-23"
+    ]
+   }
+  ],
+  "date": "2026-03-23",
+  "kind": "life"
+ },
+ {
+  "n": 25,
+  "day": 22,
+  "steps": [
+   {
+    "story": "S20",
+    "step": 0,
+    "day": 16,
+    "said_late": false,
+    "text": "Thandiwe's favorite hiking trail is Platteklip Gorge.",
+    "must": [
+     "Platteklip Gorge"
+    ]
+   }
+  ],
+  "date": "2026-03-24",
+  "kind": "life"
+ },
+ {
+  "n": 26,
+  "day": 22,
+  "steps": [
+   {
+    "story": "S20",
+    "step": 1,
+    "day": 19,
+    "said_late": true,
+    "text": "Thandiwe corrects an earlier slip: the favorite hiking trail is Kirstenbosch to Skeleton Gorge, not Platteklip Gorge.",
+    "must": [
+     "Kirstenbosch to Skeleton Gorge"
+    ]
+   }
+  ],
+  "date": "2026-03-24",
+  "kind": "life"
+ },
+ {
+  "n": 27,
+  "day": 23,
+  "steps": [],
+  "date": "2026-03-25",
+  "kind": "work"
+ },
+ {
+  "n": 28,
+  "day": 23,
+  "steps": [],
+  "date": "2026-03-25",
+  "kind": "life"
+ },
+ {
+  "n": 29,
+  "day": 24,
+  "steps": [
+   {
+    "story": "S09",
+    "step": 0,
+    "day": 22,
+    "said_late": false,
+    "text": "Thandiwe's invoice submission for Van der Merwe is 2026-03-24.",
+    "must": [
+     "2026-03-24"
+    ]
+   },
+   {
+    "story": "S05",
+    "step": 0,
+    "day": 24,
+    "said_late": false,
+    "text": "Thandiwe's client meeting with Fourie is 2026-03-26.",
+    "must": [
+     "2026-03-26"
+    ]
+   }
+  ],
+  "date": "2026-03-26",
+  "kind": "work"
+ },
+ {
+  "n": 30,
+  "day": 24,
+  "steps": [
+   {
+    "story": "S10",
+    "step": 0,
+    "day": 24,
+    "said_late": false,
+    "text": "Thandiwe's weekly yoga class is Saturday morning.",
+    "must": [
+     "Saturday morning"
+    ]
+   },
+   {
+    "story": "S25",
+    "step": 0,
+    "day": 24,
+    "said_late": false,
+    "text": "Thandiwe's cloud storage provider is Google Drive.",
+    "must": [
+     "Google Drive"
+    ]
+   }
+  ],
+  "date": "2026-03-26",
+  "kind": "life"
+ },
+ {
+  "n": 31,
+  "day": 25,
+  "steps": [
+   {
+    "story": "S29",
+    "step": 1,
+    "day": 24,
+    "said_late": true,
+    "text": "Thandiwe's need is sorted: Lerato Mokoena agreed to second-shoot.",
+    "must": [
+     "Mokoena"
+    ]
+   },
+   {
+    "story": "S30",
+    "step": 0,
+    "day": 25,
+    "said_late": false,
+    "text": "Thandiwe needs someone to walk Bongo on the days of the Stellenbosch shoot (not sorted yet).",
+    "must": [
+     "walk"
+    ]
+   }
+  ],
+  "date": "2026-03-27",
+  "kind": "life"
+ },
+ {
+  "n": 32,
+  "day": 26,
+  "steps": [],
+  "date": "2026-03-28",
+  "kind": "life"
+ },
+ {
+  "n": 33,
+  "day": 27,
+  "steps": [
+   {
+    "story": "S33",
+    "step": 0,
+    "day": 22,
+    "said_late": true,
+    "text": "a need that is not Thandiwe's own: a venue for his band's album launch (Sipho (partner)).",
+    "must": [
+     "venue"
+    ]
+   },
+   {
+    "story": "S18",
+    "step": 0,
+    "day": 24,
+    "said_late": false,
+    "text": "Thandiwe's regular pilates instructor is Nomsa Khumalo.",
+    "must": [
+     "Nomsa Khumalo"
+    ]
+   }
+  ],
+  "date": "2026-03-29",
+  "kind": "life"
+ },
+ {
+  "n": 34,
+  "day": 28,
+  "steps": [
+   {
+    "story": "S28",
+    "step": 0,
+    "day": 27,
+    "said_late": false,
+    "text": "Thandiwe's own banking app used is FNB App.",
+    "must": [
+     "FNB App"
+    ]
+   }
+  ],
+  "date": "2026-03-30",
+  "kind": "life"
+ },
+ {
+  "n": 35,
+  "day": 29,
+  "steps": [],
+  "date": "2026-03-31",
+  "kind": "life"
+ },
+ {
+  "n": 36,
+  "day": 30,
+  "steps": [
+   {
+    "story": "S16",
+    "step": 0,
+    "day": 30,
+    "said_late": false,
+    "text": "Thandiwe's gear insurance premium is 800 ZAR.",
+    "must": [
+     "800 ZAR"
+    ]
+   },
+   {
+    "story": "S18",
+    "step": 1,
+    "day": 30,
+    "said_late": false,
+    "text": "Thandiwe has switched the regular pilates instructor to Sarah Jenkins.",
+    "must": [
+     "Sarah Jenkins"
+    ]
+   }
+  ],
+  "date": "2026-04-01",
+  "kind": "life"
+ },
+ {
+  "n": 37,
+  "day": 31,
+  "steps": [
+   {
+    "story": "S23",
+    "step": 0,
+    "day": 30,
+    "said_late": false,
+    "text": "Thandiwe's preferred grocery delivery service is Checkers Sixty60.",
+    "must": [
+     "Checkers Sixty60"
+    ]
+   },
+   {
+    "story": "S27",
+    "step": 0,
+    "day": 31,
+    "said_late": false,
+    "text": "Thandiwe's own preferred bakery is The Daily Crumb.",
+    "must": [
+     "The Daily Crumb"
+    ]
+   }
+  ],
+  "date": "2026-04-02",
+  "kind": "life"
+ },
+ {
+  "n": 38,
+  "day": 32,
+  "steps": [
+   {
+    "story": "S26",
+    "step": 0,
+    "day": 27,
+    "said_late": false,
+    "text": "Thandiwe's own regular hair stylist is Zanele Mthembu.",
+    "must": [
+     "Zanele Mthembu"
+    ]
+   },
+   {
+    "story": "S30",
+    "step": 1,
+    "day": 32,
+    "said_late": false,
+    "text": "Thandiwe's need is sorted: the neighbours' son Aidan walks Bongo.",
+    "must": [
+     "Aidan",
+     "Bongo"
+    ]
+   }
+  ],
+  "date": "2026-04-03",
+  "kind": "work"
+ },
+ {
+  "n": 39,
+  "day": 33,
+  "steps": [
+   {
+    "story": "S22",
+    "step": 0,
+    "day": 29,
+    "said_late": false,
+    "text": "Thandiwe's preferred local butcher is Cape Town Meat Co.",
+    "must": [
+     "Cape Town Meat Co"
+    ]
+   },
+   {
+    "story": "S26",
+    "step": 1,
+    "day": 31,
+    "said_late": true,
+    "text": "Priya (friend)'s regular hair stylist is Priya Naidoo (about Priya (friend), not Thandiwe).",
+    "must": [
+     "Priya Naidoo",
+     "Priya"
+    ]
+   }
+  ],
+  "date": "2026-04-04",
+  "kind": "work"
+ },
+ {
+  "n": 40,
+  "day": 34,
+  "steps": [
+   {
+    "story": "S25",
+    "step": 1,
+    "day": 30,
+    "said_late": true,
+    "text": "Thandiwe imagines a what-if: then the cloud storage provider would be Dropbox. Only an idea; nothing changes.",
+    "must": [
+     "Dropbox"
+    ]
+   },
+   {
+    "story": "S28",
+    "step": 1,
+    "day": 33,
+    "said_late": true,
+    "text": "Sipho (partner)'s banking app used is Standard Bank App (about Sipho (partner), not Thandiwe).",
+    "must": [
+     "Standard Bank App",
+     "Sipho"
+    ]
+   }
+  ],
+  "date": "2026-04-05",
+  "kind": "life"
+ },
+ {
+  "n": 41,
+  "day": 35,
+  "steps": [],
+  "date": "2026-04-06",
+  "kind": "work"
+ },
+ {
+  "n": 42,
+  "day": 36,
+  "steps": [
+   {
+    "story": "S04",
+    "step": 0,
+    "day": 30,
+    "said_late": false,
+    "text": "Thandiwe's Stellenbosch shoot travel is 2026-04-01.",
+    "must": [
+     "2026-04-01"
+    ]
+   },
+   {
+    "story": "S24",
+    "step": 0,
+    "day": 36,
+    "said_late": false,
+    "text": "Thandiwe's accounting software subscription is Xero.",
+    "must": [
+     "Xero"
+    ]
+   }
+  ],
+  "date": "2026-04-07",
+  "kind": "life"
+ },
+ {
+  "n": 43,
+  "day": 37,
+  "steps": [
+   {
+    "story": "S17",
+    "step": 0,
+    "day": 31,
+    "said_late": false,
+    "text": "Thandiwe's favorite weekend brunch spot is The Silo Hotel.",
+    "must": [
+     "The Silo Hotel"
+    ]
+   },
+   {
+    "story": "S01",
+    "step": 0,
+    "day": 37,
+    "said_late": false,
+    "text": "Thandiwe's annual medical screening is 2026-04-08.",
+    "must": [
+     "2026-04-08"
+    ]
+   }
+  ],
+  "date": "2026-04-08",
+  "kind": "life"
+ },
+ {
+  "n": 44,
+  "day": 38,
+  "steps": [
+   {
+    "story": "S19",
+    "step": 0,
+    "day": 37,
+    "said_late": false,
+    "text": "Thandiwe's annual eye exam date is 2026-04-10.",
+    "must": [
+     "2026-04-10"
+    ]
+   },
+   {
+    "story": "S23",
+    "step": 1,
+    "day": 37,
+    "said_late": true,
+    "text": "Thandiwe is thinking about changing the preferred grocery delivery service to Pick n Pay PnP Now; not decided yet.",
+    "must": [
+     "Pick n Pay PnP Now"
+    ]
+   }
+  ],
+  "date": "2026-04-09",
+  "kind": "life"
+ },
+ {
+  "n": 45,
+  "day": 38,
+  "steps": [],
+  "date": "2026-04-09",
+  "kind": "life"
+ },
+ {
+  "n": 46,
+  "day": 39,
+  "steps": [
+   {
+    "story": "S17",
+    "step": 1,
+    "day": 39,
+    "said_late": false,
+    "text": "Thandiwe has switched the favorite weekend brunch spot to Mama J's.",
+    "must": [
+     "Mama J's"
+    ]
+   }
+  ],
+  "date": "2026-04-10",
+  "kind": "life"
+ },
+ {
+  "n": 47,
+  "day": 40,
+  "steps": [
+   {
+    "story": "S27",
+    "step": 1,
+    "day": 36,
+    "said_late": true,
+    "text": "Sipho (partner)'s preferred bakery is The Bread Bureau (about Sipho (partner), not Thandiwe).",
+    "must": [
+     "The Bread Bureau",
+     "Sipho"
+    ]
+   },
+   {
+    "story": "S22",
+    "step": 1,
+    "day": 39,
+    "said_late": true,
+    "text": "Thandiwe is only thinking about changing the preferred local butcher to The Butcher Shop; nothing decided.",
+    "must": [
+     "The Butcher Shop"
+    ]
+   }
+  ],
+  "date": "2026-04-11",
+  "kind": "life"
+ },
+ {
+  "n": 48,
+  "day": 41,
+  "steps": [
+   {
+    "story": "S18",
+    "step": 2,
+    "day": 35,
+    "said_late": true,
+    "text": "Thandiwe changes mind about the regular pilates instructor: back to Nomsa Khumalo, not Sarah Jenkins any more.",
+    "must": [
+     "Nomsa Khumalo"
+    ]
+   },
+   {
+    "story": "S16",
+    "step": 1,
+    "day": 40,
+    "said_late": true,
+    "text": "Thandiwe's gear insurance premium has changed: now 950 ZAR (it was 800 ZAR).",
+    "must": [
+     "950 ZAR"
+    ]
+   }
+  ],
+  "date": "2026-04-12",
+  "kind": "life"
+ },
+ {
+  "n": 49,
+  "day": 41,
+  "steps": [
+   {
+    "story": "S17",
+    "step": 2,
+    "day": 41,
+    "said_late": false,
+    "text": "Thandiwe changes mind about the favorite weekend brunch spot: back to The Silo Hotel, not Mama J's any more.",
+    "must": [
+     "The Silo Hotel"
+    ]
+   },
+   {
+    "story": "S19",
+    "step": 1,
+    "day": 41,
+    "said_late": false,
+    "text": "Thandiwe corrects an earlier slip: the annual eye exam date is 2026-04-12, not 2026-04-10.",
+    "must": [
+     "2026-04-12"
+    ]
+   }
+  ],
+  "date": "2026-04-12",
+  "kind": "life"
+ },
+ {
+  "n": 50,
+  "day": 41,
+  "steps": [
+   {
+    "story": "S23",
+    "step": 2,
+    "day": 41,
+    "said_late": false,
+    "text": "Thandiwe has now gone ahead: the preferred grocery delivery service is Pick n Pay PnP Now.",
+    "must": [
+     "Pick n Pay PnP Now"
+    ]
+   },
+   {
+    "story": "S24",
+    "step": 1,
+    "day": 41,
+    "said_late": false,
+    "text": "Thandiwe imagines a what-if: then the accounting software subscription would be Sage One. Only an idea; nothing changes.",
+    "must": [
+     "Sage One"
+    ]
+   }
+  ],
+  "date": "2026-04-12",
+  "kind": "life"
+ }
+]

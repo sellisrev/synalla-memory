@@ -1,0 +1,135 @@
+{
+ "6": [
+  [
+   "states 'Saturday morning'"
+  ],
+  [
+   "states 'Checkers Sixty60'"
+  ],
+  [
+   "judge: S11: I’ve located the file for the Nkosi wedding. The total is 15,000 ZAR. I’ve drafted the invoice with your banking details (The assistant mentions drafting an invoice with banking details, but the conversation is on 2026-03-06. While S11 is kno)"
+  ]
+ ],
+ "14": [
+  [
+   "states 'Saturday morning'"
+  ]
+ ],
+ "19": [
+  [
+   "states 'Saturday morning'",
+   "date 2026-03-15 not said"
+  ],
+  [
+   "judge: S29: I have that big wedding shoot coming up on Sunday 15 March, right? (The user mentions a wedding shoot on 15 March, but the fact S29 states the Fourie wedding is on 28 March. Even if referr)",
+   "judge: S14: I need to start prepping for my physiotherapy visit at Wellness Hub later this week. (The user mentions a physiotherapy visit at Wellness Hub 'later this week'. However, the current date is 2026-03-18, and )"
+  ]
+ ],
+ "21": [
+  [
+   "states 'Saturday morning'"
+  ],
+  [
+   "states 'Saturday morning'"
+  ],
+  [
+   "judge: S06, S05: You have a dentist appointment at 3 PM and a client meeting at 5 PM. (Mentions facts (dentist appointment and client meeting) dated after 2026-03-20.)",
+   "judge: S29: I have another commitment scheduled for that time, so I won't be able to extend the session. I hope you understand. See  (Mentions a detail (the Fourie wedding/big day) dated after 2026-03-20.)"
+  ],
+  [
+   "judge: S09: Don’t forget to charge your camera battery before the Van der Merwes shoot next month. (The Van der Merwe invoice submission is 2026-03-24, but the conversation implies a wedding shoot for the Van der Merwes )"
+  ],
+  [
+   "judge: S13: I noticed your monthly rent payment of 12500 ZAR is due tomorrow. (The conversation date is 2026-03-20, and the rent is 12500 ZAR. While the amount is correct (updated from 12000 ZAR on 2)",
+   "judge: S04: Regarding your calendar, you do have a wedding shoot scheduled for Monday morning at 9 AM in Stellenbosch. (The conversation date is 2026-03-20. The mention of a Stellenbosch shoot refers to 2026-04-01, which is dated after the )"
+  ]
+ ],
+ "29": [
+  [
+   "missing '2026-03-24'",
+   "missing '2026-03-26'"
+  ],
+  [
+   "missing '2026-03-26'"
+  ],
+  [
+   "states '2026-04-10'"
+  ]
+ ],
+ "36": [
+  [
+   "states '2026-04-01'"
+  ]
+ ],
+ "39": [
+  [
+   "missing 'Cape Town Meat Co'"
+  ],
+  [
+   "missing 'Cape Town Meat Co'"
+  ]
+ ],
+ "40": [
+  [
+   "missing 'Sipho'"
+  ]
+ ],
+ "43": [
+  [
+   "missing '2026-04-08'"
+  ]
+ ],
+ "44": [
+  [
+   "missing '2026-04-10'"
+  ]
+ ],
+ "1": [
+  [
+   "judge: S09: I've located the draft for the Van der Merwed wedding package. The total comes to R45,000, covering the full day coverag (The assistant refers to a 'Van der Merwed wedding package', but the fact S09 specifies an invoice for 'Van der Merwe' (s)",
+   "judge: S09: The total comes to R45,000, covering the full day coverage and the digital gallery. It looks ready to go. (The assistant refers to an invoice for Van der Merwe, which is dated 2026-03-24, which is after the conversation date of)",
+   "judge: S31: the 70-200mm lens needs a quick check before the weekend shoots. (The assistant mentions a 70-200mm lens, which is a detail from fact S31 dated 2026-03-15, which is after the conversatio)"
+  ]
+ ],
+ "13": [
+  [
+   "judge: S09: I need to check the total before I send the final invoice. (The user refers to the Van der Merwe invoice on 2026-03-12, but the fact S09 states the invoice submission is on 2026-03)",
+   "judge: S29: The total for the six-hour coverage and the second shooter fee is R18,500. (The user/assistant mentions a second shooter fee for the Van der Merwe booking, but the fact S29 states that the second )"
+  ]
+ ],
+ "17": [
+  [
+   "judge: S09: I need to send the final invoice for the Van der Merwed wedding before I leave for the food shoot tomorrow. (The invoice submission for Van der Merwe is dated 2026-03-24, which is after the conversation date of 2026-03-16.)",
+   "judge: S31: I need to know if I can pick it up tomorrow morning. (The conversation date is 2026-03-16 and the user is asking about a rental for a shoot tomorrow; however, S31 mentions a )"
+  ]
+ ],
+ "23": [
+  [
+   "judge: S09: Can you draft a polite message telling them the gallery is live and the deadline for comments is Friday? (The user is asking to send a message to the Van der Merwes, but the fact S09 states that the invoice submission for Van )",
+   "judge: S09: I have that food shoot for the new bistro on Tuesday, right? (The user refers to a food shoot on Tuesday, March 24th, which is a date after the conversation date of 2026-03-22.)"
+  ]
+ ],
+ "27": [
+  [
+   "judge: S09: I’ve located the Van der Merwed project. The invoice #VM-2026-04 is currently marked as 'Unpaid' with a due date of Marc (The fact states Thandiwe's invoice submission for Van der Merwe is on 2026-03-24, but the assistant claims it was due on)",
+   "judge: S09: The deposit of 50% was received and cleared on March 5th, so that’s all good. (The fact S09 states the invoice submission for Van der Merwe is 2026-03-24, which is in the future relative to the conve)"
+  ]
+ ],
+ "32": [
+  [
+   "judge: S11: my records show your primary account is still linked to the old FNB account ending in 8842. (The assistant states the primary account is still the old FNB account, but the facts state that Thandiwe's primary banki)"
+  ]
+ ],
+ "38": [
+  [
+   "judge: S23: You know I rely on Checkers Sixty60 for the heavy stuff. (This mentions a fact (Checkers Sixty60) that is dated 2026-04-01, which is before the conversation date of 2026-04-03, b)"
+  ],
+  [
+   "judge: S23: I might need to order via Checkers Sixty60 later. (The user mentions Checkers Sixty60, but fact S23 (from 2026-04-12) indicates that Thandiwe has since switched her prefer)"
+  ],
+  [
+   "judge: S09: I have the draft ready for the Van der Merwe wedding on May 12th. (The conversation is dated 2026-04-03, and S09 states the invoice submission for Van der Merwe was on 2026-03-24, implyin)",
+   "judge: N/A: You have the bistro shoot scheduled for Tuesday, April 7th, from 10 AM to 2 PM. (This mentions a date (April 7th) that is after the conversation date of 2026-04-03 and is not part of the storylines S26)"
+  ]
+ ]
+}

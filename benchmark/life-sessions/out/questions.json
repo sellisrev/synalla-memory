@@ -1,0 +1,3710 @@
+[
+ {
+  "id": "L01-S01-1",
+  "person": "L01",
+  "type": "fact",
+  "storyline": "S01",
+  "question": "What is my mortgage payment?",
+  "gold": "1,450 euros on the 4th"
+ },
+ {
+  "id": "L01-S02-1",
+  "person": "L01",
+  "type": "fact",
+  "storyline": "S02",
+  "question": "What is my car insurance premium?",
+  "gold": "82 euros on the 4th"
+ },
+ {
+  "id": "L01-S03-1",
+  "person": "L01",
+  "type": "fact",
+  "storyline": "S03",
+  "question": "What is my library book due date?",
+  "gold": "18 March"
+ },
+ {
+  "id": "L01-S04-1",
+  "person": "L01",
+  "type": "fact",
+  "storyline": "S04",
+  "question": "What is my tax filing deadline?",
+  "gold": "April 11th"
+ },
+ {
+  "id": "L01-S05-1",
+  "person": "L01",
+  "type": "fact",
+  "storyline": "S05",
+  "question": "What is my childcare subsidy?",
+  "gold": "300 euros on the 13th"
+ },
+ {
+  "id": "L01-S06-1",
+  "person": "L01",
+  "type": "fact",
+  "storyline": "S06",
+  "question": "Who is my cardiologist?",
+  "gold": "Dr. Lefebvre"
+ },
+ {
+  "id": "L01-S07-1",
+  "person": "L01",
+  "type": "fact",
+  "storyline": "S07",
+  "question": "What is my PTA meeting location?",
+  "gold": "Lycée Ampère"
+ },
+ {
+  "id": "L01-S08-1",
+  "person": "L01",
+  "type": "fact",
+  "storyline": "S08",
+  "question": "What is my dinner venue?",
+  "gold": "Chez Paul"
+ },
+ {
+  "id": "L01-S09-1",
+  "person": "L01",
+  "type": "fact",
+  "storyline": "S09",
+  "question": "What is my energy contract renewal portal?",
+  "gold": "Enedis"
+ },
+ {
+  "id": "L01-S10-1",
+  "person": "L01",
+  "type": "fact",
+  "storyline": "S10",
+  "question": "What is my pharmacy appointment location?",
+  "gold": "Pharmacie du Pont"
+ },
+ {
+  "id": "L01-S12-1",
+  "person": "L01",
+  "type": "now",
+  "storyline": "S12",
+  "question": "What is my grocery delivery service now?",
+  "gold": "Leclerc Drive (it was Carrefour Express)"
+ },
+ {
+  "id": "L01-S12-2",
+  "person": "L01",
+  "type": "before",
+  "storyline": "S12",
+  "question": "What was my grocery delivery service before it changed?",
+  "gold": "Carrefour Express"
+ },
+ {
+  "id": "L01-S12-3",
+  "person": "L01",
+  "type": "when",
+  "storyline": "S12",
+  "question": "When did my grocery delivery service change to Leclerc Drive?",
+  "gold": "2026-03-23"
+ },
+ {
+  "id": "L01-S14-1",
+  "person": "L01",
+  "type": "now",
+  "storyline": "S14",
+  "question": "What is my ICU ward assignment now?",
+  "gold": "Pavillon Sud (it was Pavillon Nord)"
+ },
+ {
+  "id": "L01-S14-2",
+  "person": "L01",
+  "type": "before",
+  "storyline": "S14",
+  "question": "What was my ICU ward assignment before it changed?",
+  "gold": "Pavillon Nord"
+ },
+ {
+  "id": "L01-S14-3",
+  "person": "L01",
+  "type": "when",
+  "storyline": "S14",
+  "question": "When did my ICU ward assignment change to Pavillon Sud?",
+  "gold": "2026-04-12"
+ },
+ {
+  "id": "L01-S15-1",
+  "person": "L01",
+  "type": "now",
+  "storyline": "S15",
+  "question": "What is my garden hose length now?",
+  "gold": "25 meters (it was 15 meters)"
+ },
+ {
+  "id": "L01-S15-2",
+  "person": "L01",
+  "type": "before",
+  "storyline": "S15",
+  "question": "What was my garden hose length before it changed?",
+  "gold": "15 meters"
+ },
+ {
+  "id": "L01-S15-3",
+  "person": "L01",
+  "type": "when",
+  "storyline": "S15",
+  "question": "When did my garden hose length change to 25 meters?",
+  "gold": "2026-03-20"
+ },
+ {
+  "id": "L01-S16-1",
+  "person": "L01",
+  "type": "now",
+  "storyline": "S16",
+  "question": "What is Inès's extracurricular class now?",
+  "gold": "Sculpture workshop (it was Pottery club)"
+ },
+ {
+  "id": "L01-S16-2",
+  "person": "L01",
+  "type": "before",
+  "storyline": "S16",
+  "question": "What was Inès's extracurricular class before it changed?",
+  "gold": "Pottery club"
+ },
+ {
+  "id": "L01-S16-3",
+  "person": "L01",
+  "type": "when",
+  "storyline": "S16",
+  "question": "When did Inès's extracurricular class change to Sculpture workshop?",
+  "gold": "2026-03-19"
+ },
+ {
+  "id": "L01-S17-1",
+  "person": "L01",
+  "type": "now",
+  "storyline": "S17",
+  "question": "What is Inès's weekend activity now?",
+  "gold": "Dance class (I switched to Art workshop, then went back)"
+ },
+ {
+  "id": "L01-S18-1",
+  "person": "L01",
+  "type": "now",
+  "storyline": "S18",
+  "question": "What is my family hiking trail now?",
+  "gold": "Parc de la Tête d'Or (I switched to Parc de Miribel-Jonage, then went back)"
+ },
+ {
+  "id": "L01-S19-1",
+  "person": "L01",
+  "type": "now",
+  "storyline": "S19",
+  "question": "What is my hospital parking zone?",
+  "gold": "Zone B (Zone C was a slip, corrected on 2026-03-25)"
+ },
+ {
+  "id": "L01-S20-1",
+  "person": "L01",
+  "type": "now",
+  "storyline": "S20",
+  "question": "Who is Hugo's pediatrician?",
+  "gold": "Dr. Bernard (Dr. Moreau was a slip, corrected on 2026-04-12)"
+ },
+ {
+  "id": "L01-S21-1",
+  "person": "L01",
+  "type": "considered",
+  "storyline": "S21",
+  "question": "Did I change my spring coat brand to Zara?",
+  "gold": "No: I only thought about it; it is still Uniqlo"
+ },
+ {
+  "id": "L01-S22-1",
+  "person": "L01",
+  "type": "considered",
+  "storyline": "S22",
+  "question": "Did I change my Easter lunch venue to Restaurant Le Vieux Lyon?",
+  "gold": "No: I only thought about it; it is still Parents' house"
+ },
+ {
+  "id": "L01-S23-1",
+  "person": "L01",
+  "type": "now",
+  "storyline": "S23",
+  "question": "Who is Inès's music teacher now?",
+  "gold": "Monsieur Leroy (changed from Madame Dubois after thinking about it)"
+ },
+ {
+  "id": "L01-S23-2",
+  "person": "L01",
+  "type": "when",
+  "storyline": "S23",
+  "question": "When did I go ahead with Monsieur Leroy for Inès's music teacher?",
+  "gold": "2026-04-02"
+ },
+ {
+  "id": "L01-S24-1",
+  "person": "L01",
+  "type": "now",
+  "storyline": "S24",
+  "question": "What is my allergy medication?",
+  "gold": "Zyrtec (Claritin was only a what-if)"
+ },
+ {
+  "id": "L01-S25-1",
+  "person": "L01",
+  "type": "now",
+  "storyline": "S25",
+  "question": "Who is Inès's ballet teacher?",
+  "gold": "Madame Girard (Madame Petit was only a what-if)"
+ },
+ {
+  "id": "L01-S26-1",
+  "person": "L01",
+  "type": "whose",
+  "storyline": "S26",
+  "question": "What is my apartment balcony view?",
+  "gold": "Courtyard (Street is Sophie's)"
+ },
+ {
+  "id": "L01-S26-2",
+  "person": "L01",
+  "type": "whose",
+  "storyline": "S26",
+  "question": "What is Sophie's apartment balcony view?",
+  "gold": "Street"
+ },
+ {
+  "id": "L01-S27-1",
+  "person": "L01",
+  "type": "whose",
+  "storyline": "S27",
+  "question": "What is my family car license plate?",
+  "gold": "AA-123-BB (CC-456-DD is Marc's)"
+ },
+ {
+  "id": "L01-S27-2",
+  "person": "L01",
+  "type": "whose",
+  "storyline": "S27",
+  "question": "What is Marc's family car license plate?",
+  "gold": "CC-456-DD"
+ },
+ {
+  "id": "L01-S28-1",
+  "person": "L01",
+  "type": "whose",
+  "storyline": "S28",
+  "question": "What is my bank branch location?",
+  "gold": "Presqu'île (Confluence is Julien's)"
+ },
+ {
+  "id": "L01-S28-2",
+  "person": "L01",
+  "type": "whose",
+  "storyline": "S28",
+  "question": "What is Julien's bank branch location?",
+  "gold": "Confluence"
+ },
+ {
+  "id": "L01-S30-1",
+  "person": "L01",
+  "type": "need",
+  "storyline": "S30",
+  "question": "Am I still looking for a second-hand child seat for the back of my bike, for Hugo?",
+  "gold": "No: sorted on 2026-03-08 (bought one from Nadia Brun through the school parents group)"
+ },
+ {
+  "id": "L01-needs_now-1",
+  "person": "L01",
+  "type": "needs_now",
+  "storyline": null,
+  "question": "Which of my needs are still open: things I am looking for someone to provide or help with (a person, a service, an item)? List them all.",
+  "gold": "a physiotherapist near Croix-Rousse for her lower back pain; a piano teacher for Inès on Wednesday afternoons",
+  "note": "not: needs already solved, or needs of someone else"
+ },
+ {
+  "id": "L01-none-1",
+  "person": "L01",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my best friend's birthday?",
+  "gold": "not in memory"
+ },
+ {
+  "id": "L01-none-2",
+  "person": "L01",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my favourite film?",
+  "gold": "not in memory"
+ },
+ {
+  "id": "L01-none-3",
+  "person": "L01",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my grandmother's maiden name?",
+  "gold": "not in memory"
+ },
+ {
+  "id": "L02-S01-1",
+  "person": "L02",
+  "type": "fact",
+  "storyline": "S01",
+  "question": "What is my monthly rent?",
+  "gold": "950 GBP"
+ },
+ {
+  "id": "L02-S02-1",
+  "person": "L02",
+  "type": "fact",
+  "storyline": "S02",
+  "question": "What is my grocery delivery provider?",
+  "gold": "Ocado"
+ },
+ {
+  "id": "L02-S03-1",
+  "person": "L02",
+  "type": "fact",
+  "storyline": "S03",
+  "question": "What is my mother's birthday?",
+  "gold": "2026-04-09"
+ },
+ {
+  "id": "L02-S04-1",
+  "person": "L02",
+  "type": "fact",
+  "storyline": "S04",
+  "question": "Who is my choir director?",
+  "gold": "Elena Rossi"
+ },
+ {
+  "id": "L02-S06-1",
+  "person": "L02",
+  "type": "fact",
+  "storyline": "S06",
+  "question": "What is my choir rehearsal venue?",
+  "gold": "Leeds Town Hall"
+ },
+ {
+  "id": "L02-S07-1",
+  "person": "L02",
+  "type": "fact",
+  "storyline": "S07",
+  "question": "Who is my school headteacher?",
+  "gold": "David Miller"
+ },
+ {
+  "id": "L02-S08-1",
+  "person": "L02",
+  "type": "fact",
+  "storyline": "S08",
+  "question": "What is my Year 4 classroom number?",
+  "gold": "Room 12"
+ },
+ {
+  "id": "L02-S09-1",
+  "person": "L02",
+  "type": "fact",
+  "storyline": "S09",
+  "question": "What is my bank account provider?",
+  "gold": "Monzo"
+ },
+ {
+  "id": "L02-S10-1",
+  "person": "L02",
+  "type": "fact",
+  "storyline": "S10",
+  "question": "What is my school start time?",
+  "gold": "8:45 AM"
+ },
+ {
+  "id": "L02-S11-1",
+  "person": "L02",
+  "type": "now",
+  "storyline": "S11",
+  "question": "What is my gym membership now?",
+  "gold": "Leeds Sports Park (it was PureGym)"
+ },
+ {
+  "id": "L02-S11-2",
+  "person": "L02",
+  "type": "before",
+  "storyline": "S11",
+  "question": "What was my gym membership before it changed?",
+  "gold": "PureGym"
+ },
+ {
+  "id": "L02-S11-3",
+  "person": "L02",
+  "type": "when",
+  "storyline": "S11",
+  "question": "When did my gym membership change to Leeds Sports Park?",
+  "gold": "2026-03-23"
+ },
+ {
+  "id": "L02-S12-1",
+  "person": "L02",
+  "type": "now",
+  "storyline": "S12",
+  "question": "What is my bedroom thermostat setting now?",
+  "gold": "20 degrees (it was 18 degrees)"
+ },
+ {
+  "id": "L02-S12-2",
+  "person": "L02",
+  "type": "before",
+  "storyline": "S12",
+  "question": "What was my bedroom thermostat setting before it changed?",
+  "gold": "18 degrees"
+ },
+ {
+  "id": "L02-S12-3",
+  "person": "L02",
+  "type": "when",
+  "storyline": "S12",
+  "question": "When did my bedroom thermostat setting change to 20 degrees?",
+  "gold": "2026-03-31"
+ },
+ {
+  "id": "L02-S13-1",
+  "person": "L02",
+  "type": "now",
+  "storyline": "S13",
+  "question": "What is my choir rehearsal schedule now?",
+  "gold": "Thursdays at 7:00 PM (it was Tuesdays at 7:30 PM)"
+ },
+ {
+  "id": "L02-S13-2",
+  "person": "L02",
+  "type": "before",
+  "storyline": "S13",
+  "question": "What was my choir rehearsal schedule before it changed?",
+  "gold": "Tuesdays at 7:30 PM"
+ },
+ {
+  "id": "L02-S13-3",
+  "person": "L02",
+  "type": "when",
+  "storyline": "S13",
+  "question": "When did my choir rehearsal schedule change to Thursdays at 7:00 PM?",
+  "gold": "2026-03-31"
+ },
+ {
+  "id": "L02-S14-1",
+  "person": "L02",
+  "type": "now",
+  "storyline": "S14",
+  "question": "What is my regular coffee shop now?",
+  "gold": "Proud Mary (it was The Alchemist)"
+ },
+ {
+  "id": "L02-S14-2",
+  "person": "L02",
+  "type": "before",
+  "storyline": "S14",
+  "question": "What was my regular coffee shop before it changed?",
+  "gold": "The Alchemist"
+ },
+ {
+  "id": "L02-S14-3",
+  "person": "L02",
+  "type": "when",
+  "storyline": "S14",
+  "question": "When did my regular coffee shop change to Proud Mary?",
+  "gold": "2026-03-07"
+ },
+ {
+  "id": "L02-S17-1",
+  "person": "L02",
+  "type": "now",
+  "storyline": "S17",
+  "question": "What is my living room thermostat setting now?",
+  "gold": "19°C (I switched to 21°C, then went back)"
+ },
+ {
+  "id": "L02-S18-1",
+  "person": "L02",
+  "type": "now",
+  "storyline": "S18",
+  "question": "What is my kettle brand now?",
+  "gold": "Smeg (I switched to Morphy Richards, then went back)"
+ },
+ {
+  "id": "L02-S19-1",
+  "person": "L02",
+  "type": "now",
+  "storyline": "S19",
+  "question": "What is my school uniform supplier?",
+  "gold": "Next (St. Mary's Shop was a slip, corrected on 2026-04-09)"
+ },
+ {
+  "id": "L02-S21-1",
+  "person": "L02",
+  "type": "considered",
+  "storyline": "S21",
+  "question": "Did I change my weekend hiking destination to Malham Cove?",
+  "gold": "No: I only thought about it; it is still Ilkley Moor"
+ },
+ {
+  "id": "L02-S23-1",
+  "person": "L02",
+  "type": "now",
+  "storyline": "S23",
+  "question": "What is my Easter travel destination now?",
+  "gold": "Lisbon (changed from Porto after thinking about it)"
+ },
+ {
+  "id": "L02-S23-2",
+  "person": "L02",
+  "type": "when",
+  "storyline": "S23",
+  "question": "When did I go ahead with Lisbon for my Easter travel destination?",
+  "gold": "2026-03-27"
+ },
+ {
+  "id": "L02-S24-1",
+  "person": "L02",
+  "type": "now",
+  "storyline": "S24",
+  "question": "What is my monthly student loan payment?",
+  "gold": "120 GBP (180 GBP was only a what-if)"
+ },
+ {
+  "id": "L02-S25-1",
+  "person": "L02",
+  "type": "now",
+  "storyline": "S25",
+  "question": "Who is my choir section leader?",
+  "gold": "James Wright (Clara Diaz was only a what-if)"
+ },
+ {
+  "id": "L02-S26-1",
+  "person": "L02",
+  "type": "whose",
+  "storyline": "S26",
+  "question": "What is my optician?",
+  "gold": "John Lewis Opticians (Specsavers is Gemma's)"
+ },
+ {
+  "id": "L02-S26-2",
+  "person": "L02",
+  "type": "whose",
+  "storyline": "S26",
+  "question": "What is Gemma's optician?",
+  "gold": "Specsavers"
+ },
+ {
+  "id": "L02-S27-1",
+  "person": "L02",
+  "type": "whose",
+  "storyline": "S27",
+  "question": "What is my energy tariff provider?",
+  "gold": "Octopus Energy (British Gas is Gemma's)"
+ },
+ {
+  "id": "L02-S27-2",
+  "person": "L02",
+  "type": "whose",
+  "storyline": "S27",
+  "question": "What is Gemma's energy tariff provider?",
+  "gold": "British Gas"
+ },
+ {
+  "id": "L02-S28-1",
+  "person": "L02",
+  "type": "whose",
+  "storyline": "S28",
+  "question": "What is my bookshop for choir scores?",
+  "gold": "Waterstones (Foyles is Elena's)"
+ },
+ {
+  "id": "L02-S28-2",
+  "person": "L02",
+  "type": "whose",
+  "storyline": "S28",
+  "question": "What is Elena's bookshop for choir scores?",
+  "gold": "Foyles"
+ },
+ {
+  "id": "L02-S30-1",
+  "person": "L02",
+  "type": "need",
+  "storyline": "S30",
+  "question": "Am I still looking for a parent volunteer who speaks Urdu for the Year 4 parents evening?",
+  "gold": "No: sorted on 2026-03-19 (Mr. Hussain from the PTA will translate)"
+ },
+ {
+  "id": "L02-needs_now-1",
+  "person": "L02",
+  "type": "needs_now",
+  "storyline": null,
+  "question": "Which of my needs are still open: things I am looking for someone to provide or help with (a person, a service, an item)? List them all.",
+  "gold": "a second-hand digital keyboard to practise choir parts at home; advice from someone who has done it on applying for the assistant head post",
+  "note": "not: needs already solved, or needs of someone else"
+ },
+ {
+  "id": "L02-none-1",
+  "person": "L02",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my wifi password?",
+  "gold": "not in memory"
+ },
+ {
+  "id": "L02-none-2",
+  "person": "L02",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my favourite football team?",
+  "gold": "not in memory"
+ },
+ {
+  "id": "L02-none-3",
+  "person": "L02",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my licence plate?",
+  "gold": "not in memory"
+ },
+ {
+  "id": "L03-S01-1",
+  "person": "L03",
+  "type": "fact",
+  "storyline": "S01",
+  "question": "What is my supplier for olive oil?",
+  "gold": "Aceites del Guadalquivir"
+ },
+ {
+  "id": "L03-S03-1",
+  "person": "L03",
+  "type": "fact",
+  "storyline": "S03",
+  "question": "What is my monthly rent?",
+  "gold": "1200 euros"
+ },
+ {
+  "id": "L03-S04-1",
+  "person": "L03",
+  "type": "fact",
+  "storyline": "S04",
+  "question": "Who is my dentist?",
+  "gold": "Dr. Elena Ruiz"
+ },
+ {
+  "id": "L03-S05-1",
+  "person": "L03",
+  "type": "fact",
+  "storyline": "S05",
+  "question": "Who is my tax advisor?",
+  "gold": "María López"
+ },
+ {
+  "id": "L03-S06-1",
+  "person": "L03",
+  "type": "fact",
+  "storyline": "S06",
+  "question": "What is my ex-wife's name?",
+  "gold": "Carmen Vidal"
+ },
+ {
+  "id": "L03-S07-1",
+  "person": "L03",
+  "type": "fact",
+  "storyline": "S07",
+  "question": "What is my bank account?",
+  "gold": "CaixaBank"
+ },
+ {
+  "id": "L03-S08-1",
+  "person": "L03",
+  "type": "fact",
+  "storyline": "S08",
+  "question": "What is my weekly market?",
+  "gold": "Mercado Central"
+ },
+ {
+  "id": "L03-S09-1",
+  "person": "L03",
+  "type": "fact",
+  "storyline": "S09",
+  "question": "What is my insurance policy?",
+  "gold": "Mapfre"
+ },
+ {
+  "id": "L03-S10-1",
+  "person": "L03",
+  "type": "fact",
+  "storyline": "S10",
+  "question": "Who is my son's teacher?",
+  "gold": "Mr. Javier Soler"
+ },
+ {
+  "id": "L03-S11-1",
+  "person": "L03",
+  "type": "now",
+  "storyline": "S11",
+  "question": "What is my monthly internet provider now?",
+  "gold": "Orange Hogar (it was Vodafone Fibra)"
+ },
+ {
+  "id": "L03-S11-2",
+  "person": "L03",
+  "type": "before",
+  "storyline": "S11",
+  "question": "What was my monthly internet provider before it changed?",
+  "gold": "Vodafone Fibra"
+ },
+ {
+  "id": "L03-S11-3",
+  "person": "L03",
+  "type": "when",
+  "storyline": "S11",
+  "question": "When did my monthly internet provider change to Orange Hogar?",
+  "gold": "2026-04-04"
+ },
+ {
+  "id": "L03-S12-1",
+  "person": "L03",
+  "type": "now",
+  "storyline": "S12",
+  "question": "What is my garage for car now?",
+  "gold": "Garage Valencia Sur (it was Talleres Roca)"
+ },
+ {
+  "id": "L03-S12-2",
+  "person": "L03",
+  "type": "before",
+  "storyline": "S12",
+  "question": "What was my garage for car before it changed?",
+  "gold": "Talleres Roca"
+ },
+ {
+  "id": "L03-S12-3",
+  "person": "L03",
+  "type": "when",
+  "storyline": "S12",
+  "question": "When did my garage for car change to Garage Valencia Sur?",
+  "gold": "2026-03-29"
+ },
+ {
+  "id": "L03-S13-1",
+  "person": "L03",
+  "type": "now",
+  "storyline": "S13",
+  "question": "What is my bakery for bread now?",
+  "gold": "Horno de Barrio (it was Panadería El Sol)"
+ },
+ {
+  "id": "L03-S13-2",
+  "person": "L03",
+  "type": "before",
+  "storyline": "S13",
+  "question": "What was my bakery for bread before it changed?",
+  "gold": "Panadería El Sol"
+ },
+ {
+  "id": "L03-S13-3",
+  "person": "L03",
+  "type": "when",
+  "storyline": "S13",
+  "question": "When did my bakery for bread change to Horno de Barrio?",
+  "gold": "2026-03-09"
+ },
+ {
+  "id": "L03-S14-1",
+  "person": "L03",
+  "type": "now",
+  "storyline": "S14",
+  "question": "What is my pharmacy now?",
+  "gold": "Farmacia del Puerto (it was Farmacia San Vicente)"
+ },
+ {
+  "id": "L03-S14-2",
+  "person": "L03",
+  "type": "before",
+  "storyline": "S14",
+  "question": "What was my pharmacy before it changed?",
+  "gold": "Farmacia San Vicente"
+ },
+ {
+  "id": "L03-S14-3",
+  "person": "L03",
+  "type": "when",
+  "storyline": "S14",
+  "question": "When did my pharmacy change to Farmacia del Puerto?",
+  "gold": "2026-03-21"
+ },
+ {
+  "id": "L03-S15-1",
+  "person": "L03",
+  "type": "now",
+  "storyline": "S15",
+  "question": "What is my gym membership now?",
+  "gold": "Anytime Fitness (it was Fit24)"
+ },
+ {
+  "id": "L03-S15-2",
+  "person": "L03",
+  "type": "before",
+  "storyline": "S15",
+  "question": "What was my gym membership before it changed?",
+  "gold": "Fit24"
+ },
+ {
+  "id": "L03-S15-3",
+  "person": "L03",
+  "type": "when",
+  "storyline": "S15",
+  "question": "When did my gym membership change to Anytime Fitness?",
+  "gold": "2026-04-10"
+ },
+ {
+  "id": "L03-S16-1",
+  "person": "L03",
+  "type": "now",
+  "storyline": "S16",
+  "question": "What is my train station now?",
+  "gold": "Avenida del Puerto (it was Joaquín Sorolla)"
+ },
+ {
+  "id": "L03-S16-2",
+  "person": "L03",
+  "type": "before",
+  "storyline": "S16",
+  "question": "What was my train station before it changed?",
+  "gold": "Joaquín Sorolla"
+ },
+ {
+  "id": "L03-S16-3",
+  "person": "L03",
+  "type": "when",
+  "storyline": "S16",
+  "question": "When did my train station change to Avenida del Puerto?",
+  "gold": "2026-03-10"
+ },
+ {
+  "id": "L03-S17-1",
+  "person": "L03",
+  "type": "now",
+  "storyline": "S17",
+  "question": "What is my evening running route now?",
+  "gold": "Turia Gardens (I switched to Albufera Lake, then went back)"
+ },
+ {
+  "id": "L03-S18-1",
+  "person": "L03",
+  "type": "now",
+  "storyline": "S18",
+  "question": "What is my weekly flower delivery now?",
+  "gold": "Floristería Valencia (I switched to Ramos Flores, then went back)"
+ },
+ {
+  "id": "L03-S19-1",
+  "person": "L03",
+  "type": "now",
+  "storyline": "S19",
+  "question": "What is my restaurant license number?",
+  "gold": "Lic-9922 (Lic-9921 was a slip, corrected on 2026-04-10)"
+ },
+ {
+  "id": "L03-S20-1",
+  "person": "L03",
+  "type": "now",
+  "storyline": "S20",
+  "question": "What is my apartment floor number?",
+  "gold": "fourth floor (third floor was a slip, corrected on 2026-03-30)"
+ },
+ {
+  "id": "L03-S21-1",
+  "person": "L03",
+  "type": "considered",
+  "storyline": "S21",
+  "question": "Did I change my son's after-school club to Basketball Academy?",
+  "gold": "No: I only thought about it; it is still Robotics Workshop"
+ },
+ {
+  "id": "L03-S22-1",
+  "person": "L03",
+  "type": "considered",
+  "storyline": "S22",
+  "question": "Did I change my train destination to Madrid Chamartín?",
+  "gold": "No: I only thought about it; it is still Barcelona Sants"
+ },
+ {
+  "id": "L03-S23-1",
+  "person": "L03",
+  "type": "now",
+  "storyline": "S23",
+  "question": "What is my coffee supplier now?",
+  "gold": "Origen Café (changed from Cafés Ruiz after thinking about it)"
+ },
+ {
+  "id": "L03-S23-2",
+  "person": "L03",
+  "type": "when",
+  "storyline": "S23",
+  "question": "When did I go ahead with Origen Café for my coffee supplier?",
+  "gold": "2026-04-03"
+ },
+ {
+  "id": "L03-S24-1",
+  "person": "L03",
+  "type": "now",
+  "storyline": "S24",
+  "question": "What is my son's grade?",
+  "gold": "3rd ESO (4th ESO was only a what-if)"
+ },
+ {
+  "id": "L03-S25-1",
+  "person": "L03",
+  "type": "now",
+  "storyline": "S25",
+  "question": "What is my restaurant capacity?",
+  "gold": "30 seats (45 seats was only a what-if)"
+ },
+ {
+  "id": "L03-S26-1",
+  "person": "L03",
+  "type": "whose",
+  "storyline": "S26",
+  "question": "What is my optician?",
+  "gold": "Óptica Central (Lentes Visión is Carmen's)"
+ },
+ {
+  "id": "L03-S26-2",
+  "person": "L03",
+  "type": "whose",
+  "storyline": "S26",
+  "question": "What is Carmen's optician?",
+  "gold": "Lentes Visión"
+ },
+ {
+  "id": "L03-S27-1",
+  "person": "L03",
+  "type": "whose",
+  "storyline": "S27",
+  "question": "Who is my regular lawyer?",
+  "gold": "Abogado Ruiz (Abogada Torres is Carmen's)"
+ },
+ {
+  "id": "L03-S27-2",
+  "person": "L03",
+  "type": "whose",
+  "storyline": "S27",
+  "question": "Who is Carmen's regular lawyer?",
+  "gold": "Abogada Torres"
+ },
+ {
+  "id": "L03-S28-1",
+  "person": "L03",
+  "type": "whose",
+  "storyline": "S28",
+  "question": "What is my wine supplier?",
+  "gold": "Bodegas Turia (Viñedos del Sureste is Toni's)"
+ },
+ {
+  "id": "L03-S28-2",
+  "person": "L03",
+  "type": "whose",
+  "storyline": "S28",
+  "question": "What is Toni's wine supplier?",
+  "gold": "Viñedos del Sureste"
+ },
+ {
+  "id": "L03-S29-1",
+  "person": "L03",
+  "type": "need",
+  "storyline": "S29",
+  "question": "Am I still looking for a cook to replace my sous-chef for two weeks in April?",
+  "gold": "No: sorted on 2026-03-21 (hired Lucía Ortega through his friend Toni for the two weeks)"
+ },
+ {
+  "id": "L03-S30-1",
+  "person": "L03",
+  "type": "need",
+  "storyline": "S30",
+  "question": "Am I still looking for a maths tutor for Pablo before his June exams?",
+  "gold": "No: sorted on 2026-03-17 (Pablo now sees the tutor Andrés Gil on Tuesdays)"
+ },
+ {
+  "id": "L03-needs_now-1",
+  "person": "L03",
+  "type": "needs_now",
+  "storyline": null,
+  "question": "Which of my needs are still open: things I am looking for someone to provide or help with (a person, a service, an item)? List them all.",
+  "gold": "a used commercial dishwasher for under 2,000 euros; an accountant who knows VAT for restaurants",
+  "note": "not: needs already solved, or needs of someone else"
+ },
+ {
+  "id": "L03-none-1",
+  "person": "L03",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my best friend's birthday?",
+  "gold": "not in memory"
+ },
+ {
+  "id": "L03-none-2",
+  "person": "L03",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my wifi password?",
+  "gold": "not in memory"
+ },
+ {
+  "id": "L03-none-3",
+  "person": "L03",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my favourite football team?",
+  "gold": "not in memory"
+ },
+ {
+  "id": "L04-S01-1",
+  "person": "L04",
+  "type": "fact",
+  "storyline": "S01",
+  "question": "When is my next diabetes check-up?",
+  "gold": "2026-04-02"
+ },
+ {
+  "id": "L04-S02-1",
+  "person": "L04",
+  "type": "fact",
+  "storyline": "S02",
+  "question": "When is my next eye screening?",
+  "gold": "2026-04-09"
+ },
+ {
+  "id": "L04-S03-1",
+  "person": "L04",
+  "type": "fact",
+  "storyline": "S03",
+  "question": "Where do I do my weekly grocery shopping?",
+  "gold": "Biedronka on Dąbrowskiego",
+  "plain": "What is my weekly grocery shopping?"
+ },
+ {
+  "id": "L04-S05-1",
+  "person": "L04",
+  "type": "fact",
+  "storyline": "S05",
+  "question": "When is my foot care appointment?",
+  "gold": "2026-04-12"
+ },
+ {
+  "id": "L04-S06-1",
+  "person": "L04",
+  "type": "fact",
+  "storyline": "S06",
+  "question": "Where do I submit my pension documents?",
+  "gold": "ZUS branch on Grzegórzecki",
+  "plain": "What is my pension document submission?"
+ },
+ {
+  "id": "L04-S07-1",
+  "person": "L04",
+  "type": "fact",
+  "storyline": "S07",
+  "question": "What is my electricity bill payment?",
+  "gold": "420 PLN"
+ },
+ {
+  "id": "L04-S08-1",
+  "person": "L04",
+  "type": "fact",
+  "storyline": "S08",
+  "question": "What is my allotment plot fee?",
+  "gold": "150 PLN"
+ },
+ {
+  "id": "L04-S09-1",
+  "person": "L04",
+  "type": "fact",
+  "storyline": "S09",
+  "question": "What is my library annual membership?",
+  "gold": "80 PLN"
+ },
+ {
+  "id": "L04-S11-1",
+  "person": "L04",
+  "type": "now",
+  "storyline": "S11",
+  "question": "What is my allotment plot number now?",
+  "gold": "Plot 15 (it was Plot 42)"
+ },
+ {
+  "id": "L04-S11-2",
+  "person": "L04",
+  "type": "before",
+  "storyline": "S11",
+  "question": "What was my allotment plot number before it changed?",
+  "gold": "Plot 42"
+ },
+ {
+  "id": "L04-S11-3",
+  "person": "L04",
+  "type": "when",
+  "storyline": "S11",
+  "question": "When did my allotment plot number change to Plot 15?",
+  "gold": "2026-04-04"
+ },
+ {
+  "id": "L04-S12-1",
+  "person": "L04",
+  "type": "now",
+  "storyline": "S12",
+  "question": "What is my pension account bank now?",
+  "gold": "Bank Millennium (it was PKO Bank Polski)"
+ },
+ {
+  "id": "L04-S12-2",
+  "person": "L04",
+  "type": "before",
+  "storyline": "S12",
+  "question": "What was my pension account bank before it changed?",
+  "gold": "PKO Bank Polski"
+ },
+ {
+  "id": "L04-S12-3",
+  "person": "L04",
+  "type": "when",
+  "storyline": "S12",
+  "question": "When did my pension account bank change to Bank Millennium?",
+  "gold": "2026-03-30"
+ },
+ {
+  "id": "L04-S13-1",
+  "person": "L04",
+  "type": "now",
+  "storyline": "S13",
+  "question": "What is my granddaughter's school term now?",
+  "gold": "Regular classes (it was Spring break)"
+ },
+ {
+  "id": "L04-S13-2",
+  "person": "L04",
+  "type": "before",
+  "storyline": "S13",
+  "question": "What was my granddaughter's school term before it changed?",
+  "gold": "Spring break"
+ },
+ {
+  "id": "L04-S13-3",
+  "person": "L04",
+  "type": "when",
+  "storyline": "S13",
+  "question": "When did my granddaughter's school term change to Regular classes?",
+  "gold": "2026-03-30"
+ },
+ {
+  "id": "L04-S14-1",
+  "person": "L04",
+  "type": "now",
+  "storyline": "S14",
+  "question": "What is my grandson's university semester now?",
+  "gold": "Spring exams (it was Winter break)"
+ },
+ {
+  "id": "L04-S14-2",
+  "person": "L04",
+  "type": "before",
+  "storyline": "S14",
+  "question": "What was my grandson's university semester before it changed?",
+  "gold": "Winter break"
+ },
+ {
+  "id": "L04-S14-3",
+  "person": "L04",
+  "type": "when",
+  "storyline": "S14",
+  "question": "When did my grandson's university semester change to Spring exams?",
+  "gold": "2026-03-23"
+ },
+ {
+  "id": "L04-S15-1",
+  "person": "L04",
+  "type": "now",
+  "storyline": "S15",
+  "question": "What is my heritage society volunteer shift now?",
+  "gold": "Thursday afternoons (it was Tuesday mornings)"
+ },
+ {
+  "id": "L04-S15-2",
+  "person": "L04",
+  "type": "before",
+  "storyline": "S15",
+  "question": "What was my heritage society volunteer shift before it changed?",
+  "gold": "Tuesday mornings"
+ },
+ {
+  "id": "L04-S15-3",
+  "person": "L04",
+  "type": "when",
+  "storyline": "S15",
+  "question": "When did my heritage society volunteer shift change to Thursday afternoons?",
+  "gold": "2026-04-12"
+ },
+ {
+  "id": "L04-S16-1",
+  "person": "L04",
+  "type": "now",
+  "storyline": "S16",
+  "question": "What is my garden maintenance day now?",
+  "gold": "Sunday afternoons (it was Saturday mornings)"
+ },
+ {
+  "id": "L04-S16-2",
+  "person": "L04",
+  "type": "before",
+  "storyline": "S16",
+  "question": "What was my garden maintenance day before it changed?",
+  "gold": "Saturday mornings"
+ },
+ {
+  "id": "L04-S16-3",
+  "person": "L04",
+  "type": "when",
+  "storyline": "S16",
+  "question": "When did my garden maintenance day change to Sunday afternoons?",
+  "gold": "2026-04-12"
+ },
+ {
+  "id": "L04-S17-1",
+  "person": "L04",
+  "type": "now",
+  "storyline": "S17",
+  "question": "What is my heritage society meeting location now?",
+  "gold": "Main Library Hall (I switched to Community Centre Room B, then went back)"
+ },
+ {
+  "id": "L04-S18-1",
+  "person": "L04",
+  "type": "now",
+  "storyline": "S18",
+  "question": "What is my home heating source now?",
+  "gold": "District heating (I switched to Gas boiler, then went back)"
+ },
+ {
+  "id": "L04-S19-1",
+  "person": "L04",
+  "type": "now",
+  "storyline": "S19",
+  "question": "What is my diabetes clinic address?",
+  "gold": "ul. Dąbrowskiego 118 (ul. Krowoderska 20 was a slip, corrected on 2026-04-09)"
+ },
+ {
+  "id": "L04-S20-1",
+  "person": "L04",
+  "type": "now",
+  "storyline": "S20",
+  "question": "What is my pension office address?",
+  "gold": "ul. Pawia 4 (ul. Grzegórzecka 15 was a slip, corrected on 2026-03-27)"
+ },
+ {
+  "id": "L04-S21-1",
+  "person": "L04",
+  "type": "considered",
+  "storyline": "S21",
+  "question": "Did I change my weekly newspaper delivery to Gazeta Krakowska?",
+  "gold": "No: I only thought about it; it is still Przegląd Dzienny"
+ },
+ {
+  "id": "L04-S22-1",
+  "person": "L04",
+  "type": "considered",
+  "storyline": "S22",
+  "question": "Did I change my volunteer shift schedule to Friday mornings?",
+  "gold": "No: I only thought about it; it is still Wednesday afternoons"
+ },
+ {
+  "id": "L04-S23-1",
+  "person": "L04",
+  "type": "now",
+  "storyline": "S23",
+  "question": "What is my grandson's contact method now?",
+  "gold": "Telegram (changed from WhatsApp after thinking about it)"
+ },
+ {
+  "id": "L04-S23-2",
+  "person": "L04",
+  "type": "when",
+  "storyline": "S23",
+  "question": "When did I go ahead with Telegram for my grandson's contact method?",
+  "gold": "2026-03-15"
+ },
+ {
+  "id": "L04-S24-1",
+  "person": "L04",
+  "type": "now",
+  "storyline": "S24",
+  "question": "What is my flight to Toronto?",
+  "gold": "LOT Polish Airlines (Air Canada was only a what-if)"
+ },
+ {
+  "id": "L04-S27-1",
+  "person": "L04",
+  "type": "whose",
+  "storyline": "S27",
+  "question": "What is my flight destination airport?",
+  "gold": "Toronto Pearson (Montreal Trudeau is Zofia's)"
+ },
+ {
+  "id": "L04-S27-2",
+  "person": "L04",
+  "type": "whose",
+  "storyline": "S27",
+  "question": "What is Zofia's flight destination airport?",
+  "gold": "Montreal Trudeau"
+ },
+ {
+  "id": "L04-S28-1",
+  "person": "L04",
+  "type": "whose",
+  "storyline": "S28",
+  "question": "What is my pension office phone number?",
+  "gold": "12 345 67 89 (22 987 65 43 is Zofia's)"
+ },
+ {
+  "id": "L04-S28-2",
+  "person": "L04",
+  "type": "whose",
+  "storyline": "S28",
+  "question": "What is Zofia's pension office phone number?",
+  "gold": "22 987 65 43"
+ },
+ {
+  "id": "L04-S30-1",
+  "person": "L04",
+  "type": "need",
+  "storyline": "S30",
+  "question": "Am I still looking for help setting up video calls with my grandson in Toronto?",
+  "gold": "No: sorted on 2026-03-17 (Kuba Wiśniewski from the heritage society set it up)"
+ },
+ {
+  "id": "L04-needs_now-1",
+  "person": "L04",
+  "type": "needs_now",
+  "storyline": null,
+  "question": "Which of my needs are still open: things I am looking for someone to provide or help with (a person, a service, an item)? List them all.",
+  "gold": "a rotavator to borrow for the allotment in April; a walking group for retired people near Nowa Huta",
+  "note": "not: needs already solved, or needs of someone else"
+ },
+ {
+  "id": "L04-none-1",
+  "person": "L04",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my passport number?",
+  "gold": "not in memory"
+ },
+ {
+  "id": "L04-none-2",
+  "person": "L04",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my grandmother's maiden name?",
+  "gold": "not in memory"
+ },
+ {
+  "id": "L04-none-3",
+  "person": "L04",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my favourite film?",
+  "gold": "not in memory"
+ },
+ {
+  "id": "L05-S01-1",
+  "person": "L05",
+  "type": "fact",
+  "storyline": "S01",
+  "question": "What is my monthly rent payment?",
+  "gold": "1,200,000 KRW"
+ },
+ {
+  "id": "L05-S02-1",
+  "person": "L05",
+  "type": "fact",
+  "storyline": "S02",
+  "question": "What is my weekly sketching session?",
+  "gold": "Sundays"
+ },
+ {
+  "id": "L05-S03-1",
+  "person": "L05",
+  "type": "fact",
+  "storyline": "S03",
+  "question": "What is my art supply supplier?",
+  "gold": "Yongsan Electronics Market"
+ },
+ {
+  "id": "L05-S04-1",
+  "person": "L05",
+  "type": "fact",
+  "storyline": "S04",
+  "question": "What is my evening photography club?",
+  "gold": "Hongdae Photo Society"
+ },
+ {
+  "id": "L05-S05-1",
+  "person": "L05",
+  "type": "fact",
+  "storyline": "S05",
+  "question": "What is my café shift schedule?",
+  "gold": "Friday nights"
+ },
+ {
+  "id": "L05-S06-1",
+  "person": "L05",
+  "type": "fact",
+  "storyline": "S06",
+  "question": "Who is my studio critique partner?",
+  "gold": "Min-jun Kim"
+ },
+ {
+  "id": "L05-S07-1",
+  "person": "L05",
+  "type": "fact",
+  "storyline": "S07",
+  "question": "What is my spring break destination?",
+  "gold": "Jeju Island"
+ },
+ {
+  "id": "L05-S08-1",
+  "person": "L05",
+  "type": "fact",
+  "storyline": "S08",
+  "question": "What is my mother's birthday?",
+  "gold": "March 17"
+ },
+ {
+  "id": "L05-S09-1",
+  "person": "L05",
+  "type": "fact",
+  "storyline": "S09",
+  "question": "What is my utility bill payment day?",
+  "gold": "April 11"
+ },
+ {
+  "id": "L05-S10-1",
+  "person": "L05",
+  "type": "fact",
+  "storyline": "S10",
+  "question": "What is my student loan interest rate?",
+  "gold": "2.5%"
+ },
+ {
+  "id": "L05-S11-1",
+  "person": "L05",
+  "type": "now",
+  "storyline": "S11",
+  "question": "What is my chiropractor appointment time now?",
+  "gold": "14:30 (it was 09:00)"
+ },
+ {
+  "id": "L05-S11-2",
+  "person": "L05",
+  "type": "before",
+  "storyline": "S11",
+  "question": "What was my chiropractor appointment time before it changed?",
+  "gold": "09:00"
+ },
+ {
+  "id": "L05-S11-3",
+  "person": "L05",
+  "type": "when",
+  "storyline": "S11",
+  "question": "When did my chiropractor appointment time change to 14:30?",
+  "gold": "2026-03-14"
+ },
+ {
+  "id": "L05-S12-1",
+  "person": "L05",
+  "type": "now",
+  "storyline": "S12",
+  "question": "What is my weekly grocery delivery slot now?",
+  "gold": "Thursday 10am (it was Tuesday 10am)"
+ },
+ {
+  "id": "L05-S12-2",
+  "person": "L05",
+  "type": "before",
+  "storyline": "S12",
+  "question": "What was my weekly grocery delivery slot before it changed?",
+  "gold": "Tuesday 10am"
+ },
+ {
+  "id": "L05-S12-3",
+  "person": "L05",
+  "type": "when",
+  "storyline": "S12",
+  "question": "When did my weekly grocery delivery slot change to Thursday 10am?",
+  "gold": "2026-03-23"
+ },
+ {
+  "id": "L05-S13-1",
+  "person": "L05",
+  "type": "now",
+  "storyline": "S13",
+  "question": "What is my optometrist appointment time now?",
+  "gold": "11:30 (it was 16:00)"
+ },
+ {
+  "id": "L05-S13-2",
+  "person": "L05",
+  "type": "before",
+  "storyline": "S13",
+  "question": "What was my optometrist appointment time before it changed?",
+  "gold": "16:00"
+ },
+ {
+  "id": "L05-S13-3",
+  "person": "L05",
+  "type": "when",
+  "storyline": "S13",
+  "question": "When did my optometrist appointment time change to 11:30?",
+  "gold": "2026-03-08"
+ },
+ {
+  "id": "L05-S14-1",
+  "person": "L05",
+  "type": "now",
+  "storyline": "S14",
+  "question": "What is my gym membership location now?",
+  "gold": "Fitness First Gangnam (it was Anytime Fitness Itaewon)"
+ },
+ {
+  "id": "L05-S14-2",
+  "person": "L05",
+  "type": "before",
+  "storyline": "S14",
+  "question": "What was my gym membership location before it changed?",
+  "gold": "Anytime Fitness Itaewon"
+ },
+ {
+  "id": "L05-S14-3",
+  "person": "L05",
+  "type": "when",
+  "storyline": "S14",
+  "question": "When did my gym membership location change to Fitness First Gangnam?",
+  "gold": "2026-03-19"
+ },
+ {
+  "id": "L05-S15-1",
+  "person": "L05",
+  "type": "now",
+  "storyline": "S15",
+  "question": "Where is my father's retirement party now?",
+  "gold": "Lotte Hotel World (it was Seoul Forest Hotel)",
+  "plain": "What is my father's retirement party now?"
+ },
+ {
+  "id": "L05-S15-2",
+  "person": "L05",
+  "type": "before",
+  "storyline": "S15",
+  "question": "Where was my father's retirement party going to be before it changed?",
+  "gold": "Seoul Forest Hotel",
+  "plain": "What was my father's retirement party before it changed?"
+ },
+ {
+  "id": "L05-S15-3",
+  "person": "L05",
+  "type": "when",
+  "storyline": "S15",
+  "question": "When did my father's retirement party move to Lotte Hotel World?",
+  "gold": "2026-03-24",
+  "plain": "When did my father's retirement party change to Lotte Hotel World?"
+ },
+ {
+  "id": "L05-S17-1",
+  "person": "L05",
+  "type": "now",
+  "storyline": "S17",
+  "question": "What is my sleeping pill dosage now?",
+  "gold": "5 mg (I switched to 10 mg, then went back)"
+ },
+ {
+  "id": "L05-S18-1",
+  "person": "L05",
+  "type": "now",
+  "storyline": "S18",
+  "question": "What is my laundry detergent brand now?",
+  "gold": "EcoClean Liquid (I switched to Ariel Pods, then went back)"
+ },
+ {
+  "id": "L05-S19-1",
+  "person": "L05",
+  "type": "now",
+  "storyline": "S19",
+  "question": "What is my internet service provider?",
+  "gold": "SK Broadband (KT Gigapass was a slip, corrected on 2026-03-11)"
+ },
+ {
+  "id": "L05-S20-1",
+  "person": "L05",
+  "type": "now",
+  "storyline": "S20",
+  "question": "What is my model glue brand?",
+  "gold": "UHU Por (Tamiya Extra Thin was a slip, corrected on 2026-03-22)"
+ },
+ {
+  "id": "L05-S22-1",
+  "person": "L05",
+  "type": "considered",
+  "storyline": "S22",
+  "question": "Did I change my evening study venue to Starbucks Gangnam Station?",
+  "gold": "No: I only thought about it; it is still Seoul National University Library"
+ },
+ {
+  "id": "L05-S23-1",
+  "person": "L05",
+  "type": "now",
+  "storyline": "S23",
+  "question": "What is my weekend pottery class now?",
+  "gold": "Gangnam Ceramics Workshop (changed from Myeongdong Clay Studio after thinking about it)"
+ },
+ {
+  "id": "L05-S23-2",
+  "person": "L05",
+  "type": "when",
+  "storyline": "S23",
+  "question": "When did I go ahead with Gangnam Ceramics Workshop for my weekend pottery class?",
+  "gold": "2026-04-09"
+ },
+ {
+  "id": "L05-S24-1",
+  "person": "L05",
+  "type": "now",
+  "storyline": "S24",
+  "question": "What is my heating system type?",
+  "gold": "Ondol floor heating (Central AC unit was only a what-if)"
+ },
+ {
+  "id": "L05-S25-1",
+  "person": "L05",
+  "type": "now",
+  "storyline": "S25",
+  "question": "What is my preferred coffee bean roaster?",
+  "gold": "Coffee Bean Republic (Daehangno Roastery was only a what-if)"
+ },
+ {
+  "id": "L05-S26-1",
+  "person": "L05",
+  "type": "whose",
+  "storyline": "S26",
+  "question": "What is my credit card annual fee?",
+  "gold": "0 KRW (15,000 KRW is Min-jun Kim's)"
+ },
+ {
+  "id": "L05-S26-2",
+  "person": "L05",
+  "type": "whose",
+  "storyline": "S26",
+  "question": "What is Min-jun Kim's credit card annual fee?",
+  "gold": "15,000 KRW"
+ },
+ {
+  "id": "L05-S27-1",
+  "person": "L05",
+  "type": "whose",
+  "storyline": "S27",
+  "question": "What is my father's retirement date?",
+  "gold": "2026-04-01 (2026-03-15 is Soo-jin's)"
+ },
+ {
+  "id": "L05-S27-2",
+  "person": "L05",
+  "type": "whose",
+  "storyline": "S27",
+  "question": "What is Soo-jin's father's retirement date?",
+  "gold": "2026-03-15"
+ },
+ {
+  "id": "L05-S29-1",
+  "person": "L05",
+  "type": "need",
+  "storyline": "S29",
+  "question": "Am I still looking for a laser cutter I can use for my final studio model?",
+  "gold": "No: sorted on 2026-04-04 (booked the cutter at the Seoul Fab Lab in Euljiro)"
+ },
+ {
+  "id": "L05-S30-1",
+  "person": "L05",
+  "type": "need",
+  "storyline": "S30",
+  "question": "Am I still looking for a new flatmate from April when Minji moves out?",
+  "gold": "No: sorted on 2026-03-16 (Hana Lee, a design student, moves in on 1 April)"
+ },
+ {
+  "id": "L05-needs_now-1",
+  "person": "L05",
+  "type": "needs_now",
+  "storyline": null,
+  "question": "Which of my needs are still open: things I am looking for someone to provide or help with (a person, a service, an item)? List them all.",
+  "gold": "a summer internship at an architecture office in Busan; a portfolio review from a practising architect",
+  "note": "not: needs already solved, or needs of someone else"
+ },
+ {
+  "id": "L05-none-1",
+  "person": "L05",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my grandmother's maiden name?",
+  "gold": "not in memory"
+ },
+ {
+  "id": "L05-none-2",
+  "person": "L05",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my shoe size?",
+  "gold": "not in memory"
+ },
+ {
+  "id": "L05-none-3",
+  "person": "L05",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my licence plate?",
+  "gold": "not in memory"
+ },
+ {
+  "id": "L06-S01-1",
+  "person": "L06",
+  "type": "fact",
+  "storyline": "S01",
+  "question": "When is my annual medical screening?",
+  "gold": "2026-04-08"
+ },
+ {
+  "id": "L06-S02-1",
+  "person": "L06",
+  "type": "fact",
+  "storyline": "S02",
+  "question": "What is my mother's birthday?",
+  "gold": "2026-03-04"
+ },
+ {
+  "id": "L06-S03-1",
+  "person": "L06",
+  "type": "fact",
+  "storyline": "S03",
+  "question": "What is my tax filing deadline?",
+  "gold": "2026-03-23"
+ },
+ {
+  "id": "L06-S04-1",
+  "person": "L06",
+  "type": "fact",
+  "storyline": "S04",
+  "question": "When is my Stellenbosch shoot travel?",
+  "gold": "2026-04-01"
+ },
+ {
+  "id": "L06-S05-1",
+  "person": "L06",
+  "type": "fact",
+  "storyline": "S05",
+  "question": "When is my client meeting with Fourie?",
+  "gold": "2026-03-26"
+ },
+ {
+  "id": "L06-S06-1",
+  "person": "L06",
+  "type": "fact",
+  "storyline": "S06",
+  "question": "When is my dentist appointment?",
+  "gold": "2026-03-21"
+ },
+ {
+  "id": "L06-S08-1",
+  "person": "L06",
+  "type": "fact",
+  "storyline": "S08",
+  "question": "When is my camera strap purchase?",
+  "gold": "2026-03-20"
+ },
+ {
+  "id": "L06-S09-1",
+  "person": "L06",
+  "type": "fact",
+  "storyline": "S09",
+  "question": "When is my invoice submission for Van der Merwe?",
+  "gold": "2026-03-24"
+ },
+ {
+  "id": "L06-S10-1",
+  "person": "L06",
+  "type": "fact",
+  "storyline": "S10",
+  "question": "What is my weekly yoga class?",
+  "gold": "Saturday morning"
+ },
+ {
+  "id": "L06-S11-1",
+  "person": "L06",
+  "type": "now",
+  "storyline": "S11",
+  "question": "What is my primary banking provider now?",
+  "gold": "Capitec Bank (it was FirstRand Bank)"
+ },
+ {
+  "id": "L06-S11-2",
+  "person": "L06",
+  "type": "before",
+  "storyline": "S11",
+  "question": "What was my primary banking provider before it changed?",
+  "gold": "FirstRand Bank"
+ },
+ {
+  "id": "L06-S11-3",
+  "person": "L06",
+  "type": "when",
+  "storyline": "S11",
+  "question": "When did my primary banking provider change to Capitec Bank?",
+  "gold": "2026-03-15"
+ },
+ {
+  "id": "L06-S12-1",
+  "person": "L06",
+  "type": "now",
+  "storyline": "S12",
+  "question": "What is my preferred coffee shop now?",
+  "gold": "Biscuiteer (it was The Daily Grind)"
+ },
+ {
+  "id": "L06-S12-2",
+  "person": "L06",
+  "type": "before",
+  "storyline": "S12",
+  "question": "What was my preferred coffee shop before it changed?",
+  "gold": "The Daily Grind"
+ },
+ {
+  "id": "L06-S12-3",
+  "person": "L06",
+  "type": "when",
+  "storyline": "S12",
+  "question": "When did my preferred coffee shop change to Biscuiteer?",
+  "gold": "2026-03-20"
+ },
+ {
+  "id": "L06-S13-1",
+  "person": "L06",
+  "type": "now",
+  "storyline": "S13",
+  "question": "What is my monthly rent amount now?",
+  "gold": "12500 ZAR (it was 12000 ZAR)"
+ },
+ {
+  "id": "L06-S13-2",
+  "person": "L06",
+  "type": "before",
+  "storyline": "S13",
+  "question": "What was my monthly rent amount before it changed?",
+  "gold": "12000 ZAR"
+ },
+ {
+  "id": "L06-S13-3",
+  "person": "L06",
+  "type": "when",
+  "storyline": "S13",
+  "question": "When did my monthly rent amount change to 12500 ZAR?",
+  "gold": "2026-03-12"
+ },
+ {
+  "id": "L06-S14-1",
+  "person": "L06",
+  "type": "now",
+  "storyline": "S14",
+  "question": "What is my physiotherapy clinic now?",
+  "gold": "Wellness Hub (it was Cape Town Physio)"
+ },
+ {
+  "id": "L06-S14-2",
+  "person": "L06",
+  "type": "before",
+  "storyline": "S14",
+  "question": "What was my physiotherapy clinic before it changed?",
+  "gold": "Cape Town Physio"
+ },
+ {
+  "id": "L06-S14-3",
+  "person": "L06",
+  "type": "when",
+  "storyline": "S14",
+  "question": "When did my physiotherapy clinic change to Wellness Hub?",
+  "gold": "2026-03-15"
+ },
+ {
+  "id": "L06-S15-1",
+  "person": "L06",
+  "type": "now",
+  "storyline": "S15",
+  "question": "What is my weekly running route now?",
+  "gold": "Llandudny Beach (it was Signal Hill)"
+ },
+ {
+  "id": "L06-S15-2",
+  "person": "L06",
+  "type": "before",
+  "storyline": "S15",
+  "question": "What was my weekly running route before it changed?",
+  "gold": "Signal Hill"
+ },
+ {
+  "id": "L06-S15-3",
+  "person": "L06",
+  "type": "when",
+  "storyline": "S15",
+  "question": "When did my weekly running route change to Llandudny Beach?",
+  "gold": "2026-03-15"
+ },
+ {
+  "id": "L06-S16-1",
+  "person": "L06",
+  "type": "now",
+  "storyline": "S16",
+  "question": "What is my gear insurance premium now?",
+  "gold": "950 ZAR (it was 800 ZAR)"
+ },
+ {
+  "id": "L06-S16-2",
+  "person": "L06",
+  "type": "before",
+  "storyline": "S16",
+  "question": "What was my gear insurance premium before it changed?",
+  "gold": "800 ZAR"
+ },
+ {
+  "id": "L06-S16-3",
+  "person": "L06",
+  "type": "when",
+  "storyline": "S16",
+  "question": "When did my gear insurance premium change to 950 ZAR?",
+  "gold": "2026-04-11"
+ },
+ {
+  "id": "L06-S17-1",
+  "person": "L06",
+  "type": "now",
+  "storyline": "S17",
+  "question": "What is my favorite weekend brunch spot now?",
+  "gold": "The Silo Hotel (I switched to Mama J's, then went back)"
+ },
+ {
+  "id": "L06-S18-1",
+  "person": "L06",
+  "type": "now",
+  "storyline": "S18",
+  "question": "Who is my regular pilates instructor now?",
+  "gold": "Nomsa Khumalo (I switched to Sarah Jenkins, then went back)"
+ },
+ {
+  "id": "L06-S19-1",
+  "person": "L06",
+  "type": "now",
+  "storyline": "S19",
+  "question": "What is my annual eye exam date?",
+  "gold": "2026-04-12 (2026-04-10 was a slip, corrected on 2026-04-12)"
+ },
+ {
+  "id": "L06-S20-1",
+  "person": "L06",
+  "type": "now",
+  "storyline": "S20",
+  "question": "What is my favorite hiking trail?",
+  "gold": "Kirstenbosch to Skeleton Gorge (Platteklip Gorge was a slip, corrected on 2026-03-21)"
+ },
+ {
+  "id": "L06-S21-1",
+  "person": "L06",
+  "type": "considered",
+  "storyline": "S21",
+  "question": "Did I change my alternative studio space for portfolio to Cape Town Art Space?",
+  "gold": "No: I only thought about it; it is still The Foundry Warehouse"
+ },
+ {
+  "id": "L06-S22-1",
+  "person": "L06",
+  "type": "considered",
+  "storyline": "S22",
+  "question": "Did I change my preferred local butcher to The Butcher Shop?",
+  "gold": "No: I only thought about it; it is still Cape Town Meat Co"
+ },
+ {
+  "id": "L06-S23-1",
+  "person": "L06",
+  "type": "now",
+  "storyline": "S23",
+  "question": "What is my preferred grocery delivery service now?",
+  "gold": "Pick n Pay PnP Now (changed from Checkers Sixty60 after thinking about it)"
+ },
+ {
+  "id": "L06-S23-2",
+  "person": "L06",
+  "type": "when",
+  "storyline": "S23",
+  "question": "When did I go ahead with Pick n Pay PnP Now for my preferred grocery delivery service?",
+  "gold": "2026-04-12"
+ },
+ {
+  "id": "L06-S24-1",
+  "person": "L06",
+  "type": "now",
+  "storyline": "S24",
+  "question": "What is my accounting software subscription?",
+  "gold": "Xero (Sage One was only a what-if)"
+ },
+ {
+  "id": "L06-S25-1",
+  "person": "L06",
+  "type": "now",
+  "storyline": "S25",
+  "question": "What is my cloud storage provider?",
+  "gold": "Google Drive (Dropbox was only a what-if)"
+ },
+ {
+  "id": "L06-S26-1",
+  "person": "L06",
+  "type": "whose",
+  "storyline": "S26",
+  "question": "Who is my regular hair stylist?",
+  "gold": "Zanele Mthembu (Priya Naidoo is Priya's)"
+ },
+ {
+  "id": "L06-S26-2",
+  "person": "L06",
+  "type": "whose",
+  "storyline": "S26",
+  "question": "Who is Priya's regular hair stylist?",
+  "gold": "Priya Naidoo"
+ },
+ {
+  "id": "L06-S27-1",
+  "person": "L06",
+  "type": "whose",
+  "storyline": "S27",
+  "question": "What is my preferred bakery?",
+  "gold": "The Daily Crumb (The Bread Bureau is Sipho's)"
+ },
+ {
+  "id": "L06-S27-2",
+  "person": "L06",
+  "type": "whose",
+  "storyline": "S27",
+  "question": "What is Sipho's preferred bakery?",
+  "gold": "The Bread Bureau"
+ },
+ {
+  "id": "L06-S28-1",
+  "person": "L06",
+  "type": "whose",
+  "storyline": "S28",
+  "question": "Which banking app do I use?",
+  "gold": "FNB App (Standard Bank App is Sipho's)",
+  "plain": "What is my banking app used?"
+ },
+ {
+  "id": "L06-S28-2",
+  "person": "L06",
+  "type": "whose",
+  "storyline": "S28",
+  "question": "Which banking app does Sipho use?",
+  "gold": "Standard Bank App",
+  "plain": "What is Sipho's banking app used?"
+ },
+ {
+  "id": "L06-S29-1",
+  "person": "L06",
+  "type": "need",
+  "storyline": "S29",
+  "question": "Am I still looking for a second shooter for the Fourie wedding on 28 March?",
+  "gold": "No: sorted on 2026-03-26 (Lerato Mokoena agreed to second-shoot)"
+ },
+ {
+  "id": "L06-S30-1",
+  "person": "L06",
+  "type": "need",
+  "storyline": "S30",
+  "question": "Am I still looking for someone to walk Bongo on the days of the Stellenbosch shoot?",
+  "gold": "No: sorted on 2026-04-03 (the neighbours' son Aidan walks Bongo)"
+ },
+ {
+  "id": "L06-needs_now-1",
+  "person": "L06",
+  "type": "needs_now",
+  "storyline": null,
+  "question": "Which of my needs are still open: things I am looking for someone to provide or help with (a person, a service, an item)? List them all.",
+  "gold": "a 70-200mm lens to rent for a weekend in April; an accountant who handles provisional tax for freelancers",
+  "note": "not: needs already solved, or needs of someone else"
+ },
+ {
+  "id": "L06-none-1",
+  "person": "L06",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my first car?",
+  "gold": "not in memory"
+ },
+ {
+  "id": "L06-none-2",
+  "person": "L06",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my licence plate?",
+  "gold": "not in memory"
+ },
+ {
+  "id": "L06-none-3",
+  "person": "L06",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my gym locker number?",
+  "gold": "not in memory"
+ },
+ {
+  "id": "L07-S01-1",
+  "person": "L07",
+  "type": "fact",
+  "storyline": "S01",
+  "question": "What is my weekly running club?",
+  "gold": "Spandau Runners"
+ },
+ {
+  "id": "L07-S02-1",
+  "person": "L07",
+  "type": "fact",
+  "storyline": "S02",
+  "question": "Who is my annual eye exam doctor?",
+  "gold": "Dr. Elena Kovic"
+ },
+ {
+  "id": "L07-S03-1",
+  "person": "L07",
+  "type": "fact",
+  "storyline": "S03",
+  "question": "What is my flight to Lyon?",
+  "gold": "Air France AF7204"
+ },
+ {
+  "id": "L07-S04-1",
+  "person": "L07",
+  "type": "fact",
+  "storyline": "S04",
+  "question": "What is my monthly apartment rent?",
+  "gold": "1450 euros"
+ },
+ {
+  "id": "L07-S05-1",
+  "person": "L07",
+  "type": "fact",
+  "storyline": "S05",
+  "question": "Who is my weekly yoga instructor?",
+  "gold": "Maria Gonzalez"
+ },
+ {
+  "id": "L07-S06-1",
+  "person": "L07",
+  "type": "fact",
+  "storyline": "S06",
+  "question": "What is my internet service provider?",
+  "gold": "Deutsche Telekom"
+ },
+ {
+  "id": "L07-S07-1",
+  "person": "L07",
+  "type": "fact",
+  "storyline": "S07",
+  "question": "What is my girlfriend's name?",
+  "gold": "Clara Weber"
+ },
+ {
+  "id": "L07-S08-1",
+  "person": "L07",
+  "type": "fact",
+  "storyline": "S08",
+  "question": "What is my weekly cycling route?",
+  "gold": "Tempelhofer Feld loop"
+ },
+ {
+  "id": "L07-S09-1",
+  "person": "L07",
+  "type": "fact",
+  "storyline": "S09",
+  "question": "What is my weekly gym membership?",
+  "gold": "Bodyworks Mitte"
+ },
+ {
+  "id": "L07-S10-1",
+  "person": "L07",
+  "type": "fact",
+  "storyline": "S10",
+  "question": "Who is my primary care doctor?",
+  "gold": "Dr. Hans Muller"
+ },
+ {
+  "id": "L07-S11-1",
+  "person": "L07",
+  "type": "now",
+  "storyline": "S11",
+  "question": "What is my Go runtime version now?",
+  "gold": "1.22.1 (it was 1.21.5)"
+ },
+ {
+  "id": "L07-S11-2",
+  "person": "L07",
+  "type": "before",
+  "storyline": "S11",
+  "question": "What was my Go runtime version before it changed?",
+  "gold": "1.21.5"
+ },
+ {
+  "id": "L07-S11-3",
+  "person": "L07",
+  "type": "when",
+  "storyline": "S11",
+  "question": "When did my Go runtime version change to 1.22.1?",
+  "gold": "2026-03-28"
+ },
+ {
+  "id": "L07-S12-1",
+  "person": "L07",
+  "type": "now",
+  "storyline": "S12",
+  "question": "Who is my regular massage therapist now?",
+  "gold": "Marcus Klein (it was Elena Vogel)"
+ },
+ {
+  "id": "L07-S12-2",
+  "person": "L07",
+  "type": "before",
+  "storyline": "S12",
+  "question": "Who was my regular massage therapist before it changed?",
+  "gold": "Elena Vogel"
+ },
+ {
+  "id": "L07-S12-3",
+  "person": "L07",
+  "type": "when",
+  "storyline": "S12",
+  "question": "When did my regular massage therapist change to Marcus Klein?",
+  "gold": "2026-03-14"
+ },
+ {
+  "id": "L07-S13-1",
+  "person": "L07",
+  "type": "now",
+  "storyline": "S13",
+  "question": "What is my commuter vehicle brand now?",
+  "gold": "Trek (it was VanMoof)"
+ },
+ {
+  "id": "L07-S13-2",
+  "person": "L07",
+  "type": "before",
+  "storyline": "S13",
+  "question": "What was my commuter vehicle brand before it changed?",
+  "gold": "VanMoof"
+ },
+ {
+  "id": "L07-S13-3",
+  "person": "L07",
+  "type": "when",
+  "storyline": "S13",
+  "question": "When did my commuter vehicle brand change to Trek?",
+  "gold": "2026-04-12"
+ },
+ {
+  "id": "L07-S14-1",
+  "person": "L07",
+  "type": "now",
+  "storyline": "S14",
+  "question": "What is my primary database engine now?",
+  "gold": "CockroachDB (it was PostgreSQL)"
+ },
+ {
+  "id": "L07-S14-2",
+  "person": "L07",
+  "type": "before",
+  "storyline": "S14",
+  "question": "What was my primary database engine before it changed?",
+  "gold": "PostgreSQL"
+ },
+ {
+  "id": "L07-S14-3",
+  "person": "L07",
+  "type": "when",
+  "storyline": "S14",
+  "question": "When did my primary database engine change to CockroachDB?",
+  "gold": "2026-04-10"
+ },
+ {
+  "id": "L07-S15-1",
+  "person": "L07",
+  "type": "now",
+  "storyline": "S15",
+  "question": "What is my vitamin D dosage now?",
+  "gold": "4000 IU (it was 2000 IU)"
+ },
+ {
+  "id": "L07-S15-2",
+  "person": "L07",
+  "type": "before",
+  "storyline": "S15",
+  "question": "What was my vitamin D dosage before it changed?",
+  "gold": "2000 IU"
+ },
+ {
+  "id": "L07-S15-3",
+  "person": "L07",
+  "type": "when",
+  "storyline": "S15",
+  "question": "When did my vitamin D dosage change to 4000 IU?",
+  "gold": "2026-04-12"
+ },
+ {
+  "id": "L07-S16-1",
+  "person": "L07",
+  "type": "now",
+  "storyline": "S16",
+  "question": "What is my cloud infrastructure provider now?",
+  "gold": "Digital Ocean (it was Google Cloud)"
+ },
+ {
+  "id": "L07-S16-2",
+  "person": "L07",
+  "type": "before",
+  "storyline": "S16",
+  "question": "What was my cloud infrastructure provider before it changed?",
+  "gold": "Google Cloud"
+ },
+ {
+  "id": "L07-S16-3",
+  "person": "L07",
+  "type": "when",
+  "storyline": "S16",
+  "question": "When did my cloud infrastructure provider change to Digital Ocean?",
+  "gold": "2026-04-04"
+ },
+ {
+  "id": "L07-S17-1",
+  "person": "L07",
+  "type": "now",
+  "storyline": "S17",
+  "question": "What is my coffee shop choice now?",
+  "gold": "The Barn (I switched to Bonanza Coffee, then went back)"
+ },
+ {
+  "id": "L07-S18-1",
+  "person": "L07",
+  "type": "now",
+  "storyline": "S18",
+  "question": "What is my streaming subscription now?",
+  "gold": "Netflix (I switched to Amazon Prime, then went back)"
+ },
+ {
+  "id": "L07-S19-1",
+  "person": "L07",
+  "type": "now",
+  "storyline": "S19",
+  "question": "What is my train departure time?",
+  "gold": "15:45 (14:30 was a slip, corrected on 2026-04-12)"
+ },
+ {
+  "id": "L07-S20-1",
+  "person": "L07",
+  "type": "now",
+  "storyline": "S20",
+  "question": "What is my girlfriend's passport number?",
+  "gold": "Y9910382 (X8849201 was a slip, corrected on 2026-04-02)"
+ },
+ {
+  "id": "L07-S21-1",
+  "person": "L07",
+  "type": "considered",
+  "storyline": "S21",
+  "question": "Did I change my mother's preferred bakery to Bäckerei Kroll?",
+  "gold": "No: I only thought about it; it is still Backstube Mitte"
+ },
+ {
+  "id": "L07-S22-1",
+  "person": "L07",
+  "type": "considered",
+  "storyline": "S22",
+  "question": "Did I change my alternative weekend activity to photography walk?",
+  "gold": "No: I only thought about it; it is still kayaking on the Spree"
+ },
+ {
+  "id": "L07-S24-1",
+  "person": "L07",
+  "type": "now",
+  "storyline": "S24",
+  "question": "What is my monthly car insurance premium?",
+  "gold": "120 euros (180 euros was only a what-if)"
+ },
+ {
+  "id": "L07-S25-1",
+  "person": "L07",
+  "type": "now",
+  "storyline": "S25",
+  "question": "What is my monthly mobile phone cost?",
+  "gold": "25 euros (15 euros was only a what-if)"
+ },
+ {
+  "id": "L07-S26-1",
+  "person": "L07",
+  "type": "whose",
+  "storyline": "S26",
+  "question": "What is my Espresso machine brand?",
+  "gold": "La Marzocco (Breville is Clara Weber's)"
+ },
+ {
+  "id": "L07-S26-2",
+  "person": "L07",
+  "type": "whose",
+  "storyline": "S26",
+  "question": "What is Clara Weber's Espresso machine brand?",
+  "gold": "Breville"
+ },
+ {
+  "id": "L07-S27-1",
+  "person": "L07",
+  "type": "whose",
+  "storyline": "S27",
+  "question": "What is my apartment floor number?",
+  "gold": "third floor (fifth floor is Clara Weber's)"
+ },
+ {
+  "id": "L07-S27-2",
+  "person": "L07",
+  "type": "whose",
+  "storyline": "S27",
+  "question": "What is Clara Weber's apartment floor number?",
+  "gold": "fifth floor"
+ },
+ {
+  "id": "L07-S28-1",
+  "person": "L07",
+  "type": "whose",
+  "storyline": "S28",
+  "question": "What is my nearest train station?",
+  "gold": "Berlin Ostkreuz (Munich Hauptbahnhof is Jonas Keller's)"
+ },
+ {
+  "id": "L07-S28-2",
+  "person": "L07",
+  "type": "whose",
+  "storyline": "S28",
+  "question": "What is Jonas Keller's nearest train station?",
+  "gold": "Munich Hauptbahnhof"
+ },
+ {
+  "id": "L07-S29-1",
+  "person": "L07",
+  "type": "need",
+  "storyline": "S29",
+  "question": "Am I still looking for a climbing partner for Tuesday evenings at Berta Block?",
+  "gold": "No: sorted on 2026-03-09 (now climbs with Jonas Keller)"
+ },
+ {
+  "id": "L07-S30-1",
+  "person": "L07",
+  "type": "need",
+  "storyline": "S30",
+  "question": "Am I still looking for a Postgres expert to review the table partitioning plan?",
+  "gold": "No: sorted on 2026-03-13 (Svenja Roth from the Go meetup reviewed it)"
+ },
+ {
+  "id": "L07-needs_now-1",
+  "person": "L07",
+  "type": "needs_now",
+  "storyline": null,
+  "question": "Which of my needs are still open: things I am looking for someone to provide or help with (a person, a service, an item)? List them all.",
+  "gold": "a cheap sublet in Berlin for his girlfriend's visit in May; a lift to Fontainebleau for the Easter climbing trip",
+  "note": "not: needs already solved, or needs of someone else"
+ },
+ {
+  "id": "L07-none-1",
+  "person": "L07",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my licence plate?",
+  "gold": "not in memory"
+ },
+ {
+  "id": "L07-none-2",
+  "person": "L07",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my blood type?",
+  "gold": "not in memory"
+ },
+ {
+  "id": "L07-none-3",
+  "person": "L07",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my favourite football team?",
+  "gold": "not in memory"
+ },
+ {
+  "id": "L08-S01-1",
+  "person": "L08",
+  "type": "fact",
+  "storyline": "S01",
+  "question": "What is my mother's birthday?",
+  "gold": "1948-05-12"
+ },
+ {
+  "id": "L08-S02-1",
+  "person": "L08",
+  "type": "fact",
+  "storyline": "S02",
+  "question": "Who is my weekly yoga instructor?",
+  "gold": "Lina Torres"
+ },
+ {
+  "id": "L08-S03-1",
+  "person": "L08",
+  "type": "fact",
+  "storyline": "S03",
+  "question": "What is my export logistics provider?",
+  "gold": "Fretex Cargo"
+ },
+ {
+  "id": "L08-S04-1",
+  "person": "L08",
+  "type": "fact",
+  "storyline": "S04",
+  "question": "What is my Mendoza airport shuttle?",
+  "gold": "Taxi Airport 500"
+ },
+ {
+  "id": "L08-S05-1",
+  "person": "L08",
+  "type": "fact",
+  "storyline": "S05",
+  "question": "What is my home security system?",
+  "gold": "SecurHome Plus"
+ },
+ {
+  "id": "L08-S06-1",
+  "person": "L08",
+  "type": "fact",
+  "storyline": "S06",
+  "question": "Who is my winery insurance agent?",
+  "gold": "Agustín Rivas"
+ },
+ {
+  "id": "L08-S07-1",
+  "person": "L08",
+  "type": "fact",
+  "storyline": "S07",
+  "question": "What is my brother's birthday?",
+  "gold": "1970-09-15"
+ },
+ {
+  "id": "L08-S08-1",
+  "person": "L08",
+  "type": "fact",
+  "storyline": "S08",
+  "question": "What is my Buenos Aires flight number?",
+  "gold": "AR1240"
+ },
+ {
+  "id": "L08-S09-1",
+  "person": "L08",
+  "type": "fact",
+  "storyline": "S09",
+  "question": "What is my bank account interest rate?",
+  "gold": "4.5% annual"
+ },
+ {
+  "id": "L08-S10-1",
+  "person": "L08",
+  "type": "fact",
+  "storyline": "S10",
+  "question": "What is my annual property tax?",
+  "gold": "120000 pesos"
+ },
+ {
+  "id": "L08-S11-1",
+  "person": "L08",
+  "type": "now",
+  "storyline": "S11",
+  "question": "Who is my mother's primary care doctor now?",
+  "gold": "Dr. Lucas Vega (it was Dr. Elena Gomez)"
+ },
+ {
+  "id": "L08-S11-2",
+  "person": "L08",
+  "type": "before",
+  "storyline": "S11",
+  "question": "Who was my mother's primary care doctor before it changed?",
+  "gold": "Dr. Elena Gomez"
+ },
+ {
+  "id": "L08-S11-3",
+  "person": "L08",
+  "type": "when",
+  "storyline": "S11",
+  "question": "When did my mother's primary care doctor change to Dr. Lucas Vega?",
+  "gold": "2026-04-11"
+ },
+ {
+  "id": "L08-S12-1",
+  "person": "L08",
+  "type": "now",
+  "storyline": "S12",
+  "question": "What is my wine label supplier now?",
+  "gold": "PrintArt Sur (it was Gráfica Mendoza)"
+ },
+ {
+  "id": "L08-S12-2",
+  "person": "L08",
+  "type": "before",
+  "storyline": "S12",
+  "question": "What was my wine label supplier before it changed?",
+  "gold": "Gráfica Mendoza"
+ },
+ {
+  "id": "L08-S12-3",
+  "person": "L08",
+  "type": "when",
+  "storyline": "S12",
+  "question": "When did my wine label supplier change to PrintArt Sur?",
+  "gold": "2026-04-09"
+ },
+ {
+  "id": "L08-S13-1",
+  "person": "L08",
+  "type": "now",
+  "storyline": "S13",
+  "question": "What is my cork supplier now?",
+  "gold": "Natural Cork Co (it was Dunlop Cork)"
+ },
+ {
+  "id": "L08-S13-2",
+  "person": "L08",
+  "type": "before",
+  "storyline": "S13",
+  "question": "What was my cork supplier before it changed?",
+  "gold": "Dunlop Cork"
+ },
+ {
+  "id": "L08-S13-3",
+  "person": "L08",
+  "type": "when",
+  "storyline": "S13",
+  "question": "When did my cork supplier change to Natural Cork Co?",
+  "gold": "2026-03-21"
+ },
+ {
+  "id": "L08-S14-1",
+  "person": "L08",
+  "type": "now",
+  "storyline": "S14",
+  "question": "What is my regular taxi service now?",
+  "gold": "Uber Business (it was Radio Taxi 456)"
+ },
+ {
+  "id": "L08-S14-2",
+  "person": "L08",
+  "type": "before",
+  "storyline": "S14",
+  "question": "What was my regular taxi service before it changed?",
+  "gold": "Radio Taxi 456"
+ },
+ {
+  "id": "L08-S14-3",
+  "person": "L08",
+  "type": "when",
+  "storyline": "S14",
+  "question": "When did my regular taxi service change to Uber Business?",
+  "gold": "2026-04-01"
+ },
+ {
+  "id": "L08-S15-1",
+  "person": "L08",
+  "type": "now",
+  "storyline": "S15",
+  "question": "What is my physiotherapy clinic now?",
+  "gold": "Clínica del Deporte (it was Centro Salud Espalda)"
+ },
+ {
+  "id": "L08-S15-2",
+  "person": "L08",
+  "type": "before",
+  "storyline": "S15",
+  "question": "What was my physiotherapy clinic before it changed?",
+  "gold": "Centro Salud Espalda"
+ },
+ {
+  "id": "L08-S15-3",
+  "person": "L08",
+  "type": "when",
+  "storyline": "S15",
+  "question": "When did my physiotherapy clinic change to Clínica del Deporte?",
+  "gold": "2026-03-26"
+ },
+ {
+  "id": "L08-S16-1",
+  "person": "L08",
+  "type": "now",
+  "storyline": "S16",
+  "question": "What is my running trail location now?",
+  "gold": "Viñedo Ruta 40 (it was Parque General San Martín)"
+ },
+ {
+  "id": "L08-S16-2",
+  "person": "L08",
+  "type": "before",
+  "storyline": "S16",
+  "question": "What was my running trail location before it changed?",
+  "gold": "Parque General San Martín"
+ },
+ {
+  "id": "L08-S16-3",
+  "person": "L08",
+  "type": "when",
+  "storyline": "S16",
+  "question": "When did my running trail location change to Viñedo Ruta 40?",
+  "gold": "2026-03-28"
+ },
+ {
+  "id": "L08-S17-1",
+  "person": "L08",
+  "type": "now",
+  "storyline": "S17",
+  "question": "What is my weekly dinner restaurant now?",
+  "gold": "La Trattoria (I switched to El Olivo, then went back)"
+ },
+ {
+  "id": "L08-S18-1",
+  "person": "L08",
+  "type": "now",
+  "storyline": "S18",
+  "question": "Who is my weekly hairdresser now?",
+  "gold": "Salón Belleza Clara (I switched to Estética Moderna, then went back)"
+ },
+ {
+  "id": "L08-S19-1",
+  "person": "L08",
+  "type": "now",
+  "storyline": "S19",
+  "question": "Who is my mother's cardiologist?",
+  "gold": "Dr. Sofia Alvarez (Dr. Mateo Ruiz was a slip, corrected on 2026-03-16)"
+ },
+ {
+  "id": "L08-S20-1",
+  "person": "L08",
+  "type": "now",
+  "storyline": "S20",
+  "question": "What is my garage door repair company?",
+  "gold": "GarageFix Mendoza (Puertas Seguras was a slip, corrected on 2026-04-04)"
+ },
+ {
+  "id": "L08-S21-1",
+  "person": "L08",
+  "type": "considered",
+  "storyline": "S21",
+  "question": "Did I change my vitamin supplement brand to Nature's Best?",
+  "gold": "No: I only thought about it; it is still VitaLife Daily"
+ },
+ {
+  "id": "L08-S22-1",
+  "person": "L08",
+  "type": "considered",
+  "storyline": "S22",
+  "question": "Did I change my weekly grocery delivery service to FreshMarket Online?",
+  "gold": "No: I only thought about it; it is still Mercado Express"
+ },
+ {
+  "id": "L08-S23-1",
+  "person": "L08",
+  "type": "now",
+  "storyline": "S23",
+  "question": "What is my wine tasting notes app now?",
+  "gold": "TasteTracker (changed from VinoLog Pro after thinking about it)"
+ },
+ {
+  "id": "L08-S23-2",
+  "person": "L08",
+  "type": "when",
+  "storyline": "S23",
+  "question": "When did I go ahead with TasteTracker for my wine tasting notes app?",
+  "gold": "2026-03-28"
+ },
+ {
+  "id": "L08-S24-1",
+  "person": "L08",
+  "type": "now",
+  "storyline": "S24",
+  "question": "What is my monthly gym membership cost?",
+  "gold": "4500 pesos (3000 pesos was only a what-if)"
+ },
+ {
+  "id": "L08-S25-1",
+  "person": "L08",
+  "type": "now",
+  "storyline": "S25",
+  "question": "What is my brother's home address?",
+  "gold": "Calle Los Andes 45 (Av. San Martín 120 was only a what-if)"
+ },
+ {
+  "id": "L08-S26-1",
+  "person": "L08",
+  "type": "whose",
+  "storyline": "S26",
+  "question": "What is my pet groomer?",
+  "gold": "Grooming Paws Mendoza (Canine Care Club is Marco's)"
+ },
+ {
+  "id": "L08-S26-2",
+  "person": "L08",
+  "type": "whose",
+  "storyline": "S26",
+  "question": "What is Marco's pet groomer?",
+  "gold": "Canine Care Club"
+ },
+ {
+  "id": "L08-S27-1",
+  "person": "L08",
+  "type": "whose",
+  "storyline": "S27",
+  "question": "Who is my running club leader?",
+  "gold": "Carlos Mendez (Ana Gutierrez is Lina's)"
+ },
+ {
+  "id": "L08-S27-2",
+  "person": "L08",
+  "type": "whose",
+  "storyline": "S27",
+  "question": "Who is Lina's running club leader?",
+  "gold": "Ana Gutierrez"
+ },
+ {
+  "id": "L08-S28-1",
+  "person": "L08",
+  "type": "whose",
+  "storyline": "S28",
+  "question": "Who is my tax advisor?",
+  "gold": "Lic. Javier Torres (Lic. Maria Fernandez is Marco's)"
+ },
+ {
+  "id": "L08-S28-2",
+  "person": "L08",
+  "type": "whose",
+  "storyline": "S28",
+  "question": "Who is Marco's tax advisor?",
+  "gold": "Lic. Maria Fernandez"
+ },
+ {
+  "id": "L08-S29-1",
+  "person": "L08",
+  "type": "need",
+  "storyline": "S29",
+  "question": "Am I still looking for extra pickers for the harvest week starting 16 March?",
+  "gold": "No: sorted on 2026-03-14 (hired a crew of six through Raúl Gómez)"
+ },
+ {
+  "id": "L08-S30-1",
+  "person": "L08",
+  "type": "need",
+  "storyline": "S30",
+  "question": "Am I still looking for a carer to stay with my mother on Thursdays?",
+  "gold": "No: sorted on 2026-03-28 (Doña Elena Ruiz now comes on Thursdays)"
+ },
+ {
+  "id": "L08-needs_now-1",
+  "person": "L08",
+  "type": "needs_now",
+  "storyline": null,
+  "question": "Which of my needs are still open: things I am looking for someone to provide or help with (a person, a service, an item)? List them all.",
+  "gold": "an importer for her Malbec in Germany; a used bottling machine in good condition",
+  "note": "not: needs already solved, or needs of someone else"
+ },
+ {
+  "id": "L08-none-1",
+  "person": "L08",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my first car?",
+  "gold": "not in memory"
+ },
+ {
+  "id": "L08-none-2",
+  "person": "L08",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my grandmother's maiden name?",
+  "gold": "not in memory"
+ },
+ {
+  "id": "L08-none-3",
+  "person": "L08",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my favourite film?",
+  "gold": "not in memory"
+ },
+ {
+  "id": "L09-S01-1",
+  "person": "L09",
+  "type": "fact",
+  "storyline": "S01",
+  "question": "What is my pro bono case deadline?",
+  "gold": "2026-03-04"
+ },
+ {
+  "id": "L09-S02-1",
+  "person": "L09",
+  "type": "fact",
+  "storyline": "S02",
+  "question": "What is my return to work date?",
+  "gold": "2026-04-12"
+ },
+ {
+  "id": "L09-S03-1",
+  "person": "L09",
+  "type": "fact",
+  "storyline": "S03",
+  "question": "When is my running club meeting?",
+  "gold": "2026-04-05"
+ },
+ {
+  "id": "L09-S05-1",
+  "person": "L09",
+  "type": "fact",
+  "storyline": "S05",
+  "question": "What is my baby monitor subscription?",
+  "gold": "12.99 CAD a month"
+ },
+ {
+  "id": "L09-S06-1",
+  "person": "L09",
+  "type": "fact",
+  "storyline": "S06",
+  "question": "When is my mother-in-law's visit?",
+  "gold": "2026-03-22",
+  "plain": "When is my mother in law visit?"
+ },
+ {
+  "id": "L09-S07-1",
+  "person": "L09",
+  "type": "fact",
+  "storyline": "S07",
+  "question": "When is my firm partner lunch?",
+  "gold": "2026-03-31"
+ },
+ {
+  "id": "L09-S08-1",
+  "person": "L09",
+  "type": "fact",
+  "storyline": "S08",
+  "question": "When is my jazz concert?",
+  "gold": "2026-04-08",
+  "plain": "When is my jazz concert ticket?"
+ },
+ {
+  "id": "L09-S09-1",
+  "person": "L09",
+  "type": "fact",
+  "storyline": "S09",
+  "question": "When is my annual physical appointment?",
+  "gold": "2026-04-15"
+ },
+ {
+  "id": "L09-S10-1",
+  "person": "L09",
+  "type": "fact",
+  "storyline": "S10",
+  "question": "What is my brother's graduation venue?",
+  "gold": "Harbourfront Centre"
+ },
+ {
+  "id": "L09-S12-1",
+  "person": "L09",
+  "type": "now",
+  "storyline": "S12",
+  "question": "What is my grocery delivery app now?",
+  "gold": "Amazon Fresh (it was Instacart)"
+ },
+ {
+  "id": "L09-S12-2",
+  "person": "L09",
+  "type": "before",
+  "storyline": "S12",
+  "question": "What was my grocery delivery app before it changed?",
+  "gold": "Instacart"
+ },
+ {
+  "id": "L09-S12-3",
+  "person": "L09",
+  "type": "when",
+  "storyline": "S12",
+  "question": "When did my grocery delivery app change to Amazon Fresh?",
+  "gold": "2026-03-19"
+ },
+ {
+  "id": "L09-S13-1",
+  "person": "L09",
+  "type": "now",
+  "storyline": "S13",
+  "question": "What is my commute route to firm now?",
+  "gold": "TTC streetcar (it was Queen Street car)"
+ },
+ {
+  "id": "L09-S13-2",
+  "person": "L09",
+  "type": "before",
+  "storyline": "S13",
+  "question": "What was my commute route to firm before it changed?",
+  "gold": "Queen Street car"
+ },
+ {
+  "id": "L09-S13-3",
+  "person": "L09",
+  "type": "when",
+  "storyline": "S13",
+  "question": "When did my commute route to firm change to TTC streetcar?",
+  "gold": "2026-03-26"
+ },
+ {
+  "id": "L09-S14-1",
+  "person": "L09",
+  "type": "now",
+  "storyline": "S14",
+  "question": "What is my parking spot rental now?",
+  "gold": "Yonge Street lot (it was Bay Street garage)"
+ },
+ {
+  "id": "L09-S14-2",
+  "person": "L09",
+  "type": "before",
+  "storyline": "S14",
+  "question": "What was my parking spot rental before it changed?",
+  "gold": "Bay Street garage"
+ },
+ {
+  "id": "L09-S14-3",
+  "person": "L09",
+  "type": "when",
+  "storyline": "S14",
+  "question": "When did my parking spot rental change to Yonge Street lot?",
+  "gold": "2026-03-11"
+ },
+ {
+  "id": "L09-S15-1",
+  "person": "L09",
+  "type": "now",
+  "storyline": "S15",
+  "question": "What is my childcare tax credit amount now?",
+  "gold": "520 CAD (it was 450 CAD)"
+ },
+ {
+  "id": "L09-S15-2",
+  "person": "L09",
+  "type": "before",
+  "storyline": "S15",
+  "question": "What was my childcare tax credit amount before it changed?",
+  "gold": "450 CAD"
+ },
+ {
+  "id": "L09-S15-3",
+  "person": "L09",
+  "type": "when",
+  "storyline": "S15",
+  "question": "When did my childcare tax credit amount change to 520 CAD?",
+  "gold": "2026-03-23"
+ },
+ {
+  "id": "L09-S16-1",
+  "person": "L09",
+  "type": "now",
+  "storyline": "S16",
+  "question": "When is my father's weekend visit now?",
+  "gold": "2026-03-21 (it was 2026-03-12)",
+  "plain": "When is my father weekend visit now?"
+ },
+ {
+  "id": "L09-S16-2",
+  "person": "L09",
+  "type": "before",
+  "storyline": "S16",
+  "question": "When was my father's weekend visit before it changed?",
+  "gold": "2026-03-12",
+  "plain": "When was my father weekend visit before it changed?"
+ },
+ {
+  "id": "L09-S17-1",
+  "person": "L09",
+  "type": "now",
+  "storyline": "S17",
+  "question": "What is my baby monitor app now?",
+  "gold": "Nanit (I switched to Owlet, then went back)"
+ },
+ {
+  "id": "L09-S18-1",
+  "person": "L09",
+  "type": "now",
+  "storyline": "S18",
+  "question": "What is my sleep pattern now?",
+  "gold": "8 hours straight (I switched to two 3-hour blocks, then went back)"
+ },
+ {
+  "id": "L09-S19-1",
+  "person": "L09",
+  "type": "now",
+  "storyline": "S19",
+  "question": "Who is my pediatrician?",
+  "gold": "Dr. Patel (Dr. Evans was a slip, corrected on 2026-04-03)",
+  "plain": "Who is my pediatrician name?"
+ },
+ {
+  "id": "L09-S20-1",
+  "person": "L09",
+  "type": "now",
+  "storyline": "S20",
+  "question": "What is my pro bono case file number?",
+  "gold": "PB-9024 (PB-9021 was a slip, corrected on 2026-03-15)"
+ },
+ {
+  "id": "L09-S21-1",
+  "person": "L09",
+  "type": "considered",
+  "storyline": "S21",
+  "question": "Did I change my weekend hiking trail to Rouge Park?",
+  "gold": "No: I only thought about it; it is still Bruce Trail"
+ },
+ {
+  "id": "L09-S22-1",
+  "person": "L09",
+  "type": "considered",
+  "storyline": "S22",
+  "question": "Did I change my investment account provider to Questrade?",
+  "gold": "No: I only thought about it; it is still Wealthsimple"
+ },
+ {
+  "id": "L09-S23-1",
+  "person": "L09",
+  "type": "now",
+  "storyline": "S23",
+  "question": "What is my pro bono filing method now?",
+  "gold": "courthouse drop-off (changed from online portal after thinking about it)"
+ },
+ {
+  "id": "L09-S23-2",
+  "person": "L09",
+  "type": "when",
+  "storyline": "S23",
+  "question": "When did I go ahead with courthouse drop-off for my pro bono filing method?",
+  "gold": "2026-04-03"
+ },
+ {
+  "id": "L09-S24-1",
+  "person": "L09",
+  "type": "now",
+  "storyline": "S24",
+  "question": "What is my family vacation destination?",
+  "gold": "Niagara Falls (Banff National Park was only a what-if)"
+ },
+ {
+  "id": "L09-S25-1",
+  "person": "L09",
+  "type": "now",
+  "storyline": "S25",
+  "question": "What is my baby clothing brand?",
+  "gold": "Carter's (Hanna Andersson was only a what-if)"
+ },
+ {
+  "id": "L09-S26-1",
+  "person": "L09",
+  "type": "whose",
+  "storyline": "S26",
+  "question": "What is my jazz club membership?",
+  "gold": "The Rex Jazz Bar (Smalls Jazz Club is Elena's)"
+ },
+ {
+  "id": "L09-S26-2",
+  "person": "L09",
+  "type": "whose",
+  "storyline": "S26",
+  "question": "What is Elena's jazz club membership?",
+  "gold": "Smalls Jazz Club"
+ },
+ {
+  "id": "L09-S27-1",
+  "person": "L09",
+  "type": "whose",
+  "storyline": "S27",
+  "question": "What is my weekly dry cleaner pickup?",
+  "gold": "Green Earth Cleaners (Press & Fold is Marcus's)"
+ },
+ {
+  "id": "L09-S27-2",
+  "person": "L09",
+  "type": "whose",
+  "storyline": "S27",
+  "question": "What is Marcus's weekly dry cleaner pickup?",
+  "gold": "Press & Fold"
+ },
+ {
+  "id": "L09-S28-1",
+  "person": "L09",
+  "type": "whose",
+  "storyline": "S28",
+  "question": "What is my family health insurance provider?",
+  "gold": "Manulife Financial (Sun Life is Grace's)"
+ },
+ {
+  "id": "L09-S28-2",
+  "person": "L09",
+  "type": "whose",
+  "storyline": "S28",
+  "question": "What is Grace's family health insurance provider?",
+  "gold": "Sun Life"
+ },
+ {
+  "id": "L09-S29-1",
+  "person": "L09",
+  "type": "need",
+  "storyline": "S29",
+  "question": "Am I still looking for a second-hand stroller that folds small enough for the TTC?",
+  "gold": "No: sorted on 2026-03-16 (bought a used UPPAbaby from Nadia Chen)"
+ },
+ {
+  "id": "L09-S30-1",
+  "person": "L09",
+  "type": "need",
+  "storyline": "S30",
+  "question": "Am I still looking for a lactation consultant who does home visits?",
+  "gold": "No: sorted on 2026-03-10 (Grace booked Megan Ross for home visits)"
+ },
+ {
+  "id": "L09-needs_now-1",
+  "person": "L09",
+  "type": "needs_now",
+  "storyline": null,
+  "question": "Which of my needs are still open: things I am looking for someone to provide or help with (a person, a service, an item)? List them all.",
+  "gold": "a daycare spot for Ada from January; a mentor who went back to Bay Street after parental leave",
+  "note": "not: needs already solved, or needs of someone else"
+ },
+ {
+  "id": "L09-none-1",
+  "person": "L09",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my shoe size?",
+  "gold": "not in memory"
+ },
+ {
+  "id": "L09-none-2",
+  "person": "L09",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my piano grade?",
+  "gold": "not in memory"
+ },
+ {
+  "id": "L09-none-3",
+  "person": "L09",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my passport number?",
+  "gold": "not in memory"
+ },
+ {
+  "id": "L10-S01-1",
+  "person": "L10",
+  "type": "fact",
+  "storyline": "S01",
+  "question": "What is my weekly grocery provider?",
+  "gold": "Nature's Basket Koramangala"
+ },
+ {
+  "id": "L10-S02-1",
+  "person": "L10",
+  "type": "fact",
+  "storyline": "S02",
+  "question": "What is my flight to Mumbai?",
+  "gold": "IndiGo 6E 204"
+ },
+ {
+  "id": "L10-S03-1",
+  "person": "L10",
+  "type": "fact",
+  "storyline": "S03",
+  "question": "What is my train to Mysore?",
+  "gold": "Shatabdi Express 12008"
+ },
+ {
+  "id": "L10-S04-1",
+  "person": "L10",
+  "type": "fact",
+  "storyline": "S04",
+  "question": "What is my laptop repair shop?",
+  "gold": "MacBook Center MG Road"
+ },
+ {
+  "id": "L10-S05-1",
+  "person": "L10",
+  "type": "fact",
+  "storyline": "S05",
+  "question": "Where is my annual health checkup?",
+  "gold": "Apollo Hospitals Jayanagar",
+  "plain": "What is my annual health checkup?"
+ },
+ {
+  "id": "L10-S06-1",
+  "person": "L10",
+  "type": "fact",
+  "storyline": "S06",
+  "question": "What is my home internet provider?",
+  "gold": "Airtel Xstream Fiber"
+ },
+ {
+  "id": "L10-S07-1",
+  "person": "L10",
+  "type": "fact",
+  "storyline": "S07",
+  "question": "What is my cab to airport?",
+  "gold": "Uber Black"
+ },
+ {
+  "id": "L10-S08-1",
+  "person": "L10",
+  "type": "fact",
+  "storyline": "S08",
+  "question": "What is my bank branch for check deposit?",
+  "gold": "HDFC Bank Indiranagar"
+ },
+ {
+  "id": "L10-S09-1",
+  "person": "L10",
+  "type": "fact",
+  "storyline": "S09",
+  "question": "What is my co-working space desk?",
+  "gold": "WeWork Embassy Golf Links"
+ },
+ {
+  "id": "L10-S10-1",
+  "person": "L10",
+  "type": "fact",
+  "storyline": "S10",
+  "question": "What is my mother's birthday gift?",
+  "gold": "Swarovski necklace"
+ },
+ {
+  "id": "L10-S11-1",
+  "person": "L10",
+  "type": "now",
+  "storyline": "S11",
+  "question": "What is my gym membership now?",
+  "gold": "Cult.fit Indiranagar (it was Gold's Gym Koramangala)"
+ },
+ {
+  "id": "L10-S11-2",
+  "person": "L10",
+  "type": "before",
+  "storyline": "S11",
+  "question": "What was my gym membership before it changed?",
+  "gold": "Gold's Gym Koramangala"
+ },
+ {
+  "id": "L10-S11-3",
+  "person": "L10",
+  "type": "when",
+  "storyline": "S11",
+  "question": "When did my gym membership change to Cult.fit Indiranagar?",
+  "gold": "2026-03-26"
+ },
+ {
+  "id": "L10-S12-1",
+  "person": "L10",
+  "type": "now",
+  "storyline": "S12",
+  "question": "What is my evening hobby class now?",
+  "gold": "Pottery workshop at Crafts Museum (it was Kathak dance at Kalakshetra)"
+ },
+ {
+  "id": "L10-S12-2",
+  "person": "L10",
+  "type": "before",
+  "storyline": "S12",
+  "question": "What was my evening hobby class before it changed?",
+  "gold": "Kathak dance at Kalakshetra"
+ },
+ {
+  "id": "L10-S12-3",
+  "person": "L10",
+  "type": "when",
+  "storyline": "S12",
+  "question": "When did my evening hobby class change to Pottery workshop at Crafts Museum?",
+  "gold": "2026-03-16"
+ },
+ {
+  "id": "L10-S13-1",
+  "person": "L10",
+  "type": "now",
+  "storyline": "S13",
+  "question": "What is my home security system now?",
+  "gold": "Vimala Smart Lock (it was Honeywell Smart Lock)"
+ },
+ {
+  "id": "L10-S13-2",
+  "person": "L10",
+  "type": "before",
+  "storyline": "S13",
+  "question": "What was my home security system before it changed?",
+  "gold": "Honeywell Smart Lock"
+ },
+ {
+  "id": "L10-S13-3",
+  "person": "L10",
+  "type": "when",
+  "storyline": "S13",
+  "question": "When did my home security system change to Vimala Smart Lock?",
+  "gold": "2026-04-12"
+ },
+ {
+  "id": "L10-S14-1",
+  "person": "L10",
+  "type": "now",
+  "storyline": "S14",
+  "question": "Who is my chartered accountant for tax filing now?",
+  "gold": "Mehta & Co Chartered Accountants (it was Rajesh Kumar & Associates)",
+  "plain": "What is my CA for tax filing now?"
+ },
+ {
+  "id": "L10-S14-2",
+  "person": "L10",
+  "type": "before",
+  "storyline": "S14",
+  "question": "Who was my chartered accountant for tax filing before it changed?",
+  "gold": "Rajesh Kumar & Associates",
+  "plain": "What was my CA for tax filing before it changed?"
+ },
+ {
+  "id": "L10-S14-3",
+  "person": "L10",
+  "type": "when",
+  "storyline": "S14",
+  "question": "When did my chartered accountant for tax filing change to Mehta & Co Chartered Accountants?",
+  "gold": "2026-04-12",
+  "plain": "When did my CA for tax filing change to Mehta & Co Chartered Accountants?"
+ },
+ {
+  "id": "L10-S15-1",
+  "person": "L10",
+  "type": "now",
+  "storyline": "S15",
+  "question": "What is my credit card limit now?",
+  "gold": "INR 750000 (it was INR 500000)"
+ },
+ {
+  "id": "L10-S15-2",
+  "person": "L10",
+  "type": "before",
+  "storyline": "S15",
+  "question": "What was my credit card limit before it changed?",
+  "gold": "INR 500000"
+ },
+ {
+  "id": "L10-S15-3",
+  "person": "L10",
+  "type": "when",
+  "storyline": "S15",
+  "question": "When did my credit card limit change to INR 750000?",
+  "gold": "2026-04-07"
+ },
+ {
+  "id": "L10-S16-1",
+  "person": "L10",
+  "type": "now",
+  "storyline": "S16",
+  "question": "What is my monthly SIP amount now?",
+  "gold": "INR 25000 (it was INR 15000)"
+ },
+ {
+  "id": "L10-S16-2",
+  "person": "L10",
+  "type": "before",
+  "storyline": "S16",
+  "question": "What was my monthly SIP amount before it changed?",
+  "gold": "INR 15000"
+ },
+ {
+  "id": "L10-S16-3",
+  "person": "L10",
+  "type": "when",
+  "storyline": "S16",
+  "question": "When did my monthly SIP amount change to INR 25000?",
+  "gold": "2026-04-02"
+ },
+ {
+  "id": "L10-S17-1",
+  "person": "L10",
+  "type": "now",
+  "storyline": "S17",
+  "question": "Who is my weekly yoga instructor now?",
+  "gold": "Anjali Iyengar (I switched to Meera Desai, then went back)"
+ },
+ {
+  "id": "L10-S18-1",
+  "person": "L10",
+  "type": "now",
+  "storyline": "S18",
+  "question": "Who is my bookkeeper now?",
+  "gold": "Sunita Rao (I switched to Kiran Patel, then went back)",
+  "plain": "What is my monthly bookkeeper now?"
+ },
+ {
+  "id": "L10-S19-1",
+  "person": "L10",
+  "type": "now",
+  "storyline": "S19",
+  "question": "How much has my start-up raised in this round?",
+  "gold": "INR 2.5 Crores (INR 2 Crores was a slip, corrected on 2026-04-08)",
+  "plain": "What is my investment amount raised?"
+ },
+ {
+  "id": "L10-S20-1",
+  "person": "L10",
+  "type": "now",
+  "storyline": "S20",
+  "question": "What is my flight departure time?",
+  "gold": "15:30 (14:30 was a slip, corrected on 2026-04-09)"
+ },
+ {
+  "id": "L10-S21-1",
+  "person": "L10",
+  "type": "considered",
+  "storyline": "S21",
+  "question": "Did I change my backup power generator to Sukam 3kVA?",
+  "gold": "No: I only thought about it; it is still Kirloskar 5kVA"
+ },
+ {
+  "id": "L10-S22-1",
+  "person": "L10",
+  "type": "considered",
+  "storyline": "S22",
+  "question": "Did I change my office printer lease to Canon imageRUNNER?",
+  "gold": "No: I only thought about it; it is still HP LaserJet Pro"
+ },
+ {
+  "id": "L10-S23-1",
+  "person": "L10",
+  "type": "now",
+  "storyline": "S23",
+  "question": "Who is my morning running coach now?",
+  "gold": "Neha Kapoor (changed from Rohan Gupta after thinking about it)"
+ },
+ {
+  "id": "L10-S23-2",
+  "person": "L10",
+  "type": "when",
+  "storyline": "S23",
+  "question": "When did I go ahead with Neha Kapoor for my morning running coach?",
+  "gold": "2026-03-17"
+ },
+ {
+  "id": "L10-S24-1",
+  "person": "L10",
+  "type": "now",
+  "storyline": "S24",
+  "question": "What is my daily step goal?",
+  "gold": "10000 steps (15000 steps was only a what-if)"
+ },
+ {
+  "id": "L10-S25-1",
+  "person": "L10",
+  "type": "now",
+  "storyline": "S25",
+  "question": "What is my sleep duration target?",
+  "gold": "7 hours (8 hours was only a what-if)"
+ },
+ {
+  "id": "L10-S27-1",
+  "person": "L10",
+  "type": "whose",
+  "storyline": "S27",
+  "question": "What is my pet groomer?",
+  "gold": "Paws & Claws Koramangala (The Dog Spot Indiranagar is Ravi's)"
+ },
+ {
+  "id": "L10-S27-2",
+  "person": "L10",
+  "type": "whose",
+  "storyline": "S27",
+  "question": "What is Ravi's pet groomer?",
+  "gold": "The Dog Spot Indiranagar"
+ },
+ {
+  "id": "L10-S28-1",
+  "person": "L10",
+  "type": "whose",
+  "storyline": "S28",
+  "question": "What is my credit card annual fee?",
+  "gold": "INR 12000 (INR 4500 is Ravi's)"
+ },
+ {
+  "id": "L10-S28-2",
+  "person": "L10",
+  "type": "whose",
+  "storyline": "S28",
+  "question": "What is Ravi's credit card annual fee?",
+  "gold": "INR 4500"
+ },
+ {
+  "id": "L10-S29-1",
+  "person": "L10",
+  "type": "need",
+  "storyline": "S29",
+  "question": "Am I still looking for a senior Android developer to hire by April?",
+  "gold": "No: sorted on 2026-03-13 (hired Arjun Menon, who starts on 6 April)"
+ },
+ {
+  "id": "L10-S30-1",
+  "person": "L10",
+  "type": "need",
+  "storyline": "S30",
+  "question": "Am I still looking for a warm introduction to someone at Kalaari Capital?",
+  "gold": "No: sorted on 2026-04-08 (Ritu Shah introduced her to a partner at Kalaari)"
+ },
+ {
+  "id": "L10-needs_now-1",
+  "person": "L10",
+  "type": "needs_now",
+  "storyline": null,
+  "question": "Which of my needs are still open: things I am looking for someone to provide or help with (a person, a service, an item)? List them all.",
+  "gold": "a co-founder who can run sales; a startup lawyer to review the term sheet",
+  "note": "not: needs already solved, or needs of someone else"
+ },
+ {
+  "id": "L10-none-1",
+  "person": "L10",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my wifi password?",
+  "gold": "not in memory"
+ },
+ {
+  "id": "L10-none-2",
+  "person": "L10",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my blood type?",
+  "gold": "not in memory"
+ },
+ {
+  "id": "L10-none-3",
+  "person": "L10",
+  "type": "none",
+  "storyline": null,
+  "question": "What is my favourite football team?",
+  "gold": "not in memory"
+ }
+]

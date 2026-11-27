@@ -1,0 +1,211 @@
+{
+ "person": "L09",
+ "model": "opus",
+ "verdicts": {
+  "L09-S01-1": {
+   "verdict": "ok",
+   "why": "Session 003 gives the deadline as 2026-03-04, and sessions 010, 015 and 021 repeat it."
+  },
+  "L09-S02-1": {
+   "verdict": "ok",
+   "why": "Session 048: 'I’m logging off my parental leave effective today, 2026-04-12' and the reply says 'officially back at work as of today'. This is the last word and replaces the earlier June 1 and April 14 plans."
+  },
+  "L09-S03-1": {
+   "verdict": "ok",
+   "why": "Session 039: 'our running club meeting is 2026-04-05'."
+  },
+  "L09-S05-1": {
+   "verdict": "ok",
+   "why": "Sessions 021 and 039 both give 12.99 CAD a month."
+  },
+  "L09-S06-1": {
+   "verdict": "ok",
+   "why": "Session 029: 'Your mother-in-law’s visit was on 2026-03-22.'"
+  },
+  "L09-S07-1": {
+   "verdict": "ok",
+   "why": "Session 034: 'My firm partner lunch is 2026-03-31.'"
+  },
+  "L09-S08-1": {
+   "verdict": "ok",
+   "why": "Session 043 confirms a ticket for the Toronto Jazz Festival on 2026-04-08."
+  },
+  "L09-S09-1": {
+   "verdict": "ok",
+   "why": "Session 036 gives the annual physical as 2026-04-15."
+  },
+  "L09-S10-1": {
+   "verdict": "ok",
+   "why": "Session 010 puts the brother's graduation at Harbourfront Centre."
+  },
+  "L09-S12-1": {
+   "verdict": "ok",
+   "why": "Session 020 says the app is now Amazon Fresh, replacing Instacart (used in session 016). Session 032 keeps Amazon Fresh."
+  },
+  "L09-S12-2": {
+   "verdict": "ok",
+   "why": "Instacart was the app used in sessions 016 and 020."
+  },
+  "L09-S12-3": {
+   "verdict": "wrong",
+   "why": "On 2026-03-19 the user only reports a switch that happened 'last week'. The sessions give no exact date, and 03-19 is just the day it was mentioned.",
+   "quote": "No, that app is gone. It’s Amazon Fresh now. I had to switch accounts last week.",
+   "session": "020",
+   "better_reference": "The week before 2026-03-19 (reported on 2026-03-19; exact date not stated)",
+   "quote_found": true
+  },
+  "L09-S13-1": {
+   "verdict": "ok",
+   "why": "Session 029: 'you are now taking the TTC streetcar, as the Queen Street car service is undergoing maintenance'."
+  },
+  "L09-S13-2": {
+   "verdict": "ok",
+   "why": "Session 020: 'my commute is still Queen Street by car'."
+  },
+  "L09-S13-3": {
+   "verdict": "ok",
+   "why": "The change is stated in session 029, dated 2026-03-26."
+  },
+  "L09-S14-1": {
+   "verdict": "ok",
+   "why": "Session 011 changes Bay Street garage to the Yonge Street lot, and session 031 confirms it."
+  },
+  "L09-S14-2": {
+   "verdict": "ok",
+   "why": "Bay Street garage appears in sessions 007 and 011."
+  },
+  "L09-S14-3": {
+   "verdict": "ok",
+   "why": "The change is made in session 011, dated 2026-03-11."
+  },
+  "L09-S15-1": {
+   "verdict": "ok",
+   "why": "Session 032: 'now 520 CAD (it was 450 CAD)'."
+  },
+  "L09-S15-2": {
+   "verdict": "ok",
+   "why": "Sessions 017 and 032 both give 450 CAD as the earlier amount."
+  },
+  "L09-S15-3": {
+   "verdict": "ok",
+   "why": "Session 032: 'This happened on Monday 23 March.'"
+  },
+  "L09-S16-1": {
+   "verdict": "ok",
+   "why": "Session 022 says the visit was rescheduled to 2026-03-21; session 012 had it on 2026-03-12."
+  },
+  "L09-S16-2": {
+   "verdict": "ok",
+   "why": "Session 012: 'Your father’s arrival is scheduled for 2026-03-12'."
+  },
+  "L09-S17-1": {
+   "verdict": "ok",
+   "why": "The app was Nanit (session 015), switched to Owlet on 15 March (session 022), then went back to Nanit (session 023)."
+  },
+  "L09-S18-1": {
+   "verdict": "ok",
+   "why": "Session 034 switches to two 3-hour blocks; session 045 goes back to 8 hours straight."
+  },
+  "L09-S19-1": {
+   "verdict": "ok",
+   "why": "Session 037 corrects Dr. Evans to Dr. Patel on 2026-04-03, and session 038 confirms Dr. Patel."
+  },
+  "L09-S20-1": {
+   "verdict": "wrong",
+   "why": "PB-9024 is right, but the correction was made in session 017, dated 2026-03-16. The user only says the slip happened on 15 March.",
+   "quote": "It’s PB-9024, not PB-9021. I messed that up on Sunday 15 March.",
+   "session": "017",
+   "better_reference": "PB-9024 (PB-9021 was a slip, corrected on 2026-03-16)",
+   "quote_found": true
+  },
+  "L09-S21-1": {
+   "verdict": "ok",
+   "why": "Session 018: 'I haven't decided yet, just thinking about it.' No session reports a change from Bruce Trail."
+  },
+  "L09-S22-1": {
+   "verdict": "unsupported",
+   "why": "The 'No, only thought about it' part is supported (session 031). The sessions never name Wealthsimple as the investment provider. Session 031 says only 'your current provider', and Wealthsimple appears only as an account with a checking balance.",
+   "quote": "can you check my Wealthsimple account? I want to make sure the transaction clears",
+   "session": "026",
+   "better_reference": "No: I only thought about it (on 2026-03-27); I have not switched. The current investment provider is not named.",
+   "quote_found": true
+  },
+  "L09-S23-1": {
+   "verdict": "ok",
+   "why": "Session 028 uses the online portal; session 033 considers courthouse drop-off; session 041 goes with courthouse drop-off."
+  },
+  "L09-S23-2": {
+   "verdict": "ok",
+   "why": "Session 041: 'It happened on Friday 3 April.'"
+  },
+  "L09-S24-1": {
+   "verdict": "ok",
+   "why": "Session 010 names Niagara Falls for the family vacation; session 012 calls Banff 'just a random what-if'."
+  },
+  "L09-S25-1": {
+   "verdict": "ok",
+   "why": "Session 026 says the family sticks with Carter's; session 032 calls Hanna Andersson 'Only an idea; nothing changes'."
+  },
+  "L09-S26-1": {
+   "verdict": "unsupported",
+   "why": "The user only thinks of stopping by The Rex to hear a set. No session says the user has a membership there or at any jazz club. Smalls is Elena's membership.",
+   "quote": "I was thinking of stopping by The Rex Jazz Bar on my way home. Just to listen to a set, not to drink. I haven’t been able to get out there in months",
+   "session": "044",
+   "better_reference": "Not in memory: no jazz club membership of mine is mentioned (I visit The Rex Jazz Bar; Smalls Jazz Club is Elena's membership)",
+   "quote_found": true
+  },
+  "L09-S26-2": {
+   "verdict": "ok",
+   "why": "Session 047: 'I heard she got that membership to Smalls Jazz Club'."
+  },
+  "L09-S27-1": {
+   "verdict": "ok",
+   "why": "Session 030 gives Green Earth Cleaners; session 040 gives Press & Fold as Marcus's."
+  },
+  "L09-S27-2": {
+   "verdict": "ok",
+   "why": "Session 040: 'His weekly dry cleaner pickup is Press & Fold.'"
+  },
+  "L09-S28-1": {
+   "verdict": "ok",
+   "why": "Sessions 004 and 005 give Manulife Financial; session 007 gives Sun Life as Grace's policy."
+  },
+  "L09-S28-2": {
+   "verdict": "ok",
+   "why": "Session 007: 'It’s the Sun Life one. The family health insurance provider.'"
+  },
+  "L09-S29-1": {
+   "verdict": "ok",
+   "why": "Session 021: 'I remember buying that used UPPAbaby from Nadia Chen back on Monday 16 March'."
+  },
+  "L09-S30-1": {
+   "verdict": "incomplete",
+   "why": "'No' is right, but Grace booked Megan Ross 'last week' relative to 2026-03-10. The 10th is only when the user learned of it. An answer giving the prior week (after 03-06, when it was still unsorted) should also count.",
+   "quote": "Grace actually booked Megan Ross for home visits last week. The confirmation is in your email.",
+   "session": "009",
+   "better_reference": "No: sorted the week before 2026-03-10 (learned on 2026-03-10) when Grace booked Megan Ross for home visits",
+   "quote_found": true
+  },
+  "L09-needs_now-1": {
+   "verdict": "incomplete",
+   "why": "Two more needs for a person or service are left open at the end. Session 036 needs a plumber for the basement leak: only quotes were requested. Session 031 needs an estate lawyer in Toronto to set up a trust for Ada: only three profiles were sent.",
+   "quote": "Oh, and one more thing. remind me to call the plumber. The leak in the basement hasn't stopped since Tuesday. I need to find someone who can come out this weekend.",
+   "session": "036",
+   "better_reference": "a daycare spot for Ada from January; a mentor who went back to Bay Street after parental leave; a plumber for the basement leak; an estate lawyer in Toronto to update my will and set up a trust for Ada",
+   "quote_found": false
+  },
+  "L09-none-1": {
+   "verdict": "ok",
+   "why": "No session mentions shoe size."
+  },
+  "L09-none-2": {
+   "verdict": "ok",
+   "why": "No session mentions a piano grade; the only piano reference is a pianist at The Rex."
+  },
+  "L09-none-3": {
+   "verdict": "ok",
+   "why": "No session mentions a passport number."
+  }
+ },
+ "cost": 0.5280342
+}

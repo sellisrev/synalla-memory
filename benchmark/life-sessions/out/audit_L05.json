@@ -1,0 +1,195 @@
+{
+ "person": "L05",
+ "model": "opus",
+ "verdicts": {
+  "L05-S01-1": {
+   "verdict": "ok",
+   "why": "Session 020 deducts 1,200,000 KRW rent, and session 021 states the monthly payment is 1,200,000 KRW."
+  },
+  "L05-S02-1": {
+   "verdict": "ok",
+   "why": "Sessions 006 and 011 say the sketching is on Sundays."
+  },
+  "L05-S03-1": {
+   "verdict": "ok",
+   "why": "Sessions 023 and 026 name Yongsan Electronics Market as the usual supplier for acrylic sheets and art supplies."
+  },
+  "L05-S04-1": {
+   "verdict": "ok",
+   "why": "Sessions 011 and 029 name Hongdae Photo Society."
+  },
+  "L05-S05-1": {
+   "verdict": "incomplete",
+   "why": "Session 034 does say Friday nights. Other sessions describe different shifts, so a reader could reasonably answer the Wednesday 14:00 to 20:00 shift that session 010 calls 'usual', or the Saturday 10 AM to 4 PM shift in session 005.",
+   "quote": "I’m working my usual shift at the café from 14:00 to 20:00 on Wednesday.",
+   "session": "010",
+   "better_reference": "Friday nights (session 034); also accept the usual Wednesday 14:00–20:00 shift (session 010)",
+   "quote_found": true
+  },
+  "L05-S06-1": {
+   "verdict": "ok",
+   "why": "Session 030 has the user swapping critique slots with Min-jun Kim, and session 044 mentions 'the critique with Min-jun'."
+  },
+  "L05-S07-1": {
+   "verdict": "ok",
+   "why": "Session 048: 'my spring break destination. It’s Jeju Island.'"
+  },
+  "L05-S08-1": {
+   "verdict": "ok",
+   "why": "Session 018 confirms the mother's birthday is March 17, and session 047 repeats it."
+  },
+  "L05-S09-1": {
+   "verdict": "ok",
+   "why": "Session 048: 'Your utility bill was due on April 11.'"
+  },
+  "L05-S10-1": {
+   "verdict": "ok",
+   "why": "Session 009 gives the student loan interest rate as 2.5%."
+  },
+  "L05-S11-1": {
+   "verdict": "ok",
+   "why": "Session 018 says the appointment was rescheduled from 09:00 to 14:30."
+  },
+  "L05-S11-2": {
+   "verdict": "ok",
+   "why": "Sessions 009, 010 and 018 give 09:00."
+  },
+  "L05-S11-3": {
+   "verdict": "ok",
+   "why": "Session 018: 'rescheduled on Saturday 14 March to 14:30'."
+  },
+  "L05-S12-1": {
+   "verdict": "ok",
+   "why": "Session 025: 'now Thursday 10am (it was Tuesday 10am)'."
+  },
+  "L05-S12-2": {
+   "verdict": "ok",
+   "why": "Sessions 019 and 025 give Tuesday 10am."
+  },
+  "L05-S12-3": {
+   "verdict": "ok",
+   "why": "The change is first reported in session 025, dated 2026-03-23."
+  },
+  "L05-S13-1": {
+   "verdict": "ok",
+   "why": "Session 014 says the appointment was rescheduled to 11:30 from 16:00 (the earlier time is in session 004)."
+  },
+  "L05-S13-2": {
+   "verdict": "ok",
+   "why": "Session 004 gives 16:00."
+  },
+  "L05-S13-3": {
+   "verdict": "ok",
+   "why": "Session 014: 'The change was processed on Sunday 8 March'."
+  },
+  "L05-S14-1": {
+   "verdict": "ok",
+   "why": "Session 019 says it is now Fitness First Gangnam, not Anytime Fitness Itaewon."
+  },
+  "L05-S14-2": {
+   "verdict": "ok",
+   "why": "Sessions 013 and 019 give Anytime Fitness Itaewon."
+  },
+  "L05-S14-3": {
+   "verdict": "ok",
+   "why": "The change is stated in session 019, dated 2026-03-19."
+  },
+  "L05-S15-1": {
+   "verdict": "ok",
+   "why": "Session 028: 'It’s Lotte Hotel World now'."
+  },
+  "L05-S15-2": {
+   "verdict": "ok",
+   "why": "Session 016 gives Seoul Forest Hotel."
+  },
+  "L05-S15-3": {
+   "verdict": "ok",
+   "why": "Session 028: 'I found out on Tuesday 24 March'."
+  },
+  "L05-S17-1": {
+   "verdict": "ok",
+   "why": "The dose was 5 mg in session 017, went to 10 mg in session 027, and back to 5 mg in session 029."
+  },
+  "L05-S18-1": {
+   "verdict": "ok",
+   "why": "The user switched to Ariel Pods in session 015, back to EcoClean in session 016, and EcoClean is still in use in session 030."
+  },
+  "L05-S19-1": {
+   "verdict": "ok",
+   "why": "Session 015 says it is SK Broadband and the KT entry was a mistake, fixed on Wednesday the 11th."
+  },
+  "L05-S20-1": {
+   "verdict": "ok",
+   "why": "Session 024 corrects the brand to UHU Por, and session 043 reaffirms UHU Por."
+  },
+  "L05-S22-1": {
+   "verdict": "ok",
+   "why": "Session 025 says the user was 'only thinking about' it, and session 023 names the usual venue as Seoul National University Library."
+  },
+  "L05-S23-1": {
+   "verdict": "ok",
+   "why": "The class was at Myeongdong Clay Studio in session 032, was being considered for a change in session 039, and is booked at Gangnam Ceramics Workshop in session 045."
+  },
+  "L05-S23-2": {
+   "verdict": "ok",
+   "why": "The booking first appears in session 045, dated 2026-04-09."
+  },
+  "L05-S24-1": {
+   "verdict": "ok",
+   "why": "Session 021 names Ondol floor heating, and the Central AC unit in session 028 is only a what-if."
+  },
+  "L05-S25-1": {
+   "verdict": "ok",
+   "why": "Session 043: 'I only drink Coffee Bean Republic'. Daehangno Roastery in session 049 is hypothetical."
+  },
+  "L05-S26-1": {
+   "verdict": "ok",
+   "why": "Session 031 gives the user's own annual fee as 0 KRW, and session 047 gives Min-jun's as 15,000 KRW."
+  },
+  "L05-S26-2": {
+   "verdict": "ok",
+   "why": "Session 047 gives 15,000 KRW."
+  },
+  "L05-S27-1": {
+   "verdict": "ok",
+   "why": "Session 001 gives 2026-04-01, and session 008 gives 2026-03-15 for Soo-jin's side."
+  },
+  "L05-S27-2": {
+   "verdict": "ok",
+   "why": "Session 008 gives 2026-03-15."
+  },
+  "L05-S29-1": {
+   "verdict": "incomplete",
+   "why": "The need is already met in session 032 (2026-03-29), when the user books a laser cutter at Hanbit Design Hub. A reader could reasonably give that as the date it was sorted; session 038 is a later booking.",
+   "quote": "Yes, please book that. I need to use a laser cutter she can use for my final studio model, and Hanbit has the high-precision ones.",
+   "session": "032",
+   "better_reference": "No: sorted (booked Hanbit Design Hub on 2026-03-29; later a slot at Seoul Fab Lab in Euljiro on 2026-04-04)",
+   "quote_found": true
+  },
+  "L05-S30-1": {
+   "verdict": "unsupported",
+   "why": "Hana Lee moving in on 1 April is supported, but the sessions never say Hana Lee is a design student.",
+   "quote": "I told Hana Lee she could move in on 1 April.",
+   "session": "017",
+   "better_reference": "No: sorted on 2026-03-16 (Hana Lee moves in on 1 April)",
+   "quote_found": true
+  },
+  "L05-needs_now-1": {
+   "verdict": "ok",
+   "why": "The Busan internship (session 029) and the review from a practising architect (session 037) are never resolved. The flatmate and laser cutter needs were met, and Dae-ho's laptop is someone else's need."
+  },
+  "L05-none-1": {
+   "verdict": "ok",
+   "why": "The sessions never mention it."
+  },
+  "L05-none-2": {
+   "verdict": "ok",
+   "why": "The sessions never mention it."
+  },
+  "L05-none-3": {
+   "verdict": "ok",
+   "why": "The sessions never mention it."
+  }
+ },
+ "cost": 0.5070622
+}

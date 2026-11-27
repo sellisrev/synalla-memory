@@ -1,0 +1,62 @@
+[
+ {
+  "person": "L01",
+  "storyline": "S29",
+  "thing": "a babysitter for Inès and Hugo on the evening of Saturday 21 March",
+  "why": "the need comes up after its own date"
+ },
+ {
+  "person": "L03",
+  "storyline": "S02",
+  "thing": "son's school",
+  "why": "could be confused with another storyline"
+ },
+ {
+  "person": "L04",
+  "storyline": "S04",
+  "thing": "heritage society meeting",
+  "why": "could be confused with another storyline"
+ },
+ {
+  "person": "L04",
+  "storyline": "S26",
+  "thing": "grandson's university",
+  "why": "could be confused with another storyline"
+ },
+ {
+  "person": "L04",
+  "storyline": "S29",
+  "thing": "someone to drive him to the diabetes clinic on 18 March",
+  "why": "the need comes up after its own date"
+ },
+ {
+  "person": "L05",
+  "storyline": "S21",
+  "thing": "potential study abroad partner",
+  "why": "the thing names the owner or says it was only considered"
+ },
+ {
+  "person": "L04",
+  "storyline": "S10",
+  "question": "What is my grandson's birthday gift?",
+  "why": "review: the value (a person's name) is not a gift"
+ },
+ {
+  "person": "L04",
+  "storyline": "S25",
+  "question": "What is my pension office contact?",
+  "why": "review: 'pension office contact' can be confused with 'pension office phone number' (S28)"
+ },
+ {
+  "person": "L10",
+  "storyline": "S26",
+  "question": "What is my personal trainer?",
+  "why": "review: the other person's trainer is named after that person (Ananya Reddy for Ananya): confusing"
+ },
+ {
+  "person": "L10",
+  "storyline": "S26",
+  "question": "What is Ananya's personal trainer?",
+  "why": "review: the other person's trainer is named after that person (Ananya Reddy for Ananya): confusing"
+ }
+]

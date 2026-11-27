@@ -1,0 +1,935 @@
+[
+ {
+  "n": 1,
+  "day": 0,
+  "steps": [],
+  "date": "2026-03-02",
+  "kind": "life"
+ },
+ {
+  "n": 2,
+  "day": 1,
+  "steps": [],
+  "date": "2026-03-03",
+  "kind": "work"
+ },
+ {
+  "n": 3,
+  "day": 2,
+  "steps": [
+   {
+    "story": "S01",
+    "step": 0,
+    "day": 2,
+    "said_late": false,
+    "text": "Valentina's mother's birthday is 1948-05-12.",
+    "must": [
+     "1948-05-12"
+    ]
+   },
+   {
+    "story": "S22",
+    "step": 0,
+    "day": 2,
+    "said_late": false,
+    "text": "Valentina's weekly grocery delivery service is Mercado Express.",
+    "must": [
+     "Mercado Express"
+    ]
+   }
+  ],
+  "date": "2026-03-04",
+  "kind": "life"
+ },
+ {
+  "n": 4,
+  "day": 3,
+  "steps": [],
+  "date": "2026-03-05",
+  "kind": "work"
+ },
+ {
+  "n": 5,
+  "day": 3,
+  "steps": [],
+  "date": "2026-03-05",
+  "kind": "life"
+ },
+ {
+  "n": 6,
+  "day": 4,
+  "steps": [],
+  "date": "2026-03-06",
+  "kind": "work"
+ },
+ {
+  "n": 7,
+  "day": 5,
+  "steps": [
+   {
+    "story": "S28",
+    "step": 0,
+    "day": 3,
+    "said_late": false,
+    "text": "Valentina's own tax advisor is Lic. Javier Torres.",
+    "must": [
+     "Lic. Javier Torres"
+    ]
+   }
+  ],
+  "date": "2026-03-07",
+  "kind": "life"
+ },
+ {
+  "n": 8,
+  "day": 6,
+  "steps": [],
+  "date": "2026-03-08",
+  "kind": "work"
+ },
+ {
+  "n": 9,
+  "day": 7,
+  "steps": [
+   {
+    "story": "S22",
+    "step": 1,
+    "day": 7,
+    "said_late": false,
+    "text": "Valentina is only thinking about changing the weekly grocery delivery service to FreshMarket Online; nothing decided.",
+    "must": [
+     "FreshMarket Online"
+    ]
+   },
+   {
+    "story": "S29",
+    "step": 0,
+    "day": 7,
+    "said_late": false,
+    "text": "Valentina needs extra pickers for the harvest week starting 16 March (not sorted yet).",
+    "must": [
+     "pickers"
+    ]
+   }
+  ],
+  "date": "2026-03-09",
+  "kind": "life"
+ },
+ {
+  "n": 10,
+  "day": 8,
+  "steps": [
+   {
+    "story": "S32",
+    "step": 0,
+    "day": 8,
+    "said_late": false,
+    "text": "Valentina needs a used bottling machine in good condition (not sorted yet).",
+    "must": [
+     "bottling"
+    ]
+   }
+  ],
+  "date": "2026-03-10",
+  "kind": "work"
+ },
+ {
+  "n": 11,
+  "day": 9,
+  "steps": [],
+  "date": "2026-03-11",
+  "kind": "life"
+ },
+ {
+  "n": 12,
+  "day": 9,
+  "steps": [
+   {
+    "story": "S19",
+    "step": 0,
+    "day": 6,
+    "said_late": false,
+    "text": "Valentina's mother's cardiologist is Dr. Mateo Ruiz.",
+    "must": [
+     "Dr. Mateo Ruiz"
+    ]
+   }
+  ],
+  "date": "2026-03-11",
+  "kind": "life"
+ },
+ {
+  "n": 13,
+  "day": 10,
+  "steps": [],
+  "date": "2026-03-12",
+  "kind": "life"
+ },
+ {
+  "n": 14,
+  "day": 11,
+  "steps": [
+   {
+    "story": "S28",
+    "step": 1,
+    "day": 11,
+    "said_late": false,
+    "text": "Marco (brother)'s tax advisor is Lic. Maria Fernandez (about Marco (brother), not Valentina).",
+    "must": [
+     "Lic. Maria Fernandez",
+     "Marco"
+    ]
+   }
+  ],
+  "date": "2026-03-13",
+  "kind": "life"
+ },
+ {
+  "n": 15,
+  "day": 12,
+  "steps": [
+   {
+    "story": "S13",
+    "step": 0,
+    "day": 12,
+    "said_late": false,
+    "text": "Valentina's cork supplier is Dunlop Cork.",
+    "must": [
+     "Dunlop Cork"
+    ]
+   },
+   {
+    "story": "S29",
+    "step": 1,
+    "day": 12,
+    "said_late": false,
+    "text": "Valentina's need is sorted: hired a crew of six through Raúl Gómez.",
+    "must": [
+     "Raúl Gómez"
+    ]
+   }
+  ],
+  "date": "2026-03-14",
+  "kind": "life"
+ },
+ {
+  "n": 16,
+  "day": 12,
+  "steps": [],
+  "date": "2026-03-14",
+  "kind": "life"
+ },
+ {
+  "n": 17,
+  "day": 13,
+  "steps": [],
+  "date": "2026-03-15",
+  "kind": "life"
+ },
+ {
+  "n": 18,
+  "day": 13,
+  "steps": [],
+  "date": "2026-03-15",
+  "kind": "work"
+ },
+ {
+  "n": 19,
+  "day": 14,
+  "steps": [
+   {
+    "story": "S19",
+    "step": 1,
+    "day": 14,
+    "said_late": false,
+    "text": "Valentina corrects an earlier slip: the mother's cardiologist is Dr. Sofia Alvarez, not Dr. Mateo Ruiz.",
+    "must": [
+     "Dr. Sofia Alvarez"
+    ]
+   }
+  ],
+  "date": "2026-03-16",
+  "kind": "life"
+ },
+ {
+  "n": 20,
+  "day": 15,
+  "steps": [
+   {
+    "story": "S03",
+    "step": 0,
+    "day": 13,
+    "said_late": false,
+    "text": "Valentina's export logistics provider is Fretex Cargo.",
+    "must": [
+     "Fretex Cargo"
+    ]
+   }
+  ],
+  "date": "2026-03-17",
+  "kind": "work"
+ },
+ {
+  "n": 21,
+  "day": 15,
+  "steps": [],
+  "date": "2026-03-17",
+  "kind": "life"
+ },
+ {
+  "n": 22,
+  "day": 16,
+  "steps": [],
+  "date": "2026-03-18",
+  "kind": "life"
+ },
+ {
+  "n": 23,
+  "day": 17,
+  "steps": [
+   {
+    "story": "S16",
+    "step": 0,
+    "day": 17,
+    "said_late": false,
+    "text": "Valentina's running trail location is Parque General San Martín.",
+    "must": [
+     "Parque General San Martín"
+    ]
+   },
+   {
+    "story": "S23",
+    "step": 0,
+    "day": 17,
+    "said_late": false,
+    "text": "Valentina's wine tasting notes app is VinoLog Pro.",
+    "must": [
+     "VinoLog Pro"
+    ]
+   }
+  ],
+  "date": "2026-03-19",
+  "kind": "life"
+ },
+ {
+  "n": 24,
+  "day": 18,
+  "steps": [
+   {
+    "story": "S33",
+    "step": 0,
+    "day": 17,
+    "said_late": true,
+    "text": "a need that is not Valentina's own: advice on a loan to buy the neighbouring plot (Marco (brother)).",
+    "must": [
+     "loan"
+    ]
+   },
+   {
+    "story": "S25",
+    "step": 0,
+    "day": 18,
+    "said_late": false,
+    "text": "Valentina's brother's home address is Calle Los Andes 45.",
+    "must": [
+     "Calle Los Andes 45"
+    ]
+   }
+  ],
+  "date": "2026-03-20",
+  "kind": "life"
+ },
+ {
+  "n": 25,
+  "day": 19,
+  "steps": [
+   {
+    "story": "S30",
+    "step": 0,
+    "day": 18,
+    "said_late": true,
+    "text": "Valentina needs a carer to stay with her mother on Thursdays (not sorted yet).",
+    "must": [
+     "carer"
+    ]
+   },
+   {
+    "story": "S13",
+    "step": 1,
+    "day": 19,
+    "said_late": false,
+    "text": "Valentina's cork supplier has changed: now Natural Cork Co (it was Dunlop Cork).",
+    "must": [
+     "Natural Cork Co"
+    ]
+   }
+  ],
+  "date": "2026-03-21",
+  "kind": "life"
+ },
+ {
+  "n": 26,
+  "day": 20,
+  "steps": [
+   {
+    "story": "S23",
+    "step": 1,
+    "day": 20,
+    "said_late": false,
+    "text": "Valentina is thinking about changing the wine tasting notes app to TasteTracker; not decided yet.",
+    "must": [
+     "TasteTracker"
+    ]
+   }
+  ],
+  "date": "2026-03-22",
+  "kind": "life"
+ },
+ {
+  "n": 27,
+  "day": 20,
+  "steps": [],
+  "date": "2026-03-22",
+  "kind": "work"
+ },
+ {
+  "n": 28,
+  "day": 21,
+  "steps": [
+   {
+    "story": "S04",
+    "step": 0,
+    "day": 21,
+    "said_late": false,
+    "text": "Valentina's Mendoza airport shuttle is Taxi Airport 500.",
+    "must": [
+     "Taxi Airport 500"
+    ]
+   }
+  ],
+  "date": "2026-03-23",
+  "kind": "life"
+ },
+ {
+  "n": 29,
+  "day": 22,
+  "steps": [
+   {
+    "story": "S15",
+    "step": 0,
+    "day": 20,
+    "said_late": false,
+    "text": "Valentina's physiotherapy clinic is Centro Salud Espalda.",
+    "must": [
+     "Centro Salud Espalda"
+    ]
+   },
+   {
+    "story": "S18",
+    "step": 0,
+    "day": 22,
+    "said_late": false,
+    "text": "Valentina's weekly hairdresser is Salón Belleza Clara.",
+    "must": [
+     "Salón Belleza Clara"
+    ]
+   }
+  ],
+  "date": "2026-03-24",
+  "kind": "life"
+ },
+ {
+  "n": 30,
+  "day": 23,
+  "steps": [
+   {
+    "story": "S25",
+    "step": 1,
+    "day": 23,
+    "said_late": false,
+    "text": "Valentina imagines a what-if: then the brother's home address would be Av. San Martín 120. Only an idea; nothing changes.",
+    "must": [
+     "Av. San Martín 120"
+    ]
+   }
+  ],
+  "date": "2026-03-25",
+  "kind": "life"
+ },
+ {
+  "n": 31,
+  "day": 24,
+  "steps": [
+   {
+    "story": "S14",
+    "step": 0,
+    "day": 21,
+    "said_late": false,
+    "text": "Valentina's regular taxi service is Radio Taxi 456.",
+    "must": [
+     "Radio Taxi 456"
+    ]
+   }
+  ],
+  "date": "2026-03-26",
+  "kind": "life"
+ },
+ {
+  "n": 32,
+  "day": 25,
+  "steps": [
+   {
+    "story": "S07",
+    "step": 0,
+    "day": 21,
+    "said_late": false,
+    "text": "Valentina's brother's birthday is 1970-09-15.",
+    "must": [
+     "1970-09-15"
+    ]
+   },
+   {
+    "story": "S27",
+    "step": 0,
+    "day": 21,
+    "said_late": false,
+    "text": "Valentina's own running club leader is Carlos Mendez.",
+    "must": [
+     "Carlos Mendez"
+    ]
+   }
+  ],
+  "date": "2026-03-27",
+  "kind": "life"
+ },
+ {
+  "n": 33,
+  "day": 26,
+  "steps": [
+   {
+    "story": "S16",
+    "step": 1,
+    "day": 26,
+    "said_late": false,
+    "text": "Valentina's running trail location has changed: now Viñedo Ruta 40 (it was Parque General San Martín).",
+    "must": [
+     "Viñedo Ruta 40"
+    ]
+   },
+   {
+    "story": "S17",
+    "step": 0,
+    "day": 26,
+    "said_late": false,
+    "text": "Valentina's weekly dinner restaurant is La Trattoria.",
+    "must": [
+     "La Trattoria"
+    ]
+   }
+  ],
+  "date": "2026-03-28",
+  "kind": "life"
+ },
+ {
+  "n": 34,
+  "day": 27,
+  "steps": [
+   {
+    "story": "S23",
+    "step": 2,
+    "day": 26,
+    "said_late": true,
+    "text": "Valentina has now gone ahead: the wine tasting notes app is TasteTracker.",
+    "must": [
+     "TasteTracker"
+    ]
+   },
+   {
+    "story": "S24",
+    "step": 0,
+    "day": 26,
+    "said_late": false,
+    "text": "Valentina's monthly gym membership cost is 4500 pesos.",
+    "must": [
+     "4500 pesos"
+    ]
+   }
+  ],
+  "date": "2026-03-29",
+  "kind": "life"
+ },
+ {
+  "n": 35,
+  "day": 28,
+  "steps": [
+   {
+    "story": "S06",
+    "step": 0,
+    "day": 22,
+    "said_late": false,
+    "text": "Valentina's winery insurance agent is Agustín Rivas.",
+    "must": [
+     "Agustín Rivas"
+    ]
+   },
+   {
+    "story": "S09",
+    "step": 0,
+    "day": 26,
+    "said_late": false,
+    "text": "Valentina's bank account interest rate is 4.5% annual.",
+    "must": [
+     "4.5% annual"
+    ]
+   }
+  ],
+  "date": "2026-03-30",
+  "kind": "work"
+ },
+ {
+  "n": 36,
+  "day": 29,
+  "steps": [
+   {
+    "story": "S30",
+    "step": 1,
+    "day": 26,
+    "said_late": true,
+    "text": "Valentina's need is sorted: Doña Elena Ruiz now comes on Thursdays.",
+    "must": [
+     "Elena Ruiz",
+     "Thursdays"
+    ]
+   },
+   {
+    "story": "S08",
+    "step": 0,
+    "day": 27,
+    "said_late": false,
+    "text": "Valentina's Buenos Aires flight number is AR1240.",
+    "must": [
+     "AR1240"
+    ]
+   }
+  ],
+  "date": "2026-03-31",
+  "kind": "life"
+ },
+ {
+  "n": 37,
+  "day": 30,
+  "steps": [
+   {
+    "story": "S15",
+    "step": 1,
+    "day": 24,
+    "said_late": true,
+    "text": "Valentina's physiotherapy clinic has changed: now Clínica del Deporte (it was Centro Salud Espalda).",
+    "must": [
+     "Clínica del Deporte"
+    ]
+   },
+   {
+    "story": "S20",
+    "step": 0,
+    "day": 28,
+    "said_late": false,
+    "text": "Valentina's garage door repair company is Puertas Seguras.",
+    "must": [
+     "Puertas Seguras"
+    ]
+   }
+  ],
+  "date": "2026-04-01",
+  "kind": "life"
+ },
+ {
+  "n": 38,
+  "day": 31,
+  "steps": [
+   {
+    "story": "S14",
+    "step": 1,
+    "day": 30,
+    "said_late": true,
+    "text": "Valentina's regular taxi service has changed: now Uber Business (it was Radio Taxi 456).",
+    "must": [
+     "Uber Business"
+    ]
+   },
+   {
+    "story": "S10",
+    "step": 0,
+    "day": 31,
+    "said_late": false,
+    "text": "Valentina's annual property tax is 120000 pesos.",
+    "must": [
+     "120000 pesos"
+    ]
+   }
+  ],
+  "date": "2026-04-02",
+  "kind": "life"
+ },
+ {
+  "n": 39,
+  "day": 32,
+  "steps": [
+   {
+    "story": "S18",
+    "step": 1,
+    "day": 28,
+    "said_late": true,
+    "text": "Valentina has switched the weekly hairdresser to Estética Moderna.",
+    "must": [
+     "Estética Moderna"
+    ]
+   },
+   {
+    "story": "S11",
+    "step": 0,
+    "day": 31,
+    "said_late": false,
+    "text": "Valentina's mother's primary care doctor is Dr. Elena Gomez.",
+    "must": [
+     "Dr. Elena Gomez"
+    ]
+   }
+  ],
+  "date": "2026-04-03",
+  "kind": "life"
+ },
+ {
+  "n": 40,
+  "day": 33,
+  "steps": [
+   {
+    "story": "S17",
+    "step": 1,
+    "day": 31,
+    "said_late": true,
+    "text": "Valentina has switched the weekly dinner restaurant to El Olivo.",
+    "must": [
+     "El Olivo"
+    ]
+   },
+   {
+    "story": "S27",
+    "step": 1,
+    "day": 31,
+    "said_late": true,
+    "text": "Lina (yoga instructor)'s running club leader is Ana Gutierrez (about Lina (yoga instructor), not Valentina).",
+    "must": [
+     "Ana Gutierrez",
+     "Lina"
+    ]
+   }
+  ],
+  "date": "2026-04-04",
+  "kind": "life"
+ },
+ {
+  "n": 41,
+  "day": 34,
+  "steps": [
+   {
+    "story": "S02",
+    "step": 0,
+    "day": 33,
+    "said_late": false,
+    "text": "Valentina's weekly yoga instructor is Lina Torres.",
+    "must": [
+     "Lina Torres"
+    ]
+   },
+   {
+    "story": "S12",
+    "step": 0,
+    "day": 33,
+    "said_late": false,
+    "text": "Valentina's wine label supplier is Gráfica Mendoza.",
+    "must": [
+     "Gráfica Mendoza"
+    ]
+   }
+  ],
+  "date": "2026-04-05",
+  "kind": "life"
+ },
+ {
+  "n": 42,
+  "day": 35,
+  "steps": [
+   {
+    "story": "S20",
+    "step": 1,
+    "day": 33,
+    "said_late": true,
+    "text": "Valentina corrects an earlier slip: the garage door repair company is GarageFix Mendoza, not Puertas Seguras.",
+    "must": [
+     "GarageFix Mendoza"
+    ]
+   },
+   {
+    "story": "S21",
+    "step": 0,
+    "day": 33,
+    "said_late": false,
+    "text": "Valentina's vitamin supplement brand is VitaLife Daily.",
+    "must": [
+     "VitaLife Daily"
+    ]
+   }
+  ],
+  "date": "2026-04-06",
+  "kind": "life"
+ },
+ {
+  "n": 43,
+  "day": 36,
+  "steps": [
+   {
+    "story": "S24",
+    "step": 1,
+    "day": 34,
+    "said_late": true,
+    "text": "Valentina imagines a what-if: then the monthly gym membership cost would be 3000 pesos. Only an idea; nothing changes.",
+    "must": [
+     "3000 pesos"
+    ]
+   },
+   {
+    "story": "S26",
+    "step": 0,
+    "day": 34,
+    "said_late": false,
+    "text": "Valentina's own pet groomer is Grooming Paws Mendoza.",
+    "must": [
+     "Grooming Paws Mendoza"
+    ]
+   }
+  ],
+  "date": "2026-04-07",
+  "kind": "life"
+ },
+ {
+  "n": 44,
+  "day": 37,
+  "steps": [
+   {
+    "story": "S18",
+    "step": 2,
+    "day": 35,
+    "said_late": true,
+    "text": "Valentina changes mind about the weekly hairdresser: back to Salón Belleza Clara, not Estética Moderna any more.",
+    "must": [
+     "Salón Belleza Clara"
+    ]
+   },
+   {
+    "story": "S17",
+    "step": 2,
+    "day": 36,
+    "said_late": true,
+    "text": "Valentina changes mind about the weekly dinner restaurant: back to La Trattoria, not El Olivo any more.",
+    "must": [
+     "La Trattoria"
+    ]
+   }
+  ],
+  "date": "2026-04-08",
+  "kind": "life"
+ },
+ {
+  "n": 45,
+  "day": 38,
+  "steps": [],
+  "date": "2026-04-09",
+  "kind": "life"
+ },
+ {
+  "n": 46,
+  "day": 39,
+  "steps": [
+   {
+    "story": "S31",
+    "step": 0,
+    "day": 37,
+    "said_late": true,
+    "text": "Valentina needs an importer for her Malbec in Germany (not sorted yet).",
+    "must": [
+     "importer"
+    ]
+   },
+   {
+    "story": "S05",
+    "step": 0,
+    "day": 39,
+    "said_late": false,
+    "text": "Valentina's home security system is SecurHome Plus.",
+    "must": [
+     "SecurHome Plus"
+    ]
+   }
+  ],
+  "date": "2026-04-10",
+  "kind": "life"
+ },
+ {
+  "n": 47,
+  "day": 40,
+  "steps": [
+   {
+    "story": "S12",
+    "step": 1,
+    "day": 38,
+    "said_late": true,
+    "text": "Valentina's wine label supplier has changed: now PrintArt Sur (it was Gráfica Mendoza).",
+    "must": [
+     "PrintArt Sur"
+    ]
+   },
+   {
+    "story": "S11",
+    "step": 1,
+    "day": 40,
+    "said_late": false,
+    "text": "Valentina's mother's primary care doctor has changed: now Dr. Lucas Vega (it was Dr. Elena Gomez).",
+    "must": [
+     "Dr. Lucas Vega"
+    ]
+   }
+  ],
+  "date": "2026-04-11",
+  "kind": "life"
+ },
+ {
+  "n": 48,
+  "day": 41,
+  "steps": [
+   {
+    "story": "S21",
+    "step": 1,
+    "day": 40,
+    "said_late": true,
+    "text": "Valentina is only thinking about changing the vitamin supplement brand to Nature's Best; nothing decided.",
+    "must": [
+     "Nature's Best"
+    ]
+   },
+   {
+    "story": "S26",
+    "step": 1,
+    "day": 41,
+    "said_late": false,
+    "text": "Marco (brother)'s pet groomer is Canine Care Club (about Marco (brother), not Valentina).",
+    "must": [
+     "Canine Care Club",
+     "Marco"
+    ]
+   }
+  ],
+  "date": "2026-04-12",
+  "kind": "life"
+ }
+]

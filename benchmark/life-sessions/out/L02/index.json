@@ -1,0 +1,940 @@
+[
+ {
+  "n": 1,
+  "day": 0,
+  "steps": [
+   {
+    "story": "S15",
+    "step": 0,
+    "day": 0,
+    "said_late": false,
+    "text": "Aisha's dentist appointment is 2026-03-02.",
+    "must": [
+     "2026-03-02"
+    ]
+   }
+  ],
+  "date": "2026-03-02",
+  "kind": "life"
+ },
+ {
+  "n": 2,
+  "day": 1,
+  "steps": [
+   {
+    "story": "S14",
+    "step": 0,
+    "day": 1,
+    "said_late": false,
+    "text": "Aisha's regular coffee shop is The Alchemist.",
+    "must": [
+     "The Alchemist"
+    ]
+   }
+  ],
+  "date": "2026-03-03",
+  "kind": "life"
+ },
+ {
+  "n": 3,
+  "day": 2,
+  "steps": [
+   {
+    "story": "S26",
+    "step": 0,
+    "day": 1,
+    "said_late": false,
+    "text": "Aisha's own optician is John Lewis Opticians.",
+    "must": [
+     "John Lewis Opticians"
+    ]
+   },
+   {
+    "story": "S16",
+    "step": 0,
+    "day": 2,
+    "said_late": false,
+    "text": "Aisha's GP surgery is City Square Clinic.",
+    "must": [
+     "City Square Clinic"
+    ]
+   }
+  ],
+  "date": "2026-03-04",
+  "kind": "life"
+ },
+ {
+  "n": 4,
+  "day": 3,
+  "steps": [
+   {
+    "story": "S02",
+    "step": 0,
+    "day": 3,
+    "said_late": false,
+    "text": "Aisha's grocery delivery provider is Ocado.",
+    "must": [
+     "Ocado"
+    ]
+   }
+  ],
+  "date": "2026-03-05",
+  "kind": "life"
+ },
+ {
+  "n": 5,
+  "day": 4,
+  "steps": [],
+  "date": "2026-03-06",
+  "kind": "work"
+ },
+ {
+  "n": 6,
+  "day": 5,
+  "steps": [
+   {
+    "story": "S10",
+    "step": 0,
+    "day": 5,
+    "said_late": false,
+    "text": "Aisha's school start time is 8:45 AM.",
+    "must": [
+     "8:45 AM"
+    ]
+   },
+   {
+    "story": "S14",
+    "step": 1,
+    "day": 5,
+    "said_late": false,
+    "text": "Aisha's regular coffee shop has changed: now Proud Mary (it was The Alchemist).",
+    "must": [
+     "Proud Mary"
+    ]
+   }
+  ],
+  "date": "2026-03-07",
+  "kind": "work"
+ },
+ {
+  "n": 7,
+  "day": 6,
+  "steps": [
+   {
+    "story": "S26",
+    "step": 1,
+    "day": 5,
+    "said_late": true,
+    "text": "Gemma (neighbour)'s optician is Specsavers (about Gemma (neighbour), not Aisha).",
+    "must": [
+     "Specsavers",
+     "Gemma"
+    ]
+   }
+  ],
+  "date": "2026-03-08",
+  "kind": "life"
+ },
+ {
+  "n": 8,
+  "day": 7,
+  "steps": [
+   {
+    "story": "S22",
+    "step": 0,
+    "day": 7,
+    "said_late": false,
+    "text": "Aisha's Lisbon flight departure airport is Manchester Airport.",
+    "must": [
+     "Manchester Airport"
+    ]
+   }
+  ],
+  "date": "2026-03-09",
+  "kind": "life"
+ },
+ {
+  "n": 9,
+  "day": 8,
+  "steps": [
+   {
+    "story": "S29",
+    "step": 0,
+    "day": 8,
+    "said_late": false,
+    "text": "Aisha needs someone to feed her cat Miso during the Easter week she is in Lisbon (not sorted yet).",
+    "must": [
+     "feed"
+    ]
+   }
+  ],
+  "date": "2026-03-10",
+  "kind": "life"
+ },
+ {
+  "n": 10,
+  "day": 9,
+  "steps": [],
+  "date": "2026-03-11",
+  "kind": "life"
+ },
+ {
+  "n": 11,
+  "day": 10,
+  "steps": [
+   {
+    "story": "S15",
+    "step": 1,
+    "day": 7,
+    "said_late": true,
+    "text": "Aisha's dentist appointment has changed: now 2026-03-09 (it was 2026-03-02).",
+    "must": [
+     "2026-03-09"
+    ]
+   },
+   {
+    "story": "S22",
+    "step": 1,
+    "day": 10,
+    "said_late": false,
+    "text": "Aisha is only thinking about changing the Lisbon flight departure airport to Leeds Bradford; nothing decided.",
+    "must": [
+     "Leeds Bradford"
+    ]
+   }
+  ],
+  "date": "2026-03-12",
+  "kind": "life"
+ },
+ {
+  "n": 12,
+  "day": 11,
+  "steps": [
+   {
+    "story": "S23",
+    "step": 0,
+    "day": 7,
+    "said_late": false,
+    "text": "Aisha's Easter travel destination is Porto.",
+    "must": [
+     "Porto"
+    ]
+   },
+   {
+    "story": "S25",
+    "step": 0,
+    "day": 10,
+    "said_late": false,
+    "text": "Aisha's choir section leader is James Wright.",
+    "must": [
+     "James Wright"
+    ]
+   }
+  ],
+  "date": "2026-03-13",
+  "kind": "life"
+ },
+ {
+  "n": 13,
+  "day": 12,
+  "steps": [
+   {
+    "story": "S30",
+    "step": 0,
+    "day": 10,
+    "said_late": true,
+    "text": "Aisha needs a parent volunteer who speaks Urdu for the Year 4 parents evening (not sorted yet).",
+    "must": [
+     "Urdu"
+    ]
+   },
+   {
+    "story": "S09",
+    "step": 0,
+    "day": 12,
+    "said_late": false,
+    "text": "Aisha's bank account provider is Monzo.",
+    "must": [
+     "Monzo"
+    ]
+   }
+  ],
+  "date": "2026-03-14",
+  "kind": "life"
+ },
+ {
+  "n": 14,
+  "day": 13,
+  "steps": [
+   {
+    "story": "S29",
+    "step": 1,
+    "day": 12,
+    "said_late": true,
+    "text": "Aisha's need is sorted: her neighbour Gemma Price agreed to feed Miso.",
+    "must": [
+     "Gemma Price",
+     "Miso"
+    ]
+   }
+  ],
+  "date": "2026-03-15",
+  "kind": "life"
+ },
+ {
+  "n": 15,
+  "day": 14,
+  "steps": [
+   {
+    "story": "S25",
+    "step": 1,
+    "day": 14,
+    "said_late": false,
+    "text": "Aisha imagines a what-if: then the choir section leader would be Clara Diaz. Only an idea; nothing changes.",
+    "must": [
+     "Clara Diaz"
+    ]
+   }
+  ],
+  "date": "2026-03-16",
+  "kind": "life"
+ },
+ {
+  "n": 16,
+  "day": 15,
+  "steps": [],
+  "date": "2026-03-17",
+  "kind": "life"
+ },
+ {
+  "n": 17,
+  "day": 15,
+  "steps": [
+   {
+    "story": "S16",
+    "step": 1,
+    "day": 9,
+    "said_late": true,
+    "text": "Aisha's GP surgery has changed: now Hyde Park Medical (it was City Square Clinic).",
+    "must": [
+     "Hyde Park Medical"
+    ]
+   }
+  ],
+  "date": "2026-03-17",
+  "kind": "life"
+ },
+ {
+  "n": 18,
+  "day": 16,
+  "steps": [
+   {
+    "story": "S11",
+    "step": 0,
+    "day": 16,
+    "said_late": false,
+    "text": "Aisha's gym membership is PureGym.",
+    "must": [
+     "PureGym"
+    ]
+   }
+  ],
+  "date": "2026-03-18",
+  "kind": "life"
+ },
+ {
+  "n": 19,
+  "day": 17,
+  "steps": [
+   {
+    "story": "S30",
+    "step": 1,
+    "day": 17,
+    "said_late": false,
+    "text": "Aisha's need is sorted: Mr. Hussain from the PTA will translate.",
+    "must": [
+     "Hussain",
+     "PTA"
+    ]
+   }
+  ],
+  "date": "2026-03-19",
+  "kind": "life"
+ },
+ {
+  "n": 20,
+  "day": 18,
+  "steps": [
+   {
+    "story": "S23",
+    "step": 1,
+    "day": 16,
+    "said_late": true,
+    "text": "Aisha is thinking about changing the Easter travel destination to Lisbon; not decided yet.",
+    "must": [
+     "Lisbon"
+    ]
+   }
+  ],
+  "date": "2026-03-20",
+  "kind": "life"
+ },
+ {
+  "n": 21,
+  "day": 19,
+  "steps": [],
+  "date": "2026-03-21",
+  "kind": "work"
+ },
+ {
+  "n": 22,
+  "day": 19,
+  "steps": [],
+  "date": "2026-03-21",
+  "kind": "life"
+ },
+ {
+  "n": 23,
+  "day": 20,
+  "steps": [
+   {
+    "story": "S08",
+    "step": 0,
+    "day": 20,
+    "said_late": false,
+    "text": "Aisha's Year 4 classroom number is Room 12.",
+    "must": [
+     "Room 12"
+    ]
+   },
+   {
+    "story": "S13",
+    "step": 0,
+    "day": 20,
+    "said_late": false,
+    "text": "Aisha's choir rehearsal schedule is Tuesdays at 7:30 PM.",
+    "must": [
+     "Tuesdays at 7:30 PM"
+    ]
+   }
+  ],
+  "date": "2026-03-22",
+  "kind": "work"
+ },
+ {
+  "n": 24,
+  "day": 21,
+  "steps": [
+   {
+    "story": "S21",
+    "step": 0,
+    "day": 21,
+    "said_late": false,
+    "text": "Aisha's weekend hiking destination is Ilkley Moor.",
+    "must": [
+     "Ilkley Moor"
+    ]
+   }
+  ],
+  "date": "2026-03-23",
+  "kind": "life"
+ },
+ {
+  "n": 25,
+  "day": 21,
+  "steps": [
+   {
+    "story": "S17",
+    "step": 0,
+    "day": 16,
+    "said_late": false,
+    "text": "Aisha's living room thermostat setting is 19°C.",
+    "must": [
+     "19°C"
+    ]
+   }
+  ],
+  "date": "2026-03-23",
+  "kind": "life"
+ },
+ {
+  "n": 26,
+  "day": 22,
+  "steps": [
+   {
+    "story": "S27",
+    "step": 0,
+    "day": 19,
+    "said_late": false,
+    "text": "Aisha's own energy tariff provider is Octopus Energy.",
+    "must": [
+     "Octopus Energy"
+    ]
+   },
+   {
+    "story": "S11",
+    "step": 1,
+    "day": 21,
+    "said_late": true,
+    "text": "Aisha's gym membership has changed: now Leeds Sports Park (it was PureGym).",
+    "must": [
+     "Leeds Sports Park"
+    ]
+   }
+  ],
+  "date": "2026-03-24",
+  "kind": "life"
+ },
+ {
+  "n": 27,
+  "day": 23,
+  "steps": [
+   {
+    "story": "S17",
+    "step": 1,
+    "day": 22,
+    "said_late": true,
+    "text": "Aisha has switched the living room thermostat setting to 21°C.",
+    "must": [
+     "21°C"
+    ]
+   }
+  ],
+  "date": "2026-03-25",
+  "kind": "life"
+ },
+ {
+  "n": 28,
+  "day": 24,
+  "steps": [
+   {
+    "story": "S04",
+    "step": 0,
+    "day": 24,
+    "said_late": false,
+    "text": "Aisha's choir director is Elena Rossi.",
+    "must": [
+     "Elena Rossi"
+    ]
+   },
+   {
+    "story": "S27",
+    "step": 1,
+    "day": 24,
+    "said_late": false,
+    "text": "Gemma (neighbour)'s energy tariff provider is British Gas (about Gemma (neighbour), not Aisha).",
+    "must": [
+     "British Gas",
+     "Gemma"
+    ]
+   }
+  ],
+  "date": "2026-03-26",
+  "kind": "life"
+ },
+ {
+  "n": 29,
+  "day": 25,
+  "steps": [
+   {
+    "story": "S23",
+    "step": 2,
+    "day": 25,
+    "said_late": false,
+    "text": "Aisha has now gone ahead: the Easter travel destination is Lisbon.",
+    "must": [
+     "Lisbon"
+    ]
+   }
+  ],
+  "date": "2026-03-27",
+  "kind": "life"
+ },
+ {
+  "n": 30,
+  "day": 26,
+  "steps": [
+   {
+    "story": "S20",
+    "step": 0,
+    "day": 24,
+    "said_late": false,
+    "text": "Aisha's flat address postcode is LS6 2AB.",
+    "must": [
+     "LS6 2AB"
+    ]
+   },
+   {
+    "story": "S12",
+    "step": 0,
+    "day": 26,
+    "said_late": false,
+    "text": "Aisha's bedroom thermostat setting is 18 degrees.",
+    "must": [
+     "18 degrees"
+    ]
+   }
+  ],
+  "date": "2026-03-28",
+  "kind": "life"
+ },
+ {
+  "n": 31,
+  "day": 27,
+  "steps": [
+   {
+    "story": "S31",
+    "step": 0,
+    "day": 25,
+    "said_late": true,
+    "text": "Aisha needs a second-hand digital keyboard to practise choir parts at home (not sorted yet).",
+    "must": [
+     "keyboard"
+    ]
+   }
+  ],
+  "date": "2026-03-29",
+  "kind": "life"
+ },
+ {
+  "n": 32,
+  "day": 27,
+  "steps": [],
+  "date": "2026-03-29",
+  "kind": "life"
+ },
+ {
+  "n": 33,
+  "day": 28,
+  "steps": [
+   {
+    "story": "S19",
+    "step": 0,
+    "day": 28,
+    "said_late": false,
+    "text": "Aisha's school uniform supplier is St. Mary's Shop.",
+    "must": [
+     "St. Mary's Shop"
+    ]
+   },
+   {
+    "story": "S21",
+    "step": 1,
+    "day": 28,
+    "said_late": false,
+    "text": "Aisha is only thinking about changing the weekend hiking destination to Malham Cove; nothing decided.",
+    "must": [
+     "Malham Cove"
+    ]
+   }
+  ],
+  "date": "2026-03-30",
+  "kind": "work"
+ },
+ {
+  "n": 34,
+  "day": 28,
+  "steps": [],
+  "date": "2026-03-30",
+  "kind": "life"
+ },
+ {
+  "n": 35,
+  "day": 29,
+  "steps": [
+   {
+    "story": "S18",
+    "step": 0,
+    "day": 27,
+    "said_late": false,
+    "text": "Aisha's kettle brand is Smeg.",
+    "must": [
+     "Smeg"
+    ]
+   },
+   {
+    "story": "S12",
+    "step": 1,
+    "day": 29,
+    "said_late": false,
+    "text": "Aisha's bedroom thermostat setting has changed: now 20 degrees (it was 18 degrees).",
+    "must": [
+     "20 degrees"
+    ]
+   }
+  ],
+  "date": "2026-03-31",
+  "kind": "life"
+ },
+ {
+  "n": 36,
+  "day": 30,
+  "steps": [
+   {
+    "story": "S13",
+    "step": 1,
+    "day": 29,
+    "said_late": true,
+    "text": "Aisha's choir rehearsal schedule has changed: now Thursdays at 7:00 PM (it was Tuesdays at 7:30 PM).",
+    "must": [
+     "Thursdays at 7:00 PM"
+    ]
+   },
+   {
+    "story": "S17",
+    "step": 2,
+    "day": 29,
+    "said_late": true,
+    "text": "Aisha changes mind about the living room thermostat setting: back to 19°C, not 21°C any more.",
+    "must": [
+     "19°C"
+    ]
+   }
+  ],
+  "date": "2026-04-01",
+  "kind": "life"
+ },
+ {
+  "n": 37,
+  "day": 31,
+  "steps": [
+   {
+    "story": "S20",
+    "step": 1,
+    "day": 29,
+    "said_late": true,
+    "text": "Aisha corrects an earlier slip: the flat address postcode is LS6 3CD, not LS6 2AB.",
+    "must": [
+     "LS6 3CD"
+    ]
+   },
+   {
+    "story": "S05",
+    "step": 0,
+    "day": 30,
+    "said_late": false,
+    "text": "Aisha's choir alto section partner is Sarah Jenkins.",
+    "must": [
+     "Sarah Jenkins"
+    ]
+   }
+  ],
+  "date": "2026-04-02",
+  "kind": "life"
+ },
+ {
+  "n": 38,
+  "day": 32,
+  "steps": [],
+  "date": "2026-04-03",
+  "kind": "work"
+ },
+ {
+  "n": 39,
+  "day": 33,
+  "steps": [],
+  "date": "2026-04-04",
+  "kind": "life"
+ },
+ {
+  "n": 40,
+  "day": 33,
+  "steps": [],
+  "date": "2026-04-04",
+  "kind": "work"
+ },
+ {
+  "n": 41,
+  "day": 34,
+  "steps": [
+   {
+    "story": "S28",
+    "step": 0,
+    "day": 30,
+    "said_late": false,
+    "text": "Aisha's own bookshop for choir scores is Waterstones.",
+    "must": [
+     "Waterstones"
+    ]
+   },
+   {
+    "story": "S32",
+    "step": 0,
+    "day": 34,
+    "said_late": false,
+    "text": "Aisha needs advice from someone who has done it on applying for the assistant head post (not sorted yet).",
+    "must": [
+     "assistant"
+    ]
+   }
+  ],
+  "date": "2026-04-05",
+  "kind": "life"
+ },
+ {
+  "n": 42,
+  "day": 35,
+  "steps": [
+   {
+    "story": "S18",
+    "step": 1,
+    "day": 33,
+    "said_late": true,
+    "text": "Aisha has switched the kettle brand to Morphy Richards.",
+    "must": [
+     "Morphy Richards"
+    ]
+   },
+   {
+    "story": "S28",
+    "step": 1,
+    "day": 33,
+    "said_late": true,
+    "text": "Elena (choir director)'s bookshop for choir scores is Foyles (about Elena (choir director), not Aisha).",
+    "must": [
+     "Foyles",
+     "Elena"
+    ]
+   }
+  ],
+  "date": "2026-04-06",
+  "kind": "life"
+ },
+ {
+  "n": 43,
+  "day": 36,
+  "steps": [
+   {
+    "story": "S07",
+    "step": 0,
+    "day": 35,
+    "said_late": false,
+    "text": "Aisha's school headteacher is David Miller.",
+    "must": [
+     "David Miller"
+    ]
+   },
+   {
+    "story": "S01",
+    "step": 0,
+    "day": 36,
+    "said_late": false,
+    "text": "Aisha's monthly rent is 950 GBP.",
+    "must": [
+     "950 GBP"
+    ]
+   }
+  ],
+  "date": "2026-04-07",
+  "kind": "work"
+ },
+ {
+  "n": 44,
+  "day": 37,
+  "steps": [
+   {
+    "story": "S24",
+    "step": 0,
+    "day": 36,
+    "said_late": false,
+    "text": "Aisha's monthly student loan payment is 120 GBP.",
+    "must": [
+     "120 GBP"
+    ]
+   },
+   {
+    "story": "S33",
+    "step": 0,
+    "day": 37,
+    "said_late": false,
+    "text": "a need that is not Aisha's own: a van to move flats in Manchester at the end of March (Zara (sister)).",
+    "must": [
+     "van"
+    ]
+   }
+  ],
+  "date": "2026-04-08",
+  "kind": "life"
+ },
+ {
+  "n": 45,
+  "day": 38,
+  "steps": [
+   {
+    "story": "S03",
+    "step": 0,
+    "day": 38,
+    "said_late": false,
+    "text": "Aisha's mother's birthday is 2026-04-09.",
+    "must": [
+     "2026-04-09"
+    ]
+   },
+   {
+    "story": "S06",
+    "step": 0,
+    "day": 38,
+    "said_late": false,
+    "text": "Aisha's choir rehearsal venue is Leeds Town Hall.",
+    "must": [
+     "Leeds Town Hall"
+    ]
+   }
+  ],
+  "date": "2026-04-09",
+  "kind": "life"
+ },
+ {
+  "n": 46,
+  "day": 39,
+  "steps": [
+   {
+    "story": "S19",
+    "step": 1,
+    "day": 38,
+    "said_late": true,
+    "text": "Aisha corrects an earlier slip: the school uniform supplier is Next, not St. Mary's Shop.",
+    "must": [
+     "Next"
+    ]
+   },
+   {
+    "story": "S18",
+    "step": 2,
+    "day": 39,
+    "said_late": false,
+    "text": "Aisha changes mind about the kettle brand: back to Smeg, not Morphy Richards any more.",
+    "must": [
+     "Smeg"
+    ]
+   }
+  ],
+  "date": "2026-04-10",
+  "kind": "work"
+ },
+ {
+  "n": 47,
+  "day": 40,
+  "steps": [],
+  "date": "2026-04-11",
+  "kind": "work"
+ },
+ {
+  "n": 48,
+  "day": 41,
+  "steps": [
+   {
+    "story": "S24",
+    "step": 1,
+    "day": 41,
+    "said_late": false,
+    "text": "Aisha imagines a what-if: then the monthly student loan payment would be 180 GBP. Only an idea; nothing changes.",
+    "must": [
+     "180 GBP"
+    ]
+   }
+  ],
+  "date": "2026-04-12",
+  "kind": "life"
+ }
+]

@@ -1,0 +1,534 @@
+[
+ {
+  "id": "S01",
+  "pattern": "plain",
+  "thing": "annual medical screening",
+  "theme": "health",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-08",
+    "2026-04-08"
+   ]
+  ],
+  "now": "2026-04-08"
+ },
+ {
+  "id": "S02",
+  "pattern": "plain",
+  "thing": "mother's birthday",
+  "theme": "family",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-04",
+    "2026-03-04"
+   ]
+  ],
+  "now": "2026-03-04"
+ },
+ {
+  "id": "S03",
+  "pattern": "plain",
+  "thing": "tax filing deadline",
+  "theme": "admin",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-23",
+    "2026-03-23"
+   ]
+  ],
+  "now": "2026-03-23"
+ },
+ {
+  "id": "S04",
+  "pattern": "plain",
+  "thing": "Stellenbosch shoot travel",
+  "theme": "travel",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-01",
+    "2026-04-01"
+   ]
+  ],
+  "now": "2026-04-01"
+ },
+ {
+  "id": "S05",
+  "pattern": "plain",
+  "thing": "client meeting with Fourie",
+  "theme": "people",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-26",
+    "2026-03-26"
+   ]
+  ],
+  "now": "2026-03-26"
+ },
+ {
+  "id": "S06",
+  "pattern": "plain",
+  "thing": "dentist appointment",
+  "theme": "health",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-21",
+    "2026-03-21"
+   ]
+  ],
+  "now": "2026-03-21"
+ },
+ {
+  "id": "S08",
+  "pattern": "plain",
+  "thing": "camera strap purchase",
+  "theme": "shopping",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-20",
+    "2026-03-20"
+   ]
+  ],
+  "now": "2026-03-20"
+ },
+ {
+  "id": "S09",
+  "pattern": "plain",
+  "thing": "invoice submission for Van der Merwe",
+  "theme": "work",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-24",
+    "2026-03-24"
+   ]
+  ],
+  "now": "2026-03-24"
+ },
+ {
+  "id": "S10",
+  "pattern": "plain",
+  "thing": "weekly yoga class",
+  "theme": "hobbies",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-26",
+    "Saturday morning"
+   ]
+  ],
+  "now": "Saturday morning"
+ },
+ {
+  "id": "S11",
+  "pattern": "change",
+  "thing": "primary banking provider",
+  "theme": "travel",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-05",
+    "FirstRand Bank"
+   ],
+   [
+    "2026-03-15",
+    "Capitec Bank"
+   ]
+  ],
+  "now": "Capitec Bank"
+ },
+ {
+  "id": "S12",
+  "pattern": "change",
+  "thing": "preferred coffee shop",
+  "theme": "shopping",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-13",
+    "The Daily Grind"
+   ],
+   [
+    "2026-03-20",
+    "Biscuiteer"
+   ]
+  ],
+  "now": "Biscuiteer"
+ },
+ {
+  "id": "S13",
+  "pattern": "change",
+  "thing": "monthly rent amount",
+  "theme": "money",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-06",
+    "12000 ZAR"
+   ],
+   [
+    "2026-03-12",
+    "12500 ZAR"
+   ]
+  ],
+  "now": "12500 ZAR"
+ },
+ {
+  "id": "S14",
+  "pattern": "change",
+  "thing": "physiotherapy clinic",
+  "theme": "health",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-06",
+    "Cape Town Physio"
+   ],
+   [
+    "2026-03-15",
+    "Wellness Hub"
+   ]
+  ],
+  "now": "Wellness Hub"
+ },
+ {
+  "id": "S15",
+  "pattern": "change",
+  "thing": "weekly running route",
+  "theme": "hobbies",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-05",
+    "Signal Hill"
+   ],
+   [
+    "2026-03-15",
+    "Llandudny Beach"
+   ]
+  ],
+  "now": "Llandudny Beach"
+ },
+ {
+  "id": "S16",
+  "pattern": "change",
+  "thing": "gear insurance premium",
+  "theme": "money",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-01",
+    "800 ZAR"
+   ],
+   [
+    "2026-04-11",
+    "950 ZAR"
+   ]
+  ],
+  "now": "950 ZAR"
+ },
+ {
+  "id": "S17",
+  "pattern": "heart",
+  "thing": "favorite weekend brunch spot",
+  "theme": "family",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-02",
+    "The Silo Hotel"
+   ],
+   [
+    "2026-04-10",
+    "Mama J's"
+   ],
+   [
+    "2026-04-12",
+    "The Silo Hotel"
+   ]
+  ],
+  "now": "The Silo Hotel"
+ },
+ {
+  "id": "S18",
+  "pattern": "heart",
+  "thing": "regular pilates instructor",
+  "theme": "health",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-26",
+    "Nomsa Khumalo"
+   ],
+   [
+    "2026-04-01",
+    "Sarah Jenkins"
+   ],
+   [
+    "2026-04-06",
+    "Nomsa Khumalo"
+   ]
+  ],
+  "now": "Nomsa Khumalo"
+ },
+ {
+  "id": "S19",
+  "pattern": "correction",
+  "thing": "annual eye exam date",
+  "theme": "family",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-08",
+    "2026-04-12"
+   ]
+  ],
+  "said_wrongly": [
+   "2026-04-08",
+   "2026-04-10"
+  ],
+  "corrected_on": "2026-04-12",
+  "now": "2026-04-12"
+ },
+ {
+  "id": "S20",
+  "pattern": "correction",
+  "thing": "favorite hiking trail",
+  "theme": "hobbies",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-18",
+    "Kirstenbosch to Skeleton Gorge"
+   ]
+  ],
+  "said_wrongly": [
+   "2026-03-18",
+   "Platteklip Gorge"
+  ],
+  "corrected_on": "2026-03-21",
+  "now": "Kirstenbosch to Skeleton Gorge"
+ },
+ {
+  "id": "S21",
+  "pattern": "tentative_dropped",
+  "thing": "alternative studio space for portfolio",
+  "theme": "work",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-07",
+    "The Foundry Warehouse"
+   ]
+  ],
+  "considered": [
+   "2026-03-15",
+   "Cape Town Art Space"
+  ],
+  "now": "The Foundry Warehouse"
+ },
+ {
+  "id": "S22",
+  "pattern": "tentative_dropped",
+  "thing": "preferred local butcher",
+  "theme": "home",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-31",
+    "Cape Town Meat Co"
+   ]
+  ],
+  "considered": [
+   "2026-04-10",
+   "The Butcher Shop"
+  ],
+  "now": "Cape Town Meat Co"
+ },
+ {
+  "id": "S23",
+  "pattern": "tentative_confirmed",
+  "thing": "preferred grocery delivery service",
+  "theme": "people",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-01",
+    "Checkers Sixty60"
+   ],
+   [
+    "2026-04-12",
+    "Pick n Pay PnP Now"
+   ]
+  ],
+  "considered": [
+   "2026-04-08",
+   "Pick n Pay PnP Now"
+  ],
+  "now": "Pick n Pay PnP Now"
+ },
+ {
+  "id": "S24",
+  "pattern": "hypothetical",
+  "thing": "accounting software subscription",
+  "theme": "admin",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-07",
+    "Xero"
+   ]
+  ],
+  "imagined": [
+   "2026-04-12",
+   "Sage One"
+  ],
+  "now": "Xero"
+ },
+ {
+  "id": "S25",
+  "pattern": "hypothetical",
+  "thing": "cloud storage provider",
+  "theme": "admin",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-26",
+    "Google Drive"
+   ]
+  ],
+  "imagined": [
+   "2026-04-01",
+   "Dropbox"
+  ],
+  "now": "Google Drive"
+ },
+ {
+  "id": "S26",
+  "pattern": "lookalike",
+  "thing": "regular hair stylist",
+  "theme": "work",
+  "other_person": "Priya (friend)",
+  "history": [
+   [
+    "2026-03-29",
+    "Zanele Mthembu"
+   ]
+  ],
+  "other_value": [
+   "2026-04-02",
+   "Priya Naidoo"
+  ],
+  "now": "Zanele Mthembu"
+ },
+ {
+  "id": "S27",
+  "pattern": "lookalike",
+  "thing": "preferred bakery",
+  "theme": "shopping",
+  "other_person": "Sipho (partner)",
+  "history": [
+   [
+    "2026-04-02",
+    "The Daily Crumb"
+   ]
+  ],
+  "other_value": [
+   "2026-04-07",
+   "The Bread Bureau"
+  ],
+  "now": "The Daily Crumb"
+ },
+ {
+  "id": "S28",
+  "pattern": "lookalike",
+  "thing": "banking app used",
+  "theme": "admin",
+  "other_person": "Sipho (partner)",
+  "history": [
+   [
+    "2026-03-29",
+    "FNB App"
+   ]
+  ],
+  "other_value": [
+   "2026-04-04",
+   "Standard Bank App"
+  ],
+  "now": "FNB App"
+ },
+ {
+  "id": "S29",
+  "pattern": "need_met",
+  "thing": "need",
+  "theme": "hobbies",
+  "other_person": null,
+  "need": {
+   "what": "a second shooter for the Fourie wedding on 28 March",
+   "topic": "photography",
+   "open_from": "2026-03-19",
+   "met_on": "2026-03-26",
+   "how": "Lerato Mokoena agreed to second-shoot"
+  }
+ },
+ {
+  "id": "S30",
+  "pattern": "need_met",
+  "thing": "need",
+  "theme": "travel",
+  "other_person": null,
+  "need": {
+   "what": "someone to walk Bongo on the days of the Stellenbosch shoot",
+   "topic": "dog-walking",
+   "open_from": "2026-03-27",
+   "met_on": "2026-04-03",
+   "how": "the neighbours' son Aidan walks Bongo"
+  }
+ },
+ {
+  "id": "S31",
+  "pattern": "need_open",
+  "thing": "need",
+  "theme": "family",
+  "other_person": null,
+  "need": {
+   "what": "a 70-200mm lens to rent for a weekend in April",
+   "topic": "camera-gear",
+   "open_from": "2026-03-15",
+   "met_on": null
+  }
+ },
+ {
+  "id": "S32",
+  "pattern": "need_open",
+  "thing": "need",
+  "theme": "money",
+  "other_person": null,
+  "need": {
+   "what": "an accountant who handles provisional tax for freelancers",
+   "topic": "tax-advice",
+   "open_from": "2026-03-19",
+   "met_on": null
+  }
+ },
+ {
+  "id": "S33",
+  "pattern": "need_other",
+  "thing": "need",
+  "theme": "people",
+  "other_person": "Sipho (partner)",
+  "need": {
+   "what": "a venue for his band's album launch",
+   "topic": "event-venue",
+   "open_from": "2026-03-24",
+   "met_on": null,
+   "not_the_persons": true
+  }
+ }
+]

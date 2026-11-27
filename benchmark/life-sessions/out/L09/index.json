@@ -1,0 +1,940 @@
+[
+ {
+  "n": 1,
+  "day": 0,
+  "steps": [],
+  "date": "2026-03-02",
+  "kind": "life"
+ },
+ {
+  "n": 2,
+  "day": 1,
+  "steps": [],
+  "date": "2026-03-03",
+  "kind": "life"
+ },
+ {
+  "n": 3,
+  "day": 2,
+  "steps": [
+   {
+    "story": "S01",
+    "step": 0,
+    "day": 2,
+    "said_late": false,
+    "text": "Daniel's pro bono case deadline is 2026-03-04.",
+    "must": [
+     "2026-03-04"
+    ]
+   }
+  ],
+  "date": "2026-03-04",
+  "kind": "life"
+ },
+ {
+  "n": 4,
+  "day": 3,
+  "steps": [
+   {
+    "story": "S28",
+    "step": 0,
+    "day": 3,
+    "said_late": false,
+    "text": "Daniel's own family health insurance provider is Manulife Financial.",
+    "must": [
+     "Manulife Financial"
+    ]
+   }
+  ],
+  "date": "2026-03-05",
+  "kind": "life"
+ },
+ {
+  "n": 5,
+  "day": 4,
+  "steps": [
+   {
+    "story": "S30",
+    "step": 0,
+    "day": 0,
+    "said_late": true,
+    "text": "Daniel needs a lactation consultant who does home visits (not sorted yet).",
+    "must": [
+     "lactation"
+    ]
+   }
+  ],
+  "date": "2026-03-06",
+  "kind": "life"
+ },
+ {
+  "n": 6,
+  "day": 5,
+  "steps": [
+   {
+    "story": "S29",
+    "step": 0,
+    "day": 4,
+    "said_late": true,
+    "text": "Daniel needs a second-hand stroller that folds small enough for the TTC (not sorted yet).",
+    "must": [
+     "stroller"
+    ]
+   }
+  ],
+  "date": "2026-03-07",
+  "kind": "life"
+ },
+ {
+  "n": 7,
+  "day": 6,
+  "steps": [
+   {
+    "story": "S14",
+    "step": 0,
+    "day": 6,
+    "said_late": false,
+    "text": "Daniel's parking spot rental is Bay Street garage.",
+    "must": [
+     "Bay Street garage"
+    ]
+   },
+   {
+    "story": "S28",
+    "step": 1,
+    "day": 6,
+    "said_late": false,
+    "text": "Grace (wife)'s family health insurance provider is Sun Life (about Grace (wife), not Daniel).",
+    "must": [
+     "Sun Life",
+     "Grace"
+    ]
+   }
+  ],
+  "date": "2026-03-08",
+  "kind": "life"
+ },
+ {
+  "n": 8,
+  "day": 7,
+  "steps": [],
+  "date": "2026-03-09",
+  "kind": "life"
+ },
+ {
+  "n": 9,
+  "day": 8,
+  "steps": [
+   {
+    "story": "S30",
+    "step": 1,
+    "day": 8,
+    "said_late": false,
+    "text": "Daniel's need is sorted: Grace booked Megan Ross for home visits.",
+    "must": [
+     "Megan Ross"
+    ]
+   }
+  ],
+  "date": "2026-03-10",
+  "kind": "life"
+ },
+ {
+  "n": 10,
+  "day": 8,
+  "steps": [
+   {
+    "story": "S24",
+    "step": 0,
+    "day": 4,
+    "said_late": false,
+    "text": "Daniel's family vacation destination is Niagara Falls.",
+    "must": [
+     "Niagara Falls"
+    ]
+   },
+   {
+    "story": "S10",
+    "step": 0,
+    "day": 7,
+    "said_late": false,
+    "text": "Daniel's brother's graduation venue is Harbourfront Centre.",
+    "must": [
+     "Harbourfront Centre"
+    ]
+   }
+  ],
+  "date": "2026-03-10",
+  "kind": "life"
+ },
+ {
+  "n": 11,
+  "day": 9,
+  "steps": [
+   {
+    "story": "S14",
+    "step": 1,
+    "day": 9,
+    "said_late": false,
+    "text": "Daniel's parking spot rental has changed: now Yonge Street lot (it was Bay Street garage).",
+    "must": [
+     "Yonge Street lot"
+    ]
+   },
+   {
+    "story": "S20",
+    "step": 0,
+    "day": 9,
+    "said_late": false,
+    "text": "Daniel's pro bono case file number is PB-9021.",
+    "must": [
+     "PB-9021"
+    ]
+   }
+  ],
+  "date": "2026-03-11",
+  "kind": "work"
+ },
+ {
+  "n": 12,
+  "day": 10,
+  "steps": [
+   {
+    "story": "S24",
+    "step": 1,
+    "day": 8,
+    "said_late": true,
+    "text": "Daniel imagines a what-if: then the family vacation destination would be Banff National Park. Only an idea; nothing changes.",
+    "must": [
+     "Banff National Park"
+    ]
+   },
+   {
+    "story": "S16",
+    "step": 0,
+    "day": 10,
+    "said_late": false,
+    "text": "Daniel's father weekend visit is 2026-03-12.",
+    "must": [
+     "2026-03-12"
+    ]
+   }
+  ],
+  "date": "2026-03-12",
+  "kind": "life"
+ },
+ {
+  "n": 13,
+  "day": 11,
+  "steps": [],
+  "date": "2026-03-13",
+  "kind": "work"
+ },
+ {
+  "n": 14,
+  "day": 11,
+  "steps": [],
+  "date": "2026-03-13",
+  "kind": "life"
+ },
+ {
+  "n": 15,
+  "day": 12,
+  "steps": [
+   {
+    "story": "S17",
+    "step": 0,
+    "day": 8,
+    "said_late": false,
+    "text": "Daniel's baby monitor app is Nanit.",
+    "must": [
+     "Nanit"
+    ]
+   },
+   {
+    "story": "S21",
+    "step": 0,
+    "day": 9,
+    "said_late": false,
+    "text": "Daniel's weekend hiking trail is Bruce Trail.",
+    "must": [
+     "Bruce Trail"
+    ]
+   }
+  ],
+  "date": "2026-03-14",
+  "kind": "life"
+ },
+ {
+  "n": 16,
+  "day": 13,
+  "steps": [
+   {
+    "story": "S12",
+    "step": 0,
+    "day": 10,
+    "said_late": false,
+    "text": "Daniel's grocery delivery app is Instacart.",
+    "must": [
+     "Instacart"
+    ]
+   },
+   {
+    "story": "S31",
+    "step": 0,
+    "day": 12,
+    "said_late": true,
+    "text": "Daniel needs a daycare spot for Ada from January (not sorted yet).",
+    "must": [
+     "daycare"
+    ]
+   }
+  ],
+  "date": "2026-03-15",
+  "kind": "life"
+ },
+ {
+  "n": 17,
+  "day": 14,
+  "steps": [
+   {
+    "story": "S15",
+    "step": 0,
+    "day": 13,
+    "said_late": false,
+    "text": "Daniel's childcare tax credit amount is 450 CAD.",
+    "must": [
+     "450 CAD"
+    ]
+   },
+   {
+    "story": "S20",
+    "step": 1,
+    "day": 13,
+    "said_late": true,
+    "text": "Daniel corrects an earlier slip: the pro bono case file number is PB-9024, not PB-9021.",
+    "must": [
+     "PB-9024"
+    ]
+   }
+  ],
+  "date": "2026-03-16",
+  "kind": "work"
+ },
+ {
+  "n": 18,
+  "day": 15,
+  "steps": [
+   {
+    "story": "S21",
+    "step": 1,
+    "day": 15,
+    "said_late": false,
+    "text": "Daniel is only thinking about changing the weekend hiking trail to Rouge Park; nothing decided.",
+    "must": [
+     "Rouge Park"
+    ]
+   }
+  ],
+  "date": "2026-03-17",
+  "kind": "life"
+ },
+ {
+  "n": 19,
+  "day": 16,
+  "steps": [],
+  "date": "2026-03-18",
+  "kind": "life"
+ },
+ {
+  "n": 20,
+  "day": 17,
+  "steps": [
+   {
+    "story": "S12",
+    "step": 1,
+    "day": 17,
+    "said_late": false,
+    "text": "Daniel's grocery delivery app has changed: now Amazon Fresh (it was Instacart).",
+    "must": [
+     "Amazon Fresh"
+    ]
+   },
+   {
+    "story": "S13",
+    "step": 0,
+    "day": 17,
+    "said_late": false,
+    "text": "Daniel's commute route to firm is Queen Street car.",
+    "must": [
+     "Queen Street car"
+    ]
+   }
+  ],
+  "date": "2026-03-19",
+  "kind": "life"
+ },
+ {
+  "n": 21,
+  "day": 18,
+  "steps": [
+   {
+    "story": "S29",
+    "step": 1,
+    "day": 14,
+    "said_late": true,
+    "text": "Daniel's need is sorted: bought a used UPPAbaby from Nadia Chen.",
+    "must": [
+     "UPPAbaby",
+     "Nadia Chen"
+    ]
+   },
+   {
+    "story": "S05",
+    "step": 0,
+    "day": 18,
+    "said_late": false,
+    "text": "Daniel's baby monitor subscription is 12.99 CAD a month.",
+    "must": [
+     "12.99 CAD a month"
+    ]
+   }
+  ],
+  "date": "2026-03-20",
+  "kind": "life"
+ },
+ {
+  "n": 22,
+  "day": 19,
+  "steps": [
+   {
+    "story": "S17",
+    "step": 1,
+    "day": 13,
+    "said_late": true,
+    "text": "Daniel has switched the baby monitor app to Owlet.",
+    "must": [
+     "Owlet"
+    ]
+   },
+   {
+    "story": "S16",
+    "step": 1,
+    "day": 19,
+    "said_late": false,
+    "text": "Daniel's father weekend visit has changed: now 2026-03-21 (it was 2026-03-12).",
+    "must": [
+     "2026-03-21"
+    ]
+   }
+  ],
+  "date": "2026-03-21",
+  "kind": "life"
+ },
+ {
+  "n": 23,
+  "day": 20,
+  "steps": [
+   {
+    "story": "S17",
+    "step": 2,
+    "day": 18,
+    "said_late": true,
+    "text": "Daniel changes mind about the baby monitor app: back to Nanit, not Owlet any more.",
+    "must": [
+     "Nanit"
+    ]
+   },
+   {
+    "story": "S18",
+    "step": 0,
+    "day": 20,
+    "said_late": false,
+    "text": "Daniel's sleep pattern is 8 hours straight.",
+    "must": [
+     "8 hours straight"
+    ]
+   }
+  ],
+  "date": "2026-03-22",
+  "kind": "life"
+ },
+ {
+  "n": 24,
+  "day": 20,
+  "steps": [
+   {
+    "story": "S25",
+    "step": 0,
+    "day": 17,
+    "said_late": false,
+    "text": "Daniel's baby clothing brand is Carter's.",
+    "must": [
+     "Carter's"
+    ]
+   },
+   {
+    "story": "S32",
+    "step": 0,
+    "day": 20,
+    "said_late": false,
+    "text": "Daniel needs a mentor who went back to Bay Street after parental leave (not sorted yet).",
+    "must": [
+     "mentor"
+    ]
+   }
+  ],
+  "date": "2026-03-22",
+  "kind": "work"
+ },
+ {
+  "n": 25,
+  "day": 21,
+  "steps": [],
+  "date": "2026-03-23",
+  "kind": "work"
+ },
+ {
+  "n": 26,
+  "day": 22,
+  "steps": [
+   {
+    "story": "S22",
+    "step": 0,
+    "day": 21,
+    "said_late": false,
+    "text": "Daniel's investment account provider is Wealthsimple.",
+    "must": [
+     "Wealthsimple"
+    ]
+   }
+  ],
+  "date": "2026-03-24",
+  "kind": "life"
+ },
+ {
+  "n": 27,
+  "day": 22,
+  "steps": [],
+  "date": "2026-03-24",
+  "kind": "life"
+ },
+ {
+  "n": 28,
+  "day": 23,
+  "steps": [
+   {
+    "story": "S19",
+    "step": 0,
+    "day": 23,
+    "said_late": false,
+    "text": "Daniel's pediatrician name is Dr. Evans.",
+    "must": [
+     "Dr. Evans"
+    ]
+   },
+   {
+    "story": "S23",
+    "step": 0,
+    "day": 23,
+    "said_late": false,
+    "text": "Daniel's pro bono filing method is online portal.",
+    "must": [
+     "online portal"
+    ]
+   }
+  ],
+  "date": "2026-03-25",
+  "kind": "work"
+ },
+ {
+  "n": 29,
+  "day": 24,
+  "steps": [
+   {
+    "story": "S06",
+    "step": 0,
+    "day": 20,
+    "said_late": false,
+    "text": "Daniel's mother in law visit is 2026-03-22.",
+    "must": [
+     "2026-03-22"
+    ]
+   },
+   {
+    "story": "S13",
+    "step": 1,
+    "day": 24,
+    "said_late": false,
+    "text": "Daniel's commute route to firm has changed: now TTC streetcar (it was Queen Street car).",
+    "must": [
+     "TTC streetcar"
+    ]
+   }
+  ],
+  "date": "2026-03-26",
+  "kind": "life"
+ },
+ {
+  "n": 30,
+  "day": 25,
+  "steps": [
+   {
+    "story": "S27",
+    "step": 0,
+    "day": 24,
+    "said_late": false,
+    "text": "Daniel's own weekly dry cleaner pickup is Green Earth Cleaners.",
+    "must": [
+     "Green Earth Cleaners"
+    ]
+   }
+  ],
+  "date": "2026-03-27",
+  "kind": "life"
+ },
+ {
+  "n": 31,
+  "day": 26,
+  "steps": [
+   {
+    "story": "S22",
+    "step": 1,
+    "day": 25,
+    "said_late": true,
+    "text": "Daniel is only thinking about changing the investment account provider to Questrade; nothing decided.",
+    "must": [
+     "Questrade"
+    ]
+   }
+  ],
+  "date": "2026-03-28",
+  "kind": "life"
+ },
+ {
+  "n": 32,
+  "day": 27,
+  "steps": [
+   {
+    "story": "S15",
+    "step": 1,
+    "day": 21,
+    "said_late": true,
+    "text": "Daniel's childcare tax credit amount has changed: now 520 CAD (it was 450 CAD).",
+    "must": [
+     "520 CAD"
+    ]
+   },
+   {
+    "story": "S25",
+    "step": 1,
+    "day": 22,
+    "said_late": true,
+    "text": "Daniel imagines a what-if: then the baby clothing brand would be Hanna Andersson. Only an idea; nothing changes.",
+    "must": [
+     "Hanna Andersson"
+    ]
+   }
+  ],
+  "date": "2026-03-29",
+  "kind": "life"
+ },
+ {
+  "n": 33,
+  "day": 28,
+  "steps": [
+   {
+    "story": "S23",
+    "step": 1,
+    "day": 28,
+    "said_late": false,
+    "text": "Daniel is thinking about changing the pro bono filing method to courthouse drop-off; not decided yet.",
+    "must": [
+     "courthouse drop-off"
+    ]
+   }
+  ],
+  "date": "2026-03-30",
+  "kind": "work"
+ },
+ {
+  "n": 34,
+  "day": 29,
+  "steps": [
+   {
+    "story": "S07",
+    "step": 0,
+    "day": 29,
+    "said_late": false,
+    "text": "Daniel's firm partner lunch is 2026-03-31.",
+    "must": [
+     "2026-03-31"
+    ]
+   },
+   {
+    "story": "S18",
+    "step": 1,
+    "day": 29,
+    "said_late": false,
+    "text": "Daniel has switched the sleep pattern to two 3-hour blocks.",
+    "must": [
+     "two 3-hour blocks"
+    ]
+   }
+  ],
+  "date": "2026-03-31",
+  "kind": "life"
+ },
+ {
+  "n": 35,
+  "day": 30,
+  "steps": [
+   {
+    "story": "S33",
+    "step": 0,
+    "day": 29,
+    "said_late": true,
+    "text": "a need that is not Daniel's own: a French interpreter for her hearing on 2 April (Mrs. Diallo (pro bono client)).",
+    "must": [
+     "interpreter"
+    ]
+   },
+   {
+    "story": "S04",
+    "step": 0,
+    "day": 30,
+    "said_late": false,
+    "text": "Daniel's brother birthday is 2026-04-01.",
+    "must": [
+     "2026-04-01"
+    ]
+   }
+  ],
+  "date": "2026-04-01",
+  "kind": "life"
+ },
+ {
+  "n": 36,
+  "day": 31,
+  "steps": [
+   {
+    "story": "S09",
+    "step": 0,
+    "day": 30,
+    "said_late": false,
+    "text": "Daniel's annual physical appointment is 2026-04-15.",
+    "must": [
+     "2026-04-15"
+    ]
+   }
+  ],
+  "date": "2026-04-02",
+  "kind": "life"
+ },
+ {
+  "n": 37,
+  "day": 32,
+  "steps": [
+   {
+    "story": "S19",
+    "step": 1,
+    "day": 32,
+    "said_late": false,
+    "text": "Daniel corrects an earlier slip: the pediatrician name is Dr. Patel, not Dr. Evans.",
+    "must": [
+     "Dr. Patel"
+    ]
+   }
+  ],
+  "date": "2026-04-03",
+  "kind": "life"
+ },
+ {
+  "n": 38,
+  "day": 33,
+  "steps": [],
+  "date": "2026-04-04",
+  "kind": "life"
+ },
+ {
+  "n": 39,
+  "day": 34,
+  "steps": [
+   {
+    "story": "S03",
+    "step": 0,
+    "day": 34,
+    "said_late": false,
+    "text": "Daniel's running club meeting is 2026-04-05.",
+    "must": [
+     "2026-04-05"
+    ]
+   }
+  ],
+  "date": "2026-04-05",
+  "kind": "life"
+ },
+ {
+  "n": 40,
+  "day": 34,
+  "steps": [
+   {
+    "story": "S27",
+    "step": 1,
+    "day": 31,
+    "said_late": true,
+    "text": "Marcus (neighbor)'s weekly dry cleaner pickup is Press & Fold (about Marcus (neighbor), not Daniel).",
+    "must": [
+     "Press & Fold",
+     "Marcus"
+    ]
+   }
+  ],
+  "date": "2026-04-05",
+  "kind": "life"
+ },
+ {
+  "n": 41,
+  "day": 35,
+  "steps": [
+   {
+    "story": "S23",
+    "step": 2,
+    "day": 32,
+    "said_late": true,
+    "text": "Daniel has now gone ahead: the pro bono filing method is courthouse drop-off.",
+    "must": [
+     "courthouse drop-off"
+    ]
+   }
+  ],
+  "date": "2026-04-06",
+  "kind": "work"
+ },
+ {
+  "n": 42,
+  "day": 36,
+  "steps": [
+   {
+    "story": "S11",
+    "step": 0,
+    "day": 36,
+    "said_late": false,
+    "text": "Daniel's home office chair is Herman Miller Aeron.",
+    "must": [
+     "Herman Miller Aeron"
+    ]
+   }
+  ],
+  "date": "2026-04-07",
+  "kind": "life"
+ },
+ {
+  "n": 43,
+  "day": 37,
+  "steps": [
+   {
+    "story": "S08",
+    "step": 0,
+    "day": 37,
+    "said_late": false,
+    "text": "Daniel's jazz concert ticket is 2026-04-08.",
+    "must": [
+     "2026-04-08"
+    ]
+   }
+  ],
+  "date": "2026-04-08",
+  "kind": "life"
+ },
+ {
+  "n": 44,
+  "day": 38,
+  "steps": [
+   {
+    "story": "S26",
+    "step": 0,
+    "day": 37,
+    "said_late": false,
+    "text": "Daniel's own jazz club membership is The Rex Jazz Bar.",
+    "must": [
+     "The Rex Jazz Bar"
+    ]
+   }
+  ],
+  "date": "2026-04-09",
+  "kind": "life"
+ },
+ {
+  "n": 45,
+  "day": 39,
+  "steps": [
+   {
+    "story": "S18",
+    "step": 2,
+    "day": 39,
+    "said_late": false,
+    "text": "Daniel changes mind about the sleep pattern: back to 8 hours straight, not two 3-hour blocks any more.",
+    "must": [
+     "8 hours straight"
+    ]
+   }
+  ],
+  "date": "2026-04-10",
+  "kind": "life"
+ },
+ {
+  "n": 46,
+  "day": 39,
+  "steps": [],
+  "date": "2026-04-10",
+  "kind": "work"
+ },
+ {
+  "n": 47,
+  "day": 40,
+  "steps": [
+   {
+    "story": "S26",
+    "step": 1,
+    "day": 40,
+    "said_late": false,
+    "text": "Elena (colleague)'s jazz club membership is Smalls Jazz Club (about Elena (colleague), not Daniel).",
+    "must": [
+     "Smalls Jazz Club",
+     "Elena"
+    ]
+   }
+  ],
+  "date": "2026-04-11",
+  "kind": "life"
+ },
+ {
+  "n": 48,
+  "day": 41,
+  "steps": [
+   {
+    "story": "S02",
+    "step": 0,
+    "day": 41,
+    "said_late": false,
+    "text": "Daniel's return to work date is 2026-04-12.",
+    "must": [
+     "2026-04-12"
+    ]
+   },
+   {
+    "story": "S11",
+    "step": 1,
+    "day": 41,
+    "said_late": false,
+    "text": "Daniel's home office chair has changed: now Steelcase Leap (it was Herman Miller Aeron).",
+    "must": [
+     "Steelcase Leap"
+    ]
+   }
+  ],
+  "date": "2026-04-12",
+  "kind": "life"
+ }
+]

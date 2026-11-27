@@ -1,0 +1,540 @@
+[
+ {
+  "id": "S01",
+  "pattern": "plain",
+  "theme": "money",
+  "days": [
+   17
+  ],
+  "thing": "monthly rent payment",
+  "values": [
+   "1,200,000 KRW"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S02",
+  "pattern": "plain",
+  "theme": "hobbies",
+  "days": [
+   4
+  ],
+  "thing": "weekly sketching session",
+  "values": [
+   "Sundays"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S03",
+  "pattern": "plain",
+  "theme": "shopping",
+  "days": [
+   20
+  ],
+  "thing": "art supply supplier",
+  "values": [
+   "Yongsan Electronics Market"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S04",
+  "pattern": "plain",
+  "theme": "hobbies",
+  "days": [
+   9
+  ],
+  "thing": "evening photography club",
+  "values": [
+   "Hongdae Photo Society"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S05",
+  "pattern": "plain",
+  "theme": "work",
+  "days": [
+   29
+  ],
+  "thing": "café shift schedule",
+  "values": [
+   "Friday nights"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S06",
+  "pattern": "plain",
+  "theme": "people",
+  "days": [
+   23
+  ],
+  "thing": "studio critique partner",
+  "values": [
+   "Min-jun Kim"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S07",
+  "pattern": "plain",
+  "theme": "travel",
+  "days": [
+   35
+  ],
+  "thing": "spring break destination",
+  "values": [
+   "Jeju Island"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S08",
+  "pattern": "plain",
+  "theme": "family",
+  "days": [
+   15
+  ],
+  "thing": "mother's birthday",
+  "values": [
+   "March 17"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S09",
+  "pattern": "plain",
+  "theme": "home",
+  "days": [
+   40
+  ],
+  "thing": "utility bill payment day",
+  "values": [
+   "April 11"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S10",
+  "pattern": "plain",
+  "theme": "money",
+  "days": [
+   7
+  ],
+  "thing": "student loan interest rate",
+  "values": [
+   "2.5%"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S11",
+  "pattern": "change",
+  "theme": "health",
+  "days": [
+   4,
+   12
+  ],
+  "thing": "chiropractor appointment time",
+  "values": [
+   "09:00",
+   "14:30"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S12",
+  "pattern": "change",
+  "theme": "home",
+  "days": [
+   15,
+   21
+  ],
+  "thing": "weekly grocery delivery slot",
+  "values": [
+   "Tuesday 10am",
+   "Thursday 10am"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S13",
+  "pattern": "change",
+  "theme": "health",
+  "days": [
+   3,
+   6
+  ],
+  "thing": "optometrist appointment time",
+  "values": [
+   "16:00",
+   "11:30"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S14",
+  "pattern": "change",
+  "theme": "people",
+  "days": [
+   11,
+   17
+  ],
+  "thing": "gym membership location",
+  "values": [
+   "Anytime Fitness Itaewon",
+   "Fitness First Gangnam"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S15",
+  "pattern": "change",
+  "theme": "family",
+  "days": [
+   14,
+   22
+  ],
+  "thing": "father's retirement party",
+  "values": [
+   "Seoul Forest Hotel",
+   "Lotte Hotel World"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S16",
+  "pattern": "change",
+  "theme": "hobbies",
+  "days": [
+   35,
+   41
+  ],
+  "thing": "weekend hiking trail",
+  "values": [
+   "Namsan Trail",
+   "Bukhansan Peak"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S17",
+  "pattern": "heart",
+  "theme": "health",
+  "days": [
+   13,
+   18,
+   22
+  ],
+  "thing": "sleeping pill dosage",
+  "values": [
+   "5 mg",
+   "10 mg"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S18",
+  "pattern": "heart",
+  "theme": "home",
+  "days": [
+   1,
+   7,
+   10
+  ],
+  "thing": "laundry detergent brand",
+  "values": [
+   "EcoClean Liquid",
+   "Ariel Pods"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S19",
+  "pattern": "correction",
+  "theme": "money",
+  "days": [
+   4,
+   9
+  ],
+  "thing": "internet service provider",
+  "values": [
+   "KT Gigapass",
+   "SK Broadband"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S20",
+  "pattern": "correction",
+  "theme": "shopping",
+  "days": [
+   15,
+   20
+  ],
+  "thing": "model glue brand",
+  "values": [
+   "Tamiya Extra Thin",
+   "UHU Por"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S21",
+  "pattern": "tentative_dropped",
+  "theme": "people",
+  "days": [
+   11,
+   18
+  ],
+  "thing": "potential study abroad partner",
+  "values": [
+   "Yuna Choi",
+   "Ji-hoon Lee"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S22",
+  "pattern": "tentative_dropped",
+  "theme": "work",
+  "days": [
+   17,
+   21
+  ],
+  "thing": "evening study venue",
+  "values": [
+   "Seoul National University Library",
+   "Starbucks Gangnam Station"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S23",
+  "pattern": "tentative_confirmed",
+  "theme": "hobbies",
+  "days": [
+   27,
+   34,
+   38
+  ],
+  "thing": "weekend pottery class",
+  "values": [
+   "Myeongdong Clay Studio",
+   "Gangnam Ceramics Workshop"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S24",
+  "pattern": "hypothetical",
+  "theme": "home",
+  "days": [
+   13,
+   23
+  ],
+  "thing": "heating system type",
+  "values": [
+   "Ondol floor heating",
+   "Central AC unit"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S25",
+  "pattern": "hypothetical",
+  "theme": "shopping",
+  "days": [
+   37,
+   41
+  ],
+  "thing": "preferred coffee bean roaster",
+  "values": [
+   "Coffee Bean Republic",
+   "Daehangno Roastery"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S26",
+  "pattern": "lookalike",
+  "theme": "money",
+  "days": [
+   26,
+   35
+  ],
+  "thing": "credit card annual fee",
+  "values": [
+   "0 KRW",
+   "15,000 KRW"
+  ],
+  "other_person": "Min-jun Kim (friend)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S27",
+  "pattern": "lookalike",
+  "theme": "family",
+  "days": [
+   0,
+   6
+  ],
+  "thing": "father's retirement date",
+  "values": [
+   "2026-04-01",
+   "2026-03-15"
+  ],
+  "other_person": "Soo-jin (aunt)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S28",
+  "pattern": "lookalike",
+  "theme": "admin",
+  "days": [
+   31,
+   35
+  ],
+  "thing": "mobile carrier plan",
+  "values": [
+   "LG Uplus",
+   "KT Mobile"
+  ],
+  "other_person": "Hana Lee (flatmate)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S29",
+  "pattern": "need_met",
+  "theme": "work",
+  "days": [
+   27,
+   33
+  ],
+  "thing": "need",
+  "values": [
+   "a laser cutter she can use for her final studio model",
+   "booked the cutter at the Seoul Fab Lab in Euljiro"
+  ],
+  "other_person": "",
+  "keyword": "laser",
+  "topic": "makerspace"
+ },
+ {
+  "id": "S30",
+  "pattern": "need_met",
+  "theme": "travel",
+  "days": [
+   10,
+   14
+  ],
+  "thing": "need",
+  "values": [
+   "a new flatmate from April when Minji moves out",
+   "Hana Lee, a design student, moves in on 1 April"
+  ],
+  "other_person": "",
+  "keyword": "flatmate",
+  "topic": "accommodation"
+ },
+ {
+  "id": "S31",
+  "pattern": "need_open",
+  "theme": "work",
+  "days": [
+   23
+  ],
+  "thing": "need",
+  "values": [
+   "a summer internship at an architecture office in Busan"
+  ],
+  "other_person": "",
+  "keyword": "internship",
+  "topic": "job-search"
+ },
+ {
+  "id": "S32",
+  "pattern": "need_open",
+  "theme": "travel",
+  "days": [
+   32
+  ],
+  "thing": "need",
+  "values": [
+   "a portfolio review from a practising architect"
+  ],
+  "other_person": "",
+  "keyword": "portfolio",
+  "topic": "mentoring"
+ },
+ {
+  "id": "S33",
+  "pattern": "need_other",
+  "theme": "people",
+  "days": [
+   21
+  ],
+  "thing": "need",
+  "values": [
+   "a cheap used laptop for his evening course"
+  ],
+  "other_person": "Dae-ho (café colleague)",
+  "keyword": "laptop",
+  "topic": "second-hand-goods"
+ }
+]

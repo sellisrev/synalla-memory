@@ -1,0 +1,179 @@
+{
+ "9": [
+  [
+   "states 'Dr. Lefebvre'"
+  ]
+ ],
+ "48": [
+  [
+   "states 'Zara'"
+  ],
+  [
+   "states 'Zara'"
+  ],
+  [
+   "states 'Zara'"
+  ],
+  [
+   "missing 'Zara Home'"
+  ],
+  [
+   "states 'Zara'"
+  ],
+  [
+   "states 'Zara'"
+  ],
+  [
+   "states 'Zara'"
+  ],
+  [
+   "states 'Zara'"
+  ],
+  [
+   "states 'Zara'"
+  ],
+  [
+   "states 'Zara'"
+  ],
+  [
+   "states 'Zara'"
+  ],
+  [
+   "states 'Zara'"
+  ],
+  [
+   "states 'Zara'"
+  ],
+  [
+   "states 'Zara'"
+  ],
+  [
+   "states 'Zara'"
+  ],
+  [
+   "states 'Zara'"
+  ],
+  [
+   "states 'Zara'"
+  ],
+  [
+   "states 'Zara'"
+  ],
+  [
+   "states 'Zara'"
+  ],
+  [
+   "states 'Zara'"
+  ],
+  [
+   "states 'Zara'"
+  ],
+  [
+   "states 'Zara'"
+  ],
+  [
+   "states 'Zara'"
+  ],
+  [
+   "states 'Zara'"
+  ]
+ ],
+ "2": [
+  [
+   "judge: S32: Inès has her piano lesson this Thursday at 4:00 PM. (The user asks about the piano lesson, and the assistant provides a specific time/day, but the fact S32 states that Clair)"
+  ]
+ ],
+ "14": [
+  [
+   "judge: S16: Your input is vital to keep the Pottery club and other programs running. (This mentions the Pottery club, which was Claire's Inès's extracurricular class on 2026-03-09, but it has been changed t)",
+   "judge: S16: He also noted that Inès needs new art clay for her Pottery club class this week, so he added that to the shopping list a (Mentions the Pottery club, which was replaced by the Sculpture workshop on 2026-03-19.)"
+  ]
+ ],
+ "23": [
+  [
+   "judge: S19: I'm parked in Zone C at the hospital, so I'll have to walk a bit to get to the shuttle, but it's better than circling fo (This contradicts the fact that Claire corrected her hospital parking zone to Zone B on 2026-03-25.)"
+  ],
+  [
+   "judge: S33: I need to pick up the prescription for Julien. (The user mentions picking up a prescription for Julien, but the facts state that Julien's need is for a lawyer to look o)",
+   "judge: S31: He’s been complaining about his back again. (The user attributes back pain to Julien, but the facts state Claire needs a physiotherapist for her own lower back pain.)"
+  ],
+  [
+   "judge: S02: I've scheduled the insurance payment for March 4th and added the grocery items to your cart. (The assistant says it scheduled the payment for March 4th, but the conversation is taking place on 2026-03-20. The insur)"
+  ]
+ ],
+ "25": [
+  [
+   "judge: S19: I think I was in Zone C, but I’m not 100% sure. (The user is expressing uncertainty about the parking zone, but the conversation date is 2026-03-22, and the fact S19 (co)",
+   "judge: S19: yes, your logs confirm you parked in Zone C at the hospital today. (The assistant confirms the user parked in Zone C, which contradicts the fact that the correct hospital parking zone is Z)"
+  ]
+ ],
+ "26": [
+  [
+   "judge: S02: I’ve checked your linked accounts. The insurance payment of €142.50 was successfully processed on March 21st. (The assistant states the insurance payment was €142.50, but the fact S02 states the car insurance premium is 82 euros.)"
+  ]
+ ],
+ "27": [
+  [
+   "judge: S04: I have that paperwork for the tax return sitting there, and I need to call Dr. Lefebvre’s office to reschedule Julien’s  (The user mentions tax return paperwork, which relates to the tax filing deadline of April 11th (S04), which is dated aft)"
+  ]
+ ],
+ "31": [
+  [
+   "judge: S32: I have to figure out when I can drop Inès at her piano lesson next week. (The user refers to a piano lesson as a scheduled event, but the fact states the piano teacher for Inès is a need that is)",
+   "judge: S04: I’ll do that. One last thing. I need to fill out that tax form for the home office deduction. (The user mentions a tax form, but the tax filing deadline is April 11th, which is after the conversation date of 2026-03)"
+  ],
+  [
+   "judge: S04: The deadline is April 15th, so it's not urgent yet (The assistant states the tax filing deadline is April 15th, but the fact S04 states the deadline is April 11th.)"
+  ],
+  [
+   "judge: S32: Inès has piano lessons Sunday afternoon. (The conversation is dated 2026-03-27. Fact S32 states that Claire needs a piano teacher for Inès on Wednesday afternoons)"
+  ]
+ ],
+ "32": [
+  [
+   "judge: S20: You have the pediatrician appointment for Hugo on Sunday morning at 10:00 AM, and the family lunch with your parents on  (The assistant claims Hugo has a pediatrician appointment this weekend, but the facts state Hugo's pediatrician is Dr. Be)"
+  ],
+  [
+   "judge: S32: I’ll pick up the groceries tomorrow morning before Inès’s piano lesson. (Inès's piano lesson is listed as a need that is 'not sorted yet' (S32), so it should not be treated as a confirmed event)",
+   "judge: S32: I’ll pick up the groceries tomorrow morning before Inès’s piano lesson. (The piano lesson for Inès is a need that is 'not sorted yet' (S32), so it cannot be treated as a confirmed event in a sc)"
+  ],
+  [
+   "missing 'Uniqlo'"
+  ]
+ ],
+ "34": [
+  [
+   "judge: N/A: Hugo has that soccer practice on Tuesday, right? (The conversation mentions a soccer practice for Hugo, but there is no fact in the provided data regarding Hugo having so)",
+   "judge: N/A: I see you also have a doctor's appointment scheduled for that same time. (The assistant claims there is a doctor's appointment scheduled, but no such appointment is mentioned in the facts for Cl)"
+  ]
+ ],
+ "35": [
+  [
+   "judge: S12: Would you like me to add these to your weekly shopping list for the Carrefour on Rue de la République? (The user's grocery delivery service has changed from Carrefour Express to Leclerc Drive as of 2026-03-23.)",
+   "judge: S12: I’ve added the stir-fry items to your Carrefour list. (The user's grocery delivery service has changed from Carrefour Express to Leclerc Drive as of 2026-03-23.)"
+  ]
+ ],
+ "39": [
+  [
+   "judge: S17: Does Inès have that art workshop this weekend? I feel like I forgot to sign her up. (The user is asking if she signed her up for the art workshop, but the fact S17 shows she changed her mind and went back )",
+   "judge: S17: The registration for Inès's weekend art workshop was completed last Tuesday. (The assistant states the art workshop registration was completed, but the fact S17 states that on 2026-04-03, Claire cha)"
+  ]
+ ],
+ "42": [
+  [
+   "judge: S12: I have checked and there is a slot available for Tuesday at 4 PM. (The assistant mentions a detail (grocery delivery) that refers to a date after the conversation date of 2026-04-06 (Tues)"
+  ]
+ ],
+ "47": [
+  [
+   "judge: S14: I just got off a 12-hour shift at Pavillon Nord and I’m staring at my laptop. (The user states she is at Pavillon Nord, but according to S14 (updated 2026-04-12), her ICU ward assignment is Pavillon )",
+   "judge: S01: I drove to the hospital for the night shift on April 4th. (The user mentions driving to the hospital on April 4th, which is fine, but S01 states her mortgage payment is on the 4th)",
+   "judge: S25: He’s picking up Inès from her ballet class (Inès's extracurricular activity is Sculpture workshop (S16, updated 2026-03-19). Ballet is only a 'what-if' idea (S25) a)"
+  ]
+ ],
+ "49": [
+  [
+   "judge: S24: I also need to remember to pick up Zyrtec for Inès on my way home from the hospital on Friday. (Zyrtec is Claire's own allergy medication, but the user attributes the need to pick it up for Inès.)"
+  ]
+ ]
+}

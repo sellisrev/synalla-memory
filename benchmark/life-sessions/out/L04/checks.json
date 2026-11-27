@@ -1,0 +1,81 @@
+{
+ "17": [
+  [
+   "date 2026-03-11 not said"
+  ]
+ ],
+ "22": [
+  [
+   "states 'Friday mornings'"
+  ]
+ ],
+ "39": [
+  [
+   "date 2026-03-30 not said"
+  ]
+ ],
+ "46": [
+  [
+   "missing '2026-04-09'"
+  ]
+ ],
+ "49": [
+  [
+   "date 2026-04-11 not said"
+  ]
+ ],
+ "7": [
+  [
+   "judge: none: I have also sent a reminder to your phone for Wednesday evening. (The conversation date is 2026-03-07. The user asks about a doctor's appointment on Thursday, which would be 2026-03-08. )"
+  ]
+ ],
+ "16": [
+  [
+   "judge: S07: The amount due is 245 PLN. (The amount due is 420 PLN, not 245 PLN.)",
+   "judge: S21: The amount due is 245 PLN. (This mentions a fact (the electricity bill amount) dated after 2026-03-14 (S07 is from 2026-03-28).)"
+  ]
+ ],
+ "25": [
+  [
+   "judge: S06: Boję się, że jak coś źle wpiszę, to będą kłopoty z ZUS na Grzegórkach. (The user refers to the ZUS branch as being 'na Grzegórkach' (on Grzegórzecka), but the fact S06 states the ZUS branch is)"
+  ]
+ ],
+ "26": [
+  [
+   "judge: S20: I was thinking of going to the pharmacy near the pension office address: ul. Grzegórzecka 15. (The pension office address was corrected to ul. Pawia 4 on 2026-03-27, making the address ul. Grzegórzecka 15 incorrect.)",
+   "judge: S20: It appears the pharmacy at ul. Grzegórzecka 15 is open until 6:00 PM on Mondays. (The user previously established that the pension office address (which the user is using to locate the pharmacy) is actu)"
+  ]
+ ],
+ "27": [
+  [
+   "judge: S13: She starts next week, on the first day of spring break. (The user says the internship starts on the first day of spring break, but the fact S13 (dated 2026-03-30) states that th)",
+   "judge: S14: She starts next week, on the first day of spring break. (The user claims the internship starts on the first day of spring break. However, the fact S14 (dated 2026-03-23) states )"
+  ]
+ ],
+ "29": [
+  [
+   "judge: S23, from 2026-03-15: Send it to his email. (The user tells the assistant to send the message to the grandson's email, but the fact states that the grandson's contac)"
+  ]
+ ],
+ "32": [
+  [
+   "judge: S21: Since you are a widower and own the apartment, the utility bill from the Przegląd Dzienny delivery confirmation might no (The assistant incorrectly associates the Przegląd Dzienny with a utility bill/delivery confirmation, whereas the facts s)"
+  ],
+  [
+   "judge: S17: The heritage society meeting is usually at the Community Centre Room B, but that was after I dropped the letter off. (Krzysztof states the meeting is at Community Centre Room B, but according to S17 (dated 2026-03-21), he changed his mind)",
+   "judge: S30: The heritage society meeting is usually at the Community Centre Room B, but that was after I dropped the letter off. (The user mentions the meeting was 'after' dropping the letter on March 25th, but S30 states that Kuba Wiśniewski helped )"
+  ]
+ ],
+ "47": [
+  [
+   "judge: S17: I plan to attend the heritage society meeting at the Stary Kleparz Market Hall before I fly. (The heritage society meeting location was last updated to be Main Library Hall on 2026-03-30, making the mention of Star)",
+   "judge: S04: I plan to attend the heritage society meeting at the Stary Kleparz Market Hall before I fly. (The meeting location was changed from Stary Kleparz Market Hall to Main Library Hall (S17) and then back to Main Library)"
+  ]
+ ],
+ "48": [
+  [
+   "judge: S17: Yes, your heritage society meeting is confirmed at the Stary Kleparz Market Hall. (The heritage society meeting location was changed back to Main Library Hall on 2026-03-30.)",
+   "judge: S15: It is scheduled for next Thursday at 18:00. (The heritage society volunteer shift was changed to Thursday afternoons on 2026-04-12, but the meeting location itself w)"
+  ]
+ ]
+}

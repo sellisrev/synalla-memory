@@ -1,0 +1,548 @@
+[
+ {
+  "id": "S01",
+  "pattern": "plain",
+  "thing": "weekly grocery provider",
+  "theme": "shopping",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-04",
+    "Nature's Basket Koramangala"
+   ]
+  ],
+  "now": "Nature's Basket Koramangala"
+ },
+ {
+  "id": "S02",
+  "pattern": "plain",
+  "thing": "flight to Mumbai",
+  "theme": "travel",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-10",
+    "IndiGo 6E 204"
+   ]
+  ],
+  "now": "IndiGo 6E 204"
+ },
+ {
+  "id": "S03",
+  "pattern": "plain",
+  "thing": "train to Mysore",
+  "theme": "travel",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-31",
+    "Shatabdi Express 12008"
+   ]
+  ],
+  "now": "Shatabdi Express 12008"
+ },
+ {
+  "id": "S04",
+  "pattern": "plain",
+  "thing": "laptop repair shop",
+  "theme": "shopping",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-04",
+    "MacBook Center MG Road"
+   ]
+  ],
+  "now": "MacBook Center MG Road"
+ },
+ {
+  "id": "S05",
+  "pattern": "plain",
+  "thing": "annual health checkup",
+  "theme": "health",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-29",
+    "Apollo Hospitals Jayanagar"
+   ]
+  ],
+  "now": "Apollo Hospitals Jayanagar"
+ },
+ {
+  "id": "S06",
+  "pattern": "plain",
+  "thing": "home internet provider",
+  "theme": "home",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-03",
+    "Airtel Xstream Fiber"
+   ]
+  ],
+  "now": "Airtel Xstream Fiber"
+ },
+ {
+  "id": "S07",
+  "pattern": "plain",
+  "thing": "cab to airport",
+  "theme": "travel",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-30",
+    "Uber Black"
+   ]
+  ],
+  "now": "Uber Black"
+ },
+ {
+  "id": "S08",
+  "pattern": "plain",
+  "thing": "bank branch for check deposit",
+  "theme": "admin",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-06",
+    "HDFC Bank Indiranagar"
+   ]
+  ],
+  "now": "HDFC Bank Indiranagar"
+ },
+ {
+  "id": "S09",
+  "pattern": "plain",
+  "thing": "co-working space desk",
+  "theme": "work",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-08",
+    "WeWork Embassy Golf Links"
+   ]
+  ],
+  "now": "WeWork Embassy Golf Links"
+ },
+ {
+  "id": "S10",
+  "pattern": "plain",
+  "thing": "mother's birthday gift",
+  "theme": "family",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-16",
+    "Swarovski necklace"
+   ]
+  ],
+  "now": "Swarovski necklace"
+ },
+ {
+  "id": "S11",
+  "pattern": "change",
+  "thing": "gym membership",
+  "theme": "shopping",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-21",
+    "Gold's Gym Koramangala"
+   ],
+   [
+    "2026-03-26",
+    "Cult.fit Indiranagar"
+   ]
+  ],
+  "now": "Cult.fit Indiranagar"
+ },
+ {
+  "id": "S12",
+  "pattern": "change",
+  "thing": "evening hobby class",
+  "theme": "hobbies",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-09",
+    "Kathak dance at Kalakshetra"
+   ],
+   [
+    "2026-03-16",
+    "Pottery workshop at Crafts Museum"
+   ]
+  ],
+  "now": "Pottery workshop at Crafts Museum"
+ },
+ {
+  "id": "S13",
+  "pattern": "change",
+  "thing": "home security system",
+  "theme": "home",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-08",
+    "Honeywell Smart Lock"
+   ],
+   [
+    "2026-04-12",
+    "Vimala Smart Lock"
+   ]
+  ],
+  "now": "Vimala Smart Lock"
+ },
+ {
+  "id": "S14",
+  "pattern": "change",
+  "thing": "CA for tax filing",
+  "theme": "admin",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-08",
+    "Rajesh Kumar & Associates"
+   ],
+   [
+    "2026-04-12",
+    "Mehta & Co Chartered Accountants"
+   ]
+  ],
+  "now": "Mehta & Co Chartered Accountants"
+ },
+ {
+  "id": "S15",
+  "pattern": "change",
+  "thing": "credit card limit",
+  "theme": "money",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-28",
+    "INR 500000"
+   ],
+   [
+    "2026-04-07",
+    "INR 750000"
+   ]
+  ],
+  "now": "INR 750000"
+ },
+ {
+  "id": "S16",
+  "pattern": "change",
+  "thing": "monthly SIP amount",
+  "theme": "money",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-23",
+    "INR 15000"
+   ],
+   [
+    "2026-04-02",
+    "INR 25000"
+   ]
+  ],
+  "now": "INR 25000"
+ },
+ {
+  "id": "S17",
+  "pattern": "heart",
+  "thing": "weekly yoga instructor",
+  "theme": "home",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-08",
+    "Anjali Iyengar"
+   ],
+   [
+    "2026-03-14",
+    "Meera Desai"
+   ],
+   [
+    "2026-03-20",
+    "Anjali Iyengar"
+   ]
+  ],
+  "now": "Anjali Iyengar"
+ },
+ {
+  "id": "S18",
+  "pattern": "heart",
+  "thing": "monthly bookkeeper",
+  "theme": "admin",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-10",
+    "Sunita Rao"
+   ],
+   [
+    "2026-03-17",
+    "Kiran Patel"
+   ],
+   [
+    "2026-03-24",
+    "Sunita Rao"
+   ]
+  ],
+  "now": "Sunita Rao"
+ },
+ {
+  "id": "S19",
+  "pattern": "correction",
+  "thing": "investment amount raised",
+  "theme": "money",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-05",
+    "INR 2.5 Crores"
+   ]
+  ],
+  "said_wrongly": [
+   "2026-04-05",
+   "INR 2 Crores"
+  ],
+  "corrected_on": "2026-04-08",
+  "now": "INR 2.5 Crores"
+ },
+ {
+  "id": "S20",
+  "pattern": "correction",
+  "thing": "flight departure time",
+  "theme": "travel",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-04",
+    "15:30"
+   ]
+  ],
+  "said_wrongly": [
+   "2026-04-04",
+   "14:30"
+  ],
+  "corrected_on": "2026-04-09",
+  "now": "15:30"
+ },
+ {
+  "id": "S21",
+  "pattern": "tentative_dropped",
+  "thing": "backup power generator",
+  "theme": "work",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-04",
+    "Kirloskar 5kVA"
+   ]
+  ],
+  "considered": [
+   "2026-03-10",
+   "Sukam 3kVA"
+  ],
+  "now": "Kirloskar 5kVA"
+ },
+ {
+  "id": "S22",
+  "pattern": "tentative_dropped",
+  "thing": "office printer lease",
+  "theme": "work",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-20",
+    "HP LaserJet Pro"
+   ]
+  ],
+  "considered": [
+   "2026-03-30",
+   "Canon imageRUNNER"
+  ],
+  "now": "HP LaserJet Pro"
+ },
+ {
+  "id": "S23",
+  "pattern": "tentative_confirmed",
+  "thing": "morning running coach",
+  "theme": "people",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-04",
+    "Rohan Gupta"
+   ],
+   [
+    "2026-03-17",
+    "Neha Kapoor"
+   ]
+  ],
+  "considered": [
+   "2026-03-09",
+   "Neha Kapoor"
+  ],
+  "now": "Neha Kapoor"
+ },
+ {
+  "id": "S24",
+  "pattern": "hypothetical",
+  "thing": "daily step goal",
+  "theme": "health",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-04",
+    "10000 steps"
+   ]
+  ],
+  "imagined": [
+   "2026-03-08",
+   "15000 steps"
+  ],
+  "now": "10000 steps"
+ },
+ {
+  "id": "S25",
+  "pattern": "hypothetical",
+  "thing": "sleep duration target",
+  "theme": "health",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-02",
+    "7 hours"
+   ]
+  ],
+  "imagined": [
+   "2026-04-09",
+   "8 hours"
+  ],
+  "now": "7 hours"
+ },
+ {
+  "id": "S26",
+  "pattern": "lookalike",
+  "thing": "personal trainer",
+  "theme": "work",
+  "other_person": "Ananya (sister)",
+  "history": [
+   [
+    "2026-03-14",
+    "Vikram Singh"
+   ]
+  ],
+  "other_value": [
+   "2026-03-21",
+   "Ananya Reddy"
+  ],
+  "now": "Vikram Singh"
+ },
+ {
+  "id": "S27",
+  "pattern": "lookalike",
+  "thing": "pet groomer",
+  "theme": "admin",
+  "other_person": "Ravi (brother)",
+  "history": [
+   [
+    "2026-04-07",
+    "Paws & Claws Koramangala"
+   ]
+  ],
+  "other_value": [
+   "2026-04-12",
+   "The Dog Spot Indiranagar"
+  ],
+  "now": "Paws & Claws Koramangala"
+ },
+ {
+  "id": "S28",
+  "pattern": "lookalike",
+  "thing": "credit card annual fee",
+  "theme": "money",
+  "other_person": "Ravi (brother)",
+  "history": [
+   [
+    "2026-03-11",
+    "INR 12000"
+   ]
+  ],
+  "other_value": [
+   "2026-03-14",
+   "INR 4500"
+  ],
+  "now": "INR 12000"
+ },
+ {
+  "id": "S29",
+  "pattern": "need_met",
+  "thing": "need",
+  "theme": "people",
+  "other_person": null,
+  "need": {
+   "what": "a senior Android developer to hire by April",
+   "topic": "hiring",
+   "open_from": "2026-03-03",
+   "met_on": "2026-03-13",
+   "how": "hired Arjun Menon, who starts on 6 April"
+  }
+ },
+ {
+  "id": "S30",
+  "pattern": "need_met",
+  "thing": "need",
+  "theme": "hobbies",
+  "other_person": null,
+  "need": {
+   "what": "a warm introduction to someone at Kalaari Capital",
+   "topic": "funding",
+   "open_from": "2026-04-04",
+   "met_on": "2026-04-08",
+   "how": "Ritu Shah introduced her to a partner at Kalaari"
+  }
+ },
+ {
+  "id": "S31",
+  "pattern": "need_open",
+  "thing": "need",
+  "theme": "health",
+  "other_person": null,
+  "need": {
+   "what": "a co-founder who can run sales",
+   "topic": "cofounder-search",
+   "open_from": "2026-03-22",
+   "met_on": null
+  }
+ },
+ {
+  "id": "S32",
+  "pattern": "need_open",
+  "thing": "need",
+  "theme": "family",
+  "other_person": null,
+  "need": {
+   "what": "a startup lawyer to review the term sheet",
+   "topic": "legal-advice",
+   "open_from": "2026-03-30",
+   "met_on": null
+  }
+ },
+ {
+  "id": "S33",
+  "pattern": "need_other",
+  "thing": "need",
+  "theme": "home",
+  "other_person": "her father",
+  "need": {
+   "what": "a physiotherapist for his knee who can come home",
+   "topic": "physiotherapy",
+   "open_from": "2026-03-31",
+   "met_on": null,
+   "not_the_persons": true
+  }
+ }
+]

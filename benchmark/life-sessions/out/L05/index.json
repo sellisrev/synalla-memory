@@ -1,0 +1,947 @@
+[
+ {
+  "n": 1,
+  "day": 0,
+  "steps": [
+   {
+    "story": "S27",
+    "step": 0,
+    "day": 0,
+    "said_late": false,
+    "text": "Ji-woo's own father's retirement date is 2026-04-01.",
+    "must": [
+     "2026-04-01"
+    ]
+   }
+  ],
+  "date": "2026-03-02",
+  "kind": "life"
+ },
+ {
+  "n": 2,
+  "day": 1,
+  "steps": [],
+  "date": "2026-03-03",
+  "kind": "work"
+ },
+ {
+  "n": 3,
+  "day": 2,
+  "steps": [],
+  "date": "2026-03-04",
+  "kind": "life"
+ },
+ {
+  "n": 4,
+  "day": 3,
+  "steps": [
+   {
+    "story": "S13",
+    "step": 0,
+    "day": 3,
+    "said_late": false,
+    "text": "Ji-woo's optometrist appointment time is 16:00.",
+    "must": [
+     "16:00"
+    ]
+   }
+  ],
+  "date": "2026-03-05",
+  "kind": "life"
+ },
+ {
+  "n": 5,
+  "day": 3,
+  "steps": [],
+  "date": "2026-03-05",
+  "kind": "life"
+ },
+ {
+  "n": 6,
+  "day": 4,
+  "steps": [
+   {
+    "story": "S02",
+    "step": 0,
+    "day": 4,
+    "said_late": false,
+    "text": "Ji-woo's weekly sketching session is Sundays.",
+    "must": [
+     "Sundays"
+    ]
+   },
+   {
+    "story": "S19",
+    "step": 0,
+    "day": 4,
+    "said_late": false,
+    "text": "Ji-woo's internet service provider is KT Gigapass.",
+    "must": [
+     "KT Gigapass"
+    ]
+   }
+  ],
+  "date": "2026-03-06",
+  "kind": "life"
+ },
+ {
+  "n": 7,
+  "day": 5,
+  "steps": [
+   {
+    "story": "S18",
+    "step": 0,
+    "day": 1,
+    "said_late": false,
+    "text": "Ji-woo's laundry detergent brand is EcoClean Liquid.",
+    "must": [
+     "EcoClean Liquid"
+    ]
+   }
+  ],
+  "date": "2026-03-07",
+  "kind": "life"
+ },
+ {
+  "n": 8,
+  "day": 6,
+  "steps": [
+   {
+    "story": "S27",
+    "step": 1,
+    "day": 6,
+    "said_late": false,
+    "text": "Soo-jin (aunt)'s father's retirement date is 2026-03-15 (about Soo-jin (aunt), not Ji-woo).",
+    "must": [
+     "2026-03-15",
+     "Soo-jin"
+    ]
+   }
+  ],
+  "date": "2026-03-08",
+  "kind": "life"
+ },
+ {
+  "n": 9,
+  "day": 7,
+  "steps": [
+   {
+    "story": "S11",
+    "step": 0,
+    "day": 4,
+    "said_late": false,
+    "text": "Ji-woo's chiropractor appointment time is 09:00.",
+    "must": [
+     "09:00"
+    ]
+   },
+   {
+    "story": "S10",
+    "step": 0,
+    "day": 7,
+    "said_late": false,
+    "text": "Ji-woo's student loan interest rate is 2.5%.",
+    "must": [
+     "2.5%"
+    ]
+   }
+  ],
+  "date": "2026-03-09",
+  "kind": "life"
+ },
+ {
+  "n": 10,
+  "day": 8,
+  "steps": [],
+  "date": "2026-03-10",
+  "kind": "life"
+ },
+ {
+  "n": 11,
+  "day": 9,
+  "steps": [
+   {
+    "story": "S04",
+    "step": 0,
+    "day": 9,
+    "said_late": false,
+    "text": "Ji-woo's evening photography club is Hongdae Photo Society.",
+    "must": [
+     "Hongdae Photo Society"
+    ]
+   }
+  ],
+  "date": "2026-03-11",
+  "kind": "life"
+ },
+ {
+  "n": 12,
+  "day": 10,
+  "steps": [
+   {
+    "story": "S30",
+    "step": 0,
+    "day": 10,
+    "said_late": false,
+    "text": "Ji-woo needs a new flatmate from April when Minji moves out (not sorted yet).",
+    "must": [
+     "flatmate"
+    ]
+   }
+  ],
+  "date": "2026-03-12",
+  "kind": "life"
+ },
+ {
+  "n": 13,
+  "day": 11,
+  "steps": [
+   {
+    "story": "S14",
+    "step": 0,
+    "day": 11,
+    "said_late": false,
+    "text": "Ji-woo's gym membership location is Anytime Fitness Itaewon.",
+    "must": [
+     "Anytime Fitness Itaewon"
+    ]
+   },
+   {
+    "story": "S21",
+    "step": 0,
+    "day": 11,
+    "said_late": false,
+    "text": "Ji-woo's potential study abroad partner is Yuna Choi.",
+    "must": [
+     "Yuna Choi"
+    ]
+   }
+  ],
+  "date": "2026-03-13",
+  "kind": "life"
+ },
+ {
+  "n": 14,
+  "day": 12,
+  "steps": [
+   {
+    "story": "S13",
+    "step": 1,
+    "day": 6,
+    "said_late": true,
+    "text": "Ji-woo's optometrist appointment time has changed: now 11:30 (it was 16:00).",
+    "must": [
+     "11:30"
+    ]
+   }
+  ],
+  "date": "2026-03-14",
+  "kind": "life"
+ },
+ {
+  "n": 15,
+  "day": 13,
+  "steps": [
+   {
+    "story": "S18",
+    "step": 1,
+    "day": 7,
+    "said_late": true,
+    "text": "Ji-woo has switched the laundry detergent brand to Ariel Pods.",
+    "must": [
+     "Ariel Pods"
+    ]
+   },
+   {
+    "story": "S19",
+    "step": 1,
+    "day": 9,
+    "said_late": true,
+    "text": "Ji-woo corrects an earlier slip: the internet service provider is SK Broadband, not KT Gigapass.",
+    "must": [
+     "SK Broadband"
+    ]
+   }
+  ],
+  "date": "2026-03-15",
+  "kind": "life"
+ },
+ {
+  "n": 16,
+  "day": 14,
+  "steps": [
+   {
+    "story": "S18",
+    "step": 2,
+    "day": 10,
+    "said_late": true,
+    "text": "Ji-woo changes mind about the laundry detergent brand: back to EcoClean Liquid, not Ariel Pods any more.",
+    "must": [
+     "EcoClean Liquid"
+    ]
+   },
+   {
+    "story": "S15",
+    "step": 0,
+    "day": 14,
+    "said_late": false,
+    "text": "Ji-woo's father's retirement party is Seoul Forest Hotel.",
+    "must": [
+     "Seoul Forest Hotel"
+    ]
+   }
+  ],
+  "date": "2026-03-16",
+  "kind": "life"
+ },
+ {
+  "n": 17,
+  "day": 14,
+  "steps": [
+   {
+    "story": "S17",
+    "step": 0,
+    "day": 13,
+    "said_late": false,
+    "text": "Ji-woo's sleeping pill dosage is 5 mg.",
+    "must": [
+     "5 mg"
+    ]
+   },
+   {
+    "story": "S30",
+    "step": 1,
+    "day": 14,
+    "said_late": false,
+    "text": "Ji-woo's need is sorted: Hana Lee, a design student, moves in on 1 April.",
+    "must": [
+     "Lee"
+    ]
+   }
+  ],
+  "date": "2026-03-16",
+  "kind": "life"
+ },
+ {
+  "n": 18,
+  "day": 15,
+  "steps": [
+   {
+    "story": "S11",
+    "step": 1,
+    "day": 12,
+    "said_late": true,
+    "text": "Ji-woo's chiropractor appointment time has changed: now 14:30 (it was 09:00).",
+    "must": [
+     "14:30"
+    ]
+   },
+   {
+    "story": "S08",
+    "step": 0,
+    "day": 15,
+    "said_late": false,
+    "text": "Ji-woo's mother's birthday is March 17.",
+    "must": [
+     "March 17"
+    ]
+   }
+  ],
+  "date": "2026-03-17",
+  "kind": "life"
+ },
+ {
+  "n": 19,
+  "day": 16,
+  "steps": [
+   {
+    "story": "S12",
+    "step": 0,
+    "day": 15,
+    "said_late": false,
+    "text": "Ji-woo's weekly grocery delivery slot is Tuesday 10am.",
+    "must": [
+     "Tuesday 10am"
+    ]
+   },
+   {
+    "story": "S20",
+    "step": 0,
+    "day": 15,
+    "said_late": false,
+    "text": "Ji-woo's model glue brand is Tamiya Extra Thin.",
+    "must": [
+     "Tamiya Extra Thin"
+    ]
+   }
+  ],
+  "date": "2026-03-18",
+  "kind": "life"
+ },
+ {
+  "n": 20,
+  "day": 17,
+  "steps": [
+   {
+    "story": "S01",
+    "step": 0,
+    "day": 17,
+    "said_late": false,
+    "text": "Ji-woo's monthly rent payment is 1,200,000 KRW.",
+    "must": [
+     "1,200,000 KRW"
+    ]
+   },
+   {
+    "story": "S14",
+    "step": 1,
+    "day": 17,
+    "said_late": false,
+    "text": "Ji-woo's gym membership location has changed: now Fitness First Gangnam (it was Anytime Fitness Itaewon).",
+    "must": [
+     "Fitness First Gangnam"
+    ]
+   }
+  ],
+  "date": "2026-03-19",
+  "kind": "life"
+ },
+ {
+  "n": 21,
+  "day": 18,
+  "steps": [
+   {
+    "story": "S24",
+    "step": 0,
+    "day": 13,
+    "said_late": false,
+    "text": "Ji-woo's heating system type is Ondol floor heating.",
+    "must": [
+     "Ondol floor heating"
+    ]
+   },
+   {
+    "story": "S21",
+    "step": 1,
+    "day": 18,
+    "said_late": false,
+    "text": "Ji-woo is only thinking about changing the potential study abroad partner to Ji-hoon Lee; nothing decided.",
+    "must": [
+     "Ji-hoon Lee"
+    ]
+   }
+  ],
+  "date": "2026-03-20",
+  "kind": "life"
+ },
+ {
+  "n": 22,
+  "day": 19,
+  "steps": [],
+  "date": "2026-03-21",
+  "kind": "work"
+ },
+ {
+  "n": 23,
+  "day": 20,
+  "steps": [
+   {
+    "story": "S22",
+    "step": 0,
+    "day": 17,
+    "said_late": false,
+    "text": "Ji-woo's evening study venue is Seoul National University Library.",
+    "must": [
+     "Seoul National University Library"
+    ]
+   },
+   {
+    "story": "S03",
+    "step": 0,
+    "day": 20,
+    "said_late": false,
+    "text": "Ji-woo's art supply supplier is Yongsan Electronics Market.",
+    "must": [
+     "Yongsan Electronics Market"
+    ]
+   }
+  ],
+  "date": "2026-03-22",
+  "kind": "work"
+ },
+ {
+  "n": 24,
+  "day": 20,
+  "steps": [
+   {
+    "story": "S20",
+    "step": 1,
+    "day": 20,
+    "said_late": false,
+    "text": "Ji-woo corrects an earlier slip: the model glue brand is UHU Por, not Tamiya Extra Thin.",
+    "must": [
+     "UHU Por"
+    ]
+   }
+  ],
+  "date": "2026-03-22",
+  "kind": "life"
+ },
+ {
+  "n": 25,
+  "day": 21,
+  "steps": [
+   {
+    "story": "S12",
+    "step": 1,
+    "day": 21,
+    "said_late": false,
+    "text": "Ji-woo's weekly grocery delivery slot has changed: now Thursday 10am (it was Tuesday 10am).",
+    "must": [
+     "Thursday 10am"
+    ]
+   },
+   {
+    "story": "S22",
+    "step": 1,
+    "day": 21,
+    "said_late": false,
+    "text": "Ji-woo is only thinking about changing the evening study venue to Starbucks Gangnam Station; nothing decided.",
+    "must": [
+     "Starbucks Gangnam Station"
+    ]
+   }
+  ],
+  "date": "2026-03-23",
+  "kind": "work"
+ },
+ {
+  "n": 26,
+  "day": 21,
+  "steps": [
+   {
+    "story": "S33",
+    "step": 0,
+    "day": 21,
+    "said_late": false,
+    "text": "a need that is not Ji-woo's own: a cheap used laptop for his evening course (Dae-ho (café colleague)).",
+    "must": [
+     "laptop"
+    ]
+   }
+  ],
+  "date": "2026-03-23",
+  "kind": "life"
+ },
+ {
+  "n": 27,
+  "day": 22,
+  "steps": [
+   {
+    "story": "S17",
+    "step": 1,
+    "day": 18,
+    "said_late": true,
+    "text": "Ji-woo has switched the sleeping pill dosage to 10 mg.",
+    "must": [
+     "10 mg"
+    ]
+   }
+  ],
+  "date": "2026-03-24",
+  "kind": "life"
+ },
+ {
+  "n": 28,
+  "day": 23,
+  "steps": [
+   {
+    "story": "S15",
+    "step": 1,
+    "day": 22,
+    "said_late": true,
+    "text": "Ji-woo's father's retirement party has changed: now Lotte Hotel World (it was Seoul Forest Hotel).",
+    "must": [
+     "Lotte Hotel World"
+    ]
+   },
+   {
+    "story": "S24",
+    "step": 1,
+    "day": 23,
+    "said_late": false,
+    "text": "Ji-woo imagines a what-if: then the heating system type would be Central AC unit. Only an idea; nothing changes.",
+    "must": [
+     "Central AC unit"
+    ]
+   }
+  ],
+  "date": "2026-03-25",
+  "kind": "life"
+ },
+ {
+  "n": 29,
+  "day": 24,
+  "steps": [
+   {
+    "story": "S17",
+    "step": 2,
+    "day": 22,
+    "said_late": true,
+    "text": "Ji-woo changes mind about the sleeping pill dosage: back to 5 mg, not 10 mg any more.",
+    "must": [
+     "5 mg"
+    ]
+   },
+   {
+    "story": "S31",
+    "step": 0,
+    "day": 23,
+    "said_late": true,
+    "text": "Ji-woo needs a summer internship at an architecture office in Busan (not sorted yet).",
+    "must": [
+     "internship"
+    ]
+   }
+  ],
+  "date": "2026-03-26",
+  "kind": "work"
+ },
+ {
+  "n": 30,
+  "day": 25,
+  "steps": [
+   {
+    "story": "S06",
+    "step": 0,
+    "day": 23,
+    "said_late": false,
+    "text": "Ji-woo's studio critique partner is Min-jun Kim.",
+    "must": [
+     "Min-jun Kim"
+    ]
+   }
+  ],
+  "date": "2026-03-27",
+  "kind": "life"
+ },
+ {
+  "n": 31,
+  "day": 26,
+  "steps": [
+   {
+    "story": "S26",
+    "step": 0,
+    "day": 26,
+    "said_late": false,
+    "text": "Ji-woo's own credit card annual fee is 0 KRW.",
+    "must": [
+     "0 KRW"
+    ]
+   }
+  ],
+  "date": "2026-03-28",
+  "kind": "life"
+ },
+ {
+  "n": 32,
+  "day": 27,
+  "steps": [
+   {
+    "story": "S23",
+    "step": 0,
+    "day": 27,
+    "said_late": false,
+    "text": "Ji-woo's weekend pottery class is Myeongdong Clay Studio.",
+    "must": [
+     "Myeongdong Clay Studio"
+    ]
+   },
+   {
+    "story": "S29",
+    "step": 0,
+    "day": 27,
+    "said_late": false,
+    "text": "Ji-woo needs a laser cutter she can use for her final studio model (not sorted yet).",
+    "must": [
+     "laser"
+    ]
+   }
+  ],
+  "date": "2026-03-29",
+  "kind": "work"
+ },
+ {
+  "n": 33,
+  "day": 28,
+  "steps": [],
+  "date": "2026-03-30",
+  "kind": "life"
+ },
+ {
+  "n": 34,
+  "day": 29,
+  "steps": [
+   {
+    "story": "S05",
+    "step": 0,
+    "day": 29,
+    "said_late": false,
+    "text": "Ji-woo's café shift schedule is Friday nights.",
+    "must": [
+     "Friday nights"
+    ]
+   }
+  ],
+  "date": "2026-03-31",
+  "kind": "work"
+ },
+ {
+  "n": 35,
+  "day": 30,
+  "steps": [],
+  "date": "2026-04-01",
+  "kind": "work"
+ },
+ {
+  "n": 36,
+  "day": 31,
+  "steps": [
+   {
+    "story": "S28",
+    "step": 0,
+    "day": 31,
+    "said_late": false,
+    "text": "Ji-woo's own mobile carrier plan is LG Uplus.",
+    "must": [
+     "LG Uplus"
+    ]
+   }
+  ],
+  "date": "2026-04-02",
+  "kind": "life"
+ },
+ {
+  "n": 37,
+  "day": 32,
+  "steps": [
+   {
+    "story": "S32",
+    "step": 0,
+    "day": 32,
+    "said_late": false,
+    "text": "Ji-woo needs a portfolio review from a practising architect (not sorted yet).",
+    "must": [
+     "portfolio"
+    ]
+   }
+  ],
+  "date": "2026-04-03",
+  "kind": "life"
+ },
+ {
+  "n": 38,
+  "day": 33,
+  "steps": [
+   {
+    "story": "S29",
+    "step": 1,
+    "day": 33,
+    "said_late": false,
+    "text": "Ji-woo's need is sorted: booked the cutter at the Seoul Fab Lab in Euljiro.",
+    "must": [
+     "Seoul Fab Lab",
+     "Euljiro"
+    ]
+   }
+  ],
+  "date": "2026-04-04",
+  "kind": "work"
+ },
+ {
+  "n": 39,
+  "day": 34,
+  "steps": [
+   {
+    "story": "S23",
+    "step": 1,
+    "day": 34,
+    "said_late": false,
+    "text": "Ji-woo is thinking about changing the weekend pottery class to Gangnam Ceramics Workshop; not decided yet.",
+    "must": [
+     "Gangnam Ceramics Workshop"
+    ]
+   }
+  ],
+  "date": "2026-04-05",
+  "kind": "life"
+ },
+ {
+  "n": 40,
+  "day": 35,
+  "steps": [
+   {
+    "story": "S16",
+    "step": 0,
+    "day": 35,
+    "said_late": false,
+    "text": "Ji-woo's weekend hiking trail is Namsan Trail.",
+    "must": [
+     "Namsan Trail"
+    ]
+   },
+   {
+    "story": "S28",
+    "step": 1,
+    "day": 35,
+    "said_late": false,
+    "text": "Hana Lee (flatmate)'s mobile carrier plan is KT Mobile (about Hana Lee (flatmate), not Ji-woo).",
+    "must": [
+     "KT Mobile",
+     "Hana"
+    ]
+   }
+  ],
+  "date": "2026-04-06",
+  "kind": "life"
+ },
+ {
+  "n": 41,
+  "day": 36,
+  "steps": [],
+  "date": "2026-04-07",
+  "kind": "work"
+ },
+ {
+  "n": 42,
+  "day": 36,
+  "steps": [],
+  "date": "2026-04-07",
+  "kind": "work"
+ },
+ {
+  "n": 43,
+  "day": 37,
+  "steps": [
+   {
+    "story": "S25",
+    "step": 0,
+    "day": 37,
+    "said_late": false,
+    "text": "Ji-woo's preferred coffee bean roaster is Coffee Bean Republic.",
+    "must": [
+     "Coffee Bean Republic"
+    ]
+   }
+  ],
+  "date": "2026-04-08",
+  "kind": "life"
+ },
+ {
+  "n": 44,
+  "day": 37,
+  "steps": [],
+  "date": "2026-04-08",
+  "kind": "work"
+ },
+ {
+  "n": 45,
+  "day": 38,
+  "steps": [
+   {
+    "story": "S23",
+    "step": 2,
+    "day": 38,
+    "said_late": false,
+    "text": "Ji-woo has now gone ahead: the weekend pottery class is Gangnam Ceramics Workshop.",
+    "must": [
+     "Gangnam Ceramics Workshop"
+    ]
+   }
+  ],
+  "date": "2026-04-09",
+  "kind": "life"
+ },
+ {
+  "n": 46,
+  "day": 39,
+  "steps": [],
+  "date": "2026-04-10",
+  "kind": "work"
+ },
+ {
+  "n": 47,
+  "day": 40,
+  "steps": [
+   {
+    "story": "S26",
+    "step": 1,
+    "day": 35,
+    "said_late": true,
+    "text": "Min-jun Kim (friend)'s credit card annual fee is 15,000 KRW (about Min-jun Kim (friend), not Ji-woo).",
+    "must": [
+     "15,000 KRW",
+     "Min-jun"
+    ]
+   }
+  ],
+  "date": "2026-04-11",
+  "kind": "life"
+ },
+ {
+  "n": 48,
+  "day": 41,
+  "steps": [
+   {
+    "story": "S07",
+    "step": 0,
+    "day": 35,
+    "said_late": false,
+    "text": "Ji-woo's spring break destination is Jeju Island.",
+    "must": [
+     "Jeju Island"
+    ]
+   },
+   {
+    "story": "S09",
+    "step": 0,
+    "day": 40,
+    "said_late": false,
+    "text": "Ji-woo's utility bill payment day is April 11.",
+    "must": [
+     "April 11"
+    ]
+   }
+  ],
+  "date": "2026-04-12",
+  "kind": "life"
+ },
+ {
+  "n": 49,
+  "day": 41,
+  "steps": [
+   {
+    "story": "S16",
+    "step": 1,
+    "day": 41,
+    "said_late": false,
+    "text": "Ji-woo's weekend hiking trail has changed: now Bukhansan Peak (it was Namsan Trail).",
+    "must": [
+     "Bukhansan Peak"
+    ]
+   },
+   {
+    "story": "S25",
+    "step": 1,
+    "day": 41,
+    "said_late": false,
+    "text": "Ji-woo imagines a what-if: then the preferred coffee bean roaster would be Daehangno Roastery. Only an idea; nothing changes.",
+    "must": [
+     "Daehangno Roastery"
+    ]
+   }
+  ],
+  "date": "2026-04-12",
+  "kind": "life"
+ }
+]

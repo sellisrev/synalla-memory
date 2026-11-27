@@ -1,0 +1,57 @@
+{
+ "11": [
+  [
+   "states 'Vikram Singh'"
+  ]
+ ],
+ "17": [
+  [
+   "date 2026-03-09 not said"
+  ]
+ ],
+ "37": [
+  [
+   "missing 'INR 25000'"
+  ]
+ ],
+ "44": [
+  [
+   "missing 'Rajesh Kumar & Associates'"
+  ]
+ ],
+ "6": [
+  [
+   "judge: S29: Hi Arjun, (The user addresses the email to Arjun and asks him to review slides, implying he is already working on the project. Howe)",
+   "judge: S22: I need to print some documents for the investor meeting next week. Can you send the files to the office printer? (This mentions a detail (the office printer) related to S22, which is dated 2026-03-30, which is after the conversation d)"
+  ]
+ ],
+ "25": [
+  [
+   "judge: S22, from 2026-03-30: I think we need to replace the toner for the HP LaserJet Pro before my parents come over later this week (The user mentions the HP LaserJet Pro, but the facts state that on 2026-03-30, Priya was only thinking about changing th)"
+  ]
+ ],
+ "31": [
+  [
+   "judge: S29: Yes, send it to Arjun. (The conversation date is 2026-03-28. According to S29, Arjun Menon is the senior developer who is hired to start on 6 Ap)",
+   "judge: S29: Once Arjun reviews the counter-proposal, what’s the typical response time for Vertex? (The user refers to Arjun as if he is a legal counsel reviewing a term sheet, but Arjun Menon is the newly hired develope)"
+  ]
+ ],
+ "45": [
+  [
+   "judge: S01: I’ve added turmeric and fresh coriander to your Instamart order for delivery by 6 PM. (The assistant mentions an 'Instamart order', but the facts state Priya's weekly grocery provider is Nature's Basket Kora)"
+  ]
+ ],
+ "46": [
+  [
+   "judge: S01: I can add two bundles to the BigBasket cart. (The assistant mentions a BigBasket cart, but the facts state Priya's weekly grocery provider is Nature's Basket Koramang)"
+  ]
+ ],
+ "47": [
+  [
+   "judge: S29: He’s been with us for three months now. (The user states Arjun has been with the company for three months, but according to S29, Arjun Menon only starts on 6 Apr)"
+  ],
+  [
+   "judge: S29: The candidate, Arjun, accepted the offer yesterday. His start date is confirmed for next Monday. (The user mentioned a need for a senior Android developer, but the assistant identifies the candidate as being for a 'sen)"
+  ]
+ ]
+}

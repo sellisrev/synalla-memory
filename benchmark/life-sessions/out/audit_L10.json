@@ -1,0 +1,219 @@
+{
+ "person": "L10",
+ "model": "opus",
+ "verdicts": {
+  "L10-S01-1": {
+   "verdict": "ok",
+   "why": "Session 005 names Nature's Basket Koramangala as the weekly grocery delivery."
+  },
+  "L10-S02-1": {
+   "verdict": "ok",
+   "why": "Sessions 010 and 012 give IndiGo 6E 204 to Mumbai."
+  },
+  "L10-S03-1": {
+   "verdict": "ok",
+   "why": "Session 038 names the Shatabdi Express 12008 for the Mysore trip."
+  },
+  "L10-S04-1": {
+   "verdict": "ok",
+   "why": "Session 043 says the laptop is at MacBook Center MG Road for screen repair."
+  },
+  "L10-S05-1": {
+   "verdict": "ok",
+   "why": "Sessions 036 and 038 book the annual checkup at Apollo Hospitals Jayanagar."
+  },
+  "L10-S06-1": {
+   "verdict": "ok",
+   "why": "Session 038 names the Airtel Xstream Fiber line."
+  },
+  "L10-S07-1": {
+   "verdict": "ok",
+   "why": "Session 034 confirms an Uber Black for the airport trip."
+  },
+  "L10-S08-1": {
+   "verdict": "ok",
+   "why": "Session 006 sends the investor's check to HDFC Bank Indiranagar."
+  },
+  "L10-S09-1": {
+   "verdict": "ok",
+   "why": "Session 047: the assistant says she is at WeWork Embassy Golf Links, and the user calls it 'the desk address'."
+  },
+  "L10-S10-1": {
+   "verdict": "ok",
+   "why": "Sessions 018, 035 and 046 name the Swarovski necklace for Mom's birthday."
+  },
+  "L10-S11-1": {
+   "verdict": "ok",
+   "why": "Session 035 switches from Gold's Gym Koramangala to Cult.fit Indiranagar."
+  },
+  "L10-S11-2": {
+   "verdict": "ok",
+   "why": "Sessions 024 and 035 give Gold's Gym Koramangala as the earlier gym."
+  },
+  "L10-S11-3": {
+   "verdict": "ok",
+   "why": "Session 035: 'The change happened on Thursday 26 March'."
+  },
+  "L10-S12-1": {
+   "verdict": "ok",
+   "why": "Session 018 says Pottery at Crafts Museum replaced Kathak, and session 042 confirms Pottery."
+  },
+  "L10-S12-2": {
+   "verdict": "ok",
+   "why": "Session 015 gives Kathak at Kalakshetra."
+  },
+  "L10-S12-3": {
+   "verdict": "ok",
+   "why": "Session 018 (2026-03-16) reports the change."
+  },
+  "L10-S13-1": {
+   "verdict": "ok",
+   "why": "Session 048: Vimala Smart Lock replaces the Honeywell one."
+  },
+  "L10-S13-2": {
+   "verdict": "ok",
+   "why": "Session 043 gives the Honeywell Smart Lock."
+  },
+  "L10-S13-3": {
+   "verdict": "ok",
+   "why": "The change is reported in session 048 (2026-04-12)."
+  },
+  "L10-S14-1": {
+   "verdict": "ok",
+   "why": "Session 048: 'Your CA is now Mehta & Co Chartered Accountants'."
+  },
+  "L10-S14-2": {
+   "verdict": "ok",
+   "why": "Session 044 names Rajesh Kumar & Associates for GST filing."
+  },
+  "L10-S14-3": {
+   "verdict": "ok",
+   "why": "The change is reported in session 048 (2026-04-12)."
+  },
+  "L10-S15-1": {
+   "verdict": "ok",
+   "why": "Session 042: the limit is now INR 750000, up from INR 500000."
+  },
+  "L10-S15-2": {
+   "verdict": "ok",
+   "why": "Sessions 036 and 037 give INR 500000."
+  },
+  "L10-S15-3": {
+   "verdict": "ok",
+   "why": "Session 042 (2026-04-07) reports the change."
+  },
+  "L10-S16-1": {
+   "verdict": "ok",
+   "why": "Session 037 raises the SIP to INR 25000 from INR 15000."
+  },
+  "L10-S16-2": {
+   "verdict": "ok",
+   "why": "Sessions 026, 032 and 037 give INR 15000."
+  },
+  "L10-S16-3": {
+   "verdict": "wrong",
+   "why": "On 2026-04-02 the user says the increase happened 'last week', so it was in the week before 2 April, not on 2 April. No exact day is given.",
+   "quote": "I increased my monthly SIP amount to INR 25000 last week, so cash flow is a bit tight compared to when it was just INR 15000.",
+   "session": "037",
+   "better_reference": "The week before 2026-04-02 (around 23-29 March); no exact date is stated",
+   "quote_found": true
+  },
+  "L10-S17-1": {
+   "verdict": "ok",
+   "why": "Anjali (008), then Meera Desai (015), then back to Anjali Iyengar (022), confirmed again in 026."
+  },
+  "L10-S18-1": {
+   "verdict": "ok",
+   "why": "Sunita Rao (011), then Kiran Patel (019), then back to Sunita Rao (026)."
+  },
+  "L10-S19-1": {
+   "verdict": "wrong",
+   "why": "INR 2.5 Crores is right, but the slip was corrected on 2026-04-12. 8 April is the date the round closed.",
+   "quote": "No, that’s wrong. It was INR 2.5 Crores. I need to fix that slip immediately.",
+   "session": "047",
+   "better_reference": "INR 2.5 Crores (INR 2 Crores was a slip, corrected on 2026-04-12; the round closed on 2026-04-08)",
+   "quote_found": true
+  },
+  "L10-S20-1": {
+   "verdict": "ok",
+   "why": "Session 045: 15:30, not 14:30, corrected on Thursday 9 April."
+  },
+  "L10-S21-1": {
+   "verdict": "ok",
+   "why": "Session 011 only weighs Sukam, and sessions 041 and 044 still use the Kirloskar 5kVA."
+  },
+  "L10-S22-1": {
+   "verdict": "ok",
+   "why": "Session 034: 'You haven't made a final decision yet' on Canon, and session 022 gives the HP LaserJet Pro lease."
+  },
+  "L10-S23-1": {
+   "verdict": "ok",
+   "why": "Session 017 considers Neha Kapoor, and sessions 019, 039 and 043 confirm her as coach."
+  },
+  "L10-S23-2": {
+   "verdict": "incomplete",
+   "why": "No go-ahead date is stated. The user was still undecided on 2026-03-15 (session 017). Neha is first shown as coach on 2026-03-17, but the user says they 'went with' her last week, so 2026-03-16 is also a reasonable reading.",
+   "quote": "Who is my coach now? I forgot who I went with last week.",
+   "session": "019",
+   "better_reference": "Between 2026-03-15 and 2026-03-17; first confirmed on 2026-03-17 (no exact date given)",
+   "quote_found": true
+  },
+  "L10-S24-1": {
+   "verdict": "ok",
+   "why": "The goal is 10000 throughout, and session 013 calls 15000 'just a thought'."
+  },
+  "L10-S25-1": {
+   "verdict": "ok",
+   "why": "Session 037 gives a 7-hour target, and session 046 calls 8 hours 'just an idea'."
+  },
+  "L10-S27-1": {
+   "verdict": "ok",
+   "why": "Session 044 books Paws & Claws Koramangala for the user's cat Kavi, and session 049 gives The Dog Spot for Ravi's dog."
+  },
+  "L10-S27-2": {
+   "verdict": "ok",
+   "why": "Session 049 gives The Dog Spot Indiranagar for Ravi's dog."
+  },
+  "L10-S28-1": {
+   "verdict": "ok",
+   "why": "Session 012 gives the user's annual fee as INR 12000, and session 017 gives Ravi's as INR 4500."
+  },
+  "L10-S28-2": {
+   "verdict": "ok",
+   "why": "Session 017 gives Ravi's annual fee as INR 4500."
+  },
+  "L10-S29-1": {
+   "verdict": "wrong",
+   "why": "Arjun Menon was hired as ops lead, not as the senior Android developer. No session shows the Android role filled, so the need is still open.",
+   "quote": "Okay, I need to send a welcome email to Arjun. He’s going to be our new ops lead, right?",
+   "session": "014",
+   "better_reference": "Yes: still open; the senior Android role is never filled (Arjun Menon, starting 6 April, is the ops lead)",
+   "quote_found": true
+  },
+  "L10-S30-1": {
+   "verdict": "ok",
+   "why": "Session 045: Ritu Shah introduced the user to the Kalaari partner on Wednesday 8 April."
+  },
+  "L10-needs_now-1": {
+   "verdict": "incomplete",
+   "why": "The senior Android developer need from session 002 is never met (session 014 hires an ops lead), so it should be on the open list.",
+   "quote": "I need to emphasize that the senior Android role is still urgent. We haven't found the right person yet, and I need them to prioritize this for April.",
+   "session": "002",
+   "better_reference": "a co-founder who can run sales; a startup lawyer to review the term sheet; a senior Android developer",
+   "quote_found": true
+  },
+  "L10-none-1": {
+   "verdict": "ok",
+   "why": "No wifi password appears in any session."
+  },
+  "L10-none-2": {
+   "verdict": "ok",
+   "why": "No blood type appears in any session."
+  },
+  "L10-none-3": {
+   "verdict": "ok",
+   "why": "No football team appears in any session."
+  }
+ },
+ "cost": 0.5158422
+}

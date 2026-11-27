@@ -1,0 +1,540 @@
+[
+ {
+  "id": "S01",
+  "pattern": "plain",
+  "theme": "people",
+  "days": [
+   2
+  ],
+  "thing": "mother's birthday",
+  "values": [
+   "1948-05-12"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S02",
+  "pattern": "plain",
+  "theme": "hobbies",
+  "days": [
+   33
+  ],
+  "thing": "weekly yoga instructor",
+  "values": [
+   "Lina Torres"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S03",
+  "pattern": "plain",
+  "theme": "work",
+  "days": [
+   13
+  ],
+  "thing": "export logistics provider",
+  "values": [
+   "Fretex Cargo"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S04",
+  "pattern": "plain",
+  "theme": "travel",
+  "days": [
+   21
+  ],
+  "thing": "Mendoza airport shuttle",
+  "values": [
+   "Taxi Airport 500"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S05",
+  "pattern": "plain",
+  "theme": "home",
+  "days": [
+   39
+  ],
+  "thing": "home security system",
+  "values": [
+   "SecurHome Plus"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S06",
+  "pattern": "plain",
+  "theme": "work",
+  "days": [
+   22
+  ],
+  "thing": "winery insurance agent",
+  "values": [
+   "Agustín Rivas"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S07",
+  "pattern": "plain",
+  "theme": "family",
+  "days": [
+   21
+  ],
+  "thing": "brother's birthday",
+  "values": [
+   "1970-09-15"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S08",
+  "pattern": "plain",
+  "theme": "travel",
+  "days": [
+   27
+  ],
+  "thing": "Buenos Aires flight number",
+  "values": [
+   "AR1240"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S09",
+  "pattern": "plain",
+  "theme": "money",
+  "days": [
+   26
+  ],
+  "thing": "bank account interest rate",
+  "values": [
+   "4.5% annual"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S10",
+  "pattern": "plain",
+  "theme": "money",
+  "days": [
+   31
+  ],
+  "thing": "annual property tax",
+  "values": [
+   "120000 pesos"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S11",
+  "pattern": "change",
+  "theme": "family",
+  "days": [
+   31,
+   40
+  ],
+  "thing": "mother's primary care doctor",
+  "values": [
+   "Dr. Elena Gomez",
+   "Dr. Lucas Vega"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S12",
+  "pattern": "change",
+  "theme": "shopping",
+  "days": [
+   33,
+   38
+  ],
+  "thing": "wine label supplier",
+  "values": [
+   "Gráfica Mendoza",
+   "PrintArt Sur"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S13",
+  "pattern": "change",
+  "theme": "shopping",
+  "days": [
+   12,
+   19
+  ],
+  "thing": "cork supplier",
+  "values": [
+   "Dunlop Cork",
+   "Natural Cork Co"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S14",
+  "pattern": "change",
+  "theme": "travel",
+  "days": [
+   21,
+   30
+  ],
+  "thing": "regular taxi service",
+  "values": [
+   "Radio Taxi 456",
+   "Uber Business"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S15",
+  "pattern": "change",
+  "theme": "health",
+  "days": [
+   20,
+   24
+  ],
+  "thing": "physiotherapy clinic",
+  "values": [
+   "Centro Salud Espalda",
+   "Clínica del Deporte"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S16",
+  "pattern": "change",
+  "theme": "hobbies",
+  "days": [
+   17,
+   26
+  ],
+  "thing": "running trail location",
+  "values": [
+   "Parque General San Martín",
+   "Viñedo Ruta 40"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S17",
+  "pattern": "heart",
+  "theme": "hobbies",
+  "days": [
+   26,
+   31,
+   36
+  ],
+  "thing": "weekly dinner restaurant",
+  "values": [
+   "La Trattoria",
+   "El Olivo"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S18",
+  "pattern": "heart",
+  "theme": "people",
+  "days": [
+   22,
+   28,
+   35
+  ],
+  "thing": "weekly hairdresser",
+  "values": [
+   "Salón Belleza Clara",
+   "Estética Moderna"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S19",
+  "pattern": "correction",
+  "theme": "family",
+  "days": [
+   6,
+   14
+  ],
+  "thing": "mother's cardiologist",
+  "values": [
+   "Dr. Mateo Ruiz",
+   "Dr. Sofia Alvarez"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S20",
+  "pattern": "correction",
+  "theme": "home",
+  "days": [
+   28,
+   33
+  ],
+  "thing": "garage door repair company",
+  "values": [
+   "Puertas Seguras",
+   "GarageFix Mendoza"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S21",
+  "pattern": "tentative_dropped",
+  "theme": "health",
+  "days": [
+   33,
+   40
+  ],
+  "thing": "vitamin supplement brand",
+  "values": [
+   "VitaLife Daily",
+   "Nature's Best"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S22",
+  "pattern": "tentative_dropped",
+  "theme": "people",
+  "days": [
+   2,
+   7
+  ],
+  "thing": "weekly grocery delivery service",
+  "values": [
+   "Mercado Express",
+   "FreshMarket Online"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S23",
+  "pattern": "tentative_confirmed",
+  "theme": "shopping",
+  "days": [
+   17,
+   20,
+   26
+  ],
+  "thing": "wine tasting notes app",
+  "values": [
+   "VinoLog Pro",
+   "TasteTracker"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S24",
+  "pattern": "hypothetical",
+  "theme": "health",
+  "days": [
+   26,
+   34
+  ],
+  "thing": "monthly gym membership cost",
+  "values": [
+   "4500 pesos",
+   "3000 pesos"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S25",
+  "pattern": "hypothetical",
+  "theme": "people",
+  "days": [
+   18,
+   23
+  ],
+  "thing": "brother's home address",
+  "values": [
+   "Calle Los Andes 45",
+   "Av. San Martín 120"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S26",
+  "pattern": "lookalike",
+  "theme": "shopping",
+  "days": [
+   34,
+   41
+  ],
+  "thing": "pet groomer",
+  "values": [
+   "Grooming Paws Mendoza",
+   "Canine Care Club"
+  ],
+  "other_person": "Marco (brother)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S27",
+  "pattern": "lookalike",
+  "theme": "hobbies",
+  "days": [
+   21,
+   31
+  ],
+  "thing": "running club leader",
+  "values": [
+   "Carlos Mendez",
+   "Ana Gutierrez"
+  ],
+  "other_person": "Lina (yoga instructor)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S28",
+  "pattern": "lookalike",
+  "theme": "admin",
+  "days": [
+   3,
+   11
+  ],
+  "thing": "tax advisor",
+  "values": [
+   "Lic. Javier Torres",
+   "Lic. Maria Fernandez"
+  ],
+  "other_person": "Marco (brother)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S29",
+  "pattern": "need_met",
+  "theme": "admin",
+  "days": [
+   7,
+   12
+  ],
+  "thing": "need",
+  "values": [
+   "extra pickers for the harvest week starting 16 March",
+   "hired a crew of six through Raúl Gómez"
+  ],
+  "other_person": "",
+  "keyword": "pickers",
+  "topic": "hiring"
+ },
+ {
+  "id": "S30",
+  "pattern": "need_met",
+  "theme": "money",
+  "days": [
+   18,
+   26
+  ],
+  "thing": "need",
+  "values": [
+   "a carer to stay with her mother on Thursdays",
+   "Doña Elena Ruiz now comes on Thursdays"
+  ],
+  "other_person": "",
+  "keyword": "carer",
+  "topic": "elder-care"
+ },
+ {
+  "id": "S31",
+  "pattern": "need_open",
+  "theme": "admin",
+  "days": [
+   37
+  ],
+  "thing": "need",
+  "values": [
+   "an importer for her Malbec in Germany"
+  ],
+  "other_person": "",
+  "keyword": "importer",
+  "topic": "wine-export"
+ },
+ {
+  "id": "S32",
+  "pattern": "need_open",
+  "theme": "work",
+  "days": [
+   8
+  ],
+  "thing": "need",
+  "values": [
+   "a used bottling machine in good condition"
+  ],
+  "other_person": "",
+  "keyword": "bottling",
+  "topic": "farm-equipment"
+ },
+ {
+  "id": "S33",
+  "pattern": "need_other",
+  "theme": "money",
+  "days": [
+   17
+  ],
+  "thing": "need",
+  "values": [
+   "advice on a loan to buy the neighbouring plot"
+  ],
+  "other_person": "Marco (brother)",
+  "keyword": "loan",
+  "topic": "mortgage-advice"
+ }
+]

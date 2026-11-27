@@ -1,0 +1,115 @@
+{
+ "15": [
+  [
+   "states 'Mercado Central'"
+  ]
+ ],
+ "17": [
+  [
+   "date 2026-03-12 not said"
+  ]
+ ],
+ "20": [
+  [
+   "missing 'Carmen Vidal'"
+  ]
+ ],
+ "21": [
+  [
+   "states 'Joaquín Sorolla'"
+  ]
+ ],
+ "23": [
+  [
+   "missing 'Tuesdays'"
+  ]
+ ],
+ "26": [
+  [
+   "date 2026-03-21 not said"
+  ]
+ ],
+ "27": [
+  [
+   "states 'Joaquín Sorolla'"
+  ],
+  [
+   "judge: S14: For the pharmacy, Farmacia del Puerto is on your route to the school district. (The assistant mentions Farmacia del Puerto, but according to S14, the current pharmacy is Farmacia del Puerto, which onl)",
+   "judge: S06: Reminder set: Call Ana at 4:30 PM to confirm Pablo’s pickup. (The assistant refers to Pablo's mom as 'Ana', but the fact S06 states his ex-wife's name is Carmen Vidal.)"
+  ]
+ ],
+ "39": [
+  [
+   "missing 'Lentes Visión'",
+   "date 2026-04-02 not said"
+  ]
+ ],
+ "47": [
+  [
+   "missing 'Carmen'"
+  ]
+ ],
+ "2": [
+  [
+   "judge: S16: You’re scheduled to pick up Pablo from school at 5:30 PM at Joaquín Sorolla station. (The conversation is on 2026-03-03. While S16 says Mateo's train station is Joaquín Sorolla, it does not state he picks u)",
+   "judge: S16: You’re scheduled to pick up Pablo from school at 5:30 PM at Joaquín Sorolla station. (This is not a contradiction, but the assistant refers to Joaquín Sorolla station which is a known fact S16. However, the)"
+  ]
+ ],
+ "4": [
+  [
+   "judge: S16: However, they noted a slight delay in the tomato batch due to transport issues near the Joaquín Sorolla station area. (This mentions the Joaquín Sorolla station, which was Mateo's train station, but the information about the station being )"
+  ],
+  [
+   "judge: S17: Do you want me to propose swapping him with Elena, who has expressed availability for extra hours, or do you prefer to h (The assistant mentions the running route in Turia Gardens on 2026-03-05. While S17 (from 2026-03-03) says the route is T)"
+  ]
+ ],
+ "9": [
+  [
+   "judge: S16: If I leave now, can I make it to Joaquín Sorolla station in time for the train to the market district? (The conversation is dated 2026-03-09, but the user mentions Joaquín Sorolla station, which was the station until 2026-03)"
+  ]
+ ],
+ "22": [
+  [
+   "judge: S06: I need to send a quick message to my ex, Elena. (The user refers to his ex-wife as Elena, but the fact S06 states his ex-wife's name is Carmen Vidal.)"
+  ]
+ ],
+ "29": [
+  [
+   "judge: S23: We’re out of the Cafés Ruiz blend. (On 2026-04-03, Mateo switches his coffee supplier to Origen Café; however, at the time of the conversation (2026-03-26),)"
+  ],
+  [
+   "judge: S08: I don't want it to get worse before the weekend. (The user mentions going to the market, but the conversation date is 2026-03-26, and the facts state the weekly market is)"
+  ],
+  [
+   "missing 'third floor'"
+  ]
+ ],
+ "32": [
+  [
+   "judge: S12: remind me to take the car to Talleres Roca next month. (Mateo changed his garage for his car to Garage Valencia Sur on 2026-03-29, so Talleres Roca is no longer his garage.)",
+   "judge: S12: remind me to take the car to Talleres Roca next month. (The mention of 'next month' refers to April 2026, and the fact regarding his garage change (S12) is dated 2026-03-29, wh)"
+  ]
+ ],
+ "34": [
+  [
+   "judge: S04: I've also flagged the dentist appointment for Pablo at 3:00 PM so you don't miss it. (The assistant attributes the dentist appointment to Pablo, but the fact S04 states that the dentist (Dr. Elena Ruiz) is )"
+  ]
+ ],
+ "36": [
+  [
+   "judge: S14: The closest pharmacy to your restaurant is Farmacia del Puerto. It’s about a ten-minute walk. (The user asks for the closest pharmacy to the restaurant. According to S14, the pharmacy was changed to Farmacia del Pue)"
+  ]
+ ],
+ "44": [
+  [
+   "judge: N/A: I think I might be free on Thursday afternoon. (The user is expressing a thought/possibility about their schedule, which is not a contradiction of any existing fact.)",
+   "judge: S08: I've added rosemary, thyme, and parsley to your shopping list. (The user mentions going to the market for a school trip next week, but the assistant's response refers to a shopping lis)"
+  ]
+ ],
+ "45": [
+  [
+   "judge: S19: I need to check if Lic-9921 requires a formal notification form or if it's just an update in the portal. (The user refers to license Lic-9921, but the correct license number is Lic-9922 according to the correction on 2026-04-1)",
+   "judge: S19: I’ve checked the Valencia municipal regulations for restaurant license Lic-9921. (The assistant uses the incorrect license number Lic-9921 instead of the corrected Lic-9922.)"
+  ]
+ ]
+}

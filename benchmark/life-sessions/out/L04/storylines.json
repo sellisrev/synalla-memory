@@ -1,0 +1,540 @@
+[
+ {
+  "id": "S01",
+  "pattern": "plain",
+  "theme": "health",
+  "days": [
+   31
+  ],
+  "thing": "next diabetes check-up",
+  "values": [
+   "2026-04-02"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S02",
+  "pattern": "plain",
+  "theme": "health",
+  "days": [
+   38
+  ],
+  "thing": "next eye screening",
+  "values": [
+   "2026-04-09"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S03",
+  "pattern": "plain",
+  "theme": "shopping",
+  "days": [
+   37
+  ],
+  "thing": "weekly grocery shopping",
+  "values": [
+   "Biedronka on Dąbrowskiego"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S04",
+  "pattern": "plain",
+  "theme": "hobbies",
+  "days": [
+   2
+  ],
+  "thing": "heritage society meeting",
+  "values": [
+   "Stary Kleparz Market Hall"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S05",
+  "pattern": "plain",
+  "theme": "health",
+  "days": [
+   41
+  ],
+  "thing": "foot care appointment",
+  "values": [
+   "2026-04-12"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S06",
+  "pattern": "plain",
+  "theme": "admin",
+  "days": [
+   14
+  ],
+  "thing": "pension document submission",
+  "values": [
+   "ZUS branch on Grzegórzecki"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S07",
+  "pattern": "plain",
+  "theme": "money",
+  "days": [
+   26
+  ],
+  "thing": "electricity bill payment",
+  "values": [
+   "420 PLN"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S08",
+  "pattern": "plain",
+  "theme": "money",
+  "days": [
+   30
+  ],
+  "thing": "allotment plot fee",
+  "values": [
+   "150 PLN"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S09",
+  "pattern": "plain",
+  "theme": "money",
+  "days": [
+   32
+  ],
+  "thing": "library annual membership",
+  "values": [
+   "80 PLN"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S10",
+  "pattern": "plain",
+  "theme": "people",
+  "days": [
+   30
+  ],
+  "thing": "grandson's birthday gift",
+  "values": [
+   "Mateusz Wiśniewski"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S11",
+  "pattern": "change",
+  "theme": "home",
+  "days": [
+   30,
+   33
+  ],
+  "thing": "allotment plot number",
+  "values": [
+   "Plot 42",
+   "Plot 15"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S12",
+  "pattern": "change",
+  "theme": "admin",
+  "days": [
+   25,
+   28
+  ],
+  "thing": "pension account bank",
+  "values": [
+   "PKO Bank Polski",
+   "Bank Millennium"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S13",
+  "pattern": "change",
+  "theme": "family",
+  "days": [
+   19,
+   28
+  ],
+  "thing": "granddaughter's school term",
+  "values": [
+   "Spring break",
+   "Regular classes"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S14",
+  "pattern": "change",
+  "theme": "family",
+  "days": [
+   11,
+   21
+  ],
+  "thing": "grandson's university semester",
+  "values": [
+   "Winter break",
+   "Spring exams"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S15",
+  "pattern": "change",
+  "theme": "work",
+  "days": [
+   36,
+   41
+  ],
+  "thing": "heritage society volunteer shift",
+  "values": [
+   "Tuesday mornings",
+   "Thursday afternoons"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S16",
+  "pattern": "change",
+  "theme": "work",
+  "days": [
+   36,
+   41
+  ],
+  "thing": "garden maintenance day",
+  "values": [
+   "Saturday mornings",
+   "Sunday afternoons"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S17",
+  "pattern": "heart",
+  "theme": "hobbies",
+  "days": [
+   11,
+   19,
+   28
+  ],
+  "thing": "heritage society meeting location",
+  "values": [
+   "Main Library Hall",
+   "Community Centre Room B"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S18",
+  "pattern": "heart",
+  "theme": "home",
+  "days": [
+   29,
+   33,
+   41
+  ],
+  "thing": "home heating source",
+  "values": [
+   "District heating",
+   "Gas boiler"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S19",
+  "pattern": "correction",
+  "theme": "travel",
+  "days": [
+   34,
+   38
+  ],
+  "thing": "diabetes clinic address",
+  "values": [
+   "ul. Krowoderska 20",
+   "ul. Dąbrowskiego 118"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S20",
+  "pattern": "correction",
+  "theme": "travel",
+  "days": [
+   15,
+   25
+  ],
+  "thing": "pension office address",
+  "values": [
+   "ul. Grzegórzecka 15",
+   "ul. Pawia 4"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S21",
+  "pattern": "tentative_dropped",
+  "theme": "shopping",
+  "days": [
+   18,
+   23
+  ],
+  "thing": "weekly newspaper delivery",
+  "values": [
+   "Przegląd Dzienny",
+   "Gazeta Krakowska"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S22",
+  "pattern": "tentative_dropped",
+  "theme": "work",
+  "days": [
+   23,
+   31
+  ],
+  "thing": "volunteer shift schedule",
+  "values": [
+   "Wednesday afternoons",
+   "Friday mornings"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S23",
+  "pattern": "tentative_confirmed",
+  "theme": "people",
+  "days": [
+   1,
+   10,
+   13
+  ],
+  "thing": "grandson's contact method",
+  "values": [
+   "WhatsApp",
+   "Telegram"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S24",
+  "pattern": "hypothetical",
+  "theme": "travel",
+  "days": [
+   35,
+   39
+  ],
+  "thing": "flight to Toronto",
+  "values": [
+   "LOT Polish Airlines",
+   "Air Canada"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S25",
+  "pattern": "hypothetical",
+  "theme": "admin",
+  "days": [
+   37,
+   41
+  ],
+  "thing": "pension office contact",
+  "values": [
+   "Phone number ending in 44",
+   "Email address ending in 99"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S26",
+  "pattern": "lookalike",
+  "theme": "people",
+  "days": [
+   23,
+   28
+  ],
+  "thing": "grandson's university",
+  "values": [
+   "University of Toronto",
+   "Queen's University"
+  ],
+  "other_person": "Kuba (grandson)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S27",
+  "pattern": "lookalike",
+  "theme": "travel",
+  "days": [
+   17,
+   23
+  ],
+  "thing": "flight destination airport",
+  "values": [
+   "Toronto Pearson",
+   "Montreal Trudeau"
+  ],
+  "other_person": "Zofia (neighbour)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S28",
+  "pattern": "lookalike",
+  "theme": "admin",
+  "days": [
+   36,
+   39
+  ],
+  "thing": "pension office phone number",
+  "values": [
+   "12 345 67 89",
+   "22 987 65 43"
+  ],
+  "other_person": "Zofia (neighbour)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S29",
+  "pattern": "need_met",
+  "theme": "family",
+  "days": [
+   9,
+   15
+  ],
+  "thing": "need",
+  "values": [
+   "someone to drive him to the diabetes clinic on 18 March",
+   "his neighbour Zofia Kowalska drove him"
+  ],
+  "other_person": "",
+  "keyword": "drive",
+  "topic": "lifts"
+ },
+ {
+  "id": "S30",
+  "pattern": "need_met",
+  "theme": "people",
+  "days": [
+   8,
+   15
+  ],
+  "thing": "need",
+  "values": [
+   "help setting up video calls with his grandson in Toronto",
+   "Kuba Wiśniewski from the heritage society set it up"
+  ],
+  "other_person": "",
+  "keyword": "video",
+  "topic": "it-help"
+ },
+ {
+  "id": "S31",
+  "pattern": "need_open",
+  "theme": "home",
+  "days": [
+   4
+  ],
+  "thing": "need",
+  "values": [
+   "a rotavator to borrow for the allotment in April"
+  ],
+  "other_person": "",
+  "keyword": "rotavator",
+  "topic": "gardening"
+ },
+ {
+  "id": "S32",
+  "pattern": "need_open",
+  "theme": "work",
+  "days": [
+   40
+  ],
+  "thing": "need",
+  "values": [
+   "a walking group for retired people near Nowa Huta"
+  ],
+  "other_person": "",
+  "keyword": "walking",
+  "topic": "fitness-partner"
+ },
+ {
+  "id": "S33",
+  "pattern": "need_other",
+  "theme": "family",
+  "days": [
+   22
+  ],
+  "thing": "need",
+  "values": [
+   "an internship at an engineering firm this summer"
+  ],
+  "other_person": "Ola (granddaughter)",
+  "keyword": "internship",
+  "topic": "job-search"
+ }
+]

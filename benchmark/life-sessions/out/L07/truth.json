@@ -1,0 +1,526 @@
+[
+ {
+  "id": "S01",
+  "pattern": "plain",
+  "thing": "weekly running club",
+  "theme": "hobbies",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-01",
+    "Spandau Runners"
+   ]
+  ],
+  "now": "Spandau Runners"
+ },
+ {
+  "id": "S02",
+  "pattern": "plain",
+  "thing": "annual eye exam doctor",
+  "theme": "health",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-06",
+    "Dr. Elena Kovic"
+   ]
+  ],
+  "now": "Dr. Elena Kovic"
+ },
+ {
+  "id": "S03",
+  "pattern": "plain",
+  "thing": "flight to Lyon",
+  "theme": "travel",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-10",
+    "Air France AF7204"
+   ]
+  ],
+  "now": "Air France AF7204"
+ },
+ {
+  "id": "S04",
+  "pattern": "plain",
+  "thing": "monthly apartment rent",
+  "theme": "money",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-19",
+    "1450 euros"
+   ]
+  ],
+  "now": "1450 euros"
+ },
+ {
+  "id": "S05",
+  "pattern": "plain",
+  "thing": "weekly yoga instructor",
+  "theme": "shopping",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-06",
+    "Maria Gonzalez"
+   ]
+  ],
+  "now": "Maria Gonzalez"
+ },
+ {
+  "id": "S06",
+  "pattern": "plain",
+  "thing": "internet service provider",
+  "theme": "admin",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-26",
+    "Deutsche Telekom"
+   ]
+  ],
+  "now": "Deutsche Telekom"
+ },
+ {
+  "id": "S07",
+  "pattern": "plain",
+  "thing": "girlfriend's name",
+  "theme": "people",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-11",
+    "Clara Weber"
+   ]
+  ],
+  "now": "Clara Weber"
+ },
+ {
+  "id": "S08",
+  "pattern": "plain",
+  "thing": "weekly cycling route",
+  "theme": "hobbies",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-19",
+    "Tempelhofer Feld loop"
+   ]
+  ],
+  "now": "Tempelhofer Feld loop"
+ },
+ {
+  "id": "S09",
+  "pattern": "plain",
+  "thing": "weekly gym membership",
+  "theme": "hobbies",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-24",
+    "Bodyworks Mitte"
+   ]
+  ],
+  "now": "Bodyworks Mitte"
+ },
+ {
+  "id": "S10",
+  "pattern": "plain",
+  "thing": "primary care doctor",
+  "theme": "health",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-26",
+    "Dr. Hans Muller"
+   ]
+  ],
+  "now": "Dr. Hans Muller"
+ },
+ {
+  "id": "S11",
+  "pattern": "change",
+  "thing": "Go runtime version",
+  "theme": "home",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-24",
+    "1.21.5"
+   ],
+   [
+    "2026-03-28",
+    "1.22.1"
+   ]
+  ],
+  "now": "1.22.1"
+ },
+ {
+  "id": "S12",
+  "pattern": "change",
+  "thing": "regular massage therapist",
+  "theme": "people",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-06",
+    "Elena Vogel"
+   ],
+   [
+    "2026-03-14",
+    "Marcus Klein"
+   ]
+  ],
+  "now": "Marcus Klein"
+ },
+ {
+  "id": "S13",
+  "pattern": "change",
+  "thing": "commuter vehicle brand",
+  "theme": "home",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-07",
+    "VanMoof"
+   ],
+   [
+    "2026-04-12",
+    "Trek"
+   ]
+  ],
+  "now": "Trek"
+ },
+ {
+  "id": "S14",
+  "pattern": "change",
+  "thing": "primary database engine",
+  "theme": "work",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-01",
+    "PostgreSQL"
+   ],
+   [
+    "2026-04-10",
+    "CockroachDB"
+   ]
+  ],
+  "now": "CockroachDB"
+ },
+ {
+  "id": "S15",
+  "pattern": "change",
+  "thing": "vitamin D dosage",
+  "theme": "health",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-08",
+    "2000 IU"
+   ],
+   [
+    "2026-04-12",
+    "4000 IU"
+   ]
+  ],
+  "now": "4000 IU"
+ },
+ {
+  "id": "S16",
+  "pattern": "change",
+  "thing": "cloud infrastructure provider",
+  "theme": "work",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-28",
+    "Google Cloud"
+   ],
+   [
+    "2026-04-04",
+    "Digital Ocean"
+   ]
+  ],
+  "now": "Digital Ocean"
+ },
+ {
+  "id": "S17",
+  "pattern": "heart",
+  "thing": "coffee shop choice",
+  "theme": "shopping",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-26",
+    "The Barn"
+   ],
+   [
+    "2026-03-29",
+    "Bonanza Coffee"
+   ],
+   [
+    "2026-04-01",
+    "The Barn"
+   ]
+  ],
+  "now": "The Barn"
+ },
+ {
+  "id": "S18",
+  "pattern": "heart",
+  "thing": "streaming subscription",
+  "theme": "money",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-01",
+    "Netflix"
+   ],
+   [
+    "2026-04-07",
+    "Amazon Prime"
+   ],
+   [
+    "2026-04-12",
+    "Netflix"
+   ]
+  ],
+  "now": "Netflix"
+ },
+ {
+  "id": "S19",
+  "pattern": "correction",
+  "thing": "train departure time",
+  "theme": "travel",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-07",
+    "15:45"
+   ]
+  ],
+  "said_wrongly": [
+   "2026-04-07",
+   "14:30"
+  ],
+  "corrected_on": "2026-04-12",
+  "now": "15:45"
+ },
+ {
+  "id": "S20",
+  "pattern": "correction",
+  "thing": "girlfriend's passport number",
+  "theme": "people",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-23",
+    "Y9910382"
+   ]
+  ],
+  "said_wrongly": [
+   "2026-03-23",
+   "X8849201"
+  ],
+  "corrected_on": "2026-04-02",
+  "now": "Y9910382"
+ },
+ {
+  "id": "S21",
+  "pattern": "tentative_dropped",
+  "thing": "mother's preferred bakery",
+  "theme": "family",
+  "other_person": "Ingrid Brandt (mother)",
+  "history": [
+   [
+    "2026-03-26",
+    "Backstube Mitte"
+   ]
+  ],
+  "considered": [
+   "2026-04-01",
+   "Bäckerei Kroll"
+  ],
+  "now": "Backstube Mitte"
+ },
+ {
+  "id": "S22",
+  "pattern": "tentative_dropped",
+  "thing": "alternative weekend activity",
+  "theme": "hobbies",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-05",
+    "kayaking on the Spree"
+   ]
+  ],
+  "considered": [
+   "2026-03-10",
+   "photography walk"
+  ],
+  "now": "kayaking on the Spree"
+ },
+ {
+  "id": "S24",
+  "pattern": "hypothetical",
+  "thing": "monthly car insurance premium",
+  "theme": "admin",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-20",
+    "120 euros"
+   ]
+  ],
+  "imagined": [
+   "2026-03-30",
+   "180 euros"
+  ],
+  "now": "120 euros"
+ },
+ {
+  "id": "S25",
+  "pattern": "hypothetical",
+  "thing": "monthly mobile phone cost",
+  "theme": "family",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-24",
+    "25 euros"
+   ]
+  ],
+  "imagined": [
+   "2026-03-27",
+   "15 euros"
+  ],
+  "now": "25 euros"
+ },
+ {
+  "id": "S26",
+  "pattern": "lookalike",
+  "thing": "Espresso machine brand",
+  "theme": "shopping",
+  "other_person": "Clara Weber (girlfriend)",
+  "history": [
+   [
+    "2026-03-26",
+    "La Marzocco"
+   ]
+  ],
+  "other_value": [
+   "2026-03-30",
+   "Breville"
+  ],
+  "now": "La Marzocco"
+ },
+ {
+  "id": "S27",
+  "pattern": "lookalike",
+  "thing": "apartment floor number",
+  "theme": "home",
+  "other_person": "Clara Weber (girlfriend)",
+  "history": [
+   [
+    "2026-03-25",
+    "third floor"
+   ]
+  ],
+  "other_value": [
+   "2026-04-02",
+   "fifth floor"
+  ],
+  "now": "third floor"
+ },
+ {
+  "id": "S28",
+  "pattern": "lookalike",
+  "thing": "nearest train station",
+  "theme": "travel",
+  "other_person": "Jonas Keller (friend)",
+  "history": [
+   [
+    "2026-03-25",
+    "Berlin Ostkreuz"
+   ]
+  ],
+  "other_value": [
+   "2026-04-01",
+   "Munich Hauptbahnhof"
+  ],
+  "now": "Berlin Ostkreuz"
+ },
+ {
+  "id": "S29",
+  "pattern": "need_met",
+  "thing": "need",
+  "theme": "shopping",
+  "other_person": null,
+  "need": {
+   "what": "a climbing partner for Tuesday evenings at Berta Block",
+   "topic": "fitness-partner",
+   "open_from": "2026-03-05",
+   "met_on": "2026-03-09",
+   "how": "now climbs with Jonas Keller"
+  }
+ },
+ {
+  "id": "S30",
+  "pattern": "need_met",
+  "thing": "need",
+  "theme": "travel",
+  "other_person": null,
+  "need": {
+   "what": "a Postgres expert to review the table partitioning plan",
+   "topic": "tech-advice",
+   "open_from": "2026-03-09",
+   "met_on": "2026-03-13",
+   "how": "Svenja Roth from the Go meetup reviewed it"
+  }
+ },
+ {
+  "id": "S31",
+  "pattern": "need_open",
+  "thing": "need",
+  "theme": "money",
+  "other_person": null,
+  "need": {
+   "what": "a cheap sublet in Berlin for his girlfriend's visit in May",
+   "topic": "accommodation",
+   "open_from": "2026-03-14",
+   "met_on": null
+  }
+ },
+ {
+  "id": "S32",
+  "pattern": "need_open",
+  "thing": "need",
+  "theme": "work",
+  "other_person": null,
+  "need": {
+   "what": "a lift to Fontainebleau for the Easter climbing trip",
+   "topic": "lifts",
+   "open_from": "2026-03-03",
+   "met_on": null
+  }
+ },
+ {
+  "id": "S33",
+  "pattern": "need_other",
+  "thing": "need",
+  "theme": "admin",
+  "other_person": null,
+  "need": {
+   "what": "a Portuguese tutor, if he moved to Lisbon",
+   "topic": "language-exchange",
+   "open_from": "2026-03-27",
+   "met_on": null,
+   "not_the_persons": true
+  }
+ }
+]

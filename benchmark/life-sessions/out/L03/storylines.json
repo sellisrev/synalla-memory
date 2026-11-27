@@ -1,0 +1,540 @@
+[
+ {
+  "id": "S01",
+  "pattern": "plain",
+  "theme": "work",
+  "days": [
+   32
+  ],
+  "thing": "supplier for olive oil",
+  "values": [
+   "Aceites del Guadalquivir"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S02",
+  "pattern": "plain",
+  "theme": "people",
+  "days": [
+   29
+  ],
+  "thing": "son's school",
+  "values": [
+   "IES Pelayo"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S03",
+  "pattern": "plain",
+  "theme": "money",
+  "days": [
+   26
+  ],
+  "thing": "monthly rent",
+  "values": [
+   "1200 euros"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S04",
+  "pattern": "plain",
+  "theme": "health",
+  "days": [
+   10
+  ],
+  "thing": "dentist",
+  "values": [
+   "Dr. Elena Ruiz"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S05",
+  "pattern": "plain",
+  "theme": "admin",
+  "days": [
+   4
+  ],
+  "thing": "tax advisor",
+  "values": [
+   "María López"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S06",
+  "pattern": "plain",
+  "theme": "family",
+  "days": [
+   11
+  ],
+  "thing": "ex-wife's name",
+  "values": [
+   "Carmen Vidal"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S07",
+  "pattern": "plain",
+  "theme": "money",
+  "days": [
+   13
+  ],
+  "thing": "bank account",
+  "values": [
+   "CaixaBank"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S08",
+  "pattern": "plain",
+  "theme": "travel",
+  "days": [
+   15
+  ],
+  "thing": "weekly market",
+  "values": [
+   "Mercado Central"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S09",
+  "pattern": "plain",
+  "theme": "admin",
+  "days": [
+   26
+  ],
+  "thing": "insurance policy",
+  "values": [
+   "Mapfre"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S10",
+  "pattern": "plain",
+  "theme": "family",
+  "days": [
+   5
+  ],
+  "thing": "son's teacher",
+  "values": [
+   "Mr. Javier Soler"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S11",
+  "pattern": "change",
+  "theme": "home",
+  "days": [
+   23,
+   33
+  ],
+  "thing": "monthly internet provider",
+  "values": [
+   "Vodafone Fibra",
+   "Orange Hogar"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S12",
+  "pattern": "change",
+  "theme": "home",
+  "days": [
+   19,
+   27
+  ],
+  "thing": "garage for car",
+  "values": [
+   "Talleres Roca",
+   "Garage Valencia Sur"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S13",
+  "pattern": "change",
+  "theme": "shopping",
+  "days": [
+   3,
+   7
+  ],
+  "thing": "bakery for bread",
+  "values": [
+   "Panadería El Sol",
+   "Horno de Barrio"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S14",
+  "pattern": "change",
+  "theme": "health",
+  "days": [
+   9,
+   19
+  ],
+  "thing": "pharmacy",
+  "values": [
+   "Farmacia San Vicente",
+   "Farmacia del Puerto"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S15",
+  "pattern": "change",
+  "theme": "hobbies",
+  "days": [
+   30,
+   39
+  ],
+  "thing": "gym membership",
+  "values": [
+   "Fit24",
+   "Anytime Fitness"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S16",
+  "pattern": "change",
+  "theme": "travel",
+  "days": [
+   0,
+   8
+  ],
+  "thing": "train station",
+  "values": [
+   "Joaquín Sorolla",
+   "Avenida del Puerto"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S17",
+  "pattern": "heart",
+  "theme": "hobbies",
+  "days": [
+   1,
+   10,
+   13
+  ],
+  "thing": "evening running route",
+  "values": [
+   "Turia Gardens",
+   "Albufera Lake"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S18",
+  "pattern": "heart",
+  "theme": "shopping",
+  "days": [
+   21,
+   31,
+   35
+  ],
+  "thing": "weekly flower delivery",
+  "values": [
+   "Floristería Valencia",
+   "Ramos Flores"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S19",
+  "pattern": "correction",
+  "theme": "work",
+  "days": [
+   32,
+   39
+  ],
+  "thing": "restaurant license number",
+  "values": [
+   "Lic-9921",
+   "Lic-9922"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S20",
+  "pattern": "correction",
+  "theme": "home",
+  "days": [
+   20,
+   28
+  ],
+  "thing": "apartment floor number",
+  "values": [
+   "third floor",
+   "fourth floor"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S21",
+  "pattern": "tentative_dropped",
+  "theme": "people",
+  "days": [
+   8,
+   13
+  ],
+  "thing": "son's after-school club",
+  "values": [
+   "Robotics Workshop",
+   "Basketball Academy"
+  ],
+  "other_person": "Pablo (son)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S22",
+  "pattern": "tentative_dropped",
+  "theme": "travel",
+  "days": [
+   16,
+   19
+  ],
+  "thing": "train destination",
+  "values": [
+   "Barcelona Sants",
+   "Madrid Chamartín"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S23",
+  "pattern": "tentative_confirmed",
+  "theme": "shopping",
+  "days": [
+   20,
+   23,
+   32
+  ],
+  "thing": "coffee supplier",
+  "values": [
+   "Cafés Ruiz",
+   "Origen Café"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S24",
+  "pattern": "hypothetical",
+  "theme": "family",
+  "days": [
+   28,
+   36
+  ],
+  "thing": "son's grade",
+  "values": [
+   "3rd ESO",
+   "4th ESO"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S25",
+  "pattern": "hypothetical",
+  "theme": "work",
+  "days": [
+   29,
+   37
+  ],
+  "thing": "restaurant capacity",
+  "values": [
+   "30 seats",
+   "45 seats"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S26",
+  "pattern": "lookalike",
+  "theme": "health",
+  "days": [
+   27,
+   31
+  ],
+  "thing": "optician",
+  "values": [
+   "Óptica Central",
+   "Lentes Visión"
+  ],
+  "other_person": "Carmen (ex-wife)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S27",
+  "pattern": "lookalike",
+  "theme": "admin",
+  "days": [
+   37,
+   40
+  ],
+  "thing": "regular lawyer",
+  "values": [
+   "Abogado Ruiz",
+   "Abogada Torres"
+  ],
+  "other_person": "Carmen (ex-wife)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S28",
+  "pattern": "lookalike",
+  "theme": "work",
+  "days": [
+   37,
+   41
+  ],
+  "thing": "wine supplier",
+  "values": [
+   "Bodegas Turia",
+   "Viñedos del Sureste"
+  ],
+  "other_person": "Toni (friend)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S29",
+  "pattern": "need_met",
+  "theme": "travel",
+  "days": [
+   11,
+   19
+  ],
+  "thing": "need",
+  "values": [
+   "a cook to replace his sous-chef for two weeks in April",
+   "hired Lucía Ortega through his friend Toni for the two weeks"
+  ],
+  "other_person": "",
+  "keyword": "cook",
+  "topic": "hiring"
+ },
+ {
+  "id": "S30",
+  "pattern": "need_met",
+  "theme": "hobbies",
+  "days": [
+   11,
+   15
+  ],
+  "thing": "need",
+  "values": [
+   "a maths tutor for Pablo before his June exams",
+   "Pablo now sees the tutor Andrés Gil on Tuesdays"
+  ],
+  "other_person": "",
+  "keyword": "tutor",
+  "topic": "tutoring"
+ },
+ {
+  "id": "S31",
+  "pattern": "need_open",
+  "theme": "money",
+  "days": [
+   33
+  ],
+  "thing": "need",
+  "values": [
+   "a used commercial dishwasher for under 2,000 euros"
+  ],
+  "other_person": "",
+  "keyword": "dishwasher",
+  "topic": "restaurant-equipment"
+ },
+ {
+  "id": "S32",
+  "pattern": "need_open",
+  "theme": "hobbies",
+  "days": [
+   9
+  ],
+  "thing": "need",
+  "values": [
+   "an accountant who knows VAT for restaurants"
+  ],
+  "other_person": "",
+  "keyword": "accountant",
+  "topic": "accounting"
+ },
+ {
+  "id": "S33",
+  "pattern": "need_other",
+  "theme": "shopping",
+  "days": [
+   23
+  ],
+  "thing": "need",
+  "values": [
+   "a business partner, if he ever opened a second restaurant"
+  ],
+  "other_person": "",
+  "keyword": "partner",
+  "topic": "cofounder-search"
+ }
+]

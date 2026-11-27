@@ -1,0 +1,92 @@
+{
+ "3": [
+  [
+   "missing '1948-05-12'"
+  ],
+  [
+   "missing '1948-05-12'"
+  ],
+  [
+   "missing '1948-05-12'"
+  ]
+ ],
+ "25": [
+  [
+   "missing 'carer'"
+  ],
+  [
+   "missing 'carer'"
+  ],
+  [
+   "date 2026-03-20 not said"
+  ]
+ ],
+ "6": [
+  [
+   "judge: S29: Also, we need to hire two more pickers for the Thursday harvest. (The user states a need to hire two more pickers, but according to S29 (dated 2026-03-14), the need for extra pickers for)",
+   "judge: S32: Also, we need to hire two more pickers for the Thursday harvest. (The mention of hiring pickers for the harvest relates to the harvest week starting 16 March, which is a detail dated aft)"
+  ]
+ ],
+ "10": [
+  [
+   "judge: S31: check if the buyer in Germany has confirmed the pickup for the reserve Malbec. (The conversation mentions a need for an importer for Malbec in Germany, which is dated 2026-03-31, which is after the co)"
+  ]
+ ],
+ "13": [
+  [
+   "judge: S28: remind me of the deadline for submitting the quarterly VAT report to Lic. Javier Torres? (The user is asking about a deadline for a report to her tax advisor, but the conversation date is not specified in the p)"
+  ]
+ ],
+ "14": [
+  [
+   "judge: S02: However, I see a general check-up was booked for April 5th. Would you like me to move that up or keep it as is? (The assistant mentions a medical appointment on April 5th, which is a detail dated after 2026-03-13 and is not part of t)"
+  ]
+ ],
+ "18": [
+  [
+   "judge: S13: The discrepancy arises because the net weight was recorded excluding the cork stoppers from Dunlop Cork, but the shippin (The conversation is dated 2026-03-15, which is before the fact that Valentina's cork supplier changed to Natural Cork Co)",
+   "judge: S13: The discrepancy arises because the net weight was recorded excluding the cork stoppers from Dunlop Cork, but the shippin (This is actually consistent with the facts provided for the date 2026-03-15. No error here.)"
+  ]
+ ],
+ "27": [
+  [
+   "judge: S29: Yes, the three pickers you hired through the local agency have confirmed their attendance. (The user mentions hiring 'three pickers through a local agency', but the fact states she hired a crew of six through Raú)",
+   "judge: S29: Are the temporary workers still confirmed for that date? (The user asks if they are confirmed, but the fact S29 states the need for pickers was already sorted by hiring a crew of)"
+  ],
+  [
+   "judge: S31: The primary buyer is Weinhandlung Müller. The contract specifies a delivery date of April 10th. (The date April 10th is after 2026-03-22 and refers to a fact (the need for a German importer) that is not part of a stor)",
+   "judge: S29: Yes, all twelve seasonal workers have signed their contracts electronically. (Valentina hired a crew of six through Raúl Gómez, not twelve workers, and the facts do not state that contracts are sign)"
+  ]
+ ],
+ "32": [
+  [
+   "judge: S06: I found one pending invoice from 'Andes Risk Solutions' for $450, due on April 10. (The assistant mentions a provider 'Andes Risk Solutions', but the fact states Valentina's winery insurance agent is Agus)"
+  ],
+  [
+   "missing '1970-09-15'"
+  ],
+  [
+   "missing '1970-09-15'"
+  ],
+  [
+   "missing '1970-09-15'"
+  ]
+ ],
+ "35": [
+  [
+   "judge: S31: Can you pull up the current labor roster and cross-reference it with the export documentation for our latest shipment to (Mentions a detail (importer for Malbec in Germany) that is a need/storyline dated after 2026-03-30.)",
+   "judge: S31: While you do that, check if there are any new buyers in the European market who have expressed interest in our Malbec. (Mentions a detail (Malbec in Germany) that is a need/storyline dated after 2026-03-30.)"
+  ]
+ ],
+ "39": [
+  [
+   "judge: S09: The interest rate is still at 4.5% annually, correct? (This is a correct statement of a known fact.)"
+  ]
+ ],
+ "42": [
+  [
+   "judge: S17: Marco is bringing his family over for our usual dinner at El Olivo (Valentina changed her weekly dinner restaurant back to La Trattoria on 2026-04-07 (after the conversation date), but the)",
+   "judge: S17: Marco is bringing his family over for our usual dinner at El Olivo (This is actually consistent with the state of facts on 2026-04-06. Let me re-evaluate. S17 (2026-04-02) says she switche)"
+  ]
+ ]
+}

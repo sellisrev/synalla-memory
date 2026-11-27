@@ -1,0 +1,898 @@
+{
+ "3": [
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ]
+ ],
+ "4": [
+  [
+   "states 'Next'"
+  ]
+ ],
+ "5": [
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ]
+ ],
+ "6": [
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ]
+ ],
+ "7": [
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Monzo'",
+   "states 'Next'",
+   "date 2026-03-07 not said"
+  ],
+  [
+   "states 'Next'"
+  ]
+ ],
+ "8": [
+  [
+   "states 'Next'",
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Next'",
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Next'",
+   "states 'Leeds Bradford'",
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Next'",
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Next'",
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Next'",
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Leeds Bradford'",
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Leeds Bradford'",
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Lisbon'"
+  ],
+  [
+   "judge: S13: You have no meetings until 2 PM, and then you have a choir rehearsal at 7 PM. (The conversation is dated 2026-03-09. On this date, the choir rehearsal schedule is still Tuesdays at 7:30 PM (the chang)"
+  ],
+  [
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Lisbon'"
+  ]
+ ],
+ "9": [
+  [
+   "states 'Leeds Bradford'",
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Next'",
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Next'",
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Next'",
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Next'",
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Sarah Jenkins'",
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Lisbon'"
+  ],
+  [
+   "missing 'feed'",
+   "states 'Next'",
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Lisbon'"
+  ],
+  [
+   "missing 'feed'",
+   "states 'Lisbon'"
+  ],
+  [
+   "missing 'feed'",
+   "states 'Leeds Bradford'",
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Lisbon'"
+  ]
+ ],
+ "10": [
+  [
+   "states 'Next'"
+  ],
+  [
+   "judge: S10: You could toss them with olive oil, rosemary, garlic, and lemon zest, then roast them at 200°C for about 40 minutes. It’ (The conversation is dated 2026-03-11, and the assistant refers to a 'Year 4 lesson tomorrow'. According to S10, school s)",
+   "judge: S13: Enjoy the choir rehearsal tonight! (The conversation is on 2026-03-11, which is a Wednesday. According to the facts (S13), choir rehearsal is on Tuesdays (u)"
+  ]
+ ],
+ "11": [
+  [
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Next'",
+   "states 'Lisbon'"
+  ],
+  [
+   "missing '2026-03-09'",
+   "states 'Leeds Town Hall'",
+   "states 'Next'",
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Next'",
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Next'",
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Next'",
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Next'",
+   "states 'Lisbon'"
+  ],
+  [
+   "missing '2026-03-09'",
+   "states 'Lisbon'"
+  ],
+  [
+   "missing '2026-03-09'",
+   "states 'Lisbon'"
+  ],
+  [
+   "missing '2026-03-09'",
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Lisbon'"
+  ],
+  [
+   "missing '2026-03-09'",
+   "states 'Lisbon'"
+  ],
+  [
+   "missing '2026-03-09'",
+   "states 'Lisbon'"
+  ],
+  [
+   "missing '2026-03-09'",
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Lisbon'"
+  ],
+  [
+   "missing '2026-03-09'",
+   "states 'Lisbon'"
+  ],
+  [
+   "missing '2026-03-09'",
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Lisbon'"
+  ],
+  [
+   "missing '2026-03-09'",
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Lisbon'"
+  ],
+  [
+   "states 'Lisbon'"
+  ]
+ ],
+ "12": [
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "judge: S13: you have choir rehearsal on Thursday evening (Mentions a fact (choir rehearsal schedule) that is dated after 2026-03-13 (rehearsal schedule changed to Thursdays on 20)"
+  ],
+  [
+   "states 'Leeds Bradford'"
+  ],
+  [
+   "judge: S13: Rehearsals with James Wright are still scheduled for this Thursday at 7 PM in the community hall. (The assistant states rehearsals are on Thursday at 7 PM, but according to S13 (from 2026-03-31), the choir rehearsal sch)"
+  ],
+  [
+   "states 'Leeds Bradford'"
+  ],
+  [
+   "states 'Leeds Bradford'"
+  ],
+  [
+   "states 'Leeds Bradford'"
+  ],
+  [
+   "judge: S14: And while you’re at it, remind me to stop by Proud Mary on the way home if I have time, I need my usual fix before the c (On 2026-03-13, the fact S14 states her regular coffee shop is Proud Mary (having changed from The Alchemist on 2026-03-0)"
+  ]
+ ],
+ "13": [
+  [
+   "states 'Next'"
+  ],
+  [
+   "judge: S13: Looking at your calendar for tomorrow, Sunday 15 March, you have choir practice at 7 PM. (The conversation is dated 2026-03-14. According to S13 (updated on 2026-03-31), choir rehearsal is on Thursdays at 7:00 )",
+   "judge: S13: I’ve blocked 9 AM to 11 AM on Sunday for meal prep. (This is part of the planning for Sunday 15 March, which contradicts the choir rehearsal schedule (S13), though the prima)"
+  ],
+  [
+   "date 2026-03-12 not said"
+  ],
+  [
+   "judge: S02: Can you check what I have left in the virtual pantry? (This mentions a need/action regarding groceries, but the conversation context implies she is planning her shopping. Howe)",
+   "judge: S13: And maybe set a reminder for the choir rehearsal on Sunday? (The conversation is on 2026-03-14 (a Saturday). The user asks to set a reminder for a choir rehearsal on Sunday, but the)"
+  ],
+  [
+   "judge: S15: I missed my dentist slot on 2026-03-09 because of the school emergency, and I can’t keep putting it off. (The user claims they missed a dentist slot on 2026-03-09, but the facts state that the dentist appointment was reschedul)"
+  ]
+ ],
+ "15": [
+  [
+   "states 'Next'"
+  ]
+ ],
+ "16": [
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "judge: S13: I’ve pulled up your schedule for Wednesday, March 18th. You have a parent-teacher conference scheduled from 4:00 PM to 5 (The assistant states the choir rehearsal is at 8:00 PM, but the fact states that as of 2026-03-31, the choir rehearsal s)",
+   "judge: S06: If you leave your home at 5:15 PM, the drive to the community center typically takes about 25 minutes in the early eveni (The assistant refers to the rehearsal venue as the 'community center', but the fact states the choir rehearsal venue is )"
+  ],
+  [
+   "judge: S13: I’ve got choir practice at 7, so I need to be efficient. (The user mentions choir practice at 7, but according to the facts (as of 2026-03-17), the rehearsal schedule is Tuesdays)"
+  ]
+ ],
+ "17": [
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "judge: S13: I think it’s this Thursday evening. (The user's statement refers to a choir rehearsal on Thursday. According to fact S13 (updated on 2026-03-31), rehearsals )"
+  ],
+  [
+   "judge: S13: I'm tied up with a Year 4 intervention group at school. I'll head over as soon as I can. (The user mentions being late for rehearsal on 'Tuesday', but the choir rehearsal schedule was changed on 2026-03-31 to T)",
+   "judge: S29: Your cat's vet appointment is scheduled for Thursday, 26 March at 10:30 AM. (This mentions a detail (a specific date/time for a vet appointment) dated after the conversation date of 2026-03-17, and)"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "judge: S15: I have that dentist appointment tomorrow morning, right? (The conversation is dated 2026-03-17. The user says the appointment is 'tomorrow morning' (2026-03-18), but the fact S15)",
+   "judge: S15: Yes, you have a dentist appointment tomorrow morning, Wednesday 18 March, at 9:15 am. (The appointment date was changed to 2026-03-09, so there is no appointment on 2026-03-18.)",
+   "judge: S29: I need to go and feed Barnaby, my cat, before he starts his nightly opera. (The user refers to her cat as 'Barnaby', but the facts state her cat's name is 'Miso'.)"
+  ],
+  [
+   "judge: S13: I think I missed the sign-up sheet for Tuesday evening. (The user mentions a choir sign-up for Tuesday evening, but the conversation date is 2026-03-17, and the fact S13 (update)",
+   "judge: S13: The next available practice is Thursday, 19 March, at 7 PM. (This mentions a rehearsal time (Thursday at 7 PM) that is part of a fact (S13) updated on 2026-03-31, which is after the)",
+   "judge: S13: I’ve booked you for the choir practice on Thursday, 19 March, at 7 PM. (This mentions a rehearsal time (Thursday at 7 PM) that is part of a fact (S13) updated on 2026-03-31, which is after the)"
+  ],
+  [
+   "judge: S13: your next rehearsal is scheduled for Thursday evening at 7 PM. (This mentions a fact (rehearsal time) dated after 2026-03-17 (the change occurred on 2026-03-31).)"
+  ]
+ ],
+ "18": [
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "missing 'PureGym'",
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "judge: S22: I realized I forgot to cancel my gym session for tomorrow, March 18th, because I’m leaving the city early on the 13th. (The user states they are leaving the city early on the 13th, but according to S22, the departure airport for the Lisbon )"
+  ],
+  [
+   "judge: S13: Good luck with the lesson tomorrow and your choir rehearsal tonight. (The assistant mentions a choir rehearsal 'tonight'. According to S13, choir rehearsals are on Tuesdays at 7:30 PM. Since)"
+  ]
+ ],
+ "19": [
+  [
+   "states 'Lisbon'"
+  ]
+ ],
+ "20": [
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'",
+   "states 'Leeds Bradford'"
+  ],
+  [
+   "states 'Next'",
+   "states 'Leeds Bradford'"
+  ],
+  [
+   "states 'Next'",
+   "date 2026-03-18 not said"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Leeds Bradford'"
+  ],
+  [
+   "states 'Next'",
+   "states 'Leeds Bradford'"
+  ],
+  [
+   "states 'Next'",
+   "states 'Leeds Bradford'"
+  ],
+  [
+   "states 'Leeds Bradford'"
+  ],
+  [
+   "states '18 degrees'"
+  ]
+ ],
+ "21": [
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ]
+ ],
+ "23": [
+  [
+   "missing 'Tuesdays at 7:30 PM'",
+   "states 'Next'"
+  ],
+  [
+   "missing 'Tuesdays at 7:30 PM'",
+   "states 'Next'"
+  ],
+  [
+   "missing 'Tuesdays at 7:30 PM'",
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "missing 'Tuesdays at 7:30 PM'",
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "missing 'Tuesdays at 7:30 PM'"
+  ]
+ ],
+ "24": [
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ]
+ ],
+ "25": [
+  [
+   "states '21°C'"
+  ],
+  [
+   "judge: S07: Address it to Mr. Henderson, the headteacher. (Aisha's school headteacher is David Miller, not Mr. Henderson.)"
+  ],
+  [
+   "states '21°C'"
+  ],
+  [
+   "states 'Lisbon'"
+  ],
+  [
+   "states '21°C'"
+  ],
+  [
+   "states '21°C'"
+  ],
+  [
+   "judge: S13: Yes, you have the Leeds Community Choir rehearsal scheduled for Thursday, March 26th, from 7:30 PM to 9:00 PM at the com (The assistant states the rehearsal is on Thursday, March 26th, but March 26th, 2026, is a Thursday, however, the convers)",
+   "judge: S13: I have that choir rehearsal in the evening, right? (The user asks about a rehearsal 'tomorrow' (March 24th), but according to S13, rehearsals are on Tuesdays at 7:30 PM.)"
+  ]
+ ],
+ "26": [
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ]
+ ],
+ "27": [
+  [
+   "states 'Next'"
+  ]
+ ],
+ "29": [
+  [
+   "states 'Leeds Bradford'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "judge: S29: And don’t forget the cat food; Whiskers is getting through it fast. (The user mentions a cat named Whiskers, but the facts state Aisha's cat is named Miso.)"
+  ],
+  [
+   "judge: S26: I think I have something at John Lewis Opticians. (The user mentions an appointment at John Lewis Opticians 'tomorrow' (2026-03-28), but the fact states S26 (John Lewis Op)",
+   "judge: S13: I have a rehearsal on Sunday (The user says they have a choir rehearsal on Sunday. According to the facts, as of 2026-03-31, rehearsal is on Thursdays)"
+  ],
+  [
+   "judge: S13: Your choir rehearsal is scheduled for Tuesdays at 7:30 PM. (The assistant states the rehearsal is on Tuesdays at 7:30 PM, but the fact from 2026-03-31 shows the schedule changed to)",
+   "judge: S13: Your next one is this coming Tuesday, March 31st. (The assistant says the next rehearsal is Tuesday, March 31st, but according to the fact from 2026-03-31, the rehearsal d)"
+  ]
+ ],
+ "31": [
+  [
+   "states 'Next'",
+   "date 2026-03-27 not said"
+  ],
+  [
+   "states 'Leeds Town Hall'",
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'",
+   "date 2026-03-27 not said"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'",
+   "date 2026-03-27 not said"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "judge: S05: I need something portable since I live alone and have limited space. It doesn’t need to be fancy, just good enough for m (Aisha is an alto section partner (implied by S05, which identifies her alto section partner as Sarah Jenkins), but she s)"
+  ]
+ ],
+ "35": [
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "judge: S06: I’ve checked your calendar. You have choir rehearsal on Thursday evening at 7 pm at the community center. No other rehea (The location of the choir rehearsal is Leeds Town Hall, not the community center.)"
+  ]
+ ],
+ "36": [
+  [
+   "states 'Next'"
+  ]
+ ],
+ "37": [
+  [
+   "states 'Next'"
+  ],
+  [
+   "judge: S15: You have a dentist appointment tomorrow at 9:30 AM. (The conversation is dated 2026-04-02. The facts state Aisha's dentist appointment was on 2026-03-09. There is no mention)"
+  ],
+  [
+   "judge: S13: I have choir rehearsal at 7 PM, and I need to know if I should buy groceries on the way home. (The user mentions choir rehearsal at 7 PM on Thursday 2 April. While the schedule changed to Thursdays at 7:00 PM (S13) )"
+  ],
+  [
+   "judge: S13, S06: The next rehearsal is still scheduled for tomorrow evening at 7 PM at Leeds Sports Park, where we usually hold our sessi (The assistant states the rehearsal is at Leeds Sports Park; however, the fact S06 states the choir rehearsal venue is Le)",
+   "judge: S13: The next rehearsal is still scheduled for tomorrow evening at 7 PM at Leeds Sports Park, where we usually hold our sessi (The assistant says the rehearsal is 'tomorrow evening' (April 3rd) at 7 PM. While the time is correct according to S13, )"
+  ],
+  [
+   "judge: S04: the choir director, Mr. Davies (The choir director is Elena Rossi, not Mr. Davies.)",
+   "judge: S06: the venue is still the community hall on Chapeltown Road (The conversation mentions a rehearsal venue (Chapeltown Road) which contradicts the fact that the choir rehearsal venue )",
+   "judge: S06: the community hall on Chapeltown Road (The choir rehearsal venue is Leeds Town Hall, not Chapeltown Road.)"
+  ],
+  [
+   "judge: S06: It’s at the community centre, right? (The user states the rehearsal is at the community centre, but the fact S06 states the choir rehearsal venue is Leeds Tow)",
+   "judge: S06: Just to confirm, the rehearsal is at the Headingley Community Centre, correct? (The assistant suggests Headingley Community Centre, but the fact S06 states the choir rehearsal venue is Leeds Town Hall)"
+  ]
+ ],
+ "38": [
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ]
+ ],
+ "40": [
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ]
+ ],
+ "42": [
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'British Gas'"
+  ]
+ ],
+ "43": [
+  [
+   "missing '950 GBP'",
+   "states 'Next'"
+  ],
+  [
+   "missing 'David Miller'",
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "missing '950 GBP'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "states 'Next'"
+  ],
+  [
+   "judge: S03: It’s still Tuesday, 14 April 2026, right? (The date 14 April 2026 is mentioned, which is after the conversation date of 2026-04-07. While S03 refers to the mother')",
+   "judge: S03: The trip to the Botanic Gardens is confirmed for Tuesday, 14 April 2026. (The date 14 April 2026 is mentioned, which is after the conversation date of 2026-04-07 and is not part of the allowed s)"
+  ]
+ ],
+ "44": [
+  [
+   "states 'Next'"
+  ]
+ ],
+ "45": [
+  [
+   "missing '2026-04-09'",
+   "states 'Next'"
+  ]
+ ],
+ "2": [
+  [
+   "judge: S15: You also have a dentist appointment scheduled for yesterday, March 2nd, which I see you marked as 'attended'. (The fact states the dentist appointment was on 2026-03-02, but the conversation is dated 2026-03-03, so 'yesterday' is c)",
+   "judge: S15: You also have a dentist appointment scheduled for yesterday, March 2nd, which I see you marked as 'attended'. (The conversation is on 2026-03-03. The assistant mentions the appointment was on March 2nd, which is a fact dated before)"
+  ]
+ ],
+ "14": [
+  [
+   "judge: S16: I was thinking of popping in for a quick check-up on my blood pressure before I start chopping vegetables, but I don’t w (The user mentions wanting to visit City Square Clinic, but according to fact S16 (from 2026-03-11), her GP surgery has c)"
+  ],
+  [
+   "judge: S23: Speaking of the trip, I need to finalize the itinerary for Porto. We leave on the 20th, right? (The user mentions Porto as the destination, but according to S23, Aisha changed her Easter travel destination to Lisbon )",
+   "judge: S23: I've checked the forecast for Porto from March 20th to March 27th. (The assistant mentions a forecast for Porto up to March 27th, but the conversation is on 2026-03-15, and the fact S23 (u)"
+  ]
+ ],
+ "22": [
+  [
+   "judge: S13: Yes, the choir rehearsal is confirmed for Thursday at 7:30 PM at the community centre. (The choir rehearsal schedule changed on 2026-03-31 to Thursdays at 7:00 PM, not 7:30 PM.)"
+  ]
+ ],
+ "28": [
+  [
+   "judge: S13: Just let her know I’ll be ten minutes late because I’ve got to help a student with a reading assessment. Say I’ll be the (The user specifies a rehearsal time of 7:00 PM, but the fact S13 (updated 2026-03-31) states choir rehearsal is Thursday)"
+  ],
+  [
+   "judge: S13: I have choir rehearsal tonight at 7 PM. (The user states rehearsal is at 7 PM, but the fact (as of 2026-03-31) is that rehearsal is on Thursdays at 7:00 PM. Howe)"
+  ],
+  [
+   "judge: S29: I’ve also set a reminder for you to water Barnaby upon your return from the dentist. (The user's cat's name is Miso, not Barnaby.)",
+   "judge: S15: I’ve also set a reminder for you to water Barnaby upon your return from the dentist. (The user's dentist appointment was on 2026-03-09, not tomorrow (the conversation date is 2026-03-26).)"
+  ],
+  [
+   "missing 'Gemma'",
+   "states 'Next'"
+  ],
+  [
+   "judge: S13: You have your choir rehearsal from 6:30 PM to 8:30 PM. (The conversation is dated 2026-03-26. Fact S13 (updated on 2026-03-31) states choir rehearsal is on Thursdays at 7:00 PM)",
+   "judge: S13: I’ve set a timer for 5:15 PM for your cooking prep and an alarm for 6:20 PM to allow time for your shower before the 6:3 (The assistant maintains the incorrect rehearsal time of 6:30 PM, whereas the rehearsal time is 7:00 PM (S13).)"
+  ]
+ ],
+ "39": [
+  [
+   "judge: S04: Hi, I need to send a quick message to the choir director, Sarah. (The user refers to the choir director as Sarah, but the fact states the choir director is Elena Rossi.)",
+   "judge: S06: We’ve got the rehearsal tonight at 7 PM in the community hall (The user states the rehearsal is in the community hall, but the fact states the rehearsal venue is Leeds Town Hall.)",
+   "judge: S13: We’ve got the rehearsal tonight at 7 PM in the community hall (The user states the rehearsal is at 7 PM, but the fact states the rehearsal schedule is Thursdays at 7:00 PM. While the )"
+  ],
+  [
+   "judge: S11: Would you like me to set a reminder to check your pantry before you head out to Leeds Sports Park later, just to see if  (The conversation date is 2026-04-04, but the user's gym membership changed to Leeds Sports Park on 2026-03-23. However, )",
+   "judge: S11: Would you like me to set a reminder to check your pantry before you head out to Leeds Sports Park later, just to see if  (This is a valid mention of a known fact (Leeds Sports Park) and does not contradict anything.)"
+  ],
+  [
+   "judge: S19: We’re switching the supplier to St. Mary's Shop for the PE kits. (Aisha corrected this earlier slip; the school uniform supplier is Next, not St. Mary's Shop.)"
+  ]
+ ],
+ "41": [
+  [
+   "judge: S13, from 2026-03-31: We’re planning the Easter concert and I need to confirm if he can still bring his collection of choral scores to the hal (The conversation takes place on 2026-04-05, but the choir rehearsal schedule was changed on 2026-03-31 to Thursdays at 7)",
+   "judge: S28, from 2026-04-04: I know I should probably order it from Waterstones since they have the best range for choir scores, but I need to check  (This is a detail from a fact dated after 2026-04-05 (the conversation is on 2026-04-05, but the fact is dated 2026-04-04)",
+   "judge: S13, from 2026-03-31: If you order by tonight, you should receive the scores by Wednesday or Thursday, which gives you plenty of time for the  (The rehearsal day is now Thursday, not Tuesday.)"
+  ]
+ ],
+ "46": [
+  [
+   "judge: S06: Your choir rehearsal is this Wednesday at 7 PM at the community center. (The rehearsal venue is Leeds Town Hall, not a community center.)"
+  ],
+  [
+   "judge: S06: Choir rehearsal is this Sunday at 7 PM at the community center. (The rehearsal venue is Leeds Town Hall, not the community center.)",
+   "judge: S13: Choir rehearsal is this Sunday at 7 PM at the community center. (The rehearsal time is 7:00 PM on Thursdays, not Sunday.)"
+  ],
+  [
+   "judge: S13: Your choir rehearsal is on Tuesdays and Thursdays at 7:30 PM. (The rehearsal time was changed to Thursdays at 7:00 PM.)",
+   "judge: N/A: Just change the date to Saturday 16 May to give us a full day. (The date 16 May 2026 is after the conversation date of 2026-04-10 and is not part of the specified storylines S18 or S19)"
+  ],
+  [
+   "judge: S13: I need to confirm I can’t make the Tuesday evening session because of the parent-teacher consultations. (The choir rehearsal schedule was changed on 2026-03-31 to Thursdays at 7:00 PM; therefore, there is no longer a Tuesday )"
+  ]
+ ],
+ "47": [
+  [
+   "judge: S13: I have some choral practice to prepare for this weekend (The conversation is dated 2026-04-11, which is a Saturday. Fact S13 (updated on 2026-03-31) states choir rehearsal is on)",
+   "judge: S23: I want to keep my Saturday free for my trip to Lisbon. (The user mentions a trip to Lisbon this weekend, but the conversation date is 2026-04-11 (a Saturday). The trip is inten)"
+  ]
+ ]
+}

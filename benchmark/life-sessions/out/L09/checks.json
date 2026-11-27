@@ -1,0 +1,379 @@
+{
+ "2": [
+  [
+   "states 'online portal'"
+  ]
+ ],
+ "4": [
+  [
+   "states 'Amazon Fresh'"
+  ]
+ ],
+ "5": [
+  [
+   "date 2026-03-02 not said"
+  ]
+ ],
+ "10": [
+  [
+   "states 'Instacart'"
+  ]
+ ],
+ "12": [
+  [
+   "missing '2026-03-12'"
+  ],
+  [
+   "missing '2026-03-12'"
+  ],
+  [
+   "missing '2026-03-12'",
+   "date 2026-03-10 not said"
+  ],
+  [
+   "states 'Instacart'",
+   "date 2026-03-10 not said"
+  ],
+  [
+   "missing '2026-03-12'"
+  ],
+  [
+   "missing '2026-03-12'",
+   "states 'Instacart'",
+   "date 2026-03-10 not said"
+  ],
+  [
+   "missing '2026-03-12'",
+   "date 2026-03-10 not said"
+  ],
+  [
+   "missing '2026-03-12'"
+  ],
+  [
+   "missing '2026-03-12'"
+  ],
+  [
+   "missing '2026-03-12'",
+   "date 2026-03-10 not said"
+  ],
+  [
+   "missing '2026-03-12'"
+  ]
+ ],
+ "16": [
+  [
+   "date 2026-03-14 not said"
+  ],
+  [
+   "judge: S16: Your father and mother visited last weekend, from Thursday 12 March to Sunday 15 March. (The fact states Daniel's father's weekend visit was 2026-03-12, but later updated (on 2026-03-21) to 2026-03-21. The ass)"
+  ]
+ ],
+ "22": [
+  [
+   "missing '2026-03-21'"
+  ],
+  [
+   "missing '2026-03-21'"
+  ]
+ ],
+ "23": [
+  [
+   "missing '8 hours straight'",
+   "date 2026-03-20 not said"
+  ]
+ ],
+ "29": [
+  [
+   "missing '2026-03-22'"
+  ]
+ ],
+ "32": [
+  [
+   "date 2026-03-24 not said"
+  ]
+ ],
+ "34": [
+  [
+   "states 'Instacart'"
+  ]
+ ],
+ "35": [
+  [
+   "missing '2026-04-01'",
+   "date 2026-03-31 not said"
+  ],
+  [
+   "date 2026-03-31 not said"
+  ],
+  [
+   "missing '2026-04-01'"
+  ],
+  [
+   "missing '2026-04-01'",
+   "date 2026-03-31 not said"
+  ],
+  [
+   "missing '2026-04-01'",
+   "states 'Instacart'",
+   "date 2026-03-31 not said"
+  ],
+  [
+   "missing '2026-04-01'"
+  ],
+  [
+   "date 2026-03-31 not said"
+  ],
+  [
+   "missing '2026-04-01'",
+   "date 2026-03-31 not said"
+  ],
+  [
+   "missing '2026-04-01'"
+  ],
+  [
+   "missing '2026-04-01'"
+  ],
+  [
+   "missing '2026-04-01'"
+  ],
+  [
+   "missing '2026-04-01'"
+  ],
+  [
+   "missing '2026-04-01'",
+   "date 2026-03-31 not said"
+  ],
+  [
+   "missing '2026-04-01'",
+   "date 2026-03-31 not said"
+  ],
+  [
+   "missing '2026-04-01'"
+  ],
+  [
+   "missing '2026-04-01'",
+   "date 2026-03-31 not said"
+  ],
+  [
+   "missing '2026-04-01'",
+   "states 'Instacart'"
+  ],
+  [
+   "missing '2026-04-01'"
+  ],
+  [
+   "missing '2026-04-01'",
+   "date 2026-03-31 not said"
+  ],
+  [
+   "missing '2026-04-01'",
+   "date 2026-03-31 not said"
+  ]
+ ],
+ "39": [
+  [
+   "missing '2026-04-05'"
+  ]
+ ],
+ "40": [
+  [
+   "date 2026-04-02 not said"
+  ],
+  [
+   "judge: S19: your pediatrician appointment for Ada is at 2:30 PM. (The pediatrician's name was corrected to Dr. Patel on 2026-04-03, and while the name isn't mentioned, the conversation i)"
+  ],
+  [
+   "judge: S18: We’re just stuck in this cycle of two 3-hour blocks of sleep. (The user describes his sleep pattern as two 3-hour blocks, but the most recent fact (S18 from 2026-04-10) states he chan)",
+   "judge: N/A: I see a credit card payment of $1,240 due on April 10th (The assistant mentions a date (April 10th) after the conversation date of 2026-04-05, and while the conversation is abou)"
+  ],
+  [
+   "judge: S14: I see the renewal for your Yonge Street lot is scheduled to auto-renew on April 15th. (The date April 15th is after the conversation date of 2026-04-05 and is not part of the S27 storyline.)",
+   "judge: S01: Regarding Julian, he hasn't replied to the last two emails, but the system shows he viewed the previous attachment. (The conversation mentions Julian/NDA/Redlines, but the facts state Daniel's pro bono case is with a client named Mrs. Di)",
+   "judge: S15: I've uploaded your recent CRA notices and the employment insurance statement to your secure folder. (The assistant's mention of tax documents relates to the parental leave benefits, but mentions documents (CRA notices) th)"
+  ]
+ ],
+ "43": [
+  [
+   "missing '2026-04-08'"
+  ],
+  [
+   "judge: S10: I see you have a performance at the Harbourfront Centre tonight at 7:00 PM. (The Harbourfront Centre is the venue for Daniel's brother's graduation, not his jazz concert.)",
+   "judge: S19: I found the invoice from Dr. Aris’s office. (Daniel's pediatrician is Dr. Patel, not Dr. Aris.)"
+  ]
+ ],
+ "47": [
+  [
+   "states 'Instacart'"
+  ]
+ ],
+ "48": [
+  [
+   "missing '2026-04-12'"
+  ],
+  [
+   "missing '2026-04-12'"
+  ],
+  [
+   "missing '2026-04-12'"
+  ],
+  [
+   "judge: S19: check if Ada’s pediatrician appointment is still on for next Tuesday. (The conversation is on 2026-04-12 (a Sunday). Next Tuesday would be 2026-04-14. There is no fact regarding a pediatricia)"
+  ],
+  [
+   "missing '2026-04-12'"
+  ]
+ ],
+ "1": [
+  [
+   "judge: S19: Also, remind me to check the pediatrician’s portal for Ada’s vaccination records. I think we need to update her file bef (Mentions the pediatrician, which is a fact/detail dated after 2026-03-02.)"
+  ]
+ ],
+ "6": [
+  [
+   "judge: S02: I need to tell her I’m still on leave and won’t be back until April 1st. (Daniel's return to work date is 2026-04-12, not April 1st.)",
+   "judge: S02: I’ll be offline for most of March but will catch up on urgent matters when I return. (Daniel returns to work on 2026-04-12, so he will be back after March, but his return date is specifically April 12th, no)",
+   "judge: S02: I’m still on parental leave with Ada and won’t be returning to the office until April 1st. (Daniel's return to work date is 2026-04-12, not April 1st.)"
+  ],
+  [
+   "states 'Dr. Evans'"
+  ],
+  [
+   "date 2026-03-06 not said"
+  ],
+  [
+   "date 2026-03-06 not said"
+  ]
+ ],
+ "9": [
+  [
+   "judge: S28: I’ve packed her bag and have the Manulife Financial insurance card ready. (The conversation states Grace's family health insurance provider is Sun Life; Manulife Financial is Daniel's own provide)",
+   "judge: S19: Yes, the appointment is on March 18th at 2:00 PM. (This mentions a date (March 18th) that is after the conversation date of 2026-03-10 and relates to a detail (pediatricia)"
+  ]
+ ],
+ "11": [
+  [
+   "judge: S02: Regarding your return, HR confirms your first day back is April 15th. (Daniel's return to work date is 2026-04-12.)"
+  ],
+  [
+   "judge: S02: You’re currently set to return two days a week, starting April 1st. (Daniel's return to work date is 2026-04-12, not April 1st.)"
+  ]
+ ],
+ "13": [
+  [
+   "judge: S02: The only other item flagged as high priority is a calendar reminder for the quarterly firm review next Tuesday, which is (The assistant states the meeting is after Daniel's return, but Daniel's return date is 2026-04-12, while the conversatio)"
+  ]
+ ],
+ "15": [
+  [
+   "judge: S16: Did Dad’s visit on March 12th go okay? (The conversation is on 2026-03-14. According to S16, the father's visit was scheduled for 2026-03-12, but S16 was update)"
+  ]
+ ],
+ "17": [
+  [
+   "judge: S02: I’ve also added a 30-minute placeholder for the HR return-to-work discussion next Monday, March 23. (The assistant mentions a return-to-work discussion for March 23. The fact S02 states Daniel's return to work date is 202)"
+  ]
+ ],
+ "19": [
+  [
+   "judge: S02: I need to confirm my parental leave end date is still set for April 14th (Daniel's return to work date is 2026-04-12, which contradicts his statement that his parental leave ends on April 14th.)"
+  ],
+  [
+   "judge: S12: Can you add those five items to my Instacart list? (Daniel's grocery delivery app has changed to Amazon Fresh (as of 2026-03-19), but the conversation is dated 2026-03-18. )",
+   "judge: S12: Your Instacart order for 6 PM delivery is confirmed. (The conversation date is 2026-03-18. While Instacart is his current app on this date, the assistant confirms an order fo)"
+  ]
+ ],
+ "21": [
+  [
+   "judge: S17: I checked the billing details for the Halo Secure monitor. (The user's baby monitor app is Nanit or Owlet, not Halo Secure.)",
+   "judge: S31: The deadline for the St. Michael’s daycare application is next Friday, March 27th. (The daycare need is from January and is not mentioned as having a deadline on March 27th, and the date March 27th is aft)"
+  ],
+  [
+   "judge: S17: Anyway, back to the tax stuff. I also need to cancel that baby monitor subscription. I haven’t used the app in months si (The user claims they haven't used the app in months and switched to a wall-mounted unit, but facts show Daniel's current)"
+  ]
+ ],
+ "24": [
+  [
+   "judge: S13: I’m still figuring out the logistics of commuting to Bay Street with a newborn (Daniel's commute route to the firm has changed to TTC streetcar (on 2026-03-26), and his previous parking location was B)",
+   "judge: S02: the document indicates that your initial return is scheduled for April 6, 2026. (Daniel's return to work date is 2026-04-12, not April 6.)"
+  ],
+  [
+   "judge: S02: I see the calendar is still mostly empty for April. We need to lock in the gradual reintegration schedule. (The user mentions the calendar is empty for April, but S02 states Daniel's return to work date is 2026-04-12, and the as)",
+   "judge: S13: I know it’s Queen Street car, but I need to know if there are any road closures planned for April due to the street fest (The user refers to 'Queen Street car' as his commute route, but the current fact S13 (from 2026-03-26) states his commut)"
+  ]
+ ],
+ "31": [
+  [
+   "judge: S19: Check if Ada’s pediatrician has any appointment slots open next Tuesday morning. (The conversation is on 2026-03-28. Next Tuesday would be 2026-03-31. The pediatrician's name is not mentioned, but the m)",
+   "judge: S19: Book the 9:15 AM. (This refers to an appointment with the pediatrician, which is a detail regarding a fact (Dr. Patel) and pertains to a ti)"
+  ],
+  [
+   "states 'Instacart'"
+  ],
+  [
+   "judge: S09: The appointment is next Tuesday, April 1, at 10:30 AM. (The appointment date mentioned (April 1) is after the conversation date of 2026-03-28 and is not part of the S22 storyli)"
+  ]
+ ],
+ "33": [
+  [
+   "judge: S02: Regarding your return-to-work plan, the current draft shows a phased return starting April 14th: two days a week for the (The assistant states the return-to-work plan starts on April 14th, but the fact S02 states Daniel's return to work date )"
+  ],
+  [
+   "judge: S01: I think I missed the filing deadline last week. (The deadline was 2026-03-04, which is more than a week before the conversation date of 2026-03-30.)",
+   "judge: S01: The filing deadline was indeed last Friday, March 27th. (The filing deadline was 2026-03-04, not March 27th.)",
+   "judge: S02: Your current plan allocates 10 billable hours per week for the first four weeks of your return, starting April 6th. (The return-to-work date is 2026-04-12, not April 6th.)",
+   "judge: S02: I’ve also attached the calendar invite for your first return-to-work check-in on April 6th. (The return-to-work date is 2026-04-12, not April 6th.)"
+  ]
+ ],
+ "37": [
+  [
+   "judge: S09: Her next pediatric appointment is scheduled for April 17th at 10:00 AM. (The appointment date (April 17th) is after the conversation date of 2026-04-03 and is not part of the S19 storyline (whi)"
+  ]
+ ],
+ "41": [
+  [
+   "judge: S02: You intend to return on April 20, working two days in the office (Tuesday and Thursday) and three days remotely. Is that (The assistant mentions a return date of April 20, but the fact S02 states Daniel's return to work date is 2026-04-12.)",
+   "judge: S02: You intend to return on April 20, working two days in the office (Tuesday and Thursday) and three days remotely. Is that (The return date mentioned (April 20) is after the conversation date (April 6) and is not part of the S23 storyline.)"
+  ]
+ ],
+ "42": [
+  [
+   "judge: S09: You have the virtual deposition prep scheduled from 10:00 AM to 11:30 AM with the senior partner. The pediatrician appoi (The statement mentions a pediatrician appointment for Ada on April 7th, but the fact S09 states the annual physical appo)"
+  ],
+  [
+   "states 'Instacart'"
+  ],
+  [
+   "states 'Instacart'"
+  ],
+  [
+   "judge: S08: Please confirm your acceptance or provide any necessary counter-proposals by end of day Friday, April 10. (This mentions a date (April 10) that is after the conversation date of 2026-04-07, and it relates to a jazz concert tick)",
+   "judge: S08: Please confirm your acceptance or provide any necessary counter-proposals by end of day Friday, April 10. (This mentions a date (April 10) that is after the conversation date of 2026-04-07, and it relates to a jazz concert tick)"
+  ],
+  [
+   "judge: S16: I’m handling dinner for Dad’s visit next month. (The user says the visit is 'next month', but based on the current date of 2026-04-07 and the fact that the visit was res)"
+  ],
+  [
+   "judge: S08: Could you please reschedule my 3 PM call with the Bay Street client to tomorrow, Wednesday, April 8th, at 10 AM? (The assistant's draft mentions an event for April 8th, which is a date after the conversation date of 2026-04-07, and th)"
+  ],
+  [
+   "judge: S09: The pediatrician follow-up is scheduled for next Tuesday, April 14th, at 10 AM. (This mentions a detail (the date April 14th) dated after the conversation date of 2026-04-07 and does not belong to the )"
+  ]
+ ],
+ "44": [
+  [
+   "judge: S02: I plan to be back next Thursday, April 9th, if the schedule allows. (The date mentioned (April 9th, 2026) is in the past relative to the conversation date (April 9th, 2026), and Daniel's re)",
+   "judge: S02: I plan to be back next Thursday, April 9th, if the schedule allows. (The user states he will be back next Thursday, April 9th, but the conversation date is April 9th, 2026, and his actual r)"
+  ],
+  [
+   "judge: S09: You have a standing reminder for a pediatrician check-in on the 15th, but nothing else scheduled. (The date 2026-04-15 is after the conversation date of 2026-04-09 and is not part of the S26 storyline.)"
+  ]
+ ],
+ "46": [
+  [
+   "judge: S02: update my return-to-work plan. I want to block off 9 AM to 11 AM on my first day back for deep work on this file, and ke (The user mentions 'my first day back' and scheduling things for it, but the conversation date is 2026-04-10 and the retu)"
+  ],
+  [
+   "judge: S02: Your internal status now reads 'On Parental Leave - Returning April 24th' with a note about reduced availability. (The assistant states Daniel's return-to-work date is April 24th, but the fact S02 states his return to work date is 2026)"
+  ]
+ ]
+}

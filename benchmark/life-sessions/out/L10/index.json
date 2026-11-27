@@ -1,0 +1,943 @@
+[
+ {
+  "n": 1,
+  "day": 0,
+  "steps": [],
+  "date": "2026-03-02",
+  "kind": "life"
+ },
+ {
+  "n": 2,
+  "day": 1,
+  "steps": [
+   {
+    "story": "S29",
+    "step": 0,
+    "day": 1,
+    "said_late": false,
+    "text": "Priya needs a senior Android developer to hire by April (not sorted yet).",
+    "must": [
+     "Android"
+    ]
+   }
+  ],
+  "date": "2026-03-03",
+  "kind": "life"
+ },
+ {
+  "n": 3,
+  "day": 2,
+  "steps": [
+   {
+    "story": "S24",
+    "step": 0,
+    "day": 2,
+    "said_late": false,
+    "text": "Priya's daily step goal is 10000 steps.",
+    "must": [
+     "10000 steps"
+    ]
+   }
+  ],
+  "date": "2026-03-04",
+  "kind": "life"
+ },
+ {
+  "n": 4,
+  "day": 3,
+  "steps": [],
+  "date": "2026-03-05",
+  "kind": "work"
+ },
+ {
+  "n": 5,
+  "day": 4,
+  "steps": [
+   {
+    "story": "S01",
+    "step": 0,
+    "day": 2,
+    "said_late": false,
+    "text": "Priya's weekly grocery provider is Nature's Basket Koramangala.",
+    "must": [
+     "Nature's Basket Koramangala"
+    ]
+   },
+   {
+    "story": "S23",
+    "step": 0,
+    "day": 2,
+    "said_late": false,
+    "text": "Priya's morning running coach is Rohan Gupta.",
+    "must": [
+     "Rohan Gupta"
+    ]
+   }
+  ],
+  "date": "2026-03-06",
+  "kind": "life"
+ },
+ {
+  "n": 6,
+  "day": 5,
+  "steps": [
+   {
+    "story": "S08",
+    "step": 0,
+    "day": 4,
+    "said_late": false,
+    "text": "Priya's bank branch for check deposit is HDFC Bank Indiranagar.",
+    "must": [
+     "HDFC Bank Indiranagar"
+    ]
+   }
+  ],
+  "date": "2026-03-07",
+  "kind": "life"
+ },
+ {
+  "n": 7,
+  "day": 6,
+  "steps": [],
+  "date": "2026-03-08",
+  "kind": "life"
+ },
+ {
+  "n": 8,
+  "day": 7,
+  "steps": [
+   {
+    "story": "S17",
+    "step": 0,
+    "day": 6,
+    "said_late": false,
+    "text": "Priya's weekly yoga instructor is Anjali Iyengar.",
+    "must": [
+     "Anjali Iyengar"
+    ]
+   }
+  ],
+  "date": "2026-03-09",
+  "kind": "life"
+ },
+ {
+  "n": 9,
+  "day": 7,
+  "steps": [],
+  "date": "2026-03-09",
+  "kind": "work"
+ },
+ {
+  "n": 10,
+  "day": 8,
+  "steps": [
+   {
+    "story": "S21",
+    "step": 0,
+    "day": 2,
+    "said_late": false,
+    "text": "Priya's backup power generator is Kirloskar 5kVA.",
+    "must": [
+     "Kirloskar 5kVA"
+    ]
+   },
+   {
+    "story": "S02",
+    "step": 0,
+    "day": 8,
+    "said_late": false,
+    "text": "Priya's flight to Mumbai is IndiGo 6E 204.",
+    "must": [
+     "IndiGo 6E 204"
+    ]
+   }
+  ],
+  "date": "2026-03-10",
+  "kind": "work"
+ },
+ {
+  "n": 11,
+  "day": 9,
+  "steps": [
+   {
+    "story": "S18",
+    "step": 0,
+    "day": 8,
+    "said_late": false,
+    "text": "Priya's monthly bookkeeper is Sunita Rao.",
+    "must": [
+     "Sunita Rao"
+    ]
+   },
+   {
+    "story": "S21",
+    "step": 1,
+    "day": 8,
+    "said_late": true,
+    "text": "Priya is only thinking about changing the backup power generator to Sukam 3kVA; nothing decided.",
+    "must": [
+     "Sukam 3kVA"
+    ]
+   }
+  ],
+  "date": "2026-03-11",
+  "kind": "work"
+ },
+ {
+  "n": 12,
+  "day": 10,
+  "steps": [
+   {
+    "story": "S28",
+    "step": 0,
+    "day": 9,
+    "said_late": false,
+    "text": "Priya's own credit card annual fee is INR 12000.",
+    "must": [
+     "INR 12000"
+    ]
+   }
+  ],
+  "date": "2026-03-12",
+  "kind": "life"
+ },
+ {
+  "n": 13,
+  "day": 10,
+  "steps": [
+   {
+    "story": "S24",
+    "step": 1,
+    "day": 6,
+    "said_late": true,
+    "text": "Priya imagines a what-if: then the daily step goal would be 15000 steps. Only an idea; nothing changes.",
+    "must": [
+     "15000 steps"
+    ]
+   }
+  ],
+  "date": "2026-03-12",
+  "kind": "life"
+ },
+ {
+  "n": 14,
+  "day": 11,
+  "steps": [
+   {
+    "story": "S29",
+    "step": 1,
+    "day": 11,
+    "said_late": false,
+    "text": "Priya's need is sorted: hired Arjun Menon, who starts on 6 April.",
+    "must": [
+     "Arjun Menon"
+    ]
+   }
+  ],
+  "date": "2026-03-13",
+  "kind": "life"
+ },
+ {
+  "n": 15,
+  "day": 12,
+  "steps": [
+   {
+    "story": "S12",
+    "step": 0,
+    "day": 7,
+    "said_late": false,
+    "text": "Priya's evening hobby class is Kathak dance at Kalakshetra.",
+    "must": [
+     "Kathak dance at Kalakshetra"
+    ]
+   },
+   {
+    "story": "S17",
+    "step": 1,
+    "day": 12,
+    "said_late": false,
+    "text": "Priya has switched the weekly yoga instructor to Meera Desai.",
+    "must": [
+     "Meera Desai"
+    ]
+   }
+  ],
+  "date": "2026-03-14",
+  "kind": "life"
+ },
+ {
+  "n": 16,
+  "day": 13,
+  "steps": [
+   {
+    "story": "S26",
+    "step": 0,
+    "day": 12,
+    "said_late": false,
+    "text": "Priya's own personal trainer is Vikram Singh.",
+    "must": [
+     "Vikram Singh"
+    ]
+   }
+  ],
+  "date": "2026-03-15",
+  "kind": "work"
+ },
+ {
+  "n": 17,
+  "day": 13,
+  "steps": [
+   {
+    "story": "S23",
+    "step": 1,
+    "day": 7,
+    "said_late": true,
+    "text": "Priya is thinking about changing the morning running coach to Neha Kapoor; not decided yet.",
+    "must": [
+     "Neha Kapoor"
+    ]
+   },
+   {
+    "story": "S28",
+    "step": 1,
+    "day": 12,
+    "said_late": true,
+    "text": "Ravi (brother)'s credit card annual fee is INR 4500 (about Ravi (brother), not Priya).",
+    "must": [
+     "INR 4500",
+     "Ravi"
+    ]
+   }
+  ],
+  "date": "2026-03-15",
+  "kind": "life"
+ },
+ {
+  "n": 18,
+  "day": 14,
+  "steps": [
+   {
+    "story": "S10",
+    "step": 0,
+    "day": 14,
+    "said_late": false,
+    "text": "Priya's mother's birthday gift is Swarovski necklace.",
+    "must": [
+     "Swarovski necklace"
+    ]
+   },
+   {
+    "story": "S12",
+    "step": 1,
+    "day": 14,
+    "said_late": false,
+    "text": "Priya's evening hobby class has changed: now Pottery workshop at Crafts Museum (it was Kathak dance at Kalakshetra).",
+    "must": [
+     "Pottery workshop at Crafts Museum"
+    ]
+   }
+  ],
+  "date": "2026-03-16",
+  "kind": "life"
+ },
+ {
+  "n": 19,
+  "day": 15,
+  "steps": [
+   {
+    "story": "S18",
+    "step": 1,
+    "day": 15,
+    "said_late": false,
+    "text": "Priya has switched the monthly bookkeeper to Kiran Patel.",
+    "must": [
+     "Kiran Patel"
+    ]
+   },
+   {
+    "story": "S23",
+    "step": 2,
+    "day": 15,
+    "said_late": false,
+    "text": "Priya has now gone ahead: the morning running coach is Neha Kapoor.",
+    "must": [
+     "Neha Kapoor"
+    ]
+   }
+  ],
+  "date": "2026-03-17",
+  "kind": "life"
+ },
+ {
+  "n": 20,
+  "day": 16,
+  "steps": [],
+  "date": "2026-03-18",
+  "kind": "work"
+ },
+ {
+  "n": 21,
+  "day": 17,
+  "steps": [],
+  "date": "2026-03-19",
+  "kind": "life"
+ },
+ {
+  "n": 22,
+  "day": 18,
+  "steps": [
+   {
+    "story": "S17",
+    "step": 2,
+    "day": 18,
+    "said_late": false,
+    "text": "Priya changes mind about the weekly yoga instructor: back to Anjali Iyengar, not Meera Desai any more.",
+    "must": [
+     "Anjali Iyengar"
+    ]
+   },
+   {
+    "story": "S22",
+    "step": 0,
+    "day": 18,
+    "said_late": false,
+    "text": "Priya's office printer lease is HP LaserJet Pro.",
+    "must": [
+     "HP LaserJet Pro"
+    ]
+   }
+  ],
+  "date": "2026-03-20",
+  "kind": "work"
+ },
+ {
+  "n": 23,
+  "day": 19,
+  "steps": [
+   {
+    "story": "S26",
+    "step": 1,
+    "day": 19,
+    "said_late": false,
+    "text": "Ananya (sister)'s personal trainer is Ananya Reddy (about Ananya (sister), not Priya).",
+    "must": [
+     "Ananya Reddy",
+     "Ananya"
+    ]
+   }
+  ],
+  "date": "2026-03-21",
+  "kind": "work"
+ },
+ {
+  "n": 24,
+  "day": 20,
+  "steps": [
+   {
+    "story": "S11",
+    "step": 0,
+    "day": 19,
+    "said_late": false,
+    "text": "Priya's gym membership is Gold's Gym Koramangala.",
+    "must": [
+     "Gold's Gym Koramangala"
+    ]
+   },
+   {
+    "story": "S31",
+    "step": 0,
+    "day": 20,
+    "said_late": false,
+    "text": "Priya needs a co-founder who can run sales (not sorted yet).",
+    "must": [
+     "co-founder"
+    ]
+   }
+  ],
+  "date": "2026-03-22",
+  "kind": "life"
+ },
+ {
+  "n": 25,
+  "day": 21,
+  "steps": [],
+  "date": "2026-03-23",
+  "kind": "work"
+ },
+ {
+  "n": 26,
+  "day": 22,
+  "steps": [
+   {
+    "story": "S16",
+    "step": 0,
+    "day": 21,
+    "said_late": false,
+    "text": "Priya's monthly SIP amount is INR 15000.",
+    "must": [
+     "INR 15000"
+    ]
+   },
+   {
+    "story": "S18",
+    "step": 2,
+    "day": 22,
+    "said_late": false,
+    "text": "Priya changes mind about the monthly bookkeeper: back to Sunita Rao, not Kiran Patel any more.",
+    "must": [
+     "Sunita Rao"
+    ]
+   }
+  ],
+  "date": "2026-03-24",
+  "kind": "life"
+ },
+ {
+  "n": 27,
+  "day": 23,
+  "steps": [],
+  "date": "2026-03-25",
+  "kind": "work"
+ },
+ {
+  "n": 28,
+  "day": 24,
+  "steps": [],
+  "date": "2026-03-26",
+  "kind": "work"
+ },
+ {
+  "n": 29,
+  "day": 25,
+  "steps": [],
+  "date": "2026-03-27",
+  "kind": "life"
+ },
+ {
+  "n": 30,
+  "day": 25,
+  "steps": [],
+  "date": "2026-03-27",
+  "kind": "work"
+ },
+ {
+  "n": 31,
+  "day": 26,
+  "steps": [],
+  "date": "2026-03-28",
+  "kind": "work"
+ },
+ {
+  "n": 32,
+  "day": 27,
+  "steps": [],
+  "date": "2026-03-29",
+  "kind": "life"
+ },
+ {
+  "n": 33,
+  "day": 27,
+  "steps": [],
+  "date": "2026-03-29",
+  "kind": "work"
+ },
+ {
+  "n": 34,
+  "day": 28,
+  "steps": [
+   {
+    "story": "S07",
+    "step": 0,
+    "day": 28,
+    "said_late": false,
+    "text": "Priya's cab to airport is Uber Black.",
+    "must": [
+     "Uber Black"
+    ]
+   },
+   {
+    "story": "S22",
+    "step": 1,
+    "day": 28,
+    "said_late": false,
+    "text": "Priya is only thinking about changing the office printer lease to Canon imageRUNNER; nothing decided.",
+    "must": [
+     "Canon imageRUNNER"
+    ]
+   }
+  ],
+  "date": "2026-03-30",
+  "kind": "work"
+ },
+ {
+  "n": 35,
+  "day": 29,
+  "steps": [
+   {
+    "story": "S11",
+    "step": 1,
+    "day": 24,
+    "said_late": true,
+    "text": "Priya's gym membership has changed: now Cult.fit Indiranagar (it was Gold's Gym Koramangala).",
+    "must": [
+     "Cult.fit Indiranagar"
+    ]
+   },
+   {
+    "story": "S32",
+    "step": 0,
+    "day": 28,
+    "said_late": true,
+    "text": "Priya needs a startup lawyer to review the term sheet (not sorted yet).",
+    "must": [
+     "lawyer"
+    ]
+   }
+  ],
+  "date": "2026-03-31",
+  "kind": "life"
+ },
+ {
+  "n": 36,
+  "day": 30,
+  "steps": [
+   {
+    "story": "S15",
+    "step": 0,
+    "day": 26,
+    "said_late": false,
+    "text": "Priya's credit card limit is INR 500000.",
+    "must": [
+     "INR 500000"
+    ]
+   },
+   {
+    "story": "S05",
+    "step": 0,
+    "day": 27,
+    "said_late": false,
+    "text": "Priya's annual health checkup is Apollo Hospitals Jayanagar.",
+    "must": [
+     "Apollo Hospitals Jayanagar"
+    ]
+   }
+  ],
+  "date": "2026-04-01",
+  "kind": "life"
+ },
+ {
+  "n": 37,
+  "day": 31,
+  "steps": [
+   {
+    "story": "S16",
+    "step": 1,
+    "day": 31,
+    "said_late": false,
+    "text": "Priya's monthly SIP amount has changed: now INR 25000 (it was INR 15000).",
+    "must": [
+     "INR 25000"
+    ]
+   },
+   {
+    "story": "S25",
+    "step": 0,
+    "day": 31,
+    "said_late": false,
+    "text": "Priya's sleep duration target is 7 hours.",
+    "must": [
+     "7 hours"
+    ]
+   }
+  ],
+  "date": "2026-04-02",
+  "kind": "life"
+ },
+ {
+  "n": 38,
+  "day": 32,
+  "steps": [
+   {
+    "story": "S03",
+    "step": 0,
+    "day": 29,
+    "said_late": false,
+    "text": "Priya's train to Mysore is Shatabdi Express 12008.",
+    "must": [
+     "Shatabdi Express 12008"
+    ]
+   },
+   {
+    "story": "S06",
+    "step": 0,
+    "day": 32,
+    "said_late": false,
+    "text": "Priya's home internet provider is Airtel Xstream Fiber.",
+    "must": [
+     "Airtel Xstream Fiber"
+    ]
+   }
+  ],
+  "date": "2026-04-03",
+  "kind": "life"
+ },
+ {
+  "n": 39,
+  "day": 33,
+  "steps": [
+   {
+    "story": "S20",
+    "step": 0,
+    "day": 33,
+    "said_late": false,
+    "text": "Priya's flight departure time is 14:30.",
+    "must": [
+     "14:30"
+    ]
+   },
+   {
+    "story": "S30",
+    "step": 0,
+    "day": 33,
+    "said_late": false,
+    "text": "Priya needs a warm introduction to someone at Kalaari Capital (not sorted yet).",
+    "must": [
+     "introduction"
+    ]
+   }
+  ],
+  "date": "2026-04-04",
+  "kind": "life"
+ },
+ {
+  "n": 40,
+  "day": 34,
+  "steps": [],
+  "date": "2026-04-05",
+  "kind": "life"
+ },
+ {
+  "n": 41,
+  "day": 35,
+  "steps": [
+   {
+    "story": "S33",
+    "step": 0,
+    "day": 29,
+    "said_late": true,
+    "text": "a need that is not Priya's own: a physiotherapist for his knee who can come home (her father).",
+    "must": [
+     "physiotherapist"
+    ]
+   }
+  ],
+  "date": "2026-04-06",
+  "kind": "life"
+ },
+ {
+  "n": 42,
+  "day": 36,
+  "steps": [
+   {
+    "story": "S15",
+    "step": 1,
+    "day": 36,
+    "said_late": false,
+    "text": "Priya's credit card limit has changed: now INR 750000 (it was INR 500000).",
+    "must": [
+     "INR 750000"
+    ]
+   }
+  ],
+  "date": "2026-04-07",
+  "kind": "life"
+ },
+ {
+  "n": 43,
+  "day": 37,
+  "steps": [
+   {
+    "story": "S04",
+    "step": 0,
+    "day": 33,
+    "said_late": false,
+    "text": "Priya's laptop repair shop is MacBook Center MG Road.",
+    "must": [
+     "MacBook Center MG Road"
+    ]
+   },
+   {
+    "story": "S13",
+    "step": 0,
+    "day": 37,
+    "said_late": false,
+    "text": "Priya's home security system is Honeywell Smart Lock.",
+    "must": [
+     "Honeywell Smart Lock"
+    ]
+   }
+  ],
+  "date": "2026-04-08",
+  "kind": "life"
+ },
+ {
+  "n": 44,
+  "day": 38,
+  "steps": [
+   {
+    "story": "S27",
+    "step": 0,
+    "day": 36,
+    "said_late": false,
+    "text": "Priya's own pet groomer is Paws & Claws Koramangala.",
+    "must": [
+     "Paws & Claws Koramangala"
+    ]
+   },
+   {
+    "story": "S14",
+    "step": 0,
+    "day": 37,
+    "said_late": false,
+    "text": "Priya's CA for tax filing is Rajesh Kumar & Associates.",
+    "must": [
+     "Rajesh Kumar & Associates"
+    ]
+   }
+  ],
+  "date": "2026-04-09",
+  "kind": "life"
+ },
+ {
+  "n": 45,
+  "day": 39,
+  "steps": [
+   {
+    "story": "S30",
+    "step": 1,
+    "day": 37,
+    "said_late": true,
+    "text": "Priya's need is sorted: Ritu Shah introduced her to a partner at Kalaari.",
+    "must": [
+     "Shah",
+     "Kalaari"
+    ]
+   },
+   {
+    "story": "S20",
+    "step": 1,
+    "day": 38,
+    "said_late": true,
+    "text": "Priya corrects an earlier slip: the flight departure time is 15:30, not 14:30.",
+    "must": [
+     "15:30"
+    ]
+   }
+  ],
+  "date": "2026-04-10",
+  "kind": "life"
+ },
+ {
+  "n": 46,
+  "day": 40,
+  "steps": [
+   {
+    "story": "S19",
+    "step": 0,
+    "day": 34,
+    "said_late": false,
+    "text": "Priya's investment amount raised is INR 2 Crores.",
+    "must": [
+     "INR 2 Crores"
+    ]
+   },
+   {
+    "story": "S25",
+    "step": 1,
+    "day": 38,
+    "said_late": true,
+    "text": "Priya imagines a what-if: then the sleep duration target would be 8 hours. Only an idea; nothing changes.",
+    "must": [
+     "8 hours"
+    ]
+   }
+  ],
+  "date": "2026-04-11",
+  "kind": "life"
+ },
+ {
+  "n": 47,
+  "day": 41,
+  "steps": [
+   {
+    "story": "S09",
+    "step": 0,
+    "day": 37,
+    "said_late": false,
+    "text": "Priya's co-working space desk is WeWork Embassy Golf Links.",
+    "must": [
+     "WeWork Embassy Golf Links"
+    ]
+   },
+   {
+    "story": "S19",
+    "step": 1,
+    "day": 37,
+    "said_late": true,
+    "text": "Priya corrects an earlier slip: the investment amount raised is INR 2.5 Crores, not INR 2 Crores.",
+    "must": [
+     "INR 2.5 Crores"
+    ]
+   }
+  ],
+  "date": "2026-04-12",
+  "kind": "work"
+ },
+ {
+  "n": 48,
+  "day": 41,
+  "steps": [
+   {
+    "story": "S13",
+    "step": 1,
+    "day": 41,
+    "said_late": false,
+    "text": "Priya's home security system has changed: now Vimala Smart Lock (it was Honeywell Smart Lock).",
+    "must": [
+     "Vimala Smart Lock"
+    ]
+   },
+   {
+    "story": "S14",
+    "step": 1,
+    "day": 41,
+    "said_late": false,
+    "text": "Priya's CA for tax filing has changed: now Mehta & Co Chartered Accountants (it was Rajesh Kumar & Associates).",
+    "must": [
+     "Mehta & Co Chartered Accountants"
+    ]
+   }
+  ],
+  "date": "2026-04-12",
+  "kind": "life"
+ },
+ {
+  "n": 49,
+  "day": 41,
+  "steps": [
+   {
+    "story": "S27",
+    "step": 1,
+    "day": 41,
+    "said_late": false,
+    "text": "Ravi (brother)'s pet groomer is The Dog Spot Indiranagar (about Ravi (brother), not Priya).",
+    "must": [
+     "The Dog Spot Indiranagar",
+     "Ravi"
+    ]
+   }
+  ],
+  "date": "2026-04-12",
+  "kind": "life"
+ }
+]

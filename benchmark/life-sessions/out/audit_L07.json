@@ -1,0 +1,219 @@
+{
+ "person": "L07",
+ "model": "opus",
+ "verdicts": {
+  "L07-S01-1": {
+   "verdict": "ok",
+   "why": "Session 035: 'I'm hitting the Spandau Runners tonight'."
+  },
+  "L07-S02-1": {
+   "verdict": "unsupported",
+   "why": "Dr. Elena Kovic appears only as the doctor for a routine dental check-up. No eye exam or eye doctor is ever mentioned.",
+   "quote": "You have a dental appointment scheduled for the morning of the 12th with Dr. Elena Kovic. It's a routine check-up",
+   "session": "040",
+   "better_reference": "not in memory (Dr. Elena Kovic is the dentist)",
+   "quote_found": true
+  },
+  "L07-S03-1": {
+   "verdict": "ok",
+   "why": "Session 048: 'You are booked on Air France AF7204'."
+  },
+  "L07-S04-1": {
+   "verdict": "ok",
+   "why": "Sessions 022 and 033 give the rent as 1450 euros."
+  },
+  "L07-S05-1": {
+   "verdict": "ok",
+   "why": "Session 040: 'your yoga session with Maria Gonzalez this Wednesday'."
+  },
+  "L07-S06-1": {
+   "verdict": "ok",
+   "why": "Session 034: the user plans to call Deutsche Telekom about their internet."
+  },
+  "L07-S07-1": {
+   "verdict": "ok",
+   "why": "Clara appears repeatedly as the partner, and session 048 gives the full name Clara Weber."
+  },
+  "L07-S08-1": {
+   "verdict": "ok",
+   "why": "Session 019: 'my weekly cycling route, the Tempelhofer Feld loop'."
+  },
+  "L07-S09-1": {
+   "verdict": "ok",
+   "why": "Session 026: 'my Bodyworks Mitte membership'."
+  },
+  "L07-S10-1": {
+   "verdict": "ok",
+   "why": "Session 028: the annual check-up is with Dr. Hans Muller."
+  },
+  "L07-S11-1": {
+   "verdict": "ok",
+   "why": "Sessions 034 and 046 give 1.22.1. Sessions 026 and 032 give 1.21.5 as the earlier version."
+  },
+  "L07-S11-2": {
+   "verdict": "ok",
+   "why": "Sessions 026 and 032 give 1.21.5."
+  },
+  "L07-S11-3": {
+   "verdict": "incomplete",
+   "why": "Session 034 says the update happened on 28 March. But on 30 March the user said they were still pinned to 1.21.5 and could not upgrade. A reader could therefore date the change to 2026-03-31, when it was first reported.",
+   "quote": "I can't upgrade right now. The legacy module in the booking aggregator is pinned to 1.21.5 and it's too risky to touch before the Q2 release.",
+   "session": "032",
+   "better_reference": "2026-03-28 (as stated in session 034; it conflicts with session 032, so 2026-03-31 should also count)",
+   "quote_found": true
+  },
+  "L07-S12-1": {
+   "verdict": "ok",
+   "why": "Session 014: 'now Marcus Klein (it was Elena Vogel)'."
+  },
+  "L07-S12-2": {
+   "verdict": "ok",
+   "why": "Session 014."
+  },
+  "L07-S12-3": {
+   "verdict": "ok",
+   "why": "The change was stated in session 014, dated 2026-03-14."
+  },
+  "L07-S13-1": {
+   "verdict": "ok",
+   "why": "Session 049: 'now Trek (it was VanMoof)'."
+  },
+  "L07-S13-2": {
+   "verdict": "ok",
+   "why": "Session 049."
+  },
+  "L07-S13-3": {
+   "verdict": "ok",
+   "why": "Session 049 is dated 2026-04-12."
+  },
+  "L07-S14-1": {
+   "verdict": "ok",
+   "why": "Session 045: the team moved away from Postgres to CockroachDB."
+  },
+  "L07-S14-2": {
+   "verdict": "ok",
+   "why": "PostgreSQL is used throughout, including in session 036."
+  },
+  "L07-S14-3": {
+   "verdict": "wrong",
+   "why": "Session 045 (dated 04-10) says the database migration was completed on Saturday 4 April. 04-10 is only the date it was mentioned.",
+   "quote": "You’re right, the migration was completed on Saturday 4 April.",
+   "session": "045",
+   "better_reference": "2026-04-04",
+   "quote_found": true
+  },
+  "L07-S15-1": {
+   "verdict": "ok",
+   "why": "Session 049: 'now 4000 IU (it was 2000 IU)'."
+  },
+  "L07-S15-2": {
+   "verdict": "ok",
+   "why": "Sessions 042 and 049 give 2000 IU."
+  },
+  "L07-S15-3": {
+   "verdict": "ok",
+   "why": "Session 049 is dated 2026-04-12."
+  },
+  "L07-S16-1": {
+   "verdict": "ok",
+   "why": "Session 032 gives Google Cloud. Session 045 says the provider switched to Digital Ocean."
+  },
+  "L07-S16-2": {
+   "verdict": "ok",
+   "why": "Session 032: 'like ours on Google Cloud'."
+  },
+  "L07-S16-3": {
+   "verdict": "ok",
+   "why": "Session 045: the switch happened Saturday the 4th."
+  },
+  "L07-S17-1": {
+   "verdict": "ok",
+   "why": "Session 033 records the switch to Bonanza. Session 036 records going back to The Barn."
+  },
+  "L07-S18-1": {
+   "verdict": "ok",
+   "why": "Session 041 records the switch to Amazon Prime. Session 050 records going back to Netflix."
+  },
+  "L07-S19-1": {
+   "verdict": "ok",
+   "why": "Session 050: 'The train departure time is 15:45, not 14:30'."
+  },
+  "L07-S20-1": {
+   "verdict": "unsupported",
+   "why": "X8849201 is given as Lena's passport (session 030). The correction to Y9910382 is about the user's own passport ('my passport details'). The sessions never establish that Lena is the girlfriend or that the girlfriend's passport was corrected.",
+   "quote": "update my passport details in the travel app. I realized I gave you the wrong number earlier.",
+   "session": "038",
+   "better_reference": "not established; Y9910382 is the user's own corrected passport number (Lena's was given as X8849201)",
+   "quote_found": true
+  },
+  "L07-S21-1": {
+   "verdict": "ok",
+   "why": "Session 037 says this was only being considered. Session 029 names Backstube Mitte for the mom's bread."
+  },
+  "L07-S22-1": {
+   "verdict": "ok",
+   "why": "Session 010 says the photography walk was only tentative. Sessions 005, 015 and 035 show kayaking on the Spree as the weekend activity."
+  },
+  "L07-S24-1": {
+   "verdict": "ok",
+   "why": "Session 022 gives 120 euros. Session 035 calls the 180-euro quote just an idea."
+  },
+  "L07-S25-1": {
+   "verdict": "ok",
+   "why": "Sessions 027 and 039 give 25 euros. Session 030 calls 15 euros only an idea."
+  },
+  "L07-S26-1": {
+   "verdict": "ok",
+   "why": "Sessions 029 and 047 mention the user's La Marzocco. Session 033 gives Clara's Breville."
+  },
+  "L07-S26-2": {
+   "verdict": "ok",
+   "why": "Session 033."
+  },
+  "L07-S27-1": {
+   "verdict": "unsupported",
+   "why": "The third floor belongs to the landlord's administrative office on Oranienstraße, not the user's apartment. The user's floor is never stated.",
+   "quote": "It’s at Oranienstraße 124, and yes, the administrative office is on the third floor.",
+   "session": "031",
+   "better_reference": "not in memory (third floor is the landlord's office; fifth floor is Clara Weber's)",
+   "quote_found": true
+  },
+  "L07-S27-2": {
+   "verdict": "ok",
+   "why": "Session 042: 'her apartment is on the fifth floor'."
+  },
+  "L07-S28-1": {
+   "verdict": "ok",
+   "why": "Sessions 031 and 045 show Ostkreuz as the user's local station, used for the S5. Session 038 gives Munich Hbf as Jonas's."
+  },
+  "L07-S28-2": {
+   "verdict": "ok",
+   "why": "Session 038: 'his nearest station is Munich Hauptbahnhof'."
+  },
+  "L07-S29-1": {
+   "verdict": "ok",
+   "why": "Session 009: 'I’m now climbing with Jonas Keller'."
+  },
+  "L07-S30-1": {
+   "verdict": "ok",
+   "why": "Session 013: 'Svenja Roth from the Go meetup reviewed it'."
+  },
+  "L07-needs_now-1": {
+   "verdict": "ok",
+   "why": "The sublet (session 014) got only an inquiry and was never confirmed. The Fontainebleau lift (session 003) was never resolved. The other needs were met."
+  },
+  "L07-none-1": {
+   "verdict": "ok",
+   "why": "No licence plate is mentioned."
+  },
+  "L07-none-2": {
+   "verdict": "ok",
+   "why": "No blood type is mentioned."
+  },
+  "L07-none-3": {
+   "verdict": "ok",
+   "why": "No football team is mentioned."
+  }
+ },
+ "cost": 0.47733420000000004
+}

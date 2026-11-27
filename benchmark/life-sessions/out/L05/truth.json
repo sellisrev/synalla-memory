@@ -1,0 +1,548 @@
+[
+ {
+  "id": "S01",
+  "pattern": "plain",
+  "thing": "monthly rent payment",
+  "theme": "money",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-19",
+    "1,200,000 KRW"
+   ]
+  ],
+  "now": "1,200,000 KRW"
+ },
+ {
+  "id": "S02",
+  "pattern": "plain",
+  "thing": "weekly sketching session",
+  "theme": "hobbies",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-06",
+    "Sundays"
+   ]
+  ],
+  "now": "Sundays"
+ },
+ {
+  "id": "S03",
+  "pattern": "plain",
+  "thing": "art supply supplier",
+  "theme": "shopping",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-22",
+    "Yongsan Electronics Market"
+   ]
+  ],
+  "now": "Yongsan Electronics Market"
+ },
+ {
+  "id": "S04",
+  "pattern": "plain",
+  "thing": "evening photography club",
+  "theme": "hobbies",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-11",
+    "Hongdae Photo Society"
+   ]
+  ],
+  "now": "Hongdae Photo Society"
+ },
+ {
+  "id": "S05",
+  "pattern": "plain",
+  "thing": "café shift schedule",
+  "theme": "work",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-31",
+    "Friday nights"
+   ]
+  ],
+  "now": "Friday nights"
+ },
+ {
+  "id": "S06",
+  "pattern": "plain",
+  "thing": "studio critique partner",
+  "theme": "people",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-25",
+    "Min-jun Kim"
+   ]
+  ],
+  "now": "Min-jun Kim"
+ },
+ {
+  "id": "S07",
+  "pattern": "plain",
+  "thing": "spring break destination",
+  "theme": "travel",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-06",
+    "Jeju Island"
+   ]
+  ],
+  "now": "Jeju Island"
+ },
+ {
+  "id": "S08",
+  "pattern": "plain",
+  "thing": "mother's birthday",
+  "theme": "family",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-17",
+    "March 17"
+   ]
+  ],
+  "now": "March 17"
+ },
+ {
+  "id": "S09",
+  "pattern": "plain",
+  "thing": "utility bill payment day",
+  "theme": "home",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-11",
+    "April 11"
+   ]
+  ],
+  "now": "April 11"
+ },
+ {
+  "id": "S10",
+  "pattern": "plain",
+  "thing": "student loan interest rate",
+  "theme": "money",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-09",
+    "2.5%"
+   ]
+  ],
+  "now": "2.5%"
+ },
+ {
+  "id": "S11",
+  "pattern": "change",
+  "thing": "chiropractor appointment time",
+  "theme": "health",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-06",
+    "09:00"
+   ],
+   [
+    "2026-03-14",
+    "14:30"
+   ]
+  ],
+  "now": "14:30"
+ },
+ {
+  "id": "S12",
+  "pattern": "change",
+  "thing": "weekly grocery delivery slot",
+  "theme": "home",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-17",
+    "Tuesday 10am"
+   ],
+   [
+    "2026-03-23",
+    "Thursday 10am"
+   ]
+  ],
+  "now": "Thursday 10am"
+ },
+ {
+  "id": "S13",
+  "pattern": "change",
+  "thing": "optometrist appointment time",
+  "theme": "health",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-05",
+    "16:00"
+   ],
+   [
+    "2026-03-08",
+    "11:30"
+   ]
+  ],
+  "now": "11:30"
+ },
+ {
+  "id": "S14",
+  "pattern": "change",
+  "thing": "gym membership location",
+  "theme": "people",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-13",
+    "Anytime Fitness Itaewon"
+   ],
+   [
+    "2026-03-19",
+    "Fitness First Gangnam"
+   ]
+  ],
+  "now": "Fitness First Gangnam"
+ },
+ {
+  "id": "S15",
+  "pattern": "change",
+  "thing": "father's retirement party",
+  "theme": "family",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-16",
+    "Seoul Forest Hotel"
+   ],
+   [
+    "2026-03-24",
+    "Lotte Hotel World"
+   ]
+  ],
+  "now": "Lotte Hotel World"
+ },
+ {
+  "id": "S16",
+  "pattern": "change",
+  "thing": "weekend hiking trail",
+  "theme": "hobbies",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-06",
+    "Namsan Trail"
+   ],
+   [
+    "2026-04-12",
+    "Bukhansan Peak"
+   ]
+  ],
+  "now": "Bukhansan Peak"
+ },
+ {
+  "id": "S17",
+  "pattern": "heart",
+  "thing": "sleeping pill dosage",
+  "theme": "health",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-15",
+    "5 mg"
+   ],
+   [
+    "2026-03-20",
+    "10 mg"
+   ],
+   [
+    "2026-03-24",
+    "5 mg"
+   ]
+  ],
+  "now": "5 mg"
+ },
+ {
+  "id": "S18",
+  "pattern": "heart",
+  "thing": "laundry detergent brand",
+  "theme": "home",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-03",
+    "EcoClean Liquid"
+   ],
+   [
+    "2026-03-09",
+    "Ariel Pods"
+   ],
+   [
+    "2026-03-12",
+    "EcoClean Liquid"
+   ]
+  ],
+  "now": "EcoClean Liquid"
+ },
+ {
+  "id": "S19",
+  "pattern": "correction",
+  "thing": "internet service provider",
+  "theme": "money",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-06",
+    "SK Broadband"
+   ]
+  ],
+  "said_wrongly": [
+   "2026-03-06",
+   "KT Gigapass"
+  ],
+  "corrected_on": "2026-03-11",
+  "now": "SK Broadband"
+ },
+ {
+  "id": "S20",
+  "pattern": "correction",
+  "thing": "model glue brand",
+  "theme": "shopping",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-17",
+    "UHU Por"
+   ]
+  ],
+  "said_wrongly": [
+   "2026-03-17",
+   "Tamiya Extra Thin"
+  ],
+  "corrected_on": "2026-03-22",
+  "now": "UHU Por"
+ },
+ {
+  "id": "S21",
+  "pattern": "tentative_dropped",
+  "thing": "potential study abroad partner",
+  "theme": "people",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-13",
+    "Yuna Choi"
+   ]
+  ],
+  "considered": [
+   "2026-03-20",
+   "Ji-hoon Lee"
+  ],
+  "now": "Yuna Choi"
+ },
+ {
+  "id": "S22",
+  "pattern": "tentative_dropped",
+  "thing": "evening study venue",
+  "theme": "work",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-19",
+    "Seoul National University Library"
+   ]
+  ],
+  "considered": [
+   "2026-03-23",
+   "Starbucks Gangnam Station"
+  ],
+  "now": "Seoul National University Library"
+ },
+ {
+  "id": "S23",
+  "pattern": "tentative_confirmed",
+  "thing": "weekend pottery class",
+  "theme": "hobbies",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-29",
+    "Myeongdong Clay Studio"
+   ],
+   [
+    "2026-04-09",
+    "Gangnam Ceramics Workshop"
+   ]
+  ],
+  "considered": [
+   "2026-04-05",
+   "Gangnam Ceramics Workshop"
+  ],
+  "now": "Gangnam Ceramics Workshop"
+ },
+ {
+  "id": "S24",
+  "pattern": "hypothetical",
+  "thing": "heating system type",
+  "theme": "home",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-15",
+    "Ondol floor heating"
+   ]
+  ],
+  "imagined": [
+   "2026-03-25",
+   "Central AC unit"
+  ],
+  "now": "Ondol floor heating"
+ },
+ {
+  "id": "S25",
+  "pattern": "hypothetical",
+  "thing": "preferred coffee bean roaster",
+  "theme": "shopping",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-08",
+    "Coffee Bean Republic"
+   ]
+  ],
+  "imagined": [
+   "2026-04-12",
+   "Daehangno Roastery"
+  ],
+  "now": "Coffee Bean Republic"
+ },
+ {
+  "id": "S26",
+  "pattern": "lookalike",
+  "thing": "credit card annual fee",
+  "theme": "money",
+  "other_person": "Min-jun Kim (friend)",
+  "history": [
+   [
+    "2026-03-28",
+    "0 KRW"
+   ]
+  ],
+  "other_value": [
+   "2026-04-06",
+   "15,000 KRW"
+  ],
+  "now": "0 KRW"
+ },
+ {
+  "id": "S27",
+  "pattern": "lookalike",
+  "thing": "father's retirement date",
+  "theme": "family",
+  "other_person": "Soo-jin (aunt)",
+  "history": [
+   [
+    "2026-03-02",
+    "2026-04-01"
+   ]
+  ],
+  "other_value": [
+   "2026-03-08",
+   "2026-03-15"
+  ],
+  "now": "2026-04-01"
+ },
+ {
+  "id": "S28",
+  "pattern": "lookalike",
+  "thing": "mobile carrier plan",
+  "theme": "admin",
+  "other_person": "Hana Lee (flatmate)",
+  "history": [
+   [
+    "2026-04-02",
+    "LG Uplus"
+   ]
+  ],
+  "other_value": [
+   "2026-04-06",
+   "KT Mobile"
+  ],
+  "now": "LG Uplus"
+ },
+ {
+  "id": "S29",
+  "pattern": "need_met",
+  "thing": "need",
+  "theme": "work",
+  "other_person": null,
+  "need": {
+   "what": "a laser cutter she can use for her final studio model",
+   "topic": "makerspace",
+   "open_from": "2026-03-29",
+   "met_on": "2026-04-04",
+   "how": "booked the cutter at the Seoul Fab Lab in Euljiro"
+  }
+ },
+ {
+  "id": "S30",
+  "pattern": "need_met",
+  "thing": "need",
+  "theme": "travel",
+  "other_person": null,
+  "need": {
+   "what": "a new flatmate from April when Minji moves out",
+   "topic": "accommodation",
+   "open_from": "2026-03-12",
+   "met_on": "2026-03-16",
+   "how": "Hana Lee, a design student, moves in on 1 April"
+  }
+ },
+ {
+  "id": "S31",
+  "pattern": "need_open",
+  "thing": "need",
+  "theme": "work",
+  "other_person": null,
+  "need": {
+   "what": "a summer internship at an architecture office in Busan",
+   "topic": "job-search",
+   "open_from": "2026-03-25",
+   "met_on": null
+  }
+ },
+ {
+  "id": "S32",
+  "pattern": "need_open",
+  "thing": "need",
+  "theme": "travel",
+  "other_person": null,
+  "need": {
+   "what": "a portfolio review from a practising architect",
+   "topic": "mentoring",
+   "open_from": "2026-04-03",
+   "met_on": null
+  }
+ },
+ {
+  "id": "S33",
+  "pattern": "need_other",
+  "thing": "need",
+  "theme": "people",
+  "other_person": "Dae-ho (café colleague)",
+  "need": {
+   "what": "a cheap used laptop for his evening course",
+   "topic": "second-hand-goods",
+   "open_from": "2026-03-23",
+   "met_on": null,
+   "not_the_persons": true
+  }
+ }
+]

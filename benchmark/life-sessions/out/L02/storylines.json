@@ -1,0 +1,540 @@
+[
+ {
+  "id": "S01",
+  "pattern": "plain",
+  "theme": "money",
+  "days": [
+   36
+  ],
+  "thing": "monthly rent",
+  "values": [
+   "950 GBP"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S02",
+  "pattern": "plain",
+  "theme": "shopping",
+  "days": [
+   3
+  ],
+  "thing": "grocery delivery provider",
+  "values": [
+   "Ocado"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S03",
+  "pattern": "plain",
+  "theme": "family",
+  "days": [
+   38
+  ],
+  "thing": "mother's birthday",
+  "values": [
+   "2026-04-09"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S04",
+  "pattern": "plain",
+  "theme": "hobbies",
+  "days": [
+   24
+  ],
+  "thing": "choir director",
+  "values": [
+   "Elena Rossi"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S05",
+  "pattern": "plain",
+  "theme": "people",
+  "days": [
+   30
+  ],
+  "thing": "choir alto section partner",
+  "values": [
+   "Sarah Jenkins"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S06",
+  "pattern": "plain",
+  "theme": "hobbies",
+  "days": [
+   38
+  ],
+  "thing": "choir rehearsal venue",
+  "values": [
+   "Leeds Town Hall"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S07",
+  "pattern": "plain",
+  "theme": "work",
+  "days": [
+   35
+  ],
+  "thing": "school headteacher",
+  "values": [
+   "David Miller"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S08",
+  "pattern": "plain",
+  "theme": "work",
+  "days": [
+   20
+  ],
+  "thing": "Year 4 classroom number",
+  "values": [
+   "Room 12"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S09",
+  "pattern": "plain",
+  "theme": "admin",
+  "days": [
+   12
+  ],
+  "thing": "bank account provider",
+  "values": [
+   "Monzo"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S10",
+  "pattern": "plain",
+  "theme": "work",
+  "days": [
+   5
+  ],
+  "thing": "school start time",
+  "values": [
+   "8:45 AM"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S11",
+  "pattern": "change",
+  "theme": "admin",
+  "days": [
+   16,
+   21
+  ],
+  "thing": "gym membership",
+  "values": [
+   "PureGym",
+   "Leeds Sports Park"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S12",
+  "pattern": "change",
+  "theme": "home",
+  "days": [
+   26,
+   29
+  ],
+  "thing": "bedroom thermostat setting",
+  "values": [
+   "18 degrees",
+   "20 degrees"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S13",
+  "pattern": "change",
+  "theme": "hobbies",
+  "days": [
+   20,
+   29
+  ],
+  "thing": "choir rehearsal schedule",
+  "values": [
+   "Tuesdays at 7:30 PM",
+   "Thursdays at 7:00 PM"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S14",
+  "pattern": "change",
+  "theme": "people",
+  "days": [
+   1,
+   5
+  ],
+  "thing": "regular coffee shop",
+  "values": [
+   "The Alchemist",
+   "Proud Mary"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S15",
+  "pattern": "change",
+  "theme": "admin",
+  "days": [
+   0,
+   7
+  ],
+  "thing": "dentist appointment",
+  "values": [
+   "2026-03-02",
+   "2026-03-09"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S16",
+  "pattern": "change",
+  "theme": "health",
+  "days": [
+   2,
+   9
+  ],
+  "thing": "GP surgery",
+  "values": [
+   "City Square Clinic",
+   "Hyde Park Medical"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S17",
+  "pattern": "heart",
+  "theme": "home",
+  "days": [
+   16,
+   22,
+   29
+  ],
+  "thing": "living room thermostat setting",
+  "values": [
+   "19°C",
+   "21°C"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S18",
+  "pattern": "heart",
+  "theme": "home",
+  "days": [
+   27,
+   33,
+   39
+  ],
+  "thing": "kettle brand",
+  "values": [
+   "Smeg",
+   "Morphy Richards"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S19",
+  "pattern": "correction",
+  "theme": "work",
+  "days": [
+   28,
+   38
+  ],
+  "thing": "school uniform supplier",
+  "values": [
+   "St. Mary's Shop",
+   "Next"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S20",
+  "pattern": "correction",
+  "theme": "home",
+  "days": [
+   24,
+   29
+  ],
+  "thing": "flat address postcode",
+  "values": [
+   "LS6 2AB",
+   "LS6 3CD"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S21",
+  "pattern": "tentative_dropped",
+  "theme": "hobbies",
+  "days": [
+   21,
+   28
+  ],
+  "thing": "weekend hiking destination",
+  "values": [
+   "Ilkley Moor",
+   "Malham Cove"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S22",
+  "pattern": "tentative_dropped",
+  "theme": "travel",
+  "days": [
+   7,
+   10
+  ],
+  "thing": "Lisbon flight departure airport",
+  "values": [
+   "Manchester Airport",
+   "Leeds Bradford"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S23",
+  "pattern": "tentative_confirmed",
+  "theme": "travel",
+  "days": [
+   7,
+   16,
+   25
+  ],
+  "thing": "Easter travel destination",
+  "values": [
+   "Porto",
+   "Lisbon"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S24",
+  "pattern": "hypothetical",
+  "theme": "money",
+  "days": [
+   36,
+   41
+  ],
+  "thing": "monthly student loan payment",
+  "values": [
+   "120 GBP",
+   "180 GBP"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S25",
+  "pattern": "hypothetical",
+  "theme": "people",
+  "days": [
+   10,
+   14
+  ],
+  "thing": "choir section leader",
+  "values": [
+   "James Wright",
+   "Clara Diaz"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S26",
+  "pattern": "lookalike",
+  "theme": "health",
+  "days": [
+   1,
+   5
+  ],
+  "thing": "optician",
+  "values": [
+   "John Lewis Opticians",
+   "Specsavers"
+  ],
+  "other_person": "Gemma (neighbour)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S27",
+  "pattern": "lookalike",
+  "theme": "money",
+  "days": [
+   19,
+   24
+  ],
+  "thing": "energy tariff provider",
+  "values": [
+   "Octopus Energy",
+   "British Gas"
+  ],
+  "other_person": "Gemma (neighbour)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S28",
+  "pattern": "lookalike",
+  "theme": "shopping",
+  "days": [
+   30,
+   33
+  ],
+  "thing": "bookshop for choir scores",
+  "values": [
+   "Waterstones",
+   "Foyles"
+  ],
+  "other_person": "Elena (choir director)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S29",
+  "pattern": "need_met",
+  "theme": "people",
+  "days": [
+   8,
+   12
+  ],
+  "thing": "need",
+  "values": [
+   "someone to feed her cat Miso during the Easter week she is in Lisbon",
+   "her neighbour Gemma Price agreed to feed Miso"
+  ],
+  "other_person": "",
+  "keyword": "feed",
+  "topic": "pet-sitting"
+ },
+ {
+  "id": "S30",
+  "pattern": "need_met",
+  "theme": "money",
+  "days": [
+   10,
+   17
+  ],
+  "thing": "need",
+  "values": [
+   "a parent volunteer who speaks Urdu for the Year 4 parents evening",
+   "Mr. Hussain from the PTA will translate"
+  ],
+  "other_person": "",
+  "keyword": "Urdu",
+  "topic": "translation"
+ },
+ {
+  "id": "S31",
+  "pattern": "need_open",
+  "theme": "travel",
+  "days": [
+   25
+  ],
+  "thing": "need",
+  "values": [
+   "a second-hand digital keyboard to practise choir parts at home"
+  ],
+  "other_person": "",
+  "keyword": "keyboard",
+  "topic": "second-hand-goods"
+ },
+ {
+  "id": "S32",
+  "pattern": "need_open",
+  "theme": "shopping",
+  "days": [
+   34
+  ],
+  "thing": "need",
+  "values": [
+   "advice from someone who has done it on applying for the assistant head post"
+  ],
+  "other_person": "",
+  "keyword": "assistant",
+  "topic": "mentoring"
+ },
+ {
+  "id": "S33",
+  "pattern": "need_other",
+  "theme": "travel",
+  "days": [
+   37
+  ],
+  "thing": "need",
+  "values": [
+   "a van to move flats in Manchester at the end of March"
+  ],
+  "other_person": "Zara (sister)",
+  "keyword": "van",
+  "topic": "moving-help"
+ }
+]

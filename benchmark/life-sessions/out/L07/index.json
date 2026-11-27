@@ -1,0 +1,916 @@
+[
+ {
+  "n": 1,
+  "day": 0,
+  "steps": [],
+  "date": "2026-03-02",
+  "kind": "life"
+ },
+ {
+  "n": 2,
+  "day": 0,
+  "steps": [],
+  "date": "2026-03-02",
+  "kind": "life"
+ },
+ {
+  "n": 3,
+  "day": 1,
+  "steps": [
+   {
+    "story": "S32",
+    "step": 0,
+    "day": 1,
+    "said_late": false,
+    "text": "Lukas needs a lift to Fontainebleau for the Easter climbing trip (not sorted yet).",
+    "must": [
+     "Fontainebleau"
+    ]
+   }
+  ],
+  "date": "2026-03-03",
+  "kind": "work"
+ },
+ {
+  "n": 4,
+  "day": 2,
+  "steps": [],
+  "date": "2026-03-04",
+  "kind": "life"
+ },
+ {
+  "n": 5,
+  "day": 3,
+  "steps": [
+   {
+    "story": "S22",
+    "step": 0,
+    "day": 3,
+    "said_late": false,
+    "text": "Lukas's alternative weekend activity is kayaking on the Spree.",
+    "must": [
+     "kayaking on the Spree"
+    ]
+   },
+   {
+    "story": "S29",
+    "step": 0,
+    "day": 3,
+    "said_late": false,
+    "text": "Lukas needs a climbing partner for Tuesday evenings at Berta Block (not sorted yet).",
+    "must": [
+     "climbing"
+    ]
+   }
+  ],
+  "date": "2026-03-05",
+  "kind": "life"
+ },
+ {
+  "n": 6,
+  "day": 4,
+  "steps": [
+   {
+    "story": "S12",
+    "step": 0,
+    "day": 4,
+    "said_late": false,
+    "text": "Lukas's regular massage therapist is Elena Vogel.",
+    "must": [
+     "Elena Vogel"
+    ]
+   }
+  ],
+  "date": "2026-03-06",
+  "kind": "life"
+ },
+ {
+  "n": 7,
+  "day": 5,
+  "steps": [],
+  "date": "2026-03-07",
+  "kind": "work"
+ },
+ {
+  "n": 8,
+  "day": 6,
+  "steps": [],
+  "date": "2026-03-08",
+  "kind": "life"
+ },
+ {
+  "n": 9,
+  "day": 7,
+  "steps": [
+   {
+    "story": "S29",
+    "step": 1,
+    "day": 7,
+    "said_late": false,
+    "text": "Lukas's need is sorted: now climbs with Jonas Keller.",
+    "must": [
+     "Jonas Keller"
+    ]
+   },
+   {
+    "story": "S30",
+    "step": 0,
+    "day": 7,
+    "said_late": false,
+    "text": "Lukas needs a Postgres expert to review the table partitioning plan (not sorted yet).",
+    "must": [
+     "Postgres"
+    ]
+   }
+  ],
+  "date": "2026-03-09",
+  "kind": "life"
+ },
+ {
+  "n": 10,
+  "day": 8,
+  "steps": [
+   {
+    "story": "S22",
+    "step": 1,
+    "day": 8,
+    "said_late": false,
+    "text": "Lukas is only thinking about changing the alternative weekend activity to photography walk; nothing decided.",
+    "must": [
+     "photography walk"
+    ]
+   }
+  ],
+  "date": "2026-03-10",
+  "kind": "life"
+ },
+ {
+  "n": 11,
+  "day": 9,
+  "steps": [],
+  "date": "2026-03-11",
+  "kind": "work"
+ },
+ {
+  "n": 12,
+  "day": 10,
+  "steps": [],
+  "date": "2026-03-12",
+  "kind": "life"
+ },
+ {
+  "n": 13,
+  "day": 11,
+  "steps": [
+   {
+    "story": "S30",
+    "step": 1,
+    "day": 11,
+    "said_late": false,
+    "text": "Lukas's need is sorted: Svenja Roth from the Go meetup reviewed it.",
+    "must": [
+     "Roth",
+     "Go"
+    ]
+   }
+  ],
+  "date": "2026-03-13",
+  "kind": "life"
+ },
+ {
+  "n": 14,
+  "day": 12,
+  "steps": [
+   {
+    "story": "S12",
+    "step": 1,
+    "day": 12,
+    "said_late": false,
+    "text": "Lukas's regular massage therapist has changed: now Marcus Klein (it was Elena Vogel).",
+    "must": [
+     "Marcus Klein"
+    ]
+   },
+   {
+    "story": "S31",
+    "step": 0,
+    "day": 12,
+    "said_late": false,
+    "text": "Lukas needs a cheap sublet in Berlin for his girlfriend's visit in May (not sorted yet).",
+    "must": [
+     "sublet"
+    ]
+   }
+  ],
+  "date": "2026-03-14",
+  "kind": "life"
+ },
+ {
+  "n": 15,
+  "day": 13,
+  "steps": [],
+  "date": "2026-03-15",
+  "kind": "life"
+ },
+ {
+  "n": 16,
+  "day": 14,
+  "steps": [],
+  "date": "2026-03-16",
+  "kind": "life"
+ },
+ {
+  "n": 17,
+  "day": 15,
+  "steps": [],
+  "date": "2026-03-17",
+  "kind": "life"
+ },
+ {
+  "n": 18,
+  "day": 16,
+  "steps": [],
+  "date": "2026-03-18",
+  "kind": "work"
+ },
+ {
+  "n": 19,
+  "day": 17,
+  "steps": [
+   {
+    "story": "S08",
+    "step": 0,
+    "day": 17,
+    "said_late": false,
+    "text": "Lukas's weekly cycling route is Tempelhofer Feld loop.",
+    "must": [
+     "Tempelhofer Feld loop"
+    ]
+   }
+  ],
+  "date": "2026-03-19",
+  "kind": "life"
+ },
+ {
+  "n": 20,
+  "day": 18,
+  "steps": [],
+  "date": "2026-03-20",
+  "kind": "work"
+ },
+ {
+  "n": 21,
+  "day": 19,
+  "steps": [],
+  "date": "2026-03-21",
+  "kind": "life"
+ },
+ {
+  "n": 22,
+  "day": 20,
+  "steps": [
+   {
+    "story": "S04",
+    "step": 0,
+    "day": 17,
+    "said_late": false,
+    "text": "Lukas's monthly apartment rent is 1450 euros.",
+    "must": [
+     "1450 euros"
+    ]
+   },
+   {
+    "story": "S24",
+    "step": 0,
+    "day": 18,
+    "said_late": false,
+    "text": "Lukas's monthly car insurance premium is 120 euros.",
+    "must": [
+     "120 euros"
+    ]
+   }
+  ],
+  "date": "2026-03-22",
+  "kind": "life"
+ },
+ {
+  "n": 23,
+  "day": 20,
+  "steps": [],
+  "date": "2026-03-22",
+  "kind": "life"
+ },
+ {
+  "n": 24,
+  "day": 21,
+  "steps": [],
+  "date": "2026-03-23",
+  "kind": "life"
+ },
+ {
+  "n": 25,
+  "day": 21,
+  "steps": [],
+  "date": "2026-03-23",
+  "kind": "work"
+ },
+ {
+  "n": 26,
+  "day": 22,
+  "steps": [
+   {
+    "story": "S09",
+    "step": 0,
+    "day": 22,
+    "said_late": false,
+    "text": "Lukas's weekly gym membership is Bodyworks Mitte.",
+    "must": [
+     "Bodyworks Mitte"
+    ]
+   },
+   {
+    "story": "S11",
+    "step": 0,
+    "day": 22,
+    "said_late": false,
+    "text": "Lukas's Go runtime version is 1.21.5.",
+    "must": [
+     "1.21.5"
+    ]
+   }
+  ],
+  "date": "2026-03-24",
+  "kind": "life"
+ },
+ {
+  "n": 27,
+  "day": 23,
+  "steps": [
+   {
+    "story": "S25",
+    "step": 0,
+    "day": 22,
+    "said_late": false,
+    "text": "Lukas's monthly mobile phone cost is 25 euros.",
+    "must": [
+     "25 euros"
+    ]
+   }
+  ],
+  "date": "2026-03-25",
+  "kind": "life"
+ },
+ {
+  "n": 28,
+  "day": 24,
+  "steps": [
+   {
+    "story": "S10",
+    "step": 0,
+    "day": 24,
+    "said_late": false,
+    "text": "Lukas's primary care doctor is Dr. Hans Muller.",
+    "must": [
+     "Dr. Hans Muller"
+    ]
+   },
+   {
+    "story": "S17",
+    "step": 0,
+    "day": 24,
+    "said_late": false,
+    "text": "Lukas's coffee shop choice is The Barn.",
+    "must": [
+     "The Barn"
+    ]
+   }
+  ],
+  "date": "2026-03-26",
+  "kind": "life"
+ },
+ {
+  "n": 29,
+  "day": 25,
+  "steps": [
+   {
+    "story": "S21",
+    "step": 0,
+    "day": 24,
+    "said_late": false,
+    "text": "Lukas's mother's preferred bakery is Backstube Mitte.",
+    "must": [
+     "Backstube Mitte"
+    ]
+   },
+   {
+    "story": "S26",
+    "step": 0,
+    "day": 24,
+    "said_late": false,
+    "text": "Lukas's own Espresso machine brand is La Marzocco.",
+    "must": [
+     "La Marzocco"
+    ]
+   }
+  ],
+  "date": "2026-03-27",
+  "kind": "life"
+ },
+ {
+  "n": 30,
+  "day": 26,
+  "steps": [
+   {
+    "story": "S20",
+    "step": 0,
+    "day": 21,
+    "said_late": false,
+    "text": "Lukas's girlfriend's passport number is X8849201.",
+    "must": [
+     "X8849201"
+    ]
+   },
+   {
+    "story": "S25",
+    "step": 1,
+    "day": 25,
+    "said_late": true,
+    "text": "Lukas imagines a what-if: then the monthly mobile phone cost would be 15 euros. Only an idea; nothing changes.",
+    "must": [
+     "15 euros"
+    ]
+   }
+  ],
+  "date": "2026-03-28",
+  "kind": "life"
+ },
+ {
+  "n": 31,
+  "day": 27,
+  "steps": [
+   {
+    "story": "S27",
+    "step": 0,
+    "day": 23,
+    "said_late": false,
+    "text": "Lukas's own apartment floor number is third floor.",
+    "must": [
+     "third floor"
+    ]
+   },
+   {
+    "story": "S28",
+    "step": 0,
+    "day": 23,
+    "said_late": false,
+    "text": "Lukas's own nearest train station is Berlin Ostkreuz.",
+    "must": [
+     "Berlin Ostkreuz"
+    ]
+   }
+  ],
+  "date": "2026-03-29",
+  "kind": "life"
+ },
+ {
+  "n": 32,
+  "day": 28,
+  "steps": [
+   {
+    "story": "S33",
+    "step": 0,
+    "day": 25,
+    "said_late": true,
+    "text": "a need that is not Lukas's own: a Portuguese tutor, if he moved to Lisbon (only imagined).",
+    "must": [
+     "Portuguese"
+    ]
+   },
+   {
+    "story": "S16",
+    "step": 0,
+    "day": 26,
+    "said_late": false,
+    "text": "Lukas's cloud infrastructure provider is Google Cloud.",
+    "must": [
+     "Google Cloud"
+    ]
+   }
+  ],
+  "date": "2026-03-30",
+  "kind": "work"
+ },
+ {
+  "n": 33,
+  "day": 29,
+  "steps": [
+   {
+    "story": "S17",
+    "step": 1,
+    "day": 27,
+    "said_late": true,
+    "text": "Lukas has switched the coffee shop choice to Bonanza Coffee.",
+    "must": [
+     "Bonanza Coffee"
+    ]
+   },
+   {
+    "story": "S26",
+    "step": 1,
+    "day": 28,
+    "said_late": true,
+    "text": "Clara Weber (girlfriend)'s Espresso machine brand is Breville (about Clara Weber (girlfriend), not Lukas).",
+    "must": [
+     "Breville",
+     "Clara"
+    ]
+   }
+  ],
+  "date": "2026-03-31",
+  "kind": "life"
+ },
+ {
+  "n": 34,
+  "day": 29,
+  "steps": [
+   {
+    "story": "S06",
+    "step": 0,
+    "day": 24,
+    "said_late": false,
+    "text": "Lukas's internet service provider is Deutsche Telekom.",
+    "must": [
+     "Deutsche Telekom"
+    ]
+   },
+   {
+    "story": "S11",
+    "step": 1,
+    "day": 26,
+    "said_late": true,
+    "text": "Lukas's Go runtime version has changed: now 1.22.1 (it was 1.21.5).",
+    "must": [
+     "1.22.1"
+    ]
+   }
+  ],
+  "date": "2026-03-31",
+  "kind": "life"
+ },
+ {
+  "n": 35,
+  "day": 30,
+  "steps": [
+   {
+    "story": "S24",
+    "step": 1,
+    "day": 28,
+    "said_late": true,
+    "text": "Lukas imagines a what-if: then the monthly car insurance premium would be 180 euros. Only an idea; nothing changes.",
+    "must": [
+     "180 euros"
+    ]
+   },
+   {
+    "story": "S01",
+    "step": 0,
+    "day": 30,
+    "said_late": false,
+    "text": "Lukas's weekly running club is Spandau Runners.",
+    "must": [
+     "Spandau Runners"
+    ]
+   }
+  ],
+  "date": "2026-04-01",
+  "kind": "life"
+ },
+ {
+  "n": 36,
+  "day": 31,
+  "steps": [
+   {
+    "story": "S14",
+    "step": 0,
+    "day": 30,
+    "said_late": false,
+    "text": "Lukas's primary database engine is PostgreSQL.",
+    "must": [
+     "PostgreSQL"
+    ]
+   },
+   {
+    "story": "S17",
+    "step": 2,
+    "day": 30,
+    "said_late": true,
+    "text": "Lukas changes mind about the coffee shop choice: back to The Barn, not Bonanza Coffee any more.",
+    "must": [
+     "The Barn"
+    ]
+   }
+  ],
+  "date": "2026-04-02",
+  "kind": "work"
+ },
+ {
+  "n": 37,
+  "day": 32,
+  "steps": [
+   {
+    "story": "S18",
+    "step": 0,
+    "day": 30,
+    "said_late": false,
+    "text": "Lukas's streaming subscription is Netflix.",
+    "must": [
+     "Netflix"
+    ]
+   },
+   {
+    "story": "S21",
+    "step": 1,
+    "day": 30,
+    "said_late": true,
+    "text": "Lukas is only thinking about changing the mother's preferred bakery to Bäckerei Kroll; nothing decided.",
+    "must": [
+     "Bäckerei Kroll"
+    ]
+   }
+  ],
+  "date": "2026-04-03",
+  "kind": "life"
+ },
+ {
+  "n": 38,
+  "day": 33,
+  "steps": [
+   {
+    "story": "S28",
+    "step": 1,
+    "day": 30,
+    "said_late": true,
+    "text": "Jonas Keller (friend)'s nearest train station is Munich Hauptbahnhof (about Jonas Keller (friend), not Lukas).",
+    "must": [
+     "Munich Hauptbahnhof",
+     "Jonas"
+    ]
+   },
+   {
+    "story": "S20",
+    "step": 1,
+    "day": 31,
+    "said_late": true,
+    "text": "Lukas corrects an earlier slip: the girlfriend's passport number is Y9910382, not X8849201.",
+    "must": [
+     "Y9910382"
+    ]
+   }
+  ],
+  "date": "2026-04-04",
+  "kind": "life"
+ },
+ {
+  "n": 39,
+  "day": 34,
+  "steps": [],
+  "date": "2026-04-05",
+  "kind": "life"
+ },
+ {
+  "n": 40,
+  "day": 35,
+  "steps": [
+   {
+    "story": "S02",
+    "step": 0,
+    "day": 35,
+    "said_late": false,
+    "text": "Lukas's annual eye exam doctor is Dr. Elena Kovic.",
+    "must": [
+     "Dr. Elena Kovic"
+    ]
+   },
+   {
+    "story": "S05",
+    "step": 0,
+    "day": 35,
+    "said_late": false,
+    "text": "Lukas's weekly yoga instructor is Maria Gonzalez.",
+    "must": [
+     "Maria Gonzalez"
+    ]
+   }
+  ],
+  "date": "2026-04-06",
+  "kind": "life"
+ },
+ {
+  "n": 41,
+  "day": 36,
+  "steps": [
+   {
+    "story": "S18",
+    "step": 1,
+    "day": 36,
+    "said_late": false,
+    "text": "Lukas has switched the streaming subscription to Amazon Prime.",
+    "must": [
+     "Amazon Prime"
+    ]
+   }
+  ],
+  "date": "2026-04-07",
+  "kind": "life"
+ },
+ {
+  "n": 42,
+  "day": 37,
+  "steps": [
+   {
+    "story": "S27",
+    "step": 1,
+    "day": 31,
+    "said_late": true,
+    "text": "Clara Weber (girlfriend)'s apartment floor number is fifth floor (about Clara Weber (girlfriend), not Lukas).",
+    "must": [
+     "fifth floor",
+     "Clara"
+    ]
+   },
+   {
+    "story": "S15",
+    "step": 0,
+    "day": 37,
+    "said_late": false,
+    "text": "Lukas's vitamin D dosage is 2000 IU.",
+    "must": [
+     "2000 IU"
+    ]
+   }
+  ],
+  "date": "2026-04-08",
+  "kind": "life"
+ },
+ {
+  "n": 43,
+  "day": 37,
+  "steps": [],
+  "date": "2026-04-08",
+  "kind": "work"
+ },
+ {
+  "n": 44,
+  "day": 38,
+  "steps": [],
+  "date": "2026-04-09",
+  "kind": "life"
+ },
+ {
+  "n": 45,
+  "day": 39,
+  "steps": [
+   {
+    "story": "S16",
+    "step": 1,
+    "day": 33,
+    "said_late": true,
+    "text": "Lukas's cloud infrastructure provider has changed: now Digital Ocean (it was Google Cloud).",
+    "must": [
+     "Digital Ocean"
+    ]
+   },
+   {
+    "story": "S14",
+    "step": 1,
+    "day": 39,
+    "said_late": false,
+    "text": "Lukas's primary database engine has changed: now CockroachDB (it was PostgreSQL).",
+    "must": [
+     "CockroachDB"
+    ]
+   }
+  ],
+  "date": "2026-04-10",
+  "kind": "work"
+ },
+ {
+  "n": 46,
+  "day": 40,
+  "steps": [],
+  "date": "2026-04-11",
+  "kind": "life"
+ },
+ {
+  "n": 47,
+  "day": 41,
+  "steps": [
+   {
+    "story": "S13",
+    "step": 0,
+    "day": 36,
+    "said_late": false,
+    "text": "Lukas's commuter vehicle brand is VanMoof.",
+    "must": [
+     "VanMoof"
+    ]
+   },
+   {
+    "story": "S19",
+    "step": 0,
+    "day": 36,
+    "said_late": false,
+    "text": "Lukas's train departure time is 14:30.",
+    "must": [
+     "14:30"
+    ]
+   }
+  ],
+  "date": "2026-04-12",
+  "kind": "life"
+ },
+ {
+  "n": 48,
+  "day": 41,
+  "steps": [
+   {
+    "story": "S03",
+    "step": 0,
+    "day": 39,
+    "said_late": false,
+    "text": "Lukas's flight to Lyon is Air France AF7204.",
+    "must": [
+     "Air France AF7204"
+    ]
+   },
+   {
+    "story": "S07",
+    "step": 0,
+    "day": 40,
+    "said_late": false,
+    "text": "Lukas's girlfriend's name is Clara Weber.",
+    "must": [
+     "Clara Weber"
+    ]
+   }
+  ],
+  "date": "2026-04-12",
+  "kind": "life"
+ },
+ {
+  "n": 49,
+  "day": 41,
+  "steps": [
+   {
+    "story": "S13",
+    "step": 1,
+    "day": 41,
+    "said_late": false,
+    "text": "Lukas's commuter vehicle brand has changed: now Trek (it was VanMoof).",
+    "must": [
+     "Trek"
+    ]
+   },
+   {
+    "story": "S15",
+    "step": 1,
+    "day": 41,
+    "said_late": false,
+    "text": "Lukas's vitamin D dosage has changed: now 4000 IU (it was 2000 IU).",
+    "must": [
+     "4000 IU"
+    ]
+   }
+  ],
+  "date": "2026-04-12",
+  "kind": "life"
+ },
+ {
+  "n": 50,
+  "day": 41,
+  "steps": [
+   {
+    "story": "S18",
+    "step": 2,
+    "day": 41,
+    "said_late": false,
+    "text": "Lukas changes mind about the streaming subscription: back to Netflix, not Amazon Prime any more.",
+    "must": [
+     "Netflix"
+    ]
+   },
+   {
+    "story": "S19",
+    "step": 1,
+    "day": 41,
+    "said_late": false,
+    "text": "Lukas corrects an earlier slip: the train departure time is 15:45, not 14:30.",
+    "must": [
+     "15:45"
+    ]
+   }
+  ],
+  "date": "2026-04-12",
+  "kind": "life"
+ }
+]

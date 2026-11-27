@@ -1,0 +1,540 @@
+[
+ {
+  "id": "S01",
+  "pattern": "plain",
+  "theme": "money",
+  "days": [
+   33
+  ],
+  "thing": "mortgage payment",
+  "values": [
+   "1,450 euros on the 4th"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S02",
+  "pattern": "plain",
+  "theme": "money",
+  "days": [
+   2
+  ],
+  "thing": "car insurance premium",
+  "values": [
+   "82 euros on the 4th"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S03",
+  "pattern": "plain",
+  "theme": "hobbies",
+  "days": [
+   16
+  ],
+  "thing": "library book due date",
+  "values": [
+   "18 March"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S04",
+  "pattern": "plain",
+  "theme": "admin",
+  "days": [
+   40
+  ],
+  "thing": "tax filing deadline",
+  "values": [
+   "April 11th"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S05",
+  "pattern": "plain",
+  "theme": "money",
+  "days": [
+   11
+  ],
+  "thing": "childcare subsidy",
+  "values": [
+   "300 euros on the 13th"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S06",
+  "pattern": "plain",
+  "theme": "health",
+  "days": [
+   7
+  ],
+  "thing": "cardiologist",
+  "values": [
+   "Dr. Lefebvre"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S07",
+  "pattern": "plain",
+  "theme": "admin",
+  "days": [
+   7
+  ],
+  "thing": "PTA meeting location",
+  "values": [
+   "Lycée Ampère"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S08",
+  "pattern": "plain",
+  "theme": "family",
+  "days": [
+   32
+  ],
+  "thing": "dinner venue",
+  "values": [
+   "Chez Paul"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S09",
+  "pattern": "plain",
+  "theme": "admin",
+  "days": [
+   28
+  ],
+  "thing": "energy contract renewal portal",
+  "values": [
+   "Enedis"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S10",
+  "pattern": "plain",
+  "theme": "health",
+  "days": [
+   26
+  ],
+  "thing": "pharmacy appointment location",
+  "values": [
+   "Pharmacie du Pont"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S11",
+  "pattern": "change",
+  "theme": "travel",
+  "days": [
+   35,
+   41
+  ],
+  "thing": "family holiday destination",
+  "values": [
+   "Annecy",
+   "Chamonix"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S12",
+  "pattern": "change",
+  "theme": "shopping",
+  "days": [
+   15,
+   21
+  ],
+  "thing": "grocery delivery service",
+  "values": [
+   "Carrefour Express",
+   "Leclerc Drive"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S13",
+  "pattern": "change",
+  "theme": "home",
+  "days": [
+   34,
+   41
+  ],
+  "thing": "living room rug brand",
+  "values": [
+   "IKEA",
+   "Zara Home"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S14",
+  "pattern": "change",
+  "theme": "work",
+  "days": [
+   35,
+   41
+  ],
+  "thing": "ICU ward assignment",
+  "values": [
+   "Pavillon Nord",
+   "Pavillon Sud"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S15",
+  "pattern": "change",
+  "theme": "home",
+  "days": [
+   13,
+   18
+  ],
+  "thing": "garden hose length",
+  "values": [
+   "15 meters",
+   "25 meters"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S16",
+  "pattern": "change",
+  "theme": "family",
+  "days": [
+   7,
+   17
+  ],
+  "thing": "Inès extracurricular class",
+  "values": [
+   "Pottery club",
+   "Sculpture workshop"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S17",
+  "pattern": "heart",
+  "theme": "family",
+  "days": [
+   19,
+   22,
+   32
+  ],
+  "thing": "Inès weekend activity",
+  "values": [
+   "Dance class",
+   "Art workshop"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S18",
+  "pattern": "heart",
+  "theme": "travel",
+  "days": [
+   13,
+   21,
+   30
+  ],
+  "thing": "family hiking trail",
+  "values": [
+   "Parc de la Tête d'Or",
+   "Parc de Miribel-Jonage"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S19",
+  "pattern": "correction",
+  "theme": "work",
+  "days": [
+   14,
+   23
+  ],
+  "thing": "hospital parking zone",
+  "values": [
+   "Zone C",
+   "Zone B"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S20",
+  "pattern": "correction",
+  "theme": "people",
+  "days": [
+   36,
+   41
+  ],
+  "thing": "Hugo's pediatrician",
+  "values": [
+   "Dr. Moreau",
+   "Dr. Bernard"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S21",
+  "pattern": "tentative_dropped",
+  "theme": "shopping",
+  "days": [
+   23,
+   30
+  ],
+  "thing": "spring coat brand",
+  "values": [
+   "Uniqlo",
+   "Zara"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S22",
+  "pattern": "tentative_dropped",
+  "theme": "travel",
+  "days": [
+   37,
+   41
+  ],
+  "thing": "Easter lunch venue",
+  "values": [
+   "Parents' house",
+   "Restaurant Le Vieux Lyon"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S23",
+  "pattern": "tentative_confirmed",
+  "theme": "family",
+  "days": [
+   13,
+   23,
+   31
+  ],
+  "thing": "Inès music teacher",
+  "values": [
+   "Madame Dubois",
+   "Monsieur Leroy"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S24",
+  "pattern": "hypothetical",
+  "theme": "health",
+  "days": [
+   29,
+   37
+  ],
+  "thing": "allergy medication",
+  "values": [
+   "Zyrtec",
+   "Claritin"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S25",
+  "pattern": "hypothetical",
+  "theme": "people",
+  "days": [
+   3,
+   13
+  ],
+  "thing": "Inès ballet teacher",
+  "values": [
+   "Madame Girard",
+   "Madame Petit"
+  ],
+  "other_person": "",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S26",
+  "pattern": "lookalike",
+  "theme": "home",
+  "days": [
+   5,
+   11
+  ],
+  "thing": "apartment balcony view",
+  "values": [
+   "Courtyard",
+   "Street"
+  ],
+  "other_person": "Sophie (colleague)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S27",
+  "pattern": "lookalike",
+  "theme": "travel",
+  "days": [
+   19,
+   28
+  ],
+  "thing": "family car license plate",
+  "values": [
+   "AA-123-BB",
+   "CC-456-DD"
+  ],
+  "other_person": "Marc (neighbour)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S28",
+  "pattern": "lookalike",
+  "theme": "admin",
+  "days": [
+   26,
+   34
+  ],
+  "thing": "bank branch location",
+  "values": [
+   "Presqu'île",
+   "Confluence"
+  ],
+  "other_person": "Julien (husband)",
+  "keyword": "",
+  "topic": "none"
+ },
+ {
+  "id": "S29",
+  "pattern": "need_met",
+  "theme": "hobbies",
+  "days": [
+   19,
+   27
+  ],
+  "thing": "need",
+  "values": [
+   "a babysitter for Inès and Hugo on the evening of Saturday 21 March",
+   "booked Léa Martin, a student from the building"
+  ],
+  "other_person": "",
+  "keyword": "babysitter",
+  "topic": "babysitting"
+ },
+ {
+  "id": "S30",
+  "pattern": "need_met",
+  "theme": "work",
+  "days": [
+   1,
+   6
+  ],
+  "thing": "need",
+  "values": [
+   "a second-hand child seat for the back of her bike, for Hugo",
+   "bought one from Nadia Brun through the school parents group"
+  ],
+  "other_person": "",
+  "keyword": "seat",
+  "topic": "second-hand-goods"
+ },
+ {
+  "id": "S31",
+  "pattern": "need_open",
+  "theme": "work",
+  "days": [
+   13
+  ],
+  "thing": "need",
+  "values": [
+   "a physiotherapist near Croix-Rousse for her lower back pain"
+  ],
+  "other_person": "",
+  "keyword": "physiotherapist",
+  "topic": "physiotherapy"
+ },
+ {
+  "id": "S32",
+  "pattern": "need_open",
+  "theme": "hobbies",
+  "days": [
+   18
+  ],
+  "thing": "need",
+  "values": [
+   "a piano teacher for Inès on Wednesday afternoons"
+  ],
+  "other_person": "",
+  "keyword": "piano",
+  "topic": "music-lessons"
+ },
+ {
+  "id": "S33",
+  "pattern": "need_other",
+  "theme": "money",
+  "days": [
+   4
+  ],
+  "thing": "need",
+  "values": [
+   "a lawyer to look over the contract for his new job"
+  ],
+  "other_person": "Julien (husband)",
+  "keyword": "lawyer",
+  "topic": "legal-advice"
+ }
+]

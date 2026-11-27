@@ -1,0 +1,211 @@
+{
+ "person": "L04",
+ "model": "opus",
+ "verdicts": {
+  "L04-S01-1": {
+   "verdict": "incomplete",
+   "why": "2026-04-02 is described as a check-up that already happened. After it, a blood-sugar appointment at the diabetes clinic was booked for 8 April at 10:00. A reader could reasonably give 2026-04-08 as the next check-up.",
+   "quote": "I have booked your appointment for Tuesday, April 8th, at 10:00 AM at ul. Krowoderska 20.",
+   "session": "043",
+   "better_reference": "The last check-up was 2026-04-02; a clinic appointment was then booked for 2026-04-08 at 10:00.",
+   "quote_found": true
+  },
+  "L04-S02-1": {
+   "verdict": "incomplete",
+   "why": "2026-04-09 is the screening that just took place. The next one was set for six months later.",
+   "quote": "I will set a reminder for your next screening in six months. That would be around October 2026.",
+   "session": "046",
+   "better_reference": "The last screening was 2026-04-09; the next is around October 2026.",
+   "quote_found": true
+  },
+  "L04-S03-1": {
+   "verdict": "incomplete",
+   "why": "An earlier session names a different Biedronka as the usual store.",
+   "quote": "Yes, please check Biedronka on Kościuszki Street. I usually go there.",
+   "session": "038",
+   "better_reference": "Biedronka on Dąbrowskiego (earlier also called Biedronka on Kościuszki Street)",
+   "quote_found": true
+  },
+  "L04-S05-1": {
+   "verdict": "ok",
+   "why": "Session 049 states the foot care appointment is 2026-04-12."
+  },
+  "L04-S06-1": {
+   "verdict": "ok",
+   "why": "Session 029 names the ZUS branch on Grzegórzecki for the pension document submission."
+  },
+  "L04-S07-1": {
+   "verdict": "ok",
+   "why": "Session 037 gives the electricity bill as 420 PLN."
+  },
+  "L04-S08-1": {
+   "verdict": "ok",
+   "why": "Session 038 gives the allotment plot fee as 150 PLN."
+  },
+  "L04-S09-1": {
+   "verdict": "ok",
+   "why": "Session 042 gives the library annual membership as 80 PLN."
+  },
+  "L04-S11-1": {
+   "verdict": "ok",
+   "why": "Session 042: the plot is now Plot 15 (it was Plot 42)."
+  },
+  "L04-S11-2": {
+   "verdict": "ok",
+   "why": "Session 042 gives the earlier plot as Plot 42."
+  },
+  "L04-S11-3": {
+   "verdict": "ok",
+   "why": "Session 042 dates the change to Saturday 4 April."
+  },
+  "L04-S12-1": {
+   "verdict": "ok",
+   "why": "Session 038: the pension account is now Bank Millennium, moved from PKO Bank Polski."
+  },
+  "L04-S12-2": {
+   "verdict": "ok",
+   "why": "Session 038 gives the earlier bank as PKO Bank Polski."
+  },
+  "L04-S12-3": {
+   "verdict": "ok",
+   "why": "Session 038 dates the move to Monday, 30 March."
+  },
+  "L04-S13-1": {
+   "verdict": "ok",
+   "why": "Session 040: regular classes now, after spring break."
+  },
+  "L04-S13-2": {
+   "verdict": "ok",
+   "why": "Session 024 gives the earlier term as Spring break."
+  },
+  "L04-S13-3": {
+   "verdict": "ok",
+   "why": "Session 040 dates the change to Monday, March 30th."
+  },
+  "L04-S14-1": {
+   "verdict": "ok",
+   "why": "Session 026 gives Spring exams; session 015 gave Winter break."
+  },
+  "L04-S14-2": {
+   "verdict": "ok",
+   "why": "Session 015 gives the earlier semester as Winter break."
+  },
+  "L04-S14-3": {
+   "verdict": "ok",
+   "why": "Session 026 (2026-03-23) reports the semester change."
+  },
+  "L04-S15-1": {
+   "verdict": "ok",
+   "why": "Session 050: the shift changed from Tuesday mornings to Thursday afternoons."
+  },
+  "L04-S15-2": {
+   "verdict": "ok",
+   "why": "Session 044 gives the earlier shift as Tuesday mornings."
+  },
+  "L04-S15-3": {
+   "verdict": "ok",
+   "why": "The change is made in session 050 on 2026-04-12."
+  },
+  "L04-S16-1": {
+   "verdict": "ok",
+   "why": "Session 050 moves the garden day to Sunday afternoons; session 045 had Saturday mornings."
+  },
+  "L04-S16-2": {
+   "verdict": "ok",
+   "why": "Session 045 gives the earlier garden day as Saturday mornings."
+  },
+  "L04-S16-3": {
+   "verdict": "ok",
+   "why": "The change is made in session 050 on 2026-04-12."
+  },
+  "L04-S17-1": {
+   "verdict": "ok",
+   "why": "Main Library Hall (015), changed to Community Centre Room B (028), then back to Main Library Hall (039)."
+  },
+  "L04-S18-1": {
+   "verdict": "ok",
+   "why": "A gas boiler was installed (043), then session 051 switches back to District heating."
+  },
+  "L04-S19-1": {
+   "verdict": "ok",
+   "why": "Session 046 corrects the clinic address to ul. Dąbrowskiego 118 on 9 April."
+  },
+  "L04-S20-1": {
+   "verdict": "incomplete",
+   "why": "The address is right, but 27 March is when the draft went to the wrong address. The correction itself was made in the 31 March session.",
+   "quote": "The pension office address is ul. Pawia 4, not ul. Grzegórzecka 15. I sent that draft to the wrong place on Friday 27 March.",
+   "session": "036",
+   "better_reference": "ul. Pawia 4 (ul. Grzegórzecka 15 was a slip; the wrong draft was sent on 2026-03-27 and corrected on 2026-03-31)",
+   "quote_found": true
+  },
+  "L04-S21-1": {
+   "verdict": "ok",
+   "why": "Session 028 only considers the change; Przegląd Dzienny is still delivered in session 045."
+  },
+  "L04-S22-1": {
+   "verdict": "wrong",
+   "why": "Friday mornings was only considered (041), but the shift at the end is not Wednesday afternoons. It moved to Thursday afternoons in session 050.",
+   "quote": "The society changed it. I can no longer go on Tuesday mornings. It is now Thursday afternoons.",
+   "session": "050",
+   "better_reference": "No: I only thought about Friday mornings; the shift is now Thursday afternoons (it was Tuesday mornings)",
+   "quote_found": true
+  },
+  "L04-S23-1": {
+   "verdict": "ok",
+   "why": "Session 013 considers Telegram; sessions 015, 018 and 022 use Telegram."
+  },
+  "L04-S23-2": {
+   "verdict": "ok",
+   "why": "Session 015 (2026-03-15) says he has gone ahead with Telegram."
+  },
+  "L04-S24-1": {
+   "verdict": "ok",
+   "why": "Session 047 gives LOT; session 048 calls Air Canada only an idea."
+  },
+  "L04-S27-1": {
+   "verdict": "ok",
+   "why": "Session 021 gives Toronto Pearson; Montreal Trudeau is Zofia's (034)."
+  },
+  "L04-S27-2": {
+   "verdict": "ok",
+   "why": "Session 034 gives Zofia's destination as Montreal Trudeau."
+  },
+  "L04-S28-1": {
+   "verdict": "incomplete",
+   "why": "Session 044 gives 12 345 67 89, but session 047 describes the user's pension office number as one ending in 44, which conflicts with it.",
+   "quote": "It's the one ending in 44. Do you have that number saved?",
+   "session": "047",
+   "better_reference": "12 345 67 89 (a later session refers to the pension office number as one ending in 44; 22 987 65 43 is Zofia's)",
+   "quote_found": true
+  },
+  "L04-S28-2": {
+   "verdict": "ok",
+   "why": "Session 048 gives Zofia's pension office number as 22 987 65 43."
+  },
+  "L04-S30-1": {
+   "verdict": "wrong",
+   "why": "The video call was set up with the assistant's help via WhatsApp in session 011 on 2026-03-10. Kuba Wiśniewski set up the shed roof on 17 March, not the video calls.",
+   "quote": "Done. It's connecting now. The screen is black for a second, and then I see his face! He's waving. Oh, this is wonderful. Thank you, AI.",
+   "session": "011",
+   "better_reference": "No: sorted on 2026-03-10, when the assistant walked me through a WhatsApp video call",
+   "quote_found": true
+  },
+  "L04-needs_now-1": {
+   "verdict": "ok",
+   "why": "The rotavator (006) is never resolved and the Nowa Huta walking group (049) is still open. The video calls were sorted, and the 18 March clinic lift date has passed."
+  },
+  "L04-none-1": {
+   "verdict": "ok",
+   "why": "No passport number appears in any session."
+  },
+  "L04-none-2": {
+   "verdict": "ok",
+   "why": "No grandmother's maiden name appears in any session."
+  },
+  "L04-none-3": {
+   "verdict": "ok",
+   "why": "No favourite film appears in any session."
+  }
+ },
+ "cost": 0.5518782
+}

@@ -1,0 +1,227 @@
+{
+ "person": "L06",
+ "model": "opus",
+ "verdicts": {
+  "L06-S01-1": {
+   "verdict": "ok",
+   "why": "Session 043 gives the annual medical screening as today, 2026-04-08."
+  },
+  "L06-S02-1": {
+   "verdict": "ok",
+   "why": "Sessions 005, 006 and 017 give the mother's birthday as 2026-03-04."
+  },
+  "L06-S03-1": {
+   "verdict": "ok",
+   "why": "Session 024 states the tax filing deadline is 2026-03-23."
+  },
+  "L06-S04-1": {
+   "verdict": "ok",
+   "why": "Session 042: 'I did that shoot on 2026-04-01.'"
+  },
+  "L06-S05-1": {
+   "verdict": "ok",
+   "why": "Sessions 029 and 033 put the Fourie client meeting on 2026-03-26."
+  },
+  "L06-S06-1": {
+   "verdict": "ok",
+   "why": "Session 022 adds the dentist appointment for 2026-03-21, and session 025 confirms it."
+  },
+  "L06-S08-1": {
+   "verdict": "ok",
+   "why": "Session 023 says the camera strap was purchased on 2026-03-20."
+  },
+  "L06-S09-1": {
+   "verdict": "ok",
+   "why": "Session 029 says the Van der Merwe invoice was sent through on 2026-03-24."
+  },
+  "L06-S10-1": {
+   "verdict": "ok",
+   "why": "Session 030 says the user does yoga on Saturday morning and usually does yoga first."
+  },
+  "L06-S11-1": {
+   "verdict": "ok",
+   "why": "Session 016: switched from FirstRand Bank to Capitec Bank."
+  },
+  "L06-S11-2": {
+   "verdict": "ok",
+   "why": "Session 016 says the old details were FirstRand Bank."
+  },
+  "L06-S11-3": {
+   "verdict": "incomplete",
+   "why": "On 2026-03-15 the user only reports a switch made 'a while back'. The actual change date is never given. 2026-03-15 is when it was reported and the CRM was updated, so 'before 15 March, date not stated' should also count.",
+   "quote": "I switched banks a while back, so the old FirstRand Bank details are gone. It’s Capitec Bank now.",
+   "session": "016",
+   "better_reference": "Reported/updated on 2026-03-15 (the switch itself happened 'a while back', date not stated)",
+   "quote_found": true
+  },
+  "L06-S12-1": {
+   "verdict": "ok",
+   "why": "Session 021 says Biscuiteer replaced the old Daily Grind spot."
+  },
+  "L06-S12-2": {
+   "verdict": "ok",
+   "why": "Session 021 names the old Daily Grind spot."
+  },
+  "L06-S12-3": {
+   "verdict": "incomplete",
+   "why": "On 2026-03-20 the user says they have been going to Biscuiteer 'lately'. The change predates that session and its date is never stated. 2026-03-20 is only when it was mentioned.",
+   "quote": "It’s where I’ve been going lately instead of the old Daily Grind spot",
+   "session": "021",
+   "better_reference": "Mentioned on 2026-03-20 (the change happened 'lately' before that; exact date not stated)",
+   "quote_found": true
+  },
+  "L06-S13-1": {
+   "verdict": "ok",
+   "why": "Session 012: now 12500 ZAR (it was 12000 ZAR)."
+  },
+  "L06-S13-2": {
+   "verdict": "ok",
+   "why": "Sessions 006 and 012 give the earlier rent as 12000 ZAR."
+  },
+  "L06-S13-3": {
+   "verdict": "ok",
+   "why": "The change was stated and confirmed to the landlord on 2026-03-12."
+  },
+  "L06-S14-1": {
+   "verdict": "ok",
+   "why": "Session 016: Cape Town Physio closed, and Wellness Hub was booked."
+  },
+  "L06-S14-2": {
+   "verdict": "ok",
+   "why": "Session 016: 'I used to go to Cape Town Physio'."
+  },
+  "L06-S14-3": {
+   "verdict": "ok",
+   "why": "Wellness Hub was found and booked in session 016 on 2026-03-15."
+  },
+  "L06-S15-1": {
+   "verdict": "ok",
+   "why": "Session 017: the route changed from Signal Hill to Llandudny Beach."
+  },
+  "L06-S15-2": {
+   "verdict": "ok",
+   "why": "Sessions 006 and 017 give Signal Hill as the earlier route."
+  },
+  "L06-S15-3": {
+   "verdict": "ok",
+   "why": "Session 017: the profile was updated on Sunday 15 March."
+  },
+  "L06-S16-1": {
+   "verdict": "ok",
+   "why": "Session 048: now 950 ZAR, it used to be 800 ZAR."
+  },
+  "L06-S16-2": {
+   "verdict": "ok",
+   "why": "Sessions 036 and 048 give the earlier premium as 800 ZAR."
+  },
+  "L06-S16-3": {
+   "verdict": "ok",
+   "why": "Session 048: 'I saw this on Saturday 11 April.'"
+  },
+  "L06-S17-1": {
+   "verdict": "ok",
+   "why": "The Silo Hotel is the favourite in session 043, Mama J's in session 046, and back to The Silo Hotel in session 049."
+  },
+  "L06-S18-1": {
+   "verdict": "ok",
+   "why": "Nomsa Khumalo in session 033, Sarah Jenkins in session 036, and back to Nomsa in session 048."
+  },
+  "L06-S19-1": {
+   "verdict": "ok",
+   "why": "Session 049 (2026-04-12) corrects the date from 2026-04-10 to 2026-04-12."
+  },
+  "L06-S20-1": {
+   "verdict": "wrong",
+   "why": "The trail name is right, but the correction was made in session 026, dated 2026-03-24, not on 2026-03-21. The hike itself was on 21 March. The sessions also never call it a 'favorite'.",
+   "quote": "By the way, for the record, it was Kirstenbosch to Skeleton Gorge, not Platteklip Gorge. I keep mixing them up in my head.",
+   "session": "026",
+   "better_reference": "Kirstenbosch to Skeleton Gorge (Platteklip Gorge was a slip, corrected on 2026-03-24; the hike was on 2026-03-21)",
+   "quote_found": true
+  },
+  "L06-S21-1": {
+   "verdict": "ok",
+   "why": "Session 017: only considering Cape Town Art Space, not decided. Session 008 uses The Foundry Warehouse for the portfolio."
+  },
+  "L06-S22-1": {
+   "verdict": "ok",
+   "why": "Session 047: 'Nothing decided yet'. Session 039: usually orders from Cape Town Meat Co."
+  },
+  "L06-S23-1": {
+   "verdict": "ok",
+   "why": "The user was undecided in session 044 and is using PnP Now in session 050."
+  },
+  "L06-S23-2": {
+   "verdict": "ok",
+   "why": "Session 044 (04-09) was still undecided, and the user goes ahead with PnP Now on 2026-04-12 (session 050)."
+  },
+  "L06-S24-1": {
+   "verdict": "ok",
+   "why": "Session 042 names the subscription as Xero. Session 050 says Sage One is only a what-if."
+  },
+  "L06-S25-1": {
+   "verdict": "ok",
+   "why": "Session 030 uses a private Google Drive folder. Session 040 says Dropbox is only a what-if."
+  },
+  "L06-S26-1": {
+   "verdict": "ok",
+   "why": "Sessions 038 and 050 name the user's hair stylist as Zanele Mthembu."
+  },
+  "L06-S26-2": {
+   "verdict": "ok",
+   "why": "Session 039: 'Her hair stylist, Priya Naidoo, did her hair'."
+  },
+  "L06-S27-1": {
+   "verdict": "ok",
+   "why": "Session 037: 'you know I can't skip their weekend specials' about The Daily Crumb."
+  },
+  "L06-S27-2": {
+   "verdict": "ok",
+   "why": "Session 047 says Sipho likes The Bread Bureau."
+  },
+  "L06-S28-1": {
+   "verdict": "incomplete",
+   "why": "In session 034 the user says they usually check the FNB App. In the next session they use the Capitec app, which matches their switch to Capitec Bank. A reader could reasonably answer the Capitec app.",
+   "quote": "And check if we have enough cash for the tip jar at the studio, or if I should just use the Capitec app.",
+   "session": "035",
+   "better_reference": "FNB App (session 034) and also the Capitec app (session 035); Standard Bank App is Sipho's",
+   "quote_found": true
+  },
+  "L06-S28-2": {
+   "verdict": "ok",
+   "why": "Session 040 says Sipho checks the Standard Bank App."
+  },
+  "L06-S29-1": {
+   "verdict": "unsupported",
+   "why": "Lerato's confirmation in session 031 is for the Stellenbosch wedding, not the Fourie wedding. For the Fourie second shooter, the sessions only show an inquiry sent to James Miller (session 020), with no confirmation.",
+   "quote": "Morning. Quick check on the Stellenbosch wedding prep. Did Lerato confirm?",
+   "session": "031",
+   "better_reference": "Not shown as sorted: an inquiry was sent to James Miller on 2026-03-19, no confirmation recorded (Lerato Mokoena confirmed on 2026-03-26 for the Stellenbosch wedding)",
+   "quote_found": true
+  },
+  "L06-S30-1": {
+   "verdict": "ok",
+   "why": "Session 038 (2026-04-03): the neighbours' son Aidan walks Bongo while the user is shooting."
+  },
+  "L06-needs_now-1": {
+   "verdict": "incomplete",
+   "why": "The lens and accountant needs are open. However, the Fourie second-shooter need from session 020 is never shown as met, since Lerato was for Stellenbosch. A reader could list it too.",
+   "quote": "I’m still stressed about needing a second shooter for the Fourie wedding on 28 March. It’s not sorted yet.",
+   "session": "020",
+   "better_reference": "a 70-200mm lens to rent for a weekend in April; an accountant who handles provisional tax for freelancers; (arguably) a second shooter for the Fourie wedding on 28 March",
+   "quote_found": true
+  },
+  "L06-none-1": {
+   "verdict": "ok",
+   "why": "No session mentions a first car."
+  },
+  "L06-none-2": {
+   "verdict": "ok",
+   "why": "No session mentions a licence plate."
+  },
+  "L06-none-3": {
+   "verdict": "ok",
+   "why": "No session mentions a gym locker."
+  }
+ },
+ "cost": 0.5259221999999999
+}

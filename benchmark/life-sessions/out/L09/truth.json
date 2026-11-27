@@ -1,0 +1,548 @@
+[
+ {
+  "id": "S01",
+  "pattern": "plain",
+  "thing": "pro bono case deadline",
+  "theme": "admin",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-04",
+    "2026-03-04"
+   ]
+  ],
+  "now": "2026-03-04"
+ },
+ {
+  "id": "S02",
+  "pattern": "plain",
+  "thing": "return to work date",
+  "theme": "admin",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-12",
+    "2026-04-12"
+   ]
+  ],
+  "now": "2026-04-12"
+ },
+ {
+  "id": "S03",
+  "pattern": "plain",
+  "thing": "running club meeting",
+  "theme": "hobbies",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-05",
+    "2026-04-05"
+   ]
+  ],
+  "now": "2026-04-05"
+ },
+ {
+  "id": "S04",
+  "pattern": "plain",
+  "thing": "brother birthday",
+  "theme": "people",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-01",
+    "2026-04-01"
+   ]
+  ],
+  "now": "2026-04-01"
+ },
+ {
+  "id": "S05",
+  "pattern": "plain",
+  "thing": "baby monitor subscription",
+  "theme": "shopping",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-20",
+    "12.99 CAD a month"
+   ]
+  ],
+  "now": "12.99 CAD a month"
+ },
+ {
+  "id": "S06",
+  "pattern": "plain",
+  "thing": "mother in law visit",
+  "theme": "family",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-22",
+    "2026-03-22"
+   ]
+  ],
+  "now": "2026-03-22"
+ },
+ {
+  "id": "S07",
+  "pattern": "plain",
+  "thing": "firm partner lunch",
+  "theme": "people",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-31",
+    "2026-03-31"
+   ]
+  ],
+  "now": "2026-03-31"
+ },
+ {
+  "id": "S08",
+  "pattern": "plain",
+  "thing": "jazz concert ticket",
+  "theme": "hobbies",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-08",
+    "2026-04-08"
+   ]
+  ],
+  "now": "2026-04-08"
+ },
+ {
+  "id": "S09",
+  "pattern": "plain",
+  "thing": "annual physical appointment",
+  "theme": "health",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-01",
+    "2026-04-15"
+   ]
+  ],
+  "now": "2026-04-15"
+ },
+ {
+  "id": "S10",
+  "pattern": "plain",
+  "thing": "brother's graduation venue",
+  "theme": "people",
+  "other_person": "Tunde (brother)",
+  "history": [
+   [
+    "2026-03-09",
+    "Harbourfront Centre"
+   ]
+  ],
+  "now": "Harbourfront Centre"
+ },
+ {
+  "id": "S11",
+  "pattern": "change",
+  "thing": "home office chair",
+  "theme": "home",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-07",
+    "Herman Miller Aeron"
+   ],
+   [
+    "2026-04-12",
+    "Steelcase Leap"
+   ]
+  ],
+  "now": "Steelcase Leap"
+ },
+ {
+  "id": "S12",
+  "pattern": "change",
+  "thing": "grocery delivery app",
+  "theme": "home",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-12",
+    "Instacart"
+   ],
+   [
+    "2026-03-19",
+    "Amazon Fresh"
+   ]
+  ],
+  "now": "Amazon Fresh"
+ },
+ {
+  "id": "S13",
+  "pattern": "change",
+  "thing": "commute route to firm",
+  "theme": "travel",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-19",
+    "Queen Street car"
+   ],
+   [
+    "2026-03-26",
+    "TTC streetcar"
+   ]
+  ],
+  "now": "TTC streetcar"
+ },
+ {
+  "id": "S14",
+  "pattern": "change",
+  "thing": "parking spot rental",
+  "theme": "travel",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-08",
+    "Bay Street garage"
+   ],
+   [
+    "2026-03-11",
+    "Yonge Street lot"
+   ]
+  ],
+  "now": "Yonge Street lot"
+ },
+ {
+  "id": "S15",
+  "pattern": "change",
+  "thing": "childcare tax credit amount",
+  "theme": "money",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-15",
+    "450 CAD"
+   ],
+   [
+    "2026-03-23",
+    "520 CAD"
+   ]
+  ],
+  "now": "520 CAD"
+ },
+ {
+  "id": "S16",
+  "pattern": "change",
+  "thing": "father weekend visit",
+  "theme": "family",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-12",
+    "2026-03-12"
+   ],
+   [
+    "2026-03-21",
+    "2026-03-21"
+   ]
+  ],
+  "now": "2026-03-21"
+ },
+ {
+  "id": "S17",
+  "pattern": "heart",
+  "thing": "baby monitor app",
+  "theme": "shopping",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-10",
+    "Nanit"
+   ],
+   [
+    "2026-03-15",
+    "Owlet"
+   ],
+   [
+    "2026-03-20",
+    "Nanit"
+   ]
+  ],
+  "now": "Nanit"
+ },
+ {
+  "id": "S18",
+  "pattern": "heart",
+  "thing": "sleep pattern",
+  "theme": "health",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-22",
+    "8 hours straight"
+   ],
+   [
+    "2026-03-31",
+    "two 3-hour blocks"
+   ],
+   [
+    "2026-04-10",
+    "8 hours straight"
+   ]
+  ],
+  "now": "8 hours straight"
+ },
+ {
+  "id": "S19",
+  "pattern": "correction",
+  "thing": "pediatrician name",
+  "theme": "health",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-25",
+    "Dr. Patel"
+   ]
+  ],
+  "said_wrongly": [
+   "2026-03-25",
+   "Dr. Evans"
+  ],
+  "corrected_on": "2026-04-03",
+  "now": "Dr. Patel"
+ },
+ {
+  "id": "S20",
+  "pattern": "correction",
+  "thing": "pro bono case file number",
+  "theme": "work",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-11",
+    "PB-9024"
+   ]
+  ],
+  "said_wrongly": [
+   "2026-03-11",
+   "PB-9021"
+  ],
+  "corrected_on": "2026-03-15",
+  "now": "PB-9024"
+ },
+ {
+  "id": "S21",
+  "pattern": "tentative_dropped",
+  "thing": "weekend hiking trail",
+  "theme": "hobbies",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-11",
+    "Bruce Trail"
+   ]
+  ],
+  "considered": [
+   "2026-03-17",
+   "Rouge Park"
+  ],
+  "now": "Bruce Trail"
+ },
+ {
+  "id": "S22",
+  "pattern": "tentative_dropped",
+  "thing": "investment account provider",
+  "theme": "money",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-23",
+    "Wealthsimple"
+   ]
+  ],
+  "considered": [
+   "2026-03-27",
+   "Questrade"
+  ],
+  "now": "Wealthsimple"
+ },
+ {
+  "id": "S23",
+  "pattern": "tentative_confirmed",
+  "thing": "pro bono filing method",
+  "theme": "work",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-25",
+    "online portal"
+   ],
+   [
+    "2026-04-03",
+    "courthouse drop-off"
+   ]
+  ],
+  "considered": [
+   "2026-03-30",
+   "courthouse drop-off"
+  ],
+  "now": "courthouse drop-off"
+ },
+ {
+  "id": "S24",
+  "pattern": "hypothetical",
+  "thing": "family vacation destination",
+  "theme": "family",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-06",
+    "Niagara Falls"
+   ]
+  ],
+  "imagined": [
+   "2026-03-10",
+   "Banff National Park"
+  ],
+  "now": "Niagara Falls"
+ },
+ {
+  "id": "S25",
+  "pattern": "hypothetical",
+  "thing": "baby clothing brand",
+  "theme": "shopping",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-19",
+    "Carter's"
+   ]
+  ],
+  "imagined": [
+   "2026-03-24",
+   "Hanna Andersson"
+  ],
+  "now": "Carter's"
+ },
+ {
+  "id": "S26",
+  "pattern": "lookalike",
+  "thing": "jazz club membership",
+  "theme": "people",
+  "other_person": "Elena (colleague)",
+  "history": [
+   [
+    "2026-04-08",
+    "The Rex Jazz Bar"
+   ]
+  ],
+  "other_value": [
+   "2026-04-11",
+   "Smalls Jazz Club"
+  ],
+  "now": "The Rex Jazz Bar"
+ },
+ {
+  "id": "S27",
+  "pattern": "lookalike",
+  "thing": "weekly dry cleaner pickup",
+  "theme": "home",
+  "other_person": "Marcus (neighbor)",
+  "history": [
+   [
+    "2026-03-26",
+    "Green Earth Cleaners"
+   ]
+  ],
+  "other_value": [
+   "2026-04-02",
+   "Press & Fold"
+  ],
+  "now": "Green Earth Cleaners"
+ },
+ {
+  "id": "S28",
+  "pattern": "lookalike",
+  "thing": "family health insurance provider",
+  "theme": "money",
+  "other_person": "Grace (wife)",
+  "history": [
+   [
+    "2026-03-05",
+    "Manulife Financial"
+   ]
+  ],
+  "other_value": [
+   "2026-03-08",
+   "Sun Life"
+  ],
+  "now": "Manulife Financial"
+ },
+ {
+  "id": "S29",
+  "pattern": "need_met",
+  "thing": "need",
+  "theme": "money",
+  "other_person": null,
+  "need": {
+   "what": "a second-hand stroller that folds small enough for the TTC",
+   "topic": "baby-gear",
+   "open_from": "2026-03-06",
+   "met_on": "2026-03-16",
+   "how": "bought a used UPPAbaby from Nadia Chen"
+  }
+ },
+ {
+  "id": "S30",
+  "pattern": "need_met",
+  "thing": "need",
+  "theme": "admin",
+  "other_person": null,
+  "need": {
+   "what": "a lactation consultant who does home visits",
+   "topic": "doctor-recommendation",
+   "open_from": "2026-03-02",
+   "met_on": "2026-03-10",
+   "how": "Grace booked Megan Ross for home visits"
+  }
+ },
+ {
+  "id": "S31",
+  "pattern": "need_open",
+  "thing": "need",
+  "theme": "shopping",
+  "other_person": null,
+  "need": {
+   "what": "a daycare spot for Ada from January",
+   "topic": "childcare",
+   "open_from": "2026-03-14",
+   "met_on": null
+  }
+ },
+ {
+  "id": "S32",
+  "pattern": "need_open",
+  "thing": "need",
+  "theme": "work",
+  "other_person": null,
+  "need": {
+   "what": "a mentor who went back to Bay Street after parental leave",
+   "topic": "mentoring",
+   "open_from": "2026-03-22",
+   "met_on": null
+  }
+ },
+ {
+  "id": "S33",
+  "pattern": "need_other",
+  "thing": "need",
+  "theme": "travel",
+  "other_person": "Mrs. Diallo (pro bono client)",
+  "need": {
+   "what": "a French interpreter for her hearing on 2 April",
+   "topic": "translation",
+   "open_from": "2026-03-31",
+   "met_on": null,
+   "not_the_persons": true
+  }
+ }
+]

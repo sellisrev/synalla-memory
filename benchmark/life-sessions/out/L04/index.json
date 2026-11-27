@@ -1,0 +1,956 @@
+[
+ {
+  "n": 1,
+  "day": 0,
+  "steps": [],
+  "date": "2026-03-02",
+  "kind": "life"
+ },
+ {
+  "n": 2,
+  "day": 1,
+  "steps": [],
+  "date": "2026-03-03",
+  "kind": "life"
+ },
+ {
+  "n": 3,
+  "day": 2,
+  "steps": [],
+  "date": "2026-03-04",
+  "kind": "work"
+ },
+ {
+  "n": 4,
+  "day": 2,
+  "steps": [],
+  "date": "2026-03-04",
+  "kind": "work"
+ },
+ {
+  "n": 5,
+  "day": 3,
+  "steps": [],
+  "date": "2026-03-05",
+  "kind": "work"
+ },
+ {
+  "n": 6,
+  "day": 4,
+  "steps": [
+   {
+    "story": "S31",
+    "step": 0,
+    "day": 4,
+    "said_late": false,
+    "text": "Krzysztof needs a rotavator to borrow for the allotment in April (not sorted yet).",
+    "must": [
+     "rotavator"
+    ]
+   }
+  ],
+  "date": "2026-03-06",
+  "kind": "life"
+ },
+ {
+  "n": 7,
+  "day": 5,
+  "steps": [
+   {
+    "story": "S04",
+    "step": 0,
+    "day": 2,
+    "said_late": false,
+    "text": "Krzysztof's heritage society meeting is Stary Kleparz Market Hall.",
+    "must": [
+     "Stary Kleparz Market Hall"
+    ]
+   }
+  ],
+  "date": "2026-03-07",
+  "kind": "life"
+ },
+ {
+  "n": 8,
+  "day": 6,
+  "steps": [],
+  "date": "2026-03-08",
+  "kind": "life"
+ },
+ {
+  "n": 9,
+  "day": 6,
+  "steps": [],
+  "date": "2026-03-08",
+  "kind": "work"
+ },
+ {
+  "n": 10,
+  "day": 7,
+  "steps": [
+   {
+    "story": "S23",
+    "step": 0,
+    "day": 1,
+    "said_late": false,
+    "text": "Krzysztof's grandson's contact method is WhatsApp.",
+    "must": [
+     "WhatsApp"
+    ]
+   }
+  ],
+  "date": "2026-03-09",
+  "kind": "life"
+ },
+ {
+  "n": 11,
+  "day": 8,
+  "steps": [
+   {
+    "story": "S30",
+    "step": 0,
+    "day": 8,
+    "said_late": false,
+    "text": "Krzysztof needs help setting up video calls with his grandson in Toronto (not sorted yet).",
+    "must": [
+     "video"
+    ]
+   }
+  ],
+  "date": "2026-03-10",
+  "kind": "life"
+ },
+ {
+  "n": 12,
+  "day": 9,
+  "steps": [],
+  "date": "2026-03-11",
+  "kind": "work"
+ },
+ {
+  "n": 13,
+  "day": 10,
+  "steps": [
+   {
+    "story": "S23",
+    "step": 1,
+    "day": 10,
+    "said_late": false,
+    "text": "Krzysztof is thinking about changing the grandson's contact method to Telegram; not decided yet.",
+    "must": [
+     "Telegram"
+    ]
+   }
+  ],
+  "date": "2026-03-12",
+  "kind": "life"
+ },
+ {
+  "n": 14,
+  "day": 10,
+  "steps": [],
+  "date": "2026-03-12",
+  "kind": "life"
+ },
+ {
+  "n": 15,
+  "day": 11,
+  "steps": [
+   {
+    "story": "S14",
+    "step": 0,
+    "day": 11,
+    "said_late": false,
+    "text": "Krzysztof's grandson's university semester is Winter break.",
+    "must": [
+     "Winter break"
+    ]
+   },
+   {
+    "story": "S17",
+    "step": 0,
+    "day": 11,
+    "said_late": false,
+    "text": "Krzysztof's heritage society meeting location is Main Library Hall.",
+    "must": [
+     "Main Library Hall"
+    ]
+   }
+  ],
+  "date": "2026-03-13",
+  "kind": "life"
+ },
+ {
+  "n": 16,
+  "day": 12,
+  "steps": [],
+  "date": "2026-03-14",
+  "kind": "life"
+ },
+ {
+  "n": 17,
+  "day": 13,
+  "steps": [
+   {
+    "story": "S29",
+    "step": 0,
+    "day": 9,
+    "said_late": true,
+    "text": "Krzysztof needs someone to drive him to the diabetes clinic on 18 March (not sorted yet).",
+    "must": [
+     "drive"
+    ]
+   },
+   {
+    "story": "S23",
+    "step": 2,
+    "day": 13,
+    "said_late": false,
+    "text": "Krzysztof has now gone ahead: the grandson's contact method is Telegram.",
+    "must": [
+     "Telegram"
+    ]
+   }
+  ],
+  "date": "2026-03-15",
+  "kind": "life"
+ },
+ {
+  "n": 18,
+  "day": 14,
+  "steps": [
+   {
+    "story": "S06",
+    "step": 0,
+    "day": 14,
+    "said_late": false,
+    "text": "Krzysztof's pension document submission is ZUS branch on Grzegórzecki.",
+    "must": [
+     "ZUS branch on Grzegórzecki"
+    ]
+   }
+  ],
+  "date": "2026-03-16",
+  "kind": "life"
+ },
+ {
+  "n": 19,
+  "day": 15,
+  "steps": [
+   {
+    "story": "S20",
+    "step": 0,
+    "day": 15,
+    "said_late": false,
+    "text": "Krzysztof's pension office address is ul. Grzegórzecka 15.",
+    "must": [
+     "ul. Grzegórzecka 15"
+    ]
+   },
+   {
+    "story": "S29",
+    "step": 1,
+    "day": 15,
+    "said_late": false,
+    "text": "Krzysztof's need is sorted: his neighbour Zofia Kowalska drove him.",
+    "must": [
+     "Zofia Kowalska"
+    ]
+   }
+  ],
+  "date": "2026-03-17",
+  "kind": "life"
+ },
+ {
+  "n": 20,
+  "day": 16,
+  "steps": [
+   {
+    "story": "S30",
+    "step": 1,
+    "day": 15,
+    "said_late": true,
+    "text": "Krzysztof's need is sorted: Kuba Wiśniewski from the heritage society set it up.",
+    "must": [
+     "Wiśniewski"
+    ]
+   }
+  ],
+  "date": "2026-03-18",
+  "kind": "life"
+ },
+ {
+  "n": 21,
+  "day": 17,
+  "steps": [
+   {
+    "story": "S27",
+    "step": 0,
+    "day": 17,
+    "said_late": false,
+    "text": "Krzysztof's own flight destination airport is Toronto Pearson.",
+    "must": [
+     "Toronto Pearson"
+    ]
+   }
+  ],
+  "date": "2026-03-19",
+  "kind": "life"
+ },
+ {
+  "n": 22,
+  "day": 18,
+  "steps": [],
+  "date": "2026-03-20",
+  "kind": "life"
+ },
+ {
+  "n": 23,
+  "day": 18,
+  "steps": [],
+  "date": "2026-03-20",
+  "kind": "life"
+ },
+ {
+  "n": 24,
+  "day": 19,
+  "steps": [
+   {
+    "story": "S13",
+    "step": 0,
+    "day": 19,
+    "said_late": false,
+    "text": "Krzysztof's granddaughter's school term is Spring break.",
+    "must": [
+     "Spring break"
+    ]
+   }
+  ],
+  "date": "2026-03-21",
+  "kind": "life"
+ },
+ {
+  "n": 25,
+  "day": 20,
+  "steps": [],
+  "date": "2026-03-22",
+  "kind": "work"
+ },
+ {
+  "n": 26,
+  "day": 21,
+  "steps": [
+   {
+    "story": "S21",
+    "step": 0,
+    "day": 18,
+    "said_late": false,
+    "text": "Krzysztof's weekly newspaper delivery is Przegląd Dzienny.",
+    "must": [
+     "Przegląd Dzienny"
+    ]
+   },
+   {
+    "story": "S14",
+    "step": 1,
+    "day": 21,
+    "said_late": false,
+    "text": "Krzysztof's grandson's university semester has changed: now Spring exams (it was Winter break).",
+    "must": [
+     "Spring exams"
+    ]
+   }
+  ],
+  "date": "2026-03-23",
+  "kind": "life"
+ },
+ {
+  "n": 27,
+  "day": 22,
+  "steps": [
+   {
+    "story": "S33",
+    "step": 0,
+    "day": 22,
+    "said_late": false,
+    "text": "a need that is not Krzysztof's own: an internship at an engineering firm this summer (Ola (granddaughter)).",
+    "must": [
+     "internship"
+    ]
+   }
+  ],
+  "date": "2026-03-24",
+  "kind": "life"
+ },
+ {
+  "n": 28,
+  "day": 23,
+  "steps": [
+   {
+    "story": "S17",
+    "step": 1,
+    "day": 19,
+    "said_late": true,
+    "text": "Krzysztof has switched the heritage society meeting location to Community Centre Room B.",
+    "must": [
+     "Community Centre Room B"
+    ]
+   },
+   {
+    "story": "S21",
+    "step": 1,
+    "day": 23,
+    "said_late": false,
+    "text": "Krzysztof is only thinking about changing the weekly newspaper delivery to Gazeta Krakowska; nothing decided.",
+    "must": [
+     "Gazeta Krakowska"
+    ]
+   }
+  ],
+  "date": "2026-03-25",
+  "kind": "life"
+ },
+ {
+  "n": 29,
+  "day": 24,
+  "steps": [
+   {
+    "story": "S26",
+    "step": 0,
+    "day": 23,
+    "said_late": false,
+    "text": "Krzysztof's own grandson's university is University of Toronto.",
+    "must": [
+     "University of Toronto"
+    ]
+   }
+  ],
+  "date": "2026-03-26",
+  "kind": "life"
+ },
+ {
+  "n": 30,
+  "day": 25,
+  "steps": [],
+  "date": "2026-03-27",
+  "kind": "work"
+ },
+ {
+  "n": 31,
+  "day": 26,
+  "steps": [],
+  "date": "2026-03-28",
+  "kind": "life"
+ },
+ {
+  "n": 32,
+  "day": 27,
+  "steps": [
+   {
+    "story": "S22",
+    "step": 0,
+    "day": 23,
+    "said_late": false,
+    "text": "Krzysztof's volunteer shift schedule is Wednesday afternoons.",
+    "must": [
+     "Wednesday afternoons"
+    ]
+   }
+  ],
+  "date": "2026-03-29",
+  "kind": "work"
+ },
+ {
+  "n": 33,
+  "day": 27,
+  "steps": [],
+  "date": "2026-03-29",
+  "kind": "life"
+ },
+ {
+  "n": 34,
+  "day": 28,
+  "steps": [
+   {
+    "story": "S27",
+    "step": 1,
+    "day": 23,
+    "said_late": true,
+    "text": "Zofia (neighbour)'s flight destination airport is Montreal Trudeau (about Zofia (neighbour), not Krzysztof).",
+    "must": [
+     "Montreal Trudeau",
+     "Zofia"
+    ]
+   },
+   {
+    "story": "S26",
+    "step": 1,
+    "day": 28,
+    "said_late": false,
+    "text": "Kuba (grandson)'s grandson's university is Queen's University (about Kuba (grandson), not Krzysztof).",
+    "must": [
+     "Queen's University",
+     "Kuba"
+    ]
+   }
+  ],
+  "date": "2026-03-30",
+  "kind": "life"
+ },
+ {
+  "n": 35,
+  "day": 28,
+  "steps": [],
+  "date": "2026-03-30",
+  "kind": "work"
+ },
+ {
+  "n": 36,
+  "day": 29,
+  "steps": [
+   {
+    "story": "S20",
+    "step": 1,
+    "day": 25,
+    "said_late": true,
+    "text": "Krzysztof corrects an earlier slip: the pension office address is ul. Pawia 4, not ul. Grzegórzecka 15.",
+    "must": [
+     "ul. Pawia 4"
+    ]
+   },
+   {
+    "story": "S18",
+    "step": 0,
+    "day": 29,
+    "said_late": false,
+    "text": "Krzysztof's home heating source is District heating.",
+    "must": [
+     "District heating"
+    ]
+   }
+  ],
+  "date": "2026-03-31",
+  "kind": "life"
+ },
+ {
+  "n": 37,
+  "day": 30,
+  "steps": [
+   {
+    "story": "S12",
+    "step": 0,
+    "day": 25,
+    "said_late": false,
+    "text": "Krzysztof's pension account bank is PKO Bank Polski.",
+    "must": [
+     "PKO Bank Polski"
+    ]
+   },
+   {
+    "story": "S07",
+    "step": 0,
+    "day": 26,
+    "said_late": false,
+    "text": "Krzysztof's electricity bill payment is 420 PLN.",
+    "must": [
+     "420 PLN"
+    ]
+   }
+  ],
+  "date": "2026-04-01",
+  "kind": "life"
+ },
+ {
+  "n": 38,
+  "day": 31,
+  "steps": [
+   {
+    "story": "S12",
+    "step": 1,
+    "day": 28,
+    "said_late": true,
+    "text": "Krzysztof's pension account bank has changed: now Bank Millennium (it was PKO Bank Polski).",
+    "must": [
+     "Bank Millennium"
+    ]
+   },
+   {
+    "story": "S08",
+    "step": 0,
+    "day": 30,
+    "said_late": false,
+    "text": "Krzysztof's allotment plot fee is 150 PLN.",
+    "must": [
+     "150 PLN"
+    ]
+   }
+  ],
+  "date": "2026-04-02",
+  "kind": "life"
+ },
+ {
+  "n": 39,
+  "day": 32,
+  "steps": [
+   {
+    "story": "S17",
+    "step": 2,
+    "day": 28,
+    "said_late": true,
+    "text": "Krzysztof changes mind about the heritage society meeting location: back to Main Library Hall, not Community Centre Room B any more.",
+    "must": [
+     "Main Library Hall"
+    ]
+   },
+   {
+    "story": "S10",
+    "step": 0,
+    "day": 30,
+    "said_late": false,
+    "text": "Krzysztof's grandson's birthday gift is Mateusz Wiśniewski.",
+    "must": [
+     "Mateusz Wiśniewski"
+    ]
+   }
+  ],
+  "date": "2026-04-03",
+  "kind": "life"
+ },
+ {
+  "n": 40,
+  "day": 33,
+  "steps": [
+   {
+    "story": "S13",
+    "step": 1,
+    "day": 28,
+    "said_late": true,
+    "text": "Krzysztof's granddaughter's school term has changed: now Regular classes (it was Spring break).",
+    "must": [
+     "Regular classes"
+    ]
+   },
+   {
+    "story": "S11",
+    "step": 0,
+    "day": 30,
+    "said_late": false,
+    "text": "Krzysztof's allotment plot number is Plot 42.",
+    "must": [
+     "Plot 42"
+    ]
+   }
+  ],
+  "date": "2026-04-04",
+  "kind": "life"
+ },
+ {
+  "n": 41,
+  "day": 34,
+  "steps": [
+   {
+    "story": "S01",
+    "step": 0,
+    "day": 31,
+    "said_late": false,
+    "text": "Krzysztof's next diabetes check-up is 2026-04-02.",
+    "must": [
+     "2026-04-02"
+    ]
+   },
+   {
+    "story": "S22",
+    "step": 1,
+    "day": 31,
+    "said_late": true,
+    "text": "Krzysztof is only thinking about changing the volunteer shift schedule to Friday mornings; nothing decided.",
+    "must": [
+     "Friday mornings"
+    ]
+   }
+  ],
+  "date": "2026-04-05",
+  "kind": "work"
+ },
+ {
+  "n": 42,
+  "day": 35,
+  "steps": [
+   {
+    "story": "S09",
+    "step": 0,
+    "day": 32,
+    "said_late": false,
+    "text": "Krzysztof's library annual membership is 80 PLN.",
+    "must": [
+     "80 PLN"
+    ]
+   },
+   {
+    "story": "S11",
+    "step": 1,
+    "day": 33,
+    "said_late": true,
+    "text": "Krzysztof's allotment plot number has changed: now Plot 15 (it was Plot 42).",
+    "must": [
+     "Plot 15"
+    ]
+   }
+  ],
+  "date": "2026-04-06",
+  "kind": "life"
+ },
+ {
+  "n": 43,
+  "day": 36,
+  "steps": [
+   {
+    "story": "S18",
+    "step": 1,
+    "day": 33,
+    "said_late": true,
+    "text": "Krzysztof has switched the home heating source to Gas boiler.",
+    "must": [
+     "Gas boiler"
+    ]
+   },
+   {
+    "story": "S19",
+    "step": 0,
+    "day": 34,
+    "said_late": false,
+    "text": "Krzysztof's diabetes clinic address is ul. Krowoderska 20.",
+    "must": [
+     "ul. Krowoderska 20"
+    ]
+   }
+  ],
+  "date": "2026-04-07",
+  "kind": "life"
+ },
+ {
+  "n": 44,
+  "day": 37,
+  "steps": [
+   {
+    "story": "S15",
+    "step": 0,
+    "day": 36,
+    "said_late": false,
+    "text": "Krzysztof's heritage society volunteer shift is Tuesday mornings.",
+    "must": [
+     "Tuesday mornings"
+    ]
+   },
+   {
+    "story": "S28",
+    "step": 0,
+    "day": 36,
+    "said_late": false,
+    "text": "Krzysztof's own pension office phone number is 12 345 67 89.",
+    "must": [
+     "12 345 67 89"
+    ]
+   }
+  ],
+  "date": "2026-04-08",
+  "kind": "work"
+ },
+ {
+  "n": 45,
+  "day": 38,
+  "steps": [
+   {
+    "story": "S16",
+    "step": 0,
+    "day": 36,
+    "said_late": false,
+    "text": "Krzysztof's garden maintenance day is Saturday mornings.",
+    "must": [
+     "Saturday mornings"
+    ]
+   },
+   {
+    "story": "S03",
+    "step": 0,
+    "day": 37,
+    "said_late": false,
+    "text": "Krzysztof's weekly grocery shopping is Biedronka on Dąbrowskiego.",
+    "must": [
+     "Biedronka on Dąbrowskiego"
+    ]
+   }
+  ],
+  "date": "2026-04-09",
+  "kind": "work"
+ },
+ {
+  "n": 46,
+  "day": 39,
+  "steps": [
+   {
+    "story": "S02",
+    "step": 0,
+    "day": 38,
+    "said_late": false,
+    "text": "Krzysztof's next eye screening is 2026-04-09.",
+    "must": [
+     "2026-04-09"
+    ]
+   },
+   {
+    "story": "S19",
+    "step": 1,
+    "day": 38,
+    "said_late": true,
+    "text": "Krzysztof corrects an earlier slip: the diabetes clinic address is ul. Dąbrowskiego 118, not ul. Krowoderska 20.",
+    "must": [
+     "ul. Dąbrowskiego 118"
+    ]
+   }
+  ],
+  "date": "2026-04-10",
+  "kind": "life"
+ },
+ {
+  "n": 47,
+  "day": 40,
+  "steps": [
+   {
+    "story": "S24",
+    "step": 0,
+    "day": 35,
+    "said_late": false,
+    "text": "Krzysztof's flight to Toronto is LOT Polish Airlines.",
+    "must": [
+     "LOT Polish Airlines"
+    ]
+   },
+   {
+    "story": "S25",
+    "step": 0,
+    "day": 37,
+    "said_late": false,
+    "text": "Krzysztof's pension office contact is Phone number ending in 44.",
+    "must": [
+     "Phone number ending in 44"
+    ]
+   }
+  ],
+  "date": "2026-04-11",
+  "kind": "life"
+ },
+ {
+  "n": 48,
+  "day": 41,
+  "steps": [
+   {
+    "story": "S24",
+    "step": 1,
+    "day": 39,
+    "said_late": true,
+    "text": "Krzysztof imagines a what-if: then the flight to Toronto would be Air Canada. Only an idea; nothing changes.",
+    "must": [
+     "Air Canada"
+    ]
+   },
+   {
+    "story": "S28",
+    "step": 1,
+    "day": 39,
+    "said_late": true,
+    "text": "Zofia (neighbour)'s pension office phone number is 22 987 65 43 (about Zofia (neighbour), not Krzysztof).",
+    "must": [
+     "22 987 65 43",
+     "Zofia"
+    ]
+   }
+  ],
+  "date": "2026-04-12",
+  "kind": "life"
+ },
+ {
+  "n": 49,
+  "day": 41,
+  "steps": [
+   {
+    "story": "S32",
+    "step": 0,
+    "day": 40,
+    "said_late": true,
+    "text": "Krzysztof needs a walking group for retired people near Nowa Huta (not sorted yet).",
+    "must": [
+     "walking"
+    ]
+   },
+   {
+    "story": "S05",
+    "step": 0,
+    "day": 41,
+    "said_late": false,
+    "text": "Krzysztof's foot care appointment is 2026-04-12.",
+    "must": [
+     "2026-04-12"
+    ]
+   }
+  ],
+  "date": "2026-04-12",
+  "kind": "work"
+ },
+ {
+  "n": 50,
+  "day": 41,
+  "steps": [
+   {
+    "story": "S15",
+    "step": 1,
+    "day": 41,
+    "said_late": false,
+    "text": "Krzysztof's heritage society volunteer shift has changed: now Thursday afternoons (it was Tuesday mornings).",
+    "must": [
+     "Thursday afternoons"
+    ]
+   },
+   {
+    "story": "S16",
+    "step": 1,
+    "day": 41,
+    "said_late": false,
+    "text": "Krzysztof's garden maintenance day has changed: now Sunday afternoons (it was Saturday mornings).",
+    "must": [
+     "Sunday afternoons"
+    ]
+   }
+  ],
+  "date": "2026-04-12",
+  "kind": "work"
+ },
+ {
+  "n": 51,
+  "day": 41,
+  "steps": [
+   {
+    "story": "S18",
+    "step": 2,
+    "day": 41,
+    "said_late": false,
+    "text": "Krzysztof changes mind about the home heating source: back to District heating, not Gas boiler any more.",
+    "must": [
+     "District heating"
+    ]
+   },
+   {
+    "story": "S25",
+    "step": 1,
+    "day": 41,
+    "said_late": false,
+    "text": "Krzysztof imagines a what-if: then the pension office contact would be Email address ending in 99. Only an idea; nothing changes.",
+    "must": [
+     "Email address ending in 99"
+    ]
+   }
+  ],
+  "date": "2026-04-12",
+  "kind": "life"
+ }
+]

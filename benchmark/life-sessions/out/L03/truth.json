@@ -1,0 +1,548 @@
+[
+ {
+  "id": "S01",
+  "pattern": "plain",
+  "thing": "supplier for olive oil",
+  "theme": "work",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-03",
+    "Aceites del Guadalquivir"
+   ]
+  ],
+  "now": "Aceites del Guadalquivir"
+ },
+ {
+  "id": "S02",
+  "pattern": "plain",
+  "thing": "son's school",
+  "theme": "people",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-31",
+    "IES Pelayo"
+   ]
+  ],
+  "now": "IES Pelayo"
+ },
+ {
+  "id": "S03",
+  "pattern": "plain",
+  "thing": "monthly rent",
+  "theme": "money",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-28",
+    "1200 euros"
+   ]
+  ],
+  "now": "1200 euros"
+ },
+ {
+  "id": "S04",
+  "pattern": "plain",
+  "thing": "dentist",
+  "theme": "health",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-12",
+    "Dr. Elena Ruiz"
+   ]
+  ],
+  "now": "Dr. Elena Ruiz"
+ },
+ {
+  "id": "S05",
+  "pattern": "plain",
+  "thing": "tax advisor",
+  "theme": "admin",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-06",
+    "María López"
+   ]
+  ],
+  "now": "María López"
+ },
+ {
+  "id": "S06",
+  "pattern": "plain",
+  "thing": "ex-wife's name",
+  "theme": "family",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-13",
+    "Carmen Vidal"
+   ]
+  ],
+  "now": "Carmen Vidal"
+ },
+ {
+  "id": "S07",
+  "pattern": "plain",
+  "thing": "bank account",
+  "theme": "money",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-15",
+    "CaixaBank"
+   ]
+  ],
+  "now": "CaixaBank"
+ },
+ {
+  "id": "S08",
+  "pattern": "plain",
+  "thing": "weekly market",
+  "theme": "travel",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-17",
+    "Mercado Central"
+   ]
+  ],
+  "now": "Mercado Central"
+ },
+ {
+  "id": "S09",
+  "pattern": "plain",
+  "thing": "insurance policy",
+  "theme": "admin",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-28",
+    "Mapfre"
+   ]
+  ],
+  "now": "Mapfre"
+ },
+ {
+  "id": "S10",
+  "pattern": "plain",
+  "thing": "son's teacher",
+  "theme": "family",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-07",
+    "Mr. Javier Soler"
+   ]
+  ],
+  "now": "Mr. Javier Soler"
+ },
+ {
+  "id": "S11",
+  "pattern": "change",
+  "thing": "monthly internet provider",
+  "theme": "home",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-25",
+    "Vodafone Fibra"
+   ],
+   [
+    "2026-04-04",
+    "Orange Hogar"
+   ]
+  ],
+  "now": "Orange Hogar"
+ },
+ {
+  "id": "S12",
+  "pattern": "change",
+  "thing": "garage for car",
+  "theme": "home",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-21",
+    "Talleres Roca"
+   ],
+   [
+    "2026-03-29",
+    "Garage Valencia Sur"
+   ]
+  ],
+  "now": "Garage Valencia Sur"
+ },
+ {
+  "id": "S13",
+  "pattern": "change",
+  "thing": "bakery for bread",
+  "theme": "shopping",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-05",
+    "Panadería El Sol"
+   ],
+   [
+    "2026-03-09",
+    "Horno de Barrio"
+   ]
+  ],
+  "now": "Horno de Barrio"
+ },
+ {
+  "id": "S14",
+  "pattern": "change",
+  "thing": "pharmacy",
+  "theme": "health",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-11",
+    "Farmacia San Vicente"
+   ],
+   [
+    "2026-03-21",
+    "Farmacia del Puerto"
+   ]
+  ],
+  "now": "Farmacia del Puerto"
+ },
+ {
+  "id": "S15",
+  "pattern": "change",
+  "thing": "gym membership",
+  "theme": "hobbies",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-01",
+    "Fit24"
+   ],
+   [
+    "2026-04-10",
+    "Anytime Fitness"
+   ]
+  ],
+  "now": "Anytime Fitness"
+ },
+ {
+  "id": "S16",
+  "pattern": "change",
+  "thing": "train station",
+  "theme": "travel",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-02",
+    "Joaquín Sorolla"
+   ],
+   [
+    "2026-03-10",
+    "Avenida del Puerto"
+   ]
+  ],
+  "now": "Avenida del Puerto"
+ },
+ {
+  "id": "S17",
+  "pattern": "heart",
+  "thing": "evening running route",
+  "theme": "hobbies",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-03",
+    "Turia Gardens"
+   ],
+   [
+    "2026-03-12",
+    "Albufera Lake"
+   ],
+   [
+    "2026-03-15",
+    "Turia Gardens"
+   ]
+  ],
+  "now": "Turia Gardens"
+ },
+ {
+  "id": "S18",
+  "pattern": "heart",
+  "thing": "weekly flower delivery",
+  "theme": "shopping",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-23",
+    "Floristería Valencia"
+   ],
+   [
+    "2026-04-02",
+    "Ramos Flores"
+   ],
+   [
+    "2026-04-06",
+    "Floristería Valencia"
+   ]
+  ],
+  "now": "Floristería Valencia"
+ },
+ {
+  "id": "S19",
+  "pattern": "correction",
+  "thing": "restaurant license number",
+  "theme": "work",
+  "other_person": null,
+  "history": [
+   [
+    "2026-04-03",
+    "Lic-9922"
+   ]
+  ],
+  "said_wrongly": [
+   "2026-04-03",
+   "Lic-9921"
+  ],
+  "corrected_on": "2026-04-10",
+  "now": "Lic-9922"
+ },
+ {
+  "id": "S20",
+  "pattern": "correction",
+  "thing": "apartment floor number",
+  "theme": "home",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-22",
+    "fourth floor"
+   ]
+  ],
+  "said_wrongly": [
+   "2026-03-22",
+   "third floor"
+  ],
+  "corrected_on": "2026-03-30",
+  "now": "fourth floor"
+ },
+ {
+  "id": "S21",
+  "pattern": "tentative_dropped",
+  "thing": "son's after-school club",
+  "theme": "people",
+  "other_person": "Pablo (son)",
+  "history": [
+   [
+    "2026-03-10",
+    "Robotics Workshop"
+   ]
+  ],
+  "considered": [
+   "2026-03-15",
+   "Basketball Academy"
+  ],
+  "now": "Robotics Workshop"
+ },
+ {
+  "id": "S22",
+  "pattern": "tentative_dropped",
+  "thing": "train destination",
+  "theme": "travel",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-18",
+    "Barcelona Sants"
+   ]
+  ],
+  "considered": [
+   "2026-03-21",
+   "Madrid Chamartín"
+  ],
+  "now": "Barcelona Sants"
+ },
+ {
+  "id": "S23",
+  "pattern": "tentative_confirmed",
+  "thing": "coffee supplier",
+  "theme": "shopping",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-22",
+    "Cafés Ruiz"
+   ],
+   [
+    "2026-04-03",
+    "Origen Café"
+   ]
+  ],
+  "considered": [
+   "2026-03-25",
+   "Origen Café"
+  ],
+  "now": "Origen Café"
+ },
+ {
+  "id": "S24",
+  "pattern": "hypothetical",
+  "thing": "son's grade",
+  "theme": "family",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-30",
+    "3rd ESO"
+   ]
+  ],
+  "imagined": [
+   "2026-04-07",
+   "4th ESO"
+  ],
+  "now": "3rd ESO"
+ },
+ {
+  "id": "S25",
+  "pattern": "hypothetical",
+  "thing": "restaurant capacity",
+  "theme": "work",
+  "other_person": null,
+  "history": [
+   [
+    "2026-03-31",
+    "30 seats"
+   ]
+  ],
+  "imagined": [
+   "2026-04-08",
+   "45 seats"
+  ],
+  "now": "30 seats"
+ },
+ {
+  "id": "S26",
+  "pattern": "lookalike",
+  "thing": "optician",
+  "theme": "health",
+  "other_person": "Carmen (ex-wife)",
+  "history": [
+   [
+    "2026-03-29",
+    "Óptica Central"
+   ]
+  ],
+  "other_value": [
+   "2026-04-02",
+   "Lentes Visión"
+  ],
+  "now": "Óptica Central"
+ },
+ {
+  "id": "S27",
+  "pattern": "lookalike",
+  "thing": "regular lawyer",
+  "theme": "admin",
+  "other_person": "Carmen (ex-wife)",
+  "history": [
+   [
+    "2026-04-08",
+    "Abogado Ruiz"
+   ]
+  ],
+  "other_value": [
+   "2026-04-11",
+   "Abogada Torres"
+  ],
+  "now": "Abogado Ruiz"
+ },
+ {
+  "id": "S28",
+  "pattern": "lookalike",
+  "thing": "wine supplier",
+  "theme": "work",
+  "other_person": "Toni (friend)",
+  "history": [
+   [
+    "2026-04-08",
+    "Bodegas Turia"
+   ]
+  ],
+  "other_value": [
+   "2026-04-12",
+   "Viñedos del Sureste"
+  ],
+  "now": "Bodegas Turia"
+ },
+ {
+  "id": "S29",
+  "pattern": "need_met",
+  "thing": "need",
+  "theme": "travel",
+  "other_person": null,
+  "need": {
+   "what": "a cook to replace his sous-chef for two weeks in April",
+   "topic": "hiring",
+   "open_from": "2026-03-13",
+   "met_on": "2026-03-21",
+   "how": "hired Lucía Ortega through his friend Toni for the two weeks"
+  }
+ },
+ {
+  "id": "S30",
+  "pattern": "need_met",
+  "thing": "need",
+  "theme": "hobbies",
+  "other_person": null,
+  "need": {
+   "what": "a maths tutor for Pablo before his June exams",
+   "topic": "tutoring",
+   "open_from": "2026-03-13",
+   "met_on": "2026-03-17",
+   "how": "Pablo now sees the tutor Andrés Gil on Tuesdays"
+  }
+ },
+ {
+  "id": "S31",
+  "pattern": "need_open",
+  "thing": "need",
+  "theme": "money",
+  "other_person": null,
+  "need": {
+   "what": "a used commercial dishwasher for under 2,000 euros",
+   "topic": "restaurant-equipment",
+   "open_from": "2026-04-04",
+   "met_on": null
+  }
+ },
+ {
+  "id": "S32",
+  "pattern": "need_open",
+  "thing": "need",
+  "theme": "hobbies",
+  "other_person": null,
+  "need": {
+   "what": "an accountant who knows VAT for restaurants",
+   "topic": "accounting",
+   "open_from": "2026-03-11",
+   "met_on": null
+  }
+ },
+ {
+  "id": "S33",
+  "pattern": "need_other",
+  "thing": "need",
+  "theme": "shopping",
+  "other_person": null,
+  "need": {
+   "what": "a business partner, if he ever opened a second restaurant",
+   "topic": "cofounder-search",
+   "open_from": "2026-03-25",
+   "met_on": null,
+   "not_the_persons": true
+  }
+ }
+]

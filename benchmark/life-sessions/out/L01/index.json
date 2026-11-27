@@ -1,0 +1,954 @@
+[
+ {
+  "n": 1,
+  "day": 0,
+  "steps": [],
+  "date": "2026-03-02",
+  "kind": "life"
+ },
+ {
+  "n": 2,
+  "day": 0,
+  "steps": [],
+  "date": "2026-03-02",
+  "kind": "life"
+ },
+ {
+  "n": 3,
+  "day": 1,
+  "steps": [
+   {
+    "story": "S30",
+    "step": 0,
+    "day": 1,
+    "said_late": false,
+    "text": "Claire needs a second-hand child seat for the back of her bike, for Hugo (not sorted yet).",
+    "must": [
+     "seat"
+    ]
+   }
+  ],
+  "date": "2026-03-03",
+  "kind": "work"
+ },
+ {
+  "n": 4,
+  "day": 2,
+  "steps": [
+   {
+    "story": "S02",
+    "step": 0,
+    "day": 2,
+    "said_late": false,
+    "text": "Claire's car insurance premium is 82 euros on the 4th.",
+    "must": [
+     "82 euros on the 4th"
+    ]
+   }
+  ],
+  "date": "2026-03-04",
+  "kind": "life"
+ },
+ {
+  "n": 5,
+  "day": 3,
+  "steps": [
+   {
+    "story": "S25",
+    "step": 0,
+    "day": 3,
+    "said_late": false,
+    "text": "Claire's Inès ballet teacher is Madame Girard.",
+    "must": [
+     "Madame Girard"
+    ]
+   }
+  ],
+  "date": "2026-03-05",
+  "kind": "life"
+ },
+ {
+  "n": 6,
+  "day": 4,
+  "steps": [
+   {
+    "story": "S33",
+    "step": 0,
+    "day": 4,
+    "said_late": false,
+    "text": "a need that is not Claire's own: a lawyer to look over the contract for his new job (Julien (husband)).",
+    "must": [
+     "lawyer"
+    ]
+   }
+  ],
+  "date": "2026-03-06",
+  "kind": "life"
+ },
+ {
+  "n": 7,
+  "day": 5,
+  "steps": [
+   {
+    "story": "S26",
+    "step": 0,
+    "day": 5,
+    "said_late": false,
+    "text": "Claire's own apartment balcony view is Courtyard.",
+    "must": [
+     "Courtyard"
+    ]
+   }
+  ],
+  "date": "2026-03-07",
+  "kind": "life"
+ },
+ {
+  "n": 8,
+  "day": 5,
+  "steps": [],
+  "date": "2026-03-07",
+  "kind": "life"
+ },
+ {
+  "n": 9,
+  "day": 6,
+  "steps": [
+   {
+    "story": "S30",
+    "step": 1,
+    "day": 6,
+    "said_late": false,
+    "text": "Claire's need is sorted: bought one from Nadia Brun through the school parents group.",
+    "must": [
+     "Nadia Brun"
+    ]
+   }
+  ],
+  "date": "2026-03-08",
+  "kind": "work"
+ },
+ {
+  "n": 10,
+  "day": 7,
+  "steps": [
+   {
+    "story": "S16",
+    "step": 0,
+    "day": 7,
+    "said_late": false,
+    "text": "Claire's Inès extracurricular class is Pottery club.",
+    "must": [
+     "Pottery club"
+    ]
+   }
+  ],
+  "date": "2026-03-09",
+  "kind": "life"
+ },
+ {
+  "n": 11,
+  "day": 8,
+  "steps": [],
+  "date": "2026-03-10",
+  "kind": "life"
+ },
+ {
+  "n": 12,
+  "day": 9,
+  "steps": [],
+  "date": "2026-03-11",
+  "kind": "work"
+ },
+ {
+  "n": 13,
+  "day": 10,
+  "steps": [],
+  "date": "2026-03-12",
+  "kind": "work"
+ },
+ {
+  "n": 14,
+  "day": 10,
+  "steps": [
+   {
+    "story": "S07",
+    "step": 0,
+    "day": 7,
+    "said_late": false,
+    "text": "Claire's PTA meeting location is Lycée Ampère.",
+    "must": [
+     "Lycée Ampère"
+    ]
+   }
+  ],
+  "date": "2026-03-12",
+  "kind": "life"
+ },
+ {
+  "n": 15,
+  "day": 11,
+  "steps": [
+   {
+    "story": "S05",
+    "step": 0,
+    "day": 11,
+    "said_late": false,
+    "text": "Claire's childcare subsidy is 300 euros on the 13th.",
+    "must": [
+     "300 euros on the 13th"
+    ]
+   },
+   {
+    "story": "S26",
+    "step": 1,
+    "day": 11,
+    "said_late": false,
+    "text": "Sophie (colleague)'s apartment balcony view is Street (about Sophie (colleague), not Claire).",
+    "must": [
+     "Street",
+     "Sophie"
+    ]
+   }
+  ],
+  "date": "2026-03-13",
+  "kind": "life"
+ },
+ {
+  "n": 16,
+  "day": 12,
+  "steps": [
+   {
+    "story": "S06",
+    "step": 0,
+    "day": 7,
+    "said_late": false,
+    "text": "Claire's cardiologist is Dr. Lefebvre.",
+    "must": [
+     "Dr. Lefebvre"
+    ]
+   }
+  ],
+  "date": "2026-03-14",
+  "kind": "life"
+ },
+ {
+  "n": 17,
+  "day": 13,
+  "steps": [
+   {
+    "story": "S15",
+    "step": 0,
+    "day": 13,
+    "said_late": false,
+    "text": "Claire's garden hose length is 15 meters.",
+    "must": [
+     "15 meters"
+    ]
+   },
+   {
+    "story": "S23",
+    "step": 0,
+    "day": 13,
+    "said_late": false,
+    "text": "Claire's Inès music teacher is Madame Dubois.",
+    "must": [
+     "Madame Dubois"
+    ]
+   }
+  ],
+  "date": "2026-03-15",
+  "kind": "life"
+ },
+ {
+  "n": 18,
+  "day": 14,
+  "steps": [
+   {
+    "story": "S31",
+    "step": 0,
+    "day": 13,
+    "said_late": true,
+    "text": "Claire needs a physiotherapist near Croix-Rousse for her lower back pain (not sorted yet).",
+    "must": [
+     "physiotherapist"
+    ]
+   },
+   {
+    "story": "S19",
+    "step": 0,
+    "day": 14,
+    "said_late": false,
+    "text": "Claire's hospital parking zone is Zone C.",
+    "must": [
+     "Zone C"
+    ]
+   }
+  ],
+  "date": "2026-03-16",
+  "kind": "work"
+ },
+ {
+  "n": 19,
+  "day": 15,
+  "steps": [
+   {
+    "story": "S12",
+    "step": 0,
+    "day": 15,
+    "said_late": false,
+    "text": "Claire's grocery delivery service is Carrefour Express.",
+    "must": [
+     "Carrefour Express"
+    ]
+   }
+  ],
+  "date": "2026-03-17",
+  "kind": "life"
+ },
+ {
+  "n": 20,
+  "day": 16,
+  "steps": [
+   {
+    "story": "S25",
+    "step": 1,
+    "day": 13,
+    "said_late": true,
+    "text": "Claire imagines a what-if: then the Inès ballet teacher would be Madame Petit. Only an idea; nothing changes.",
+    "must": [
+     "Madame Petit"
+    ]
+   },
+   {
+    "story": "S03",
+    "step": 0,
+    "day": 16,
+    "said_late": false,
+    "text": "Claire's library book due date is 18 March.",
+    "must": [
+     "18 March"
+    ]
+   }
+  ],
+  "date": "2026-03-18",
+  "kind": "life"
+ },
+ {
+  "n": 21,
+  "day": 17,
+  "steps": [
+   {
+    "story": "S16",
+    "step": 1,
+    "day": 17,
+    "said_late": false,
+    "text": "Claire's Inès extracurricular class has changed: now Sculpture workshop (it was Pottery club).",
+    "must": [
+     "Sculpture workshop"
+    ]
+   }
+  ],
+  "date": "2026-03-19",
+  "kind": "life"
+ },
+ {
+  "n": 22,
+  "day": 17,
+  "steps": [
+   {
+    "story": "S18",
+    "step": 0,
+    "day": 13,
+    "said_late": false,
+    "text": "Claire's family hiking trail is Parc de la Tête d'Or.",
+    "must": [
+     "Parc de la Tête d'Or"
+    ]
+   }
+  ],
+  "date": "2026-03-19",
+  "kind": "life"
+ },
+ {
+  "n": 23,
+  "day": 18,
+  "steps": [
+   {
+    "story": "S15",
+    "step": 1,
+    "day": 18,
+    "said_late": false,
+    "text": "Claire's garden hose length has changed: now 25 meters (it was 15 meters).",
+    "must": [
+     "25 meters"
+    ]
+   },
+   {
+    "story": "S32",
+    "step": 0,
+    "day": 18,
+    "said_late": false,
+    "text": "Claire needs a piano teacher for Inès on Wednesday afternoons (not sorted yet).",
+    "must": [
+     "piano"
+    ]
+   }
+  ],
+  "date": "2026-03-20",
+  "kind": "life"
+ },
+ {
+  "n": 24,
+  "day": 19,
+  "steps": [
+   {
+    "story": "S17",
+    "step": 0,
+    "day": 19,
+    "said_late": false,
+    "text": "Claire's Inès weekend activity is Dance class.",
+    "must": [
+     "Dance class"
+    ]
+   },
+   {
+    "story": "S27",
+    "step": 0,
+    "day": 19,
+    "said_late": false,
+    "text": "Claire's own family car license plate is AA-123-BB.",
+    "must": [
+     "AA-123-BB"
+    ]
+   }
+  ],
+  "date": "2026-03-21",
+  "kind": "life"
+ },
+ {
+  "n": 25,
+  "day": 20,
+  "steps": [
+   {
+    "story": "S29",
+    "step": 0,
+    "day": 19,
+    "said_late": true,
+    "text": "Claire needs a babysitter for Inès and Hugo on the evening of Saturday 21 March (not sorted yet).",
+    "must": [
+     "babysitter"
+    ]
+   }
+  ],
+  "date": "2026-03-22",
+  "kind": "life"
+ },
+ {
+  "n": 26,
+  "day": 21,
+  "steps": [
+   {
+    "story": "S18",
+    "step": 1,
+    "day": 21,
+    "said_late": false,
+    "text": "Claire has switched the family hiking trail to Parc de Miribel-Jonage.",
+    "must": [
+     "Parc de Miribel-Jonage"
+    ]
+   }
+  ],
+  "date": "2026-03-23",
+  "kind": "life"
+ },
+ {
+  "n": 27,
+  "day": 22,
+  "steps": [
+   {
+    "story": "S17",
+    "step": 1,
+    "day": 22,
+    "said_late": false,
+    "text": "Claire has switched the Inès weekend activity to Art workshop.",
+    "must": [
+     "Art workshop"
+    ]
+   }
+  ],
+  "date": "2026-03-24",
+  "kind": "life"
+ },
+ {
+  "n": 28,
+  "day": 22,
+  "steps": [],
+  "date": "2026-03-24",
+  "kind": "life"
+ },
+ {
+  "n": 29,
+  "day": 23,
+  "steps": [
+   {
+    "story": "S19",
+    "step": 1,
+    "day": 23,
+    "said_late": false,
+    "text": "Claire corrects an earlier slip: the hospital parking zone is Zone B, not Zone C.",
+    "must": [
+     "Zone B"
+    ]
+   },
+   {
+    "story": "S23",
+    "step": 1,
+    "day": 23,
+    "said_late": false,
+    "text": "Claire is thinking about changing the Inès music teacher to Monsieur Leroy; not decided yet.",
+    "must": [
+     "Monsieur Leroy"
+    ]
+   }
+  ],
+  "date": "2026-03-25",
+  "kind": "work"
+ },
+ {
+  "n": 30,
+  "day": 24,
+  "steps": [],
+  "date": "2026-03-26",
+  "kind": "life"
+ },
+ {
+  "n": 31,
+  "day": 25,
+  "steps": [
+   {
+    "story": "S12",
+    "step": 1,
+    "day": 21,
+    "said_late": true,
+    "text": "Claire's grocery delivery service has changed: now Leclerc Drive (it was Carrefour Express).",
+    "must": [
+     "Leclerc Drive"
+    ]
+   }
+  ],
+  "date": "2026-03-27",
+  "kind": "life"
+ },
+ {
+  "n": 32,
+  "day": 26,
+  "steps": [
+   {
+    "story": "S21",
+    "step": 0,
+    "day": 23,
+    "said_late": false,
+    "text": "Claire's spring coat brand is Uniqlo.",
+    "must": [
+     "Uniqlo"
+    ]
+   },
+   {
+    "story": "S28",
+    "step": 0,
+    "day": 26,
+    "said_late": false,
+    "text": "Claire's own bank branch location is Presqu'île.",
+    "must": [
+     "Presqu'île"
+    ]
+   }
+  ],
+  "date": "2026-03-28",
+  "kind": "life"
+ },
+ {
+  "n": 33,
+  "day": 27,
+  "steps": [
+   {
+    "story": "S29",
+    "step": 1,
+    "day": 27,
+    "said_late": false,
+    "text": "Claire's need is sorted: booked Léa Martin, a student from the building.",
+    "must": [
+     "Léa Martin"
+    ]
+   }
+  ],
+  "date": "2026-03-29",
+  "kind": "life"
+ },
+ {
+  "n": 34,
+  "day": 28,
+  "steps": [
+   {
+    "story": "S27",
+    "step": 1,
+    "day": 28,
+    "said_late": false,
+    "text": "Marc (neighbour)'s family car license plate is CC-456-DD (about Marc (neighbour), not Claire).",
+    "must": [
+     "CC-456-DD",
+     "Marc"
+    ]
+   }
+  ],
+  "date": "2026-03-30",
+  "kind": "life"
+ },
+ {
+  "n": 35,
+  "day": 29,
+  "steps": [
+   {
+    "story": "S24",
+    "step": 0,
+    "day": 29,
+    "said_late": false,
+    "text": "Claire's allergy medication is Zyrtec.",
+    "must": [
+     "Zyrtec"
+    ]
+   }
+  ],
+  "date": "2026-03-31",
+  "kind": "life"
+ },
+ {
+  "n": 36,
+  "day": 30,
+  "steps": [
+   {
+    "story": "S09",
+    "step": 0,
+    "day": 28,
+    "said_late": false,
+    "text": "Claire's energy contract renewal portal is Enedis.",
+    "must": [
+     "Enedis"
+    ]
+   },
+   {
+    "story": "S18",
+    "step": 2,
+    "day": 30,
+    "said_late": false,
+    "text": "Claire changes mind about the family hiking trail: back to Parc de la Tête d'Or, not Parc de Miribel-Jonage any more.",
+    "must": [
+     "Parc de la Tête d'Or"
+    ]
+   }
+  ],
+  "date": "2026-04-01",
+  "kind": "life"
+ },
+ {
+  "n": 37,
+  "day": 30,
+  "steps": [],
+  "date": "2026-04-01",
+  "kind": "life"
+ },
+ {
+  "n": 38,
+  "day": 31,
+  "steps": [],
+  "date": "2026-04-02",
+  "kind": "work"
+ },
+ {
+  "n": 39,
+  "day": 32,
+  "steps": [
+   {
+    "story": "S10",
+    "step": 0,
+    "day": 26,
+    "said_late": false,
+    "text": "Claire's pharmacy appointment location is Pharmacie du Pont.",
+    "must": [
+     "Pharmacie du Pont"
+    ]
+   },
+   {
+    "story": "S08",
+    "step": 0,
+    "day": 32,
+    "said_late": false,
+    "text": "Claire's dinner venue is Chez Paul.",
+    "must": [
+     "Chez Paul"
+    ]
+   }
+  ],
+  "date": "2026-04-03",
+  "kind": "life"
+ },
+ {
+  "n": 40,
+  "day": 33,
+  "steps": [
+   {
+    "story": "S17",
+    "step": 2,
+    "day": 32,
+    "said_late": true,
+    "text": "Claire changes mind about the Inès weekend activity: back to Dance class, not Art workshop any more.",
+    "must": [
+     "Dance class"
+    ]
+   },
+   {
+    "story": "S01",
+    "step": 0,
+    "day": 33,
+    "said_late": false,
+    "text": "Claire's mortgage payment is 1,450 euros on the 4th.",
+    "must": [
+     "1,450 euros on the 4th"
+    ]
+   }
+  ],
+  "date": "2026-04-04",
+  "kind": "life"
+ },
+ {
+  "n": 41,
+  "day": 34,
+  "steps": [
+   {
+    "story": "S21",
+    "step": 1,
+    "day": 30,
+    "said_late": true,
+    "text": "Claire is only thinking about changing the spring coat brand to Zara; nothing decided.",
+    "must": [
+     "Zara"
+    ]
+   },
+   {
+    "story": "S13",
+    "step": 0,
+    "day": 34,
+    "said_late": false,
+    "text": "Claire's living room rug brand is IKEA.",
+    "must": [
+     "IKEA"
+    ]
+   }
+  ],
+  "date": "2026-04-05",
+  "kind": "life"
+ },
+ {
+  "n": 42,
+  "day": 35,
+  "steps": [
+   {
+    "story": "S23",
+    "step": 2,
+    "day": 31,
+    "said_late": true,
+    "text": "Claire has now gone ahead: the Inès music teacher is Monsieur Leroy.",
+    "must": [
+     "Monsieur Leroy"
+    ]
+   },
+   {
+    "story": "S28",
+    "step": 1,
+    "day": 34,
+    "said_late": true,
+    "text": "Julien (husband)'s bank branch location is Confluence (about Julien (husband), not Claire).",
+    "must": [
+     "Confluence",
+     "Julien"
+    ]
+   }
+  ],
+  "date": "2026-04-06",
+  "kind": "life"
+ },
+ {
+  "n": 43,
+  "day": 36,
+  "steps": [
+   {
+    "story": "S14",
+    "step": 0,
+    "day": 35,
+    "said_late": false,
+    "text": "Claire's ICU ward assignment is Pavillon Nord.",
+    "must": [
+     "Pavillon Nord"
+    ]
+   },
+   {
+    "story": "S20",
+    "step": 0,
+    "day": 36,
+    "said_late": false,
+    "text": "Claire's Hugo's pediatrician is Dr. Moreau.",
+    "must": [
+     "Dr. Moreau"
+    ]
+   }
+  ],
+  "date": "2026-04-07",
+  "kind": "work"
+ },
+ {
+  "n": 44,
+  "day": 37,
+  "steps": [
+   {
+    "story": "S22",
+    "step": 0,
+    "day": 37,
+    "said_late": false,
+    "text": "Claire's Easter lunch venue is Parents' house.",
+    "must": [
+     "Parents' house"
+    ]
+   },
+   {
+    "story": "S24",
+    "step": 1,
+    "day": 37,
+    "said_late": false,
+    "text": "Claire imagines a what-if: then the allergy medication would be Claritin. Only an idea; nothing changes.",
+    "must": [
+     "Claritin"
+    ]
+   }
+  ],
+  "date": "2026-04-08",
+  "kind": "life"
+ },
+ {
+  "n": 45,
+  "day": 38,
+  "steps": [],
+  "date": "2026-04-09",
+  "kind": "life"
+ },
+ {
+  "n": 46,
+  "day": 39,
+  "steps": [
+   {
+    "story": "S11",
+    "step": 0,
+    "day": 35,
+    "said_late": false,
+    "text": "Claire's family holiday destination is Annecy.",
+    "must": [
+     "Annecy"
+    ]
+   }
+  ],
+  "date": "2026-04-10",
+  "kind": "life"
+ },
+ {
+  "n": 47,
+  "day": 40,
+  "steps": [
+   {
+    "story": "S04",
+    "step": 0,
+    "day": 40,
+    "said_late": false,
+    "text": "Claire's tax filing deadline is April 11th.",
+    "must": [
+     "April 11th"
+    ]
+   }
+  ],
+  "date": "2026-04-11",
+  "kind": "life"
+ },
+ {
+  "n": 48,
+  "day": 41,
+  "steps": [
+   {
+    "story": "S11",
+    "step": 1,
+    "day": 41,
+    "said_late": false,
+    "text": "Claire's family holiday destination has changed: now Chamonix (it was Annecy).",
+    "must": [
+     "Chamonix"
+    ]
+   },
+   {
+    "story": "S13",
+    "step": 1,
+    "day": 41,
+    "said_late": false,
+    "text": "Claire's living room rug brand has changed: now Zara Home (it was IKEA).",
+    "must": [
+     "Zara Home"
+    ]
+   }
+  ],
+  "date": "2026-04-12",
+  "kind": "life"
+ },
+ {
+  "n": 49,
+  "day": 41,
+  "steps": [
+   {
+    "story": "S14",
+    "step": 1,
+    "day": 41,
+    "said_late": false,
+    "text": "Claire's ICU ward assignment has changed: now Pavillon Sud (it was Pavillon Nord).",
+    "must": [
+     "Pavillon Sud"
+    ]
+   },
+   {
+    "story": "S20",
+    "step": 1,
+    "day": 41,
+    "said_late": false,
+    "text": "Claire corrects an earlier slip: the Hugo's pediatrician is Dr. Bernard, not Dr. Moreau.",
+    "must": [
+     "Dr. Bernard"
+    ]
+   }
+  ],
+  "date": "2026-04-12",
+  "kind": "work"
+ },
+ {
+  "n": 50,
+  "day": 41,
+  "steps": [
+   {
+    "story": "S22",
+    "step": 1,
+    "day": 41,
+    "said_late": false,
+    "text": "Claire is only thinking about changing the Easter lunch venue to Restaurant Le Vieux Lyon; nothing decided.",
+    "must": [
+     "Restaurant Le Vieux Lyon"
+    ]
+   }
+  ],
+  "date": "2026-04-12",
+  "kind": "life"
+ }
+]

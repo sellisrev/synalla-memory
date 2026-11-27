@@ -1,0 +1,199 @@
+{
+ "person": "L02",
+ "model": "opus",
+ "verdicts": {
+  "L02-S01-1": {
+   "verdict": "ok",
+   "why": "Session 043: 'my rent is 950 GBP this month'."
+  },
+  "L02-S02-1": {
+   "verdict": "ok",
+   "why": "Ocado is used for deliveries in sessions 004, 012, 019 and 024. The single Asda slot in session 015 does not displace it."
+  },
+  "L02-S03-1": {
+   "verdict": "ok",
+   "why": "Session 045: 'It’s her birthday today, 2026-04-09'."
+  },
+  "L02-S04-1": {
+   "verdict": "ok",
+   "why": "Session 042 calls her 'Elena (choir director)' and session 028 gives her full name, Elena Rossi. The 'Sarah' and 'Mark' drafts in sessions 029 and 030 were names the assistant chose."
+  },
+  "L02-S06-1": {
+   "verdict": "ok",
+   "why": "Session 045: 'I have choir rehearsal at Leeds Town Hall tonight'."
+  },
+  "L02-S07-1": {
+   "verdict": "ok",
+   "why": "Session 043: 'the headteacher, David Miller'."
+  },
+  "L02-S08-1": {
+   "verdict": "ok",
+   "why": "Session 023: 'the practical activity for Room 12'."
+  },
+  "L02-S09-1": {
+   "verdict": "ok",
+   "why": "Session 013: 'check my Monzo account'."
+  },
+  "L02-S10-1": {
+   "verdict": "ok",
+   "why": "The 8:45 AM start is stated in sessions 006, 007 and 042."
+  },
+  "L02-S11-1": {
+   "verdict": "ok",
+   "why": "Session 026 records the switch to Leeds Sports Park. Session 044 confirms that membership is active."
+  },
+  "L02-S11-2": {
+   "verdict": "ok",
+   "why": "Session 026: the cancellation confirmation came from PureGym."
+  },
+  "L02-S11-3": {
+   "verdict": "ok",
+   "why": "Session 026: 'that change happened on Monday 23 March'."
+  },
+  "L02-S12-1": {
+   "verdict": "wrong",
+   "why": "On 03-31 the bedroom thermostat was found at 20 degrees, and the user had it lowered back to 18 degrees in the same session. It is 18 degrees now.",
+   "quote": "Thermostat lowered to 18 degrees.",
+   "session": "035",
+   "better_reference": "18 degrees (it was turned up to 20, then lowered back to 18 on 2026-03-31)",
+   "quote_found": true
+  },
+  "L02-S12-2": {
+   "verdict": "incomplete",
+   "why": "18 degrees is correct for the value before the rise to 20. However, the latest change was from 20 back to 18, so 20 degrees should also count as the value before it changed.",
+   "quote": "It’s set to 20 degrees now, but I think it was 18 degrees before.",
+   "session": "035",
+   "better_reference": "18 degrees before it was turned up to 20; 20 degrees before it was lowered back to 18",
+   "quote_found": true
+  },
+  "L02-S12-3": {
+   "verdict": "unsupported",
+   "why": "Session 030 (03-28) shows 18 degrees. On 03-31 the user only discovers it is already at 20 and does not know when it was turned up. The date of the change to 20 is never given; 03-31 is the date the setting went back to 18.",
+   "quote": "I think I might have turned the bedroom thermostat up too high. It’s set to 20 degrees now, but I think it was 18 degrees before.",
+   "session": "035",
+   "better_reference": "Not stated exactly: some time between 2026-03-28 and 2026-03-31 (it was changed back to 18 on 2026-03-31)",
+   "quote_found": true
+  },
+  "L02-S13-1": {
+   "verdict": "ok",
+   "why": "Session 036: 'We're doing Thursdays at 7:00 PM now.'"
+  },
+  "L02-S13-2": {
+   "verdict": "ok",
+   "why": "Session 036 gives the old schedule as Tuesdays at 7:30 PM, and session 023 agrees."
+  },
+  "L02-S13-3": {
+   "verdict": "ok",
+   "why": "Session 036: 'This change happened on Tuesday 31 March'."
+  },
+  "L02-S14-1": {
+   "verdict": "unsupported",
+   "why": "Session 006 describes a single visit to Proud Mary. Nothing says it replaced The Alchemist as the regular place.",
+   "quote": "I’m going to head to Proud Mary for a coffee first, then come back and review the documents.",
+   "session": "006",
+   "better_reference": "The Alchemist (Proud Mary was a one-off visit on 2026-03-07)",
+   "quote_found": true
+  },
+  "L02-S14-2": {
+   "verdict": "ok",
+   "why": "Session 002: 'I usually go to The Alchemist on my way back from work'."
+  },
+  "L02-S14-3": {
+   "verdict": "unsupported",
+   "why": "2026-03-07 is the date of one coffee at Proud Mary. No change of regular coffee shop is ever stated.",
+   "quote": "I’m going to head to Proud Mary for a coffee first, then come back and review the documents.",
+   "session": "006",
+   "better_reference": "Not established; Proud Mary was only visited on 2026-03-07",
+   "quote_found": true
+  },
+  "L02-S17-1": {
+   "verdict": "ok",
+   "why": "The setting went from 19°C (session 025) to 21°C on 03-24 (session 027), then back to 19°C (session 036)."
+  },
+  "L02-S18-1": {
+   "verdict": "ok",
+   "why": "The user moved from Smeg (session 035) to Morphy Richards on 04-04 (session 042), then back to Smeg (session 046)."
+  },
+  "L02-S19-1": {
+   "verdict": "incomplete",
+   "why": "Next is correct. However, St. Mary's Shop was not a slip: it was the real supplier for years until the school switched, and the user named it themselves in session 033. Only the correction of the assistant's record happened on 04-09.",
+   "quote": "It’s been St. Mary's Shop for years, but we switched, and I forgot to tell you properly until then.",
+   "session": "046",
+   "better_reference": "Next (it was St. Mary's Shop for years; the switch was passed on to the assistant on 2026-04-09)",
+   "quote_found": true
+  },
+  "L02-S21-1": {
+   "verdict": "ok",
+   "why": "Session 033: 'Just thinking about it though; nothing decided.' Ilkley Moor remains the hiking destination (sessions 024 and 026)."
+  },
+  "L02-S23-1": {
+   "verdict": "ok",
+   "why": "Porto was the plan in session 012. Lisbon was considered in session 020 and booked in session 029, and session 041 confirms the Lisbon flight."
+  },
+  "L02-S23-2": {
+   "verdict": "ok",
+   "why": "Session 029 (03-27): 'I’ve finally booked the flights for the Easter trip. It’s Lisbon'."
+  },
+  "L02-S24-1": {
+   "verdict": "ok",
+   "why": "Session 044 confirms 120 GBP. Session 048 describes 180 GBP as 'just a what-if'."
+  },
+  "L02-S25-1": {
+   "verdict": "ok",
+   "why": "Session 012 names James Wright as section leader. Session 015 describes Clara Diaz as 'Just an idea; nothing changes'."
+  },
+  "L02-S26-1": {
+   "verdict": "ok",
+   "why": "Session 003: 'your usual optician, John Lewis Opticians?', and the user answers 'Yes'."
+  },
+  "L02-S26-2": {
+   "verdict": "ok",
+   "why": "Session 007: 'The name of the optician she mentioned last week... It’s Specsavers.'"
+  },
+  "L02-S27-1": {
+   "verdict": "ok",
+   "why": "Session 026 records the user's Octopus Energy tariff."
+  },
+  "L02-S27-2": {
+   "verdict": "ok",
+   "why": "Session 028: Gemma's provider is British Gas."
+  },
+  "L02-S28-1": {
+   "verdict": "ok",
+   "why": "Session 041: 'Yes, definitely Waterstones.'"
+  },
+  "L02-S28-2": {
+   "verdict": "ok",
+   "why": "Session 042: 'Elena (choir director)'s bookshop for choir scores is Foyles.'"
+  },
+  "L02-S30-1": {
+   "verdict": "unsupported",
+   "why": "The open need in session 013 is a parent who speaks Urdu to help at parents' evening. Mr. Hussain only agrees to translate the written consent letter for the museum trip. The sessions never show the parents' evening volunteer being found.",
+   "quote": "Yes, Mr. Hussain from the PTA will translate. He’s been very helpful with the last few letters.",
+   "session": "019",
+   "better_reference": "Not shown as met: Mr. Hussain translates the trip consent letter, but no Urdu-speaking volunteer for parents' evening is confirmed",
+   "quote_found": true
+  },
+  "L02-needs_now-1": {
+   "verdict": "incomplete",
+   "why": "The keyboard (session 031) and the assistant head advice (session 041) are both correctly listed as open. The Urdu-speaking volunteer for parents' evening was never confirmed (see S30-1), so a reader could reasonably list it as well.",
+   "quote": "we are looking for one parent who can speak Urdu to help facilitate conversations for our Urdu-speaking families.",
+   "session": "013",
+   "better_reference": "a second-hand digital keyboard to practise choir parts at home; advice from someone who has done it on applying for the assistant head post; (arguably) an Urdu-speaking parent volunteer for parents' evening",
+   "quote_found": true
+  },
+  "L02-none-1": {
+   "verdict": "ok",
+   "why": "No wifi password appears in any session."
+  },
+  "L02-none-2": {
+   "verdict": "ok",
+   "why": "No football team is mentioned in any session."
+  },
+  "L02-none-3": {
+   "verdict": "ok",
+   "why": "No licence plate is mentioned in any session."
+  }
+ },
+ "cost": 0.5008422
+}

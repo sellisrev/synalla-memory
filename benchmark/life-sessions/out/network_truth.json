@@ -1,0 +1,972 @@
+[
+ {
+  "person": "L01",
+  "need": "L01-N1",
+  "pattern": "need_met",
+  "phrase": "a babysitter for Inès and Hugo on the evening of Saturday 21 March",
+  "topic": "babysitting",
+  "city": "lyon",
+  "true": [
+   "M001-e1"
+  ],
+  "would_fit": [
+   "M001-e1"
+  ],
+  "near_misses": [
+   "M002-e1",
+   "M003-e1",
+   "M004-e1"
+  ]
+ },
+ {
+  "person": "L01",
+  "need": "L01-N2",
+  "pattern": "need_met",
+  "phrase": "a second-hand child seat for the back of her bike, for Hugo",
+  "topic": "second-hand-goods",
+  "city": "lyon",
+  "true": [
+   "M005-e1"
+  ],
+  "would_fit": [
+   "M005-e1"
+  ],
+  "near_misses": [
+   "M006-e1",
+   "M007-e1",
+   "M008-e1"
+  ]
+ },
+ {
+  "person": "L01",
+  "need": "L01-N3",
+  "pattern": "need_open",
+  "phrase": "a physiotherapist near Croix-Rousse for her lower back pain",
+  "topic": "physiotherapy",
+  "city": "lyon",
+  "true": [
+   "M009-e1",
+   "M010-e1"
+  ],
+  "would_fit": [
+   "M009-e1",
+   "M010-e1"
+  ],
+  "near_misses": [
+   "M011-e1",
+   "M012-e1",
+   "M013-e1"
+  ]
+ },
+ {
+  "person": "L01",
+  "need": "L01-N4",
+  "pattern": "need_open",
+  "phrase": "a piano teacher for Inès on Wednesday afternoons",
+  "topic": "music-lessons",
+  "city": "lyon",
+  "true": [
+   "M014-e1",
+   "M015-e1"
+  ],
+  "would_fit": [
+   "M014-e1",
+   "M015-e1"
+  ],
+  "near_misses": [
+   "M016-e1",
+   "M017-e1",
+   "M018-e1"
+  ]
+ },
+ {
+  "person": "L01",
+  "need": "L01-N5",
+  "pattern": "need_other",
+  "phrase": "a lawyer to look over the contract for his new job",
+  "topic": "legal-advice",
+  "city": "lyon",
+  "true": [],
+  "would_fit": [
+   "M019-e1"
+  ],
+  "near_misses": [
+   "M020-e1",
+   "M021-e1",
+   "M022-e1"
+  ]
+ },
+ {
+  "person": "L02",
+  "need": "L02-N1",
+  "pattern": "need_met",
+  "phrase": "someone to feed her cat Miso during the Easter week she is in Lisbon",
+  "topic": "pet-sitting",
+  "city": "leeds",
+  "true": [
+   "M023-e1"
+  ],
+  "would_fit": [
+   "M023-e1"
+  ],
+  "near_misses": [
+   "M024-e1",
+   "M025-e1",
+   "M026-e1"
+  ]
+ },
+ {
+  "person": "L02",
+  "need": "L02-N2",
+  "pattern": "need_met",
+  "phrase": "a parent volunteer who speaks Urdu for the Year 4 parents evening",
+  "topic": "translation",
+  "city": "leeds",
+  "true": [
+   "M027-e1"
+  ],
+  "would_fit": [
+   "M027-e1"
+  ],
+  "near_misses": [
+   "M028-e1",
+   "M029-e1",
+   "M030-e1"
+  ]
+ },
+ {
+  "person": "L02",
+  "need": "L02-N3",
+  "pattern": "need_open",
+  "phrase": "a second-hand digital keyboard to practise choir parts at home",
+  "topic": "second-hand-goods",
+  "city": "leeds",
+  "true": [
+   "M031-e1",
+   "M032-e1"
+  ],
+  "would_fit": [
+   "M031-e1",
+   "M032-e1"
+  ],
+  "near_misses": [
+   "M033-e1",
+   "M034-e1",
+   "M035-e1"
+  ]
+ },
+ {
+  "person": "L02",
+  "need": "L02-N4",
+  "pattern": "need_open",
+  "phrase": "advice from someone who has done it on applying for the assistant head post",
+  "topic": "mentoring",
+  "city": "leeds",
+  "true": [
+   "M036-e1",
+   "M037-e1"
+  ],
+  "would_fit": [
+   "M036-e1",
+   "M037-e1"
+  ],
+  "near_misses": [
+   "M038-e1",
+   "M039-e1",
+   "M040-e1"
+  ]
+ },
+ {
+  "person": "L02",
+  "need": "L02-N5",
+  "pattern": "need_other",
+  "phrase": "a van to move flats in Manchester at the end of March",
+  "topic": "moving-help",
+  "city": "leeds",
+  "true": [],
+  "would_fit": [
+   "M041-e1"
+  ],
+  "near_misses": [
+   "M042-e1",
+   "M043-e1",
+   "M044-e1"
+  ]
+ },
+ {
+  "person": "L03",
+  "need": "L03-N1",
+  "pattern": "need_met",
+  "phrase": "a cook to replace his sous-chef for two weeks in April",
+  "topic": "hiring",
+  "city": "valencia",
+  "true": [
+   "M045-e1"
+  ],
+  "would_fit": [
+   "M045-e1"
+  ],
+  "near_misses": [
+   "M046-e1",
+   "M047-e1",
+   "M048-e1"
+  ]
+ },
+ {
+  "person": "L03",
+  "need": "L03-N2",
+  "pattern": "need_met",
+  "phrase": "a maths tutor for Pablo before his June exams",
+  "topic": "tutoring",
+  "city": "valencia",
+  "true": [
+   "M049-e1"
+  ],
+  "would_fit": [
+   "M049-e1"
+  ],
+  "near_misses": [
+   "M050-e1",
+   "M051-e1",
+   "M052-e1"
+  ]
+ },
+ {
+  "person": "L03",
+  "need": "L03-N3",
+  "pattern": "need_open",
+  "phrase": "a used commercial dishwasher for under 2,000 euros",
+  "topic": "restaurant-equipment",
+  "city": "valencia",
+  "true": [
+   "M053-e1",
+   "M054-e1"
+  ],
+  "would_fit": [
+   "M053-e1",
+   "M054-e1"
+  ],
+  "near_misses": [
+   "M055-e1",
+   "M056-e1",
+   "M057-e1"
+  ]
+ },
+ {
+  "person": "L03",
+  "need": "L03-N4",
+  "pattern": "need_open",
+  "phrase": "an accountant who knows VAT for restaurants",
+  "topic": "accounting",
+  "city": "valencia",
+  "true": [
+   "M058-e1",
+   "M059-e1"
+  ],
+  "would_fit": [
+   "M058-e1",
+   "M059-e1"
+  ],
+  "near_misses": [
+   "M060-e1",
+   "M061-e1",
+   "M062-e1"
+  ]
+ },
+ {
+  "person": "L03",
+  "need": "L03-N5",
+  "pattern": "need_other",
+  "phrase": "a business partner, if he ever opened a second restaurant",
+  "topic": "cofounder-search",
+  "city": "valencia",
+  "true": [],
+  "would_fit": [
+   "M063-e1"
+  ],
+  "near_misses": [
+   "M064-e1",
+   "M065-e1",
+   "M066-e1"
+  ]
+ },
+ {
+  "person": "L04",
+  "need": "L04-N1",
+  "pattern": "need_met",
+  "phrase": "someone to drive him to the diabetes clinic on 18 March",
+  "topic": "lifts",
+  "city": "krakow",
+  "true": [
+   "M067-e1"
+  ],
+  "would_fit": [
+   "M067-e1"
+  ],
+  "near_misses": [
+   "M068-e1",
+   "M069-e1",
+   "M070-e1"
+  ]
+ },
+ {
+  "person": "L04",
+  "need": "L04-N2",
+  "pattern": "need_met",
+  "phrase": "help setting up video calls with his grandson in Toronto",
+  "topic": "it-help",
+  "city": "krakow",
+  "true": [
+   "M071-e1"
+  ],
+  "would_fit": [
+   "M071-e1"
+  ],
+  "near_misses": [
+   "M072-e1",
+   "M073-e1",
+   "M074-e1"
+  ]
+ },
+ {
+  "person": "L04",
+  "need": "L04-N3",
+  "pattern": "need_open",
+  "phrase": "a rotavator to borrow for the allotment in April",
+  "topic": "gardening",
+  "city": "krakow",
+  "true": [
+   "M075-e1",
+   "M076-e1"
+  ],
+  "would_fit": [
+   "M075-e1",
+   "M076-e1"
+  ],
+  "near_misses": [
+   "M077-e1",
+   "M078-e1",
+   "M079-e1"
+  ]
+ },
+ {
+  "person": "L04",
+  "need": "L04-N4",
+  "pattern": "need_open",
+  "phrase": "a walking group for retired people near Nowa Huta",
+  "topic": "fitness-partner",
+  "city": "krakow",
+  "true": [
+   "M080-e1",
+   "M081-e1"
+  ],
+  "would_fit": [
+   "M080-e1",
+   "M081-e1"
+  ],
+  "near_misses": [
+   "M082-e1",
+   "M083-e1",
+   "M084-e1"
+  ]
+ },
+ {
+  "person": "L04",
+  "need": "L04-N5",
+  "pattern": "need_other",
+  "phrase": "an internship at an engineering firm this summer",
+  "topic": "job-search",
+  "city": "krakow",
+  "true": [],
+  "would_fit": [
+   "M085-e1"
+  ],
+  "near_misses": [
+   "M086-e1",
+   "M087-e1",
+   "M088-e1"
+  ]
+ },
+ {
+  "person": "L05",
+  "need": "L05-N1",
+  "pattern": "need_met",
+  "phrase": "a laser cutter she can use for her final studio model",
+  "topic": "makerspace",
+  "city": "seoul",
+  "true": [
+   "M089-e1"
+  ],
+  "would_fit": [
+   "M089-e1"
+  ],
+  "near_misses": [
+   "M090-e1",
+   "M091-e1",
+   "M092-e1"
+  ]
+ },
+ {
+  "person": "L05",
+  "need": "L05-N2",
+  "pattern": "need_met",
+  "phrase": "a new flatmate from April when Minji moves out",
+  "topic": "accommodation",
+  "city": "seoul",
+  "true": [
+   "M093-e1"
+  ],
+  "would_fit": [
+   "M093-e1"
+  ],
+  "near_misses": [
+   "M094-e1",
+   "M095-e1",
+   "M096-e1"
+  ]
+ },
+ {
+  "person": "L05",
+  "need": "L05-N3",
+  "pattern": "need_open",
+  "phrase": "a summer internship at an architecture office in Busan",
+  "topic": "job-search",
+  "city": "seoul",
+  "true": [
+   "M097-e1",
+   "M098-e1"
+  ],
+  "would_fit": [
+   "M097-e1",
+   "M098-e1"
+  ],
+  "near_misses": [
+   "M099-e1",
+   "M100-e1",
+   "M101-e1"
+  ]
+ },
+ {
+  "person": "L05",
+  "need": "L05-N4",
+  "pattern": "need_open",
+  "phrase": "a portfolio review from a practising architect",
+  "topic": "mentoring",
+  "city": "seoul",
+  "true": [
+   "M102-e1",
+   "M103-e1"
+  ],
+  "would_fit": [
+   "M102-e1",
+   "M103-e1"
+  ],
+  "near_misses": [
+   "M104-e1",
+   "M105-e1",
+   "M106-e1"
+  ]
+ },
+ {
+  "person": "L05",
+  "need": "L05-N5",
+  "pattern": "need_other",
+  "phrase": "a cheap used laptop for his evening course",
+  "topic": "second-hand-goods",
+  "city": "seoul",
+  "true": [],
+  "would_fit": [
+   "M107-e1"
+  ],
+  "near_misses": [
+   "M108-e1",
+   "M109-e1",
+   "M110-e1"
+  ]
+ },
+ {
+  "person": "L06",
+  "need": "L06-N1",
+  "pattern": "need_met",
+  "phrase": "a second shooter for the Fourie wedding on 28 March",
+  "topic": "photography",
+  "city": "cape-town",
+  "true": [
+   "M111-e1"
+  ],
+  "would_fit": [
+   "M111-e1"
+  ],
+  "near_misses": [
+   "M112-e1",
+   "M113-e1",
+   "M114-e1"
+  ]
+ },
+ {
+  "person": "L06",
+  "need": "L06-N2",
+  "pattern": "need_met",
+  "phrase": "someone to walk Bongo on the days of the Stellenbosch shoot",
+  "topic": "dog-walking",
+  "city": "cape-town",
+  "true": [
+   "M115-e1"
+  ],
+  "would_fit": [
+   "M115-e1"
+  ],
+  "near_misses": [
+   "M116-e1",
+   "M117-e1",
+   "M118-e1"
+  ]
+ },
+ {
+  "person": "L06",
+  "need": "L06-N3",
+  "pattern": "need_open",
+  "phrase": "a 70-200mm lens to rent for a weekend in April",
+  "topic": "camera-gear",
+  "city": "cape-town",
+  "true": [
+   "M119-e1",
+   "M120-e1"
+  ],
+  "would_fit": [
+   "M119-e1",
+   "M120-e1"
+  ],
+  "near_misses": [
+   "M121-e1",
+   "M122-e1",
+   "M123-e1"
+  ]
+ },
+ {
+  "person": "L06",
+  "need": "L06-N4",
+  "pattern": "need_open",
+  "phrase": "an accountant who handles provisional tax for freelancers",
+  "topic": "tax-advice",
+  "city": "cape-town",
+  "true": [
+   "M124-e1",
+   "M125-e1"
+  ],
+  "would_fit": [
+   "M124-e1",
+   "M125-e1"
+  ],
+  "near_misses": [
+   "M126-e1",
+   "M127-e1",
+   "M128-e1"
+  ]
+ },
+ {
+  "person": "L06",
+  "need": "L06-N5",
+  "pattern": "need_other",
+  "phrase": "a venue for his band's album launch",
+  "topic": "event-venue",
+  "city": "cape-town",
+  "true": [],
+  "would_fit": [
+   "M129-e1"
+  ],
+  "near_misses": [
+   "M130-e1",
+   "M131-e1",
+   "M132-e1"
+  ]
+ },
+ {
+  "person": "L07",
+  "need": "L07-N1",
+  "pattern": "need_met",
+  "phrase": "a climbing partner for Tuesday evenings at Berta Block",
+  "topic": "fitness-partner",
+  "city": "berlin",
+  "true": [
+   "M133-e1"
+  ],
+  "would_fit": [
+   "M133-e1"
+  ],
+  "near_misses": [
+   "M134-e1",
+   "M135-e1",
+   "M136-e1"
+  ]
+ },
+ {
+  "person": "L07",
+  "need": "L07-N2",
+  "pattern": "need_met",
+  "phrase": "a Postgres expert to review the table partitioning plan",
+  "topic": "tech-advice",
+  "city": "berlin",
+  "true": [
+   "M137-e1"
+  ],
+  "would_fit": [
+   "M137-e1"
+  ],
+  "near_misses": [
+   "M138-e1",
+   "M139-e1",
+   "M140-e1"
+  ]
+ },
+ {
+  "person": "L07",
+  "need": "L07-N3",
+  "pattern": "need_open",
+  "phrase": "a cheap sublet in Berlin for his girlfriend's visit in May",
+  "topic": "accommodation",
+  "city": "berlin",
+  "true": [
+   "M141-e1",
+   "M142-e1"
+  ],
+  "would_fit": [
+   "M141-e1",
+   "M142-e1"
+  ],
+  "near_misses": [
+   "M143-e1",
+   "M144-e1",
+   "M145-e1"
+  ]
+ },
+ {
+  "person": "L07",
+  "need": "L07-N4",
+  "pattern": "need_open",
+  "phrase": "a lift to Fontainebleau for the Easter climbing trip",
+  "topic": "lifts",
+  "city": "berlin",
+  "true": [
+   "M146-e1",
+   "M147-e1"
+  ],
+  "would_fit": [
+   "M146-e1",
+   "M147-e1"
+  ],
+  "near_misses": [
+   "M148-e1",
+   "M149-e1",
+   "M150-e1"
+  ]
+ },
+ {
+  "person": "L07",
+  "need": "L07-N5",
+  "pattern": "need_other",
+  "phrase": "a Portuguese tutor, if he moved to Lisbon",
+  "topic": "language-exchange",
+  "city": "berlin",
+  "true": [],
+  "would_fit": [
+   "M151-e1"
+  ],
+  "near_misses": [
+   "M152-e1",
+   "M153-e1",
+   "M154-e1"
+  ]
+ },
+ {
+  "person": "L08",
+  "need": "L08-N1",
+  "pattern": "need_met",
+  "phrase": "extra pickers for the harvest week starting 16 March",
+  "topic": "hiring",
+  "city": "mendoza",
+  "true": [
+   "M155-e1"
+  ],
+  "would_fit": [
+   "M155-e1"
+  ],
+  "near_misses": [
+   "M156-e1",
+   "M157-e1",
+   "M158-e1"
+  ]
+ },
+ {
+  "person": "L08",
+  "need": "L08-N2",
+  "pattern": "need_met",
+  "phrase": "a carer to stay with her mother on Thursdays",
+  "topic": "elder-care",
+  "city": "mendoza",
+  "true": [
+   "M159-e1"
+  ],
+  "would_fit": [
+   "M159-e1"
+  ],
+  "near_misses": [
+   "M160-e1",
+   "M161-e1",
+   "M162-e1"
+  ]
+ },
+ {
+  "person": "L08",
+  "need": "L08-N3",
+  "pattern": "need_open",
+  "phrase": "an importer for her Malbec in Germany",
+  "topic": "wine-export",
+  "city": "mendoza",
+  "true": [
+   "M163-e1",
+   "M164-e1"
+  ],
+  "would_fit": [
+   "M163-e1",
+   "M164-e1"
+  ],
+  "near_misses": [
+   "M165-e1",
+   "M166-e1",
+   "M167-e1"
+  ]
+ },
+ {
+  "person": "L08",
+  "need": "L08-N4",
+  "pattern": "need_open",
+  "phrase": "a used bottling machine in good condition",
+  "topic": "farm-equipment",
+  "city": "mendoza",
+  "true": [
+   "M168-e1",
+   "M169-e1"
+  ],
+  "would_fit": [
+   "M168-e1",
+   "M169-e1"
+  ],
+  "near_misses": [
+   "M170-e1",
+   "M171-e1",
+   "M172-e1"
+  ]
+ },
+ {
+  "person": "L08",
+  "need": "L08-N5",
+  "pattern": "need_other",
+  "phrase": "advice on a loan to buy the neighbouring plot",
+  "topic": "mortgage-advice",
+  "city": "mendoza",
+  "true": [],
+  "would_fit": [
+   "M173-e1"
+  ],
+  "near_misses": [
+   "M174-e1",
+   "M175-e1",
+   "M176-e1"
+  ]
+ },
+ {
+  "person": "L09",
+  "need": "L09-N1",
+  "pattern": "need_met",
+  "phrase": "a second-hand stroller that folds small enough for the TTC",
+  "topic": "baby-gear",
+  "city": "toronto",
+  "true": [
+   "M177-e1"
+  ],
+  "would_fit": [
+   "M177-e1"
+  ],
+  "near_misses": [
+   "M178-e1",
+   "M179-e1",
+   "M180-e1"
+  ]
+ },
+ {
+  "person": "L09",
+  "need": "L09-N2",
+  "pattern": "need_met",
+  "phrase": "a lactation consultant who does home visits",
+  "topic": "doctor-recommendation",
+  "city": "toronto",
+  "true": [
+   "M181-e1"
+  ],
+  "would_fit": [
+   "M181-e1"
+  ],
+  "near_misses": [
+   "M182-e1",
+   "M183-e1",
+   "M184-e1"
+  ]
+ },
+ {
+  "person": "L09",
+  "need": "L09-N3",
+  "pattern": "need_open",
+  "phrase": "a daycare spot for Ada from January",
+  "topic": "childcare",
+  "city": "toronto",
+  "true": [
+   "M185-e1",
+   "M186-e1"
+  ],
+  "would_fit": [
+   "M185-e1",
+   "M186-e1"
+  ],
+  "near_misses": [
+   "M187-e1",
+   "M188-e1",
+   "M189-e1"
+  ]
+ },
+ {
+  "person": "L09",
+  "need": "L09-N4",
+  "pattern": "need_open",
+  "phrase": "a mentor who went back to Bay Street after parental leave",
+  "topic": "mentoring",
+  "city": "toronto",
+  "true": [
+   "M190-e1",
+   "M191-e1"
+  ],
+  "would_fit": [
+   "M190-e1",
+   "M191-e1"
+  ],
+  "near_misses": [
+   "M192-e1",
+   "M193-e1",
+   "M194-e1"
+  ]
+ },
+ {
+  "person": "L09",
+  "need": "L09-N5",
+  "pattern": "need_other",
+  "phrase": "a French interpreter for her hearing on 2 April",
+  "topic": "translation",
+  "city": "toronto",
+  "true": [],
+  "would_fit": [
+   "M195-e1"
+  ],
+  "near_misses": [
+   "M196-e1",
+   "M197-e1",
+   "M198-e1"
+  ]
+ },
+ {
+  "person": "L10",
+  "need": "L10-N1",
+  "pattern": "need_met",
+  "phrase": "a senior Android developer to hire by April",
+  "topic": "hiring",
+  "city": "bangalore",
+  "true": [
+   "M199-e1"
+  ],
+  "would_fit": [
+   "M199-e1"
+  ],
+  "near_misses": [
+   "M200-e1",
+   "M201-e1",
+   "M202-e1"
+  ]
+ },
+ {
+  "person": "L10",
+  "need": "L10-N2",
+  "pattern": "need_met",
+  "phrase": "a warm introduction to someone at Kalaari Capital",
+  "topic": "funding",
+  "city": "bangalore",
+  "true": [
+   "M203-e1"
+  ],
+  "would_fit": [
+   "M203-e1"
+  ],
+  "near_misses": [
+   "M204-e1",
+   "M205-e1",
+   "M206-e1"
+  ]
+ },
+ {
+  "person": "L10",
+  "need": "L10-N3",
+  "pattern": "need_open",
+  "phrase": "a co-founder who can run sales",
+  "topic": "cofounder-search",
+  "city": "bangalore",
+  "true": [
+   "M207-e1",
+   "M208-e1"
+  ],
+  "would_fit": [
+   "M207-e1",
+   "M208-e1"
+  ],
+  "near_misses": [
+   "M209-e1",
+   "M210-e1",
+   "M211-e1"
+  ]
+ },
+ {
+  "person": "L10",
+  "need": "L10-N4",
+  "pattern": "need_open",
+  "phrase": "a startup lawyer to review the term sheet",
+  "topic": "legal-advice",
+  "city": "bangalore",
+  "true": [
+   "M212-e1",
+   "M213-e1"
+  ],
+  "would_fit": [
+   "M212-e1",
+   "M213-e1"
+  ],
+  "near_misses": [
+   "M214-e1",
+   "M215-e1",
+   "M216-e1"
+  ]
+ },
+ {
+  "person": "L10",
+  "need": "L10-N5",
+  "pattern": "need_other",
+  "phrase": "a physiotherapist for his knee who can come home",
+  "topic": "physiotherapy",
+  "city": "bangalore",
+  "true": [],
+  "would_fit": [
+   "M217-e1"
+  ],
+  "near_misses": [
+   "M218-e1",
+   "M219-e1",
+   "M220-e1"
+  ]
+ }
+]

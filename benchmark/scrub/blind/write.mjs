@@ -13,9 +13,22 @@ import { fileURLToPath } from 'node:url';
 const HERE = dirname(fileURLToPath(import.meta.url));
 const arg = (k, d) => { const i = process.argv.indexOf(k); return i > 0 ? process.argv[i + 1] : d; };
 const WRITERS = arg('--writers', 'sonnet,opus').split(','), JOBS = Number(arg('--jobs', '4'));
-const SET2 = arg('--set', '1') === '2';
+const SET = arg('--set', '1'), SUFFIX = SET === '1' ? '' : SET; // set 1: set.json and raw/; set N: setN.json and rawN/
 const ONLY = arg('--themes', '') ? arg('--themes', '').split(',').map(Number) : null;
 const CLAUDE = process.platform === 'win32' ? 'claude.exe' : 'claude';
+
+export const THEMES_3 = [
+  'IoT and embedded devices (ESP32 and Raspberry Pi projects, MQTT brokers, firmware updates over the air, cloud IoT hubs)',
+  'marketing and analytics tools (Google Analytics, Meta Ads, HubSpot, Mailchimp, Segment, tracking pixels)',
+  'customer support and CRM (Zendesk, Intercom, Salesforce, Freshdesk, helpdesk macros and integrations)',
+  'video, streaming and media (OBS, Twitch and YouTube stream keys, Vimeo, Mux, podcast hosting)',
+  'office IT for a small company (Microsoft 365, Google Workspace admin, printers, shared mailboxes, onboarding notes)',
+  'logistics, ERP and manufacturing (SAP, Odoo, warehouse scanners, EDI partners, PLC and SCADA access)',
+  'family life and personal paperwork (insurance and health portals, school apps, streaming accounts, a shared notes file)',
+  'security work (pentest notes, password manager exports, SIEM and EDR consoles, incident tickets)',
+  'mobile game and app backends (PlayFab, Supabase, Appwrite, push notification services, ad networks)',
+  'research computing (HPC clusters, Jupyter on servers, lab instruments, rented cloud GPUs, dataset portals)',
+];
 
 export const THEMES_2 = [
   'hospital and clinic IT (EHR integrations, HL7/FHIR endpoints, lab systems, staff accounts)',
@@ -74,9 +87,9 @@ function ask(text, model) {
 }
 
 async function main() {
-  const T = SET2 ? THEMES_2 : THEMES;
-  const raw = join(HERE, SET2 ? 'raw2' : 'raw'); mkdirSync(raw, { recursive: true });
-  const todo = WRITERS.flatMap(w => (SET2 ? THEMES_2 : THEMES).map((t, i) => [w, i])).filter(([, i]) => !ONLY || ONLY.includes(i));
+  const T = SET === '3' ? THEMES_3 : SET === '2' ? THEMES_2 : THEMES;
+  const raw = join(HERE, 'raw' + SUFFIX); mkdirSync(raw, { recursive: true });
+  const todo = WRITERS.flatMap(w => T.map((t, i) => [w, i])).filter(([, i]) => !ONLY || ONLY.includes(i));
   let next = 0;
   await Promise.all(Array.from({ length: JOBS }, async () => {
     while (next < todo.length) {
@@ -105,7 +118,7 @@ async function main() {
       (ok ? set : dropped).push({ id: `${f.replace('.json', '')}-${n}`, writer: j.writer, theme: j.theme, text: s?.text, secrets: s?.secrets });
     });
   }
-  writeFileSync(join(HERE, SET2 ? 'set2.json' : 'set.json'), JSON.stringify(set, null, 1));
+  writeFileSync(join(HERE, 'set' + SUFFIX + '.json'), JSON.stringify(set, null, 1));
   console.log(`set: ${set.length} snippets (${set.filter(s => s.secrets.length).length} with secrets, ${set.reduce((a, s) => a + s.secrets.length, 0)} secrets); dropped ${dropped.length} whose secrets were not in the text`);
 }
 

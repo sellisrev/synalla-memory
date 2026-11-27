@@ -41,9 +41,44 @@ Rules, fixed before it was written:
 Opus's 272/305. The M1 bar (95% caught) is **not met**. Set 2 is now retired to tuning as well; the next change is
 measured on a set 3.
 
+## Round 3 rules (27 Nov), from set 2
+
+Set 2's misses and false positives were read and turned into rules for classes, never for one example:
+
+- **Secrets now caught:** "the key is VALUE" or "der neue ist VALUE" with no colon; "Auth Token VALUE" right after its
+  name; PHP `define('DB_PASSWORD', ...)` and `'dbpassword' => ...` arrays; salts; `$cred = "..."`; XML elements such as
+  `<Pass>...</Pass>`; game-server config lines (`rcon_password "..."`), `sv_setsteamaccount` tokens and `steamcmd +login`;
+  `ldapsearch -w`; WooCommerce `ck_`/`cs_` and RubyGems keys; `consumer_secret=` in URLs; recovery-code lists made of
+  plain letters and digits; one-line codes in groups ("K7QM 2XRT 9WLP ..."); table columns whose name ends in a secret
+  word ("Shared secret", "Backup code"); German compound words such as "webpasswort"; domain transfer auth codes; TOTP
+  seeds; generated 16-letter app passwords; login cookies (`wordpress_logged_in_...=`, `steamLoginSecure=`).
+- **Now left alone:** the DER prefix of RSA public keys (`MIIBIjANBgkqhkiG9w0BAQEFAAOC...`), key thumbprints, minisign
+  public keys, `data:` URIs, AWS ARNs, `$(cat ...)` command substitution, key ids (`key_01H...`, `rsa4096/0x...`,
+  "signing key: 0x..."), UPS tracking numbers, webhook body signatures (`X-...-Hmac-Sha256:`), idempotency keys,
+  WordPress default values ("put your unique phrase here"), `xoxb-your-token-here`, and a French elision (`l'admin`)
+  is no longer read as an opening quote.
+- **Left as misses on purpose:** `changeme123` (a default-looking value; treating it as a secret would also hide
+  `.env.example` lines), a photocopier code with no secret word near it, and a Stripe secret key whose first characters
+  the writer copied into the publishable key next to it (the publishable key is public and stays).
+- **Accepted false positives:** AWS access key ids (`AKIA...`) are always hidden, even when the text says the key is
+  inactive: an id alone is not a secret, but hiding one costs little and the format is never anything else.
+
+Tuning numbers (not evidence): set 2 **99.3% caught (98.3–99.7%), 0.8% harmless changed (0.3–2.1%)**; set 1 96.2% /
+1.2%; the held-out set 99.8% / 0% and the tuning set 99.3% / 0% did not move. Against the scrubber before this round,
+no secret of sets 1 or 2 went from caught to missed and no harmless snippet went from unchanged to changed.
+
+## Set 3 (27 Nov): the blind measurement for round 3
+
+Ten new themes (`THEMES_3` in `write.mjs`), the same prompt and writers, written after the round 3 rules were frozen
+(commit before the set was written). The set 2 rules apply unchanged: snippets whose listed secrets are not in their
+text are dropped and counted; caught = no 8 characters of the secret in a row remain (a whole URL with a password
+counts by its password); a harmless snippet changed at all is a false positive; Wilson 95% intervals by writer and by
+theme; the bar is at least 95% caught, false positives published. The number is recorded here before any miss or false
+positive is read.
+
 The sets themselves are kept out of the public repository: their invented keys look real enough that GitHub's push
 protection (and any secret scanner copying the repository) treats them as leaks. The writers' replies are kept
 locally and can be shared on request; `write.mjs` writes a new set of the same kind.
 
-Run: `node benchmark/scrub/blind/write.mjs [--set 2]`, then
-`node --import ./tools/ts-resolve.mjs benchmark/scrub/blind/eval.mjs [--set 2]` from the repo root.
+Run: `node benchmark/scrub/blind/write.mjs [--set 2|3]`, then
+`node --import ./tools/ts-resolve.mjs benchmark/scrub/blind/eval.mjs [--set 2|3]` from the repo root.

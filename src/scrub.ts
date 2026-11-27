@@ -3,10 +3,7 @@
 
 // Secret scrubber: replaces secrets in imported text with markers before anything is stored (pilot plan W1).
 // Spec: test/fixtures/scrub/SPEC.md. Reviewed by two adversarial reviews; built by hand after local-model builds failed.
-// 27 Nov rules (after the first blind set, now the tuning set): passwords in French and German prose, command lines
-// (sshpass, mysql -p, docker login -p, curl -u, echo | sudo -S, login() calls), recovery-code and password lists,
-// password columns of tables, more config names (storePassword, appKey, Pwd=, PSK), session cookies, webhook URLs,
-// more token formats; placeholders, masked values and public key material are never secrets.
+// Rules added from blind sets 1 and 2 (27 Nov), class by class: benchmark/scrub/blind/README.md.
 
 export const KINDS = ['private-key', 'url-password', 'jwt', 'aws-access-key', 'github-token', 'anthropic-key',
   'openai-key', 'stripe-key', 'slack-token', 'google-api-key', 'prefixed-token', 'nostr-secret', 'auth-header',
@@ -17,10 +14,8 @@ export function marker(kind: unknown): string {
   return '[secret:' + kind + ']';
 }
 
-const B = '(?<![A-Za-z0-9_-])';
-const E = '(?![A-Za-z0-9_-])';
-const PK = '-----BEGIN ([A-Z0-9]+ )*PRIVATE KEY( BLOCK)?-----';
-const PK_END = '-----END ([A-Z0-9]+ )*PRIVATE KEY( BLOCK)?-----';
+const B = '(?<![A-Za-z0-9_-])', E = '(?![A-Za-z0-9_-])';
+const PK = '-----BEGIN ([A-Z0-9]+ )*PRIVATE KEY( BLOCK)?-----', PK_END = '-----END ([A-Z0-9]+ )*PRIVATE KEY( BLOCK)?-----';
 const KEYS = 'password|passwd|passphrase|pwd|secret|token|api[_-]?key|access[_-]?key|secret[_-]?key|private[_-]?key'
   + '|secret[_-]?access[_-]?key|client[_-]?secret|auth[_-]?token|(?:access|refresh|session|id)[_-]?token';
 const TYPES = '(?:string|number|boolean|bigint|null|undefined|true|false|none|any|unknown|void)(?![A-Za-z0-9_])';
@@ -30,13 +25,12 @@ const BARE = '(?![$%{<(\\[\\/~.!]|' + TYPES + ')(?=' + VCH + '*[A-Za-z])(?=' + V
 const AUTH = '\\bauthorization\\s*[:=]\\s*["\']?(?:bearer|basic|token|key)[ \\t=]+([A-Za-z0-9._~+\\/=:-]{8,})'
   + '|\\bbearer\\s+([A-Za-z0-9._~+\\/=-]{16,})';
 // Words for a password or code in English, French and German prose.
-const PW = "password|passwort|passwd|passphrase|pwd|pw|mot de passe|mdp|kennwort|passcode|code d['’]acc[eè]s|zugangscode"
+const PW = "auth-?code|authcode|epp-?code|transfer code|totp seed|2fa-?recovery|password|passwort|passwd|passphrase|pwd|pw|mot de passe|mdp|kennwort|passcode|code d['’]acc[eè]s|zugangscode"
   + '|netzwerkschl[uü]ssel|wlan-schl[uü]ssel|wifi-schl[uü]ssel|wpa-?key|cl[eé] (?:wifi|wi-fi|wpa|api|secr[eè]te)|psk|code pin|pin|puk|geheimzahl';
-const PW_RE = new RegExp('(?<![A-Za-z0-9_.$:/@<{])(?:' + PW + '|secret key|recovery code|backup code|wiederherstellungscode|code de r[ée]cup[ée]ration'
-  + '|cl[eé]|schl[uü]ssel|api key|api-key|requirepass)(?![A-Za-z0-9])', 'gi');
+const PW_RE = new RegExp('(?<![A-Za-z0-9_.$:/@<{])(?:\\p{L}{2,20}(?:passwort|kennwort)|' + PW + '|secret key|recovery code|backup code|wiederherstellungscode|code de r[ée]cup[ée]ration'
+  + '|cl[eé](?! (?:de s[ée]curit[ée]|usb|fido|u2f))|schl[uü]ssel|api key|api-key|requirepass|pass(?=[ \\t]+[a-z]{16}(?![A-Za-z0-9])))(?![A-Za-z0-9])', 'giu');
 const FILE = /\.(?:pdf|txt|md|json|ya?ml|png|jpe?g|docx?|xlsx?|zip|gz|tar|pfx|p12|jks|pem|key|crt|csv|log|bak|conf|cfg|ini|env|sh|py|js|ts)$/i;
 const LINK_RE =/[:=→]|\b(?:is|est|c['’]est|ist|lautet|use|nimm|utilise|sind|sont)\b/i;
-
 const strong = (v: string) => /[0-9]/.test(v) && /[A-Za-z]/.test(v) || /[^A-Za-z0-9\s]/.test(v) && /[A-Za-z0-9]/.test(v) && v.length >= 6
   || (/^[0-9]{4,}$/.test(v));
 const longMixed = (v: string) => v.length >= 16 && /[0-9]/.test(v) && /[A-Za-z]/.test(v);
@@ -45,22 +39,24 @@ const longMixed = (v: string) => v.length >= 16 && /[0-9]/.test(v) && /[A-Za-z]/
 const VAULTS = /^(?:1password|bitwarden|keepass(?:xc)?|lastpass|dashlane|vault|keychain|pass|enpass|proton ?pass)(?:[-\s].*)?$/i;
 const proseSecret = (v: string) => !VAULTS.test(v) && !/^[A-Za-z]+(?:\.[A-Za-z]+)+$/.test(v) && !/^\w+=/.test(v)
   && (!/\s/.test(v) || /[0-9]/.test(v) && /[^\w\s]/.test(v))
-  && (/[0-9]/.test(v) && /\p{L}/u.test(v) || /^[0-9]{6,}$/.test(v) || /[!#$%&*+=?@^~|\\/<>]/.test(v) && /\p{L}/u.test(v) && v.length >= 6);
-
+  && (/[0-9]/.test(v) && /\p{L}/u.test(v) || /^[0-9]{6,}$/.test(v) || /[!#$%&*+=?@^~|\\/<>]/.test(v) && /\p{L}/u.test(v) && v.length >= 6
+    || appPassword(v));
+// A generated app password: 16 lower-case letters with few vowels (Microsoft, Apple and Google app passwords).
+const appPassword = (v: string) => /^[a-z]{16}$/.test(v) && (v.match(/[aeiou]/g) ?? []).length <= 3;
 /** Placeholders, masked values, code that reads a secret, and documentation examples: never secrets. */
 function isPlaceholder(v: string): boolean {
   const s = v.replace(/^["'`«\s]+|["'`»\s,;:!?)]+$/g, '');
   return s.length === 0 || /^[A-Za-z_]+(?:\.[A-Za-z_]+)+$/.test(s)
     || /^(<[^>]*>|\$\{[^}]*\}|\$\(?[A-Za-z_][A-Za-z0-9_]*\)?|%[A-Za-z_]+%|\{\{[^}]*\}\}|\[[^\]]*\]|![a-z_]+)$/.test(s)
+    || /^(?:\$\(|`)/.test(s) // command substitution: the value is read at run time
     || /^(?:p[r]ocess.env|os\.environ|os\.getenv|System\.getenv|getenv|secrets\.|vars\.|env\.|ENV\[|arn:aws)/.test(s) || /^[A-Za-z_][A-Za-z0-9_.]*\(/.test(s)
     || /\.\.\.|…|\*{3,}|x{6,}|X{6,}|•{3,}/.test(s)
+    || /^(?:put|enter|insert|paste) your\b|[_\s-]here$/i.test(s)
     || /^(your|my|the)[_-]|^(YOUR|REPLACE|CHANGE|INSERT|ENTER)[_-]?|replace[_-]?me|change[_-]?me|placeholder|dummy|redacted|example|^(xxx+|value|changeit)$/i.test(s)
     || /^[A-Z_]{2,24}$/.test(s);
 }
-
 interface Rule { kind: string; re: RegExp; groups: number[]; ok?: (v: string, m: RegExpExecArray) => boolean }
 const R = (kind: string, re: RegExp, groups: number[] = [], ok?: Rule['ok']): Rule => ok ? { kind, re, groups, ok } : { kind, re, groups };
-
 const RULES: Rule[] = [
   R('private-key', new RegExp(PK + '(?:[\\s\\S]*?' + PK_END + '|(?:\\r?\\n[A-Za-z0-9+\\/=]+)*)', 'g')),
   R('private-key', new RegExp(B + 'AGE-SECRET-KEY-1[0-9A-Z]{40,}' + E, 'g')),
@@ -78,7 +74,8 @@ const RULES: Rule[] = [
   R('slack-token', new RegExp(B + 'xox[abposred]-[A-Za-z0-9-]{10,}' + E, 'g')),
   R('google-api-key', new RegExp(B + 'AIza[A-Za-z0-9_-]{35}' + E, 'g')),
   R('prefixed-token', new RegExp(B + '(hf_|glpat-|gldt-|glptt-|glrt-|gloas-|glcbt-|dckr_pat_|npm_|gsk_|pypi-|dop_v1_|doo_v1_|dor_v1_|shp(?:at|ss|ca|pa)_'
-    + '|xai-|pplx-|r8_|pcsk_|sq0atp-|sq0csp-|EAAA|SK[0-9a-f]{2}|lin_api_|ntn_|secret_|figd_|dapi.|AVNS_|rnd_|fly_|vercel_|nfp_|tfp_|atlasv1-)[A-Za-z0-9_-]{16,}' + E, 'g')),
+    + '|xai-|pplx-|r8_|pcsk_|rubygems_|sq0atp-|sq0csp-|EAAA|SK[0-9a-f]{2}|lin_api_|ntn_|secret_|figd_|dapi.|AVNS_|rnd_|fly_|vercel_|nfp_|tfp_|atlasv1-)[A-Za-z0-9_-]{16,}' + E, 'g')),
+  R('prefixed-token', new RegExp(B + 'c[ks]_[0-9a-f]{40}' + E, 'g')), // WooCommerce consumer key and secret
   R('prefixed-token', /(?<![A-Za-z0-9_-])whsec_[A-Za-z0-9+\/=_-]{20,}/g),
   R('prefixed-token', new RegExp(B + 'sk_[A-Za-z0-9]{28,}' + E, 'g')), // RevenueCat and other sk_ keys
   R('prefixed-token', new RegExp(B + 'SG\\.[A-Za-z0-9_-]{16,}\\.[A-Za-z0-9_-]{16,}' + E, 'g')),
@@ -92,11 +89,17 @@ const RULES: Rule[] = [
   R('password', new RegExp('\\b(?:sshpass|docker[ \\t]+login|podman[ \\t]+login|helm[ \\t]+registry[ \\t]+login|az[ \\t]+login|redis-cli|keytool|notarytool)\\b'
     + '[^\\n|;&]*?[ \\t](?:-p|-a|-storepass|-keypass|--password|--pass)(?:=|[ \\t]+)([\'"]?)([^\\s\'"]{3,})\\1', 'g'), [2]),
   R('password', /\b(?:mysql\w*|mariadb\w*)\b[^\n|;&]*?[ \t]-p(['"]?)([^\s'"]{3,})\1/g, [2]), // mysql -pX: attached, else it prompts
+  R('password', /\bldap(?:search|modify|add|delete|passwd|whoami|compare)\b[^\n|;&]*?[ \t]-w[ \t]+(['"]?)([^\s'"]{3,})\1/g, [2]),
+  R('password', /\bsteamcmd\b[^\n|;&]*?\+login[ \t]+\S+[ \t]+(?!\+)(['"]?)([^\s'"]{3,})\1/g, [2]),
+  R('password', /\+?sv_setsteamaccount[ \t]+"?([A-Za-z0-9]{16,})"?/g, [1]), // game server login token
+  R('password', /^[ \t]*\w*(?:password|passwd|pass|secret|token|key)[ \t]+"([^"\n]{4,})"/gim, [1]), // cfg: rcon_password "..."
+  R('password', /\bdefine\(\s*['"][A-Z0-9_]*(?:PASSWORD|PASS|KEY|SALT|SECRET|TOKEN|NONCE)[A-Z0-9_]*['"]\s*,\s*(?:'([^'\n]{4,})'|"([^"\n]{4,})")\s*\)/g, [1, 2]),
+  R('password', /<(\w*(?:pass|password|passwd|pwd|secret|token|apikey|api_key|key))\b[^>\n]*>([^<\n]{4,})<\/\1>/gi, [2]),
   R('password', /\brabbitmqctl[ \t]+(?:add_user|change_password)[ \t]+\S+[ \t]+(['"]?)([^\s'"]{3,})\1/g, [2]),
   R('password', /^[ \t]*(?:requirepass|masterauth)[ \t]+(['"]?)([^\s'"]{3,})\1/gm, [2]),
   R('password', /^[^\s:#]+:(\d+|\*):[^\s:]+:[^\s:]+:(\S{4,})$/gm, [2]), // .pgpass
   R('password', /\b(?:login|logins|user|username|benutzer|identifiant|account|root|admin|zugang)\b[^\n/]{0,40}?\S[ \t]+\/[ \t]+([^\s,;]{6,})/gi, [1], v => proseSecret(v.replace(/[.]$/, ''))),
-  R('password', /[?&](?:X-Amz-Signature|X-Goog-Signature|sig|signature|access_token|api_key|apikey)=([^&\s"'#]{16,})/g, [1]),
+  R('password', /[?&](?:X-Amz-Signature|X-Goog-Signature|sig|signature|access_token|api_key|apikey|consumer_key|consumer_secret|client_secret)=([^&\s"'#]{16,})/g, [1]),
   R('password', /"auth"\s*:\s*"([A-Za-z0-9+\/=]{12,})"/g, [1]), // docker config.json
   R('password', /name:[ \t]*['"]?[A-Za-z0-9_]*(?:SECRET|PASSWORD|TOKEN|KEY|PASS)[A-Za-z0-9_]*['"]?[ \t]*\r?\n[ \t]*value:[ \t]*['"]?([^'"\s]{6,})/gi, [1]),
   R('webhook', /https?:\/\/[^\s\/]+\/api\/webhook\/[A-Za-z0-9_-]{16,}/g), // Home Assistant
@@ -107,35 +110,48 @@ const RULES: Rule[] = [
   R('password', /\boption[ \t]+(?:key|password)[ \t]+'([^'\n]{4,})'/g, [1]),
   R('assignment', new RegExp('(?<![A-Za-z0-9-])--?(?:' + KEYS + '|key|pass|auth)(?![A-Za-z0-9])(?:=|[ \\t]+)(?:"([^"\\n]{4,})"|\'([^\'\\n]{4,})\'|' + BARE + ')', 'gi'), [1, 2, 3]),
   // "the key you asked for: VALUE", "token: VALUE" in prose: a value that mixes letters and digits, on the same line.
-  R('assignment', new RegExp('(?<![A-Za-z0-9])(?:key|token|password|passphrase|secret|credential|pat|cl[eé]|schl[uü]ssel)s?(?![A-Za-z0-9])[^\\n:.]{0,40}:[ \\t]+'
+  R('assignment', new RegExp('(?<![A-Za-z0-9])(?:key|keystring|token|password|passphrase|secret|credential|pat|seed|recovery|cl[eé]|schl[uü]ssel)s?(?![A-Za-z0-9])[^\\n:.]{0,40}:[ \\t]+'
     + '(?![`]|[A-Za-z]:[\\\\/]|\\.{0,2}\\/)(?=[^\\s]*[0-9])(?=[^\\s]*[A-Za-z])([^\\s\'",;()\\[\\]{}]{12,4096})', 'gi'), [1]),
+  // "the key is VALUE", "der neue ist VALUE": a long letters-and-digits value after a link word, on the same line.
+  R('assignment', new RegExp('(?<![A-Za-z0-9])(?:key|token|secret|credential|keystring|schl[uü]ssel|cl[eé])s?(?![A-Za-z0-9])[^\\n:.]{0,40}?[ \\t]'
+    + '(?:is|ist|est|lautet|is now|ist jetzt|est maintenant)[ \\t]+[`"\']?([A-Za-z0-9_-]{16,256})(?![A-Za-z0-9_-])', 'gi'), [1],
+    v => /[0-9]/.test(v) && /[A-Za-z]/.test(v) && !/^0x[0-9a-f]{8,40}$/i.test(v)),
+  // "Auth Token VALUE", "API key VALUE": the value right after the name.
+  R('assignment', /(?<![A-Za-z0-9])(?:auth[ _-]?token|api[ _-]?key|secret[ _-]?key|access[ _-]?token|private[ _-]?key)[ \t]+([A-Za-z0-9_-]{20,256})(?![A-Za-z0-9_-])/gi, [1],
+    v => /[0-9]/.test(v) && /[A-Za-z]/.test(v)),
   R('assignment', new RegExp('(?<![A-Za-z0-9])(?:' + KEYS + ')(?![A-Za-z0-9])["\']?[ \\t]*[:=][ \\t]*'
     + '(?:"([^"\\n]{4,4096})"|\'([^\'\\n]{4,4096})\'|' + BARE + ')', 'gi'), [1, 2, 3]),
   // Config names that end in a secret word: storePassword=, appKey:, .erlang.cookie =, DB_PASS=, x-api-key: ...
-  R('assignment', new RegExp('(?<![A-Za-z0-9])(?:[A-Za-z_.][A-Za-z0-9_.-]{0,40}?)?(password|passwd|pwd|pass|passphrase|secret|token|key|psk|cookie)["\']?[ \\t]*[:=][ \\t]*'
+  R('assignment', new RegExp('(?<![A-Za-z0-9])(?:[A-Za-z_.][A-Za-z0-9_.-]{0,40}?)?(password|passwd|pwd|pass|passphrase|secret|token|key|psk|cookie|salt(?:main)?|creds?|credentials?'
+    + '|(?:revocation|recovery|backup|verification|otp|2fa|mfa|security|unlock|transfer|epp)[_-]?code)["\']?[ \\t]*(?:=>|[:=])[ \\t]*'
     + '(?:"([^"\\n]{4,4096})"|\'([^\'\\n]{4,4096})\'|(' + VCH + '{6,4096}))', 'gi'), [2, 3, 4],
-    (v, m) => !/^[$%{<(\[\/~.!]/.test(v)
+    (v, m) => !/^[$%{<(\[\/~.!]/.test(v) && !/^0x[0-9a-f]{8,40}$/i.test(v) && !(/^cred/i.test(m[1] ?? '') && /^\w+=/.test(v))
       && (/key$/i.test(m[1] ?? '') ? longMixed(v) && !/^0x[0-9a-f]+$/i.test(v) : strong(v) && !/^\d+$/.test(v))),
   // Session cookies and similar name=value pairs: _gitlab_session=..., sessionid=..., R_SESS=...
-  R('assignment', /(?<![A-Za-z0-9])(?:[A-Za-z_][\w-]*?)?(?:sess(?:ion)?(?:id|_id)?|sid|jwt|auth|token)=([A-Za-z0-9%._~+\/:=-]{12,})/gi,
+  R('assignment', /(?<![A-Za-z0-9])(?:[A-Za-z_][\w-]*?)?(?:sess(?:ion)?(?:id|_id)?|sid|jwt|auth|token|login(?:secure)?|logged_in(?:_[0-9a-f]+)?)=([A-Za-z0-9%._~+\/:=-]{12,})/gi,
     [1], v => longMixed(v) || v.length >= 24),
 ];
 
 // Public material, protected from every rule but the strong formats: fingerprints, public keys, key ids, DKIM records,
 // JWK fields, publishable keys and object ids.
 const PUBLIC: RegExp[] = [
-  /\b(?:public[ _-]?key|clé publique|öffentlicher schlüssel|node[ _-]?key|disco[ _-]?key)\b["']?[ \t]*(?:[:=]|is|ist|est)?[ \t]*\S+/gi,
+  /(?<![A-Za-z0-9])(?:public[ _-]?key|clé publique|öffentlicher schlüssel|node[ _-]?key|disco[ _-]?key)(?![A-Za-z0-9])["']?[ \t]*(?:[:=]|is|ist|est)?[ \t]*\S+/gi,
   /\b(?:fingerprint|empreinte|fingerabdruck)\b[^\n]{0,6}?[:=]?[ \t]*(?:[0-9A-F]{4}[ \t]+){4,}[0-9A-F]{4}/gi,
-  /\b(?:AC|SM|MM|PN|MG|CA|RE|IS|SK)[0-9a-f]{32}\b/g,
+  /\b(?:AC|SM|MM|PN|MG|CA|RE|IS|SK)[0-9a-f]{32}\b/g, /\b(?:SHA256|SHA1|MD5):[A-Za-z0-9+\/=]{16,}/g, /\bv=DKIM1[^"\n]*/g,
   /\b(?:idempotency[ _-]?key|(?:extended[ _-]?)?request[ _-]?id|trace[ _-]?id|correlation[ _-]?id|paypal-request-id|distribution|deployment)\b[^\n]{0,4}?[:=]?[ \t]*\S+/gi,
-  /\b(?:SHA256|SHA1|MD5):[A-Za-z0-9+\/=]{16,}/g,
+  /\bidempotency[ _-]?key\b(?:[^\n:=]{0,30}[:=])?[ \t]*[^\s,;]+/gi,
+  // SubjectPublicKeyInfo (the DER prefix of every RSA public key), key thumbprints, minisign public keys, data: URIs,
+  // ARNs, signatures of webhook bodies, parcel tracking numbers.
+  /MII[BC][A-Za-z0-9+\/]{2}ANBgkqhkiG9w0BAQEFAAOC[A-Za-z0-9+\/=]*/g, /\b(?:thumbprint|x5t(?:#S256)?)\b(?:[ \t]+\(?sha-?(?:1|256)\)?)?[ \t]*[:=]?[ \t]*\S+/gi,
+  /\bminisign\b[^\n]*?[ \t]-P[ \t]+\S+/g, /\bdata:[\w\/+.-]+;base64,[A-Za-z0-9+\/=]+/g, /\barn:aws[\w-]*:[^\s"'`]+/g,
+  /\bX-[\w-]*(?:Hmac|Signature)[\w-]*:[ \t]*\S+/gi, /\b1Z[0-9A-Z]{16}\b/g,
+  /\b(?:rsa|dsa|ed25519|cv25519|nistp\d+|brainpool\w+)\d*\/(?:0x)?[0-9A-F]{8,40}\b/gi,
   /-----BEGIN (?:[A-Z0-9]+ )*(?:PUBLIC KEY|CERTIFICATE|PGP PUBLIC KEY BLOCK)-----[\s\S]*?-----END (?:[A-Z0-9]+ )*(?:PUBLIC KEY|CERTIFICATE|PGP PUBLIC KEY BLOCK)-----/g,
   /\b(?:ssh-(?:ed25519|rsa|dss)|ecdsa-sha2-[a-z0-9]+|sk-ssh-ed25519@openssh\.com)[ \t]+AAAA[A-Za-z0-9+\/=]+/g,
-  /\bv=DKIM1[^"\n]*/g,
-  /"(?:n|e|x|y|kid|x5t|crv)"\s*:\s*"[^"]*"/g,
+  /"(?:n|e|x|y|kid|x5t|crv)"\s*:\s*"[^"]*"/g, /(?<![A-Za-z0-9_-])pk_(?:live|test)_[A-Za-z0-9]{16,}/g,
   new RegExp('\\b(?:key[ _-]?id|kid|fingerprint|empreinte|fingerabdruck|identifiant de cl[eé]|schl[uü]ssel-?id)\\b[^\\n]{0,40}?[:=]?[ \\t]*'
-    + '(?:0x)?(?:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|[0-9A-F]{8,40})\\b', 'gi'),
-  /(?<![A-Za-z0-9_-])pk_(?:live|test)_[A-Za-z0-9]{16,}/g,
+    + '(?:0x)?(?:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|[0-9A-F]{8,40}|key_[0-9A-Z]{20,32})\\b', 'gi'),
+  /\bsigning key\b[^\n]{0,30}?[:=]?[ \t]*0x[0-9A-F]{8,16}\b/gi, // a GPG key id: "signing key: 0x7D3E91A4C05B2F68"
   /(?<![A-Za-z0-9_-])(?:chatcmpl|dpl|req|msg|evt|cus|pi|ch|txn|resp|run|cmpl|file|asst|thread|batch)[_-][A-Za-z0-9]{10,}/g,
 ];
 const STRONG_KINDS = new Set(['private-key', 'aws-access-key', 'github-token', 'anthropic-key', 'openai-key', 'stripe-key', 'slack-token', 'google-api-key', 'nostr-secret']);
@@ -143,14 +159,15 @@ const STRONG_KINDS = new Set(['private-key', 'aws-access-key', 'github-token', '
 // A heading that announces recovery codes, or a list of passwords; the codes or values follow on its lines.
 const CODES_HEAD = new RegExp('(?:recovery|backup|wiederherstellungs?|notfall|einmal|2fa|mfa|r[ée]cup[ée]ration|secours|sauvegarde)[ -]?(?:codes?|kódy)'
   + "|codes? (?:de|d['’]) ?(?:secours|r[ée]cup[ée]ration|sauvegarde)|recovery-codes|backup-codes", 'gi');
-const CODE = /(?<![A-Za-z0-9-])(?:[A-Za-z0-9]{4,6}(?:-[A-Za-z0-9]{4,6}){1,3}|\d{4}[ -]\d{4}|\d{6,10}|[A-Z0-9]{4}-[A-Z0-9]{4})(?![A-Za-z0-9-])/g;
-const COLUMN = /^\s*(?:password|passwort|kennwort|mot de passe|mdp|pw|pwd|pass|passphrase|secret|token|auth token|api key|key|pin|code|psk)\s*$/i;
+const CODE = /(?<![A-Za-z0-9-])(?:[A-Za-z0-9]{4,6}(?:-[A-Za-z0-9]{4,6}){1,3}|\d{4}[ -]\d{4}|\d{6,10}|[A-Z0-9]{4}-[A-Z0-9]{4}|(?=[A-Za-z]*[0-9])(?=[0-9]*[A-Za-z])[A-Za-z0-9]{8,64})(?![A-Za-z0-9-])/g;
+// A column whose name ends in a secret word ("Shared secret", "Plaid secret", "Backup code"), never an id or public one.
+const COLUMN = /^\s*(?:[\p{L}0-9 _-]{0,30}[ _-])?(?:password|passwort|kennwort|mot de passe|mdp|pw|pwd|pass|passphrase|secret|token|auth token|api key|key|pin|code|psk)s?\s*$/iu;
+const NOT_COLUMN = /\b(?:public|publishable|id|ids|name|names|hint|type|length|expiry|expires|rotated|owner|scope|scopes)\b|[_ -]id\b|zip|postal|country|status|error|area/i;
 const LIST_HEAD =/^.*\b(?:passwords|passw[oö]rter|mots de passe|zugangsdaten|logins|credentials|identifiants|acc[eè]s)\b.*$/gim;
 
 function entropy(s: string): number {
-  const n: Record<string, number> = {};
+  const n: Record<string, number> = {}; let h = 0;
   for (const c of s) n[c] = (n[c] ?? 0) + 1;
-  let h = 0;
   for (const k of Object.keys(n)) { const p = (n[k] as number) / s.length; h -= p * Math.log2(p); }
   return h;
 }
@@ -164,7 +181,7 @@ export function scrub(text: unknown): { text: string; found: { kind: string; sta
   const free = (s: number, e: number) => spans.every(x => e <= x.start || s >= x.end);
   const add = (kind: string, start: number, value: string) => {
     if (!value || !free(start, start + value.length)) return;
-    if (STRONG_KINDS.has(kind) ? /EXAMPLE|\.\.\.|x{6,}|X{6,}|\*{3,}/.test(value) : kind !== 'private-key' && kind !== 'webhook' && isPlaceholder(value)) return;
+    if (STRONG_KINDS.has(kind) ? /EXAMPLE|\.\.\.|x{6,}|X{6,}|\*{3,}/.test(value) || /your[-_]|[-_]here$/i.test(value) : kind !== 'private-key' && kind !== 'webhook' && isPlaceholder(value)) return;
     if (kind === 'webhook' && /XXXX|your-|<|\$\{/i.test(value)) return;
     if (kind === 'url-password' && /^(?:pass|password|passwd|pwd|secret|changeme|pw)$/i.test(value)) return;
     if (kind === 'password' && value.startsWith('-')) return; // a flag (--password-stdin), not a value
@@ -182,7 +199,8 @@ export function scrub(text: unknown): { text: string; found: { kind: string; sta
         value = m[g] as string;
         start = m.index + m[0].lastIndexOf(value);
       }
-      if (kind === 'password') { const t = /[.,;:?]+$/.exec(value); if (t && t[0] !== value) value = value.slice(0, -t[0].length); }
+      if (!STRONG_KINDS.has(kind) && kind !== 'private-key' && kind !== 'webhook' && isPlaceholder(value)) continue; // before trimming "sk-..."
+      if (kind === 'password' || kind === 'assignment') { const t = (kind === 'password' ? /[.,;:?]+$/ : /[.,;:]+$/).exec(value); if (t && t[0] !== value) value = value.slice(0, -t[0].length); }
       if (ok && !ok(value, m)) continue;
       add(kind, start, value);
     }
@@ -201,7 +219,11 @@ export function scrub(text: unknown): { text: string; found: { kind: string; sta
     const app = /^[\s:]*([a-z]{4} [a-z]{4} [a-z]{4} [a-z]{4})(?![a-z])/.exec(window.slice(at));
     if (app && /pass|pw|mdp/i.test(m[0])) { add('password', end + at + app[0].lastIndexOf(app[1] as string), app[1] as string); continue; }
     const pin = /^(?:pin|puk|code pin|geheimzahl)$/i.test(m[0]);
-    const tokRe = /«[ \t]*([^»\n]{4,128}?)[ \t]*»|"([^"\n]{4,128})"|'([^'\n]{4,128})'|`([^`\n]{4,128})`|([^\s"'`«»,;()<>[\]]+)/g;
+    // Groups of four to six letters and digits in a row ("K7QM 2XRT 9WLP 4HNC") are one code.
+    const run = /^[\s:=]*((?:[A-Z0-9]{4,6}[ -]){2,}[A-Z0-9]{4,6})(?![A-Za-z0-9])/.exec(window.slice(at));
+    if (run && /[0-9]/.test(run[1] as string) && /[A-Z]/.test(run[1] as string)) { add('password', end + at + run[0].lastIndexOf(run[1] as string), run[1] as string); continue; }
+    // A quote opens only after a space or punctuation, so French elisions (l'admin, d'accès) are not quotes.
+    const tokRe = /«[ \t]*([^»\n]{4,128}?)[ \t]*»|"([^"\n]{4,128})"|(?<![\p{L}])'([^'\n]{4,128})'|`([^`\n]{4,128})`|([^\s"'`«»,;()<>[\]]+)/gu;
     tokRe.lastIndex = at;
     for (let k = 0, t = tokRe.exec(window); t && k < 4; t = tokRe.exec(window), k++) {
       let v = (t[1] ?? t[2] ?? t[3] ?? t[4] ?? t[5]) as string;
@@ -250,13 +272,13 @@ export function scrub(text: unknown): { text: string; found: { kind: string; sta
     if (/^\s*\|.*\|\s*$/.test(line)) {
       const cells = line.split('|').slice(1, -1);
       const isSep = cells.every(c => /^\s*:?-{2,}:?\s*$/.test(c));
-      const named = cells.map((c, i) => COLUMN.test(c) ? i : -1).filter(i => i >= 0);
+      const named = cells.map((c, i) => COLUMN.test(c) && !NOT_COLUMN.test(c) ? i : -1).filter(i => i >= 0);
       if (named.length && !cols.length) cols = named;
       else if (!isSep && cols.length) {
         let off = pos + line.indexOf('|') + 1;
         cells.forEach((c, i) => {
           const v = c.trim();
-          if (cols.includes(i) && v && !/^\(.*\)$/.test(v) && v.length >= 4) add('password', off + c.indexOf(v), v);
+          if (cols.includes(i) && v && !/^\(.*\)$/.test(v) && v.length >= 4 && !/^(?:see|in|siehe|voir|dans|im)\b/i.test(v)) add('password', off + c.indexOf(v), v);
           off += c.length + 1;
         });
       }

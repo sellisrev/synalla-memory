@@ -143,3 +143,46 @@ for (const seed of GOLDEN_SEEDS) {
     for (let i = 0; i < golden.length; i++) assert.deepEqual(got[i], golden[i], `step ${i}: ${JSON.stringify(steps[i]).slice(0, 300)}`);
   });
 }
+
+// Round 3 rules (27 Nov, classes from blind set 2; examples written here, not copied from the set).
+test('round 3 classes: secrets are hidden', () => {
+  const cases = [
+    ['The Mapbox key is 9b2e4f7a1c8d3e6f0a5b2c9d4e7f1a3b, use it in tiles.js', '9b2e4f7a1c8d3e6f0a5b2c9d4e7f1a3b'],
+    ['Der neue Token ist 5c1d9e2f-3a4b-4c6d-8e9f-0a1b2c3d4e5f, bitte tauschen', '5c1d9e2f-3a4b-4c6d-8e9f-0a1b2c3d4e5f'],
+    ['Twilio auth token 3d9f2a7c1e8b4d6f0a2c5e7b9d1f3a5c for the reminders', '3d9f2a7c1e8b4d6f0a2c5e7b9d1f3a5c'],
+    ["define( 'DB_PASSWORD', 'Lm4!qz9Rt2#w' );", 'Lm4!qz9Rt2#w'],
+    ["  'dbpassword' => 'Gq7#mK2!pX9z',", 'Gq7#mK2!pX9z'],
+    ['<Pass encoding="base64">V2ludGVyMjAyNSFGdHA=</Pass>', 'V2ludGVyMjAyNSFGdHA='],
+    ['rcon_password "Kiesel-Wolke-42"', 'Kiesel-Wolke-42'],
+    ['./srcds_run +sv_setsteamaccount 9E1D7C4A2B8F3065D1C9A7E4B2F80631 +map de_dust2', '9E1D7C4A2B8F3065D1C9A7E4B2F80631'],
+    ['steamcmd +login builder Qw7!zR2m_Lp +quit', 'Qw7!zR2m_Lp'],
+    ["ldapsearch -H ldaps://dc.local -D cn=svc -w 'Tz8#pQ2!vL' -b dc=local", 'Tz8#pQ2!vL'],
+    ['-u ck_1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b:x', 'ck_1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b'],
+    ['Backup codes:\nr8kq2m7vxa\nz3pw9n4tbc\nh6ds1fgy0e', 'z3pw9n4tbc'],
+    ['| Env | Shared secret |\n|---|---|\n| test | Hq7mL2xR9k |', 'Hq7mL2xR9k'],
+    ['routerpasswort ist jetzt Teekanne-Nebel-58', 'Teekanne-Nebel-58'],
+    ['Der Auth-Code für den Transfer von bäckerei-graf.at lautet: 4Rq!zL8m-Tp2', '4Rq!zL8m-Tp2'],
+    ['2FA recovery code: Q7MX 3KRT 8WLP 5HNC', 'Q7MX 3KRT 8WLP 5HNC'],
+    ['smtp user info@firma.at, pass qzxkrtvmwplhndbc', 'qzxkrtvmwplhndbc'],
+    ['steamLoginSecure=76561198000000001%7C%7CeyJhbGciOiJFZERTQSJ9.abc', '76561198000000001'],
+  ];
+  for (const [text, secret] of cases) assert.ok(!scrub(text).text.includes(secret), `left in: ${text}`);
+});
+
+test('round 3 classes: public material and placeholders stay', () => {
+  for (const text of [
+    "ALTER USER X SET RSA_PUBLIC_KEY='MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAq8vL2mXp';",
+    'thumbprint sha256 Lr8mQ2vXk9TzP4nWc7bY1sJd6HfG3aE5uK0oI2tRnVx',
+    'minisign -Vm app.tar.gz -P RWQx7Kq2Lm9Vz4Tb7Np1Wc6Hd3Jf5Rs0YeUa8Qk3Mv9Px2Lz5Wn1Cb6Hj',
+    '.logo { background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk); }',
+    'arn:aws:secretsmanager:eu-central-1:123456789012:secret:app/db-Ab12Cd',
+    'TOKEN="$(cat /run/secrets/token)"',
+    "Le mot de passe de l'admin doit faire 20 caractères. L'ancien est désactivé.",
+    'Old key id: key_01HZX4M9QK7T2VBN8RPC3WJD6F',
+    'Release signing key: rsa4096/0x7A3F9C21D8E4B605',
+    'Suivi : 1Z84F2A90394817265',
+    "define('DB_PASSWORD', 'password_here');",
+    'export OPENAI_API_KEY=sk-...',
+    'Idempotency-Key on both requests: 3f8a2c1e-9b4d-4e7a-a6c5-1d2e3f4a5b6c.',
+  ]) assert.equal(scrub(text).text, text);
+});

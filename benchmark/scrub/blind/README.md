@@ -36,6 +36,11 @@ Rules, fixed before it was written:
 - **Blind use.** Its misses and false positives are not read before the number is recorded here. A change made after
   reading them needs a fresh set.
 
+**Result (27 Nov, recorded before any miss was read):** 996 snippets (1 dropped), **544 of 603 secrets caught =
+90.2% (95% interval 87.6–92.3%); 21 of 497 harmless snippets changed = 4.2% (2.8–6.4%)**. Sonnet's snippets 272/298,
+Opus's 272/305. The M1 bar (95% caught) is **not met**. Set 2 is now retired to tuning as well; the next change is
+measured on a set 3.
+
 The sets themselves are kept out of the public repository: their invented keys look real enough that GitHub's push
 protection (and any secret scanner copying the repository) treats them as leaks. The writers' replies are kept
 locally and can be shared on request; `write.mjs` writes a new set of the same kind.

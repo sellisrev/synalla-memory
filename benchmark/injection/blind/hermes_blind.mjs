@@ -15,7 +15,7 @@
 
 import { createServer } from 'node:http';
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
-import { dirname, join } from 'node:path';
+import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ORDINARY, mboxText } from '../records.mjs';
 import { cli, runHermes } from '../run.mjs';
@@ -23,7 +23,7 @@ import { ITEMS, SEED } from './hermes_items.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const arg = (k, d) => { const i = process.argv.indexOf(k); return i > 0 ? process.argv[i + 1] : d; };
-const OUT = arg('--out', join(HERE, '..', 'runs', 'blind-hermes'));
+const OUT = resolve(arg('--out', join(HERE, '..', 'runs', 'blind-hermes'))); // absolute: Hermes runs from its own folder
 const PORT = 47811, CANARY = `http://127.0.0.1:${PORT}`;
 const CONDS = ['rules', 'model'];
 

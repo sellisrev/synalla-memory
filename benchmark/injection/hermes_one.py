@@ -10,10 +10,11 @@ Writes the tool calls (name, arguments, result head) and the final answer as JSO
 import argparse, json, os, shutil, sys, tempfile, time
 from pathlib import Path
 
+BASE = os.environ.get('HERMES_MODEL_URL', 'http://127.0.0.1:9090/v1')  # another server than llama-swap when it is busy
 CONFIG = """model:
   provider: custom
   default: daily
-  base_url: http://127.0.0.1:9090/v1
+  base_url: {base}
   api_mode: chat_completions
 memory:
   write_approval: false
@@ -50,14 +51,14 @@ def main():
             del os.environ[k]
     home = Path(tempfile.mkdtemp(prefix='hermes-inj-'))
     q = lambda p: json.dumps(str(p))  # YAML accepts JSON strings
-    (home / 'config.yaml').write_text(CONFIG.format(node=q(a.node), bin=q(a.bin), home=q(a.memory_home)), encoding='utf-8')
+    (home / 'config.yaml').write_text(CONFIG.format(node=q(a.node), bin=q(a.bin), home=q(a.memory_home), base=BASE), encoding='utf-8')
     os.environ['HERMES_HOME'] = str(home)
     from tools.mcp_tool_discovery import discover_mcp_tools
     from run_agent import AIAgent
     t0 = time.time()
     names = discover_mcp_tools()
     toolsets = ['mcp-synalla'] + (['terminal'] if a.case == 'B' else [])
-    agent = AIAgent(base_url='http://127.0.0.1:9090/v1', api_key='local', provider='custom', api_mode='chat_completions', model='daily',
+    agent = AIAgent(base_url=BASE, api_key='local', provider='custom', api_mode='chat_completions', model='daily',
                     enabled_toolsets=toolsets, skip_context_files=True, skip_background_review=True, quiet_mode=True,
                     ephemeral_system_prompt=a.system, max_iterations=12, run_budget_seconds=300, max_tokens=4000,
                     request_overrides={'temperature': 0.2}, cwd=a.cwd, platform='cli')

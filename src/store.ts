@@ -95,6 +95,8 @@ CREATE VIRTUAL TABLE IF NOT EXISTS fts USING fts5(text, content='chunks', conten
   tokenize='unicode61 remove_diacritics 2');
 CREATE TRIGGER IF NOT EXISTS chunks_ai AFTER INSERT ON chunks BEGIN
   INSERT INTO fts(rowid, text) VALUES (new.cid, new.text); END;
+CREATE TRIGGER IF NOT EXISTS chunks_au AFTER UPDATE OF text ON chunks BEGIN
+  INSERT INTO fts(fts, rowid, text) VALUES ('delete', old.cid, old.text); INSERT INTO fts(rowid, text) VALUES (new.cid, new.text); END;
 CREATE TRIGGER IF NOT EXISTS chunks_ad AFTER DELETE ON chunks BEGIN
   INSERT INTO fts(fts, rowid, text) VALUES ('delete', old.cid, old.text); END;
 CREATE TABLE IF NOT EXISTS facts(fid INTEGER PRIMARY KEY, item TEXT NOT NULL REFERENCES items(id) ON DELETE CASCADE,
@@ -105,6 +107,9 @@ CREATE INDEX IF NOT EXISTS facts_item ON facts(item);
 CREATE INDEX IF NOT EXISTS facts_gkey ON facts(gkey);
 CREATE VIRTUAL TABLE IF NOT EXISTS facts_fts USING fts5(body, tokenize='unicode61 remove_diacritics 2');
 CREATE TRIGGER IF NOT EXISTS facts_ai AFTER INSERT ON facts BEGIN
+  INSERT INTO facts_fts(rowid, body) VALUES (new.fid, new.subject || ' | ' || new.predicate || ' | ' || new.object || ' ' || new.quote); END;
+CREATE TRIGGER IF NOT EXISTS facts_au AFTER UPDATE OF subject, predicate, object, quote ON facts BEGIN
+  DELETE FROM facts_fts WHERE rowid = old.fid;
   INSERT INTO facts_fts(rowid, body) VALUES (new.fid, new.subject || ' | ' || new.predicate || ' | ' || new.object || ' ' || new.quote); END;
 CREATE TRIGGER IF NOT EXISTS facts_ad AFTER DELETE ON facts BEGIN
   DELETE FROM facts_fts WHERE rowid = old.fid; END;
@@ -290,7 +295,60 @@ export class MemoryStore {
     const store = new MemoryStore(db, dim, path, key);
     store.#chunkVecs.load();
     store.#factVecs.load();
+    // Stores made before stand-ins: their money and ID numbers get stand-ins in place, once (old [secret:...] markers stay).
+    if (!db.prepare(`SELECT v FROM meta WHERE k = 'pseudonyms'`).get()) {
+      store.rehide();
+      db.prepare(`INSERT INTO meta(k, v) VALUES ('pseudonyms', '1')`).run();
+    }
     return store;
+  }
+
+  /**
+   * Hide values in text already stored, in place: the stand-in rules on every text of these items (all items when
+   * `items` is omitted), plus `extra` values (a later check model's finds). Facts, wants and checks are kept; a chunk
+   * or fact whose text changed loses its vector, so the next `embed` redoes only those. Returns what changed.
+   */
+  rehide(items?: readonly string[], extra: readonly string[] = []): { items: number; chunks: number; facts: number } {
+    const db = this.#db, out = { items: 0, chunks: 0, facts: 0 };
+    const h = (t: string | null) => (t === null ? null : this.#hide(t, extra));
+    const ids = items ?? (db.prepare('SELECT id FROM items').all() as { id: string }[]).map(r => r.id);
+    const run = db.transaction(() => {
+      const dropChunks: number[] = [], dropFacts: number[] = [];
+      for (const id of ids) {
+        const it = db.prepare('SELECT title, text FROM items WHERE id = ?').get(id) as { title: string; text: string } | undefined;
+        if (!it) continue;
+        let changed = false;
+        const title = h(it.title) as string, text = h(it.text) as string;
+        if (title !== it.title || text !== it.text) { db.prepare('UPDATE items SET title = ?, text = ? WHERE id = ?').run(title, text, id); changed = true; }
+        for (const c of db.prepare('SELECT cid, text FROM chunks WHERE item = ?').all(id) as { cid: number; text: string }[]) {
+          const t = h(c.text) as string;
+          if (t === c.text) continue;
+          db.prepare('UPDATE chunks SET text = ?, vec = NULL WHERE cid = ?').run(t, c.cid);
+          dropChunks.push(c.cid); out.chunks++; changed = true;
+        }
+        const keys = new Set<string>();
+        for (const f of db.prepare('SELECT fid, subject, predicate, object, quote, gkey FROM facts WHERE item = ?').all(id) as
+          { fid: number; subject: string; predicate: string; object: string; quote: string; gkey: string }[]) {
+          const s = h(f.subject) as string, p = h(f.predicate) as string, o = h(f.object) as string, q = h(f.quote) as string;
+          if (s === f.subject && p === f.predicate && o === f.object && q === f.quote) continue;
+          const gkey = norm(s) + '\u0000' + norm(p);
+          db.prepare('UPDATE facts SET subject = ?, predicate = ?, object = ?, quote = ?, gkey = ?, vec = NULL WHERE fid = ?').run(s, p, o, q, gkey, f.fid);
+          keys.add(f.gkey); keys.add(gkey); dropFacts.push(f.fid); out.facts++; changed = true;
+        }
+        for (const w of db.prepare('SELECT wid, what, quote, closed_quote FROM wants WHERE item = ?').all(id) as
+          { wid: number; what: string; quote: string; closed_quote: string | null }[]) {
+          const a = h(w.what), b = h(w.quote), c = h(w.closed_quote);
+          if (a !== w.what || b !== w.quote || c !== w.closed_quote) { db.prepare('UPDATE wants SET what = ?, quote = ?, closed_quote = ? WHERE wid = ?').run(a, b, c, w.wid); changed = true; }
+        }
+        if (keys.size) this.#resupersede(keys);
+        if (changed) out.items++;
+      }
+      return { dropChunks, dropFacts };
+    });
+    const { dropChunks, dropFacts } = run();
+    this.#chunkVecs.drop(dropChunks);
+    this.#factVecs.drop(dropFacts);
+    return out;
   }
 
   /** Text as stored: secrets and money and ID numbers replaced by their stand-ins (see the header). */
@@ -353,6 +411,9 @@ export class MemoryStore {
     if (!r) return false;
     if (r.date === String(item.date ?? '') && r.title === pseudonymize(item.title ?? '', this.#vault, [], false)
       && r.text === pseudonymize(item.text ?? '', this.#vault, [], false)) return true;
+    // Stored before stand-ins: secrets as [secret:kind] markers, money and ID numbers given stand-ins by the migration.
+    const legacy = (t: string) => pseudonymize(scrub(t).text, this.#vault, [], false);
+    if (r.date === String(item.date ?? '') && r.title === legacy(item.title ?? '') && r.text === legacy(item.text ?? '')) return true;
     // Stored after the model checks: its text differs from the rules' result, so compare the rules' result by hash.
     const c = this.#db.prepare('SELECT rules_hash FROM item_checks WHERE item = ?').get(item.id) as { rules_hash: string } | undefined;
     return !!c && c.rules_hash === rulesHash(item);

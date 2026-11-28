@@ -53,3 +53,27 @@ test('ordinary numbers stay readable', () => {
   for (const t of ['Call me on +43 660 7351 284', 'Parcel 1Z84 is waiting', 'Meeting on 2026-11-27 at 10:30', 'Order #7710 delayed',
     'Room 2.14 at Praxis Mur', 'EUR 1,140 from January', 'version 3.8.0 (build 20261118.4)', 'Ticket #55102']) assert.deepEqual(found(t), [], t);
 });
+
+test('round 2 (after blind set 1): lowercase IBANs, cards with an expiry after them, and the number families set 1 showed', () => {
+  assert.deepEqual(found('iban: gb29 nwbk 6016 1331 9268 19'), [['iban', 'gb29 nwbk 6016 1331 9268 19']]);
+  assert.deepEqual(found('backup mastercard 5425 2334 3010 9903 11/27, cvv 041'), [['card-number', '5425 2334 3010 9903']]);
+  assert.deepEqual(found('Amex 3742 454554 00126 exp 05/29'), [['card-number', '3742 454554 00126']]);
+  assert.deepEqual(found('mijn BSN is 111222333'), [['social-security-number', '111222333']]);
+  assert.deepEqual(found('rijksregisternummer 85.07.30-033.28'), [['social-security-number', '85.07.30-033.28']]);
+  assert.deepEqual(found('steht auf dem Ausweis: 65170839J007'), [['social-security-number', '65170839J007']]);
+  assert.deepEqual(found('Sozialversicherungsnummer 65 170839 J 003'), [['social-security-number', '65 170839 J 003']]);
+  assert.deepEqual(found('NUSS: 28/12345678/40'), [['social-security-number', '28/12345678/40']]);
+  assert.deepEqual(found("my SSN for the credit check lol. it's 078-05-1120"), [['social-security-number', '078-05-1120']]);
+  assert.deepEqual(found('Il mio codice fiscale è RSSMRA85T10A562S'), [['tax-id', 'RSSMRA85T10A562S']]);
+  assert.deepEqual(found('mi NIE para el contrato es X1234567L'), [['tax-id', 'X1234567L']]);
+  assert.deepEqual(found('vom Finanzamt habe ich jetzt die 143/512/60874'), [['tax-id', '143/512/60874']]);
+  assert.deepEqual(found('Steuer-ID 65929970489, geboren am 12.03.1991'), [['tax-id', '65929970489']]);
+  assert.deepEqual(found('passport (exp 03/2031): 548213976'), [['passport-number', '548213976']]);
+  assert.deepEqual(found('Kinderreisepass abgelaufen, neuer Pass C01X00T47'), [['passport-number', 'C01X00T47']]);
+});
+
+test('round 2: company VAT numbers, council tax references and numbers under other labels stay readable', () => {
+  for (const t of ['USt-IdNr. DE123456789', 'Cliente: Panadería Ortega S.L. (NIF-IVA ESB86451239)', 'council tax ref 4400 2211 9',
+    'Bitte geben Sie NIE an, um TANs abzufragen. Vorgangsnummer 2026-11-AX-90214', 'Ihr TIN wird nie per Mail verschickt.',
+    'Boarding pass 4471823 for gate B12', 'the SSN field on the order 88213-447 stays empty']) assert.deepEqual(found(t), [], t);
+});

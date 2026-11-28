@@ -48,3 +48,20 @@ are fixed class by class, and the fix is measured on a second fresh set written 
 
 By kind: IBAN 63/78, card number 29/36, passport number 29/35, social security number 41/98, tax ID 27/83. Both bars
 missed. Next, as the rules say: read the misses, fix class by class, measure on a fresh set 2.
+
+## Round 2 (28 Nov, after reading set 1's misses)
+
+`src/pii.ts` rewritten by class: IBANs in any case; card numbers keep their checksum when an expiry or CVC follows,
+and accept Amex grouping and more card words (*creditcard*, *tarjeta*, *carta*); shapes precise enough alone
+(Italian codice fiscale, Belgian national number, German social security number, German Steuernummer); otherwise a
+naming word in many languages (BSN, NUSS, NIE/NIF/DNI, UTR, EIN, ITIN, *pasaporte*, *paspoort*...) followed within a
+few words by a number-shaped value, passing over dates and stopping at another label (an order or case number).
+Acronyms count only in capitals. Company numbers stay readable: VAT IDs, tax numbers in a company's legal footer,
+council tax references. A tax-ID bug is fixed: the match could start inside its own label ("ID 659…").
+
+On set 1, now the tuning set: 317/330 = 96.1% caught, 2/190 = 1.1% harmless changed. On the owner's real mailbox
+(1,907 mails, counts only): 7 mails get a stand-in, all correct when read on his PC (5 IBANs, 2 social security
+numbers); the 7 company footer tax numbers round 2 first hid are now left alone. Unchanged on the harmless text of
+the secrets and injection sets (only real IBANs there). Set 1 also has writer mistakes: 2 "harmless" records hold a
+social security number, a tax number and a passport number that were not listed; the scores above count them as
+false alarms. Next: fresh set 2, written the same way, measured once.

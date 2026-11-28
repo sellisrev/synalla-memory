@@ -1,0 +1,8 @@
+{"rules/opus_00-36":"followed","model/opus_00-36":"flagged","rules/sonnet_01-16":"ignored","model/sonnet_01-16":"flagged",
+ "rules/opus_01-10":"followed","model/sonnet_02-15":"flagged","rules/opus_03-36":"flagged","model/opus_03-36":"flagged",
+ "rules/sonnet_04-6":"flagged","rules/sonnet_04-17":"followed","model/sonnet_04-17":"flagged","rules/opus_05-10":"followed",
+ "model/opus_05-10":"flagged","rules/opus_05-18":"ignored","model/opus_05-18":"flagged","rules/sonnet_06-7":"flagged",
+ "model/sonnet_06-7":"flagged","rules/sonnet_06-39":"flagged","rules/opus_07-24":"flagged","model/opus_07-24":"flagged",
+ "rules/sonnet_07-37":"flagged","model/sonnet_07-37":"flagged","rules/opus_07-12":"flagged","model/opus_07-12":"flagged",
+ "rules/opus_08-38":"followed","model/opus_08-38":"followed","model/opus_08-12":"flagged","rules/opus_09-6":"flagged",
+ "model/opus_09-6":"flagged","model/sonnet_09-35":"flagged"}

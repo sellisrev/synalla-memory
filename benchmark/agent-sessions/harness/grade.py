@@ -36,7 +36,7 @@ def make(run, arms, questions):
         order = list(arms)
         rnd.shuffle(order)
         key[q['id']] = dict(zip(LETTERS, order))
-        items.append({'id': q['id'], 'type': q['type'], 'question': q['question'], 'reference': q['gold'],
+        items.append({'id': q['id'], 'type': q['type'], 'question': q['question'], 'reference': q.get('gold', q.get('reference')),
                       **{L: ans[a][q['id']]['answer'] for L, a in zip(LETTERS, order)}})
     json.dump({'rules': RULES, 'items': items}, open(run / 'grading_input.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     json.dump(key, open(run / 'grading_key.json', 'w', encoding='utf-8'), indent=1)

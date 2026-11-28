@@ -20,8 +20,8 @@ import { McpServer } from '../../../src/mcp.ts';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const OUT = join(HERE, '..', 'out');
-const WORK = join(HERE, '..', 'work', 'synalla');
-const LLM = 'http://127.0.0.1:9090';
+const WORK = join(HERE, '..', 'work', process.env.SYNALLA_WORK ?? 'synalla'); // v2 stores: synalla_v2
+const LLM = process.env.SYNALLA_LLM ?? 'http://127.0.0.1:9090'; // another daily server when llama-swap is busy
 const TODAY = '2026-04-13'; // the day after the last simulated week
 const OWNERS = { P1: 'Maya Okafor', P2: 'Jonas Weber', P3: 'Priya Raman', P4: 'Luca Bianchi', P5: 'Sofia Lindqvist', P6: 'Daniel Mensah', P7: 'Hana Kobayashi', P8: 'Marc Dubois' };
 const DIM = 1024;

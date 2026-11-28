@@ -1,8 +1,9 @@
 # Agent-session set: construction rules
 
 Published before the set is generated (24 Nov 2026). This is Synalla memory's public benchmark input: synthetic
-coding and assistant sessions, so it can be published and rerun. The questions are written or approved by a developer
-outside the project, from the timelines below, not by us.
+coding and assistant sessions, so it can be published and rerun. The questions are written by a generator from the
+timelines below and checked against the sessions by a second model (Serge, 27 Nov 2026: no outside question writer;
+first plan: an outside developer).
 
 ## What is generated (`generate.py`, fixed seed)
 
@@ -17,12 +18,22 @@ outside the project, from the timelines below, not by us.
 - The timeline and the map from sessions to events are published with the set; they are the ground truth for the
   question writer, not input to any system.
 
-## Questions (written by the outside developer)
+## Questions (generated, then checked; rules fixed 28 Nov before any question was generated)
 
 - About 150 in total, spread over the 8 developers.
 - Mix: facts stated once (30%), facts needing two or more sessions (20%), what is true now after a change (20%), when
   something happened (15%), preferences (5%), and questions whose answer is not in the sessions (10%).
 - Each question has a reference answer and the sessions it comes from.
+- **Writer:** the local `daily` model (Qwen3.6 35B-A3B) gets one developer's timeline and the map from sessions to
+  events, and writes that developer's 20 questions in the mix above (6 facts, 4 across sessions, 4 true now, 3 when,
+  1 preference, 2 not in the sessions), each citing its event ids (`generate_questions.py`).
+- **Rules checked by code:** cited events exist; a "true now" question cites the last event of a chain of replaced
+  events and its reference is that event's value; a "when" reference holds the event's date; a question whose
+  answer is not in the sessions cites no event.
+- **Checked by a second model** (Gemma 4 26B, `fast`): it reads the cited sessions and must agree that they support
+  the reference answer; for "not in the sessions" it reads every session of that developer and must find no answer.
+  A question that fails is dropped, never rewritten by hand; the drops are published with their reason.
+- Systems never see the timelines, the questions or the checks before they answer.
 
 ## Systems and grading
 

@@ -10,9 +10,9 @@ import { join } from 'node:path';
 import { ensureModels, startChatServer } from '../src/models.ts';
 import { checkModel, scrubWithModel, speaksToAgentModel } from '../src/checks.ts';
 
-const [dir, gguf] = process.argv.slice(2);
+const [dir, gguf, threads] = process.argv.slice(2);
 const { server } = await ensureModels(dir, { gpu: 'cpu' });
-const s = await startChatServer(server, gguf, { gpuLayers: 0 });
+const s = await startChatServer(server, gguf, { gpuLayers: 0, ...(threads ? { threads: Number(threads) } : {}) });
 try {
   const base = checkModel(s.url, 'check');
   let calls = 0, secs = 0;

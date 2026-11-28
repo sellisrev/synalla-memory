@@ -39,7 +39,9 @@ are unchanged. Every model below, the 26B one included, is measured again with i
 
 **CPU speed of E4B** (`small_models_cpu.mjs`, the shipped llama.cpp CPU build started by the package, on this PC's 16-core
 Ryzen AI Max+ 395, so faster than most laptops): secrets pass 0.88 s a call, 1.30 s a record; injection question
-0.98 s a record. A first import of 1,907 mails is about an hour here; expect several hours on an ordinary laptop.
+0.98 s a record. Limited to 4 threads, as a stand-in for an ordinary laptop (28 Nov, while GPU jobs ran): 1.91 s a
+call, 2.83 s a record for the secrets pass, 2.23 s for the injection question. A first check of 2,000 mails is then
+about 3 hours, which is why a first import skips the model and `check-backlog` catches up later.
 
 Rules alone on set 4: 560/596 = 94.0% caught, 7/495 = 1.4% changed.
 

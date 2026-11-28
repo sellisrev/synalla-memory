@@ -188,8 +188,9 @@ export async function startEmbedServer(server: string, model: string, opts: { gp
  * Start llama-server with a check model (chat) on a free localhost port: one request at a time, an 8,192-token window
  * (records are cut at 12,000 characters), the model's own chat template. `gpuLayers` 0 keeps it on the CPU.
  */
-export async function startChatServer(server: string, model: string, opts: { gpuLayers?: number; timeoutMs?: number; fetch?: typeof fetch } = {}): Promise<Sidecar> {
-  return startServer(server, ['-m', model, '-c', '8192', '-np', '1', '--jinja', '-ngl', String(opts.gpuLayers ?? 0)], opts);
+export async function startChatServer(server: string, model: string, opts: { gpuLayers?: number; threads?: number; timeoutMs?: number; fetch?: typeof fetch } = {}): Promise<Sidecar> {
+  return startServer(server, ['-m', model, '-c', '8192', '-np', '1', '--jinja', '-ngl', String(opts.gpuLayers ?? 0),
+    ...(opts.threads ? ['-t', String(opts.threads)] : [])], opts);
 }
 
 async function startServer(server: string, base: string[], opts: { timeoutMs?: number; fetch?: typeof fetch }): Promise<Sidecar> {

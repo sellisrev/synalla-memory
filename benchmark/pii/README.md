@@ -35,3 +35,16 @@ written with it; this set measures it on text written by models that never saw i
 
 Measured once with the rules as committed when the set is written. If the bars are missed, the misses are read, rules
 are fixed class by class, and the fix is measured on a second fresh set written the same way, never on this one.
+
+## Set 1 result (28 Nov, the set's only look, rules at c2d03e9)
+
+400 records (210 positive, 190 harmless), 330 values, no malformed records.
+
+| | Result | Bar |
+|---|---|---|
+| Values caught | 189/330 = **57.3%** (51.9–62.5) | 95% |
+| Harmless records changed | 4/190 = 2.1% (0.8–5.3) | 2% |
+| Extra hides in positive records | 2 | |
+
+By kind: IBAN 63/78, card number 29/36, passport number 29/35, social security number 41/98, tax ID 27/83. Both bars
+missed. Next, as the rules say: read the misses, fix class by class, measure on a fresh set 2.

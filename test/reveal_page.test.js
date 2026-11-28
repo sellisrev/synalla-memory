@@ -69,3 +69,26 @@ test('recall finds a real value the owner types under its stand-in, and the inst
     assert.equal(noPage.isError, true);
   } finally { await srv.close(); store.close(); }
 });
+
+test('export --plain writes stand-ins; with --reveal, the real values (a folder on this computer only)', async () => {
+  const { mkdtempSync, mkdirSync, writeFileSync, readFileSync, readdirSync, rmSync } = await import('node:fs');
+  const { tmpdir } = await import('node:os');
+  const { join } = await import('node:path');
+  const { main } = await import('../src/cli.ts');
+  const root = mkdtempSync(join(tmpdir(), 'synalla-export-'));
+  try {
+    const notes = join(root, 'notes'); mkdirSync(notes);
+    writeFileSync(join(notes, 'rent.md'), '# Rent\nRent goes to DE89 3704 0044 0532 0130 00 from January.');
+    const e = { home: join(root, 'home'), keychain: (() => { const m = new Map(); return { kind: 't', get: n => m.get(n) ?? null, set: (n, v) => m.set(n, v), delete: n => m.delete(n) }; })(),
+      out: s => e.o.push(s), err: s => e.r.push(s), o: [], r: [], readStdin: async () => '', now: () => new Date('2026-11-28T10:00:00Z'), openclawDir: join(root, 'oc') };
+    assert.equal(await main(['init', '--no-embed'], e), 0);
+    assert.equal(await main(['import-notes', notes], e), 0);
+    const all = dir => { const out = []; const walk = d => { for (const f of readdirSync(d, { withFileTypes: true })) f.isDirectory() ? walk(join(d, f.name)) : f.name.endsWith('.md') && f.name !== 'README.md' && out.push(readFileSync(join(d, f.name), 'utf8')); }; walk(dir); return out.join('\n'); };
+    assert.equal(await main(['export', '--plain', join(root, 'a')], e), 0);
+    assert.match(all(join(root, 'a')), /Rent goes to ⟦IBAN 1⟧/);
+    assert.match(e.o.join(''), /add --reveal for the real values/);
+    assert.equal(await main(['export', '--plain', join(root, 'b'), '--reveal'], e), 0);
+    assert.match(all(join(root, 'b')), /Rent goes to DE89 3704 0044 0532 0130 00/);
+    assert.doesNotMatch(all(join(root, 'b')), /⟦IBAN/);
+  } finally { rmSync(root, { recursive: true, force: true }); }
+});

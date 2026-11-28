@@ -36,9 +36,14 @@ export function renderPlain(items: Iterable<StoredItem>): Map<string, string> {
  * Write the readable copy under `synalla-memory/readable/` on `target`, and delete files from an earlier export
  * that no longer have content. Returns the file names written.
  */
-export async function exportPlain(store: { items(): Iterable<StoredItem> }, target: Target): Promise<string[]> {
+/**
+ * `reveal` puts kept values back in place of their stand-ins: only for a folder on the owner's own computer, asked for
+ * explicitly (`export --plain <dir> --reveal`); never for a copy at a backup provider.
+ */
+export async function exportPlain(store: { items(): Iterable<StoredItem> }, target: Target, opts: { reveal?: (text: string) => string } = {}): Promise<string[]> {
   const root = 'synalla-memory/readable/';
   const files = renderPlain(store.items());
+  if (opts.reveal) for (const [name, text] of files) files.set(name, opts.reveal(text));
   const written: string[] = [];
   await target.put(`${root}README.md`, Buffer.from(README, 'utf8'));
   for (const [name, text] of [...files].sort()) {

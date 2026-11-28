@@ -417,11 +417,14 @@ export async function main(argv: string[], env: Env): Promise<number> {
         return 0;
       }
       case 'export': {
-        if (rest[0] !== '--plain' || !rest[1]) throw new Error('usage: synalla-memory export --plain <dir>');
+        if (rest[0] !== '--plain' || !rest[1] || rest[1].startsWith('--')) throw new Error('usage: synalla-memory export --plain <dir> [--reveal]');
+        const reveal = rest.includes('--reveal');
         const c = load(env), store = openStore(env, c);
         try {
-          const files = await exportPlain(store, folderTarget(rest[1]));
-          env.out(`Wrote ${files.length} readable file(s) under ${join(rest[1], 'synalla-memory', 'readable')}. They are NOT encrypted.\n`);
+          const files = await exportPlain(store, folderTarget(rest[1]), reveal ? { reveal: t => store.reveal(t) } : {});
+          env.out(`Wrote ${files.length} readable file(s) under ${join(rest[1], 'synalla-memory', 'readable')}. They are NOT encrypted`
+            + (reveal ? ' and hold the real values behind the stand-ins (IBANs, ID numbers, kept secrets).\n'
+              : '; private values appear as stand-ins (add --reveal for the real values).\n'));
           return 0;
         } finally { store.close(); }
       }

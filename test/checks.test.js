@@ -171,12 +171,33 @@ test('check-with builtin: the sidecar starts once to set it up, runs during an i
     assert.deepEqual(starts, ['gemma-4-e4b']);
     assert.equal(running, 0);
     assert.deepEqual(JSON.parse(readFileSync(join(e.home, 'config.json'), 'utf8')).check, { builtin: 'gemma-4-e4b' });
+    // A first import with the built-in model leaves the model for later: no sidecar, the rules only.
     assert.equal(await main(['import-notes', notes], e), 0);
-    assert.match(e.o.join(''), /Checked with gemma-4-e4b: 0 record\(s\)/);
+    assert.match(e.o.join(''), /Model checks left for later on 1 record\(s\)/);
+    assert.equal(starts.length, 1);
+    e.o.length = 0;
+    assert.equal(await main(['recall', 'cellar door code'], e), 0);
+    assert.match(e.o.join(''), /Hq8vT3nLw2Rp/); // the rules alone do not see this one
+    // check-backlog runs the model on the waiting records, in place
+    e.o.length = 0;
+    assert.equal(await main(['check-backlog'], e), 0);
+    assert.match(e.o.join(''), /Checked 1 record\(s\) with gemma-4-e4b: 1 got new stand-ins, 0 speak to an AI assistant\. 0 still wait\./);
     assert.equal(starts.length, 2);
     assert.equal(running, 0);
     e.o.length = 0;
     assert.equal(await main(['recall', 'cellar door code'], e), 0);
     assert.match(e.o.join(''), /door code for the cellar is ⟦door code \d+⟧/);
+    assert.doesNotMatch(e.o.join(''), /Hq8vT3nLw2Rp/);
+    // nothing left; a re-import of the same notes is recognised as unchanged; a later import is checked at once
+    e.o.length = 0;
+    assert.equal(await main(['check-backlog'], e), 0);
+    assert.match(e.o.join(''), /Nothing waits/);
+    assert.equal(await main(['import-notes', notes], e), 0);
+    assert.match(e.o.join(''), /Notes: 0 imported, 1 unchanged/);
+    writeFileSync(join(notes, 'more.md'), '# More\nThe garage code is Zt5pQ8wLm3Kx now.');
+    e.o.length = 0;
+    assert.equal(await main(['import-notes', notes], e), 0);
+    assert.match(e.o.join(''), /Checked with gemma-4-e4b/);
+    assert.equal(starts.length, 3);
   } finally { srv.close(); rmSync(root, { recursive: true, force: true }); }
 });

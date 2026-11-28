@@ -86,6 +86,8 @@ CREATE TABLE IF NOT EXISTS items(id TEXT PRIMARY KEY, date TEXT NOT NULL, source
   text TEXT NOT NULL DEFAULT '');
 CREATE TABLE IF NOT EXISTS pseudonyms(token TEXT PRIMARY KEY, label TEXT NOT NULL, n INTEGER NOT NULL,
   mac TEXT NOT NULL UNIQUE, value TEXT);
+CREATE TABLE IF NOT EXISTS pending_checks(item TEXT PRIMARY KEY REFERENCES items(id) ON DELETE CASCADE,
+  rules_hash TEXT NOT NULL, ask_injection INTEGER NOT NULL);
 CREATE TABLE IF NOT EXISTS item_checks(item TEXT PRIMARY KEY REFERENCES items(id) ON DELETE CASCADE,
   rules_hash TEXT NOT NULL, speaks_to_agent INTEGER);
 CREATE TABLE IF NOT EXISTS chunks(cid INTEGER PRIMARY KEY, item TEXT NOT NULL REFERENCES items(id) ON DELETE CASCADE,
@@ -234,6 +236,7 @@ export class MemoryStore {
   #chunkVecs: VectorIndex;
   #factVecs: VectorIndex;
   #vault: Vault;
+  #kept: string[] | null = null;
   /** Keyed hash of a hidden value, so the same value finds its stand-in again and the table has no plain index. */
   #mac: (v: string) => string;
 
@@ -250,6 +253,7 @@ export class MemoryStore {
         const n = ((db.prepare('SELECT max(n) AS n FROM pseudonyms WHERE label = ?').get(label) as { n: number | null }).n ?? 0) + 1;
         const token = standIn(label, n);
         db.prepare('INSERT INTO pseudonyms(token, label, n, mac, value) VALUES (?, ?, ?, ?, ?)').run(token, label, n, m, keep ? value : null);
+        this.#kept = null;
         return token;
       },
       valueOf: t => {
@@ -351,6 +355,41 @@ export class MemoryStore {
     return out;
   }
 
+  /** The kept hidden values, longest first (cached until a new one is added). */
+  #keptValues(): string[] {
+    this.#kept ??= (this.#db.prepare('SELECT value FROM pseudonyms WHERE value IS NOT NULL AND length(value) >= 4 ORDER BY length(value) DESC')
+      .all() as { value: string }[]).map(r => r.value);
+    return this.#kept;
+  }
+
+  /** Records imported without the model checks (a first import on a slow computer), for check-backlog. */
+  markUnchecked(item: { id: string; date?: string; title?: string; text?: string }, askInjection: boolean): void {
+    this.#db.prepare('INSERT INTO pending_checks(item, rules_hash, ask_injection) VALUES (?, ?, ?) ON CONFLICT(item) DO UPDATE SET '
+      + 'rules_hash = excluded.rules_hash, ask_injection = excluded.ask_injection').run(item.id, rulesHash(item), Number(askInjection));
+  }
+
+  /** Up to `limit` records still waiting for the model checks, oldest first, as stored (stand-ins in place). */
+  uncheckedItems(limit = 200): (StoredItem & { askInjection: boolean; rulesHash: string })[] {
+    return (this.#db.prepare(`SELECT i.id, i.date, i.source, i.title, i.text, p.ask_injection, p.rules_hash FROM pending_checks p
+      JOIN items i ON i.id = p.item ORDER BY i.date LIMIT ?`).all(limit) as (StoredItem & { ask_injection: number; rules_hash: string })[])
+      .map(({ ask_injection, rules_hash, ...r }) => ({ ...r, askInjection: ask_injection === 1, rulesHash: rules_hash }));
+  }
+
+  /** Whether any record from this source is stored (a first import has none). */
+  hasSource(source: string): boolean { return !!this.#db.prepare('SELECT 1 FROM items WHERE source = ? LIMIT 1').get(source); }
+
+  /** How many records still wait for the model checks. */
+  uncheckedCount(): number { return (this.#db.prepare('SELECT count(*) AS n FROM pending_checks').get() as { n: number }).n; }
+
+  /** A waiting record was checked: its injection answer is kept, it leaves the queue. */
+  checkedLater(item: string, rulesHash: string, speaksToAgent: boolean | null): void {
+    this.#db.transaction(() => {
+      this.#db.prepare('INSERT INTO item_checks(item, rules_hash, speaks_to_agent) VALUES (?, ?, ?) ON CONFLICT(item) DO UPDATE SET '
+        + 'rules_hash = excluded.rules_hash, speaks_to_agent = excluded.speaks_to_agent').run(item, rulesHash, speaksToAgent === null ? null : Number(speaksToAgent));
+      this.#db.prepare('DELETE FROM pending_checks WHERE item = ?').run(item);
+    })();
+  }
+
   /** Text as stored: secrets and money and ID numbers replaced by their stand-ins (see the header). */
   #hide(text: string, extra: readonly string[] = []): string {
     return pseudonymize(text, this.#vault, extra) as string;
@@ -414,6 +453,10 @@ export class MemoryStore {
     // Stored before stand-ins: secrets as [secret:kind] markers, money and ID numbers given stand-ins by the migration.
     const legacy = (t: string) => pseudonymize(scrub(t).text, this.#vault, [], false);
     if (r.date === String(item.date ?? '') && r.title === legacy(item.title ?? '') && r.text === legacy(item.text ?? '')) return true;
+    // Rewritten later with a check model's values (check-backlog): hide every kept value the raw text holds.
+    const kept = (t: string) => this.#keptValues().filter(v => t.includes(v));
+    const later = (t: string) => pseudonymize(t, this.#vault, kept(t), false);
+    if (r.date === String(item.date ?? '') && r.title === later(item.title ?? '') && r.text === later(item.text ?? '')) return true;
     // Stored after the model checks: its text differs from the rules' result, so compare the rules' result by hash.
     const c = this.#db.prepare('SELECT rules_hash FROM item_checks WHERE item = ?').get(item.id) as { rules_hash: string } | undefined;
     return !!c && c.rules_hash === rulesHash(item);

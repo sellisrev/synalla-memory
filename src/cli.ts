@@ -40,7 +40,7 @@ import { McpServer, serveStdio } from './mcp.ts';
 import { backup, restore, folderTarget, webdavTarget, s3Target, listSnapshots, type Target } from './backup.ts';
 import { exportPlain } from './export.ts';
 import { httpChatModel, extractPending } from './facts.ts';
-import { checkModel, type CheckModel, scrubItemWithModel, speaksToAgentModel } from './checks.ts';
+import { checkModel, type CheckModel, secretsByModel, scrubItemWithModel, speaksToAgentModel } from './checks.ts';
 
 export interface Config {
   /** Names this memory's keys in the keychain, so two memories on one machine never share keys. */
@@ -250,11 +250,18 @@ export async function main(argv: string[], env: Env): Promise<number> {
           const seen = new Map(Object.entries(c.claudeCodeSeen ?? {}));
           // With check-with, sessions get the model's second pass for secrets too (not the injection question: they are
           // the owner's own conversations).
-          const ck = await openCheck(env, c), cm = ck?.m ?? null, memo = new Map<string, string[]>();
-          let r: Awaited<ReturnType<typeof importClaudeCode>>, hermesFailed = false, openclawFailed = false;
+          // As for mail: the first import with the built-in model, or --skip-checks, leaves the model pass for check-backlog.
+          const skip = !!c.check && !rest.includes('--check') && (rest.includes('--skip-checks') || ('builtin' in c.check && store.stats().items === 0));
+          let ck: Awaited<ReturnType<typeof openCheck>> = null; // started on the first new session
+          const memo = new Map<string, string[]>();
+          let r: Awaited<ReturnType<typeof importClaudeCode>>, hermesFailed = false, openclawFailed = false, deferred = 0;
           try {
-            const add = async (it: Parameters<MemoryStore['addItem']>[0] & { title: string; text: string; chunks: string[] }) =>
-              store.addItem(cm ? await scrubItemWithModel(it, cm, memo) : it);
+            const add = async (it: Parameters<MemoryStore['addItem']>[0] & { title: string; text: string; chunks: string[] }) => {
+              if (!skip && c.check && !ck) ck = await openCheck(env, c);
+              const cids = store.addItem(ck ? await scrubItemWithModel(it, ck.m, memo) : it);
+              if (skip) { store.markUnchecked(it, false); deferred++; }
+              return cids;
+            };
             r = await importClaudeCode({ addItem: add }, seen, env.claudeProjects);
             c.claudeCodeSeen = Object.fromEntries(seen);
             save(env, c);
@@ -277,7 +284,9 @@ export async function main(argv: string[], env: Env): Promise<number> {
               if (os.size > 0) env.out(`OpenClaw: ${o.items.length} session(s) imported.\n`);
               for (const f of o.failed) { openclawFailed = true; env.err(`OpenClaw (agent ${f.agent}): ${f.error}\n`); }
             } catch (e) { openclawFailed = true; env.err(`OpenClaw: ${(e as Error).message}\n`); }
-          } finally { ck?.stop(); }
+          } finally { (ck as { stop(): void } | null)?.stop(); } // set inside add(), which TypeScript cannot follow
+          if (deferred) env.out(`Model checks left for later on ${deferred} session(s) (first import); the rules ran. `
+            + 'Run `synalla-memory check-backlog` when the computer is free.\n');
           const em = await embedderOrKeywords(env, c); // the items are saved; vectors can follow with `embed`
           try { if (em.e) env.out(`Embedded ${await embedMissing(store, em.e)} new chunk(s).\n`); } finally { em.stop(); }
           return r.failed.length > 0 || hermesFailed || openclawFailed ? 1 : 0;
@@ -297,12 +306,23 @@ export async function main(argv: string[], env: Env): Promise<number> {
           const notes = { skipped: 0 };
           const items = cmd === 'import-mail' ? readMbox(path, stats) : readNotes(path, notes);
           let added = 0, same = 0;
-          const ck = await openCheck(env, c), cm = ck?.m ?? null, memo = new Map<string, string[]>();
-          let marked = 0;
+          // A first import with the built-in check model (slow on most computers), or --skip-checks: no model now; the
+          // records wait for `check-backlog`. Old mail rarely holds an injection; the rules still hide secrets.
+          const skip = !!c.check && !rest.includes('--check') && (rest.includes('--skip-checks')
+            || ('builtin' in c.check && !store.hasSource(cmd === 'import-mail' ? 'mail' : 'notes')));
+          // The check model starts on the first new record, so a re-import with nothing new starts nothing.
+          let ck: Awaited<ReturnType<typeof openCheck>> = null, cm: CheckModel | null = null;
+          const memo = new Map<string, string[]>();
+          let marked = 0, deferred = 0;
           try {
             for (const it of items) {
               if (store.hasSameItem(it)) { same++; continue; }
-              if (!cm) { store.addItem(it); added++; continue; }
+              if (!skip && c.check && !ck) { ck = await openCheck(env, c); cm = ck?.m ?? null; }
+              if (!cm) {
+                store.addItem(it); added++;
+                if (skip) { store.markUnchecked(it, !(it as { sent?: boolean }).sent); deferred++; }
+                continue;
+              }
               // The model checks: a second pass for secrets, and whether the record speaks to an AI assistant (never for
               // mail the owner sent). The rules have already run inside each call; the store's scrub leaves markers be.
               const checked = await scrubItemWithModel(it, cm, memo);
@@ -312,6 +332,8 @@ export async function main(argv: string[], env: Env): Promise<number> {
             }
           } finally { ck?.stop(); }
           if (ck) env.out(`Checked with ${ck.name}: ${marked} record(s) that speak to an AI assistant will carry a warning.\n`);
+          if (deferred) env.out(`Model checks left for later on ${deferred} record(s) (first import); the rules ran. `
+            + 'Run `synalla-memory check-backlog` when the computer is free.\n');
           if (cmd === 'import-mail') {
             env.out(`Mail: ${stats.seen} message(s) read, ${added} imported, ${same} unchanged; left out: ${stats.spamTrash} spam or trash, `
               + `${stats.badDate} without a date, ${stats.empty} empty, ${stats.duplicates ?? 0} duplicate copies, ${stats.errors} unreadable`
@@ -400,6 +422,37 @@ export async function main(argv: string[], env: Env): Promise<number> {
         try {
           const files = await exportPlain(store, folderTarget(rest[1]));
           env.out(`Wrote ${files.length} readable file(s) under ${join(rest[1], 'synalla-memory', 'readable')}. They are NOT encrypted.\n`);
+          return 0;
+        } finally { store.close(); }
+      }
+      case 'check-backlog': {
+        // The model checks for records imported without them (a first import, --skip-checks), a batch at a time:
+        // the model's secrets get stand-ins in place (facts kept, changed chunks re-embedded), its injection answer is
+        // kept for recall. Safe to stop and run again.
+        const c = load(env);
+        if (!c.check) throw new Error('choose a check model first: synalla-memory check-with builtin');
+        const li = rest.indexOf('--limit'), limit = li >= 0 ? Number(rest[li + 1]) : 200;
+        if (!Number.isSafeInteger(limit) || limit < 1) throw new Error('--limit must be a positive number');
+        const store = openStore(env, c);
+        try {
+          const todo = store.uncheckedItems(limit);
+          if (todo.length === 0) { env.out('Nothing waits for the model checks.\n'); return 0; }
+          const ck = await openCheck(env, c);
+          let hidden = 0, marked = 0;
+          try {
+            const memo = new Map<string, string[]>();
+            for (const it of todo) {
+              const values = [...new Set([...await secretsByModel(it.title, ck!.m, memo), ...await secretsByModel(it.text, ck!.m, memo)])];
+              if (values.length) hidden += store.rehide([it.id], values).items;
+              const speaks = it.askInjection ? await speaksToAgentModel(`${it.title}\n${it.text}`, ck!.m) : null;
+              if (speaks) marked++;
+              store.checkedLater(it.id, it.rulesHash, speaks);
+            }
+          } finally { ck?.stop(); }
+          env.out(`Checked ${todo.length} record(s) with ${ck!.name}: ${hidden} got new stand-ins, ${marked} speak to an AI assistant. `
+            + `${store.uncheckedCount()} still wait.\n`);
+          const em = await embedderOrKeywords(env, c);
+          try { if (em.e) env.out(`Embedded ${await embedMissing(store, em.e)} changed chunk(s).\n`); } finally { em.stop(); }
           return 0;
         } finally { store.close(); }
       }
@@ -510,7 +563,7 @@ export async function main(argv: string[], env: Env): Promise<number> {
         } finally { store.close(); }
       }
       default:
-        env.out('usage: synalla-memory init | import | import-mail <mbox> | import-notes <folder> | embed | check-with builtin | <url> <model> [--cloud-ok] | install-skill <agent> | extract-with ... | extract | recall <q> | serve | backup-to ... | backup | restore ... | export --plain <dir> | koofr-login-done | status\n');
+        env.out('usage: synalla-memory init | import | import-mail <mbox> | import-notes <folder> | embed | check-with builtin | <url> <model> [--cloud-ok] | check-backlog | install-skill <agent> | extract-with ... | extract | recall <q> | serve | backup-to ... | backup | restore ... | export --plain <dir> | koofr-login-done | status\n');
         return cmd ? 2 : 0;
     }
   } catch (e) {

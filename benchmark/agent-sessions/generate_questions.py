@@ -74,6 +74,12 @@ CHECK_SCHEMA = {'type': 'object', 'additionalProperties': False, 'required': ['s
                 'properties': {'supported': {'type': 'boolean'}, 'reason': {'type': 'string'}}}
 
 
+ABSENT_SYSTEM = """You check whether a question is answered anywhere in a developer's sessions with their AI agent. "answered": true
+if the SESSIONS text gives the answer to the QUESTION (even in passing), false if it does not. Give a short reason."""
+ABSENT_SCHEMA = {'type': 'object', 'additionalProperties': False, 'required': ['answered', 'reason'],
+                 'properties': {'answered': {'type': 'boolean'}, 'reason': {'type': 'string'}}}
+
+
 def write():
     allq = []
     for p in PERSONAS:
@@ -130,7 +136,12 @@ def check():
             ns = q['sessions']
         text = '\n\n'.join(f'--- session {n}\n' + session_text(p, n) for n in ns)[:90000]
         user = f"QUESTION{' (ABSENT)' if q['type'] == 'absent' else ''}: {q['question']}\nREFERENCE: {q['reference']}\n\nSESSIONS:\n{text}"
-        v = ask('fast', CHECK_SYSTEM, user, CHECK_SCHEMA, 400)
+        if q['type'] == 'absent':
+            # its own plain question: the first form ("supported" meaning "not answered") was misread (28 Nov)
+            a = ask('fast', ABSENT_SYSTEM, f"QUESTION: {q['question']}\n\nSESSIONS:\n{text}", ABSENT_SCHEMA, 400)
+            v = {'supported': not a['answered'], 'reason': a['reason']}
+        else:
+            v = ask('fast', CHECK_SYSTEM, user, CHECK_SCHEMA, 400)
         if not v['supported']:
             dropped.append({**q, 'why': 'second model: ' + v['reason']})
             continue

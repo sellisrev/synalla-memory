@@ -65,3 +65,21 @@ numbers); the 7 company footer tax numbers round 2 first hid are now left alone.
 the secrets and injection sets (only real IBANs there). Set 1 also has writer mistakes: 2 "harmless" records hold a
 social security number, a tax number and a passport number that were not listed; the scores above count them as
 false alarms. Next: fresh set 2, written the same way, measured once.
+
+## Set 2 result (28 Nov, the set's only look, rules at ef51f12)
+
+400 records (214 positive, 186 harmless), 349 values, written the same way as set 1 with new themes.
+
+| | Result | Bar |
+|---|---|---|
+| Values caught | 337/349 = **96.6%** (94.1–98.0) | 95% |
+| Harmless records changed | 1/186 = **0.5%** (0.1–3.0) | 2% |
+| Extra hides in positive records | 0 | |
+
+By kind: IBAN 88/91, card number 32/35, passport number 38/38, social security number 100/101, tax ID 79/84. **Both
+bars met** (the interval's lower end, 94.1%, is just under 95%). The 12 misses, read after scoring: 3 card numbers
+the writers took from payment providers' published test cards, which the rules leave readable on purpose; 2 IBANs
+split across two lines on purpose ("IBAN (suite)"); tax IDs whose label is new to the rules ("identifiant fiscal")
+or holds a word the rules read as another label ("numéro fiscal de référence", "Steuer-ID für die Rechnung"); a card
+named only by its product ("Chase Sapphire"). The one false alarm is an HR reference after a tax word. No further
+change is made on this set; a round 3 would need a set 3.

@@ -64,7 +64,10 @@ warning on mail and notes that try to give orders to your AI assistant (prompt i
 - `check-with <https url> <model> --cloud-ok`: a cloud model, if you choose it. Each checked record is sent there in
   full; its API key is read from standard input and kept in the keychain.
 
-Without a model the rules still run. Agent sessions get the secrets pass too. Measurements:
+Without a model the rules still run. On a slow computer, the first import of your mail skips the model (the rules
+still run; `--check` forces it), and agent sessions always leave it for later, because years of sessions take hours:
+`synalla-memory check-backlog --minutes 30` checks the waiting records a slice at a time, in place. New mail is checked
+as it arrives. Measurements:
 [benchmark/small_models.md](benchmark/small_models.md).
 
 MCP tools: `recall`, `remember`, `facts_about`, `what_changed`, `show_to_owner`. Setting it up in Claude Code, Hermes,

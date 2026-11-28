@@ -139,7 +139,10 @@ test('with check-with, agent sessions get the second pass too, and are never ask
       claudeProjects: join(root, 'claude'), hermesDb: join(root, 'none.db'), openclawDir: join(root, 'no-openclaw') };
     assert.equal(await main(['init', '--no-embed'], e), 0);
     assert.equal(await main(['check-with', `http://127.0.0.1:${srv.address().port}/`, 'fake'], e), 0);
+    // sessions always leave the model pass for check-backlog (real histories are too large to wait for)
     assert.equal(await main(['import'], e), 0, e.r.join(''));
+    assert.match(e.o.join(''), /Model checks left for later on 1 session\(s\)/);
+    assert.equal(await main(['check-backlog', '--minutes', '5'], e), 0);
     e.o.length = 0;
     assert.equal(await main(['recall', 'staging deploy phrase'], e), 0);
     assert.match(e.o.join(''), /staging box still takes ⟦secret \d+⟧ as the deploy phrase/);

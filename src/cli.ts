@@ -250,8 +250,9 @@ export async function main(argv: string[], env: Env): Promise<number> {
           const seen = new Map(Object.entries(c.claudeCodeSeen ?? {}));
           // With check-with, sessions get the model's second pass for secrets too (not the injection question: they are
           // the owner's own conversations).
-          // As for mail: the first import with the built-in model, or --skip-checks, leaves the model pass for check-backlog.
-          const skip = !!c.check && !rest.includes('--check') && (rest.includes('--skip-checks') || ('builtin' in c.check && store.stats().items === 0));
+          // Always left for check-backlog unless --check: real session histories run to 100 MB, and the model pass over
+          // them took hours on a large GPU (owner's own data, 28 Nov), so an import must not wait for it.
+          const skip = !!c.check && !rest.includes('--check');
           let ck: Awaited<ReturnType<typeof openCheck>> = null; // started on the first new session
           const memo = new Map<string, string[]>();
           let r: Awaited<ReturnType<typeof importClaudeCode>>, hermesFailed = false, openclawFailed = false, deferred = 0;
@@ -436,15 +437,20 @@ export async function main(argv: string[], env: Env): Promise<number> {
         if (!c.check) throw new Error('choose a check model first: synalla-memory check-with builtin');
         const li = rest.indexOf('--limit'), limit = li >= 0 ? Number(rest[li + 1]) : 200;
         if (!Number.isSafeInteger(limit) || limit < 1) throw new Error('--limit must be a positive number');
+        // --minutes N: stop starting new records after N minutes (a slice while the computer is free)
+        const mi = rest.indexOf('--minutes'), until = mi >= 0 ? env.now().getTime() + Number(rest[mi + 1]) * 60000 : Infinity;
+        if (Number.isNaN(until)) throw new Error('--minutes must be a number');
         const store = openStore(env, c);
         try {
           const todo = store.uncheckedItems(limit);
           if (todo.length === 0) { env.out('Nothing waits for the model checks.\n'); return 0; }
           const ck = await openCheck(env, c);
-          let hidden = 0, marked = 0;
+          let hidden = 0, marked = 0, done = 0;
           try {
             const memo = new Map<string, string[]>();
             for (const it of todo) {
+              if (env.now().getTime() > until) break;
+              done++;
               const values = [...new Set([...await secretsByModel(it.title, ck!.m, memo), ...await secretsByModel(it.text, ck!.m, memo)])];
               if (values.length) hidden += store.rehide([it.id], values).items;
               const speaks = it.askInjection ? await speaksToAgentModel(`${it.title}\n${it.text}`, ck!.m) : null;
@@ -452,7 +458,7 @@ export async function main(argv: string[], env: Env): Promise<number> {
               store.checkedLater(it.id, it.rulesHash, speaks);
             }
           } finally { ck?.stop(); }
-          env.out(`Checked ${todo.length} record(s) with ${ck!.name}: ${hidden} got new stand-ins, ${marked} speak to an AI assistant. `
+          env.out(`Checked ${done} record(s) with ${ck!.name}: ${hidden} got new stand-ins, ${marked} speak to an AI assistant. `
             + `${store.uncheckedCount()} still wait.\n`);
           const em = await embedderOrKeywords(env, c);
           try { if (em.e) env.out(`Embedded ${await embedMissing(store, em.e)} changed chunk(s).\n`); } finally { em.stop(); }
